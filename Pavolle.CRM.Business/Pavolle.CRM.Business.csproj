@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="IzinYonetimi\" />
+    <Folder Include="DemirbasYonetimi\" />
+    <Folder Include="AlisverisYonetimi\" />
+    <Folder Include="ModulYonetimi\" />
+    <Folder Include="Dosya Yonetimi\" />
+    <Folder Include="IsPlanlama\" />
+    <Folder Include="KurumYonetimi\" />
+    <Folder Include="Sifre Yonetimi\" />
+    <Folder Include="TeknikDestek\" />
+    <Folder Include="OneriSikayetYonetimi\" />
+    <Folder Include="PersonelYonetimi\" />
+    <Folder Include="UygulamaYonetimi\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+  </ItemGroup>
+
+</Project>
