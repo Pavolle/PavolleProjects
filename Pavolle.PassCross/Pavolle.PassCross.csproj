@@ -48,4 +48,12 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Page\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+	</ItemGroup>
+
 </Project>

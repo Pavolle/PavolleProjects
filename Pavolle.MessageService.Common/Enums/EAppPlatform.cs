@@ -11,5 +11,6 @@ namespace Pavolle.MessageService.Common.Enums
         iOSAppStore=1,
         AndroidPalyConsole,
         WebApplication,
+        WebSite
     }
 }
