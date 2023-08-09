@@ -4,6 +4,12 @@
              x:Class="Pavolle.MessageService.MobileApp.Pages.Login.SignIn"
              Title="SignIn">
     <VerticalStackLayout>
+
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame>
+                
+            </Frame>
+        </StackLayout>
         <Label 
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
