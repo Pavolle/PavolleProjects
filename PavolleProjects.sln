@@ -189,6 +189,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{FCF10A3A-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{ACCB87E2-556B-4289-85B3-874386D07DB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.MobileApp", "Pavolle.MessageService.MobileApp\Pavolle.MessageService.MobileApp.csproj", "{5F05BF7E-F2B9-4897-A3F9-C5B5AF15B7FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -509,6 +511,12 @@ Global
 		{5B89D7D8-CE87-4B71-9EBC-9A40E37BC20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B89D7D8-CE87-4B71-9EBC-9A40E37BC20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B89D7D8-CE87-4B71-9EBC-9A40E37BC20A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F05BF7E-F2B9-4897-A3F9-C5B5AF15B7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F05BF7E-F2B9-4897-A3F9-C5B5AF15B7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F05BF7E-F2B9-4897-A3F9-C5B5AF15B7FD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5F05BF7E-F2B9-4897-A3F9-C5B5AF15B7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F05BF7E-F2B9-4897-A3F9-C5B5AF15B7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F05BF7E-F2B9-4897-A3F9-C5B5AF15B7FD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -593,6 +601,7 @@ Global
 		{5B89D7D8-CE87-4B71-9EBC-9A40E37BC20A} = {F0BC52FF-2E68-4B9D-BEDA-DA3B8EB2442D}
 		{FCF10A3A-801C-4FFF-8395-4F932D1BA183} = {570F66D8-60F4-453C-B10F-10F44B3CEEAD}
 		{ACCB87E2-556B-4289-85B3-874386D07DB2} = {570F66D8-60F4-453C-B10F-10F44B3CEEAD}
+		{5F05BF7E-F2B9-4897-A3F9-C5B5AF15B7FD} = {83C4CF40-127D-48FB-8D7B-137687F6D459}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB022668-0D9A-42CE-B969-F65E1AD40F7C}
