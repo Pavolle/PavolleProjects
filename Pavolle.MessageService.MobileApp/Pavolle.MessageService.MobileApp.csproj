@@ -48,4 +48,22 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Pages\Company\" />
+	  <Folder Include="Pages\Main\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\Login\SignIn.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Login\SingOut.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
