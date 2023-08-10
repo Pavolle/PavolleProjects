@@ -35,7 +35,7 @@ namespace Pavolle.MessageService.WebApp.Controllers
         }
 
         [HttpPost(MessageServiceApiUrlConsts.EditRoutePrefix)]
-        public ActionResult Edit(long? oid, [FromBody] CompanyRequest request)
+        public ActionResult Edit(long? oid, [FromBody] CompanyEditRequest request)
         {
             return Ok(CompanyManager.Instance.Edit(oid, request));
         }

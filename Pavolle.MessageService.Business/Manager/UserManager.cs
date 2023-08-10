@@ -1,6 +1,10 @@
-﻿using Pavolle.Core.Utils;
+﻿using DevExpress.Xpo;
+using Pavolle.Core.Utils;
+using Pavolle.MessageService.Common.Enums;
+using Pavolle.MessageService.DbModels.Entities;
 using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Request;
+using Pavolle.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +58,27 @@ namespace Pavolle.MessageService.Business.Manager
         public object? ChangePassword(ChangePasswordRequest request)
         {
             throw new NotImplementedException();
+        }
+
+        internal User CreateNewUser(Session session, Company company, EUserType userType, string username, string name, string surname, string password, string phoneNumber, string email)
+        {
+            if (session.Query<User>().Any(t => t.Username == username))
+            {
+                return null;
+            }
+            User user = new User(session)
+            {
+                Username = username,
+                Name = name,
+                Surname = surname,
+                UserType = userType,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                Company = company,
+                Password = SecurityHelperManager.Instance.GetEncryptedPassword(username, password),
+            };
+            user.Save();
+            return user;
         }
     }
 }

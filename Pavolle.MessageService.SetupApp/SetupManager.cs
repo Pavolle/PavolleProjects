@@ -60,6 +60,8 @@ namespace Pavolle.MessageService.Business.Manager
                     };
                     sistemAdmin.Save();
 
+                    company.AdminUser = sistemAdmin;
+
                     Console.WriteLine(adminusername + " kullanıcısı oluşturuldu.");
                 }
 

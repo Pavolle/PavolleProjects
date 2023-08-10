@@ -28,5 +28,8 @@ namespace Pavolle.MessageService.DbModels.Entities
 
         [Persistent("manager_company")]
         public bool Manager { get; set; }
+
+        [Persistent("admin_user_oid")]
+        public User AdminUser { get; set; }
     }
 }

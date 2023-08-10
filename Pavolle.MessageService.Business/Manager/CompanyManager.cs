@@ -1,7 +1,9 @@
 ﻿using DevExpress.Xpo;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
+using Pavolle.MessageService.Common.Enums;
 using Pavolle.MessageService.DbModels;
+using Pavolle.MessageService.DbModels.Entities;
 using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
@@ -27,9 +29,25 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        public MessageServiceResponseBase Edit(long? oid, CompanyRequest request)
+        public MessageServiceResponseBase Edit(long? oid, CompanyEditRequest request)
         {
-            throw new NotImplementedException();
+            var response = new MessageServiceResponseBase();
+            using (Session session = XpoManager.Instance.GetNewSession())
+            {
+                var company = session.Query<Company>().FirstOrDefault(t => t.Oid == oid);
+                if(company == null)
+                {
+                    response.Success = false;
+                    return response;
+                }
+
+                company.Name = request.Name;
+                company.Address = request.Address;
+                company.LastUpdateTime = DateTime.Now;
+                company.Save();
+               
+            }
+            return response;
         }
 
         public MessageServiceResponseBase Add(CompanyRequest request)
@@ -37,6 +55,29 @@ namespace Pavolle.MessageService.Business.Manager
             var response=new MessageServiceResponseBase();
             using (Session session=XpoManager.Instance.GetNewSession())
             {
+                //Kontroller eklenecek
+
+                session.BeginTransaction();
+                var company = new Company(session)
+                {
+                    Name = request.Name,
+                    Code = request.Code,
+                    Address = request.Address,
+                };
+                company.Save();
+
+                User user = UserManager.Instance.CreateNewUser(session, company, EUserType.CompanyAdmin, request.AdminUsername, request.AdminName, request.AdminSurname, request.AdminPassword, request.AdminPhoneNumber, request.AdminEmail);
+
+                if(user != null)
+                {
+                    company.AdminUser = user;
+                    session.CommitTransaction();
+                    response.Success = false;
+                }
+                else
+                {
+                    session.RollbackTransaction();
+                }
 
             }
             return response;
@@ -44,7 +85,8 @@ namespace Pavolle.MessageService.Business.Manager
 
         public CompanyListResponse List(MessageServiceCriteriaBase criteria)
         {
-            throw new NotImplementedException();
+            var response=new CompanyListResponse();
+            return response;
         }
 
         public LookupResponse Lookup(MessageServiceCriteriaBase criteria)
