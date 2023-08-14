@@ -1,22 +1,68 @@
-<body>
-  <div>
-    <!--Login Page olacak-->
+<!-- <body>
+  <app-nav-menu></app-nav-menu>
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
-  <div>
-    <section id="sidebar">
-      <app-menu></app-menu>
-    </section>
-    <section id="main">
-      <div id="headerAreaObject">
-        <app-header></app-header>
+</body> -->
+<style>
 
-      </div>
-      <div id="pageAreaObject">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+    app-header {
+        position: fixed; /* normalde fixed */
+        width: 100%;
+        top: 0px;
+        height: 4rem;
+        z-index: 2;
+    }
+
+    main {
+        position: absolute;
+        width: 100%;
+        top: 4rem;
+        z-index: 1;
+    }
+
+    app-nav-menu {
+        position: fixed;
+        left: 0rem;
+        width: 250px;
+        height: calc(100vh - 4rem);
+        /* background-color: #292b2c;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        border-top: 1px solid white; */
+    }
+
+    .display-area {
+        /* absolute yerlerine yeniden bak. fixed olabilir çünkü */
+        position: fixed;
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3.5rem;
+        text-align: center;
+        color: white
+    }
+</style>
+<body>
+    <app-header></app-header>
+
+    <main>
+        <app-menu></app-menu>
+        <div class="display-area p-3">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+    <!--
+      <main>
         <router-outlet></router-outlet>
-      </div>
-      <div id="footerAreaObject">
-        <app-footer></app-footer>
-      </div>
-    </section>
-  </div>
+      </main> -->
+
+    <app-footer></app-footer>
 </body>
