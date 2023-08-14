@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.ViewModels.Response
 {
-    public class CompanyListResponse:MessageServiceResponseBase
+    public class CompanyListResponse : MessageServiceResponseBase
     {
+        public object DataList { get; set; }
     }
 }
