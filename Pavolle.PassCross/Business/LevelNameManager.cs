@@ -21,6 +21,7 @@ namespace Pavolle.PassCross.Business
         public LookupResponse GetLevelNameList(ELanguage language)
         {
             LookupResponse lookupResponse = new LookupResponse();
+
             if (language == ELanguage.Turkce)
             {
                 lookupResponse = new LookupResponse

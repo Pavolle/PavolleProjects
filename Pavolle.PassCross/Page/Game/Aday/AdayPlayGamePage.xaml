@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pavolle.PassCross.Page.Game.Aday.AdayPlayGamePage"
+             Title="AdayPlayGamePage">
+    <VerticalStackLayout>
+        <StackLayout>
+
+            <!--<Path Stroke="Transparent" Data="m198.87499,26.66l396.00001,0l0,205.51133c-198.00001,0 -198.00001,78.30359 -396.00001,33.81292l0,-239.32425z" Fill="#7AD6CA"/>-->
+
+            <StackLayout ClassId="HeaderObject">
+                <!--Reklamı bu alana ekleyebiliriz Üst tarafta 40px boşluk bırakacağız-->
+            </StackLayout>
+            <StackLayout class="MainAreaObject">
+                <!--Üst trafta puan ve seviye - puan ve kaç can kaldığı yer alacak-->
+                <StackLayout ClassId="MainAreaHeaderObject"></StackLayout>
+                <Frame BorderColor="Transparent">
+                    <StackLayout Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Seviye:Aday"></Label>
+                        <Label HorizontalOptions="Center" Text="Puan: 0"></Label>
+                        <Label HorizontalOptions="EndAndExpand" Text="Kalp: 3"></Label>
+                    </StackLayout>
+                </Frame>
+                <Label Text="İpuçlarına göre şifreyi çözün!" HorizontalTextAlignment="Center" TextColor="#111c40" FontSize="18"></Label>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Frame Padding="2" BorderColor="#111c40" CornerRadius="10" Margin="1">
+                        <Entry class="Number1Object" WidthRequest="40" HeightRequest="40" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="" Keyboard="Numeric" FontSize="18" TextColor="#111C40" TextChanged="Entry_TextChanged_1"></Entry>
+                    </Frame>
+                    <Frame Padding="2" BorderColor="#111c40" CornerRadius="10" Margin="1">
+                        <Entry ClassId="Number2Object" WidthRequest="40" HeightRequest="40" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="18" Text="" Keyboard="Numeric"  TextColor="#111C40" TextChanged="Entry_TextChanged_2"></Entry>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout ClassId="FooterObject">
+                <Label x:Name="CompanyNameAndAppVersionObject"></Label>
+            </StackLayout>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

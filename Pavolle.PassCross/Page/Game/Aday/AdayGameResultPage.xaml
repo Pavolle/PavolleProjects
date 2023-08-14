@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pavolle.PassCross.Page.Game.Aday.AdayGameResultPage"
+             Title="AdayGameResultPage">
+    <VerticalStackLayout>
+        <StackLayout>
+            <StackLayout ClassId="HeaderObject">
+                <!--Reklamı bu alana ekleyebiliriz Üst tarafta 40px boşluk bırakacağız-->
+            </StackLayout>
+            <StackLayout class="MainAreaObject">
+                <!--Üst trafta puan ve seviye - puan ve kaç can kaldığı yer alacak-->
+                <StackLayout ClassId="MainAreaHeaderObject"></StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Entry WidthRequest="100"></Entry>
+                    <Entry WidthRequest="100"></Entry>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout ClassId="FooterObject">
+                <Label x:Name="CompanyNameAndAppVersionObject"></Label>
+            </StackLayout>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

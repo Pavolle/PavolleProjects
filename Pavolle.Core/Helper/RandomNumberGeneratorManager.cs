@@ -13,5 +13,10 @@ namespace Pavolle.Core.Helper
         {
 
         }
+
+        
+
+        
     }
+    
 }

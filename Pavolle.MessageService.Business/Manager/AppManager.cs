@@ -282,43 +282,43 @@ namespace Pavolle.MessageService.Business.Manager
 
             if (appOid.Length == 1)
             {
-                sonuc += "P000000000" + companyId;
+                sonuc += "P000000000" + appOid;
             }
             else if (appOid.Length == 2)
             {
-                sonuc += "P00000000" + companyId;
+                sonuc += "P00000000" + appOid;
             }
             else if (appOid.Length == 3)
             {
-                sonuc += "P0000000" + companyId;
+                sonuc += "P0000000" + appOid;
             }
             else if (appOid.Length == 4)
             {
-                sonuc += "P000000" + companyId;
+                sonuc += "P000000" + appOid;
             }
             else if (appOid.Length == 5)
             {
-                sonuc += "P00000" + companyId;
+                sonuc += "P00000" + appOid;
             }
             else if (appOid.Length == 6)
             {
-                sonuc += "P0000" + companyId;
+                sonuc += "P0000" + appOid;
             }
             else if (appOid.Length == 7)
             {
-                sonuc += "P000" + companyId;
+                sonuc += "P000" + appOid;
             }
             else if (appOid.Length == 8)
             {
-                sonuc += "P00" + companyId;
+                sonuc += "P00" + appOid;
             }
             else if (appOid.Length == 9)
             {
-                sonuc += "P0" + companyId;
+                sonuc += "P0" + appOid;
             }
             else
             {
-                sonuc += "P" + companyId;
+                sonuc += "P" + appOid;
             }
 
             return sonuc;
