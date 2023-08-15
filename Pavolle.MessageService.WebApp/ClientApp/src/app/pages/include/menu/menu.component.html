@@ -1,19 +1,27 @@
 <nav class="side-nav-content" style="background-color: #111c40;">
+    <div>
+        <!--Kullanıcı Bilgileri üst kısımda yer alacak.-->
+    </div>
     <div class=" text">
         <ul class="nav-list tema ">
+            <li class="nav-list-item">
+              <a>
+                  Anasayfa
+              </a>
+            </li>
             <li class="nav-list-item">
                 <a>
                     Yönetim
                 </a>
                 <ul class="nav-list-list">
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kullanicilar']">
-                            Kullanıcılar
+                        <a [routerLink]="['yonetim/kurumlar']">
+                            Kurumlar
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kurumlar']">
-                            Kurumlar
+                        <a [routerLink]="['yonetim/kullanicilar']">
+                            Kullanıcılar
                         </a>
                     </li>
                     <li class="nav-list-item ">
@@ -22,16 +30,77 @@
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/info-messages']">
-                            Bilgi Mesajları
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
                         <a [routerLink]="['yonetim/ayarlar']">
                             Ayarlar
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li class="nav-list-item">
+                <a>
+                    Uygulama Yönetimi
+                </a>
+                <ul class="nav-list-list">
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['yonetim/kullanicilar']">
+                            Uygulamalar
+                        </a>
+                    </li>
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['yonetim/ayarlar']">
+                            Versiyon Yönetimi
+                        </a>
+                    </li>
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['yonetim/kurumlar']">
+                            Kullanıcı Mesajları
+                        </a>
+                    </li>
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['yonetim/yetkiler']">
+                            Uygulama Hataları
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-list-item">
+                <a>
+                    Canlı Destek
+                </a>
+            </li>
+            <li class="nav-list-item">
+                <a>
+                    Raporlar
+                </a>
+                <ul class="nav-list-list">
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['yonetim/kullanicilar']">
+                            Uygulama Hataları
+                        </a>
+                    </li>
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['yonetim/kullanicilar']">
+                            Kullanıcı Etkileşimleri
+                        </a>
+                    </li>
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['yonetim/kullanicilar']">
+                            Mağaza Yorumları
+                        </a>
+                    </li>
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['yonetim/kullanicilar']">
+                            Genel Durum
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="nav-list-item">
+                <a>
+                    Çıkış
+                </a>
             </li>
         </ul>
     </div>
