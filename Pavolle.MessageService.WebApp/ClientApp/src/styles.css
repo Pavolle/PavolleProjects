@@ -23,3 +23,8 @@ header {
   color: white;
   background-color: #111c40;
 }
+
+.menu-icon-custom {
+  font-size: 35px;
+  color: white;
+}

@@ -6,85 +6,95 @@
         <ul class="nav-list tema ">
             <li class="nav-list-item">
                 <!--Admin anasayfa-->
+                <span class="dx-icon-home menu-icon-custom"></span>
                 <a [routerLink]="['yonetim/admin/mainpage']">
                     Anasayfa
                 </a>
             </li>
-           <!-- <li class="nav-list-item">
-                
-                <a>
-                    Anasayfa
-                </a>
-            </li>-->
             <li class="nav-list-item">
-                <a>
-                    Yönetim
-                </a>
-                <ul class="nav-list-list">
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['managment/company']">
-                            Kurumlar
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['managment/users']">
-                            Kullanıcılar
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['managment/auth']">
-                            Yetkiler
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['managment/settings']">
-                            Ayarlar
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['managment/schedule']">
-                            Zamanlanmış Görevler
-                        </a>
-                    </li>
-                </ul>
+              <span class="dx-icon-bookmark menu-icon-custom"></span>
+              <a>
+                Yönetim
+              </a>
+              <ul class="nav-list-list">
+                <li class="nav-list-item ">
+                  <span class="dx-icon-box menu-icon-custom"></span>
+                  <a [routerLink]="['managment/company']">
+                    Kurumlar
+                    </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-user menu-icon-custom"></span>
+                  <a [routerLink]="['managment/users']">
+                    Kullanıcılar
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-key menu-icon-custom"></span>
+                  <a [routerLink]="['managment/auth']">
+                    Yetkiler
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-preferences menu-icon-custom"></span>
+                  <a [routerLink]="['managment/settings']">
+                    Ayarlar
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-clock menu-icon-custom"></span>
+                  <a [routerLink]="['managment/schedule']">
+                    Görevler
+                  </a>
+                </li>
+              </ul>
             </li>
+
             <li class="nav-list-item">
-                <a>
-                    Uygulama Yönetimi
-                </a>
-                <ul class="nav-list-list">
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['appmanagment/apps']">
-                            Uygulamalar
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['appmanagment/versionmanagment']">
-                            Versiyon Yönetimi
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['appmanagment/usermessages']">
-                            Kullanıcı Mesajları
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['appmanagment/errors']">
-                            Uygulama Hataları
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['appmanagment/support']">
-                            Teknik Destek Talepleri
-                        </a>
-                    </li>
-                </ul>
+              <span class="dx-icon-product menu-icon-custom"></span>
+              <a>
+                Uygulama Yönetimi
+              </a>
+              <ul class="nav-list-list">
+                <li class="nav-list-item ">
+                  <span class="dx-icon-box menu-icon-custom"></span>
+                  <a [routerLink]="['appmanagment/apps']">
+                    Uygulamalar
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-toolbox menu-icon-custom"></span>
+                  <a [routerLink]="['appmanagment/versionmanagment']">
+                    Versiyon Yönetimi
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-comment menu-icon-custom"></span>
+                  <a [routerLink]="['appmanagment/usermessages']">
+                    Kullanıcı Mesajları
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-clear menu-icon-custom"></span>
+                  <a [routerLink]="['appmanagment/errors']">
+                    Uygulama Hataları
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-email menu-icon-custom"></span>
+                  <a [routerLink]="['appmanagment/support']">
+                    Destek Talepleri
+                  </a>
+                </li>
+              </ul>
             </li>
+
             <li class="nav-list-item">
                 <a [routerLink]="['livesupport']">
                     Canlı Destek
                 </a>
             </li>
+
             <li class="nav-list-item">
                 <a>
                     Raporlar
