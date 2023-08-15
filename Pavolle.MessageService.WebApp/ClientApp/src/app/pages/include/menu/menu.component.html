@@ -13,10 +13,10 @@
             </li>
             <li class="nav-list-item">
               <span class="dx-icon-bookmark menu-icon-custom"></span>
-              <a>
+              <a (click)=toggleDisplayYonetim() [routerLink]="['']">
                 Yönetim
               </a>
-              <ul class="nav-list-list">
+              <ul class="nav-list-list" *ngIf="!isShowYonetim">
                 <li class="nav-list-item ">
                   <span class="dx-icon-box menu-icon-custom"></span>
                   <a [routerLink]="['managment/company']">
@@ -52,10 +52,10 @@
 
             <li class="nav-list-item">
               <span class="dx-icon-product menu-icon-custom"></span>
-              <a>
+              <a (click)=toggleDisplayUygulamaYonetim() [routerLink]="['']">
                 Uygulama Yönetimi
               </a>
-              <ul class="nav-list-list">
+              <ul class="nav-list-list"  *ngIf="!isShowUygulamaYonetim">
                 <li class="nav-list-item ">
                   <span class="dx-icon-box menu-icon-custom"></span>
                   <a [routerLink]="['appmanagment/apps']">
@@ -90,44 +90,51 @@
             </li>
 
             <li class="nav-list-item">
-                <a [routerLink]="['livesupport']">
-                    Canlı Destek
-                </a>
+              <span class="dx-icon-runner menu-icon-custom"></span>
+              <a [routerLink]="['livesupport']">
+                Canlı Destek
+              </a>
             </li>
 
             <li class="nav-list-item">
-                <a>
-                    Raporlar
-                </a>
-                <ul class="nav-list-list">
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['report/apperrors']">
-                            Uygulama Hataları
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['report/interactions']">
-                            Kullanıcı Etkileşimleri
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['report/storecomment']">
-                            Mağaza Yorumları
-                        </a>
-                    </li>
-                    <li class="nav-list-item ">
-                        <a [routerLink]="['report/general']">
-                            Genel Durum
-                        </a>
-                    </li>
-                </ul>
+              <span class="dx-icon-chart menu-icon-custom"></span>
+              <a (click)=toggleDisplayUygulamaRaporlar() [routerLink]="['']">
+                Raporlar
+              </a>
+              <ul class="nav-list-list"  *ngIf="!isShowUygulamaRaporlar">
+                <li class="nav-list-item ">
+                  <span class="dx-icon-clear menu-icon-custom"></span>
+                  <a [routerLink]="['report/apperrors']">
+                    Uygulama Hataları
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-filter menu-icon-custom"></span>
+                  <a [routerLink]="['report/interactions']">
+                    Kullanıcı Etkileşimleri
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-comment menu-icon-custom"></span>
+                  <a [routerLink]="['report/storecomment']">
+                    Mağaza Yorumları
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-globe menu-icon-custom"></span>
+                  <a [routerLink]="['report/general']">
+                    Genel Durum
+                  </a>
+                </li>
+              </ul>
             </li>
 
 
             <li class="nav-list-item">
-                <a [routerLink]="['logout']">
-                    Çıkış
-                </a>
+              <span class="dx-icon-chevronnext menu-icon-custom"></span>
+              <a [routerLink]="['logout']">
+                Çıkış
+              </a>
             </li>
         </ul>
     </div>
