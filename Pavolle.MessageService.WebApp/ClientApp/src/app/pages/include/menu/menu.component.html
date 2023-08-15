@@ -5,33 +5,45 @@
     <div class=" text">
         <ul class="nav-list tema ">
             <li class="nav-list-item">
-              <a>
-                  Anasayfa
-              </a>
+                <!--Admin anasayfa-->
+                <a [routerLink]="['yonetim/admin/mainpage']">
+                    Anasayfa
+                </a>
             </li>
+           <!-- <li class="nav-list-item">
+                
+                <a>
+                    Anasayfa
+                </a>
+            </li>-->
             <li class="nav-list-item">
                 <a>
                     Yönetim
                 </a>
                 <ul class="nav-list-list">
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kurumlar']">
+                        <a [routerLink]="['managment/company']">
                             Kurumlar
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kullanicilar']">
+                        <a [routerLink]="['managment/users']">
                             Kullanıcılar
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/yetkiler']">
+                        <a [routerLink]="['managment/auth']">
                             Yetkiler
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/ayarlar']">
+                        <a [routerLink]="['managment/settings']">
                             Ayarlar
+                        </a>
+                    </li>
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['managment/schedule']">
+                            Zamanlanmış Görevler
                         </a>
                     </li>
                 </ul>
@@ -42,29 +54,34 @@
                 </a>
                 <ul class="nav-list-list">
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kullanicilar']">
+                        <a [routerLink]="['appmanagment/apps']">
                             Uygulamalar
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/ayarlar']">
+                        <a [routerLink]="['appmanagment/versionmanagment']">
                             Versiyon Yönetimi
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kurumlar']">
+                        <a [routerLink]="['appmanagment/usermessages']">
                             Kullanıcı Mesajları
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/yetkiler']">
+                        <a [routerLink]="['appmanagment/errors']">
                             Uygulama Hataları
+                        </a>
+                    </li>
+                    <li class="nav-list-item ">
+                        <a [routerLink]="['appmanagment/support']">
+                            Teknik Destek Talepleri
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-list-item">
-                <a>
+                <a [routerLink]="['livesupport']">
                     Canlı Destek
                 </a>
             </li>
@@ -74,22 +91,22 @@
                 </a>
                 <ul class="nav-list-list">
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kullanicilar']">
+                        <a [routerLink]="['report/apperrors']">
                             Uygulama Hataları
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kullanicilar']">
+                        <a [routerLink]="['report/interactions']">
                             Kullanıcı Etkileşimleri
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kullanicilar']">
+                        <a [routerLink]="['report/storecomment']">
                             Mağaza Yorumları
                         </a>
                     </li>
                     <li class="nav-list-item ">
-                        <a [routerLink]="['yonetim/kullanicilar']">
+                        <a [routerLink]="['report/general']">
                             Genel Durum
                         </a>
                     </li>
@@ -98,7 +115,7 @@
 
 
             <li class="nav-list-item">
-                <a>
+                <a [routerLink]="['logout']">
                     Çıkış
                 </a>
             </li>
