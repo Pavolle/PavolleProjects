@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Common.Enums
 {
-    public enum EAppPlatform
+    public enum ESettingType
     {
-        iOSAppStore=1,
-        AndroidPlayConsole,
-        HuaweiAppGalery,
-        WebApplication,
-        WebSite
     }
 }

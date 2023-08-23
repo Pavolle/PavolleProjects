@@ -97,7 +97,10 @@ namespace Pavolle.MessageService.Business.Manager
                 YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.ListRoutePrefix, "Kurum Listesi Görüntüleme", true, true, false, false, false, false, false, false);
                 YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.DetailRoutePrefix, "Kurum Detayı Görüntüleme", true, true, false, false, false, false, false, false);
                 YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.LookupRoutePrefix, "Kurum Listesi Lookup", true, true, false, false, false, false, false, false);
-                
+
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.LoginRouteConsts.Route + "/" + MessageServiceApiUrlConsts.LoginRouteConsts.SignInRoutePrefix, "Kullanıcı Girişi", false, false, false, false, false, false, false, true);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.LoginRouteConsts.Route + "/" + MessageServiceApiUrlConsts.LoginRouteConsts.SignOutRoutePrefix, "Sistem Çıkışı", true, true, true, true, true, true, false, false);
+
             }
 
         }
