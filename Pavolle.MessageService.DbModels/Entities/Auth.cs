@@ -40,5 +40,8 @@ namespace Pavolle.MessageService.DbModels.Entities
 
         [Persistent("editable")]
         public bool Editable { get; set; }
+
+        [Persistent("Anonymous")]
+        public bool Anonymous { get; set; }
     }
 }

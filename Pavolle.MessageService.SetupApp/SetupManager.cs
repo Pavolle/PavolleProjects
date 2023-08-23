@@ -21,7 +21,7 @@ namespace Pavolle.MessageService.Business.Manager
 
         }
 
-        public void Setup(string managerCompany, string code, string adminusername, string adminpassword)
+        public void Setup(string managerCompany, string code, string adminusername, string adminpassword, int setupLanguage)
         {
             //Pavolle company oluştur.
             //Pavolle admin kullanıcısı oluştur.
@@ -86,16 +86,18 @@ namespace Pavolle.MessageService.Business.Manager
                     Console.WriteLine(companyAdminUsername + " kullanıcısı oluşturuldu.");
                 }
 
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AppRouteConsts.Route + "/" + MessageServiceApiUrlConsts.AddRoutePrefix, "Uygulama Oluşturma", false, true, false, true);
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AppRouteConsts.Route + "/" + MessageServiceApiUrlConsts.EditRoutePrefix, "Uygulama Bilgileri Düzenleme", false, true, false, true);
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AppRouteConsts.Route + "/" + MessageServiceApiUrlConsts.DeleteRoutePrefix, "Uygulama Silme", false, true, false, true);
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AppRouteConsts.Route + "/" + MessageServiceApiUrlConsts.ListRoutePrefix, "Uygulama Listesi Görüntüleme", false, true, true, true);
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AppRouteConsts.Route + "/" + MessageServiceApiUrlConsts.DetailRoutePrefix, "Uygulama Detayı Görüntüleme", false, true, true, true);
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AppRouteConsts.Route + "/" + MessageServiceApiUrlConsts.LookupRoutePrefix, "Uygulama Listesi Lookup", false, true, true, true);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AuthRouteConsts.Route + "/" + MessageServiceApiUrlConsts.EditRoutePrefix, "Yetki Bilgileri Düzenleme", true, false, false, false, false, false, false, false);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AuthRouteConsts.Route + "/" + MessageServiceApiUrlConsts.ListRoutePrefix, "Yetki Listesi Görüntüleme", true, false, false, false, false, false, false, false);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AuthRouteConsts.Route + "/" + MessageServiceApiUrlConsts.DetailRoutePrefix, "Yetki Detayı Görüntüleme", true, false, false, false, false, false, false, false);
 
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AuthRouteConsts.Route + "/" + MessageServiceApiUrlConsts.EditRoutePrefix, "Yetki Bilgileri Düzenleme", false, true, false, false);
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AuthRouteConsts.Route + "/" + MessageServiceApiUrlConsts.ListRoutePrefix, "Yetki Listesi Görüntüleme", false, true, true, false);
-                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.AuthRouteConsts.Route + "/" + MessageServiceApiUrlConsts.DetailRoutePrefix, "Yetki Detayı Görüntüleme", false, true, true, false);
+                
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.AddRoutePrefix, "Kurum Oluşturma", true, true, false, false, false, false, false, false);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.EditRoutePrefix, "Kurum Bilgileri Düzenleme", true, true, false, false, false, false, false, false);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.DeleteRoutePrefix, "Kurum Silme", true, true, false, false, false, false, false, false);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.ListRoutePrefix, "Kurum Listesi Görüntüleme", true, true, false, false, false, false, false, false);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.DetailRoutePrefix, "Kurum Detayı Görüntüleme", true, true, false, false, false, false, false, false);
+                YetkiYoksaYaz(session, MessageServiceApiUrlConsts.CompanyRouteConsts.Route + "/" + MessageServiceApiUrlConsts.LookupRoutePrefix, "Kurum Listesi Lookup", true, true, false, false, false, false, false, false);
+                
             }
 
         }
@@ -107,7 +109,8 @@ namespace Pavolle.MessageService.Business.Manager
             bool developer,
             bool tecnicalSupportSpecialist,
             bool liveSupportSpecialist,
-            bool editable)
+            bool editable, 
+            bool anonymous)
         {
             Auth yetki = session.Query<Auth>().FirstOrDefault(t => t.ApiKey == apiKey);
             if (yetki != null) return;
@@ -123,7 +126,8 @@ namespace Pavolle.MessageService.Business.Manager
                 DeveloperAuth=developer,
                 TecnicalSupportSpecialistAuth=tecnicalSupportSpecialist,
                 LiveSupportSpecialistAuth=liveSupportSpecialist,
-                Editable =editable
+                Editable =editable,
+                Anonymous=anonymous
             }.Save();
             Console.WriteLine(apiDefintion + " servisi için yetki bilgileri veritabanına yazıldı.");
         }
