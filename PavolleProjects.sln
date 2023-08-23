@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0001 Araç Piyasa Değeri", "0001 Araç Piyasa Değeri", "{7D447ACE-0105-4A8B-B620-9F2DF541FC25}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0006 Araç Piyasa Değeri", "0006 Araç Piyasa Değeri", "{7D447ACE-0105-4A8B-B620-9F2DF541FC25}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0007 Supplera", "0007 Supplera", "{B4DEF2E4-3231-4B9B-BB9A-0E682C324D06}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Surrvey", "Surrvey", "{DEDF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4B48D27B-A9D3-4F9A-B376-BEB8F87ACCF7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ESecim", "ESecim", "{207BFA26-84EC-4CA2-9AE1-86F304D33F5A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0012 ESecim", "0012 ESecim", "{207BFA26-84EC-4CA2-9AE1-86F304D33F5A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0008 Teknik Destek", "0008 Teknik Destek", "{B21F27AB-5F57-47CC-AA49-EFF19428B92E}"
 EndProject
@@ -105,7 +105,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MobileService.ViewM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MobileService.ClientLib", "Pavolle.MobileService.ClientLib\Pavolle.MobileService.ClientLib.csproj", "{45BDFBD6-8C78-4831-B34B-112D01C819CB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0006 Message Service", "0006 Message Service", "{83C4CF40-127D-48FB-8D7B-137687F6D459}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0001 Message Service", "0001 Message Service", "{83C4CF40-127D-48FB-8D7B-137687F6D459}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SmsLib", "Pavolle.SmsLib\Pavolle.SmsLib.csproj", "{CB6F9EFC-E1B0-49A0-974C-555A721A8CC8}"
 EndProject
@@ -145,7 +145,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.EGaleri.DbModels", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.EGaleri.ViewModels", "Pavolle.EGaleri.ViewModels\Pavolle.EGaleri.ViewModels.csproj", "{DF5EAF5A-330F-4D99-A0D4-C3CB670639CD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDKS", "PDKS", "{52A3DFC0-67DF-47F0-8C70-C1E64EA00F5F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0013 PDKS", "0013 PDKS", "{52A3DFC0-67DF-47F0-8C70-C1E64EA00F5F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PDKS.Business", "Pavolle.PDKS.Business\Pavolle.PDKS.Business.csproj", "{598FF830-49E4-4F5D-BC63-480F45FF8EBF}"
 EndProject
@@ -227,83 +227,117 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0009 Seo Analiz", "0009 Seo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0010 Stok ve Depo Yönetimi", "0010 Stok ve Depo Yönetimi", "{93B2CE86-B5E8-474C-9A1B-AE4646A8F5DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.Business", "Pavolle.SeoAnaliz.Business\Pavolle.SeoAnaliz.Business.csproj", "{C2E67C45-04CB-4530-87DA-37114D19DEA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.Business", "Pavolle.SeoAnaliz.Business\Pavolle.SeoAnaliz.Business.csproj", "{C2E67C45-04CB-4530-87DA-37114D19DEA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.Common", "Pavolle.SeoAnaliz.Common\Pavolle.SeoAnaliz.Common.csproj", "{05BA7755-5F79-4873-BA07-0F81EAF97EA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.Common", "Pavolle.SeoAnaliz.Common\Pavolle.SeoAnaliz.Common.csproj", "{05BA7755-5F79-4873-BA07-0F81EAF97EA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.ViewModels", "Pavolle.SeoAnaliz.ViewModels\Pavolle.SeoAnaliz.ViewModels.csproj", "{AC8960A5-D3E2-457D-B93F-842F5A4994CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.ViewModels", "Pavolle.SeoAnaliz.ViewModels\Pavolle.SeoAnaliz.ViewModels.csproj", "{AC8960A5-D3E2-457D-B93F-842F5A4994CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.DbModels", "Pavolle.SeoAnaliz.DbModels\Pavolle.SeoAnaliz.DbModels.csproj", "{CE8DF3C6-B411-4E01-AB0A-A873DEF90305}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.DbModels", "Pavolle.SeoAnaliz.DbModels\Pavolle.SeoAnaliz.DbModels.csproj", "{CE8DF3C6-B411-4E01-AB0A-A873DEF90305}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.WebSecurity", "Pavolle.SeoAnaliz.WebSecurity\Pavolle.SeoAnaliz.WebSecurity.csproj", "{655429DA-1A94-4B57-B637-6543E852C1D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.WebSecurity", "Pavolle.SeoAnaliz.WebSecurity\Pavolle.SeoAnaliz.WebSecurity.csproj", "{655429DA-1A94-4B57-B637-6543E852C1D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.MobileApp", "Pavolle.SeoAnaliz.MobileApp\Pavolle.SeoAnaliz.MobileApp.csproj", "{30A177D6-77D4-4ABE-A69B-36934E92CAC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.MobileApp", "Pavolle.SeoAnaliz.MobileApp\Pavolle.SeoAnaliz.MobileApp.csproj", "{30A177D6-77D4-4ABE-A69B-36934E92CAC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.UnitTests", "Pavolle.SeoAnaliz.UnitTests\Pavolle.SeoAnaliz.UnitTests.csproj", "{787032F7-3A02-4338-B657-62027D647937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.UnitTests", "Pavolle.SeoAnaliz.UnitTests\Pavolle.SeoAnaliz.UnitTests.csproj", "{787032F7-3A02-4338-B657-62027D647937}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0011 Rent A Car", "0011 Rent A Car", "{7711E1E1-1302-4DFF-9C2F-CBF1034DBC86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.Business", "Pavolle.TeknikDestek.Business\Pavolle.TeknikDestek.Business.csproj", "{DBE57359-4107-49CC-B413-680BFAAC4011}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.Business", "Pavolle.TeknikDestek.Business\Pavolle.TeknikDestek.Business.csproj", "{DBE57359-4107-49CC-B413-680BFAAC4011}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.Common", "Pavolle.TeknikDestek.Common\Pavolle.TeknikDestek.Common.csproj", "{4329140E-C1A9-4EDB-8F87-39F78F0876C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.Common", "Pavolle.TeknikDestek.Common\Pavolle.TeknikDestek.Common.csproj", "{4329140E-C1A9-4EDB-8F87-39F78F0876C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.DbModels", "Pavolle.TeknikDestek.DbModels\Pavolle.TeknikDestek.DbModels.csproj", "{941DE675-345D-45D9-B04E-E0C92F7BF43C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.DbModels", "Pavolle.TeknikDestek.DbModels\Pavolle.TeknikDestek.DbModels.csproj", "{941DE675-345D-45D9-B04E-E0C92F7BF43C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.ViewModels", "Pavolle.TeknikDestek.ViewModels\Pavolle.TeknikDestek.ViewModels.csproj", "{387A2BD1-94C2-4680-8E4F-9AD6A79323D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.ViewModels", "Pavolle.TeknikDestek.ViewModels\Pavolle.TeknikDestek.ViewModels.csproj", "{387A2BD1-94C2-4680-8E4F-9AD6A79323D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.WebSecurity", "Pavolle.TeknikDestek.WebSecurity\Pavolle.TeknikDestek.WebSecurity.csproj", "{8B8F9770-B57D-494D-8361-95A11CA7823B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.WebSecurity", "Pavolle.TeknikDestek.WebSecurity\Pavolle.TeknikDestek.WebSecurity.csproj", "{8B8F9770-B57D-494D-8361-95A11CA7823B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.ClientLib", "Pavolle.TeknikDestek.ClientLib\Pavolle.TeknikDestek.ClientLib.csproj", "{75D76453-AADC-465F-9D8D-022232CEA589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.ClientLib", "Pavolle.TeknikDestek.ClientLib\Pavolle.TeknikDestek.ClientLib.csproj", "{75D76453-AADC-465F-9D8D-022232CEA589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.UnitTests", "Pavolle.TeknikDestek.UnitTests\Pavolle.TeknikDestek.UnitTests.csproj", "{20A48910-DB1B-4302-8BDB-7585A74905F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.UnitTests", "Pavolle.TeknikDestek.UnitTests\Pavolle.TeknikDestek.UnitTests.csproj", "{20A48910-DB1B-4302-8BDB-7585A74905F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.MobileApp", "Pavolle.TeknikDestek.MobileApp\Pavolle.TeknikDestek.MobileApp.csproj", "{0ECDDC3C-2EA2-4DE6-8D84-0D71F57D8A20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.MobileApp", "Pavolle.TeknikDestek.MobileApp\Pavolle.TeknikDestek.MobileApp.csproj", "{0ECDDC3C-2EA2-4DE6-8D84-0D71F57D8A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.WebApp", "Pavolle.TeknikDestek.WebApp\Pavolle.TeknikDestek.WebApp.csproj", "{7B4B597E-9510-45B3-88E2-2D9F84C3D4EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.WebApp", "Pavolle.TeknikDestek.WebApp\Pavolle.TeknikDestek.WebApp.csproj", "{7B4B597E-9510-45B3-88E2-2D9F84C3D4EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.WebApp", "Pavolle.SeoAnaliz.WebApp\Pavolle.SeoAnaliz.WebApp.csproj", "{3B0D03F5-E035-4688-8AFA-CF9647A762A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.WebApp", "Pavolle.SeoAnaliz.WebApp\Pavolle.SeoAnaliz.WebApp.csproj", "{3B0D03F5-E035-4688-8AFA-CF9647A762A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BorsaNakliye.MobileApp", "Pavolle.BorsaNakliye.MobileApp\Pavolle.BorsaNakliye.MobileApp.csproj", "{3158442D-B286-4F42-9C02-E6222858B313}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BorsaNakliye.MobileApp", "Pavolle.BorsaNakliye.MobileApp\Pavolle.BorsaNakliye.MobileApp.csproj", "{3158442D-B286-4F42-9C02-E6222858B313}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.Business", "Pavolle.StokDepoYonetimi.Business\Pavolle.StokDepoYonetimi.Business.csproj", "{DB6A833A-FB77-462F-BA9D-381D84416C1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.Business", "Pavolle.StokDepoYonetimi.Business\Pavolle.StokDepoYonetimi.Business.csproj", "{DB6A833A-FB77-462F-BA9D-381D84416C1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.Common", "Pavolle.StokDepoYonetimi.Common\Pavolle.StokDepoYonetimi.Common.csproj", "{4C3033F2-560A-4007-B3B9-AB93E1A2E215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.Common", "Pavolle.StokDepoYonetimi.Common\Pavolle.StokDepoYonetimi.Common.csproj", "{4C3033F2-560A-4007-B3B9-AB93E1A2E215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.DbModels", "Pavolle.StokDepoYonetimi.DbModels\Pavolle.StokDepoYonetimi.DbModels.csproj", "{31A4B482-BB1B-4836-A5E2-383A5E430695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.DbModels", "Pavolle.StokDepoYonetimi.DbModels\Pavolle.StokDepoYonetimi.DbModels.csproj", "{31A4B482-BB1B-4836-A5E2-383A5E430695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.ViewModels", "Pavolle.StokDepoYonetimi.ViewModels\Pavolle.StokDepoYonetimi.ViewModels.csproj", "{EFBD74C7-02AD-402D-B88A-B45161552411}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.ViewModels", "Pavolle.StokDepoYonetimi.ViewModels\Pavolle.StokDepoYonetimi.ViewModels.csproj", "{EFBD74C7-02AD-402D-B88A-B45161552411}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.WebSecurity", "Pavolle.StokDepoYonetimi.WebSecurity\Pavolle.StokDepoYonetimi.WebSecurity.csproj", "{5400D640-0143-4B3E-829B-4D5A93E258C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.WebSecurity", "Pavolle.StokDepoYonetimi.WebSecurity\Pavolle.StokDepoYonetimi.WebSecurity.csproj", "{5400D640-0143-4B3E-829B-4D5A93E258C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.MobileApp", "Pavolle.StokDepoYonetimi.MobileApp\Pavolle.StokDepoYonetimi.MobileApp.csproj", "{BD4F2B30-4741-480A-9EA7-87D41FBE89EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.MobileApp", "Pavolle.StokDepoYonetimi.MobileApp\Pavolle.StokDepoYonetimi.MobileApp.csproj", "{BD4F2B30-4741-480A-9EA7-87D41FBE89EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.WebApp", "Pavolle.StokDepoYonetimi.WebApp\Pavolle.StokDepoYonetimi.WebApp.csproj", "{7D2ED622-81A1-4827-89B7-2621F7138B69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.WebApp", "Pavolle.StokDepoYonetimi.WebApp\Pavolle.StokDepoYonetimi.WebApp.csproj", "{7D2ED622-81A1-4827-89B7-2621F7138B69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.UnitTests", "Pavolle.StokDepoYonetimi.UnitTests\Pavolle.StokDepoYonetimi.UnitTests.csproj", "{52F4EEBB-0B85-4EA7-B19A-DF1EAFC4CEC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.UnitTests", "Pavolle.StokDepoYonetimi.UnitTests\Pavolle.StokDepoYonetimi.UnitTests.csproj", "{52F4EEBB-0B85-4EA7-B19A-DF1EAFC4CEC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.ClientLib", "Pavolle.StokDepoYonetimi.ClientLib\Pavolle.StokDepoYonetimi.ClientLib.csproj", "{59A80019-55F4-4C5B-822C-C3A6DA7B6C38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.ClientLib", "Pavolle.StokDepoYonetimi.ClientLib\Pavolle.StokDepoYonetimi.ClientLib.csproj", "{59A80019-55F4-4C5B-822C-C3A6DA7B6C38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.Supplera.MobileApp", "Pavolle.Supplera.MobileApp\Pavolle.Supplera.MobileApp.csproj", "{459DD636-D454-4428-960B-F8A8385C36C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Supplera.MobileApp", "Pavolle.Supplera.MobileApp\Pavolle.Supplera.MobileApp.csproj", "{459DD636-D454-4428-960B-F8A8385C36C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.IntegrationService", "Pavolle.StokDepoYonetimi.IntegrationService\Pavolle.StokDepoYonetimi.IntegrationService.csproj", "{04A1008F-1F42-483A-BDFF-EA992193FC3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.IntegrationService", "Pavolle.StokDepoYonetimi.IntegrationService\Pavolle.StokDepoYonetimi.IntegrationService.csproj", "{04A1008F-1F42-483A-BDFF-EA992193FC3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.Business", "Pavolle.RentACar.Business\Pavolle.RentACar.Business.csproj", "{E0DB5D99-525B-4364-9F38-F2666E32241E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.Business", "Pavolle.RentACar.Business\Pavolle.RentACar.Business.csproj", "{E0DB5D99-525B-4364-9F38-F2666E32241E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.Common", "Pavolle.RentACar.Common\Pavolle.RentACar.Common.csproj", "{6ABFBEF5-9E1D-4C2B-9800-4475CDB3ECA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.Common", "Pavolle.RentACar.Common\Pavolle.RentACar.Common.csproj", "{6ABFBEF5-9E1D-4C2B-9800-4475CDB3ECA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.ViewModels", "Pavolle.RentACar.ViewModels\Pavolle.RentACar.ViewModels.csproj", "{E49FBD05-8625-4D3C-90C6-2DDC5D8E955B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.ViewModels", "Pavolle.RentACar.ViewModels\Pavolle.RentACar.ViewModels.csproj", "{E49FBD05-8625-4D3C-90C6-2DDC5D8E955B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.DbModels", "Pavolle.RentACar.DbModels\Pavolle.RentACar.DbModels.csproj", "{B40E9A92-FC5B-4990-AC53-B4B37857F4E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.DbModels", "Pavolle.RentACar.DbModels\Pavolle.RentACar.DbModels.csproj", "{B40E9A92-FC5B-4990-AC53-B4B37857F4E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.WebSecurity", "Pavolle.RentACar.WebSecurity\Pavolle.RentACar.WebSecurity.csproj", "{B8A5464F-8FFE-4C10-B130-53CCC2F2588D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.WebSecurity", "Pavolle.RentACar.WebSecurity\Pavolle.RentACar.WebSecurity.csproj", "{B8A5464F-8FFE-4C10-B130-53CCC2F2588D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.ClientLib", "Pavolle.RentACar.ClientLib\Pavolle.RentACar.ClientLib.csproj", "{3D508D27-C38F-42E1-B04A-A54D681E7300}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.ClientLib", "Pavolle.RentACar.ClientLib\Pavolle.RentACar.ClientLib.csproj", "{3D508D27-C38F-42E1-B04A-A54D681E7300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.WebApp", "Pavolle.RentACar.WebApp\Pavolle.RentACar.WebApp.csproj", "{03FE28F1-8EB2-40AF-BC42-A6B1114A7801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.WebApp", "Pavolle.RentACar.WebApp\Pavolle.RentACar.WebApp.csproj", "{03FE28F1-8EB2-40AF-BC42-A6B1114A7801}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.MobileApp", "Pavolle.RentACar.MobileApp\Pavolle.RentACar.MobileApp.csproj", "{2A096995-A500-4F7D-B15D-07AD724A95D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.MobileApp", "Pavolle.RentACar.MobileApp\Pavolle.RentACar.MobileApp.csproj", "{2A096995-A500-4F7D-B15D-07AD724A95D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.UnitTests", "Pavolle.RentACar.UnitTests\Pavolle.RentACar.UnitTests.csproj", "{0D609794-B973-4BE6-813D-222E96A17C9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.UnitTests", "Pavolle.RentACar.UnitTests\Pavolle.RentACar.UnitTests.csproj", "{0D609794-B973-4BE6-813D-222E96A17C9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.UnitTests", "Pavolle.B2B.UnitTests\Pavolle.B2B.UnitTests.csproj", "{DF70282C-A798-41B0-8CA8-2AD598B294DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.MobileApp", "Pavolle.B2B.MobileApp\Pavolle.B2B.MobileApp.csproj", "{F4E4ADA7-B99E-49C4-B3C0-DADCEDEF54DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.WebApp", "Pavolle.B2B.WebApp\Pavolle.B2B.WebApp.csproj", "{BC515B9D-B75E-41B0-9112-9E084D227A40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.Common", "Pavolle.B2B.Common\Pavolle.B2B.Common.csproj", "{53424865-F697-4969-AE80-CB80A43B30F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.ClientLib", "Pavolle.B2B.ClientLib\Pavolle.B2B.ClientLib.csproj", "{0BC73E21-6359-4B5F-BE3F-D46C243FB808}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.DbModels", "Pavolle.B2B.DbModels\Pavolle.B2B.DbModels.csproj", "{0D7946A7-DFB0-4BA2-B753-EB3BB1FA7ACD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.ViewModels", "Pavolle.B2B.ViewModels\Pavolle.B2B.ViewModels.csproj", "{A311B25D-6E9A-45F6-A082-7423BBF4F567}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.WebSecurity", "Pavolle.B2B.WebSecurity\Pavolle.B2B.WebSecurity.csproj", "{B9F9262B-5CCA-47C0-B4DB-FD9041304F7B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.B2B.SetupApp", "Pavolle.B2B.SetupApp\Pavolle.B2B.SetupApp.csproj", "{C85CD4D7-E1DE-45A3-AD21-8721A3C58A29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.AracPiyasaDegeri.MobileApp", "Pavolle.AracPiyasaDegeri.MobileApp\Pavolle.AracPiyasaDegeri.MobileApp.csproj", "{00A20358-97E0-4ACD-BDDD-19506431EA0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.AracPiyasaDegeri.SetupApp", "Pavolle.AracPiyasaDegeri.SetupApp\Pavolle.AracPiyasaDegeri.SetupApp.csproj", "{159521CB-178E-406A-B0A0-0CB44EA8C6B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.AracPiyasaDegeri.UnitTests", "Pavolle.AracPiyasaDegeri.UnitTests\Pavolle.AracPiyasaDegeri.UnitTests.csproj", "{F08AAA95-6ACF-4F73-804E-B2B6A4164777}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BorsaNakliye.UnitTests", "Pavolle.BorsaNakliye.UnitTests\Pavolle.BorsaNakliye.UnitTests.csproj", "{0313C790-8FD7-4038-9423-DEBAB9842805}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.CRM.UnitTests", "Pavolle.CRM.UnitTests\Pavolle.CRM.UnitTests.csproj", "{4646F02C-E41B-475B-96AC-DD43F0636EBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.CRM.ClientLib", "Pavolle.CRM.ClientLib\Pavolle.CRM.ClientLib.csproj", "{22BD69C2-BB6B-4CCE-B78C-1B7569081FEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.CRM.WebApp", "Pavolle.CRM.WebApp\Pavolle.CRM.WebApp.csproj", "{CE27B05B-55F0-4AF1-B95A-5C09E7469295}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.CRM.MobileApp", "Pavolle.CRM.MobileApp\Pavolle.CRM.MobileApp.csproj", "{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -853,6 +887,80 @@ Global
 		{0D609794-B973-4BE6-813D-222E96A17C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D609794-B973-4BE6-813D-222E96A17C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D609794-B973-4BE6-813D-222E96A17C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF70282C-A798-41B0-8CA8-2AD598B294DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF70282C-A798-41B0-8CA8-2AD598B294DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF70282C-A798-41B0-8CA8-2AD598B294DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF70282C-A798-41B0-8CA8-2AD598B294DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E4ADA7-B99E-49C4-B3C0-DADCEDEF54DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E4ADA7-B99E-49C4-B3C0-DADCEDEF54DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E4ADA7-B99E-49C4-B3C0-DADCEDEF54DF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F4E4ADA7-B99E-49C4-B3C0-DADCEDEF54DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E4ADA7-B99E-49C4-B3C0-DADCEDEF54DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E4ADA7-B99E-49C4-B3C0-DADCEDEF54DF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BC515B9D-B75E-41B0-9112-9E084D227A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC515B9D-B75E-41B0-9112-9E084D227A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC515B9D-B75E-41B0-9112-9E084D227A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC515B9D-B75E-41B0-9112-9E084D227A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53424865-F697-4969-AE80-CB80A43B30F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53424865-F697-4969-AE80-CB80A43B30F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53424865-F697-4969-AE80-CB80A43B30F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53424865-F697-4969-AE80-CB80A43B30F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC73E21-6359-4B5F-BE3F-D46C243FB808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC73E21-6359-4B5F-BE3F-D46C243FB808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC73E21-6359-4B5F-BE3F-D46C243FB808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC73E21-6359-4B5F-BE3F-D46C243FB808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D7946A7-DFB0-4BA2-B753-EB3BB1FA7ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D7946A7-DFB0-4BA2-B753-EB3BB1FA7ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D7946A7-DFB0-4BA2-B753-EB3BB1FA7ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D7946A7-DFB0-4BA2-B753-EB3BB1FA7ACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A311B25D-6E9A-45F6-A082-7423BBF4F567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A311B25D-6E9A-45F6-A082-7423BBF4F567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A311B25D-6E9A-45F6-A082-7423BBF4F567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A311B25D-6E9A-45F6-A082-7423BBF4F567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9F9262B-5CCA-47C0-B4DB-FD9041304F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9F9262B-5CCA-47C0-B4DB-FD9041304F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9F9262B-5CCA-47C0-B4DB-FD9041304F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9F9262B-5CCA-47C0-B4DB-FD9041304F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C85CD4D7-E1DE-45A3-AD21-8721A3C58A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C85CD4D7-E1DE-45A3-AD21-8721A3C58A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C85CD4D7-E1DE-45A3-AD21-8721A3C58A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C85CD4D7-E1DE-45A3-AD21-8721A3C58A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00A20358-97E0-4ACD-BDDD-19506431EA0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A20358-97E0-4ACD-BDDD-19506431EA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A20358-97E0-4ACD-BDDD-19506431EA0E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{00A20358-97E0-4ACD-BDDD-19506431EA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A20358-97E0-4ACD-BDDD-19506431EA0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00A20358-97E0-4ACD-BDDD-19506431EA0E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{159521CB-178E-406A-B0A0-0CB44EA8C6B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{159521CB-178E-406A-B0A0-0CB44EA8C6B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{159521CB-178E-406A-B0A0-0CB44EA8C6B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{159521CB-178E-406A-B0A0-0CB44EA8C6B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08AAA95-6ACF-4F73-804E-B2B6A4164777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08AAA95-6ACF-4F73-804E-B2B6A4164777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08AAA95-6ACF-4F73-804E-B2B6A4164777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08AAA95-6ACF-4F73-804E-B2B6A4164777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0313C790-8FD7-4038-9423-DEBAB9842805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0313C790-8FD7-4038-9423-DEBAB9842805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0313C790-8FD7-4038-9423-DEBAB9842805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0313C790-8FD7-4038-9423-DEBAB9842805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4646F02C-E41B-475B-96AC-DD43F0636EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4646F02C-E41B-475B-96AC-DD43F0636EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4646F02C-E41B-475B-96AC-DD43F0636EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4646F02C-E41B-475B-96AC-DD43F0636EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22BD69C2-BB6B-4CCE-B78C-1B7569081FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22BD69C2-BB6B-4CCE-B78C-1B7569081FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22BD69C2-BB6B-4CCE-B78C-1B7569081FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22BD69C2-BB6B-4CCE-B78C-1B7569081FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE27B05B-55F0-4AF1-B95A-5C09E7469295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE27B05B-55F0-4AF1-B95A-5C09E7469295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE27B05B-55F0-4AF1-B95A-5C09E7469295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE27B05B-55F0-4AF1-B95A-5C09E7469295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -860,7 +968,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AD827B5B-63DF-4B86-9CBD-A025122220FE} = {524A0779-72CF-4510-AAB2-F326F92F6F1C}
 		{DEDF3EBE-D427-4D87-AA41-843CFD865D24} = {524A0779-72CF-4510-AAB2-F326F92F6F1C}
-		{207BFA26-84EC-4CA2-9AE1-86F304D33F5A} = {524A0779-72CF-4510-AAB2-F326F92F6F1C}
 		{1100EF72-E03F-48CD-9B26-76F1E0514CD5} = {4B48D27B-A9D3-4F9A-B376-BEB8F87ACCF7}
 		{CF7882F1-968D-4C97-A87B-E911C2DB0576} = {4B48D27B-A9D3-4F9A-B376-BEB8F87ACCF7}
 		{D4DB86E8-89A5-48EE-8187-160FC34B7173} = {B4DEF2E4-3231-4B9B-BB9A-0E682C324D06}
@@ -920,7 +1027,6 @@ Global
 		{3DE38B02-8329-41C8-B578-8A6A3F74F589} = {898C28C1-9D76-4F6C-B19A-58FFC2E2B0DB}
 		{ED1C80A5-0912-47E9-9792-755F4FC5F361} = {898C28C1-9D76-4F6C-B19A-58FFC2E2B0DB}
 		{DF5EAF5A-330F-4D99-A0D4-C3CB670639CD} = {898C28C1-9D76-4F6C-B19A-58FFC2E2B0DB}
-		{52A3DFC0-67DF-47F0-8C70-C1E64EA00F5F} = {524A0779-72CF-4510-AAB2-F326F92F6F1C}
 		{598FF830-49E4-4F5D-BC63-480F45FF8EBF} = {52A3DFC0-67DF-47F0-8C70-C1E64EA00F5F}
 		{55DEC8B2-BA18-4CAE-AB77-52D11DEBB651} = {52A3DFC0-67DF-47F0-8C70-C1E64EA00F5F}
 		{EAF30C1F-B6D1-48F3-8CBD-8624A0BA2170} = {52A3DFC0-67DF-47F0-8C70-C1E64EA00F5F}
@@ -994,6 +1100,23 @@ Global
 		{03FE28F1-8EB2-40AF-BC42-A6B1114A7801} = {7711E1E1-1302-4DFF-9C2F-CBF1034DBC86}
 		{2A096995-A500-4F7D-B15D-07AD724A95D6} = {7711E1E1-1302-4DFF-9C2F-CBF1034DBC86}
 		{0D609794-B973-4BE6-813D-222E96A17C9B} = {7711E1E1-1302-4DFF-9C2F-CBF1034DBC86}
+		{DF70282C-A798-41B0-8CA8-2AD598B294DA} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{F4E4ADA7-B99E-49C4-B3C0-DADCEDEF54DF} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{BC515B9D-B75E-41B0-9112-9E084D227A40} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{53424865-F697-4969-AE80-CB80A43B30F5} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{0BC73E21-6359-4B5F-BE3F-D46C243FB808} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{0D7946A7-DFB0-4BA2-B753-EB3BB1FA7ACD} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{A311B25D-6E9A-45F6-A082-7423BBF4F567} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{B9F9262B-5CCA-47C0-B4DB-FD9041304F7B} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{C85CD4D7-E1DE-45A3-AD21-8721A3C58A29} = {3EC79FB5-ED02-42B6-B9ED-AE72D3619A63}
+		{00A20358-97E0-4ACD-BDDD-19506431EA0E} = {7D447ACE-0105-4A8B-B620-9F2DF541FC25}
+		{159521CB-178E-406A-B0A0-0CB44EA8C6B4} = {7D447ACE-0105-4A8B-B620-9F2DF541FC25}
+		{F08AAA95-6ACF-4F73-804E-B2B6A4164777} = {7D447ACE-0105-4A8B-B620-9F2DF541FC25}
+		{0313C790-8FD7-4038-9423-DEBAB9842805} = {CBE5F912-AEA4-40EF-AEE4-BC5EB2454A4C}
+		{4646F02C-E41B-475B-96AC-DD43F0636EBF} = {066646C8-D633-4D58-BF60-45C88E06B95F}
+		{22BD69C2-BB6B-4CCE-B78C-1B7569081FEB} = {066646C8-D633-4D58-BF60-45C88E06B95F}
+		{CE27B05B-55F0-4AF1-B95A-5C09E7469295} = {066646C8-D633-4D58-BF60-45C88E06B95F}
+		{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2} = {066646C8-D633-4D58-BF60-45C88E06B95F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB022668-0D9A-42CE-B969-F65E1AD40F7C}

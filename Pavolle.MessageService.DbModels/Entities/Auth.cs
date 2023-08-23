@@ -27,13 +27,18 @@ namespace Pavolle.MessageService.DbModels.Entities
         public bool CompanyAdminAuth { get; set; }
 
         [Persistent("company_user_auth")]
-        public bool CompanyUserAuth { get; set; }
-
-        [Persistent("project_manager_auth")]
         public bool ProjectManagerAuth { get; set; }
+
+        [Persistent("developer_auth")]
+        public bool DeveloperAuth { get; set; }
+
+        [Persistent("tecnical_support_specialist_auth")]
+        public bool TecnicalSupportSpecialistAuth { get; set; }
+
+        [Persistent("live_support_specialist_auth")]
+        public bool LiveSupportSpecialistAuth { get; set; }
 
         [Persistent("editable")]
         public bool Editable { get; set; }
-
     }
 }

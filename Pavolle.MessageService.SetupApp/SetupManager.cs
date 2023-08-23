@@ -100,7 +100,14 @@ namespace Pavolle.MessageService.Business.Manager
 
         }
 
-        private void YetkiYoksaYaz(Session session, string apiKey, string apiDefintion, bool admin, bool companyAdmin, bool companyUser, bool editable)
+        private void YetkiYoksaYaz(Session session, string apiKey, string apiDefintion, 
+            bool admin, 
+            bool companyAdmin, 
+            bool projectPanager,
+            bool developer,
+            bool tecnicalSupportSpecialist,
+            bool liveSupportSpecialist,
+            bool editable)
         {
             Auth yetki = session.Query<Auth>().FirstOrDefault(t => t.ApiKey == apiKey);
             if (yetki != null) return;
@@ -112,8 +119,11 @@ namespace Pavolle.MessageService.Business.Manager
                 ApiDefinition = apiDefintion,
                 AdminAuth = admin,
                 CompanyAdminAuth = companyAdmin,
-                CompanyUserAuth=companyUser,
-                Editable=editable
+                ProjectManagerAuth= projectPanager,
+                DeveloperAuth=developer,
+                TecnicalSupportSpecialistAuth=tecnicalSupportSpecialist,
+                LiveSupportSpecialistAuth=liveSupportSpecialist,
+                Editable =editable
             }.Save();
             Console.WriteLine(apiDefintion + " servisi için yetki bilgileri veritabanına yazıldı.");
         }
