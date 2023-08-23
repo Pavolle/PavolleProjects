@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Pavolle.MessageService.RabbitClient": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:58195;http://localhost:58198"
+    }
+  }
+}
