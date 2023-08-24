@@ -1,5 +1,8 @@
-﻿using Pavolle.Core.Utils;
+﻿using DevExpress.Xpo;
+using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
+using Pavolle.MessageService.DbModels;
+using Pavolle.MessageService.DbModels.Entities;
 using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
@@ -20,8 +23,11 @@ namespace Pavolle.MessageService.Business.Manager
         //ProjectManager
         List<UserAuthViewData> _authsSystemAdmin;
         List<UserAuthViewData> _authsCompanyAdmin;
-        List<UserAuthViewData> _authsUser;
         List<UserAuthViewData> _authsProjectManager;
+        List<UserAuthViewData> _authsDeveloper;
+        List<UserAuthViewData> _authsTechSupport;
+        List<UserAuthViewData> _authsLiveSupport;
+
         List<AuthViewData> _auths;
 
         private AuthManager()
@@ -31,7 +37,25 @@ namespace Pavolle.MessageService.Business.Manager
 
         private void LoadAuthorization()
         {
-            throw new NotImplementedException();
+            using (Session session = XpoManager.Instance.GetNewSession())
+            {
+                _auths = session.Query<Auth>().Select(t => new AuthViewData
+                {
+                    Oid = t.Oid,
+                    CreatedTime = t.CreatedTime,
+                    LastUpdateTime = t.LastUpdateTime,
+                    ApiKey = t.ApiKey,
+                    ApiDefinition = t.ApiDefinition,
+                    AdminAuth = t.AdminAuth,
+                    CompanyAdminAuth = t.CompanyAdminAuth,
+                    ProjectManagerAuth = t.ProjectManagerAuth,
+                    DeveloperAuth = t.DeveloperAuth,
+                    TecnicalSupportSpecialistAuth = t.TecnicalSupportSpecialistAuth,
+                    LiveSupportSpecialistAuth = t.LiveSupportSpecialistAuth,
+                    Editable = t.Editable,
+                    Anonymous = t.Anonymous
+                }).ToList();
+            }
         }
 
         public AuthDetailResponse Detail(long? oid, MessageServiceRequestBase request)

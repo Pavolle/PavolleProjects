@@ -15,6 +15,7 @@ namespace Pavolle.MessageService.DbModels.Entities
 
         //Todo incelenecek
         public Company Company { get; set; }
-        public int SureAy { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }
