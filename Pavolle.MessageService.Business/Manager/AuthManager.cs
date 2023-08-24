@@ -67,41 +67,139 @@ namespace Pavolle.MessageService.Business.Manager
 
             foreach (var item in _auths)
             {
-                _authsSystemAdmin.Add(new UserAuthViewData { IsAutorized = item.AdminAuth, ApiKey = item.ApiKey });
-                _authsCompanyAdmin.Add(new UserAuthViewData { IsAutorized = item.CompanyAdminAuth, ApiKey = item.ApiKey });
-                _authsProjectManager.Add(new UserAuthViewData { IsAutorized = item.ProjectManagerAuth, ApiKey = item.ApiKey });
-                _authsDeveloper.Add(new UserAuthViewData { IsAutorized = item.DeveloperAuth, ApiKey = item.ApiKey });
-                _authsTechSupport.Add(new UserAuthViewData { IsAutorized = item.TecnicalSupportSpecialistAuth, ApiKey = item.ApiKey });
-                _authsLiveSupport.Add(new UserAuthViewData { IsAutorized = item.LiveSupportSpecialistAuth, ApiKey = item.ApiKey });
-                _authsAnonymous.Add(new UserAuthViewData { IsAutorized = item.Anonymous, ApiKey = item.ApiKey });
+                _authsSystemAdmin.Add(new UserAuthViewData { IsAutorized = item.AdminAuth, ApiKey = item.ApiKey.Replace("{oid}","") });
+                _authsCompanyAdmin.Add(new UserAuthViewData { IsAutorized = item.CompanyAdminAuth, ApiKey = item.ApiKey.Replace("{oid}", "") });
+                _authsProjectManager.Add(new UserAuthViewData { IsAutorized = item.ProjectManagerAuth, ApiKey = item.ApiKey.Replace("{oid}", "") });
+                _authsDeveloper.Add(new UserAuthViewData { IsAutorized = item.DeveloperAuth, ApiKey = item.ApiKey.Replace("{oid}", "") });
+                _authsTechSupport.Add(new UserAuthViewData { IsAutorized = item.TecnicalSupportSpecialistAuth, ApiKey = item.ApiKey.Replace("{oid}", "") });
+                _authsLiveSupport.Add(new UserAuthViewData { IsAutorized = item.LiveSupportSpecialistAuth, ApiKey = item.ApiKey.Replace("{oid}", "") });
+                _authsAnonymous.Add(new UserAuthViewData { IsAutorized = item.Anonymous, ApiKey = item.ApiKey.Replace("{oid}", "") });
             }
         }
 
         public AuthDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
-            throw new NotImplementedException();
+            var response= _auths.Where(t => t.Oid == oid.Value).Select(t => new AuthDetailResponse
+            {
+                Oid = t.Oid,
+                AdminAuth = t.AdminAuth,
+                Anonymous = t.Anonymous,
+                ApiDefinition = t.ApiDefinition,
+                ApiKey=t.ApiKey,
+               CompanyAdminAuth=t.CompanyAdminAuth,
+               CreatedTime=t.CreatedTime,
+               DeveloperAuth=t.DeveloperAuth,
+               Editable=t.Editable,
+               LastUpdateTime=t.LastUpdateTime,
+               LiveSupportSpecialistAuth=t.LiveSupportSpecialistAuth,
+               ProjectManagerAuth=t.ProjectManagerAuth,
+               TecnicalSupportSpecialistAuth = t.TecnicalSupportSpecialistAuth,
+               Success=true
+            }).FirstOrDefault();
+
+            if (response == null)
+            {
+                response = new AuthDetailResponse();
+                response.ErrorMessage = "";
+                response.Success = false;
+                return response;
+            }
+            else return response;
         }
 
         public MessageServiceResponseBase Edit(long? oid, AuthRequest request)
         {
+            var response = new MessageServiceResponseBase();
+
+            using(Session session = XpoManager.Instance.GetNewSession())
+            {
+                var auth = session.Query<Auth>().FirstOrDefault(t => t.Oid == oid.Value);
+                if (auth == null)
+                {
+                    response.Success = false;
+                    return response;
+                }
+                if (!auth.Editable)
+                {
+                    //Yetki ile ilgili süreçler değiştirilemez.
+                    response.Success = false;
+                    return response;
+                }
+
+                auth.ApiDefinition = request.ApiDefinition;
+                auth.AdminAuth=request.AdminAuth;
+                auth.CompanyAdminAuth = request.CompanyAdminAuth;
+                auth.ProjectManagerAuth = request.ProjectManagerAuth;
+                auth.DeveloperAuth = request.DeveloperAuth;
+                auth.TecnicalSupportSpecialistAuth = request.TecnicalSupportSpecialistAuth;
+                auth.LiveSupportSpecialistAuth=request.LiveSupportSpecialistAuth;
+                auth.Save();
+
+            }
             //TODO Success ise 
             LoadAuthorization();
-            throw new NotImplementedException();
+
+            return response;
         }
 
         public AuthListResponse List(MessageServiceCriteriaBase criteria)
         {
-            throw new NotImplementedException();
+            return new AuthListResponse
+            {
+                DataList = _auths
+            };
         }
 
-        internal List<UserAuthViewData> GetAuthForUserType(EUserType userType)
+        internal List<UserAuthViewData> GetAuthForUserType(EUserType? userType)
         {
-            throw new NotImplementedException();
+            switch (userType)
+            {
+                case EUserType.SystemAdmin:
+                    return _authsSystemAdmin;
+                case EUserType.CompanyAdmin:
+                    return _authsCompanyAdmin;
+                case EUserType.ProjectManager:
+                    return _authsProjectManager;
+                case EUserType.Developer:
+                    return _authsDeveloper;
+                case EUserType.TecnicalSupportSpecialist:
+                    return _authsTechSupport;
+                case EUserType.LiveSupportSpecialist:
+                    return _authsLiveSupport;
+                default:
+                    return _authsAnonymous;
+            }
         }
 
-        public bool IsAuthorized(string apiKey, EUserType kullaniciTipi)
+        public bool IsAuthorized(string apiKey, EUserType? userType)
         {
-            return false;
+            UserAuthViewData? data;
+            switch (userType)
+            {
+                case EUserType.SystemAdmin:
+                    data = _authsSystemAdmin.FirstOrDefault(t => apiKey.StartsWith(t.ApiKey));
+                    break;
+                case EUserType.CompanyAdmin:
+                    data = _authsCompanyAdmin.FirstOrDefault(t => apiKey.StartsWith(t.ApiKey));
+                    break;
+                case EUserType.ProjectManager:
+                    data = _authsProjectManager.FirstOrDefault(t => apiKey.StartsWith(t.ApiKey));
+                    break;
+                case EUserType.Developer:
+                    data = _authsDeveloper.FirstOrDefault(t => apiKey.StartsWith(t.ApiKey));
+                    break;
+                case EUserType.TecnicalSupportSpecialist:
+                    data = _authsTechSupport.FirstOrDefault(t => apiKey.StartsWith(t.ApiKey));
+                    break;
+                case EUserType.LiveSupportSpecialist:
+                    data = _authsLiveSupport.FirstOrDefault(t => apiKey.StartsWith(t.ApiKey));
+                    break;
+                default:
+                    data = _authsAnonymous.FirstOrDefault(t => apiKey.StartsWith(t.ApiKey));
+                    break;
+            }
+            if (data == null) return false;
+            return data.IsAutorized;
         }
     }
 }
