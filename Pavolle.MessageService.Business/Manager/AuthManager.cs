@@ -27,6 +27,7 @@ namespace Pavolle.MessageService.Business.Manager
         List<UserAuthViewData> _authsDeveloper;
         List<UserAuthViewData> _authsTechSupport;
         List<UserAuthViewData> _authsLiveSupport;
+        List<UserAuthViewData> _authsAnonymous;
 
         List<AuthViewData> _auths;
 
@@ -55,6 +56,24 @@ namespace Pavolle.MessageService.Business.Manager
                     Editable = t.Editable,
                     Anonymous = t.Anonymous
                 }).ToList();
+            }
+
+            _authsSystemAdmin = new List<UserAuthViewData>();
+            _authsCompanyAdmin = new List<UserAuthViewData>();
+            _authsProjectManager = new List<UserAuthViewData>(); ;
+            _authsDeveloper = new List<UserAuthViewData>();
+            _authsTechSupport = new List<UserAuthViewData>();
+            _authsLiveSupport = new List<UserAuthViewData>();
+
+            foreach (var item in _auths)
+            {
+                _authsSystemAdmin.Add(new UserAuthViewData { IsAutorized = item.AdminAuth, ApiKey = item.ApiKey });
+                _authsCompanyAdmin.Add(new UserAuthViewData { IsAutorized = item.CompanyAdminAuth, ApiKey = item.ApiKey });
+                _authsProjectManager.Add(new UserAuthViewData { IsAutorized = item.ProjectManagerAuth, ApiKey = item.ApiKey });
+                _authsDeveloper.Add(new UserAuthViewData { IsAutorized = item.DeveloperAuth, ApiKey = item.ApiKey });
+                _authsTechSupport.Add(new UserAuthViewData { IsAutorized = item.TecnicalSupportSpecialistAuth, ApiKey = item.ApiKey });
+                _authsLiveSupport.Add(new UserAuthViewData { IsAutorized = item.LiveSupportSpecialistAuth, ApiKey = item.ApiKey });
+                _authsAnonymous.Add(new UserAuthViewData { IsAutorized = item.Anonymous, ApiKey = item.ApiKey });
             }
         }
 
