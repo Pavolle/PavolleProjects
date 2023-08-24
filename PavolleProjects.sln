@@ -339,23 +339,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.CRM.WebApp", "Pavol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.CRM.MobileApp", "Pavolle.CRM.MobileApp\Pavolle.CRM.MobileApp.csproj", "{C4445EC9-E751-4FA7-AED4-78B5AE0B31E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BorsaNakliye.SetupApp", "Pavolle.BorsaNakliye.SetupApp\Pavolle.BorsaNakliye.SetupApp.csproj", "{520F71E8-E10C-4D91-A204-C9A23B7C086C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BorsaNakliye.SetupApp", "Pavolle.BorsaNakliye.SetupApp\Pavolle.BorsaNakliye.SetupApp.csproj", "{520F71E8-E10C-4D91-A204-C9A23B7C086C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.EGaleri.SetupApp", "Pavolle.EGaleri.SetupApp\Pavolle.EGaleri.SetupApp.csproj", "{66253532-1DCE-4902-940E-F2A816CAB797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.EGaleri.SetupApp", "Pavolle.EGaleri.SetupApp\Pavolle.EGaleri.SetupApp.csproj", "{66253532-1DCE-4902-940E-F2A816CAB797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.Supplera.SetupApp", "Pavolle.Supplera.SetupApp\Pavolle.Supplera.SetupApp.csproj", "{4BFD385B-6618-496A-A953-531C93C37B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Supplera.SetupApp", "Pavolle.Supplera.SetupApp\Pavolle.Supplera.SetupApp.csproj", "{4BFD385B-6618-496A-A953-531C93C37B30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.TeknikDestek.SetupApp", "Pavolle.TeknikDestek.SetupApp\Pavolle.TeknikDestek.SetupApp.csproj", "{FB461E9F-7E61-4EB1-9ACB-38E48FD2248E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.TeknikDestek.SetupApp", "Pavolle.TeknikDestek.SetupApp\Pavolle.TeknikDestek.SetupApp.csproj", "{FB461E9F-7E61-4EB1-9ACB-38E48FD2248E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.SeoAnaliz.SetupApp", "Pavolle.SeoAnaliz.SetupApp\Pavolle.SeoAnaliz.SetupApp.csproj", "{1B2D8B4D-DB70-4D75-9D58-4DCEC795EAEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SeoAnaliz.SetupApp", "Pavolle.SeoAnaliz.SetupApp\Pavolle.SeoAnaliz.SetupApp.csproj", "{1B2D8B4D-DB70-4D75-9D58-4DCEC795EAEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.StokDepoYonetimi.SetupApp", "Pavolle.StokDepoYonetimi.SetupApp\Pavolle.StokDepoYonetimi.SetupApp.csproj", "{D9C180D7-0386-4437-8723-232516BE3A3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.StokDepoYonetimi.SetupApp", "Pavolle.StokDepoYonetimi.SetupApp\Pavolle.StokDepoYonetimi.SetupApp.csproj", "{D9C180D7-0386-4437-8723-232516BE3A3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.RentACar.SetupApp", "Pavolle.RentACar.SetupApp\Pavolle.RentACar.SetupApp.csproj", "{0DEA37E6-69C5-43EC-8CC0-B00E73A302D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.RentACar.SetupApp", "Pavolle.RentACar.SetupApp\Pavolle.RentACar.SetupApp.csproj", "{0DEA37E6-69C5-43EC-8CC0-B00E73A302D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.ESecim.SetupApp", "Pavolle.ESecim.SetupApp\Pavolle.ESecim.SetupApp.csproj", "{EFE2C294-8640-4151-95AE-7EC09B971E9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.ESecim.SetupApp", "Pavolle.ESecim.SetupApp\Pavolle.ESecim.SetupApp.csproj", "{EFE2C294-8640-4151-95AE-7EC09B971E9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.PDKS.SetupApp", "Pavolle.PDKS.SetupApp\Pavolle.PDKS.SetupApp.csproj", "{69D98DC8-0354-4B95-BC7E-E76190803A9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PDKS.SetupApp", "Pavolle.PDKS.SetupApp\Pavolle.PDKS.SetupApp.csproj", "{69D98DC8-0354-4B95-BC7E-E76190803A9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.CrudOperationHelper", "Pavolle.CrudOperationHelper\Pavolle.CrudOperationHelper.csproj", "{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1015,6 +1017,10 @@ Global
 		{69D98DC8-0354-4B95-BC7E-E76190803A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69D98DC8-0354-4B95-BC7E-E76190803A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69D98DC8-0354-4B95-BC7E-E76190803A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1180,6 +1186,7 @@ Global
 		{0DEA37E6-69C5-43EC-8CC0-B00E73A302D4} = {7711E1E1-1302-4DFF-9C2F-CBF1034DBC86}
 		{EFE2C294-8640-4151-95AE-7EC09B971E9D} = {207BFA26-84EC-4CA2-9AE1-86F304D33F5A}
 		{69D98DC8-0354-4B95-BC7E-E76190803A9A} = {52A3DFC0-67DF-47F0-8C70-C1E64EA00F5F}
+		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0} = {5BA131B6-1F76-4ACD-8BA1-EA5CBD7E5EA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB022668-0D9A-42CE-B969-F65E1AD40F7C}

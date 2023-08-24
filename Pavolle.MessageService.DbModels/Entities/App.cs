@@ -11,9 +11,7 @@ namespace Pavolle.MessageService.DbModels.Entities
     [Persistent("apps")]
     public class App : BaseObject
     {
-        public App(Session session) : base(session)
-        {
-        }
+        public App(Session session) : base(session){}
 
         [Persistent("company_oid")]
         public Company Company { get; set; }
