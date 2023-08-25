@@ -57,7 +57,7 @@ namespace Pavolle.CrudOperationHelper
                     textBoxTableClass.Text = "Gerekli Değil!";
                 }
 
-                if(_selectedColumn.DataType == EDataType.CLASS || _selectedColumn.DataType == EDataType.STRING)
+                if(_selectedColumn.DataType == EDataType.CLASS)
                 {
                     textBoxNullable.Text = "Gerekli Değil";
                 }

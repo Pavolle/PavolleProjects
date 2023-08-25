@@ -186,7 +186,7 @@ namespace Pavolle.CrudOperationHelper
                     labelTableClass.Visible = false;
                     textBoxTableClass.Visible = false;
 
-                    checkBoxNullable.Visible = false;
+                    checkBoxNullable.Visible = true;
                     break;
 
                 case "INT":
@@ -222,6 +222,36 @@ namespace Pavolle.CrudOperationHelper
 
                 case "DOUBLE":
                     _columnModel.DataType = EDataType.LONG;
+                    labelSize.Visible = false;
+                    textBoxSize.Visible = false;
+
+                    labelEnumClass.Visible = false;
+                    textBoxEnumClassName.Visible = false;
+
+                    labelTableClass.Visible = false;
+                    textBoxTableClass.Visible = false;
+
+
+                    checkBoxNullable.Visible = true;
+                    break;
+
+                case "DATETIME":
+                    _columnModel.DataType = EDataType.DATETIME;
+                    labelSize.Visible = false;
+                    textBoxSize.Visible = false;
+
+                    labelEnumClass.Visible = false;
+                    textBoxEnumClassName.Visible = false;
+
+                    labelTableClass.Visible = false;
+                    textBoxTableClass.Visible = false;
+
+
+                    checkBoxNullable.Visible = true;
+                    break;
+
+                case "BOOL":
+                    _columnModel.DataType = EDataType.BOOL;
                     labelSize.Visible = false;
                     textBoxSize.Visible = false;
 
