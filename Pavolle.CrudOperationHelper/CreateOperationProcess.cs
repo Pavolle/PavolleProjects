@@ -51,74 +51,98 @@ namespace Pavolle.CrudOperationHelper
                 }
                 Output("Tablo sınıfı oluşturuluyor...");
 
-                string classSinifi = "";
-                classSinifi += "using DevExpress.Xpo;"+Environment.NewLine;
-                classSinifi += "using " + table.ProjectName + ".Common.Enums;" + Environment.NewLine;
-                classSinifi += "using System;" + Environment.NewLine;
-                classSinifi += "using System.Collections.Generic;" + Environment.NewLine;
-                classSinifi += "using System.Linq;" + Environment.NewLine;
-                classSinifi += "using System.Text;" + Environment.NewLine;
-                classSinifi += "using System.Threading.Tasks;" + Environment.NewLine;
-                classSinifi += "" + Environment.NewLine;//Boşluk
-                classSinifi += "namespace "+table.ProjectName+".DbModels.Entities" + Environment.NewLine;
-                classSinifi += "{" + Environment.NewLine; ;
-                classSinifi += "    [Persistent(\""+table.TableDbName+"\")]" + Environment.NewLine;
-                classSinifi += "    public class "+table.TableClassName+" : BaseObject" + Environment.NewLine;
-                classSinifi += "    {" + Environment.NewLine;
-                classSinifi += "        public "+table.TableClassName+"(Session session) : base(session){}" + Environment.NewLine;
-
-                classSinifi += "" + Environment.NewLine;
-                foreach (var column in table.Columns)
-                {
-                    //TODO Bu kısım yazılacak.
-                    classSinifi += "        [Persistent(\""+column.DbName+"\")]" + Environment.NewLine;
-                    if (column.DataType == EDataType.STRING)
-                    {
-                        classSinifi += "        [Size("+column.Size+")]" + Environment.NewLine;
-                    }
-                    if (column.Index)
-                    {
-                        classSinifi += "        [Indexed(Unique = " + (column.UniqueIndex ? "true" : "false") + ", Name = \"index_" + table.TableDbName +"_"+ column.DbName + "\")]" + Environment.NewLine;
-                    }
-                    switch (column.DataType)
-                    {
-                        case EDataType.LONG:
-                            classSinifi += "        public long"+ (column.Nullable?"?":"").ToString()+" " + column.Name + " { get; set; }" + Environment.NewLine;
-                            break;
-                        case EDataType.STRING:
-                            classSinifi += "        public string "+column.Name+" { get; set; }" + Environment.NewLine;
-                            break;
-                        case EDataType.INT:
-                            classSinifi += "        public int"+ (column.Nullable?"?":"").ToString()+" " + column.Name + " { get; set; }" + Environment.NewLine;
-                            break;
-                        case EDataType.FLOAT:
-                            classSinifi += "        public float"+ (column.Nullable?"?":"").ToString()+" " + column.Name + " { get; set; }" + Environment.NewLine;
-                            break;
-                        case EDataType.DOUBLE:
-                            classSinifi += "        public double"+ (column.Nullable?"?":"").ToString()+" " + column.Name + " { get; set; }" + Environment.NewLine;
-                            break;
-                        case EDataType.ENUM:
-                            classSinifi += "        public "+column.EnumClass+ (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
-                            break;
-                        case EDataType.CLASS:
-                            classSinifi += "        public "+column.TableClass+" " + column.Name + " { get; set; }" + Environment.NewLine;
-                            break;
-                        default:
-                            break;
-                    }
-
-                    classSinifi += "" + Environment.NewLine;
-
-
-                }
-
-                classSinifi += "    }" + Environment.NewLine;
-                classSinifi += "}" + Environment.NewLine;
+                GenerateEntityClass(table);
 
 
             }
             Thread.Sleep(2000);
             Output("Tamamlandı!");
+        }
+
+        void GenerateEntityClass(Table table)
+        {
+            Output("*****************************");
+            Output("Entity class oluşturuluyor...");
+            string classSinifi = "";
+            classSinifi += "using DevExpress.Xpo;" + Environment.NewLine;
+            classSinifi += "using " + table.ProjectName + ".Common.Enums;" + Environment.NewLine;
+            classSinifi += "using System;" + Environment.NewLine;
+            classSinifi += "using System.Collections.Generic;" + Environment.NewLine;
+            classSinifi += "using System.Linq;" + Environment.NewLine;
+            classSinifi += "using System.Text;" + Environment.NewLine;
+            classSinifi += "using System.Threading.Tasks;" + Environment.NewLine;
+            classSinifi += "" + Environment.NewLine;//Boşluk
+            classSinifi += "namespace " + table.ProjectName + ".DbModels.Entities" + Environment.NewLine;
+            classSinifi += "{" + Environment.NewLine; ;
+            classSinifi += "    [Persistent(\"" + table.TableDbName + "\")]" + Environment.NewLine;
+            classSinifi += "    public class " + table.TableClassName + " : BaseObject" + Environment.NewLine;
+            classSinifi += "    {" + Environment.NewLine;
+            classSinifi += "        public " + table.TableClassName + "(Session session) : base(session){}" + Environment.NewLine;
+
+            classSinifi += "" + Environment.NewLine;
+            foreach (var column in table.Columns)
+            {
+                //TODO Bu kısım yazılacak.
+                classSinifi += "        [Persistent(\"" + column.DbName + "\")]" + Environment.NewLine;
+                if (column.DataType == EDataType.STRING)
+                {
+                    classSinifi += "        [Size(" + column.Size + ")]" + Environment.NewLine;
+                }
+                if (column.Index)
+                {
+                    classSinifi += "        [Indexed(Unique = " + (column.UniqueIndex ? "true" : "false") + ", Name = \"index_" + table.TableDbName + "_" + column.DbName + "\")]" + Environment.NewLine;
+                }
+                switch (column.DataType)
+                {
+                    case EDataType.LONG:
+                        classSinifi += "        public long" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.STRING:
+                        classSinifi += "        public string " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.INT:
+                        classSinifi += "        public int" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.FLOAT:
+                        classSinifi += "        public float" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.DOUBLE:
+                        classSinifi += "        public double" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.BOOL:
+                        classSinifi += "        public bool" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.DATETIME:
+                        classSinifi += "        public DateTime" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.ENUM:
+                        classSinifi += "        public " + column.EnumClass + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.CLASS:
+                        classSinifi += "        public " + column.TableClass + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    default:
+                        break;
+                }
+
+                classSinifi += "" + Environment.NewLine;
+
+
+            }
+
+            classSinifi += "    }" + Environment.NewLine;
+            classSinifi += "}" + Environment.NewLine;
+
+            Output("Entity class oluşturuldu!");
+            Output("*****************************");
+            Output("");
+            Output(classSinifi);
+            Output("");
+
+            Output("Class ilgili klasore yazılıyor...");
+            Output("Class ilgili klasore yazıldı.");
+
+
         }
 
         void Output(string message)
