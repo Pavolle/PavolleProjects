@@ -52,6 +52,8 @@ namespace Pavolle.CrudOperationHelper
         FLOAT,
         DOUBLE,
         ENUM,
-        CLASS
+        CLASS,
+        DATETIME,
+        BOOL
     }
 }

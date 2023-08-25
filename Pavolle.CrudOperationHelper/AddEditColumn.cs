@@ -104,27 +104,35 @@ namespace Pavolle.CrudOperationHelper
                         break;
 
                     case "STRING":
-                        data.DataType = EDataType.LONG;
+                        data.DataType = EDataType.STRING;
                         break;
 
                     case "INT":
-                        data.DataType = EDataType.LONG;
+                        data.DataType = EDataType.INT;
                         break;
 
                     case "FLOAT":
-                        data.DataType = EDataType.LONG;
+                        data.DataType = EDataType.FLOAT;
                         break;
 
                     case "DOUBLE":
-                        data.DataType = EDataType.LONG;
+                        data.DataType = EDataType.DOUBLE;
                         break;
 
                     case "ENUM":
-                        data.DataType = EDataType.LONG;
+                        data.DataType = EDataType.ENUM;
                         break;
 
                     case "CLASS":
-                        data.DataType = EDataType.LONG;
+                        data.DataType = EDataType.CLASS;
+                        break;
+
+                    case "DATETIME":
+                        data.DataType = EDataType.DATETIME;
+                        break;
+
+                    case "BOOL":
+                        data.DataType = EDataType.BOOL;
                         break;
 
                     default:

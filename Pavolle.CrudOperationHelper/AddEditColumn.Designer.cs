@@ -95,7 +95,8 @@
             "FLOAT",
             "DOUBLE",
             "ENUM",
-            "CLASS"});
+            "CLASS",
+            "DATETIME"});
             this.comboBox1.Location = new System.Drawing.Point(163, 91);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(230, 33);
