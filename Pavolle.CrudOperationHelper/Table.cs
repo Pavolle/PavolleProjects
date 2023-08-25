@@ -8,6 +8,7 @@ namespace Pavolle.CrudOperationHelper
 {
     public class Table
     {
+        public string ProjectNameRoot { get; set; } = string.Empty;
         public string ProjectName { get; set; } = string.Empty;
         public string TableClassName { get; set; } = string.Empty;
         public string TableDbName { get; set; } = string.Empty;

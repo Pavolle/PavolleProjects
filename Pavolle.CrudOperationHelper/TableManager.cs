@@ -35,9 +35,9 @@ namespace Pavolle.CrudOperationHelper
             _table.Columns.Add(column);
         }
 
-        internal void SetProjectName(string text)
+        internal void SetProjectNameRoot(string text)
         {
-            _table.ProjectName = text;
+            _table.ProjectNameRoot = text;
         }
 
         internal void SetTableName(string text)
@@ -78,6 +78,11 @@ namespace Pavolle.CrudOperationHelper
         internal void SetDeleteService(bool ischecked)
         {
             _table.DeleteService = ischecked;
+        }
+
+        internal void SetProjectName(string text)
+        {
+            _table.ProjectName = text;
         }
     }
 }

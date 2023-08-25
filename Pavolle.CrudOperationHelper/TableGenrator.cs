@@ -105,7 +105,8 @@ namespace Pavolle.CrudOperationHelper
 
         private void buttonCreateTable_Click(object sender, EventArgs e)
         {
-            TableManager.Instance.SetProjectName(textBoxProjectName.Text);
+            TableManager.Instance.SetProjectNameRoot(textBoxProjectNameRoot.Text);
+            TableManager.Instance.SetProjectName(textBoxProjectMame.Text);
             TableManager.Instance.SetTableName(textBoxDbName.Text);
             TableManager.Instance.SetClasstName(textBoxClassName.Text);
             TableManager.Instance.SetListService(checkBoxServiceList.Checked);
@@ -116,6 +117,11 @@ namespace Pavolle.CrudOperationHelper
             TableManager.Instance.SetDeleteService(checkBoxServiceDelete.Checked);
             CreateOperationProcess process=new CreateOperationProcess();
             process.ShowDialog();
+        }
+
+        private void TableGenrator_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

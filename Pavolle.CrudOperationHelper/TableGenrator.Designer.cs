@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelProjectName = new System.Windows.Forms.Label();
-            this.textBoxProjectName = new System.Windows.Forms.TextBox();
+            this.textBoxProjectNameRoot = new System.Windows.Forms.TextBox();
             this.groupBoxTables = new System.Windows.Forms.GroupBox();
             this.checkBoxServiceDelete = new System.Windows.Forms.CheckBox();
             this.checkBoxServiceEdit = new System.Windows.Forms.CheckBox();
@@ -71,6 +71,8 @@
             this.labelDbName = new System.Windows.Forms.Label();
             this.labelTableClassName = new System.Windows.Forms.Label();
             this.buttonCreateTable = new System.Windows.Forms.Button();
+            this.textBoxProjectMame = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxTables.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,18 +81,18 @@
             // labelProjectName
             // 
             this.labelProjectName.AutoSize = true;
-            this.labelProjectName.Location = new System.Drawing.Point(29, 38);
+            this.labelProjectName.Location = new System.Drawing.Point(30, 35);
             this.labelProjectName.Name = "labelProjectName";
-            this.labelProjectName.Size = new System.Drawing.Size(166, 25);
+            this.labelProjectName.Size = new System.Drawing.Size(161, 25);
             this.labelProjectName.TabIndex = 0;
-            this.labelProjectName.Text = "Project Name(Root)";
+            this.labelProjectName.Text = "Project Name Root";
             // 
-            // textBoxProjectName
+            // textBoxProjectNameRoot
             // 
-            this.textBoxProjectName.Location = new System.Drawing.Point(223, 32);
-            this.textBoxProjectName.Name = "textBoxProjectName";
-            this.textBoxProjectName.Size = new System.Drawing.Size(307, 31);
-            this.textBoxProjectName.TabIndex = 1;
+            this.textBoxProjectNameRoot.Location = new System.Drawing.Point(251, 35);
+            this.textBoxProjectNameRoot.Name = "textBoxProjectNameRoot";
+            this.textBoxProjectNameRoot.Size = new System.Drawing.Size(307, 31);
+            this.textBoxProjectNameRoot.TabIndex = 1;
             // 
             // groupBoxTables
             // 
@@ -494,17 +496,36 @@
             this.buttonCreateTable.UseVisualStyleBackColor = true;
             this.buttonCreateTable.Click += new System.EventHandler(this.buttonCreateTable_Click);
             // 
+            // textBoxProjectMame
+            // 
+            this.textBoxProjectMame.Location = new System.Drawing.Point(836, 32);
+            this.textBoxProjectMame.Name = "textBoxProjectMame";
+            this.textBoxProjectMame.Size = new System.Drawing.Size(307, 31);
+            this.textBoxProjectMame.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(615, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Project Name";
+            // 
             // TableGenrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 848);
+            this.Controls.Add(this.textBoxProjectMame);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCreateTable);
             this.Controls.Add(this.groupBoxTables);
-            this.Controls.Add(this.textBoxProjectName);
+            this.Controls.Add(this.textBoxProjectNameRoot);
             this.Controls.Add(this.labelProjectName);
             this.Name = "TableGenrator";
             this.Text = "Table Generator";
+            this.Load += new System.EventHandler(this.TableGenrator_Load);
             this.groupBoxTables.ResumeLayout(false);
             this.groupBoxTables.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -518,7 +539,7 @@
         #endregion
 
         private Label labelProjectName;
-        private TextBox textBoxProjectName;
+        private TextBox textBoxProjectNameRoot;
         private GroupBox groupBoxTables;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
@@ -560,5 +581,7 @@
         private Button buttonEditColumn;
         private Button buttonCreateTable;
         private Button buttonDeleteColumn;
+        private TextBox textBoxProjectMame;
+        private Label label1;
     }
 }

@@ -38,10 +38,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxOutput.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxOutput.Location = new System.Drawing.Point(12, 50);
+            this.textBoxOutput.Location = new System.Drawing.Point(-4, 41);
             this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.Size = new System.Drawing.Size(1257, 880);
+            this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxOutput.Size = new System.Drawing.Size(1381, 852);
             this.textBoxOutput.TabIndex = 0;
             // 
             // label1
@@ -57,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 963);
+            this.ClientSize = new System.Drawing.Size(1380, 898);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxOutput);
             this.Name = "CreateOperationProcess";
