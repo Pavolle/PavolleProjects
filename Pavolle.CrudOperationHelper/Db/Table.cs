@@ -40,5 +40,8 @@ namespace Pavolle.CrudOperationHelper.Db
 
         [Persistent("delete_service")]
         public bool DeleteService { get; set; }
+
+        [Persistent("intitialize")]
+        public bool Intialize { get; set; }
     }
 }

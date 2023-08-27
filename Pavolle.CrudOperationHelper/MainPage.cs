@@ -27,6 +27,11 @@ namespace Pavolle.CrudOperationHelper
             {
                 MessageBox.Show("Veritabanı bağlantısı sağlanamadı!!!");
             }
+
+
+            textBoxProjectMame.Enabled = false;
+            textBoxProjectNameRoot.Enabled = false;
+            textBoxProjectsPath.Enabled = false;
         }
 
         void RefreshProjectList()
@@ -59,6 +64,17 @@ namespace Pavolle.CrudOperationHelper
             textBoxProjectMame.Text = detail.Name;
             textBoxProjectNameRoot.Text = detail.Root;
             textBoxProjectsPath.Text = detail.Path;
+
+            if (detail.Intialize)
+            {
+                butttonEditProjects.Enabled = false;
+                buttonIntializeProject.Enabled = false;
+            }
+            else
+            {
+                butttonEditProjects.Enabled = true;
+                buttonIntializeProject.Enabled = true;
+            }
         }
 
         private void butttonEditProjects_Click(object sender, EventArgs e)
@@ -73,6 +89,21 @@ namespace Pavolle.CrudOperationHelper
             textBoxProjectMame.Text = detail1.Name;
             textBoxProjectNameRoot.Text = detail1.Root;
             textBoxProjectsPath.Text = detail1.Path;
+        }
+
+        private void buttonIntializeProject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEditTable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddTable_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

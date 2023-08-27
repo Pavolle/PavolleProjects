@@ -49,7 +49,8 @@ namespace Pavolle.CrudOperationHelper.Db
                 {
                     Name = t.Name,
                     Root = t.Root,
-                    Path = t.Path
+                    Path = t.Path,
+                    Intialize=t.Intialize
                 }).FirstOrDefault();
             }
             return response;
@@ -99,5 +100,6 @@ namespace Pavolle.CrudOperationHelper.Db
         public string Name { get; internal set; }
         public string Root { get; internal set; }
         public string Path { get; internal set; }
+        public bool Intialize { get; internal set; }
     }
 }

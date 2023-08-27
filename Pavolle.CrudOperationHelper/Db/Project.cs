@@ -22,5 +22,8 @@ namespace Pavolle.CrudOperationHelper.Db
 
         [Persistent("path")]
         public string Path { get; set; }
+
+        [Persistent("intitialize")]
+        public bool Intialize { get; set; }
     }
 }
