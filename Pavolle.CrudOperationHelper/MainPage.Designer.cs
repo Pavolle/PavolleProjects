@@ -51,6 +51,7 @@
             this.buttonAddProject.TabIndex = 0;
             this.buttonAddProject.Text = "Add Project";
             this.buttonAddProject.UseVisualStyleBackColor = true;
+            this.buttonAddProject.Click += new System.EventHandler(this.buttonAddProject_Click);
             // 
             // buttonAddTable
             // 
@@ -164,6 +165,7 @@
             this.Controls.Add(this.buttonAddProject);
             this.Name = "MainPage";
             this.Text = "MainPage";
+            this.Load += new System.EventHandler(this.MainPage_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

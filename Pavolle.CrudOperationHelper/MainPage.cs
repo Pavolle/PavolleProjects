@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pavolle.CrudOperationHelper.Db;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,26 @@ namespace Pavolle.CrudOperationHelper
         public MainPage()
         {
             InitializeComponent();
+
+            try
+            {
+                string[] text = File.ReadAllLines("appsettings.ini");
+                DbManager.Instance.Initialize(text[0]);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Veritabanı bağlantısı sağlanamadı!!!");
+            }
+        }
+
+        private void buttonAddProject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
