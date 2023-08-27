@@ -1,6 +1,6 @@
 ﻿namespace Pavolle.CrudOperationHelper
 {
-    partial class CreateProject
+    partial class EditProject
     {
         /// <summary>
         /// Required designer variable.
@@ -50,10 +50,10 @@
             this.groupBox1.Controls.Add(this.textBoxProjectMame);
             this.groupBox1.Controls.Add(this.textBoxProjectNameRoot);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(27, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(599, 312);
-            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
             // 
@@ -63,7 +63,7 @@
             this.butttonCreate.Name = "butttonCreate";
             this.butttonCreate.Size = new System.Drawing.Size(144, 51);
             this.butttonCreate.TabIndex = 12;
-            this.butttonCreate.Text = "Create";
+            this.butttonCreate.Text = "Save";
             this.butttonCreate.UseVisualStyleBackColor = true;
             this.butttonCreate.Click += new System.EventHandler(this.butttonCreate_Click);
             // 
@@ -125,14 +125,15 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Project Name";
             // 
-            // CreateProject
+            // EditProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 344);
+            this.ClientSize = new System.Drawing.Size(652, 366);
             this.Controls.Add(this.groupBox1);
-            this.Name = "CreateProject";
-            this.Text = "CreateProject";
+            this.Name = "EditProject";
+            this.Text = "EditProject";
+            this.Load += new System.EventHandler(this.SaveProject_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

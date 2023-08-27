@@ -30,7 +30,7 @@
         {
             this.buttonAddProject = new System.Windows.Forms.Button();
             this.buttonAddTable = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxProjects = new System.Windows.Forms.ListBox();
             this.labelProjects = new System.Windows.Forms.Label();
             this.textBoxProjectMame = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,14 +62,15 @@
             this.buttonAddTable.Text = "Add Table";
             this.buttonAddTable.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // listBoxProjects
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(24, 85);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(215, 279);
-            this.listBox1.TabIndex = 2;
+            this.listBoxProjects.FormattingEnabled = true;
+            this.listBoxProjects.ItemHeight = 25;
+            this.listBoxProjects.Location = new System.Drawing.Point(24, 85);
+            this.listBoxProjects.Name = "listBoxProjects";
+            this.listBoxProjects.Size = new System.Drawing.Size(215, 279);
+            this.listBoxProjects.TabIndex = 2;
+            this.listBoxProjects.SelectedIndexChanged += new System.EventHandler(this.listBoxProjects_SelectedIndexChanged);
             // 
             // labelProjects
             // 
@@ -153,6 +154,7 @@
             this.butttonEditProjects.TabIndex = 12;
             this.butttonEditProjects.Text = "Edit Project";
             this.butttonEditProjects.UseVisualStyleBackColor = true;
+            this.butttonEditProjects.Click += new System.EventHandler(this.butttonEditProjects_Click);
             // 
             // MainPage
             // 
@@ -161,7 +163,7 @@
             this.ClientSize = new System.Drawing.Size(905, 386);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelProjects);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxProjects);
             this.Controls.Add(this.buttonAddProject);
             this.Name = "MainPage";
             this.Text = "MainPage";
@@ -177,7 +179,7 @@
 
         private Button buttonAddProject;
         private Button buttonAddTable;
-        private ListBox listBox1;
+        private ListBox listBoxProjects;
         private Label labelProjects;
         private TextBox textBoxProjectMame;
         private Label label1;
