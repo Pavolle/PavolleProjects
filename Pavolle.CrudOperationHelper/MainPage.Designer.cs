@@ -160,7 +160,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(24, 390);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(599, 312);
+            this.groupBox1.Size = new System.Drawing.Size(599, 336);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
@@ -193,6 +193,7 @@
             this.listBoxTables.Name = "listBoxTables";
             this.listBoxTables.Size = new System.Drawing.Size(312, 604);
             this.listBoxTables.TabIndex = 13;
+            this.listBoxTables.SelectedIndexChanged += new System.EventHandler(this.listBoxTables_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -214,7 +215,7 @@
             this.groupBox2.Controls.Add(this.buttonAddTable);
             this.groupBox2.Location = new System.Drawing.Point(656, 29);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(919, 673);
+            this.groupBox2.Size = new System.Drawing.Size(919, 683);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tables";
@@ -243,7 +244,7 @@
             this.listBoxColumns.ItemHeight = 25;
             this.listBoxColumns.Location = new System.Drawing.Point(370, 268);
             this.listBoxColumns.Name = "listBoxColumns";
-            this.listBoxColumns.Size = new System.Drawing.Size(205, 304);
+            this.listBoxColumns.Size = new System.Drawing.Size(531, 304);
             this.listBoxColumns.TabIndex = 25;
             // 
             // buttonEditTable
@@ -352,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1587, 738);
+            this.ClientSize = new System.Drawing.Size(1587, 728);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelProjects);

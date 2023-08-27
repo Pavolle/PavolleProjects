@@ -34,9 +34,7 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelProjectName = new System.Windows.Forms.Label();
-            this.textBoxProjectMame = new System.Windows.Forms.TextBox();
             this.textBoxProjectNameRoot = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,19 +45,17 @@
             this.groupBox1.Controls.Add(this.buttonCancel);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.labelProjectName);
-            this.groupBox1.Controls.Add(this.textBoxProjectMame);
             this.groupBox1.Controls.Add(this.textBoxProjectNameRoot);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(27, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(599, 312);
+            this.groupBox1.Size = new System.Drawing.Size(599, 275);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
             // 
             // butttonCreate
             // 
-            this.butttonCreate.Location = new System.Drawing.Point(422, 243);
+            this.butttonCreate.Location = new System.Drawing.Point(413, 187);
             this.butttonCreate.Name = "butttonCreate";
             this.butttonCreate.Size = new System.Drawing.Size(144, 51);
             this.butttonCreate.TabIndex = 12;
@@ -69,14 +65,14 @@
             // 
             // textBoxProjectsPath
             // 
-            this.textBoxProjectsPath.Location = new System.Drawing.Point(259, 177);
+            this.textBoxProjectsPath.Location = new System.Drawing.Point(250, 121);
             this.textBoxProjectsPath.Name = "textBoxProjectsPath";
             this.textBoxProjectsPath.Size = new System.Drawing.Size(307, 31);
             this.textBoxProjectsPath.TabIndex = 11;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(259, 243);
+            this.buttonCancel.Location = new System.Drawing.Point(250, 187);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(144, 51);
             this.buttonCancel.TabIndex = 1;
@@ -87,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 177);
+            this.label2.Location = new System.Drawing.Point(29, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 10;
@@ -96,40 +92,24 @@
             // labelProjectName
             // 
             this.labelProjectName.AutoSize = true;
-            this.labelProjectName.Location = new System.Drawing.Point(38, 117);
+            this.labelProjectName.Location = new System.Drawing.Point(29, 61);
             this.labelProjectName.Name = "labelProjectName";
             this.labelProjectName.Size = new System.Drawing.Size(161, 25);
             this.labelProjectName.TabIndex = 6;
             this.labelProjectName.Text = "Project Name Root";
             // 
-            // textBoxProjectMame
-            // 
-            this.textBoxProjectMame.Location = new System.Drawing.Point(259, 52);
-            this.textBoxProjectMame.Name = "textBoxProjectMame";
-            this.textBoxProjectMame.Size = new System.Drawing.Size(307, 31);
-            this.textBoxProjectMame.TabIndex = 9;
-            // 
             // textBoxProjectNameRoot
             // 
-            this.textBoxProjectNameRoot.Location = new System.Drawing.Point(259, 117);
+            this.textBoxProjectNameRoot.Location = new System.Drawing.Point(250, 61);
             this.textBoxProjectNameRoot.Name = "textBoxProjectNameRoot";
             this.textBoxProjectNameRoot.Size = new System.Drawing.Size(307, 31);
             this.textBoxProjectNameRoot.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 25);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Project Name";
             // 
             // EditProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 366);
+            this.ClientSize = new System.Drawing.Size(642, 320);
             this.Controls.Add(this.groupBox1);
             this.Name = "EditProject";
             this.Text = "EditProject";
@@ -148,8 +128,6 @@
         private Button buttonCancel;
         private Label label2;
         private Label labelProjectName;
-        private TextBox textBoxProjectMame;
         private TextBox textBoxProjectNameRoot;
-        private Label label1;
     }
 }

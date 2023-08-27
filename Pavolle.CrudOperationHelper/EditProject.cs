@@ -23,7 +23,7 @@ namespace Pavolle.CrudOperationHelper
             _path = path;
             _root = root;
 
-            textBoxProjectMame.Text = _name;
+            this.Text = "Edit Project (" + name + ")";
             textBoxProjectNameRoot.Text = _root;
             textBoxProjectsPath.Text= _path;
         }
@@ -35,7 +35,7 @@ namespace Pavolle.CrudOperationHelper
 
         private void butttonCreate_Click(object sender, EventArgs e)
         {
-            bool response = DbManager.Instance.EditProject(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text);
+            bool response = DbManager.Instance.EditProject(_name, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text);
 
             if (response)
             {

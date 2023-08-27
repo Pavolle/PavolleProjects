@@ -93,6 +93,53 @@ namespace Pavolle.CrudOperationHelper.Db
             }
             return response;
         }
+
+        internal List<string> GetTableList(string name)
+        {
+            var response =new List<string>();
+            using (Session session = XpoManager.Instance.GetNewSession())
+            {
+                response = session.Query<Table>().Where(t => t.Project.Name == name).Select(t => t.ClassName).ToList();
+            }
+            return response;
+        }
+
+        internal bool CreateTable(string projectName, string name, string dbname, bool list, bool lookup, bool add, bool edit, bool detail, bool delete)
+        {
+            var response = true;
+            using (Session session = XpoManager.Instance.GetNewSession())
+            {
+                var project = session.Query<Project>().FirstOrDefault(t => t.Name == projectName);
+                if(project == null)
+                {
+                    response=false;
+                }
+                else
+                {
+                    if(session.Query<Table>().Any(t => t.ClassName == name && t.Project.Oid == project.Oid))
+                    {
+                        response = false;
+                    }
+                    else
+                    {
+                        new Table(session)
+                        {
+                            Project = project,
+                            ClassName = name,
+                            DbName = dbname,
+                            ListService = list,
+                            AddService = add,
+                            DeleteService = delete,
+                            EditService = edit,
+                            DetailService = detail,
+                            LookupService = lookup
+                        }.Save();
+                        response=true;
+                    }
+                }
+            }
+            return response;
+        }
     }
 
     public class ProjectViewData
@@ -101,5 +148,10 @@ namespace Pavolle.CrudOperationHelper.Db
         public string Root { get; internal set; }
         public string Path { get; internal set; }
         public bool Intialize { get; internal set; }
+    }
+
+    public class TableViewData
+    {
+
     }
 }

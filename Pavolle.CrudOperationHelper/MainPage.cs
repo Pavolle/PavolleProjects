@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Pavolle.CrudOperationHelper
 {
     public partial class MainPage : Form
     {
+        string _selectedProjectName = "";
         public MainPage()
         {
             InitializeComponent();
@@ -56,10 +58,9 @@ namespace Pavolle.CrudOperationHelper
 
         }
 
-        private void listBoxProjects_SelectedIndexChanged(object sender, EventArgs e)
+        void GetProjectDetail(string name)
         {
-            string name = (string)(((ListBox)sender).SelectedItem);
-            var detail=DbManager.Instance.GetProjectDetal(name);
+            var detail = DbManager.Instance.GetProjectDetal(name);
 
             textBoxProjectMame.Text = detail.Name;
             textBoxProjectNameRoot.Text = detail.Root;
@@ -75,6 +76,35 @@ namespace Pavolle.CrudOperationHelper
                 butttonEditProjects.Enabled = true;
                 buttonIntializeProject.Enabled = true;
             }
+
+
+
+            var tableList = DbManager.Instance.GetTableList(name);
+            listBoxTables.Items.Clear();
+
+            if (tableList.Count == 0)
+            {
+                listBoxTables.Items.Add("Tablo Tanımlanmamış!");
+                listBoxTables.Enabled = false;
+            }
+            else
+            {
+                foreach (var item in tableList)
+                {
+                    listBoxTables.Items.Add(item);
+                }
+                listBoxTables.Enabled = true;
+            }
+
+            _selectedProjectName = name;
+        }
+
+        private void listBoxProjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = (string)(((ListBox)sender).SelectedItem);
+            GetProjectDetail(name);
+
+
         }
 
         private void butttonEditProjects_Click(object sender, EventArgs e)
@@ -89,6 +119,7 @@ namespace Pavolle.CrudOperationHelper
             textBoxProjectMame.Text = detail1.Name;
             textBoxProjectNameRoot.Text = detail1.Root;
             textBoxProjectsPath.Text = detail1.Path;
+            GetProjectDetail(name);
         }
 
         private void buttonIntializeProject_Click(object sender, EventArgs e)
@@ -102,6 +133,13 @@ namespace Pavolle.CrudOperationHelper
         }
 
         private void buttonAddTable_Click(object sender, EventArgs e)
+        {
+            AddTable addTable = new AddTable(_selectedProjectName);
+            addTable.ShowDialog();
+            GetProjectDetail(_selectedProjectName);
+        }
+
+        private void listBoxTables_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
