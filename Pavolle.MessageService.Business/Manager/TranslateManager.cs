@@ -4,6 +4,7 @@ using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
 using Pavolle.MessageService.DbModels;
 using Pavolle.MessageService.DbModels.Entities;
+using Pavolle.MessageService.ViewModels.ViewData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,23 @@ namespace Pavolle.MessageService.Business.Manager
 {
     public class TranslateManager:Singleton<TranslateManager>
     {
+        List<TranslateViewData> _translateDatas;
         private TranslateManager() { }
 
         public void Initialize()
         {
-            //Verileri yükleyecek
+            using (Session session = XpoManager.Instance.GetNewSession())
+            {
+                _translateDatas = session.Query<TranslateData>().Select(t => new TranslateViewData
+                {
+                    Oid = t.Oid,
+                    CreatedTime = t.CreatedTime,
+                    LastUpdateTime = t.LastUpdateTime,
+                    Variable = t.Variable,
+                    EN = t.EN,
+                    TR = t.TR
+                }).ToList();
+            }
         }
 
         public void Setup()
