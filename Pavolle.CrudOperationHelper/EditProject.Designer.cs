@@ -35,11 +35,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelProjectName = new System.Windows.Forms.Label();
             this.textBoxProjectNameRoot = new System.Windows.Forms.TextBox();
+            this.textBoxUserTypes = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxUserTypes);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.butttonCreate);
             this.groupBox1.Controls.Add(this.textBoxProjectsPath);
             this.groupBox1.Controls.Add(this.buttonCancel);
@@ -48,14 +52,14 @@
             this.groupBox1.Controls.Add(this.textBoxProjectNameRoot);
             this.groupBox1.Location = new System.Drawing.Point(27, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(599, 275);
+            this.groupBox1.Size = new System.Drawing.Size(583, 394);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
             // 
             // butttonCreate
             // 
-            this.butttonCreate.Location = new System.Drawing.Point(413, 187);
+            this.butttonCreate.Location = new System.Drawing.Point(413, 303);
             this.butttonCreate.Name = "butttonCreate";
             this.butttonCreate.Size = new System.Drawing.Size(144, 51);
             this.butttonCreate.TabIndex = 12;
@@ -65,14 +69,14 @@
             // 
             // textBoxProjectsPath
             // 
-            this.textBoxProjectsPath.Location = new System.Drawing.Point(250, 121);
+            this.textBoxProjectsPath.Location = new System.Drawing.Point(250, 108);
             this.textBoxProjectsPath.Name = "textBoxProjectsPath";
             this.textBoxProjectsPath.Size = new System.Drawing.Size(307, 31);
             this.textBoxProjectsPath.TabIndex = 11;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(250, 187);
+            this.buttonCancel.Location = new System.Drawing.Point(250, 303);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(144, 51);
             this.buttonCancel.TabIndex = 1;
@@ -83,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 121);
+            this.label2.Location = new System.Drawing.Point(29, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 10;
@@ -105,11 +109,28 @@
             this.textBoxProjectNameRoot.Size = new System.Drawing.Size(307, 31);
             this.textBoxProjectNameRoot.TabIndex = 7;
             // 
+            // textBoxUserTypes
+            // 
+            this.textBoxUserTypes.Location = new System.Drawing.Point(250, 154);
+            this.textBoxUserTypes.Multiline = true;
+            this.textBoxUserTypes.Name = "textBoxUserTypes";
+            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 127);
+            this.textBoxUserTypes.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 157);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 25);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "User Types";
+            // 
             // EditProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 320);
+            this.ClientSize = new System.Drawing.Size(642, 439);
             this.Controls.Add(this.groupBox1);
             this.Name = "EditProject";
             this.Text = "EditProject";
@@ -129,5 +150,7 @@
         private Label label2;
         private Label labelProjectName;
         private TextBox textBoxProjectNameRoot;
+        private TextBox textBoxUserTypes;
+        private Label label6;
     }
 }

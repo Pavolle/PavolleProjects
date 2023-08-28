@@ -56,7 +56,7 @@ namespace Pavolle.CrudOperationHelper.Db
             return response;
         }
 
-        public bool SaveProject(string name, string root, string path)
+        public bool SaveProject(string name, string root, string path, string userTypes)
         {
             bool response = true;
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -71,7 +71,8 @@ namespace Pavolle.CrudOperationHelper.Db
                     {
                         Name = name,
                         Root = root,
-                        Path = path
+                        Path = path,
+                        UserType= userTypes
                     }.Save();
                     response = true;
                 }
@@ -79,7 +80,7 @@ namespace Pavolle.CrudOperationHelper.Db
             return response;
         }
 
-        internal bool EditProject(string name, string root, string path)
+        internal bool EditProject(string name, string root, string path, string userType)
         {
             bool response = true;
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -89,6 +90,7 @@ namespace Pavolle.CrudOperationHelper.Db
                 project.Root=root;
                 project.Path = path;
                 project.LastUpdateTime = DateTime.Now;
+                project.UserType= userType;
                 project.Save();
             }
             return response;

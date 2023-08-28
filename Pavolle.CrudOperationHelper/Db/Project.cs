@@ -15,13 +15,20 @@ namespace Pavolle.CrudOperationHelper.Db
         }
 
         [Persistent("name")]
+        [Size(255)]
         public string Name { get; set; }
 
         [Persistent("root")]
+        [Size(255)]
         public string Root { get; set; }
 
         [Persistent("path")]
+        [Size(255)]
         public string Path { get; set; }
+
+        [Persistent("user_types")]
+        [Size(255)]
+        public string UserType { get; set; }
 
         [Persistent("intitialize")]
         public bool Intialize { get; set; }

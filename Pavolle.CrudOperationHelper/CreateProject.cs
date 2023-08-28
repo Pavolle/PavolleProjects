@@ -25,7 +25,7 @@ namespace Pavolle.CrudOperationHelper
 
         private void butttonCreate_Click(object sender, EventArgs e)
         {
-            bool response=DbManager.Instance.SaveProject(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text);
+            bool response=DbManager.Instance.SaveProject(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text);
             if (response)
             {
                 this.Close();
