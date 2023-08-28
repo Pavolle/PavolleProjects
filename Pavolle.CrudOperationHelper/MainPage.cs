@@ -34,6 +34,7 @@ namespace Pavolle.CrudOperationHelper
             textBoxProjectMame.Enabled = false;
             textBoxProjectNameRoot.Enabled = false;
             textBoxProjectsPath.Enabled = false;
+            textBoxUserTypes.Enabled = false;
         }
 
         void RefreshProjectList()
@@ -65,6 +66,7 @@ namespace Pavolle.CrudOperationHelper
             textBoxProjectMame.Text = detail.Name;
             textBoxProjectNameRoot.Text = detail.Root;
             textBoxProjectsPath.Text = detail.Path;
+            textBoxUserTypes.Text = detail.UserType;
 
             if (detail.Intialize)
             {
@@ -111,7 +113,7 @@ namespace Pavolle.CrudOperationHelper
         {
             string name = textBoxProjectMame.Text;
             var detail = DbManager.Instance.GetProjectDetal(name);
-            EditProject editProject = new EditProject(detail.Name, detail.Root, detail.Path);
+            EditProject editProject = new EditProject(detail.Name, detail.Root, detail.Path, detail.UserType);
             editProject.ShowDialog();
 
             var detail1 = DbManager.Instance.GetProjectDetal(name);
@@ -119,6 +121,7 @@ namespace Pavolle.CrudOperationHelper
             textBoxProjectMame.Text = detail1.Name;
             textBoxProjectNameRoot.Text = detail1.Root;
             textBoxProjectsPath.Text = detail1.Path;
+            textBoxUserTypes.Text = detail.UserType;
             GetProjectDetail(name);
         }
 

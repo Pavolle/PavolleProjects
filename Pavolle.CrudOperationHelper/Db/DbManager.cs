@@ -40,7 +40,7 @@ namespace Pavolle.CrudOperationHelper.Db
             return response;
         }
 
-        public ProjectViewData GetProjectDetal(string name)
+        public ProjectViewData? GetProjectDetal(string name)
         {
             var response=new ProjectViewData();
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -50,7 +50,8 @@ namespace Pavolle.CrudOperationHelper.Db
                     Name = t.Name,
                     Root = t.Root,
                     Path = t.Path,
-                    Intialize=t.Intialize
+                    Intialize=t.Intialize,
+                    UserType=t.UserType
                 }).FirstOrDefault();
             }
             return response;
@@ -150,6 +151,7 @@ namespace Pavolle.CrudOperationHelper.Db
         public string Root { get; internal set; }
         public string Path { get; internal set; }
         public bool Intialize { get; internal set; }
+        public string UserType { get; internal set; }
     }
 
     public class TableViewData

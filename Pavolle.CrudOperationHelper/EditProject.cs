@@ -16,16 +16,19 @@ namespace Pavolle.CrudOperationHelper
         string _name;
         string _path;
         string _root;
-        public EditProject(string name, string root, string path)
+        string _userType;
+        public EditProject(string name, string root, string path, string userType)
         {
             InitializeComponent();
             _name = name;
             _path = path;
             _root = root;
+            _userType = userType;
 
             this.Text = "Edit Project (" + name + ")";
             textBoxProjectNameRoot.Text = _root;
-            textBoxProjectsPath.Text= _path;
+            textBoxProjectsPath.Text = _path;
+            textBoxUserTypes.Text = _userType;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
