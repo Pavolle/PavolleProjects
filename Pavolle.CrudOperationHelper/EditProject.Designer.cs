@@ -44,12 +44,16 @@
             this.labelAudience = new System.Windows.Forms.Label();
             this.textBoxIssuer = new System.Windows.Forms.TextBox();
             this.labelIssuer = new System.Windows.Forms.Label();
+            this.textBoxLanguage = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxLanguage);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBoxUserTypes);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.butttonCreate);
@@ -70,7 +74,7 @@
             this.textBoxUserTypes.Location = new System.Drawing.Point(250, 154);
             this.textBoxUserTypes.Multiline = true;
             this.textBoxUserTypes.Name = "textBoxUserTypes";
-            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 127);
+            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 102);
             this.textBoxUserTypes.TabIndex = 19;
             // 
             // label6
@@ -197,6 +201,22 @@
             this.labelIssuer.TabIndex = 10;
             this.labelIssuer.Text = "Issuer";
             // 
+            // textBoxLanguage
+            // 
+            this.textBoxLanguage.Location = new System.Drawing.Point(249, 262);
+            this.textBoxLanguage.Name = "textBoxLanguage";
+            this.textBoxLanguage.Size = new System.Drawing.Size(307, 31);
+            this.textBoxLanguage.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 262);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 25);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Language(s)";
+            // 
             // EditProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -233,5 +253,7 @@
         private Label labelAudience;
         private TextBox textBoxIssuer;
         private Label labelIssuer;
+        private TextBox textBoxLanguage;
+        private Label label7;
     }
 }

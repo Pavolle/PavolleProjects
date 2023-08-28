@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxTokenExpire = new System.Windows.Forms.TextBox();
+            this.labelTokenExpire = new System.Windows.Forms.Label();
+            this.textBoxAudience = new System.Windows.Forms.TextBox();
+            this.labelAudience = new System.Windows.Forms.Label();
+            this.textBoxIssuer = new System.Windows.Forms.TextBox();
+            this.labelIssuer = new System.Windows.Forms.Label();
             this.textBoxUserTypes = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.butttonCreate = new System.Windows.Forms.Button();
@@ -39,19 +46,16 @@
             this.textBoxProjectMame = new System.Windows.Forms.TextBox();
             this.textBoxProjectNameRoot = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBoxTokenExpire = new System.Windows.Forms.TextBox();
-            this.labelTokenExpire = new System.Windows.Forms.Label();
-            this.textBoxAudience = new System.Windows.Forms.TextBox();
-            this.labelAudience = new System.Windows.Forms.Label();
-            this.textBoxIssuer = new System.Windows.Forms.TextBox();
-            this.labelIssuer = new System.Windows.Forms.Label();
+            this.textBoxLanguage = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxLanguage);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.textBoxUserTypes);
             this.groupBox1.Controls.Add(this.label6);
@@ -70,12 +74,75 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBoxTokenExpire);
+            this.groupBox3.Controls.Add(this.labelTokenExpire);
+            this.groupBox3.Controls.Add(this.textBoxAudience);
+            this.groupBox3.Controls.Add(this.labelAudience);
+            this.groupBox3.Controls.Add(this.textBoxIssuer);
+            this.groupBox3.Controls.Add(this.labelIssuer);
+            this.groupBox3.Location = new System.Drawing.Point(6, 296);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(596, 150);
+            this.groupBox3.TabIndex = 18;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Security";
+            // 
+            // textBoxTokenExpire
+            // 
+            this.textBoxTokenExpire.Location = new System.Drawing.Point(253, 104);
+            this.textBoxTokenExpire.Name = "textBoxTokenExpire";
+            this.textBoxTokenExpire.Size = new System.Drawing.Size(307, 31);
+            this.textBoxTokenExpire.TabIndex = 15;
+            // 
+            // labelTokenExpire
+            // 
+            this.labelTokenExpire.AutoSize = true;
+            this.labelTokenExpire.Location = new System.Drawing.Point(32, 104);
+            this.labelTokenExpire.Name = "labelTokenExpire";
+            this.labelTokenExpire.Size = new System.Drawing.Size(165, 25);
+            this.labelTokenExpire.TabIndex = 14;
+            this.labelTokenExpire.Text = "Token Expire (Hour)";
+            // 
+            // textBoxAudience
+            // 
+            this.textBoxAudience.Location = new System.Drawing.Point(253, 67);
+            this.textBoxAudience.Name = "textBoxAudience";
+            this.textBoxAudience.Size = new System.Drawing.Size(307, 31);
+            this.textBoxAudience.TabIndex = 13;
+            // 
+            // labelAudience
+            // 
+            this.labelAudience.AutoSize = true;
+            this.labelAudience.Location = new System.Drawing.Point(32, 67);
+            this.labelAudience.Name = "labelAudience";
+            this.labelAudience.Size = new System.Drawing.Size(85, 25);
+            this.labelAudience.TabIndex = 12;
+            this.labelAudience.Text = "Audience";
+            // 
+            // textBoxIssuer
+            // 
+            this.textBoxIssuer.Location = new System.Drawing.Point(253, 30);
+            this.textBoxIssuer.Name = "textBoxIssuer";
+            this.textBoxIssuer.Size = new System.Drawing.Size(307, 31);
+            this.textBoxIssuer.TabIndex = 11;
+            // 
+            // labelIssuer
+            // 
+            this.labelIssuer.AutoSize = true;
+            this.labelIssuer.Location = new System.Drawing.Point(32, 30);
+            this.labelIssuer.Name = "labelIssuer";
+            this.labelIssuer.Size = new System.Drawing.Size(58, 25);
+            this.labelIssuer.TabIndex = 10;
+            this.labelIssuer.Text = "Issuer";
+            // 
             // textBoxUserTypes
             // 
             this.textBoxUserTypes.Location = new System.Drawing.Point(259, 163);
             this.textBoxUserTypes.Multiline = true;
             this.textBoxUserTypes.Name = "textBoxUserTypes";
-            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 127);
+            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 88);
             this.textBoxUserTypes.TabIndex = 17;
             // 
             // label6
@@ -155,68 +222,21 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Project Name";
             // 
-            // groupBox3
+            // textBoxLanguage
             // 
-            this.groupBox3.Controls.Add(this.textBoxTokenExpire);
-            this.groupBox3.Controls.Add(this.labelTokenExpire);
-            this.groupBox3.Controls.Add(this.textBoxAudience);
-            this.groupBox3.Controls.Add(this.labelAudience);
-            this.groupBox3.Controls.Add(this.textBoxIssuer);
-            this.groupBox3.Controls.Add(this.labelIssuer);
-            this.groupBox3.Location = new System.Drawing.Point(6, 296);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(596, 150);
-            this.groupBox3.TabIndex = 18;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Security";
+            this.textBoxLanguage.Location = new System.Drawing.Point(262, 268);
+            this.textBoxLanguage.Name = "textBoxLanguage";
+            this.textBoxLanguage.Size = new System.Drawing.Size(307, 31);
+            this.textBoxLanguage.TabIndex = 20;
             // 
-            // textBoxTokenExpire
+            // label7
             // 
-            this.textBoxTokenExpire.Location = new System.Drawing.Point(253, 104);
-            this.textBoxTokenExpire.Name = "textBoxTokenExpire";
-            this.textBoxTokenExpire.Size = new System.Drawing.Size(307, 31);
-            this.textBoxTokenExpire.TabIndex = 15;
-            // 
-            // labelTokenExpire
-            // 
-            this.labelTokenExpire.AutoSize = true;
-            this.labelTokenExpire.Location = new System.Drawing.Point(32, 104);
-            this.labelTokenExpire.Name = "labelTokenExpire";
-            this.labelTokenExpire.Size = new System.Drawing.Size(165, 25);
-            this.labelTokenExpire.TabIndex = 14;
-            this.labelTokenExpire.Text = "Token Expire (Hour)";
-            // 
-            // textBoxAudience
-            // 
-            this.textBoxAudience.Location = new System.Drawing.Point(253, 67);
-            this.textBoxAudience.Name = "textBoxAudience";
-            this.textBoxAudience.Size = new System.Drawing.Size(307, 31);
-            this.textBoxAudience.TabIndex = 13;
-            // 
-            // labelAudience
-            // 
-            this.labelAudience.AutoSize = true;
-            this.labelAudience.Location = new System.Drawing.Point(32, 67);
-            this.labelAudience.Name = "labelAudience";
-            this.labelAudience.Size = new System.Drawing.Size(85, 25);
-            this.labelAudience.TabIndex = 12;
-            this.labelAudience.Text = "Audience";
-            // 
-            // textBoxIssuer
-            // 
-            this.textBoxIssuer.Location = new System.Drawing.Point(253, 30);
-            this.textBoxIssuer.Name = "textBoxIssuer";
-            this.textBoxIssuer.Size = new System.Drawing.Size(307, 31);
-            this.textBoxIssuer.TabIndex = 11;
-            // 
-            // labelIssuer
-            // 
-            this.labelIssuer.AutoSize = true;
-            this.labelIssuer.Location = new System.Drawing.Point(32, 30);
-            this.labelIssuer.Name = "labelIssuer";
-            this.labelIssuer.Size = new System.Drawing.Size(58, 25);
-            this.labelIssuer.TabIndex = 10;
-            this.labelIssuer.Text = "Issuer";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(41, 268);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 25);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Language(s)";
             // 
             // CreateProject
             // 
@@ -254,5 +274,7 @@
         private Label labelAudience;
         private TextBox textBoxIssuer;
         private Label labelIssuer;
+        private TextBox textBoxLanguage;
+        private Label label7;
     }
 }

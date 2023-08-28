@@ -54,13 +54,14 @@ namespace Pavolle.CrudOperationHelper.Db
                     UserType=t.UserType,
                     Issuer=t.Issuer,
                     Audience=t.Audience,
-                    TokenExpireMinute=t.TokenExpireMinute
+                    TokenExpireMinute=t.TokenExpireMinute,
+                    Language=t.Languages
                 }).FirstOrDefault();
             }
             return response;
         }
 
-        public bool SaveProject(string name, string root, string path, string userTypes, string issuer, string audience, int tokenExpireMinute)
+        public bool SaveProject(string name, string root, string path, string userTypes, string issuer, string audience, int tokenExpireMinute,string language)
         {
             bool response = true;
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -79,7 +80,8 @@ namespace Pavolle.CrudOperationHelper.Db
                         UserType= userTypes,
                         Issuer= issuer,
                         Audience= audience,
-                        TokenExpireMinute=tokenExpireMinute
+                        TokenExpireMinute=tokenExpireMinute,
+                        Languages = language
                     }.Save();
                     response = true;
                 }
@@ -87,7 +89,7 @@ namespace Pavolle.CrudOperationHelper.Db
             return response;
         }
 
-        internal bool EditProject(string name, string root, string path, string userType, string issuer, string audience, int tokenExpireMinute)
+        internal bool EditProject(string name, string root, string path, string userType, string issuer, string audience, int tokenExpireMinute, string language)
         {
             bool response = true;
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -101,6 +103,7 @@ namespace Pavolle.CrudOperationHelper.Db
                 project.Issuer= issuer;
                 project.Audience= audience;
                 project.TokenExpireMinute=tokenExpireMinute;
+                project.Languages = language;
                 project.Save();
             }
             return response;
@@ -164,6 +167,7 @@ namespace Pavolle.CrudOperationHelper.Db
         public string Issuer { get; internal set; }
         public string Audience { get; internal set; }
         public int TokenExpireMinute { get; internal set; }
+        public string Language { get; internal set; }
     }
 
     public class TableViewData

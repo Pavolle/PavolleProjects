@@ -39,6 +39,7 @@ namespace Pavolle.CrudOperationHelper
             textBoxIssuer.Enabled = false;
             textBoxAudience.Enabled = false;
             textBoxTokenExpire.Enabled = false;
+            textBoxLanguage.Enabled = false;
         }
 
         void RefreshProjectList()
@@ -74,6 +75,7 @@ namespace Pavolle.CrudOperationHelper
             textBoxIssuer.Text = detail.Issuer;
             textBoxAudience.Text = detail.Audience;
             textBoxTokenExpire.Text=detail.TokenExpireMinute.ToString();
+            textBoxLanguage.Text = detail.Language;
 
             if (detail.Intialize)
             {
@@ -120,7 +122,7 @@ namespace Pavolle.CrudOperationHelper
         {
             string name = textBoxProjectMame.Text;
             var detail = DbManager.Instance.GetProjectDetal(name);
-            EditProject editProject = new EditProject(detail.Name, detail.Root, detail.Path, detail.UserType);
+            EditProject editProject = new EditProject(detail.Name, detail.Root, detail.Path, detail.UserType, detail.Issuer, detail.Audience, detail.TokenExpireMinute, detail.Language);
             editProject.ShowDialog();
 
             var detail1 = DbManager.Instance.GetProjectDetal(name);

@@ -66,6 +66,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBoxLanguage = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -160,6 +162,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxLanguage);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.textBoxUserTypes);
             this.groupBox1.Controls.Add(this.label6);
@@ -173,7 +177,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(24, 390);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(599, 514);
+            this.groupBox1.Size = new System.Drawing.Size(599, 587);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
@@ -186,7 +190,7 @@
             this.groupBox3.Controls.Add(this.labelAudience);
             this.groupBox3.Controls.Add(this.textBoxIssuer);
             this.groupBox3.Controls.Add(this.labelIssuer);
-            this.groupBox3.Location = new System.Drawing.Point(6, 270);
+            this.groupBox3.Location = new System.Drawing.Point(6, 336);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(587, 150);
             this.groupBox3.TabIndex = 16;
@@ -260,7 +264,7 @@
             // 
             // buttonIntializeProject
             // 
-            this.buttonIntializeProject.Location = new System.Drawing.Point(25, 426);
+            this.buttonIntializeProject.Location = new System.Drawing.Point(23, 499);
             this.buttonIntializeProject.Name = "buttonIntializeProject";
             this.buttonIntializeProject.Size = new System.Drawing.Size(262, 60);
             this.buttonIntializeProject.TabIndex = 13;
@@ -270,7 +274,7 @@
             // 
             // butttonEditProjects
             // 
-            this.butttonEditProjects.Location = new System.Drawing.Point(306, 426);
+            this.butttonEditProjects.Location = new System.Drawing.Point(306, 499);
             this.butttonEditProjects.Name = "butttonEditProjects";
             this.butttonEditProjects.Size = new System.Drawing.Size(260, 60);
             this.butttonEditProjects.TabIndex = 12;
@@ -442,11 +446,27 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Table Name";
             // 
+            // textBoxLanguage
+            // 
+            this.textBoxLanguage.Location = new System.Drawing.Point(259, 258);
+            this.textBoxLanguage.Name = "textBoxLanguage";
+            this.textBoxLanguage.Size = new System.Drawing.Size(307, 31);
+            this.textBoxLanguage.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(38, 258);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 25);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Language(s)";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1835, 919);
+            this.ClientSize = new System.Drawing.Size(1835, 989);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelProjects);
@@ -506,5 +526,7 @@
         private Label labelAudience;
         private TextBox textBoxIssuer;
         private Label labelIssuer;
+        private TextBox textBoxLanguage;
+        private Label label7;
     }
 }

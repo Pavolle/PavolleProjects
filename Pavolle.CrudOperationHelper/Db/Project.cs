@@ -27,7 +27,7 @@ namespace Pavolle.CrudOperationHelper.Db
         public string Path { get; set; }
 
         [Persistent("user_types")]
-        [Size(255)]
+        [Size(2000)]
         public string UserType { get; set; }
 
         [Persistent("intitialize")]
@@ -41,7 +41,12 @@ namespace Pavolle.CrudOperationHelper.Db
         [Size(255)]
         public string Audience { get; set; }
 
+        [Persistent("languages")]
+        public string Languages { get; set; }
+
         [Persistent("token_expire_minute")]
         public int TokenExpireMinute { get; set; }
+
+
     }
 }
