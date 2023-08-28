@@ -128,7 +128,7 @@ namespace Pavolle.CrudOperationHelper
 
         private void buttonIntializeProject_Click(object sender, EventArgs e)
         {
-            bool createUserTypeEnumClassResult=ProjectInitializeManager.Instance.Start(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text);
+            bool createUserTypeEnumClassResult=ProjectInitializeManager.Instance.Start(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text,"pavolle",24);
         }
 
         private void buttonEditTable_Click(object sender, EventArgs e)

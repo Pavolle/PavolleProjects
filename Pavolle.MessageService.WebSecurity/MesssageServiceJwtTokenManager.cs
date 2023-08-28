@@ -5,12 +5,12 @@ using System.Security.Claims;
 
 namespace Pavolle.MessageService.WebSecurity
 {
-    public class MesssageServiceJwtTokenManager:Singleton<MesssageServiceJwtTokenManager>
+    public class MesssageServiceJwtTokenManager : Singleton<MesssageServiceJwtTokenManager>
     {
         private MesssageServiceJwtTokenManager() { }
 
 
-        public string TokenOlustur(string username, string sessionId, string companyOid, string userType, string language, string requestIp)
+        public string CreateToken(string username, string sessionId, string companyOid, string userType, string language, string requestIp)
         {
             var subject = new ClaimsIdentity(new[]
             {
