@@ -20,7 +20,7 @@ namespace Pavolle.CrudOperationHelper
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void butttonCreate_Click(object sender, EventArgs e)

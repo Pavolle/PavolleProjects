@@ -133,6 +133,8 @@ namespace Pavolle.MessageService.Business.Manager
                 Anonymous=anonymous
             }.Save();
             Console.WriteLine(apiDefintion + " servisi için yetki bilgileri veritabanına yazıldı.");
+
+            TranslateManager.Instance.Setup();
         }
     }
 }
