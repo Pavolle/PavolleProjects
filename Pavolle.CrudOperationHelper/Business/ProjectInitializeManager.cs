@@ -20,12 +20,12 @@ namespace Pavolle.CrudOperationHelper.Business
 
         public bool Start(string projectName, string projectNameRoot, string projectPath, string userType, string issuer, string audience, int tokenExpireHour)
         {
-            GenerateBaseObject(projectNameRoot, projectPath);
-            GeneratXpoMnaagerClass(projectNameRoot, projectPath);
+            GenerateBaseObject(projectNameRoot, projectPath); //Ok
+            GeneratXpoManagerClass(projectNameRoot, projectPath); //Ok
 
             //TODO Auth Manager sınıfı eklenecek.
             GenerateUserTypeClassess(projectNameRoot, projectPath, userType);
-            GenerateWebSecurityLayer(projectName, projectNameRoot, projectPath, issuer, audience, tokenExpireHour);
+            GenerateWebSecurityLayer(projectName, projectNameRoot, projectPath, issuer, audience, tokenExpireHour); //Ok
 
             GenerateCompanyBusiness(projectNameRoot, projectPath);
 
@@ -187,7 +187,7 @@ namespace Pavolle.CrudOperationHelper.Business
         }
 
 
-        public bool GeneratXpoMnaagerClass(string projectNameRoot, string projectPath)
+        public bool GeneratXpoManagerClass(string projectNameRoot, string projectPath)
         {
             bool response = false;
 
@@ -338,7 +338,7 @@ namespace Pavolle.CrudOperationHelper.Business
             principalClass += "{" + Environment.NewLine;
             principalClass += "    public class " + projectName + "Principal : IPrincipal" + Environment.NewLine;
             principalClass += "    {" + Environment.NewLine;
-            principalClass += "        public " + projectName + "Principal(" + projectName + "Identity identity,  string sessionId, long? companyOid, EUserType? userType, ELanguage? language, string requestIp)" + Environment.NewLine;
+            principalClass += "        public " + projectName + "Principal(" + projectName + "Identity identity,  string sessionId, long? organizationOid, EUserType? userType, ELanguage? language, string requestIp)" + Environment.NewLine;
             principalClass += "        {" + Environment.NewLine;
             principalClass += "            if (identity == null)" + Environment.NewLine;
             principalClass += "            {" + Environment.NewLine;
@@ -346,7 +346,7 @@ namespace Pavolle.CrudOperationHelper.Business
             principalClass += "            }" + Environment.NewLine;
             principalClass += "            this.Identity = identity;" + Environment.NewLine;
             principalClass += "            this.SessionId = sessionId;" + Environment.NewLine;
-            principalClass += "            this.CompanyOid = companyOid;" + Environment.NewLine;
+            principalClass += "            this.OrganizationOid = organizationOid;" + Environment.NewLine;
             principalClass += "            this.UserType = userType;" + Environment.NewLine;
             principalClass += "            this.Language = language;" + Environment.NewLine;
             principalClass += "            this.RequestIp = requestIp;" + Environment.NewLine;
@@ -356,7 +356,7 @@ namespace Pavolle.CrudOperationHelper.Business
             principalClass += "" + Environment.NewLine;
             principalClass += "        public string SessionId { get; set; }" + Environment.NewLine;
             principalClass += "" + Environment.NewLine;
-            principalClass += "        public long? CompanyOid { get; set; }" + Environment.NewLine;
+            principalClass += "        public long? OrganizationOid { get; set; }" + Environment.NewLine;
             principalClass += "" + Environment.NewLine;
             principalClass += "        public EUserType? UserType { get; set; }" + Environment.NewLine;
             principalClass += "" + Environment.NewLine;
@@ -389,13 +389,13 @@ namespace Pavolle.CrudOperationHelper.Business
             jwtTokenManagerClass += "" + Environment.NewLine;
             jwtTokenManagerClass += "        private " + projectName + "JwtTokenManager() { }" + Environment.NewLine;
             jwtTokenManagerClass += "" + Environment.NewLine;
-            jwtTokenManagerClass += "        public string CreateToken(string username, string sessionId, string companyOid, string userType, string language, string requestIp)" + Environment.NewLine;
+            jwtTokenManagerClass += "        public string CreateToken(string username, string sessionId, string organizationOid, string userType, string language, string requestIp)" + Environment.NewLine;
             jwtTokenManagerClass += "        {" + Environment.NewLine;
             jwtTokenManagerClass += "            var subject = new ClaimsIdentity(new[]" + Environment.NewLine;
             jwtTokenManagerClass += "            {" + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetUsernameKey(), username)," + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetSesionIdKey(), sessionId)," + Environment.NewLine;
-            jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetCompanyOidKey(), companyOid)," + Environment.NewLine;
+            jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetOrganizationOidKey(), organizationOid)," + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetUserTypeKey(), userType)," + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetLanguageKey(), language)," + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetRequestIp(), requestIp)" + Environment.NewLine;
@@ -438,7 +438,7 @@ namespace Pavolle.CrudOperationHelper.Business
             securityConstsManagerClass += "" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string UsernameKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string SesionIdKey;" + Environment.NewLine;
-            securityConstsManagerClass += "        private readonly string CompanyOidKey;" + Environment.NewLine;
+            securityConstsManagerClass += "        private readonly string OrganizationOidKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string UserTypeKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string LanguageKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly SymmetricSecurityKey key;" + Environment.NewLine;
@@ -450,7 +450,7 @@ namespace Pavolle.CrudOperationHelper.Business
             securityConstsManagerClass += "            LanguageKey = \"Language\";" + Environment.NewLine;
             securityConstsManagerClass += "            SesionIdKey = \"SessionId\";" + Environment.NewLine;
             securityConstsManagerClass += "            UserTypeKey = \"UserType\";" + Environment.NewLine;
-            securityConstsManagerClass += "            CompanyOidKey = \"CompanyOid\";" + Environment.NewLine;
+            securityConstsManagerClass += "            OrganizationOidKey = \"OrganizationOid\";" + Environment.NewLine;
             securityConstsManagerClass += "            RequestIpKey = \"RequestIP\";" + Environment.NewLine;
             securityConstsManagerClass += "            key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SymmetricSecurityKeyString)) { KeyId = \"1000\" };" + Environment.NewLine;
             securityConstsManagerClass += "        }" + Environment.NewLine;
@@ -485,9 +485,9 @@ namespace Pavolle.CrudOperationHelper.Business
             securityConstsManagerClass += "            return key;" + Environment.NewLine;
             securityConstsManagerClass += "        }" + Environment.NewLine;
             securityConstsManagerClass += "" + Environment.NewLine;
-            securityConstsManagerClass += "        public string GetCompanyOidKey()" + Environment.NewLine;
+            securityConstsManagerClass += "        public string GetOrganizationOidKey()" + Environment.NewLine;
             securityConstsManagerClass += "        {" + Environment.NewLine;
-            securityConstsManagerClass += "            return CompanyOidKey;" + Environment.NewLine;
+            securityConstsManagerClass += "            return OrganizationOidKey;" + Environment.NewLine;
             securityConstsManagerClass += "        }" + Environment.NewLine;
             securityConstsManagerClass += "" + Environment.NewLine;
             securityConstsManagerClass += "        public string GetUserTypeKey()" + Environment.NewLine;
