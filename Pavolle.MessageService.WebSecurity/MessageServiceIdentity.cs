@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Principal;
-using System.Text;
+﻿using System.Security.Principal;
 
 namespace Pavolle.MessageService.WebSecurity
 {
-    public class CustomIdentity : IIdentity
+    public class MessageServiceIdentity : IIdentity
     {
-        public CustomIdentity(string name, string authenticationType)
+        public MessageServiceIdentity(string name, string authenticationType)
         {
             Name = name;
             IsAuthenticated = true;

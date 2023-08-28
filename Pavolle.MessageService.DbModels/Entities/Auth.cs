@@ -15,9 +15,11 @@ namespace Pavolle.MessageService.DbModels.Entities
         }
 
         [Persistent("api_key")]
+        [Size(255)]
         public string ApiKey { get; set; }
 
         [Persistent("api_definition")]
+        [Size(255)]
         public string ApiDefinition { get; set; }
 
         [Persistent("admin_auth")]

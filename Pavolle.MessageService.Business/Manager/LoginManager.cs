@@ -75,7 +75,7 @@ namespace Pavolle.MessageService.Business.Manager
                     user.Save();
                 }
 
-                response.Token = JwtTokenManager.Instance.TokenOlustur(user.Username, Guid.NewGuid().ToString(), user.Company.Oid.ToString(), ((int)user.UserType).ToString(), request.Language.Value.ToString(), request.RequestIp);
+                response.Token = MesssageServiceJwtTokenManager.Instance.TokenOlustur(user.Username, Guid.NewGuid().ToString(), user.Company.Oid.ToString(), ((int)user.UserType).ToString(), request.Language.Value.ToString(), request.RequestIp);
 
                 //yetkilerin sorgulanması.
                 response.Name = user.Name;

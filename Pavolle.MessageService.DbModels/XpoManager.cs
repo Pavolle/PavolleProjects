@@ -87,7 +87,6 @@ namespace Pavolle.MessageService.DbModels
 
                 string connectionPoolString = XpoDefault.GetConnectionPoolString(_connectionString, 30, 500);
 
-                Debug.WriteLine(connectionPoolString);
                 IDataStore store = XpoDefault.GetConnectionProvider(connectionPoolString, AutoCreateOption.DatabaseAndSchema);
                 dict.GetDataStoreSchema(typeof(BaseObject).Assembly);
                 dl = new ThreadSafeDataLayer(dict, store);

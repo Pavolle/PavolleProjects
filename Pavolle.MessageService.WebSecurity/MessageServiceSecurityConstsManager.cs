@@ -1,33 +1,30 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using Pavolle.Core.Utils;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
 namespace Pavolle.MessageService.WebSecurity
 {
     public class SecurityConstsManager : Singleton<SecurityConstsManager>
     {
-        public const string SymmetricSecurityKeyString = "734df+5gdgaq@@&&www-3421-3-ff!dsfwwwdMilkoBilişimfb34g7ugfdsfvfv--34sdewwe3er34rwwefd34ffssd5ww4545zss";
-        public const string Issuer = "milko_bilisim";
-        public const string Audience = "milko_bilisim";
+        public const string SymmetricSecurityKeyString = "734df+5gdgaq@@&&www-3421-3-ff!dsfwwwdpavollefb34g7ugfdsfvfv--34sdewwe3er34rwwefd34ffssd5ww4545zss";
+        public const string Issuer = "pavolle";
+        public const string Audience = "pavolle";
 
-        private readonly string KullaniciAdiKey;
+        private readonly string UsernameKey;
         private readonly string SesionIdKey;
-        private readonly string KurumOidKey;
-        private readonly string KullaniciTipiKey;
-        private readonly string DilKey;
+        private readonly string CompanyOidKey;
+        private readonly string UserTypeKey;
+        private readonly string LanguageKey;
         private readonly SymmetricSecurityKey key;
         private readonly string RequestIpKey;
 
         private SecurityConstsManager()
         {
-            KullaniciAdiKey = "KullaniciAdi";
-            DilKey = "Dil";
+            UsernameKey = "Username";
+            LanguageKey = "Language";
             SesionIdKey = "SessionId";
-            KullaniciTipiKey = "KullaniciTipi";
-            KurumOidKey = "KurumOid";
+            UserTypeKey = "UserType";
+            CompanyOidKey = "CompanyOid";
             RequestIpKey = "RequestIP";
             key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SymmetricSecurityKeyString)) { KeyId = "1000" };
         }
@@ -37,14 +34,14 @@ namespace Pavolle.MessageService.WebSecurity
             return RequestIpKey;
         }
 
-        public string GetDilKey()
+        public string GetLanguageKey()
         {
-            return DilKey;
+            return LanguageKey;
         }
 
-        public string GetKullaniciAdiKey()
+        public string GetUsernameKey()
         {
-            return KullaniciAdiKey;
+            return UsernameKey;
         }
 
         public string GetSesionIdKey()
@@ -62,14 +59,14 @@ namespace Pavolle.MessageService.WebSecurity
             return key;
         }
 
-        public string GetKurumOidKey()
+        public string GetCompanyOidKey()
         {
-            return KurumOidKey;
+            return CompanyOidKey;
         }
 
-        public string GetKullaniciTipiKey()
+        public string GetUserTypeKey()
         {
-            return KullaniciTipiKey;
+            return UserTypeKey;
         }
 
         public string GetKeyString()
