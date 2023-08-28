@@ -42,5 +42,27 @@ namespace Pavolle.CrudOperationHelper.Business
 
             return response;
         }
+
+        internal bool EditFile(string projectPath, string projectFoldername, string fileName, string data)
+        {
+            bool response = true;
+
+            try
+            {
+                if (!Directory.Exists(projectPath + "/" + projectFoldername))
+                {
+                    Directory.CreateDirectory(projectPath + "/" + projectFoldername);
+                }
+
+                File.WriteAllText(projectPath + "/" + projectFoldername + "/" + fileName, data);
+            }
+            catch (Exception ex)
+            {
+                response = false;
+            }
+
+
+            return response;
+        }
     }
 }

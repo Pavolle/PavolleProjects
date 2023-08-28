@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.MessageService.DbModels.Entities
+namespace Pavolle.MessageService.Common.Enums
 {
-    internal class Schedule
+    public enum ESchedulerType
     {
+        CleanSession=1
     }
 }

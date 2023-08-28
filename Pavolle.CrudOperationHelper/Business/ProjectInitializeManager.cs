@@ -505,6 +505,29 @@ namespace Pavolle.CrudOperationHelper.Business
 
             bool createSecurityConstManagerClassResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.WebSecurityProjectName, projectName + AppConsts.WebSecuritySecurityConstsManagerClassFileName, securityConstsManagerClass);
 
+
+            string csprojWebSecurity = "";
+            csprojWebSecurity += "<Project Sdk=\"Microsoft.NET.Sdk\">" + Environment.NewLine;
+            csprojWebSecurity += "" + Environment.NewLine;
+            csprojWebSecurity += "  <PropertyGroup>" + Environment.NewLine;
+            csprojWebSecurity += "    <TargetFramework>net6.0</TargetFramework>" + Environment.NewLine;
+            csprojWebSecurity += "    <ImplicitUsings>enable</ImplicitUsings>" + Environment.NewLine;
+            csprojWebSecurity += "    <Nullable>enable</Nullable>" + Environment.NewLine;
+            csprojWebSecurity += "  </PropertyGroup>" + Environment.NewLine;
+            csprojWebSecurity += "" + Environment.NewLine;
+            csprojWebSecurity += "  <ItemGroup>" + Environment.NewLine;
+            csprojWebSecurity += "    <PackageReference Include=\"Microsoft.IdentityModel.Tokens\" Version=\"6.32.0\" />" + Environment.NewLine;
+            csprojWebSecurity += "    <PackageReference Include=\"System.IdentityModel.Tokens.Jwt\" Version=\"6.32.0\" />" + Environment.NewLine;
+            csprojWebSecurity += "  </ItemGroup>" + Environment.NewLine;
+            csprojWebSecurity += "" + Environment.NewLine;
+            csprojWebSecurity += "  <ItemGroup>" + Environment.NewLine;
+            csprojWebSecurity += "    <ProjectReference Include=\"..\\"+projectNameRoot+"."+AppConsts.CommonProjectName+"\\"+projectNameRoot+"."+AppConsts.CommonProjectName+".csproj\" />" + Environment.NewLine;
+            csprojWebSecurity += "    <ProjectReference Include=\"..\\Pavolle.Core\\Pavolle.Core.csproj\" />" + Environment.NewLine;
+            csprojWebSecurity += "  </ItemGroup>" + Environment.NewLine;
+            csprojWebSecurity += "" + Environment.NewLine;
+            csprojWebSecurity += "</Project>" + Environment.NewLine;
+
+            bool createcsprojResult = FileHelperManager.Instance.EditFile(projectPath, projectNameRoot + "." + AppConsts.WebSecurityProjectName, projectNameRoot + "." + AppConsts.WebSecurityProjectName + ".csproj", csprojWebSecurity);
         }
 
     }
