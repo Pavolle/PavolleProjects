@@ -1,4 +1,5 @@
-﻿using Pavolle.CrudOperationHelper.Db;
+﻿using Pavolle.CrudOperationHelper.Business;
+using Pavolle.CrudOperationHelper.Db;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -127,7 +128,7 @@ namespace Pavolle.CrudOperationHelper
 
         private void buttonIntializeProject_Click(object sender, EventArgs e)
         {
-
+            bool createUserTypeEnumClassResult=UserTypeEnumClassGeneratorManager.Instance.Generate(textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text);
         }
 
         private void buttonEditTable_Click(object sender, EventArgs e)
