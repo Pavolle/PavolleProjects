@@ -29,15 +29,23 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxUserTypes = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.butttonCreate = new System.Windows.Forms.Button();
             this.textBoxProjectsPath = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelProjectName = new System.Windows.Forms.Label();
             this.textBoxProjectNameRoot = new System.Windows.Forms.TextBox();
-            this.textBoxUserTypes = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxTokenExpire = new System.Windows.Forms.TextBox();
+            this.labelTokenExpire = new System.Windows.Forms.Label();
+            this.textBoxAudience = new System.Windows.Forms.TextBox();
+            this.labelAudience = new System.Windows.Forms.Label();
+            this.textBoxIssuer = new System.Windows.Forms.TextBox();
+            this.labelIssuer = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -52,14 +60,31 @@
             this.groupBox1.Controls.Add(this.textBoxProjectNameRoot);
             this.groupBox1.Location = new System.Drawing.Point(27, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(583, 394);
+            this.groupBox1.Size = new System.Drawing.Size(583, 541);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
             // 
+            // textBoxUserTypes
+            // 
+            this.textBoxUserTypes.Location = new System.Drawing.Point(250, 154);
+            this.textBoxUserTypes.Multiline = true;
+            this.textBoxUserTypes.Name = "textBoxUserTypes";
+            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 127);
+            this.textBoxUserTypes.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 157);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 25);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "User Types";
+            // 
             // butttonCreate
             // 
-            this.butttonCreate.Location = new System.Drawing.Point(413, 303);
+            this.butttonCreate.Location = new System.Drawing.Point(413, 467);
             this.butttonCreate.Name = "butttonCreate";
             this.butttonCreate.Size = new System.Drawing.Size(144, 51);
             this.butttonCreate.TabIndex = 12;
@@ -76,7 +101,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(250, 303);
+            this.buttonCancel.Location = new System.Drawing.Point(249, 467);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(144, 51);
             this.buttonCancel.TabIndex = 1;
@@ -109,34 +134,83 @@
             this.textBoxProjectNameRoot.Size = new System.Drawing.Size(307, 31);
             this.textBoxProjectNameRoot.TabIndex = 7;
             // 
-            // textBoxUserTypes
+            // groupBox3
             // 
-            this.textBoxUserTypes.Location = new System.Drawing.Point(250, 154);
-            this.textBoxUserTypes.Multiline = true;
-            this.textBoxUserTypes.Name = "textBoxUserTypes";
-            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 127);
-            this.textBoxUserTypes.TabIndex = 19;
+            this.groupBox3.Controls.Add(this.textBoxTokenExpire);
+            this.groupBox3.Controls.Add(this.labelTokenExpire);
+            this.groupBox3.Controls.Add(this.textBoxAudience);
+            this.groupBox3.Controls.Add(this.labelAudience);
+            this.groupBox3.Controls.Add(this.textBoxIssuer);
+            this.groupBox3.Controls.Add(this.labelIssuer);
+            this.groupBox3.Location = new System.Drawing.Point(23, 326);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(597, 150);
+            this.groupBox3.TabIndex = 20;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Security";
             // 
-            // label6
+            // textBoxTokenExpire
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 157);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 25);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "User Types";
+            this.textBoxTokenExpire.Location = new System.Drawing.Point(253, 104);
+            this.textBoxTokenExpire.Name = "textBoxTokenExpire";
+            this.textBoxTokenExpire.Size = new System.Drawing.Size(307, 31);
+            this.textBoxTokenExpire.TabIndex = 15;
+            // 
+            // labelTokenExpire
+            // 
+            this.labelTokenExpire.AutoSize = true;
+            this.labelTokenExpire.Location = new System.Drawing.Point(32, 104);
+            this.labelTokenExpire.Name = "labelTokenExpire";
+            this.labelTokenExpire.Size = new System.Drawing.Size(165, 25);
+            this.labelTokenExpire.TabIndex = 14;
+            this.labelTokenExpire.Text = "Token Expire (Hour)";
+            // 
+            // textBoxAudience
+            // 
+            this.textBoxAudience.Location = new System.Drawing.Point(253, 67);
+            this.textBoxAudience.Name = "textBoxAudience";
+            this.textBoxAudience.Size = new System.Drawing.Size(307, 31);
+            this.textBoxAudience.TabIndex = 13;
+            // 
+            // labelAudience
+            // 
+            this.labelAudience.AutoSize = true;
+            this.labelAudience.Location = new System.Drawing.Point(32, 67);
+            this.labelAudience.Name = "labelAudience";
+            this.labelAudience.Size = new System.Drawing.Size(85, 25);
+            this.labelAudience.TabIndex = 12;
+            this.labelAudience.Text = "Audience";
+            // 
+            // textBoxIssuer
+            // 
+            this.textBoxIssuer.Location = new System.Drawing.Point(253, 30);
+            this.textBoxIssuer.Name = "textBoxIssuer";
+            this.textBoxIssuer.Size = new System.Drawing.Size(307, 31);
+            this.textBoxIssuer.TabIndex = 11;
+            // 
+            // labelIssuer
+            // 
+            this.labelIssuer.AutoSize = true;
+            this.labelIssuer.Location = new System.Drawing.Point(32, 30);
+            this.labelIssuer.Name = "labelIssuer";
+            this.labelIssuer.Size = new System.Drawing.Size(58, 25);
+            this.labelIssuer.TabIndex = 10;
+            this.labelIssuer.Text = "Issuer";
             // 
             // EditProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 439);
+            this.ClientSize = new System.Drawing.Size(632, 579);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "EditProject";
             this.Text = "EditProject";
             this.Load += new System.EventHandler(this.SaveProject_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -152,5 +226,12 @@
         private TextBox textBoxProjectNameRoot;
         private TextBox textBoxUserTypes;
         private Label label6;
+        private GroupBox groupBox3;
+        private TextBox textBoxTokenExpire;
+        private Label labelTokenExpire;
+        private TextBox textBoxAudience;
+        private Label labelAudience;
+        private TextBox textBoxIssuer;
+        private Label labelIssuer;
     }
 }

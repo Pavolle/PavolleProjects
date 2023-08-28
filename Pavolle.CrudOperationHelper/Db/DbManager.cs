@@ -51,13 +51,16 @@ namespace Pavolle.CrudOperationHelper.Db
                     Root = t.Root,
                     Path = t.Path,
                     Intialize=t.Intialize,
-                    UserType=t.UserType
+                    UserType=t.UserType,
+                    Issuer=t.Issuer,
+                    Audience=t.Audience,
+                    TokenExpireMinute=t.TokenExpireMinute
                 }).FirstOrDefault();
             }
             return response;
         }
 
-        public bool SaveProject(string name, string root, string path, string userTypes)
+        public bool SaveProject(string name, string root, string path, string userTypes, string issuer, string audience, int tokenExpireMinute)
         {
             bool response = true;
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -73,7 +76,10 @@ namespace Pavolle.CrudOperationHelper.Db
                         Name = name,
                         Root = root,
                         Path = path,
-                        UserType= userTypes
+                        UserType= userTypes,
+                        Issuer= issuer,
+                        Audience= audience,
+                        TokenExpireMinute=tokenExpireMinute
                     }.Save();
                     response = true;
                 }
@@ -81,7 +87,7 @@ namespace Pavolle.CrudOperationHelper.Db
             return response;
         }
 
-        internal bool EditProject(string name, string root, string path, string userType)
+        internal bool EditProject(string name, string root, string path, string userType, string issuer, string audience, int tokenExpireMinute)
         {
             bool response = true;
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -92,6 +98,9 @@ namespace Pavolle.CrudOperationHelper.Db
                 project.Path = path;
                 project.LastUpdateTime = DateTime.Now;
                 project.UserType= userType;
+                project.Issuer= issuer;
+                project.Audience= audience;
+                project.TokenExpireMinute=tokenExpireMinute;
                 project.Save();
             }
             return response;
@@ -152,6 +161,9 @@ namespace Pavolle.CrudOperationHelper.Db
         public string Path { get; internal set; }
         public bool Intialize { get; internal set; }
         public string UserType { get; internal set; }
+        public string Issuer { get; internal set; }
+        public string Audience { get; internal set; }
+        public int TokenExpireMinute { get; internal set; }
     }
 
     public class TableViewData

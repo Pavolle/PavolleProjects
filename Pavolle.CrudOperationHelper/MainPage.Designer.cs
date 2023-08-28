@@ -39,6 +39,15 @@
             this.textBoxProjectsPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxTokenExpire = new System.Windows.Forms.TextBox();
+            this.labelTokenExpire = new System.Windows.Forms.Label();
+            this.textBoxAudience = new System.Windows.Forms.TextBox();
+            this.labelAudience = new System.Windows.Forms.Label();
+            this.textBoxIssuer = new System.Windows.Forms.TextBox();
+            this.labelIssuer = new System.Windows.Forms.Label();
+            this.textBoxUserTypes = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.buttonIntializeProject = new System.Windows.Forms.Button();
             this.butttonEditProjects = new System.Windows.Forms.Button();
             this.listBoxTables = new System.Windows.Forms.ListBox();
@@ -57,9 +66,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxUserTypes = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +128,7 @@
             // 
             // textBoxProjectNameRoot
             // 
-            this.textBoxProjectNameRoot.Location = new System.Drawing.Point(259, 117);
+            this.textBoxProjectNameRoot.Location = new System.Drawing.Point(259, 89);
             this.textBoxProjectNameRoot.Name = "textBoxProjectNameRoot";
             this.textBoxProjectNameRoot.Size = new System.Drawing.Size(307, 31);
             this.textBoxProjectNameRoot.TabIndex = 7;
@@ -128,7 +136,7 @@
             // labelProjectName
             // 
             this.labelProjectName.AutoSize = true;
-            this.labelProjectName.Location = new System.Drawing.Point(38, 117);
+            this.labelProjectName.Location = new System.Drawing.Point(38, 89);
             this.labelProjectName.Name = "labelProjectName";
             this.labelProjectName.Size = new System.Drawing.Size(161, 25);
             this.labelProjectName.TabIndex = 6;
@@ -136,7 +144,7 @@
             // 
             // textBoxProjectsPath
             // 
-            this.textBoxProjectsPath.Location = new System.Drawing.Point(259, 177);
+            this.textBoxProjectsPath.Location = new System.Drawing.Point(259, 126);
             this.textBoxProjectsPath.Name = "textBoxProjectsPath";
             this.textBoxProjectsPath.Size = new System.Drawing.Size(307, 31);
             this.textBoxProjectsPath.TabIndex = 11;
@@ -144,7 +152,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 177);
+            this.label2.Location = new System.Drawing.Point(38, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 10;
@@ -152,6 +160,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.textBoxUserTypes);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.buttonIntializeProject);
@@ -164,14 +173,94 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(24, 390);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(599, 486);
+            this.groupBox1.Size = new System.Drawing.Size(599, 514);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBoxTokenExpire);
+            this.groupBox3.Controls.Add(this.labelTokenExpire);
+            this.groupBox3.Controls.Add(this.textBoxAudience);
+            this.groupBox3.Controls.Add(this.labelAudience);
+            this.groupBox3.Controls.Add(this.textBoxIssuer);
+            this.groupBox3.Controls.Add(this.labelIssuer);
+            this.groupBox3.Location = new System.Drawing.Point(6, 270);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(587, 150);
+            this.groupBox3.TabIndex = 16;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Security";
+            // 
+            // textBoxTokenExpire
+            // 
+            this.textBoxTokenExpire.Location = new System.Drawing.Point(253, 104);
+            this.textBoxTokenExpire.Name = "textBoxTokenExpire";
+            this.textBoxTokenExpire.Size = new System.Drawing.Size(307, 31);
+            this.textBoxTokenExpire.TabIndex = 15;
+            // 
+            // labelTokenExpire
+            // 
+            this.labelTokenExpire.AutoSize = true;
+            this.labelTokenExpire.Location = new System.Drawing.Point(32, 104);
+            this.labelTokenExpire.Name = "labelTokenExpire";
+            this.labelTokenExpire.Size = new System.Drawing.Size(165, 25);
+            this.labelTokenExpire.TabIndex = 14;
+            this.labelTokenExpire.Text = "Token Expire (Hour)";
+            // 
+            // textBoxAudience
+            // 
+            this.textBoxAudience.Location = new System.Drawing.Point(253, 67);
+            this.textBoxAudience.Name = "textBoxAudience";
+            this.textBoxAudience.Size = new System.Drawing.Size(307, 31);
+            this.textBoxAudience.TabIndex = 13;
+            // 
+            // labelAudience
+            // 
+            this.labelAudience.AutoSize = true;
+            this.labelAudience.Location = new System.Drawing.Point(32, 67);
+            this.labelAudience.Name = "labelAudience";
+            this.labelAudience.Size = new System.Drawing.Size(85, 25);
+            this.labelAudience.TabIndex = 12;
+            this.labelAudience.Text = "Audience";
+            // 
+            // textBoxIssuer
+            // 
+            this.textBoxIssuer.Location = new System.Drawing.Point(253, 30);
+            this.textBoxIssuer.Name = "textBoxIssuer";
+            this.textBoxIssuer.Size = new System.Drawing.Size(307, 31);
+            this.textBoxIssuer.TabIndex = 11;
+            // 
+            // labelIssuer
+            // 
+            this.labelIssuer.AutoSize = true;
+            this.labelIssuer.Location = new System.Drawing.Point(32, 30);
+            this.labelIssuer.Name = "labelIssuer";
+            this.labelIssuer.Size = new System.Drawing.Size(58, 25);
+            this.labelIssuer.TabIndex = 10;
+            this.labelIssuer.Text = "Issuer";
+            // 
+            // textBoxUserTypes
+            // 
+            this.textBoxUserTypes.Location = new System.Drawing.Point(259, 167);
+            this.textBoxUserTypes.Multiline = true;
+            this.textBoxUserTypes.Name = "textBoxUserTypes";
+            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 85);
+            this.textBoxUserTypes.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 167);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 25);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "User Types";
+            // 
             // buttonIntializeProject
             // 
-            this.buttonIntializeProject.Location = new System.Drawing.Point(28, 391);
+            this.buttonIntializeProject.Location = new System.Drawing.Point(25, 426);
             this.buttonIntializeProject.Name = "buttonIntializeProject";
             this.buttonIntializeProject.Size = new System.Drawing.Size(262, 60);
             this.buttonIntializeProject.TabIndex = 13;
@@ -181,7 +270,7 @@
             // 
             // butttonEditProjects
             // 
-            this.butttonEditProjects.Location = new System.Drawing.Point(296, 391);
+            this.butttonEditProjects.Location = new System.Drawing.Point(306, 426);
             this.butttonEditProjects.Name = "butttonEditProjects";
             this.butttonEditProjects.Size = new System.Drawing.Size(260, 60);
             this.butttonEditProjects.TabIndex = 12;
@@ -193,9 +282,9 @@
             // 
             this.listBoxTables.FormattingEnabled = true;
             this.listBoxTables.ItemHeight = 25;
-            this.listBoxTables.Location = new System.Drawing.Point(20, 65);
+            this.listBoxTables.Location = new System.Drawing.Point(20, 73);
             this.listBoxTables.Name = "listBoxTables";
-            this.listBoxTables.Size = new System.Drawing.Size(312, 604);
+            this.listBoxTables.Size = new System.Drawing.Size(312, 779);
             this.listBoxTables.TabIndex = 13;
             this.listBoxTables.SelectedIndexChanged += new System.EventHandler(this.listBoxTables_SelectedIndexChanged);
             // 
@@ -219,14 +308,14 @@
             this.groupBox2.Controls.Add(this.buttonAddTable);
             this.groupBox2.Location = new System.Drawing.Point(656, 29);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(919, 683);
+            this.groupBox2.Size = new System.Drawing.Size(1167, 875);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tables";
             // 
             // buttonIntializeTable
             // 
-            this.buttonIntializeTable.Location = new System.Drawing.Point(370, 595);
+            this.buttonIntializeTable.Location = new System.Drawing.Point(624, 787);
             this.buttonIntializeTable.Name = "buttonIntializeTable";
             this.buttonIntializeTable.Size = new System.Drawing.Size(266, 60);
             this.buttonIntializeTable.TabIndex = 27;
@@ -248,12 +337,12 @@
             this.listBoxColumns.ItemHeight = 25;
             this.listBoxColumns.Location = new System.Drawing.Point(370, 268);
             this.listBoxColumns.Name = "listBoxColumns";
-            this.listBoxColumns.Size = new System.Drawing.Size(531, 304);
+            this.listBoxColumns.Size = new System.Drawing.Size(248, 579);
             this.listBoxColumns.TabIndex = 25;
             // 
             // buttonEditTable
             // 
-            this.buttonEditTable.Location = new System.Drawing.Point(649, 595);
+            this.buttonEditTable.Location = new System.Drawing.Point(909, 787);
             this.buttonEditTable.Name = "buttonEditTable";
             this.buttonEditTable.Size = new System.Drawing.Size(252, 60);
             this.buttonEditTable.TabIndex = 24;
@@ -353,28 +442,11 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Table Name";
             // 
-            // textBoxUserTypes
-            // 
-            this.textBoxUserTypes.Location = new System.Drawing.Point(256, 228);
-            this.textBoxUserTypes.Multiline = true;
-            this.textBoxUserTypes.Name = "textBoxUserTypes";
-            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 127);
-            this.textBoxUserTypes.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 231);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 25);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "User Types";
-            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1587, 888);
+            this.ClientSize = new System.Drawing.Size(1835, 919);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelProjects);
@@ -385,6 +457,8 @@
             this.Load += new System.EventHandler(this.MainPage_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -425,5 +499,12 @@
         private Button buttonIntializeTable;
         private TextBox textBoxUserTypes;
         private Label label6;
+        private GroupBox groupBox3;
+        private TextBox textBoxTokenExpire;
+        private Label labelTokenExpire;
+        private TextBox textBoxAudience;
+        private Label labelAudience;
+        private TextBox textBoxIssuer;
+        private Label labelIssuer;
     }
 }

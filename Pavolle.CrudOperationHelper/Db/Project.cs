@@ -32,5 +32,16 @@ namespace Pavolle.CrudOperationHelper.Db
 
         [Persistent("intitialize")]
         public bool Intialize { get; set; }
+
+        [Persistent("issuer")]
+        [Size(255)]
+        public string Issuer { get; set; }
+
+        [Persistent("audience")]
+        [Size(255)]
+        public string Audience { get; set; }
+
+        [Persistent("token_expire_minute")]
+        public int TokenExpireMinute { get; set; }
     }
 }

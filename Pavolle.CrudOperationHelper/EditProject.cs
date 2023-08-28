@@ -38,7 +38,7 @@ namespace Pavolle.CrudOperationHelper
 
         private void butttonCreate_Click(object sender, EventArgs e)
         {
-            bool response = DbManager.Instance.EditProject(_name, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text);
+            bool response = DbManager.Instance.EditProject(_name, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text, textBoxIssuer.Text, textBoxAudience.Text, Convert.ToInt32(textBoxTokenExpire.Text));
 
             if (response)
             {

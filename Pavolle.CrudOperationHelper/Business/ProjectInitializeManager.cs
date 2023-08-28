@@ -18,14 +18,14 @@ namespace Pavolle.CrudOperationHelper.Business
         //Log all request and response
         //Log .net log
 
-        public bool Start(string projectName, string projectNameRoot, string projectPath, string userType, string issuer, int tokenExpireHour)
+        public bool Start(string projectName, string projectNameRoot, string projectPath, string userType, string issuer, string audience, int tokenExpireHour)
         {
             GenerateBaseObject(projectNameRoot, projectPath);
             GeneratXpoMnaagerClass(projectNameRoot, projectPath);
 
             //TODO Auth Manager sınıfı eklenecek.
             GenerateUserTypeClassess(projectNameRoot, projectPath, userType);
-            GenerateWebSecurityLayer(projectName, projectNameRoot, projectPath, issuer, tokenExpireHour);
+            GenerateWebSecurityLayer(projectName, projectNameRoot, projectPath, issuer, audience, tokenExpireHour);
 
             GenerateCompanyBusiness(projectNameRoot, projectPath);
 
@@ -297,7 +297,7 @@ namespace Pavolle.CrudOperationHelper.Business
         }
 
 
-        private void GenerateWebSecurityLayer(string projectName, string projectNameRoot, string projectPath, string issuer, int tokenExpireHour)
+        private void GenerateWebSecurityLayer(string projectName, string projectNameRoot, string projectPath, string issuer, string audience, int tokenExpireHour)
         {
             //Identity
             //SecurityConstManager
@@ -434,7 +434,7 @@ namespace Pavolle.CrudOperationHelper.Business
             securityConstsManagerClass += "    {" + Environment.NewLine;
             securityConstsManagerClass += "        public const string SymmetricSecurityKeyString = \"" + string.Format(AppConsts.WebSecurityKey, issuer, "PAVOLLE", issuer) + "\";" + Environment.NewLine;
             securityConstsManagerClass += "        public const string Issuer = \"" + issuer + "\";" + Environment.NewLine;
-            securityConstsManagerClass += "        public const string Audience = \"" + issuer + "\";" + Environment.NewLine;
+            securityConstsManagerClass += "        public const string Audience = \"" + audience + "\";" + Environment.NewLine;
             securityConstsManagerClass += "" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string UsernameKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string SesionIdKey;" + Environment.NewLine;

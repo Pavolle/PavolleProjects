@@ -36,6 +36,9 @@ namespace Pavolle.CrudOperationHelper
             textBoxProjectNameRoot.Enabled = false;
             textBoxProjectsPath.Enabled = false;
             textBoxUserTypes.Enabled = false;
+            textBoxIssuer.Enabled = false;
+            textBoxAudience.Enabled = false;
+            textBoxTokenExpire.Enabled = false;
         }
 
         void RefreshProjectList()
@@ -68,6 +71,9 @@ namespace Pavolle.CrudOperationHelper
             textBoxProjectNameRoot.Text = detail.Root;
             textBoxProjectsPath.Text = detail.Path;
             textBoxUserTypes.Text = detail.UserType;
+            textBoxIssuer.Text = detail.Issuer;
+            textBoxAudience.Text = detail.Audience;
+            textBoxTokenExpire.Text=detail.TokenExpireMinute.ToString();
 
             if (detail.Intialize)
             {
@@ -128,7 +134,7 @@ namespace Pavolle.CrudOperationHelper
 
         private void buttonIntializeProject_Click(object sender, EventArgs e)
         {
-            bool createUserTypeEnumClassResult=ProjectInitializeManager.Instance.Start(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text,"pavolle",24);
+            bool createUserTypeEnumClassResult = ProjectInitializeManager.Instance.Start(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text, textBoxIssuer.Text, textBoxAudience.Text, Convert.ToInt32(textBoxTokenExpire.Text));
         }
 
         private void buttonEditTable_Click(object sender, EventArgs e)
