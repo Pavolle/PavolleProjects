@@ -20,6 +20,7 @@ namespace Pavolle.CrudOperationHelper.Business
 
         public bool Start(string projectName, string projectNameRoot, string projectPath, string userType, string issuer, string audience, int tokenExpireHour)
         {
+            //TODO Öncesinde projeye kütüphane ve bağlantıları ekleyeceğiz.
             GenerateBaseObject(projectNameRoot, projectPath); //Ok
             GeneratXpoManagerClass(projectNameRoot, projectPath); //Ok
 

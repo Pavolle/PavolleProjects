@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.MessageService.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,16 @@ namespace Pavolle.MessageService.DbModels.Entities
         {
         }
 
+        [Persistent("scheduler_type")]
         public ESchedulerType SchedulerType { get; set; }
+
+        [Persistent("name")]
         public string Name { get; set; }
+
+        [Persistent("cron")]
         public string Cron { get; set; }
+
+        [Persistent("last_run_time")]
         public DateTime LastRunTime { get; set; }
     }
 }
