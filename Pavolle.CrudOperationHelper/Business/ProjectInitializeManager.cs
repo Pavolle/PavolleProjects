@@ -129,10 +129,10 @@ namespace Pavolle.CrudOperationHelper.Business
             authorizationDbClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
             authorizationDbClass += "{" + Environment.NewLine;
             authorizationDbClass += "    [Persistent(\"authorizations\")]" + Environment.NewLine;
-            authorizationDbClass += "    public class " + AppConsts.DBModelsAuthClassName.Replace(".cs", "") + " : BaseObject" + Environment.NewLine;
+            authorizationDbClass += "    public class " + AppConsts.DBModelsAuthClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
             authorizationDbClass += "    {" + Environment.NewLine;
             authorizationDbClass += "" + Environment.NewLine;
-            authorizationDbClass += "        public " + AppConsts.DBModelsAuthClassName.Replace(".cs", "") + "(Session session) : base(session)" + Environment.NewLine;
+            authorizationDbClass += "        public " + AppConsts.DBModelsAuthClassName + "(Session session) : base(session)" + Environment.NewLine;
             authorizationDbClass += "        {" + Environment.NewLine;
             authorizationDbClass += "        }" + Environment.NewLine;
             authorizationDbClass += "" + Environment.NewLine;
@@ -167,9 +167,11 @@ namespace Pavolle.CrudOperationHelper.Business
             authorizationDbClass += "    }" + Environment.NewLine;
             authorizationDbClass += "}" + Environment.NewLine;
 
+            //Todo login'e göre kullanıcı yetkilerinin sorgulanması
+
             bool createEnumClassResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.CommonProjectName + "/" + AppConsts.CommonEnumFolderName, AppConsts.UserTypeEnumClassName, userTypeEnumClass);
 
-            bool createAuthClassResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsAuthClassName, authorizationDbClass);
+            bool createAuthClassResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsAuthClassFileName, authorizationDbClass);
         }
 
         private void GenerateUserSessionBusiness(string projectNameRoot, string projectPath)

@@ -17,7 +17,8 @@ namespace Pavolle.CrudOperationHelper
 
         public static string DBModelsProjectName = "DbModels";
         public static string DBModelsEntitiesFolderName = "Entities";
-        public static string DBModelsAuthClassName = "Auth.cs";
+        public static string DBModelsAuthClassName = "Auth";
+        public static string DBModelsAuthClassFileName = "Auth.cs";
         public static string DBModelsBaseObjectClassName = "BaseObject";
         public static string DBModelsBaseObjectClassFileName = "BaseObject.cs";
         public static string DBModelsXpoManagerClassName = "XpoManager";
