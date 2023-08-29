@@ -9,16 +9,21 @@ using System.Threading.Tasks;
 namespace Pavolle.MessageService.DbModels.Entities
 {
     [Persistent("settings")]
-    public class Settings : BaseObject
+    public class SystemSettings : BaseObject
     {
-        public Settings(Session session) : base(session)
+        public SystemSettings(Session session) : base(session)
         {
         }
 
         [Persistent("setting_type")]
         public ESettingType SettingType { get; set; }
 
+        [Persistent("setting_name")]
+        [Size(1000)]
+        public string SettingName { get; set; }
+
         [Persistent("value")]
+        [Size(1000)]
         public string Value { get; set; }
     }
 }

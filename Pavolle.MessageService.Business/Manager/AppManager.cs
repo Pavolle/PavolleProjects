@@ -36,7 +36,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 using(Session session = XpoManager.Instance.GetNewSession())
                 {
-                    var company = session.Query<Company>().FirstOrDefault(t => t.Oid == request.CompanyOid);
+                    var company = session.Query<Organization>().FirstOrDefault(t => t.Oid == request.CompanyOid);
                     response = ValidationManager.Instance.CheckNull(company, EMessageCode.Company);
                     if (response.Success)
                     {

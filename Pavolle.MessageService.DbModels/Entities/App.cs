@@ -14,7 +14,7 @@ namespace Pavolle.MessageService.DbModels.Entities
         public App(Session session) : base(session){}
 
         [Persistent("company_oid")]
-        public Company Company { get; set; }
+        public Organization Company { get; set; }
 
         [Persistent("app_id")]
         [Indexed(Unique =true, Name = "index_apps_appid")]

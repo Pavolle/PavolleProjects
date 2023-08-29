@@ -15,7 +15,6 @@ namespace Pavolle.MessageService.DbModels.Entities
         }
 
         [Persistent("variable")]
-        [Indexed(Unique = true, Name = "index_translate_datas_variable")]
         [Size(1000)]
         public string Variable { get; set; }
 

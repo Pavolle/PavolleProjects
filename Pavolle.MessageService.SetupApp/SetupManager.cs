@@ -31,14 +31,13 @@ namespace Pavolle.MessageService.Business.Manager
             
             using(Session session = XpoManager.Instance.GetNewSession())
             {
-                Company company = session.Query<Company>().FirstOrDefault(t => t.Name == managerCompany && t.Manager);
+                Organization company = session.Query<Organization>().FirstOrDefault(t => t.Name == managerCompany);
                 if (company == null)
                 {
-                    company = new Company(session)
+                    company = new Organization(session)
                     {
                         Name = managerCompany,
                         Code=code,
-                        Manager = true,
                         Address = ""
                     };
                     company.Save();
@@ -59,8 +58,6 @@ namespace Pavolle.MessageService.Business.Manager
                         Password = SecurityHelperManager.Instance.GetEncryptedPassword(adminusername, adminpassword),
                     };
                     sistemAdmin.Save();
-
-                    company.AdminUser = sistemAdmin;
 
                     Console.WriteLine(adminusername + " kullanıcısı oluşturuldu.");
                 }

@@ -26,7 +26,7 @@ namespace Pavolle.MessageService.Business.Manager
             var response = new MessageServiceResponseBase();
             using (Session session = XpoManager.Instance.GetNewSession())
             {
-                var t = session.Query<Company>().FirstOrDefault(t => t.Oid == oid);
+                var t = session.Query<Organization>().FirstOrDefault(t => t.Oid == oid);
 
                 if(t != null)
                 {
@@ -44,7 +44,7 @@ namespace Pavolle.MessageService.Business.Manager
             var response = new CompanyDetailResponse();
             using (Session session = XpoManager.Instance.GetNewSession())
             {
-                var data = session.Query<Company>().FirstOrDefault(t => t.Oid == oid);
+                var data = session.Query<Organization>().FirstOrDefault(t => t.Oid == oid);
                 if(data != null)
                 {
                     response.Oid = data.Oid;
@@ -68,7 +68,7 @@ namespace Pavolle.MessageService.Business.Manager
             var response = new MessageServiceResponseBase();
             using (Session session = XpoManager.Instance.GetNewSession())
             {
-                var company = session.Query<Company>().FirstOrDefault(t => t.Oid == oid);
+                var company = session.Query<Organization>().FirstOrDefault(t => t.Oid == oid);
                 if(company == null)
                 {
                     response.Success = false;
@@ -92,7 +92,7 @@ namespace Pavolle.MessageService.Business.Manager
                 //Kontroller eklenecek
 
                 session.BeginTransaction();
-                var company = new Company(session)
+                var company = new Organization(session)
                 {
                     Name = request.Name,
                     Code = request.Code,
@@ -104,7 +104,6 @@ namespace Pavolle.MessageService.Business.Manager
 
                 if(user != null)
                 {
-                    company.AdminUser = user;
                     session.CommitTransaction();
                     response.Success = false;
                 }
@@ -122,7 +121,7 @@ namespace Pavolle.MessageService.Business.Manager
             var response=new CompanyListResponse();
             using (Session session = XpoManager.Instance.GetNewSession())
             {
-                response.DataList = session.Query<Company>()
+                response.DataList = session.Query<Organization>()
                     .Select(t => new CompanyViewData
                     {
                         Oid = t.Oid,
@@ -141,7 +140,7 @@ namespace Pavolle.MessageService.Business.Manager
             var response=new LookupResponse();
             using(Session session = XpoManager.Instance.GetNewSession())
             {
-                response.DataList = session.Query<Company>()
+                response.DataList = session.Query<Organization>()
                     .Select(t => new LookupViewData
                     {
                         Key = t.Oid,

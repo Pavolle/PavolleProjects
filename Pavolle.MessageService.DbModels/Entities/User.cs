@@ -16,7 +16,7 @@ namespace Pavolle.MessageService.DbModels.Entities
         }
 
         [Persistent("company_oid")]
-        public Company Company { get; set; }
+        public Organization Company { get; set; }
 
         [Persistent("username")]
         [Size(50)]

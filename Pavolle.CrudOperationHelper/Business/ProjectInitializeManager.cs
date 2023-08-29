@@ -44,13 +44,32 @@ namespace Pavolle.CrudOperationHelper.Business
 
             GenerateBaseObject(projectNameRoot, projectPath); //Ok
             GeneratXpoManagerClass(projectNameRoot, projectPath); //Ok
-            GenerateUserSessionClass(projectNameRoot, projectPath);
+            GenerateUserSessionClass(projectNameRoot, projectPath); //Ok
+
+            GenerateCountryClass(projectNameRoot, projectPath);
+            GenerateCityClass(projectNameRoot, projectPath);
             GenerateOrganizationClass(projectNameRoot, projectPath);
+
             GenerateSystemSettingsClass(projectNameRoot, projectPath);
             GenerateSchedulerClass(projectNameRoot, projectPath);
             GenerateTranslateDataClass(projectNameRoot, projectPath, language);
             GenerateUserClass(projectNameRoot, projectPath);
             GenerateUserTypeClassess(projectNameRoot, projectPath, userType);
+        }
+
+        private void GenerateOrganizationClass(string projectNameRoot, string projectPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void GenerateCityClass(string projectNameRoot, string projectPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void GenerateCountryClass(string projectNameRoot, string projectPath)
+        {
+            throw new NotImplementedException();
         }
 
         private void InitiliazeDbModelsCsProject(string projectNameRoot, string projectPath, string projectName)
@@ -70,10 +89,6 @@ namespace Pavolle.CrudOperationHelper.Business
         }
 
         private void GenerateSystemSettingsClass(string projectNameRoot, string projectPath)
-        {
-        }
-
-        private void GenerateOrganizationClass(string projectNameRoot, string projectPath)
         {
         }
 

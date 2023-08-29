@@ -60,7 +60,7 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        internal User CreateNewUser(Session session, Company company, EUserType userType, string username, string name, string surname, string password, string phoneNumber, string email)
+        internal User CreateNewUser(Session session, Organization company, EUserType userType, string username, string name, string surname, string password, string phoneNumber, string email)
         {
             if (session.Query<User>().Any(t => t.Username == username))
             {
