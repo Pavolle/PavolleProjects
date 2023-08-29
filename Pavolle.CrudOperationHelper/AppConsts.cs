@@ -22,6 +22,8 @@ namespace Pavolle.CrudOperationHelper
         public static string DBModelsBaseObjectClassFileName = "BaseObject.cs";
         public static string DBModelsXpoManagerClassName = "XpoManager";
         public static string DBModelsXpoManagerClassFileName = "XpoManager.cs";
+        public static string DBModelsUserSessionClassName = "UserSession";
+        public static string DBModelsUserSessionClassFileName = "UserSession.cs";
 
         public static string WebSecurityProjectName = "WebSecurity";
         public static string WebSecurityIdentityClassName = "Identity";

@@ -18,17 +18,15 @@ namespace Pavolle.CrudOperationHelper.Business
         //Log all request and response
         //Log .net log
 
-        public bool Start(string projectName, string projectNameRoot, string projectPath, string userType, string issuer, string audience, int tokenExpireHour)
+        public bool Start(string projectName, string projectNameRoot, string projectPath, string userType, string issuer, string audience, int tokenExpireHour, string language)
         {
             //TODO Öncesinde projeye kütüphane ve bağlantıları ekleyeceğiz.
-            GenerateBaseObject(projectNameRoot, projectPath); //Ok
-            GeneratXpoManagerClass(projectNameRoot, projectPath); //Ok
+            GenerateDbModels(projectName, projectNameRoot, projectPath, userType, language);
 
             //TODO Auth Manager sınıfı eklenecek.
-            GenerateUserTypeClassess(projectNameRoot, projectPath, userType);
             GenerateWebSecurityLayer(projectName, projectNameRoot, projectPath, issuer, audience, tokenExpireHour); //Ok
 
-            GenerateCompanyBusiness(projectNameRoot, projectPath);
+            GenerateOrganizationBusiness(projectNameRoot, projectPath);
 
             GenerateUserBusiness(projectNameRoot, projectPath);
             GenerateSystemSettingBusiness(projectNameRoot, projectPath);
@@ -38,6 +36,72 @@ namespace Pavolle.CrudOperationHelper.Business
             GenerateSetupManager(projectNameRoot, projectPath);
 
             return true;
+        }
+
+        private void GenerateDbModels(string projectName, string projectNameRoot, string projectPath, string userType, string language)
+        {
+            InitiliazeDbModelsCsProject(projectNameRoot, projectPath, projectName);
+
+            GenerateBaseObject(projectNameRoot, projectPath); //Ok
+            GeneratXpoManagerClass(projectNameRoot, projectPath); //Ok
+            GenerateUserSessionClass(projectNameRoot, projectPath);
+            GenerateOrganizationClass(projectNameRoot, projectPath);
+            GenerateSystemSettingsClass(projectNameRoot, projectPath);
+            GenerateSchedulerClass(projectNameRoot, projectPath);
+            GenerateTranslateDataClass(projectNameRoot, projectPath, language);
+            GenerateUserClass(projectNameRoot, projectPath);
+            GenerateUserTypeClassess(projectNameRoot, projectPath, userType);
+        }
+
+        private void InitiliazeDbModelsCsProject(string projectNameRoot, string projectPath, string projectName)
+        {
+        }
+
+        private void GenerateUserClass(string projectNameRoot, string projectPath)
+        {
+        }
+
+        private void GenerateTranslateDataClass(string projectNameRoot, string projectPath, string language)
+        {
+        }
+
+        private void GenerateSchedulerClass(string projectNameRoot, string projectPath)
+        {
+        }
+
+        private void GenerateSystemSettingsClass(string projectNameRoot, string projectPath)
+        {
+        }
+
+        private void GenerateOrganizationClass(string projectNameRoot, string projectPath)
+        {
+        }
+
+        private void GenerateUserSessionClass(string projectNameRoot, string projectPath)
+        {
+            string userSessionClass = "";
+            userSessionClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            userSessionClass += "" + Environment.NewLine;
+            userSessionClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            userSessionClass += "{" + Environment.NewLine;
+            userSessionClass += "    [Persistent(\"user_sessions\")]" + Environment.NewLine;
+            userSessionClass += "    public class " + AppConsts.DBModelsEntitiesFolderName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            userSessionClass += "    {" + Environment.NewLine;
+            userSessionClass += "        public "+ AppConsts.DBModelsEntitiesFolderName + "(Session session) : base(session)" + Environment.NewLine;
+            userSessionClass += "        {" + Environment.NewLine;
+            userSessionClass += "        }" + Environment.NewLine;
+            userSessionClass += "" + Environment.NewLine;
+            userSessionClass += "        [Persistent(\"token\")]" + Environment.NewLine;
+            userSessionClass += "        [Size(1000)]" + Environment.NewLine;
+            userSessionClass += "        public string Token { get; set; }" + Environment.NewLine;
+            userSessionClass += "" + Environment.NewLine;
+            userSessionClass += "        [Persistent(\"request_ip\")]" + Environment.NewLine;
+            userSessionClass += "        [Size(20)]" + Environment.NewLine;
+            userSessionClass += "        public string RequestIp { get; set; }" + Environment.NewLine;
+            userSessionClass += "    }" + Environment.NewLine;
+            userSessionClass += "}" + Environment.NewLine;
+
+            bool createResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsUserSessionClassFileName, userSessionClass);
         }
 
         private void GenerateSetupManager(string projectNameRoot, string projectPath)
@@ -128,7 +192,7 @@ namespace Pavolle.CrudOperationHelper.Business
         {
         }
 
-        private void GenerateCompanyBusiness(string projectNameRoot, string projectPath)
+        private void GenerateOrganizationBusiness(string projectNameRoot, string projectPath)
         {
             /*
              Db Class
