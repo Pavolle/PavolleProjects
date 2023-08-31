@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pavolle.MessageService.Common.Enums
+﻿namespace Pavolle.MessageService.Common.Enums
 {
     public enum ESchedulerType
     {
-        CleanSession=1
+        CleanSession=1,
     }
 }

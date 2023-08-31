@@ -14,6 +14,13 @@ namespace Pavolle.CrudOperationHelper
         public static string CommonUtilsFolderName = "Utils";
         public static string ApiUrlConstsFileName = "{0}ApiUrlConsts";
 
+        public static string SchedulerTypeEnumClassFileName = "ESchedulerType.cs";
+        public static string SchedulerTypeEnumClassName = "ESchedulerType";
+        public static string DBModelsSchedulerClassFileName = "Scheduler.cs";
+        public static string DBModelsSchedulerClassName = "Scheduler";
+        public static string DBModelsSchedulerLogClassFileName = "SchedulerLog.cs";
+        public static string DBModelsSchedulerLogClassName = "SchedulerLog";
+
 
         public static string DBModelsProjectName = "DbModels";
         public static string DBModelsEntitiesFolderName = "Entities";
@@ -25,6 +32,8 @@ namespace Pavolle.CrudOperationHelper
         public static string DBModelsXpoManagerClassFileName = "XpoManager.cs";
         public static string DBModelsUserSessionClassName = "UserSession";
         public static string DBModelsUserSessionClassFileName = "UserSession.cs";
+        public static string DBModelsTranslateDataClassName = "TranslateData";
+        public static string DBModelsTranslateDataClassFileName = "TranslateData.cs";
 
         public static string WebSecurityProjectName = "WebSecurity";
         public static string WebSecurityIdentityClassName = "Identity";

@@ -46,30 +46,28 @@ namespace Pavolle.CrudOperationHelper.Business
             GeneratXpoManagerClass(projectNameRoot, projectPath); //Ok
             GenerateUserSessionClass(projectNameRoot, projectPath); //Ok
 
+
+            GenerateTranslateDataClass(projectNameRoot, projectPath, language);
             GenerateCountryClass(projectNameRoot, projectPath);
             GenerateCityClass(projectNameRoot, projectPath);
             GenerateOrganizationClass(projectNameRoot, projectPath);
 
             GenerateSystemSettingsClass(projectNameRoot, projectPath);
             GenerateSchedulerClass(projectNameRoot, projectPath);
-            GenerateTranslateDataClass(projectNameRoot, projectPath, language);
             GenerateUserClass(projectNameRoot, projectPath);
             GenerateUserTypeClassess(projectNameRoot, projectPath, userType);
         }
 
         private void GenerateOrganizationClass(string projectNameRoot, string projectPath)
         {
-            throw new NotImplementedException();
         }
 
         private void GenerateCityClass(string projectNameRoot, string projectPath)
         {
-            throw new NotImplementedException();
         }
 
         private void GenerateCountryClass(string projectNameRoot, string projectPath)
         {
-            throw new NotImplementedException();
         }
 
         private void InitiliazeDbModelsCsProject(string projectNameRoot, string projectPath, string projectName)
@@ -82,10 +80,115 @@ namespace Pavolle.CrudOperationHelper.Business
 
         private void GenerateTranslateDataClass(string projectNameRoot, string projectPath, string language)
         {
+            string[] _languages = language.Split(',');
+            string translateDataClass = "";
+            translateDataClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            translateDataClass += "" + Environment.NewLine;
+            translateDataClass += "namespace "+projectNameRoot+"."+AppConsts.DBModelsProjectName+"." +AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            translateDataClass += "{" + Environment.NewLine;
+            translateDataClass += "    [Persistent(\"translate_datas\")]" + Environment.NewLine;
+            translateDataClass += "    public class "+AppConsts.DBModelsTranslateDataClassName+" : "+AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            translateDataClass += "    {" + Environment.NewLine;
+            translateDataClass += "        public "+AppConsts.DBModelsTranslateDataClassName+"(Session session) : base(session)" + Environment.NewLine;
+            translateDataClass += "        {" + Environment.NewLine;
+            translateDataClass += "        }" + Environment.NewLine;
+            translateDataClass += "" + Environment.NewLine;
+            translateDataClass += "        [Persistent(\"variable\")]" + Environment.NewLine;
+            translateDataClass += "        [Size(1000)]" + Environment.NewLine;
+            translateDataClass += "        public string Variable { get; set; }" + Environment.NewLine;
+            translateDataClass += "" + Environment.NewLine;
+
+            foreach (var item in _languages)
+            {
+                translateDataClass += "        [Persistent(\""+item.ToLower()+"\")]" + Environment.NewLine;
+                translateDataClass += "        [Size(1000)]" + Environment.NewLine;
+                translateDataClass += "        public string "+item.ToUpper()+" { get; set; }" + Environment.NewLine;
+                translateDataClass += "" + Environment.NewLine;
+            }
+            translateDataClass += "    }" + Environment.NewLine;
+            translateDataClass += "}" + Environment.NewLine;
+
+            bool createResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsTranslateDataClassFileName, translateDataClass);
         }
 
         private void GenerateSchedulerClass(string projectNameRoot, string projectPath)
         {
+            string schedulerTypeEnumClass = "";
+            schedulerTypeEnumClass += "namespace " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + Environment.NewLine;
+            schedulerTypeEnumClass += "{" + Environment.NewLine;
+            schedulerTypeEnumClass += "    public enum "+ AppConsts.SchedulerTypeEnumClassName  + Environment.NewLine;
+            schedulerTypeEnumClass += "    {" + Environment.NewLine;
+            schedulerTypeEnumClass += "        CleanSession = 1," + Environment.NewLine;
+            schedulerTypeEnumClass += "    }" + Environment.NewLine;
+            schedulerTypeEnumClass += "}" + Environment.NewLine;
+
+            bool createEnumClassResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.CommonProjectName + "/" + AppConsts.CommonEnumFolderName, AppConsts.SchedulerTypeEnumClassFileName, schedulerTypeEnumClass);
+
+
+            string schedulerClass = "";
+            schedulerClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            schedulerClass += "using "+projectNameRoot+"."+AppConsts.CommonProjectName+"."+AppConsts.CommonEnumFolderName+";" + Environment.NewLine;
+            schedulerClass += "" + Environment.NewLine;
+            schedulerClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            schedulerClass += "{" + Environment.NewLine;
+            schedulerClass += "    [Persistent(\"schedulers\")]" + Environment.NewLine;
+            schedulerClass += "    public class " + AppConsts.DBModelsSchedulerClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            schedulerClass += "    {" + Environment.NewLine;
+            schedulerClass += "" + Environment.NewLine;
+            schedulerClass += "        public " + AppConsts.DBModelsSchedulerClassName + "(Session session) : base(session)" + Environment.NewLine;
+            schedulerClass += "        {" + Environment.NewLine;
+            schedulerClass += "        }" + Environment.NewLine;
+            schedulerClass += "" + Environment.NewLine;
+            schedulerClass += "        [Persistent(\"scheduler_type\")]" + Environment.NewLine;
+            schedulerClass += "        public ESchedulerType SchedulerType { get; set; }" + Environment.NewLine;
+            schedulerClass += "" + Environment.NewLine;
+            schedulerClass += "        [Persistent(\"name\")]" + Environment.NewLine;
+            schedulerClass += "        [Size(255)]" + Environment.NewLine;
+            schedulerClass += "        public string Name { get; set; }" + Environment.NewLine;
+            schedulerClass += "" + Environment.NewLine;
+            schedulerClass += "        [Persistent(\"cron\")]" + Environment.NewLine;
+            schedulerClass += "        [Size(30)]" + Environment.NewLine;
+            schedulerClass += "        public string Cron { get; set; }" + Environment.NewLine;
+            schedulerClass += "" + Environment.NewLine;
+            schedulerClass += "        [Persistent(\"last_run_time\")]" + Environment.NewLine;
+            schedulerClass += "        public DateTime LastRunTime { get; set; }" + Environment.NewLine;
+            schedulerClass += "    }" + Environment.NewLine;
+            schedulerClass += "}" + Environment.NewLine;
+            bool schedulerClasssResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsSchedulerClassFileName, schedulerClass);
+
+
+            string schedulerLogClass = "";
+            schedulerLogClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            schedulerLogClass += "" + Environment.NewLine;
+            schedulerLogClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            schedulerLogClass += "{" + Environment.NewLine;
+            schedulerLogClass += "    [Persistent(\"scheduler_logs\")]" + Environment.NewLine;
+            schedulerLogClass += "    public class " + AppConsts.DBModelsSchedulerLogClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            schedulerLogClass += "    {" + Environment.NewLine;
+            schedulerLogClass += "" + Environment.NewLine;
+            schedulerLogClass += "        public " + AppConsts.DBModelsSchedulerLogClassName + "(Session session) : base(session)" + Environment.NewLine;
+            schedulerLogClass += "        {" + Environment.NewLine;
+            schedulerLogClass += "        }" + Environment.NewLine;
+            schedulerLogClass += "" + Environment.NewLine;
+            schedulerLogClass += "        [Persistent(\"scheduler_oid\")]" + Environment.NewLine;
+            schedulerLogClass += "        public Scheduler Scheduler { get; set; }" + Environment.NewLine;
+            schedulerLogClass += "" + Environment.NewLine;
+            schedulerLogClass += "        [Persistent(\"start_time\")]" + Environment.NewLine;
+            schedulerLogClass += "        public DateTime StartTime { get; set; }" + Environment.NewLine;
+            schedulerLogClass += "" + Environment.NewLine;
+            schedulerLogClass += "        [Persistent(\"end_time\")]" + Environment.NewLine;
+            schedulerLogClass += "        public DateTime EndTime { get; set; }" + Environment.NewLine;
+            schedulerLogClass += "" + Environment.NewLine;
+            schedulerLogClass += "        [Persistent(\"success\")]" + Environment.NewLine;
+            schedulerLogClass += "        public bool Success { get; set; }" + Environment.NewLine;
+            schedulerLogClass += "" + Environment.NewLine;
+            schedulerLogClass += "        [Persistent(\"result\")]" + Environment.NewLine;
+            schedulerLogClass += "        [Size(1000)]" + Environment.NewLine;
+            schedulerLogClass += "        public string Result { get; set; }" + Environment.NewLine;
+            schedulerLogClass += "    }" + Environment.NewLine;
+            schedulerLogClass += "}" + Environment.NewLine;
+
+            schedulerClasssResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsSchedulerLogClassFileName, schedulerLogClass);
         }
 
         private void GenerateSystemSettingsClass(string projectNameRoot, string projectPath)
