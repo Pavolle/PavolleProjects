@@ -1,9 +1,4 @@
 ﻿using DevExpress.Xpo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.DbModels.Entities
 {
@@ -23,7 +18,7 @@ namespace Pavolle.MessageService.DbModels.Entities
         [Persistent("phone_code")]
         public string PhoneCode { get; set; }
 
-        [Persistent("name_oid")]
+        [Persistent("name_td_oid")]
         public TranslateData Name { get; set; }
     }
 }

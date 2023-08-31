@@ -21,6 +21,12 @@ namespace Pavolle.CrudOperationHelper
         public static string DBModelsSchedulerLogClassFileName = "SchedulerLog.cs";
         public static string DBModelsSchedulerLogClassName = "SchedulerLog";
 
+        public static string SettingTypeEnumClassFileName = "ESettingType.cs";
+        public static string SettingTypeEnumClassName = "ESettingType";
+        public static string DBModelsSettingClassFileName = "Setting.cs";
+        public static string DBModelsSettingClassName = "Setting";
+        public static string DBModelsSettingChangeLogClassFileName = "SettingChangeLog.cs";
+        public static string DBModelsSettingChangeLogClassName = "SettingChangeLog";
 
         public static string DBModelsProjectName = "DbModels";
         public static string DBModelsEntitiesFolderName = "Entities";
@@ -34,6 +40,9 @@ namespace Pavolle.CrudOperationHelper
         public static string DBModelsUserSessionClassFileName = "UserSession.cs";
         public static string DBModelsTranslateDataClassName = "TranslateData";
         public static string DBModelsTranslateDataClassFileName = "TranslateData.cs";
+
+        public static string DBModelsUserClassFileName = "User.cs";
+        public static string DBModelsUserClassName = "User";
 
         public static string WebSecurityProjectName = "WebSecurity";
         public static string WebSecurityIdentityClassName = "Identity";

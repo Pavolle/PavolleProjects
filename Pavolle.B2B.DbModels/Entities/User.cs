@@ -1,11 +1,12 @@
-﻿using DevExpress.Xpo;
-using Pavolle.MessageService.Common.Enums;
+using DevExpress.Xpo;
+using Pavolle.B2B.Common.Enums;
 
-namespace Pavolle.MessageService.DbModels.Entities
+namespace Pavolle.B2B.DbModels.Entities
 {
     [Persistent("users")]
     public class User : BaseObject
     {
+
         public User(Session session) : base(session)
         {
         }

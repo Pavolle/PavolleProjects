@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace Pavolle.MessageService.DbModels.Entities
 {
     [Persistent("settings")]
-    public class SystemSettings : BaseObject
+    public class Setting : BaseObject
     {
-        public SystemSettings(Session session) : base(session)
+        public Setting(Session session) : base(session)
         {
         }
 

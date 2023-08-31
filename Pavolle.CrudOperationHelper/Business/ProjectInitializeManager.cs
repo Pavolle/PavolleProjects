@@ -72,10 +72,85 @@ namespace Pavolle.CrudOperationHelper.Business
 
         private void InitiliazeDbModelsCsProject(string projectNameRoot, string projectPath, string projectName)
         {
+            string dbModelscsproj = "";
+            dbModelscsproj += "<Project Sdk=\"Microsoft.NET.Sdk\">" + Environment.NewLine;
+            dbModelscsproj += "" + Environment.NewLine;
+            dbModelscsproj += "  <PropertyGroup>" + Environment.NewLine;
+            dbModelscsproj += "    <TargetFramework>net6.0</TargetFramework>" + Environment.NewLine;
+            dbModelscsproj += "    <ImplicitUsings>enable</ImplicitUsings>" + Environment.NewLine;
+            dbModelscsproj += "    <Nullable>enable</Nullable>" + Environment.NewLine;
+            dbModelscsproj += "  </PropertyGroup>" + Environment.NewLine;
+            dbModelscsproj += "" + Environment.NewLine;
+            dbModelscsproj += "  <ItemGroup>" + Environment.NewLine;
+            dbModelscsproj += "    <PackageReference Include=\"DevExpress.Xpo\" Version=\"23.1.3\" />" + Environment.NewLine;
+            dbModelscsproj += "  </ItemGroup>" + Environment.NewLine;
+            dbModelscsproj += "" + Environment.NewLine;
+            dbModelscsproj += "  <ItemGroup>" + Environment.NewLine;
+            dbModelscsproj += "    <ProjectReference Include=\"..\\"+projectNameRoot+"."+AppConsts.CommonProjectName+"\\"+projectNameRoot+"."+AppConsts.CommonProjectName+".csproj\" />" + Environment.NewLine;
+            dbModelscsproj += "    <ProjectReference Include=\"..\\Pavolle.Core\\Pavolle.Core.csproj\" />" + Environment.NewLine;
+            dbModelscsproj += "  </ItemGroup>" + Environment.NewLine;
+            dbModelscsproj += "" + Environment.NewLine;
+            dbModelscsproj += "</Project>" + Environment.NewLine;
+
+            bool createcsprojResult = FileHelperManager.Instance.EditFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName, projectNameRoot + "." + AppConsts.DBModelsProjectName + ".csproj", dbModelscsproj);
         }
 
         private void GenerateUserClass(string projectNameRoot, string projectPath)
         {
+            string userClass = "";
+            userClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            userClass += "using " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + ";" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            userClass += "{" + Environment.NewLine;
+            userClass += "    [Persistent(\"users\")]" + Environment.NewLine;
+            userClass += "    public class "+AppConsts.DBModelsUserClassName+" : "+AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            userClass += "    {" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        public "+AppConsts.DBModelsUserClassName+"(Session session) : base(session)" + Environment.NewLine;
+            userClass += "        {" + Environment.NewLine;
+            userClass += "        }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"organization_oid\")]" + Environment.NewLine;
+            userClass += "        public Organization Organization { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"username\")]" + Environment.NewLine;
+            userClass += "        [Size(50)]" + Environment.NewLine;
+            userClass += "        [Indexed(Name = \"index_users_username\", Unique = true)]" + Environment.NewLine;
+            userClass += "        public string Username { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"user_type\")]" + Environment.NewLine;
+            userClass += "        public EUserType UserType { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"name\")]" + Environment.NewLine;
+            userClass += "        [Size(255)]" + Environment.NewLine;
+            userClass += "        public string Name { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"surname\")]" + Environment.NewLine;
+            userClass += "        [Size(255)]" + Environment.NewLine;
+            userClass += "        public string Surname { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"email\")]" + Environment.NewLine;
+            userClass += "        [Size(255)]" + Environment.NewLine;
+            userClass += "        public string Email { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"phone_number\")]" + Environment.NewLine;
+            userClass += "        [Size(50)]" + Environment.NewLine;
+            userClass += "        public string PhoneNumber { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"password\")]" + Environment.NewLine;
+            userClass += "        [Size(1000)]" + Environment.NewLine;
+            userClass += "        public string Password { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"wrong_try_count\")]" + Environment.NewLine;
+            userClass += "        public int WrongTryCount { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"is_locked\")]" + Environment.NewLine;
+            userClass += "        public bool IsLocked { get; set; }" + Environment.NewLine;
+            userClass += "    }" + Environment.NewLine;
+            userClass += "}" + Environment.NewLine;
+
+            bool createResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsUserClassFileName, userClass);
         }
 
         private void GenerateTranslateDataClass(string projectNameRoot, string projectPath, string language)
@@ -193,6 +268,77 @@ namespace Pavolle.CrudOperationHelper.Business
 
         private void GenerateSystemSettingsClass(string projectNameRoot, string projectPath)
         {
+            string settingTypeEnumClass = "";
+            settingTypeEnumClass += "namespace " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + Environment.NewLine;
+            settingTypeEnumClass += "{" + Environment.NewLine;
+            settingTypeEnumClass += "    public enum " + AppConsts.SettingTypeEnumClassName + Environment.NewLine;
+            settingTypeEnumClass += "    {" + Environment.NewLine;
+            settingTypeEnumClass += "        SchedulerControlCron = 1," + Environment.NewLine;
+            settingTypeEnumClass += "    }" + Environment.NewLine;
+            settingTypeEnumClass += "}" + Environment.NewLine;
+
+            bool createEnumClassResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.CommonProjectName + "/" + AppConsts.CommonEnumFolderName, AppConsts.SettingTypeEnumClassFileName, settingTypeEnumClass);
+
+
+            string settingClass = "";
+            settingClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            settingClass += "using " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + ";" + Environment.NewLine;
+            settingClass += "" + Environment.NewLine;
+            settingClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            settingClass += "{" + Environment.NewLine;
+            settingClass += "    [Persistent(\"schedulers\")]" + Environment.NewLine;
+            settingClass += "    public class " + AppConsts.DBModelsSettingClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            settingClass += "    {" + Environment.NewLine;
+            settingClass += "" + Environment.NewLine;
+            settingClass += "        public " + AppConsts.DBModelsSettingClassName + "(Session session) : base(session)" + Environment.NewLine;
+            settingClass += "        {" + Environment.NewLine;
+            settingClass += "        }" + Environment.NewLine;
+            settingClass += "" + Environment.NewLine;
+            settingClass += "        [Persistent(\"setting_type\")]" + Environment.NewLine;
+            settingClass += "        public ESettingType SettingType { get; set; }" + Environment.NewLine;
+            settingClass += "" + Environment.NewLine;
+            settingClass += "        [Persistent(\"setting_name\")]" + Environment.NewLine;
+            settingClass += "        [Size(1000)]" + Environment.NewLine;
+            settingClass += "        public string SettingName { get; set; }" + Environment.NewLine;
+            settingClass += "" + Environment.NewLine;
+            settingClass += "        [Persistent(\"value\")]" + Environment.NewLine;
+            settingClass += "        [Size(1000)]" + Environment.NewLine;
+            settingClass += "        public string Value { get; set; }" + Environment.NewLine;
+            settingClass += "    }" + Environment.NewLine;
+            settingClass += "}" + Environment.NewLine;
+            bool schedulerClasssResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsSettingClassFileName, settingClass);
+
+
+            string settingChangeLogClass = "";
+            settingChangeLogClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            settingChangeLogClass += "" + Environment.NewLine;
+            settingChangeLogClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            settingChangeLogClass += "{" + Environment.NewLine;
+            settingChangeLogClass += "    [Persistent(\"scheduler_logs\")]" + Environment.NewLine;
+            settingChangeLogClass += "    public class " + AppConsts.DBModelsSettingChangeLogClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            settingChangeLogClass += "    {" + Environment.NewLine;
+            settingChangeLogClass += "" + Environment.NewLine;
+            settingChangeLogClass += "        public " + AppConsts.DBModelsSettingChangeLogClassName + "(Session session) : base(session)" + Environment.NewLine;
+            settingChangeLogClass += "        {" + Environment.NewLine;
+            settingChangeLogClass += "        }" + Environment.NewLine;
+            settingChangeLogClass += "" + Environment.NewLine;
+            settingChangeLogClass += "        [Persistent(\"setting_oid\")]" + Environment.NewLine;
+            settingChangeLogClass += "        public Setting Setting { get; set; }" + Environment.NewLine;
+            settingChangeLogClass += "" + Environment.NewLine;
+            settingChangeLogClass += "        [Persistent(\"user_oid\")]" + Environment.NewLine;
+            settingChangeLogClass += "        public User User { get; set; }" + Environment.NewLine;
+            settingChangeLogClass += "" + Environment.NewLine;
+            settingChangeLogClass += "        [Persistent(\"old_value\")]" + Environment.NewLine;
+            settingChangeLogClass += "        [Size(1000)]" + Environment.NewLine;
+            settingChangeLogClass += "        public string OldValue { get; set; }" + Environment.NewLine;
+            settingChangeLogClass += "" + Environment.NewLine;
+            settingChangeLogClass += "        [Persistent(\"new_value\")]" + Environment.NewLine;
+            settingChangeLogClass += "        [Size(1000)]" + Environment.NewLine;
+            settingChangeLogClass += "        public string NewValue { get; set; }" + Environment.NewLine;
+            settingChangeLogClass += "    }" + Environment.NewLine;
+            settingChangeLogClass += "}" + Environment.NewLine;
+
+            schedulerClasssResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsSettingChangeLogClassFileName, settingChangeLogClass);
         }
 
         private void GenerateUserSessionClass(string projectNameRoot, string projectPath)

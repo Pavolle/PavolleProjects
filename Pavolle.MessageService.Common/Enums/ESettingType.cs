@@ -8,5 +8,6 @@ namespace Pavolle.MessageService.Common.Enums
 {
     public enum ESettingType
     {
+        SchedulerControlCron=1
     }
 }
