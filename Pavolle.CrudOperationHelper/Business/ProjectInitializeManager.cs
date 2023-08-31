@@ -45,9 +45,8 @@ namespace Pavolle.CrudOperationHelper.Business
             GenerateBaseObject(projectNameRoot, projectPath); //Ok
             GeneratXpoManagerClass(projectNameRoot, projectPath); //Ok
             GenerateUserSessionClass(projectNameRoot, projectPath); //Ok
+            GenerateTranslateDataClass(projectNameRoot, projectPath, language);//Ok
 
-
-            GenerateTranslateDataClass(projectNameRoot, projectPath, language);
             GenerateCountryClass(projectNameRoot, projectPath);
             GenerateCityClass(projectNameRoot, projectPath);
             GenerateOrganizationClass(projectNameRoot, projectPath);
@@ -55,19 +54,123 @@ namespace Pavolle.CrudOperationHelper.Business
             GenerateSystemSettingsClass(projectNameRoot, projectPath);
             GenerateSchedulerClass(projectNameRoot, projectPath);
             GenerateUserClass(projectNameRoot, projectPath);
-            GenerateUserTypeClassess(projectNameRoot, projectPath, userType);
+            GenerateAuthClassess(projectNameRoot, projectPath, userType);
         }
 
         private void GenerateOrganizationClass(string projectNameRoot, string projectPath)
         {
+            string dbClass = "";
+            dbClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            dbClass += "{" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "    [Persistent(\"countries\")]" + Environment.NewLine;
+            dbClass += "    public class " + AppConsts.DBModelsOrganizationClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            dbClass += "    {" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        public " + AppConsts.DBModelsOrganizationClassName + "(Session session) : base(session)" + Environment.NewLine;
+            dbClass += "        {" + Environment.NewLine;
+            dbClass += "        }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"name\")]" + Environment.NewLine;
+            dbClass += "        [Size(1000)]" + Environment.NewLine;
+            dbClass += "        public string Name { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"code\")]" + Environment.NewLine;
+            dbClass += "        [Size(5)]" + Environment.NewLine;
+            dbClass += "        public string Code { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"address\")]" + Environment.NewLine;
+            dbClass += "        [Size(1000)]" + Environment.NewLine;
+            dbClass += "        public string Address { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"langitude\")]" + Environment.NewLine;
+            dbClass += "        public double? Langitude { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"latitude\")]" + Environment.NewLine;
+            dbClass += "        public double? Latitude { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"upper_organization_oid\")]" + Environment.NewLine;
+            dbClass += "        public Organization UpperOrganization { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"country_oid\")]" + Environment.NewLine;
+            dbClass += "        public Country Country { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"city_oid\")]" + Environment.NewLine;
+            dbClass += "        public City City { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"zip_code\")]" + Environment.NewLine;
+            dbClass += "        [Size(20)]" + Environment.NewLine;
+            dbClass += "        public string ZipCode { get; set; }" + Environment.NewLine;
+            dbClass += "    }" + Environment.NewLine;
+            dbClass += "}" + Environment.NewLine;
+            bool createResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsOrganizationClassFileName, dbClass);
         }
 
         private void GenerateCityClass(string projectNameRoot, string projectPath)
         {
+            string dbClass = "";
+            dbClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            dbClass += "{" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "    [Persistent(\"countries\")]" + Environment.NewLine;
+            dbClass += "    public class " + AppConsts.DBModelsCityClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            dbClass += "    {" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        public " + AppConsts.DBModelsCityClassName + "(Session session) : base(session)" + Environment.NewLine;
+            dbClass += "        {" + Environment.NewLine;
+            dbClass += "        }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"code\")]" + Environment.NewLine;
+            dbClass += "        [Size(20)]" + Environment.NewLine;
+            dbClass += "        public string Code { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"country_oid\")]" + Environment.NewLine;
+            dbClass += "        public Country Country { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"name_td_oid\")]" + Environment.NewLine;
+            dbClass += "        public "+AppConsts.DBModelsTranslateDataClassName+" Name { get; set; }" + Environment.NewLine;
+            dbClass += "    }" + Environment.NewLine;
+            dbClass += "}" + Environment.NewLine;
+            bool createResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsCityClassFileName, dbClass);
         }
 
         private void GenerateCountryClass(string projectNameRoot, string projectPath)
         {
+            string dbClass = "";
+            dbClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "namespace "+projectNameRoot+"."+AppConsts.DBModelsProjectName+"."+AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            dbClass += "{" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "    [Persistent(\"countries\")]" + Environment.NewLine;
+            dbClass += "    public class " + AppConsts.DBModelsCountryClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
+            dbClass += "    {" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        public "+AppConsts.DBModelsCountryClassName+"(Session session) : base(session)" + Environment.NewLine;
+            dbClass += "        {" + Environment.NewLine;
+            dbClass += "        }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"iso2\")]" + Environment.NewLine;
+            dbClass += "        [Size(2)]" + Environment.NewLine;
+            dbClass += "        public string ISOCode2 { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"iso3\")]" + Environment.NewLine;
+            dbClass += "        [Size(3)]" + Environment.NewLine;
+            dbClass += "        public string ISOCode3 { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"phone_code\")]" + Environment.NewLine;
+            dbClass += "        [Size(30)]" + Environment.NewLine;
+            dbClass += "        public string PhoneCode { get; set; }" + Environment.NewLine;
+            dbClass += "" + Environment.NewLine;
+            dbClass += "        [Persistent(\"name_td_oid\")]" + Environment.NewLine;
+            dbClass += "        public "+AppConsts.DBModelsTranslateDataClassName+" Name { get; set; }" + Environment.NewLine;
+            dbClass += "    }" + Environment.NewLine;
+            dbClass += "}" + Environment.NewLine;
+            bool createResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsCountryClassFileName, dbClass);
         }
 
         private void InitiliazeDbModelsCsProject(string projectNameRoot, string projectPath, string projectName)
@@ -372,70 +475,129 @@ namespace Pavolle.CrudOperationHelper.Business
         {
         }
 
-        private void GenerateUserTypeClassess(string projectNameRoot, string projectPath, string userType)
+        private void GenerateAuthClassess(string projectNameRoot, string projectPath, string userType)
         {
-            string[] userTypes = userType.Split(',');
-            int enumBaslangicSayisi = 1;
             string userTypeEnumClass = "";
-            userTypeEnumClass += "namespace " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + "" + Environment.NewLine;
+            userTypeEnumClass+= "namespace "+projectNameRoot+"."+AppConsts.CommonProjectName+"."+AppConsts.CommonEnumFolderName + Environment.NewLine;
             userTypeEnumClass += "{" + Environment.NewLine;
-            userTypeEnumClass += "    public enum EUserType" + Environment.NewLine;
+            userTypeEnumClass += "    public enum "+AppConsts.UserTypeEnumClassName+"" + Environment.NewLine;
             userTypeEnumClass += "    {" + Environment.NewLine;
-
-            string authorizationDbClass = "";
-            authorizationDbClass += "using DevExpress.Xpo;" + Environment.NewLine;
-            authorizationDbClass += "using System;" + Environment.NewLine;
-            authorizationDbClass += "using System.Collections.Generic;" + Environment.NewLine;
-            authorizationDbClass += "using System.Linq;" + Environment.NewLine;
-            authorizationDbClass += "using System.Text;" + Environment.NewLine;
-            authorizationDbClass += "using System.Threading.Tasks;" + Environment.NewLine;
-            authorizationDbClass += "" + Environment.NewLine;
-            authorizationDbClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
-            authorizationDbClass += "{" + Environment.NewLine;
-            authorizationDbClass += "    [Persistent(\"authorizations\")]" + Environment.NewLine;
-            authorizationDbClass += "    public class " + AppConsts.DBModelsAuthClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
-            authorizationDbClass += "    {" + Environment.NewLine;
-            authorizationDbClass += "" + Environment.NewLine;
-            authorizationDbClass += "        public " + AppConsts.DBModelsAuthClassName + "(Session session) : base(session)" + Environment.NewLine;
-            authorizationDbClass += "        {" + Environment.NewLine;
-            authorizationDbClass += "        }" + Environment.NewLine;
-            authorizationDbClass += "" + Environment.NewLine;
-            authorizationDbClass += "        [Persistent(\"api_key\")]" + Environment.NewLine;
-            authorizationDbClass += "        [Size(255)]" + Environment.NewLine;
-            authorizationDbClass += "        public string ApiKey { get; set; }" + Environment.NewLine;
-            authorizationDbClass += "" + Environment.NewLine;
-            authorizationDbClass += "        [Persistent(\"api_definition\")]" + Environment.NewLine;
-            authorizationDbClass += "        [Size(255)]" + Environment.NewLine;
-            authorizationDbClass += "        public string ApiDefinition { get; set; }" + Environment.NewLine;
-            authorizationDbClass += "" + Environment.NewLine;
-            foreach (var item in userTypes)
-            {
-                string itemClean = item.Trim().Replace(" ", "");
-                userTypeEnumClass += "        " + itemClean + " = " + enumBaslangicSayisi + "," + Environment.NewLine;
-
-                enumBaslangicSayisi++;
-
-                authorizationDbClass += "        [Persistent(\"" + itemClean.ToLower() + "_auth\")]" + Environment.NewLine;
-                authorizationDbClass += "        public string " + itemClean + "Auth { get; set; }" + Environment.NewLine;
-                authorizationDbClass += "" + Environment.NewLine;
-            }
+            userTypeEnumClass += "        SystemAdmin = 1," + Environment.NewLine;
+            userTypeEnumClass += "        SystemUser = 2," + Environment.NewLine;
+            userTypeEnumClass += "        OrganizationAdmin = 3," + Environment.NewLine;
+            userTypeEnumClass += "        OrganizationUser = 4" + Environment.NewLine;
             userTypeEnumClass += "    }" + Environment.NewLine;
             userTypeEnumClass += "}" + Environment.NewLine;
+            bool createcsprojResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.CommonProjectName + "/" + AppConsts.CommonEnumFolderName, AppConsts.UserTypeEnumClassFileName, userTypeEnumClass);
+
+            string methodTypeEnumClass = "";
+            methodTypeEnumClass += "namespace " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + Environment.NewLine;
+            methodTypeEnumClass += "{" + Environment.NewLine;
+            methodTypeEnumClass += "    public enum " + AppConsts.ApiMethodTypeEnumClassName + "" + Environment.NewLine;
+            methodTypeEnumClass += "    {" + Environment.NewLine;
+            methodTypeEnumClass += "        Get = 1," + Environment.NewLine;
+            methodTypeEnumClass += "        Post = 2," + Environment.NewLine;
+            methodTypeEnumClass += "        Put = 3," + Environment.NewLine;
+            methodTypeEnumClass += "        Delete = 4" + Environment.NewLine;
+            methodTypeEnumClass += "    }" + Environment.NewLine;
+            methodTypeEnumClass += "}" + Environment.NewLine;
+
+            createcsprojResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.CommonProjectName +"/"+AppConsts.CommonEnumFolderName, AppConsts.ApiMethodTypeEnumClassFileName, methodTypeEnumClass);
+
+            string userGroupClass = "";
+            userGroupClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            userGroupClass += "using "+projectNameRoot+"."+AppConsts.CommonProjectName+"."+ AppConsts.CommonEnumFolderName + ";" + Environment.NewLine;
+            userGroupClass += "" + Environment.NewLine;
+            userGroupClass += "namespace "+projectNameRoot+"."+AppConsts.DBModelsProjectName+"."+AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            userGroupClass += "{" + Environment.NewLine;
+            userGroupClass += "    [Persistent(\"user_groups\")]" + Environment.NewLine;
+            userGroupClass += "    public class "+AppConsts.UserGroupClassName+" : "+AppConsts.DBModelsBaseObjectClassName+"" + Environment.NewLine;
+            userGroupClass += "    {" + Environment.NewLine;
+            userGroupClass += "" + Environment.NewLine;
+            userGroupClass += "        public "+AppConsts.UserGroupClassName+"(Session session) : base(session)" + Environment.NewLine;
+            userGroupClass += "        {" + Environment.NewLine;
+            userGroupClass += "        }" + Environment.NewLine;
+            userGroupClass += "" + Environment.NewLine;
+            userGroupClass += "        [Persistent(\"organization_oid\")]" + Environment.NewLine;
+            userGroupClass += "        public Organization Organization { get; set; }" + Environment.NewLine;
+            userGroupClass += "" + Environment.NewLine;
+            userGroupClass += "        [Persistent(\"name\")]" + Environment.NewLine;
+            userGroupClass += "        [Size(255)]" + Environment.NewLine;
+            userGroupClass += "        public string Name { get; set; }" + Environment.NewLine;
+            userGroupClass += "" + Environment.NewLine;
+            userGroupClass += "        [Persistent(\"user_type\")]" + Environment.NewLine;
+            userGroupClass += "        public "+AppConsts.UserTypeEnumClassName+" UserType { get; set; }" + Environment.NewLine;
+            userGroupClass += "    }" + Environment.NewLine;
+            userGroupClass += "}" + Environment.NewLine;
+
+            createcsprojResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.UserGroupClassFileName, userGroupClass);
+
+            string apiServiceClass = "";
+            apiServiceClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            apiServiceClass += "using " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + ";" + Environment.NewLine;
+            apiServiceClass += "" + Environment.NewLine;
+            apiServiceClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            apiServiceClass += "{" + Environment.NewLine;
+            apiServiceClass += "    [Persistent(\"user_groups\")]" + Environment.NewLine;
+            apiServiceClass += "    public class " + AppConsts.ApiServiceClassName + " : " + AppConsts.DBModelsBaseObjectClassName + "" + Environment.NewLine;
+            apiServiceClass += "    {" + Environment.NewLine;
+            apiServiceClass += "" + Environment.NewLine;
+            apiServiceClass += "        public " + AppConsts.ApiServiceClassName + "(Session session) : base(session)" + Environment.NewLine;
+            apiServiceClass += "        {" + Environment.NewLine;
+            apiServiceClass += "        }" + Environment.NewLine;
+            apiServiceClass += "" + Environment.NewLine;
+            apiServiceClass += "        [Persistent(\"api_key\")]" + Environment.NewLine;
+            apiServiceClass += "        [Size(255)]" + Environment.NewLine;
+            apiServiceClass += "        public string ApiKey { get; set; }" + Environment.NewLine;
+            apiServiceClass += "" + Environment.NewLine;
+            apiServiceClass += "        [Persistent(\"api_definition_td_oid\")]" + Environment.NewLine;
+            apiServiceClass += "        [Size(255)]" + Environment.NewLine;
+            apiServiceClass += "        public TranslateData ApiDefinition { get; set; }" + Environment.NewLine;
+            apiServiceClass += "" + Environment.NewLine;
+            apiServiceClass += "        [Persistent(\"method_type\")]" + Environment.NewLine;
+            apiServiceClass += "        public EApiServiceMethodType MethodType { get; set; }" + Environment.NewLine;
+            apiServiceClass += "" + Environment.NewLine;
+            apiServiceClass += "        [Persistent(\"editable_for_admin\")]" + Environment.NewLine;
+            apiServiceClass += "        public bool EditableForAdmin { get; set; }" + Environment.NewLine;
+            apiServiceClass += "" + Environment.NewLine;
+            apiServiceClass += "        [Persistent(\"editable_for_organization\")]" + Environment.NewLine;
+            apiServiceClass += "        public bool EditableForOrganization { get; set; }" + Environment.NewLine;
+            apiServiceClass += "" + Environment.NewLine;
+            apiServiceClass += "        [Persistent(\"Anonymous\")]" + Environment.NewLine;
+            apiServiceClass += "        public bool Anonymous { get; set; }" + Environment.NewLine;
+            apiServiceClass += "    }" + Environment.NewLine;
+            apiServiceClass += "}" + Environment.NewLine;
+
+            createcsprojResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.ApiServiceClassFileName, apiServiceClass);
+
+            string authClass = "";
+            authClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            authClass += "using " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + ";" + Environment.NewLine;
+            authClass += "" + Environment.NewLine;
+            authClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
+            authClass += "{" + Environment.NewLine;
+            authClass += "    [Persistent(\"user_groups\")]" + Environment.NewLine;
+            authClass += "    public class " + AppConsts.DBModelsAuthClassName + " : " + AppConsts.DBModelsBaseObjectClassName + "" + Environment.NewLine;
+            authClass += "    {" + Environment.NewLine;
+            authClass += "" + Environment.NewLine;
+            authClass += "        public " + AppConsts.DBModelsAuthClassName + "(Session session) : base(session)" + Environment.NewLine;
+            authClass += "        {" + Environment.NewLine;
+            authClass += "        }" + Environment.NewLine;
+            authClass += "" + Environment.NewLine;
+            authClass += "        [Persistent(\"api_service_oid\")]" + Environment.NewLine;
+            authClass += "        public ApiService ApiService { get; set; }" + Environment.NewLine;
+            authClass += "" + Environment.NewLine;
+            authClass += "        [Persistent(\"user_group_oid\")]" + Environment.NewLine;
+            authClass += "        public UserGroup UserGroup { get; set; }" + Environment.NewLine;
+            authClass += "" + Environment.NewLine;
+            authClass += "        [Persistent(\"is_authority\")]" + Environment.NewLine;
+            authClass += "        public bool IsAuhtority { get; set; }" + Environment.NewLine;
+            authClass += "    }" + Environment.NewLine;
+            authClass += "}" + Environment.NewLine;
 
 
-            authorizationDbClass += "        [Persistent(\"editable\")]" + Environment.NewLine;
-            authorizationDbClass += "        public bool Editable { get; set; }" + Environment.NewLine;
-            authorizationDbClass += "" + Environment.NewLine;
-            authorizationDbClass += "        [Persistent(\"Anonymous\")]" + Environment.NewLine;
-            authorizationDbClass += "        public bool Anonymous { get; set; }" + Environment.NewLine;
-            authorizationDbClass += "    }" + Environment.NewLine;
-            authorizationDbClass += "}" + Environment.NewLine;
+            createcsprojResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsAuthClassFileName, authClass);
 
-            //Todo login'e göre kullanıcı yetkilerinin sorgulanması
-
-            bool createEnumClassResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.CommonProjectName + "/" + AppConsts.CommonEnumFolderName, AppConsts.UserTypeEnumClassName, userTypeEnumClass);
-
-            bool createAuthClassResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.DBModelsProjectName + "/" + AppConsts.DBModelsEntitiesFolderName, AppConsts.DBModelsAuthClassFileName, authorizationDbClass);
         }
 
         private void GenerateUserSessionBusiness(string projectNameRoot, string projectPath)
@@ -669,7 +831,7 @@ namespace Pavolle.CrudOperationHelper.Business
             principalClass += "{" + Environment.NewLine;
             principalClass += "    public class " + projectName + "Principal : IPrincipal" + Environment.NewLine;
             principalClass += "    {" + Environment.NewLine;
-            principalClass += "        public " + projectName + "Principal(" + projectName + "Identity identity,  string sessionId, long? organizationOid, EUserType? userType, ELanguage? language, string requestIp)" + Environment.NewLine;
+            principalClass += "        public " + projectName + "Principal(" + projectName + "Identity identity,  string sessionId, long? userGroupOid, EUserType? userType, ELanguage? language, string requestIp)" + Environment.NewLine;
             principalClass += "        {" + Environment.NewLine;
             principalClass += "            if (identity == null)" + Environment.NewLine;
             principalClass += "            {" + Environment.NewLine;
@@ -677,7 +839,7 @@ namespace Pavolle.CrudOperationHelper.Business
             principalClass += "            }" + Environment.NewLine;
             principalClass += "            this.Identity = identity;" + Environment.NewLine;
             principalClass += "            this.SessionId = sessionId;" + Environment.NewLine;
-            principalClass += "            this.OrganizationOid = organizationOid;" + Environment.NewLine;
+            principalClass += "            this.UserGroupOid = userGroupOid;" + Environment.NewLine;
             principalClass += "            this.UserType = userType;" + Environment.NewLine;
             principalClass += "            this.Language = language;" + Environment.NewLine;
             principalClass += "            this.RequestIp = requestIp;" + Environment.NewLine;
@@ -687,7 +849,7 @@ namespace Pavolle.CrudOperationHelper.Business
             principalClass += "" + Environment.NewLine;
             principalClass += "        public string SessionId { get; set; }" + Environment.NewLine;
             principalClass += "" + Environment.NewLine;
-            principalClass += "        public long? OrganizationOid { get; set; }" + Environment.NewLine;
+            principalClass += "        public long? UserGroupOid { get; set; }" + Environment.NewLine;
             principalClass += "" + Environment.NewLine;
             principalClass += "        public EUserType? UserType { get; set; }" + Environment.NewLine;
             principalClass += "" + Environment.NewLine;
@@ -720,13 +882,13 @@ namespace Pavolle.CrudOperationHelper.Business
             jwtTokenManagerClass += "" + Environment.NewLine;
             jwtTokenManagerClass += "        private " + projectName + "JwtTokenManager() { }" + Environment.NewLine;
             jwtTokenManagerClass += "" + Environment.NewLine;
-            jwtTokenManagerClass += "        public string CreateToken(string username, string sessionId, string organizationOid, string userType, string language, string requestIp)" + Environment.NewLine;
+            jwtTokenManagerClass += "        public string CreateToken(string username, string sessionId, string userGroupOid, string userType, string language, string requestIp)" + Environment.NewLine;
             jwtTokenManagerClass += "        {" + Environment.NewLine;
             jwtTokenManagerClass += "            var subject = new ClaimsIdentity(new[]" + Environment.NewLine;
             jwtTokenManagerClass += "            {" + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetUsernameKey(), username)," + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetSesionIdKey(), sessionId)," + Environment.NewLine;
-            jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetOrganizationOidKey(), organizationOid)," + Environment.NewLine;
+            jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetUserGroupOidKey(), userGroupOid)," + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetUserTypeKey(), userType)," + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetLanguageKey(), language)," + Environment.NewLine;
             jwtTokenManagerClass += "                new Claim(" + projectName + "SecurityConstsManager.Instance.GetRequestIp(), requestIp)" + Environment.NewLine;
@@ -769,7 +931,7 @@ namespace Pavolle.CrudOperationHelper.Business
             securityConstsManagerClass += "" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string UsernameKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string SesionIdKey;" + Environment.NewLine;
-            securityConstsManagerClass += "        private readonly string OrganizationOidKey;" + Environment.NewLine;
+            securityConstsManagerClass += "        private readonly string UserGroupOidKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string UserTypeKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly string LanguageKey;" + Environment.NewLine;
             securityConstsManagerClass += "        private readonly SymmetricSecurityKey key;" + Environment.NewLine;
@@ -781,7 +943,7 @@ namespace Pavolle.CrudOperationHelper.Business
             securityConstsManagerClass += "            LanguageKey = \"Language\";" + Environment.NewLine;
             securityConstsManagerClass += "            SesionIdKey = \"SessionId\";" + Environment.NewLine;
             securityConstsManagerClass += "            UserTypeKey = \"UserType\";" + Environment.NewLine;
-            securityConstsManagerClass += "            OrganizationOidKey = \"OrganizationOid\";" + Environment.NewLine;
+            securityConstsManagerClass += "            UserGroupOidKey = \"UserGroupOid\";" + Environment.NewLine;
             securityConstsManagerClass += "            RequestIpKey = \"RequestIP\";" + Environment.NewLine;
             securityConstsManagerClass += "            key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SymmetricSecurityKeyString)) { KeyId = \"1000\" };" + Environment.NewLine;
             securityConstsManagerClass += "        }" + Environment.NewLine;
@@ -816,9 +978,9 @@ namespace Pavolle.CrudOperationHelper.Business
             securityConstsManagerClass += "            return key;" + Environment.NewLine;
             securityConstsManagerClass += "        }" + Environment.NewLine;
             securityConstsManagerClass += "" + Environment.NewLine;
-            securityConstsManagerClass += "        public string GetOrganizationOidKey()" + Environment.NewLine;
+            securityConstsManagerClass += "        public string GetUserGroupOidKey()" + Environment.NewLine;
             securityConstsManagerClass += "        {" + Environment.NewLine;
-            securityConstsManagerClass += "            return OrganizationOidKey;" + Environment.NewLine;
+            securityConstsManagerClass += "            return UserGroupOidKey;" + Environment.NewLine;
             securityConstsManagerClass += "        }" + Environment.NewLine;
             securityConstsManagerClass += "" + Environment.NewLine;
             securityConstsManagerClass += "        public string GetUserTypeKey()" + Environment.NewLine;

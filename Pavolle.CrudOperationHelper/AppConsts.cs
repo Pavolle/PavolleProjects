@@ -10,7 +10,6 @@ namespace Pavolle.CrudOperationHelper
     {
         public static string CommonProjectName = "Common";
         public static string CommonEnumFolderName = "Enums";
-        public static string UserTypeEnumClassName = "EUserType.cs";
         public static string CommonUtilsFolderName = "Utils";
         public static string ApiUrlConstsFileName = "{0}ApiUrlConsts";
 
@@ -30,8 +29,6 @@ namespace Pavolle.CrudOperationHelper
 
         public static string DBModelsProjectName = "DbModels";
         public static string DBModelsEntitiesFolderName = "Entities";
-        public static string DBModelsAuthClassName = "Auth";
-        public static string DBModelsAuthClassFileName = "Auth.cs";
         public static string DBModelsBaseObjectClassName = "BaseObject";
         public static string DBModelsBaseObjectClassFileName = "BaseObject.cs";
         public static string DBModelsXpoManagerClassName = "XpoManager";
@@ -41,8 +38,26 @@ namespace Pavolle.CrudOperationHelper
         public static string DBModelsTranslateDataClassName = "TranslateData";
         public static string DBModelsTranslateDataClassFileName = "TranslateData.cs";
 
+        public static string DBModelsCityClassName = "City";
+        public static string DBModelsCityClassFileName = "City.cs";
+        public static string DBModelsCountryClassName = "Country";
+        public static string DBModelsCountryClassFileName = "Country.cs";
+        public static string DBModelsOrganizationClassName = "Organization";
+        public static string DBModelsOrganizationClassFileName = "Organization.cs";
+        public static string DBModelsAuthClassName = "Auth";
+        public static string DBModelsAuthClassFileName = "Auth.cs";
+
+
+        public static string UserTypeEnumClassName = "EUserType";
+        public static string UserTypeEnumClassFileName = "EUserType.cs";
+        public static string ApiMethodTypeEnumClassName = "EApiServiceMethodType";
+        public static string ApiMethodTypeEnumClassFileName = "EApiServiceMethodType.cs";
         public static string DBModelsUserClassFileName = "User.cs";
         public static string DBModelsUserClassName = "User";
+        public static string UserGroupClassFileName = "UserGroup.cs";
+        public static string UserGroupClassName = "UserGroup";
+        public static string ApiServiceClassFileName = "ApiService.cs";
+        public static string ApiServiceClassName = "ApiService";
 
         public static string WebSecurityProjectName = "WebSecurity";
         public static string WebSecurityIdentityClassName = "Identity";

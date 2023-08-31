@@ -12,7 +12,7 @@ namespace Pavolle.MessageService.WebSecurity
 
         private readonly string UsernameKey;
         private readonly string SesionIdKey;
-        private readonly string OrganizationOidKey;
+        private readonly string UserGroupOidKey;
         private readonly string UserTypeKey;
         private readonly string LanguageKey;
         private readonly SymmetricSecurityKey key;
@@ -24,7 +24,7 @@ namespace Pavolle.MessageService.WebSecurity
             LanguageKey = "Language";
             SesionIdKey = "SessionId";
             UserTypeKey = "UserType";
-            OrganizationOidKey = "OrganizationOid";
+            UserGroupOidKey = "UserGroupOid";
             RequestIpKey = "RequestIP";
             key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SymmetricSecurityKeyString)) { KeyId = "1000" };
         }
@@ -59,9 +59,9 @@ namespace Pavolle.MessageService.WebSecurity
             return key;
         }
 
-        public string GetOrganizationOidKey()
+        public string GetUserGroupOidKey()
         {
-            return OrganizationOidKey;
+            return UserGroupOidKey;
         }
 
         public string GetUserTypeKey()

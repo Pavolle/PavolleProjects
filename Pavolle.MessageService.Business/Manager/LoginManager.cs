@@ -75,7 +75,7 @@ namespace Pavolle.MessageService.Business.Manager
                     user.Save();
                 }
 
-                response.Token = MesssageServiceJwtTokenManager.Instance.CreateToken(user.Username, Guid.NewGuid().ToString(), user.Company.Oid.ToString(), ((int)user.UserType).ToString(), request.Language.Value.ToString(), request.RequestIp);
+                response.Token = MesssageServiceJwtTokenManager.Instance.CreateToken(user.Username, Guid.NewGuid().ToString(), user.Organization.Oid.ToString(), ((int)user.UserType).ToString(), request.Language.Value.ToString(), request.RequestIp);
 
                 //yetkilerin sorgulanması.
                 response.Name = user.Name;
@@ -83,7 +83,7 @@ namespace Pavolle.MessageService.Business.Manager
                 response.Email = user.Email;
                 response.Username = user.Username;
 
-                response.Auths = AuthManager.Instance.GetAuthForUserType(user.UserType);
+                //response.Auths = AuthManager.Instance.GetAuthForUserType(user.UserType);
             }
 
             return response;

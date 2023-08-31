@@ -74,7 +74,7 @@ namespace Pavolle.MessageService.Business.Manager
                 UserType = userType,
                 Email = email,
                 PhoneNumber = phoneNumber,
-                Company = company,
+                Organization = company,
                 Password = SecurityHelperManager.Instance.GetEncryptedPassword(username, password),
             };
             user.Save();

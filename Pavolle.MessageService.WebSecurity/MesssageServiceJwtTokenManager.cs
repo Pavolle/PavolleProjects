@@ -10,13 +10,13 @@ namespace Pavolle.MessageService.WebSecurity
         private MesssageServiceJwtTokenManager() { }
 
 
-        public string CreateToken(string username, string sessionId, string organizationOid, string userType, string language, string requestIp)
+        public string CreateToken(string username, string sessionId, string userGroupOid, string userType, string language, string requestIp)
         {
             var subject = new ClaimsIdentity(new[]
             {
                 new Claim(SecurityConstsManager.Instance.GetUsernameKey(), username),
                 new Claim(SecurityConstsManager.Instance.GetSesionIdKey(), sessionId),
-                new Claim(SecurityConstsManager.Instance.GetOrganizationOidKey(), organizationOid),
+                new Claim(SecurityConstsManager.Instance.GetUserGroupOidKey(), userGroupOid),
                 new Claim(SecurityConstsManager.Instance.GetUserTypeKey(), userType),
                 new Claim(SecurityConstsManager.Instance.GetLanguageKey(), language),
                 new Claim(SecurityConstsManager.Instance.GetRequestIp(), requestIp)

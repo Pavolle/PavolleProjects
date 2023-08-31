@@ -6,7 +6,7 @@ namespace Pavolle.B2B.WebSecurity
 {
     public class B2BPrincipal : IPrincipal
     {
-        public B2BPrincipal(B2BIdentity identity,  string sessionId, long? organizationOid, EUserType? userType, ELanguage? language, string requestIp)
+        public B2BPrincipal(B2BIdentity identity,  string sessionId, long? userGroupOid, EUserType? userType, ELanguage? language, string requestIp)
         {
             if (identity == null)
             {
@@ -14,7 +14,7 @@ namespace Pavolle.B2B.WebSecurity
             }
             this.Identity = identity;
             this.SessionId = sessionId;
-            this.OrganizationOid = organizationOid;
+            this.UserGroupOid = userGroupOid;
             this.UserType = userType;
             this.Language = language;
             this.RequestIp = requestIp;
@@ -24,7 +24,7 @@ namespace Pavolle.B2B.WebSecurity
 
         public string SessionId { get; set; }
 
-        public long? OrganizationOid { get; set; }
+        public long? UserGroupOid { get; set; }
 
         public EUserType? UserType { get; set; }
 

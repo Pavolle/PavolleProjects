@@ -100,7 +100,7 @@ namespace Pavolle.MessageService.Business.Manager
                 };
                 company.Save();
 
-                User user = UserManager.Instance.CreateNewUser(session, company, EUserType.CompanyAdmin, request.AdminUsername, request.AdminName, request.AdminSurname, request.AdminPassword, request.AdminPhoneNumber, request.AdminEmail);
+                User user = UserManager.Instance.CreateNewUser(session, company, EUserType.SystemAdmin, request.AdminUsername, request.AdminName, request.AdminSurname, request.AdminPassword, request.AdminPhoneNumber, request.AdminEmail);
 
                 if(user != null)
                 {

@@ -10,13 +10,13 @@ namespace Pavolle.B2B.WebSecurity
 
         private B2BJwtTokenManager() { }
 
-        public string CreateToken(string username, string sessionId, string organizationOid, string userType, string language, string requestIp)
+        public string CreateToken(string username, string sessionId, string userGroupOid, string userType, string language, string requestIp)
         {
             var subject = new ClaimsIdentity(new[]
             {
                 new Claim(B2BSecurityConstsManager.Instance.GetUsernameKey(), username),
                 new Claim(B2BSecurityConstsManager.Instance.GetSesionIdKey(), sessionId),
-                new Claim(B2BSecurityConstsManager.Instance.GetOrganizationOidKey(), organizationOid),
+                new Claim(B2BSecurityConstsManager.Instance.GetUserGroupOidKey(), userGroupOid),
                 new Claim(B2BSecurityConstsManager.Instance.GetUserTypeKey(), userType),
                 new Claim(B2BSecurityConstsManager.Instance.GetLanguageKey(), language),
                 new Claim(B2BSecurityConstsManager.Instance.GetRequestIp(), requestIp)
