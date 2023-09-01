@@ -370,8 +370,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMS Gönderim", "SMS Gönde
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00", "00", "{AFD15187-5351-4186-889D-FA2486AD8F55}"
 	ProjectSection(SolutionItems) = preProject
-		01.09.2023 = 01.09.2023
+		01.09.2023.txt = 01.09.2023.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.FaceMemory", "Pavolle.FaceMemory\Pavolle.FaceMemory.csproj", "{9F274E36-091D-421C-B8D5-96555BDA1E27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1039,6 +1041,12 @@ Global
 		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1207,6 +1215,7 @@ Global
 		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0} = {5BA131B6-1F76-4ACD-8BA1-EA5CBD7E5EA3}
 		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC} = {5BA131B6-1F76-4ACD-8BA1-EA5CBD7E5EA3}
 		{5DD15358-9F82-4957-987B-60CC434DE635} = {5CE011D9-C60B-4C00-9F0E-04A3BDE56A45}
+		{9F274E36-091D-421C-B8D5-96555BDA1E27} = {FCF10A3A-801C-4FFF-8395-4F932D1BA183}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB022668-0D9A-42CE-B969-F65E1AD40F7C}
