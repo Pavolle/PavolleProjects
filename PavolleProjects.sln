@@ -57,7 +57,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Hukko", "Pavolle.Hu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Vetko", "Pavolle.Vetko\Pavolle.Vetko.csproj", "{2F297872-E19C-4D41-A49F-C5D2267F254D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Mediko", "Pavolle.Mediko\Pavolle.Mediko.csproj", "{B40B60FC-1675-470E-A178-F1A803A2B1C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Medicco", "Pavolle.Mediko\Pavolle.Medicco.csproj", "{B40B60FC-1675-470E-A178-F1A803A2B1C1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MailLib", "Pavolle.MailLib\Pavolle.MailLib.csproj", "{B9C982DE-7666-4550-8396-1F4A5232FDA1}"
 EndProject
@@ -357,7 +357,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.ESecim.SetupApp", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PDKS.SetupApp", "Pavolle.PDKS.SetupApp\Pavolle.PDKS.SetupApp.csproj", "{69D98DC8-0354-4B95-BC7E-E76190803A9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.CrudOperationHelper", "Pavolle.CrudOperationHelper\Pavolle.CrudOperationHelper.csproj", "{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.CrudOperationHelper", "Pavolle.CrudOperationHelper\Pavolle.CrudOperationHelper.csproj", "{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.DictinaryAppDesigner", "Pavolle.DictinaryAppDesigner\Pavolle.DictinaryAppDesigner.csproj", "{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ARGE", "ARGE", "{5CE011D9-C60B-4C00-9F0E-04A3BDE56A45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMS Gönderim", "SMS Gönderim", "{5DD15358-9F82-4957-987B-60CC434DE635}"
+	ProjectSection(SolutionItems) = preProject
+		Araştırma.txt = Araştırma.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00", "00", "{AFD15187-5351-4186-889D-FA2486AD8F55}"
+	ProjectSection(SolutionItems) = preProject
+		01.09.2023 = 01.09.2023
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1021,6 +1035,10 @@ Global
 		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1187,6 +1205,8 @@ Global
 		{EFE2C294-8640-4151-95AE-7EC09B971E9D} = {207BFA26-84EC-4CA2-9AE1-86F304D33F5A}
 		{69D98DC8-0354-4B95-BC7E-E76190803A9A} = {52A3DFC0-67DF-47F0-8C70-C1E64EA00F5F}
 		{B6BAD84D-F781-42F1-977C-DF673BF9D0C0} = {5BA131B6-1F76-4ACD-8BA1-EA5CBD7E5EA3}
+		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC} = {5BA131B6-1F76-4ACD-8BA1-EA5CBD7E5EA3}
+		{5DD15358-9F82-4957-987B-60CC434DE635} = {5CE011D9-C60B-4C00-9F0E-04A3BDE56A45}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB022668-0D9A-42CE-B969-F65E1AD40F7C}

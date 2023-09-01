@@ -1,0 +1,6 @@
+SMPP
+SMS Gateway
+
+Konularýný araþtýralým.
+SMS Gönderen bir hizmet verici haline gelmemiz gerekiyor.
+Bunun için arge çalýþmasýný bitirip bireysel satýþa yönelik uygulamalar geliþtirelim.
