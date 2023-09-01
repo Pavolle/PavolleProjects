@@ -41,6 +41,9 @@ namespace Pavolle.MessageService.Common.Utils
             public const string SignInRoutePrefix="signin";
             public const string SignOutRoutePrefix = "signout";
             public const string ForgotPaswordRoutePrefix = "forgotpassword";
+            public const string VerifyCodeRoutePrefix = "verifycode";
+            public const string ResetPaswordRoutePrefix = "verifycode";
+            
         }
 
         public class MessageRouteConsts

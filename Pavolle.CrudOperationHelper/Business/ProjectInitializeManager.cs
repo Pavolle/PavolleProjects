@@ -65,7 +65,7 @@ namespace Pavolle.CrudOperationHelper.Business
             dbClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
             dbClass += "{" + Environment.NewLine;
             dbClass += "" + Environment.NewLine;
-            dbClass += "    [Persistent(\"countries\")]" + Environment.NewLine;
+            dbClass += "    [Persistent(\"organizations\")]" + Environment.NewLine;
             dbClass += "    public class " + AppConsts.DBModelsOrganizationClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
             dbClass += "    {" + Environment.NewLine;
             dbClass += "" + Environment.NewLine;
@@ -116,7 +116,7 @@ namespace Pavolle.CrudOperationHelper.Business
             dbClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
             dbClass += "{" + Environment.NewLine;
             dbClass += "" + Environment.NewLine;
-            dbClass += "    [Persistent(\"countries\")]" + Environment.NewLine;
+            dbClass += "    [Persistent(\"cities\")]" + Environment.NewLine;
             dbClass += "    public class " + AppConsts.DBModelsCityClassName + " : " + AppConsts.DBModelsBaseObjectClassName + Environment.NewLine;
             dbClass += "    {" + Environment.NewLine;
             dbClass += "" + Environment.NewLine;
@@ -250,6 +250,10 @@ namespace Pavolle.CrudOperationHelper.Business
             userClass += "" + Environment.NewLine;
             userClass += "        [Persistent(\"is_locked\")]" + Environment.NewLine;
             userClass += "        public bool IsLocked { get; set; }" + Environment.NewLine;
+            userClass += "" + Environment.NewLine;
+            userClass += "        [Persistent(\"code\")]" + Environment.NewLine;
+            userClass += "        [Size(10)]" + Environment.NewLine;
+            userClass += "        public string Code { get; set; }" + Environment.NewLine;
             userClass += "    }" + Environment.NewLine;
             userClass += "}" + Environment.NewLine;
 

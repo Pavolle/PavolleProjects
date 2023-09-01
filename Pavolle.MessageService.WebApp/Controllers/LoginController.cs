@@ -26,5 +26,17 @@ namespace Pavolle.MessageService.WebApp.Controllers
         {
             return Ok(LoginManager.Instance.ForgotPasword(request));
         }
+
+        [HttpPost(MessageServiceApiUrlConsts.LoginRouteConsts.VerifyCodeRoutePrefix)]
+        public ActionResult VerifyCode([FromBody] VerifyCodeRequest request)
+        {
+            return Ok(LoginManager.Instance.VerifyCode(request));
+        }
+
+        [HttpPost(MessageServiceApiUrlConsts.LoginRouteConsts.ResetPaswordRoutePrefix)]
+        public ActionResult ResetPassword([FromBody] ResetPasswordRequest request)
+        {
+            return Ok(LoginManager.Instance.ResetPassword(request));
+        }
     }
 }

@@ -47,5 +47,9 @@ namespace Pavolle.B2B.DbModels.Entities
 
         [Persistent("is_locked")]
         public bool IsLocked { get; set; }
+
+        [Persistent("code")]
+        [Size(10)]
+        public string Code { get; set; }
     }
 }

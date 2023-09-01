@@ -3,7 +3,7 @@ using DevExpress.Xpo;
 namespace Pavolle.B2B.DbModels.Entities
 {
 
-    [Persistent("countries")]
+    [Persistent("cities")]
     public class City : BaseObject
     {
 

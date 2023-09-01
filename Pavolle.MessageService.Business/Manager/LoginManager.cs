@@ -98,5 +98,15 @@ namespace Pavolle.MessageService.Business.Manager
         {
             throw new NotImplementedException();
         }
+
+        public object? VerifyCode(VerifyCodeRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object? ResetPassword(ResetPasswordRequest request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
