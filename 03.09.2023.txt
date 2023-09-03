@@ -1,1 +1,3 @@
 Web sitesine menüleri ekledik.
+ViewDataBase classýnýn uygulama için otomatik oluþturulmasý saðlandý
+RequestBase classýnýn uygulama için otomatik oluþturulmasý saðlandý.

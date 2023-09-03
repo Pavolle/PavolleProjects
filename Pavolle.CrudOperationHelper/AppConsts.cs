@@ -16,10 +16,12 @@ namespace Pavolle.CrudOperationHelper
         public static string ViewModelsProjectName = "ViewModels";
         public static string ViewModelsViewDataFolderName = "ViewData";
         public static string ViewModelsViewDataBaseClassName = "ViewDataBase";
-        public static string ViewModelsRequestBaseClassName = "RequestBase";
-        public static string ViewModelsResponselderName = "Response";
         public static string ViewModelsRequestFolderName = "Request";
+        public static string ViewModelsRequestBaseClassName = "RequestBase";
+        public static string ViewModelsResponseFolderName = "Response";
+        public static string ViewModelsResponseBaseClassName = "ResponseBase";
         public static string ViewModelsCriteriaFolderName = "Criteria";
+        public static string ViewModelsCriteriaBaseClassName = "CriteriaBase";
         public static string ViewModelsModelFolderName = "Model";
 
         public static string SchedulerTypeEnumClassFileName = "ESchedulerType.cs";

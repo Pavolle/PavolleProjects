@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.B2B.Common\Pavolle.B2B.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Criteria\" />
+  </ItemGroup>
+
 </Project>
