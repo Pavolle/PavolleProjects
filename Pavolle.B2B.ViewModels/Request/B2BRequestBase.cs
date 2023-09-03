@@ -1,13 +1,18 @@
-﻿using Pavolle.Core.ViewModels.Request;
-using Pavolle.MessageService.Common.Enums;
+using Pavolle.Core.ViewModels.Request;
+using Pavolle.B2B.Common.Enums;
 
-namespace Pavolle.MessageService.ViewModels.Request
+namespace Pavolle.B2B.ViewModels.Request
 {
-    public class MessageServiceRequestBase:RequestBase
+    public class B2BRequestBase:RequestBase
     {
+
         public string Username { get; set; }
+
         public EUserType? UserType { get; set; }
+
         public long? UserGroupOid { get; set; }
+
         public string SessionId { get; set; }
+
     }
 }

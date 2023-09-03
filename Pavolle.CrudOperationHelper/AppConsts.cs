@@ -13,6 +13,15 @@ namespace Pavolle.CrudOperationHelper
         public static string CommonUtilsFolderName = "Utils";
         public static string ApiUrlConstsFileName = "{0}ApiUrlConsts";
 
+        public static string ViewModelsProjectName = "ViewModels";
+        public static string ViewModelsViewDataFolderName = "ViewData";
+        public static string ViewModelsViewDataBaseClassName = "ViewDataBase";
+        public static string ViewModelsRequestBaseClassName = "RequestBase";
+        public static string ViewModelsResponselderName = "Response";
+        public static string ViewModelsRequestFolderName = "Request";
+        public static string ViewModelsCriteriaFolderName = "Criteria";
+        public static string ViewModelsModelFolderName = "Model";
+
         public static string SchedulerTypeEnumClassFileName = "ESchedulerType.cs";
         public static string SchedulerTypeEnumClassName = "ESchedulerType";
         public static string DBModelsSchedulerClassFileName = "Scheduler.cs";

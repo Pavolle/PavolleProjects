@@ -1,9 +1,13 @@
-﻿namespace Pavolle.Core.ViewModels.ViewData
+namespace Pavolle.B2B.ViewModels.ViewData
 {
-    public class ViewDataBase
+    public class B2BViewDataBase
     {
+
         public long Oid { get; set; }
+
         public DateTime CreatedTime { get; set; }
+
         public DateTime? LastUpdateTime { get; set; }
+
     }
 }

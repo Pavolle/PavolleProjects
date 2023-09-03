@@ -36,7 +36,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 using(Session session = XpoManager.Instance.GetNewSession())
                 {
-                    var company = session.Query<Organization>().FirstOrDefault(t => t.Oid == request.CompanyOid);
+                    var company = session.Query<Organization>().FirstOrDefault(t => t.Oid == request.UserGroupOid);
                     response = ValidationManager.Instance.CheckNull(company, EMessageCode.Company);
                     if (response.Success)
                     {
@@ -71,7 +71,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 var app = session.Query<App>().FirstOrDefault(t => t.Oid == oid);
                 response = ValidationManager.Instance.CheckNull(app, EMessageCode.App);
-                if (app.Company.Oid == request.CompanyOid)
+                if (app.Company.Oid == request.UserGroupOid)
                 {
                     if (response.Success)
                     {
@@ -106,7 +106,7 @@ namespace Pavolle.MessageService.Business.Manager
             using(Session session = XpoManager.Instance.GetNewSession())
             {
                 response.DataList = session.Query<App>()
-                    .Where(t => t.Company.Oid == criteria.CompanyOid)
+                    .Where(t => t.Company.Oid == criteria.UserGroupOid)
                     .Select(m => new AppViewData
                     {
                         Oid = m.Oid,
@@ -137,7 +137,7 @@ namespace Pavolle.MessageService.Business.Manager
             using (Session session = XpoManager.Instance.GetNewSession())
             {
                 response.DataList = session.Query<App>()
-                    .Where(t => t.Company.Oid == criteria.CompanyOid)
+                    .Where(t => t.Company.Oid == criteria.UserGroupOid)
                     .Select(m => new LookupViewData
                     {
                         Key = m.Oid,
@@ -164,7 +164,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 var app = session.Query<App>().FirstOrDefault(t => t.Oid == oid);
 
-                if (app.Company.Oid == request.CompanyOid)
+                if (app.Company.Oid == request.UserGroupOid)
                 {
                     if (response.Success)
                     {
@@ -203,7 +203,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 var app = session.Query<App>().FirstOrDefault(t => t.Oid == oid);
                 response = ValidationManager.Instance.CheckNull(app, EMessageCode.App);
-                if (app.Company.Oid == request.CompanyOid)
+                if (app.Company.Oid == request.UserGroupOid)
                 {
                     if(session.Query<AppVersion>().Any(t=>t.App.Oid==oid))
                     {

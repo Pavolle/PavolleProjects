@@ -359,7 +359,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PDKS.SetupApp", "Pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.CrudOperationHelper", "Pavolle.CrudOperationHelper\Pavolle.CrudOperationHelper.csproj", "{B6BAD84D-F781-42F1-977C-DF673BF9D0C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.DictinaryAppDesigner", "Pavolle.DictinaryAppDesigner\Pavolle.DictinaryAppDesigner.csproj", "{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.DictinaryAppDesigner", "Pavolle.DictinaryAppDesigner\Pavolle.DictinaryAppDesigner.csproj", "{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ARGE", "ARGE", "{5CE011D9-C60B-4C00-9F0E-04A3BDE56A45}"
 EndProject
@@ -371,9 +371,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00", "00", "{AFD15187-5351-4186-889D-FA2486AD8F55}"
 	ProjectSection(SolutionItems) = preProject
 		01.09.2023.txt = 01.09.2023.txt
+		03.09.2023.txt = 03.09.2023.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.FaceMemory", "Pavolle.FaceMemory\Pavolle.FaceMemory.csproj", "{9F274E36-091D-421C-B8D5-96555BDA1E27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.FaceMemory", "Pavolle.FaceMemory\Pavolle.FaceMemory.csproj", "{9F274E36-091D-421C-B8D5-96555BDA1E27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

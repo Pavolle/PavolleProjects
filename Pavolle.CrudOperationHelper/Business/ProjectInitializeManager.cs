@@ -25,6 +25,8 @@ namespace Pavolle.CrudOperationHelper.Business
             //TODO Auth Manager sınıfı eklenecek.
             GenerateWebSecurityLayer(projectName, projectNameRoot, projectPath, issuer, audience, tokenExpireHour); //Ok
 
+            GenerateBaseViewModelsClass(projectName, projectNameRoot, projectPath);
+
             GenerateControllerAndBusiness(projectNameRoot, projectPath, projectName);
 
             GenerateOrganizationBusiness(projectNameRoot, projectPath);
@@ -37,6 +39,51 @@ namespace Pavolle.CrudOperationHelper.Business
             GenerateSetupManager(projectNameRoot, projectPath);
 
             return true;
+        }
+
+        private void GenerateBaseViewModelsClass(string projectName, string projectNameRoot, string projectPath)
+        {
+            string viewDataBaseClass = "";
+            viewDataBaseClass += "namespace " + projectNameRoot + "." + AppConsts.ViewModelsProjectName + "." + AppConsts.ViewModelsViewDataFolderName + Environment.NewLine;
+            viewDataBaseClass += "{" + Environment.NewLine;
+            viewDataBaseClass += "    public class " + projectName + AppConsts.ViewModelsViewDataBaseClassName + Environment.NewLine;
+            viewDataBaseClass += "    {" + Environment.NewLine;
+            viewDataBaseClass += "" + Environment.NewLine;
+            viewDataBaseClass += "        public long Oid { get; set; }" + Environment.NewLine;
+            viewDataBaseClass += "" + Environment.NewLine;
+            viewDataBaseClass += "        public DateTime CreatedTime { get; set; }" + Environment.NewLine;
+            viewDataBaseClass += "" + Environment.NewLine;
+            viewDataBaseClass += "        public DateTime? LastUpdateTime { get; set; }" + Environment.NewLine;
+            viewDataBaseClass += "" + Environment.NewLine;
+            viewDataBaseClass += "    }" + Environment.NewLine;
+            viewDataBaseClass += "}" + Environment.NewLine;
+
+            bool createResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.ViewModelsProjectName + "/" + AppConsts.ViewModelsViewDataFolderName, projectName + AppConsts.ViewModelsViewDataBaseClassName + ".cs", viewDataBaseClass);
+
+            string requestBaseClass = "";
+            requestBaseClass += "using Pavolle.Core.ViewModels.Request;" + Environment.NewLine;
+            requestBaseClass += "using "+projectNameRoot+"."+AppConsts.CommonProjectName+"."+AppConsts.CommonEnumFolderName+";" + Environment.NewLine;
+            requestBaseClass += "" + Environment.NewLine;
+            requestBaseClass += "namespace " + projectNameRoot + "." + AppConsts.ViewModelsProjectName + "." + AppConsts.ViewModelsRequestFolderName + Environment.NewLine;
+            requestBaseClass += "{" + Environment.NewLine;
+            requestBaseClass += "    public class " + projectName + AppConsts.ViewModelsRequestBaseClassName + ":RequestBase" + Environment.NewLine;
+            requestBaseClass += "    {" + Environment.NewLine;
+            requestBaseClass += "" + Environment.NewLine;
+            requestBaseClass += "        public string Username { get; set; }" + Environment.NewLine;
+            requestBaseClass += "" + Environment.NewLine;
+            requestBaseClass += "        public "+AppConsts.UserTypeEnumClassName+"? UserType { get; set; }" + Environment.NewLine;
+            requestBaseClass += "" + Environment.NewLine;
+            requestBaseClass += "        public long? UserGroupOid { get; set; }" + Environment.NewLine;
+            requestBaseClass += "" + Environment.NewLine;
+            requestBaseClass += "        public string SessionId { get; set; }" + Environment.NewLine;
+            requestBaseClass += "" + Environment.NewLine;
+            requestBaseClass += "    }" + Environment.NewLine;
+            requestBaseClass += "}" + Environment.NewLine;
+
+            createResult = FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + "." + AppConsts.ViewModelsProjectName + "/" + AppConsts.ViewModelsRequestFolderName, projectName + AppConsts.ViewModelsRequestBaseClassName + ".cs", requestBaseClass);
+
+            string responseBaseClass = "";
+            responseBaseClass += "" + Environment.NewLine;
         }
 
         private void GenerateControllerAndBusiness(string projectNameRoot, string projectPath, string projectName)
