@@ -21,10 +21,11 @@ namespace Pavolle.CrudOperationHelper.Business
         public bool Start(string projectName, string projectNameRoot, string projectPath, string userType, string issuer, string audience, int tokenExpireHour, string language)
         {
             //TODO Öncesinde projeye kütüphane ve bağlantıları ekleyeceğiz.
-            GenerateDbModels(projectName, projectNameRoot, projectPath, userType, language);
-
+            GenerateDbModels(projectName, projectNameRoot, projectPath, userType, language); //ok
             //TODO Auth Manager sınıfı eklenecek.
             GenerateWebSecurityLayer(projectName, projectNameRoot, projectPath, issuer, audience, tokenExpireHour); //Ok
+
+            GenerateControllerAndBusiness(projectNameRoot, projectPath, projectName);
 
             GenerateOrganizationBusiness(projectNameRoot, projectPath);
 
@@ -38,19 +39,71 @@ namespace Pavolle.CrudOperationHelper.Business
             return true;
         }
 
+        private void GenerateControllerAndBusiness(string projectNameRoot, string projectPath, string projectName)
+        {
+            GenerateLoginClasses(projectNameRoot, projectPath, projectName);
+        }
+
+        private void GenerateLoginClasses(string projectNameRoot, string projectPath, string projectName)
+        {
+            string controller = "";
+            controller += "using Microsoft.AspNetCore.Mvc;" + Environment.NewLine;
+            controller += "using " + projectNameRoot + ".Business.Manager;" + Environment.NewLine;
+            controller += "using " + projectNameRoot + ".Common.Utils;" + Environment.NewLine;
+            controller += "using " + projectNameRoot + ".ViewModels.Request;" + Environment.NewLine;
+            controller += "" + Environment.NewLine;
+            controller += "namespace " + projectNameRoot + ".WebApp.Controllers" + Environment.NewLine;
+            controller += "{" + Environment.NewLine;
+            controller += "    [Produces(\"application/json\")]" + Environment.NewLine;
+            controller += "    [Route("+projectName+"ApiUrlConsts.LoginRouteConsts.Route)]" + Environment.NewLine;
+            controller += "    public class LoginController : Controller" + Environment.NewLine;
+            controller += "    {" + Environment.NewLine;
+            controller += "" + Environment.NewLine;
+            controller += "        [HttpPost(MessageServiceApiUrlConsts.LoginRouteConsts.SignInRoutePrefix)]" + Environment.NewLine;
+            controller += "        public ActionResult SignIn([FromBody] LoginRequest request)" + Environment.NewLine;
+            controller += "        {" + Environment.NewLine;
+            controller += "            return Ok(LoginManager.Instance.SignIn(request));" + Environment.NewLine;
+            controller += "        }" + Environment.NewLine;
+            controller += "" + Environment.NewLine;
+            controller += "        [HttpPost(MessageServiceApiUrlConsts.LoginRouteConsts.SignOutRoutePrefix)]" + Environment.NewLine;
+            controller += "        public ActionResult SignOut(MessageServiceRequestBase request)" + Environment.NewLine;
+            controller += "        {" + Environment.NewLine;
+            controller += "            return Ok(LoginManager.Instance.SignOut(request));" + Environment.NewLine;
+            controller += "        }" + Environment.NewLine;
+            controller += "" + Environment.NewLine;
+            controller += "        [HttpPost(MessageServiceApiUrlConsts.LoginRouteConsts.ForgotPaswordRoutePrefix)]" + Environment.NewLine;
+            controller += "        public ActionResult ForgotPasword([FromBody]ForgotPasswordRequest request)" + Environment.NewLine;
+            controller += "        {" + Environment.NewLine;
+            controller += "            return Ok(LoginManager.Instance.ForgotPasword(request));" + Environment.NewLine;
+            controller += "        }" + Environment.NewLine;
+            controller += "" + Environment.NewLine;
+            controller += "        [HttpPost(MessageServiceApiUrlConsts.LoginRouteConsts.VerifyCodeRoutePrefix)]" + Environment.NewLine;
+            controller += "        public ActionResult VerifyCode([FromBody] VerifyCodeRequest request)" + Environment.NewLine;
+            controller += "        {" + Environment.NewLine;
+            controller += "            return Ok(LoginManager.Instance.VerifyCode(request));" + Environment.NewLine;
+            controller += "        }" + Environment.NewLine;
+            controller += "" + Environment.NewLine;
+            controller += "        [HttpPost(MessageServiceApiUrlConsts.LoginRouteConsts.ResetPaswordRoutePrefix)]" + Environment.NewLine;
+            controller += "        public ActionResult ResetPassword([FromBody] ResetPasswordRequest request)" + Environment.NewLine;
+            controller += "        {" + Environment.NewLine;
+            controller += "            return Ok(LoginManager.Instance.ResetPassword(request));" + Environment.NewLine;
+            controller += "        }" + Environment.NewLine;
+            controller += "    }" + Environment.NewLine;
+            controller += "}" + Environment.NewLine;
+
+
+        }
+
         private void GenerateDbModels(string projectName, string projectNameRoot, string projectPath, string userType, string language)
         {
             InitiliazeDbModelsCsProject(projectNameRoot, projectPath, projectName);
-
             GenerateBaseObject(projectNameRoot, projectPath); //Ok
             GeneratXpoManagerClass(projectNameRoot, projectPath); //Ok
             GenerateUserSessionClass(projectNameRoot, projectPath); //Ok
             GenerateTranslateDataClass(projectNameRoot, projectPath, language);//Ok
-
             GenerateCountryClass(projectNameRoot, projectPath);
             GenerateCityClass(projectNameRoot, projectPath);
             GenerateOrganizationClass(projectNameRoot, projectPath);
-
             GenerateSystemSettingsClass(projectNameRoot, projectPath);
             GenerateSchedulerClass(projectNameRoot, projectPath);
             GenerateUserClass(projectNameRoot, projectPath);
