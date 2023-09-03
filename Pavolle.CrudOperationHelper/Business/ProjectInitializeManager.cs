@@ -65,13 +65,13 @@ namespace Pavolle.CrudOperationHelper.Business
             requestBaseClass += "    public class " + projectName + AppConsts.ViewModelsRequestBaseClassName + ":RequestBase" + Environment.NewLine;
             requestBaseClass += "    {" + Environment.NewLine;
             requestBaseClass += "" + Environment.NewLine;
-            requestBaseClass += "        public string Username { get; set; }" + Environment.NewLine;
+            requestBaseClass += "        public string? Username { get; set; }" + Environment.NewLine;
             requestBaseClass += "" + Environment.NewLine;
             requestBaseClass += "        public "+AppConsts.UserTypeEnumClassName+"? UserType { get; set; }" + Environment.NewLine;
             requestBaseClass += "" + Environment.NewLine;
             requestBaseClass += "        public long? UserGroupOid { get; set; }" + Environment.NewLine;
             requestBaseClass += "" + Environment.NewLine;
-            requestBaseClass += "        public string SessionId { get; set; }" + Environment.NewLine;
+            requestBaseClass += "        public string? SessionId { get; set; }" + Environment.NewLine;
             requestBaseClass += "" + Environment.NewLine;
             requestBaseClass += "    }" + Environment.NewLine;
             requestBaseClass += "}" + Environment.NewLine;
