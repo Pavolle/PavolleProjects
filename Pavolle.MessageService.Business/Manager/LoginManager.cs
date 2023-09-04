@@ -1,89 +1,159 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
+using Pavolle.MessageService.Common.Enums;
 using Pavolle.MessageService.DbModels;
 using Pavolle.MessageService.DbModels.Entities;
+using Pavolle.MessageService.ViewModels.Model;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
+using Pavolle.MessageService.ViewModels.ViewData;
 using Pavolle.MessageService.WebSecurity;
 using Pavolle.Security;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
-    public class LoginManager:Singleton<LoginManager>
+    public class LoginManager : Singleton<LoginManager>
     {
-        public List<string> _users;
+        private List<UserCacheModel> _users;
         private LoginManager()
-        {
-            //TODO Her yeni kullanıcı eklendiğinde bu alanın güncellenmesi gerekiyor.
-            ReloadUsers();
-        }
-
-        void ReloadUsers()
         {
             using (Session session = XpoManager.Instance.GetNewSession())
             {
-                _users=session.Query<User>().Select(t=>t.Username).ToList();
+                ReloadUsers(session);
             }
+        }
+
+        public void ReloadUsers(Session session)
+        {
+            _users = session.Query<User>().Select(t => new UserCacheModel
+            {
+                Username = t.Username,
+                PhoneNumber = t.PhoneNumber,
+                Email = t.Email,
+                WrongTryCount = t.WrongTryCount,
+                IsLocked = t.IsLocked,
+                Code = t.Code,
+                Password = t.Password,
+                UserGroupOid = t.UserGroup.Oid,
+                UserType = t.UserGroup.UserType
+            }).ToList();
+        }
+
+        public MessageServiceResponseBase ForgotPasword(ForgotPasswordRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageServiceResponseBase ResetPassword(ResetPasswordRequest request)
+        {
+            throw new NotImplementedException();
         }
 
         public TokenResponse SignIn(LoginRequest request)
         {
             var response = new TokenResponse();
-            if (_users.Any(t => t == request.Username))
+
+            if(request != null)
             {
-                //Hata
-                response.Success = false;
-                response.Token = "";
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, ELanguage.Ingilizce);
                 return response;
             }
-            bool signInSuccess = false;
-            using (Session session = XpoManager.Instance.GetNewSession())
-            {
-                var user = session.Query<User>().FirstOrDefault(t => t.Username == request.Username);
-                if(user==null)
-                {
-                    response.Success = false;
-                    return response;
-                }
-                if (user.IsLocked)
-                {
-                    response.Success = false;
-                    return response;
-                }
 
-                signInSuccess = user.Password == SecurityHelperManager.Instance.GetEncryptedPassword(request.Password, request.Username);
-                if (!signInSuccess)
+            if (request.Language == null)
+            {
+                request.Language = ELanguage.Ingilizce;
+            }
+
+            string checkUsernameResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true);
+            if(checkUsernameResult != null)
+            {
+                response.ErrorMessage = checkUsernameResult;
+                return response;
+            }
+
+            string checkPasswordResult = ValidationManager.Instance.CheckString(request.Username, false, 8, 50, true);
+            if (checkPasswordResult != null)
+            {
+                response.ErrorMessage = checkPasswordResult;
+                return response;
+            }
+
+            var userCache = _users.FirstOrDefault(t => t.Username == request.Username);
+            if (userCache == null)
+            {
+                //todo nameof(request.Username test edilecek.)
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UsernameOrPasswordIsNotCorrect, request.Language.Value);
+                response.WrongTryCount = 0;
+                response.IsLocked = false;
+                return response;
+            }
+
+            if(userCache.IsLocked)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UserIsLocked, request.Language.Value);
+                response.IsLocked = true;
+                response.WrongTryCount = userCache.WrongTryCount;
+                return response;
+            }
+
+            var authResult = SecurityHelperManager.Instance.GetEncryptedPassword(request.Password, request.Username) == userCache.Password;
+            if (!authResult)
+            {
+                userCache.WrongTryCount++;
+                if(userCache.WrongTryCount > 50)
                 {
-                    user.WrongTryCount++;
-                    if(user.WrongTryCount > 10)
+                    userCache.IsLocked = true;
+                    using (Session session = XpoManager.Instance.GetNewSession())
                     {
+                        //todo test edilecek. Burada bu bilgiliyi değiştirmemizin listede de değişiklik yapıp yapmadığını kontrol etmemiz gerekiyor.
+                        userCache.IsLocked = true;
+
+                        var user = session.Query<User>().FirstOrDefault(t => t.Username == request.Username);
                         user.IsLocked = true;
+                        user.WrongTryCount = 50;
+                        user.LastUpdateTime = DateTime.Now;
+                        user.Save();
+                        response.IsLocked = true; 
+                        response.WrongTryCount = userCache.WrongTryCount;
                     }
-                    user.Save();
-                    response.Success = false;
-                    return response;
                 }
                 else
                 {
+                    response.IsLocked = false;
+                    response.WrongTryCount = userCache.WrongTryCount;
+                }
+                response.ErrorMessage=TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UsernameOrPasswordIsNotCorrect, request.Language.Value);
+                return response;
+            }
+
+            response.Token = MesssageServiceJwtTokenManager.Instance.CreateToken(request.Username, Guid.NewGuid().ToString(), userCache.UserGroupOid.ToString(), ((int)userCache.UserType).ToString(), ((int)request.Language.Value).ToString(), request.RequestIp);
+
+            response.Authorizations = AuthManager.Instance.GetAuthList(userCache.UserGroupOid);
+            response.UserInfo = new UserInfoViewData
+            {
+                Name = userCache.Name,
+                Surname = userCache.Surname,
+                Username = userCache.Username,
+                UserDefinition = UserGroupManager.Instance.GetUserGroupDefinition(userCache.UserGroupOid)
+            };
+
+            if (userCache.WrongTryCount > 10)
+            {
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    var user = session.Query<User>().FirstOrDefault(t => t.Username == request.Username);
                     user.IsLocked = false;
                     user.WrongTryCount = 0;
+                    user.LastUpdateTime = DateTime.Now;
                     user.Save();
                 }
-
-                response.Token = MesssageServiceJwtTokenManager.Instance.CreateToken(user.Username, Guid.NewGuid().ToString(), user.Organization.Oid.ToString(), ((int)user.UserType).ToString(), request.Language.Value.ToString(), request.RequestIp);
-
-                //yetkilerin sorgulanması.
-                response.Name = user.Name;
-                response.Surname = user.Surname;
-                response.Email = user.Email;
-                response.Username = user.Username;
-
-                //response.Auths = AuthManager.Instance.GetAuthForUserType(user.UserType);
             }
 
             return response;
@@ -94,17 +164,7 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        public object? ForgotPasword(ForgotPasswordRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object? VerifyCode(VerifyCodeRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object? ResetPassword(ResetPasswordRequest request)
+        public MessageServiceResponseBase VerifyCode(VerifyCodeRequest request)
         {
             throw new NotImplementedException();
         }

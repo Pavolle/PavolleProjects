@@ -1,3 +1,5 @@
 Web sitesine menüleri ekledik.
 ViewDataBase classýnýn uygulama için otomatik oluþturulmasý saðlandý
 RequestBase classýnýn uygulama için otomatik oluþturulmasý saðlandý.
+ResponseBase ve Criteria base taraflarý classlarýnýn da otmatik oluþturulmasý tamamalandý. Burada iþ yükünü core projesine aktardýk. Bu yüzden otomatik proje oluþturma sürecinde Core projesinin de oluþturulmasýný saðlamamamýz gerekiyor...
+

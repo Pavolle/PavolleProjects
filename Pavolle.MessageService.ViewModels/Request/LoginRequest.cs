@@ -1,5 +1,4 @@
-﻿using Pavolle.Core.Enums;
-using Pavolle.Core.ViewModels.Request;
+﻿using Pavolle.Core.ViewModels.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class LoginRequest:RequestBase
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string? Username { get; set; }
+        public string? Password { get; set; }
     }
 }

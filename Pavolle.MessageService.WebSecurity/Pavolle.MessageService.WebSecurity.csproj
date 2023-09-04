@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
     <ProjectReference Include="..\Pavolle.MessageService.Common\Pavolle.MessageService.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 
 </Project>

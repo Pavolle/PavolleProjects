@@ -16,7 +16,6 @@
     <ProjectReference Include="..\Pavolle.MessageService.DbModels\Pavolle.MessageService.DbModels.csproj" />
     <ProjectReference Include="..\Pavolle.MessageService.ViewModels\Pavolle.MessageService.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.MessageService.WebSecurity\Pavolle.MessageService.WebSecurity.csproj" />
-    <ProjectReference Include="..\Pavolle.Multilanguage\Pavolle.Multilanguage.csproj" />
     <ProjectReference Include="..\Pavolle.Security\Pavolle.Security.csproj" />
   </ItemGroup>
 

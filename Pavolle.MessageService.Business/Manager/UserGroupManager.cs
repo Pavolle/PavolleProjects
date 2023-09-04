@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
-    public class ValidationManager:Singleton<ValidationManager>
+    public class UserGroupManager:Singleton<UserGroupManager>
     {
-        private ValidationManager() { }
+        private UserGroupManager()
+        {
 
-        public string CheckString(string? text, bool nullable, int minLength, int maxLength, bool xssControl)
+        }
+
+        internal string GetUserGroupDefinition(long userGroupOid)
         {
             throw new NotImplementedException();
         }

@@ -50,6 +50,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Multilanguage", "Pavolle.Multilanguage\Pavolle.Multilanguage.csproj", "{00A8917B-B054-4E3D-8771-5D696420D515}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0000 Mobile Apps", "0000 Mobile Apps", "{570F66D8-60F4-453C-B10F-10F44B3CEEAD}"
+	ProjectSection(SolutionItems) = preProject
+		03.09.2023.txt = 03.09.2023.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.VeggyMath", "Pavolle.VeggyMath\Pavolle.VeggyMath.csproj", "{C2FD59E2-0C27-4E76-8202-E5B262FE0CC3}"
 EndProject
@@ -369,12 +372,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMS Gönderim", "SMS Gönde
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00", "00", "{AFD15187-5351-4186-889D-FA2486AD8F55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.FaceMemory", "Pavolle.FaceMemory\Pavolle.FaceMemory.csproj", "{9F274E36-091D-421C-B8D5-96555BDA1E27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2023", "2023", "{DCD33EEC-1756-41A8-9D34-F8B11274A59B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eylül", "Eylül", "{CAD7E36D-BB0C-4447-A6B5-46D83C201BCD}"
 	ProjectSection(SolutionItems) = preProject
 		01.09.2023.txt = 01.09.2023.txt
 		03.09.2023.txt = 03.09.2023.txt
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.FaceMemory", "Pavolle.FaceMemory\Pavolle.FaceMemory.csproj", "{9F274E36-091D-421C-B8D5-96555BDA1E27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1217,6 +1224,8 @@ Global
 		{BA94C1B2-FF8B-4B67-8984-AAE710DE26FC} = {5BA131B6-1F76-4ACD-8BA1-EA5CBD7E5EA3}
 		{5DD15358-9F82-4957-987B-60CC434DE635} = {5CE011D9-C60B-4C00-9F0E-04A3BDE56A45}
 		{9F274E36-091D-421C-B8D5-96555BDA1E27} = {FCF10A3A-801C-4FFF-8395-4F932D1BA183}
+		{DCD33EEC-1756-41A8-9D34-F8B11274A59B} = {AFD15187-5351-4186-889D-FA2486AD8F55}
+		{CAD7E36D-BB0C-4447-A6B5-46D83C201BCD} = {DCD33EEC-1756-41A8-9D34-F8B11274A59B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB022668-0D9A-42CE-B969-F65E1AD40F7C}

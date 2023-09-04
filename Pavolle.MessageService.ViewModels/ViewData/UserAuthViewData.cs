@@ -9,6 +9,6 @@ namespace Pavolle.MessageService.ViewModels.ViewData
     public class UserAuthViewData
     {
         public string ApiKey { get; set; }
-        public bool IsAutorized { get; set; }
+        public bool IsAuthority { get; set; }
     }
 }

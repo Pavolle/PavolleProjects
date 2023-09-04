@@ -10,8 +10,8 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class ForgotPasswordRequest:RequestBase
     {
-        public string Username { get; set; }
-        public ECommunicationType CommunicationType { get; set; }
-        public string CommunicationValue { get; set; }
+        public string? Username { get; set; }
+        public ECommunicationType? CommunicationType { get; set; }
+        public string? CommunicationValue { get; set; }
     }
 }
