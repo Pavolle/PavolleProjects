@@ -19,6 +19,9 @@ namespace Pavolle.MessageService.DbModels.Entities
         [Indexed(Name = "index_users_username", Unique = true)]
         public string Username { get; set; }
 
+        [Persistent("user_type")]
+        public EUserType UserType { get; set; }
+
         [Persistent("name")]
         [Size(255)]
         public string Name { get; set; }

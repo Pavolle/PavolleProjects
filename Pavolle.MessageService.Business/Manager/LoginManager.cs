@@ -10,12 +10,6 @@ using Pavolle.MessageService.ViewModels.Response;
 using Pavolle.MessageService.ViewModels.ViewData;
 using Pavolle.MessageService.WebSecurity;
 using Pavolle.Security;
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {

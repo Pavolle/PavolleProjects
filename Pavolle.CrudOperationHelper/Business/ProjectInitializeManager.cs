@@ -331,8 +331,8 @@ namespace Pavolle.CrudOperationHelper.Business
             userClass += "        {" + Environment.NewLine;
             userClass += "        }" + Environment.NewLine;
             userClass += "" + Environment.NewLine;
-            userClass += "        [Persistent(\"organization_oid\")]" + Environment.NewLine;
-            userClass += "        public Organization Organization { get; set; }" + Environment.NewLine;
+            userClass += "        [Persistent(\"user_group_oid\")]" + Environment.NewLine;
+            userClass += "        public UserGroup UserGroup { get; set; }" + Environment.NewLine;
             userClass += "" + Environment.NewLine;
             userClass += "        [Persistent(\"username\")]" + Environment.NewLine;
             userClass += "        [Size(50)]" + Environment.NewLine;
