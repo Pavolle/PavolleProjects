@@ -1,2 +1,11 @@
 SignIn metodu yazýldý. Testlerden sonra genel projeye eklenebilir hale getireceðiz.
 Projelere güvenlik katmaný eklendi. Low, Strong ve Master olmak üzere 3 güvenlik seviyesi bulunmakta. Bu güvenlik seviyesi kullanýcý, Kullanýcý ve IP adreslerine göre güvenlik katmaný oluþturuyor.
+
+Web sitesi için geliþtireceðimiz projeler için altyapý klasörü oluþturduk. Burada geliþtirdiðimiz her proje için web sayfasý ve reklam sayfasýný hazýrlayacaðýz.
+
+Projenin Tanýtýmý Ýçin
+Yönetilebilir Güvenlik Seviyeleri
+Brut Force saldýrýlarýna karþý koruma
+DDOS ataklarýna karþý koruma
+Kullanýcý Gruplama ve Grup yetkilendirme
+JWT Token ile kimliklendirme ve geliþmiþ kimlik kontrolü

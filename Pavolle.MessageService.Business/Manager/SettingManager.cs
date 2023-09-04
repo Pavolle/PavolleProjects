@@ -15,6 +15,11 @@ namespace Pavolle.MessageService.Business.Manager
 
         }
 
+        internal ELanguage GetDefaultLanguage()
+        {
+            throw new NotImplementedException();
+        }
+
         internal ESecurityLevel GetSecurityLevel()
         {
             throw new NotImplementedException();

@@ -130,7 +130,7 @@ namespace Pavolle.MessageService.Business.Manager
             //}.Save();
             Console.WriteLine(apiDefintion + " servisi için yetki bilgileri veritabanına yazıldı.");
 
-            TranslateManager.Instance.Setup();
+            //TranslateManager.Instance.Setup();
         }
     }
 }

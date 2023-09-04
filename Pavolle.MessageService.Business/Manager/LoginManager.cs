@@ -2,6 +2,7 @@
 using log4net;
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Request;
 using Pavolle.MessageService.Common.Enums;
 using Pavolle.MessageService.DbModels;
 using Pavolle.MessageService.DbModels.Entities;
@@ -11,29 +12,28 @@ using Pavolle.MessageService.ViewModels.Response;
 using Pavolle.MessageService.ViewModels.ViewData;
 using Pavolle.MessageService.WebSecurity;
 using Pavolle.Security;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Collections.Concurrent;
 
 namespace Pavolle.MessageService.Business.Manager
 {
     public class LoginManager : Singleton<LoginManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(LoginManager));
-        private List<UserCacheModel> _users;
+        private ConcurrentDictionary<string, UserCacheModel> _users;
         private LoginManager()
         {
             using (Session session = XpoManager.Instance.GetNewSession())
             {
-                ReloadUsers(session);
+                LoadUsers(session);
             }
 
             _log.Debug("Initialize " + nameof(LoginManager));
         }
 
-        public void ReloadUsers(Session session)
+        private void LoadUsers(Session session)
         {
-            _log.Debug("Kullanıcı cache listesi yenileniyor...");
-            _users = session.Query<User>().Select(t => new UserCacheModel
+            _log.Debug("Users cache list loading...");
+            var _userList = session.Query<User>().Select(t => new UserCacheModel
             {
                 Username = t.Username,
                 PhoneNumber = t.PhoneNumber,
@@ -45,7 +45,43 @@ namespace Pavolle.MessageService.Business.Manager
                 UserGroupOid = t.UserGroup.Oid,
                 UserType = t.UserGroup.UserType
             }).ToList();
-            _log.Debug("Kullanıcı cache listesi yenileme tamamlandı.");
+            foreach (var user in _userList)
+            {
+                bool result = _users.TryAdd(user.Username, user);
+            }
+            _log.Debug("Users cache list loaded.");
+        }
+
+
+        public bool AddUser(string username, UserCacheModel userCacheModel)
+        {
+            try
+            {
+                return _users.TryAdd(username, userCacheModel);
+            }
+            catch (Exception ex) 
+            {
+                _log.Debug("Add user to cache error: " + ex);
+                return false;
+            }
+        }
+
+        public bool UpdateUser(string username, UserCacheModel userCacheModel)
+        {
+            try
+            {
+                if (!_users.ContainsKey(username))
+                {
+                    return _users.TryAdd(username, userCacheModel);
+                }
+                _users[username] = userCacheModel;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _log.Debug("Update user to cache error: " + ex);
+                return false;
+            }
         }
 
         public MessageServiceResponseBase ForgotPasword(ForgotPasswordRequest request)
@@ -56,24 +92,28 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, ELanguage.Ingilizce);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Request is null");
                     return response;
                 }
 
                 if (request.Language == null)
                 {
-                    request.Language = ELanguage.Ingilizce;
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
                 string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
                 checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
@@ -81,41 +121,49 @@ namespace Pavolle.MessageService.Business.Manager
                 checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
 
-                var userCache = _users.FirstOrDefault(t => t.Username == request.Username);
+                if (!_users.ContainsKey(request.Username))
+                {
+                    _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    return response;
+                }
+
+                var userCache = _users[request.Username];
                 if (userCache == null)
                 {
-                    //todo nameof(request.Username test edilecek.)
+                    _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
                     response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Username);
                     return response;
                 }
 
                 bool communicationVerify = false;
-                bool sendRestCodeResult = false;
+                bool sendResetCodeResult = false;
                 switch (request.CommunicationType.Value)
                 {
                     case ECommunicationType.Phone:
                         communicationVerify = request.CommunicationValue == userCache.PhoneNumber;
                         if (communicationVerify)
                         {
-                            sendRestCodeResult = CommunicationManager.Instance.GenerateResetCodeAndSendSMSToUser(userCache.Username);
+                            sendResetCodeResult = CommunicationManager.Instance.GenerateResetCodeAndSendSMSToUser(userCache.Username);
                         }
                         break;
                     case ECommunicationType.Mail:
                         communicationVerify = request.CommunicationValue == userCache.Email;
                         if (communicationVerify)
                         {
-                            sendRestCodeResult = CommunicationManager.Instance.GenerateResetCodeAndSendEmailToUser(userCache.Username);
+                            sendResetCodeResult = CommunicationManager.Instance.GenerateResetCodeAndSendEmailToUser(userCache.Username);
                         }
                         break;
                     default:
                         break;
                 }
 
-                if (communicationVerify && sendRestCodeResult)
+                if (communicationVerify && sendResetCodeResult)
                 {
                     switch (request.CommunicationType.Value)
                     {
@@ -159,24 +207,28 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, ELanguage.Ingilizce);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Request is null");
                     return response;
                 }
 
                 if (request.Language == null)
                 {
-                    request.Language = ELanguage.Ingilizce;
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
                 string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
                 checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
@@ -184,17 +236,54 @@ namespace Pavolle.MessageService.Business.Manager
                 checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
 
-                var userCache = _users.FirstOrDefault(t => t.Username == request.Username);
+                if (!_users.ContainsKey(request.Username))
+                {
+                    _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    return response;
+                }
+
+                var userCache = _users[request.Username];
                 if (userCache == null)
                 {
                     //todo nameof(request.Username test edilecek.)
                     response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Username);
                     return response;
                 }
+
+                bool communicationVerify = false;
+                switch (request.CommunicationType.Value)
+                {
+                    case ECommunicationType.Phone:
+                        communicationVerify = request.CommunicationValue == userCache.PhoneNumber;
+                        break;
+                    case ECommunicationType.Mail:
+                        communicationVerify = request.CommunicationValue == userCache.Email;
+                        break;
+                    default:
+                        break;
+                }
+                if (communicationVerify)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    return response;
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    
+                }
+                
+
+
+
+
+
             }
             catch (Exception ex)
             {
@@ -212,18 +301,21 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, ELanguage.Ingilizce);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Request is null");
                     return response;
                 }
 
                 if (request.Language == null)
                 {
-                    request.Language = ELanguage.Ingilizce;
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
                 string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
@@ -231,11 +323,19 @@ namespace Pavolle.MessageService.Business.Manager
                 checkResult = ValidationManager.Instance.CheckString(request.Password, false, 8, 50, true, EMessageServiceMessageCode.Password);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
 
-                var userCache = _users.FirstOrDefault(t => t.Username == request.Username);
+                if (!_users.ContainsKey(request.Username))
+                {
+                    _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    return response;
+                }
+
+                var userCache = _users[request.Username];
                 if (userCache == null)
                 {
                     //todo nameof(request.Username test edilecek.)
@@ -288,9 +388,9 @@ namespace Pavolle.MessageService.Business.Manager
                 response.Authorizations = AuthManager.Instance.GetAuthList(userCache.UserGroupOid);
                 response.UserInfo = new UserInfoViewData
                 {
+                    Username = userCache.Username,
                     Name = userCache.Name,
                     Surname = userCache.Surname,
-                    Username = userCache.Username,
                     UserDefinition = UserGroupManager.Instance.GetUserGroupDefinition(userCache.UserGroupOid)
                 };
 
@@ -347,7 +447,18 @@ namespace Pavolle.MessageService.Business.Manager
             var response = new MessageServiceResponseBase();
             try
             {
+                if (request == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Request is null");
+                    return response;
+                }
 
+                if (request.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
             }
             catch (Exception ex)
             {
@@ -365,24 +476,28 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, ELanguage.Ingilizce);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Request is null");
                     return response;
                 }
 
                 if (request.Language == null)
                 {
-                    request.Language = ELanguage.Ingilizce;
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
                 string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
                 checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
@@ -390,22 +505,31 @@ namespace Pavolle.MessageService.Business.Manager
                 checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType);
                 if (checkResult != null)
                 {
+                    _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
 
-                var userCache = _users.FirstOrDefault(t => t.Username == request.Username);
+                if (!_users.ContainsKey(request.Username))
+                {
+                    _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    return response;
+                }
+
+                var userCache = _users[request.Username];
                 if (userCache == null)
                 {
                     //todo nameof(request.Username test edilecek.)
                     response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Username);
+                    _log.Error("Error: " + response.ErrorMessage);
                     return response;
                 }
             }
             catch (Exception ex)
             {
                 response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
-                _log.Debug("Unexpected error occured!!! Error: " + ex);
+                _log.Error("Unexpected error occured!!! Error: " + ex);
             }
 
             return response;
