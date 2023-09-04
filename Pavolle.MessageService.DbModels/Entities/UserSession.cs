@@ -16,5 +16,12 @@ namespace Pavolle.MessageService.DbModels.Entities
         [Persistent("request_ip")]
         [Size(20)]
         public string RequestIp { get; set; }
+
+        [Persistent("active")]
+        public bool Active { get; set; }
+
+        [Persistent("username")]
+        [Size(50)]
+        public string Username { get; set; }
     }
 }

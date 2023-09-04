@@ -11,6 +11,13 @@ namespace Pavolle.MessageService.Common.Enums
         XNotFound=1,
         SecurityError,
         UsernameOrPasswordIsNotCorrect,
-        UserIsLocked
+        UserIsLocked,
+        Username,
+        CommunicationValue,
+        Password,
+        CommunicationType,
+        UnexpectedError,
+        CodeSendedToEmailNumber,
+        CodeSendedToPhoneNumber
     }
 }

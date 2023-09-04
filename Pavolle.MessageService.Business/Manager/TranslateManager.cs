@@ -18,7 +18,7 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        internal string? GetXNotFoundMessage(ELanguage? language, string objectName)
+        internal string? GetXNotFoundMessage(ELanguage? language, EMessageServiceMessageCode messageCode)
         {
             throw new NotImplementedException();
         }

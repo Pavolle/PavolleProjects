@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.MessageService.Common.Enums
+namespace Pavolle.Core.Enums
 {
-    public enum ESettingType
+    public enum ESecurityLevel
     {
-        SchedulerControlCron=1,
-        SecurityLevel=2,
+        Low=1,
+        Strong=2,
+        Master=3
     }
 }
