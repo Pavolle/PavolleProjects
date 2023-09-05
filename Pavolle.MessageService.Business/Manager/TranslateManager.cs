@@ -2,7 +2,10 @@
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
+using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Model;
+using Pavolle.MessageService.ViewModels.Request;
+using Pavolle.MessageService.ViewModels.Response;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -17,6 +20,21 @@ namespace Pavolle.MessageService.Business.Manager
         static readonly ILog _log = LogManager.GetLogger(typeof(TranslateManager));
         private ConcurrentDictionary<string, TranslateDataCacheModel> _translateData;
         private TranslateManager() { }
+
+        public object List(ListTranslateDataCriteria criteria)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Detail(long? oid, MessageServiceRequestBase request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageServiceResponseBase Edit(long? oid, EditTranslateDataRequest request)
+        {
+            throw new NotImplementedException();
+        }
 
         public string? GetMessage(EMessageServiceMessageCode messageCode, ELanguage turkce)
         {

@@ -15,88 +15,66 @@ namespace Pavolle.MessageService.Common.Utils
         public const string EditRoutePrefix = "edit/{oid}";
         public const string DeleteRoutePrefix = "delete/{oid}";
 
-        public class AppRouteConsts
-        {
-            public const string Route = "ms/api/app";
-        }
-
-        public class AuthRouteConsts
-        {
-            public const string Route = "ms/api/auth";
-        }
-
-        public class CompanyRouteConsts
-        {
-            public const string Route = "ms/api/company";
-        }
-
-        public class DefinitionRouteConsts
-        {
-            public const string Route = "ms/api/definition";
-        }
-
         public class LoginRouteConsts
         {
-            public const string Route = "ms/api/login";
+            public const string Route = "api/login";
             public const string SignInRoutePrefix="signin";
             public const string SignOutRoutePrefix = "signout";
             public const string ForgotPaswordRoutePrefix = "forgotpassword";
             public const string VerifyCodeRoutePrefix = "verifycode";
-            public const string ResetPaswordRoutePrefix = "verifycode";
+            public const string ResetPaswordRoutePrefix = "resetcode";
             
         }
 
-        public class MessageRouteConsts
+        public class AuthRouteConsts
         {
-            public const string Route = "ms/api/message";
+            public const string Route = "api/auth";
         }
 
-        public class MessageManagmentRouteConsts
+        public class CityRouteConsts
         {
-            public const string Route = "ms/api/messagemanagment";
+            public const string Route = "api/city";
         }
 
-        public class SettingsRouteConsts
+        public class CountryRouteConsts
         {
-            public const string Route = "ms/api/settings";
+            public const string Route = "api/country";
         }
 
-        public class UserRouteConsts
+        public class DefinitionRouteConsts
         {
-            public const string Route = "ms/api/user";
-            public const string ChangePasswordRoutePrefix = "changepassword";
-            public const string MyInfoRoutePrefix = "info";
+            public const string Route = "api/definition";
+        }
+
+        public class OrganizationRouteConsts
+        {
+            public const string Route = "api/organization";
         }
 
         public class SchedulerRouteConsts
         {
-            public const string Route = "ms/api/scheduler";
-            public const string RunRoutePrefix = "run";
+            public const string Route = "api/scheduler";
+            public const string RunRoutePrefix = "run/{oid}";
         }
 
-        public class VersionChangeRouteConsts
+        public class SettingRouteConsts
         {
-            public const string Route = "ms/api/versionchange";
+            public const string Route = "api/setting";
         }
 
-        public class IssueRouteConsts
+        public class TranslateRouteConsts
         {
-            public const string Route = "ms/api/issue";
+            public const string Route = "api/translate";
         }
 
-        public class VersionRouteConsts
+        public class UserRouteConsts
         {
-            public const string Route = "ms/api/version";
+            public const string Route = "api/user";
         }
 
-        public class NotificationRouteConsts
+        public class UserGroupRouteConsts
         {
-            public const string Route = "ms/api/notification";
-        }
-
-        public class AppErrorRouteConsts
-        {
-            public const string Route = "ms/api/error";
+            public const string Route = "api/usergroup";
         }
     }
 }

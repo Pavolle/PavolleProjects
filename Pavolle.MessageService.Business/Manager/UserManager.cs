@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
-    public class CountryManager:Singleton<CountryManager>
+    public class UserManager : Singleton<UserManager>
     {
-        private CountryManager() { }
+        private UserManager() { }
 
-        public MessageServiceResponseBase Delete(long? oid, DeleteCountryCriteria request)
+        public MessageServiceResponseBase Delete(long? oid, DeleteUserCriteria request)
         {
             throw new NotImplementedException();
         }
@@ -25,22 +25,22 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        public MessageServiceResponseBase Edit(long? oid, EditCountryRequest request)
+        public MessageServiceResponseBase Edit(long? oid, EditUserRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public MessageServiceResponseBase Add(AddCountryRequest request)
+        public MessageServiceResponseBase Add( AddUserRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object List(ListCountryCriteria criteria)
+        public object List(ListUserCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public LookupResponse Lookup(LookupCountryCriteria criteria)
+        public LookupResponse Lookup(LookupUserCriteria criteria)
         {
             throw new NotImplementedException();
         }

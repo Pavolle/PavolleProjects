@@ -5,7 +5,10 @@ using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
 using Pavolle.MessageService.DbModels;
 using Pavolle.MessageService.DbModels.Entities;
+using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Model;
+using Pavolle.MessageService.ViewModels.Request;
+using Pavolle.MessageService.ViewModels.Response;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -92,6 +95,21 @@ namespace Pavolle.MessageService.Business.Manager
                 _log.Error("Fetch Security Level setting error: " + ex);
                 return ESecurityLevel.Master;
             }
+        }
+
+        public object? List(ListSettingCriteria request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object? Detail(long? oid, MessageServiceRequestBase request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageServiceResponseBase Edit(long? oid, EditSettingRequest request)
+        {
+            throw new NotImplementedException();
         }
     }
 }
