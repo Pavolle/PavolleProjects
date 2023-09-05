@@ -9,3 +9,5 @@ Brut Force saldýrýlarýna karþý koruma
 DDOS ataklarýna karþý koruma
 Kullanýcý Gruplama ve Grup yetkilendirme
 JWT Token ile kimliklendirme ve geliþmiþ kimlik kontrolü
+
+Pavolle Biliþim için RabbitMQ sunucusu kuruldu admin pavollebilisim

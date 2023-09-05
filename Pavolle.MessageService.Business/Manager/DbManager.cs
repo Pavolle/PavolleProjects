@@ -9,22 +9,24 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
-    public class DbManager:Singleton<DbManager>
+    public class DbManager : Singleton<DbManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(DbManager));
         private DbManager()
-        { 
+        {
         }
 
-        public bool InitDatabase(string connectionString)
+        public bool Initialize(string connectionString)
         {
             try
             {
                 XpoManager.Instance.InitXpo(connectionString);
+                _log.Info("Database connection etablish.");
                 return true;
             }
             catch (Exception ex)
             {
+                _log.Error("Database connection error: " + ex);
                 return false;
             }
         }
