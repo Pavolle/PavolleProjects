@@ -26,9 +26,9 @@ namespace Pavolle.MessageService.Common.Utils
             
         }
 
-        public class AuthRouteConsts
+        public class ApiServiceRouteConsts
         {
-            public const string Route = "api/auth";
+            public const string Route = "api/apiservice";
         }
 
         public class CityRouteConsts
@@ -70,6 +70,12 @@ namespace Pavolle.MessageService.Common.Utils
         public class UserRouteConsts
         {
             public const string Route = "api/user";
+            public const string MyInfoRoutePrefix = "myinfo";
+            public const string EditMyInfoRoutePrefix = "editmyinfo";
+            public const string VerifyPhoneRoutePrefix = "verifyphone";
+            public const string VerifyEmailRoutePrefix = "verifyemail";
+            public const string SendVerificationCodeRoutePrefix = "sendverificationcode";
+            public const string ChangePasswordRoutePrefix = "changepassword";
         }
 
         public class UserGroupRouteConsts

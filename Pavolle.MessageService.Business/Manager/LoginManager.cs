@@ -385,7 +385,7 @@ namespace Pavolle.MessageService.Business.Manager
 
                 response.Token = MesssageServiceJwtTokenManager.Instance.CreateToken(request.Username, Guid.NewGuid().ToString(), userCache.UserGroupOid.ToString(), ((int)userCache.UserType).ToString(), ((int)request.Language.Value).ToString(), request.RequestIp);
 
-                response.Authorizations = AuthManager.Instance.GetAuthList(userCache.UserGroupOid);
+                response.Authorizations = ApiServiceManager.Instance.GetAuthList(userCache.UserGroupOid);
                 response.UserInfo = new UserInfoViewData
                 {
                     Username = userCache.Username,

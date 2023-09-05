@@ -12,17 +12,17 @@ using System.Text.Json;
 namespace Pavolle.MessageService.WebApp.Controllers
 {
     [Produces("application/json")]
-    [Route(MessageServiceApiUrlConsts.AuthRouteConsts.Route)]
-    public class AuthController : Controller
+    [Route(MessageServiceApiUrlConsts.ApiServiceRouteConsts.Route)]
+    public class ApiServiceController : Controller
     {
-        static readonly ILog _log = LogManager.GetLogger(typeof(AuthController));
+        static readonly ILog _log = LogManager.GetLogger(typeof(ApiServiceController));
 
         [HttpGet(MessageServiceApiUrlConsts.ListRoutePrefix)]
-        public ActionResult List([FromQuery] ListAuthCriteria criteria)
+        public ActionResult List([FromQuery] ListApiServiceCriteria criteria)
         {
             try
             {
-                var response = AuthManager.Instance.List(criteria);
+                var response = ApiServiceManager.Instance.List(criteria);
                 _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -38,7 +38,7 @@ namespace Pavolle.MessageService.WebApp.Controllers
         {
             try
             {
-                var response = AuthManager.Instance.Detail(oid, request);
+                var response = ApiServiceManager.Instance.Detail(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -50,11 +50,11 @@ namespace Pavolle.MessageService.WebApp.Controllers
         }
 
         [HttpPost(MessageServiceApiUrlConsts.EditRoutePrefix)]
-        public ActionResult Edit(long? oid, [FromBody] EditAuthRequest request)
+        public ActionResult Edit(long? oid, [FromBody] EditApiServiceRequest request)
         {
             try
             {
-                var response = AuthManager.Instance.Edit(oid, request);
+                var response = ApiServiceManager.Instance.Edit(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }

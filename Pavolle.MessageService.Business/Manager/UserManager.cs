@@ -44,5 +44,35 @@ namespace Pavolle.MessageService.Business.Manager
         {
             throw new NotImplementedException();
         }
+
+        public object MyInfo(MessageServiceRequestBase request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object EditMyInfo(EditMyInfoRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VerifyPhone(VerifyPhoneRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object VerifyEmail(VerifyEmailRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object SendVerificationCode(SendVerificationCodeRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ChangePassword(ChangePasswordRequest request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

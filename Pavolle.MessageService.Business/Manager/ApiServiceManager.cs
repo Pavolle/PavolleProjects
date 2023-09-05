@@ -11,24 +11,24 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
-    public class AuthManager:Singleton<AuthManager>
+    public class ApiServiceManager:Singleton<ApiServiceManager>
     {
-        private AuthManager()
+        private ApiServiceManager()
         {
 
         }
 
-        public object Detail(long? oid, MessageServiceRequestBase request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public MessageServiceResponseBase Edit(long? oid, EditAuthRequest request)
+        public ApiServiceDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object List(ListAuthCriteria criteria)
+        public MessageServiceResponseBase Edit(long? oid, EditApiServiceRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ApiServiceListResponse List(ListApiServiceCriteria criteria)
         {
             throw new NotImplementedException();
         }

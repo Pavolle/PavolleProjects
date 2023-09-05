@@ -34,9 +34,15 @@ namespace Pavolle.MessageService.DbModels.Entities
         [Size(255)]
         public string Email { get; set; }
 
+        [Persistent("email_verify")]
+        public bool EmailVerify { get; set; }
+
         [Persistent("phone_number")]
         [Size(50)]
         public string PhoneNumber { get; set; }
+
+        [Persistent("phone_number_verify")]
+        public bool PhoneNumberVerify { get; set; }
 
         [Persistent("password")]
         [Size(1000)]

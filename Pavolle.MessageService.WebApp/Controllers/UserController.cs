@@ -112,5 +112,101 @@ namespace Pavolle.MessageService.WebApp.Controllers
                 return Ok(new MessageServiceResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, ELanguage.Ingilizce) });
             }
         }
+
+        [HttpGet(MessageServiceApiUrlConsts.UserRouteConsts.MyInfoRoutePrefix)]
+        public ActionResult MyInfo(MessageServiceRequestBase request)
+        {
+            try
+            {
+                var response = UserManager.Instance.MyInfo(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new MessageServiceResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, ELanguage.Ingilizce) });
+            }
+        }
+
+        [HttpPost(MessageServiceApiUrlConsts.UserRouteConsts.EditMyInfoRoutePrefix)]
+        public ActionResult EditMyInfo(EditMyInfoRequest request)
+        {
+            try
+            {
+                var response = UserManager.Instance.EditMyInfo(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new MessageServiceResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, ELanguage.Ingilizce) });
+            }
+        }
+
+        [HttpPost(MessageServiceApiUrlConsts.UserRouteConsts.VerifyPhoneRoutePrefix)]
+        public ActionResult VerifyPhone(VerifyPhoneRequest request)
+        {
+            try
+            {
+                var response = UserManager.Instance.VerifyPhone(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new MessageServiceResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, ELanguage.Ingilizce) });
+            }
+        }
+
+        [HttpPost(MessageServiceApiUrlConsts.UserRouteConsts.VerifyEmailRoutePrefix)]
+        public ActionResult VerifyEmail(VerifyEmailRequest request)
+        {
+            try
+            {
+                var response = UserManager.Instance.VerifyEmail(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new MessageServiceResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, ELanguage.Ingilizce) });
+            }
+        }
+
+        [HttpPost(MessageServiceApiUrlConsts.UserRouteConsts.SendVerificationCodeRoutePrefix)]
+        public ActionResult SendVerificationCode(SendVerificationCodeRequest request)
+        {
+            try
+            {
+                var response = UserManager.Instance.SendVerificationCode(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new MessageServiceResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, ELanguage.Ingilizce) });
+            }
+        }
+
+        [HttpPost(MessageServiceApiUrlConsts.UserRouteConsts.ChangePasswordRoutePrefix)]
+        public ActionResult ChangePassword(ChangePasswordRequest request)
+        {
+            try
+            {
+                var response = UserManager.Instance.ChangePassword(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new MessageServiceResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, ELanguage.Ingilizce) });
+            }
+        }
     }
 }

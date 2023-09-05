@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.MessageService.ViewModels.Criteria
+namespace Pavolle.MessageService.ViewModels.Request
 {
-    public class ListAuthCriteria : MessageServiceCriteriaBase
+    public class EditApiServiceRequest : MessageServiceRequestBase
     {
     }
 }
