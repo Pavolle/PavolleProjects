@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using log4net;
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
@@ -16,13 +17,9 @@ namespace Pavolle.MessageService.Business.Manager
 {
     public class SettingManager:Singleton<SettingManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(SettingManager));
         private ConcurrentDictionary<ESettingType, SettingCacheModel> _settings;
-        private SettingManager()
-        {
-
-        }
-
-        
+        private SettingManager(){}
 
         public void Intialize()
         {
@@ -73,8 +70,9 @@ namespace Pavolle.MessageService.Business.Manager
                 }
                 return ELanguage.Ingilizce;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _log.Error("Fetch Default Language setting error: " + ex);
                 return ELanguage.Ingilizce;
             }
         }
@@ -89,8 +87,9 @@ namespace Pavolle.MessageService.Business.Manager
                 }
                 return ESecurityLevel.Master;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                _log.Error("Fetch Security Level setting error: " + ex);
                 return ESecurityLevel.Master;
             }
         }

@@ -3,14 +3,14 @@
 namespace Pavolle.MessageService.DbModels.Entities
 {
     [Persistent("scheduler_logs")]
-    public class SchedulerLog : BaseObject
+    public class JobLog : BaseObject
     {
-        public SchedulerLog(Session session) : base(session)
+        public JobLog(Session session) : base(session)
         {
         }
 
-        [Persistent("scheduler_oid")]
-        public Scheduler Scheduler { get; set; }
+        [Persistent("job_oid")]
+        public Job Job { get; set; }
 
         [Persistent("start_time")]
         public DateTime StartTime { get; set; }

@@ -29,6 +29,8 @@ namespace Pavolle.MessageService.Business.Manager
         {
             using (Session session = XpoManager.Instance.GetNewSession())
             {
+                _userGroups = new ConcurrentDictionary<long, UserGroupCacheModel>();
+
                 var _userGroupList = session.Query<UserGroup>().Select(t => new UserGroupCacheModel
                 {
                     Oid = t.Oid,
@@ -37,7 +39,7 @@ namespace Pavolle.MessageService.Business.Manager
                     OrganizationName = t.Organization == null ? "" : t.Organization.Name,
                     OrganizationOid = t.Organization == null ? (long?)null : t.Organization.Oid
                 }).ToList();
-                _userGroups = new ConcurrentDictionary<long, UserGroupCacheModel>();
+
                 foreach (var item in _userGroupList)
                 {
                     _userGroups.TryAdd(item.Oid, item);

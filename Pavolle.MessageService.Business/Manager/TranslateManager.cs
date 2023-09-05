@@ -1,4 +1,5 @@
-﻿using Pavolle.Core.Enums;
+﻿using log4net;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
 using Pavolle.MessageService.ViewModels.Model;
@@ -13,6 +14,7 @@ namespace Pavolle.MessageService.Business.Manager
 {
     public class TranslateManager:Singleton<TranslateManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(TranslateManager));
         private ConcurrentDictionary<string, TranslateDataCacheModel> _translateData;
         private TranslateManager() { }
 

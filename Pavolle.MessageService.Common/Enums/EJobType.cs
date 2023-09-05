@@ -1,6 +1,6 @@
 ﻿namespace Pavolle.MessageService.Common.Enums
 {
-    public enum ESchedulerType
+    public enum EJobType
     {
         CleanSession=1,
     }

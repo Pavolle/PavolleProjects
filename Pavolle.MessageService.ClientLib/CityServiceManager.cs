@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.ClientLib
 {
-    public class MSCompanyManager:Singleton<MSCompanyManager>
+    public class CityServiceManager : Singleton<CityServiceManager>
     {
-        private MSCompanyManager()
-        {
-
-        }
+        private CityServiceManager(){}
     }
 }
