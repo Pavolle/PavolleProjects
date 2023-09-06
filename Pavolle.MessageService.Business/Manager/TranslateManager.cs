@@ -21,12 +21,12 @@ namespace Pavolle.MessageService.Business.Manager
         private ConcurrentDictionary<string, TranslateDataCacheModel> _translateData;
         private TranslateManager() { }
 
-        public object List(ListTranslateDataCriteria criteria)
+        public TranslateDataListResponse List(ListTranslateDataCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public object Detail(long? oid, MessageServiceRequestBase request)
+        public TranslateDataDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
         }

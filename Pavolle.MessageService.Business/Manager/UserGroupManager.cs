@@ -78,7 +78,7 @@ namespace Pavolle.MessageService.Business.Manager
             return userGroup.OrganizationName + " - " + userGroup.Name;
         }
 
-        public object List(ListUserGroupCriteria criteria)
+        public UserGroupListResponse List(ListUserGroupCriteria criteria)
         {
             throw new NotImplementedException();
         }
@@ -88,7 +88,7 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        public object Detail(long? oid, MessageServiceRequestBase request)
+        public UserGroupDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
         }

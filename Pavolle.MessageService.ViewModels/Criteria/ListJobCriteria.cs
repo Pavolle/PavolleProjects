@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.ViewModels.Criteria
 {
-    public class ListSchedulerCriteria:MessageServiceCriteriaBase
+    public class ListJobCriteria:MessageServiceCriteriaBase
     {
     }
 }

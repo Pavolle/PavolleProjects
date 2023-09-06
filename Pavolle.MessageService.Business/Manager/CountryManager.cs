@@ -3,11 +3,6 @@ using Pavolle.Core.ViewModels.Response;
 using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
@@ -15,17 +10,17 @@ namespace Pavolle.MessageService.Business.Manager
     {
         private CountryManager() { }
 
-        public MessageServiceResponseBase Delete(long? oid, DeleteCountryCriteria request)
+        public CountryListResponse List(ListCountryCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public object Detail(long? oid, MessageServiceRequestBase request)
+        public LookupResponse Lookup(LookupCountryCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public MessageServiceResponseBase Edit(long? oid, EditCountryRequest request)
+        public CountryDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
         }
@@ -35,12 +30,12 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        public object List(ListCountryCriteria criteria)
+        public MessageServiceResponseBase Edit(long? oid, EditCountryRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public LookupResponse Lookup(LookupCountryCriteria criteria)
+        public MessageServiceResponseBase Delete(long? oid, DeleteCountryCriteria request)
         {
             throw new NotImplementedException();
         }

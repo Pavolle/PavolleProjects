@@ -15,27 +15,7 @@ namespace Pavolle.MessageService.Business.Manager
     {
         private UserManager() { }
 
-        public MessageServiceResponseBase Delete(long? oid, DeleteUserCriteria request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object Detail(long? oid, MessageServiceRequestBase request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public MessageServiceResponseBase Edit(long? oid, EditUserRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public MessageServiceResponseBase Add( AddUserRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object List(ListUserCriteria criteria)
+        public UserListResponse List(ListUserCriteria criteria)
         {
             throw new NotImplementedException();
         }
@@ -45,6 +25,25 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
+        public UserDetailResponse Detail(long? oid, MessageServiceRequestBase request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageServiceResponseBase Add(AddUserRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageServiceResponseBase Edit(long? oid, EditUserRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MessageServiceResponseBase Delete(long? oid, DeleteUserCriteria request)
+        {
+            throw new NotImplementedException();
+        }
         public object MyInfo(MessageServiceRequestBase request)
         {
             throw new NotImplementedException();

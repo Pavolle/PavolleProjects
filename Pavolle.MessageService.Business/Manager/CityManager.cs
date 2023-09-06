@@ -15,12 +15,17 @@ namespace Pavolle.MessageService.Business.Manager
     {
         private CityManager() { }
 
-        public object Detail(long? oid, MessageServiceRequestBase request)
+        public CityListResponse List(ListCityCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public MessageServiceResponseBase Edit(long? oid, EditCityRequest request)
+        public LookupResponse Lookup(LookupCityCriteria criteria)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CityDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
         }
@@ -30,12 +35,7 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        public object List(ListCityCriteria criteria)
-        {
-            throw new NotImplementedException();
-        }
-
-        public LookupResponse Lookup(LookupCityCriteria criteria)
+        public MessageServiceResponseBase Edit(long? oid, EditCityRequest request)
         {
             throw new NotImplementedException();
         }

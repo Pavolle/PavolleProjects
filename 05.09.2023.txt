@@ -1,1 +1,3 @@
 Altyapýda kullanýlacak bütün controllerlar oluþturuldu. Controllerlara servisler eklenecek. Filterlerlar eklenecek.
+
+Controllerlar tamamlandý. Definition kaldý sadece.

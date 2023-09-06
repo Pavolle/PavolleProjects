@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.ViewModels.Request
 {
-    public class RunSchedulerRequest:MessageServiceRequestBase
+    public class RunJobRequest:MessageServiceRequestBase
     {
     }
 }

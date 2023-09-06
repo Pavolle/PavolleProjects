@@ -10,26 +10,26 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
-    public class SchedulerManager:Singleton<SchedulerManager>
+    public class JobManager:Singleton<JobManager>
     {
-        private SchedulerManager() { }
+        private JobManager() { }
 
-        public object Detail(long? oid, MessageServiceRequestBase request)
+        public JobListResponse List(ListJobCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public MessageServiceResponseBase Edit(long? oid, EditSchedulerRequest request)
+        public JobDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object List(ListSchedulerCriteria criteria)
+        public MessageServiceResponseBase Edit(long? oid, EditJobRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public MessageServiceResponseBase Run(long? oid, RunSchedulerRequest request)
+        public MessageServiceResponseBase Run(long? oid, RunJobRequest request)
         {
             throw new NotImplementedException();
         }

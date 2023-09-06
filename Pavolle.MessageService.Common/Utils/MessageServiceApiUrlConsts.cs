@@ -51,9 +51,9 @@ namespace Pavolle.MessageService.Common.Utils
             public const string Route = "api/organization";
         }
 
-        public class SchedulerRouteConsts
+        public class JobRouteConsts
         {
-            public const string Route = "api/scheduler";
+            public const string Route = "api/job";
             public const string RunRoutePrefix = "run/{oid}";
         }
 

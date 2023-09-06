@@ -12,17 +12,17 @@ using System.Text.Json;
 namespace Pavolle.MessageService.WebApp.Controllers
 {
     [Produces("application/json")]
-    [Route(MessageServiceApiUrlConsts.SchedulerRouteConsts.Route)]
-    public class SchedulerController : Controller
+    [Route(MessageServiceApiUrlConsts.JobRouteConsts.Route)]
+    public class JobController : Controller
     {
-        static readonly ILog _log = LogManager.GetLogger(typeof(SchedulerController));
+        static readonly ILog _log = LogManager.GetLogger(typeof(JobController));
 
         [HttpGet(MessageServiceApiUrlConsts.ListRoutePrefix)]
-        public ActionResult List([FromQuery] ListSchedulerCriteria criteria)
+        public ActionResult List([FromQuery] ListJobCriteria criteria)
         {
             try
             {
-                var response = SchedulerManager.Instance.List(criteria);
+                var response = JobManager.Instance.List(criteria);
                 _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -38,7 +38,7 @@ namespace Pavolle.MessageService.WebApp.Controllers
         {
             try
             {
-                var response = SchedulerManager.Instance.Detail(oid, request);
+                var response = JobManager.Instance.Detail(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -50,11 +50,11 @@ namespace Pavolle.MessageService.WebApp.Controllers
         }
 
         [HttpPost(MessageServiceApiUrlConsts.EditRoutePrefix)]
-        public ActionResult Edit(long? oid, [FromBody] EditSchedulerRequest request)
+        public ActionResult Edit(long? oid, [FromBody] EditJobRequest request)
         {
             try
             {
-                var response = SchedulerManager.Instance.Edit(oid, request);
+                var response = JobManager.Instance.Edit(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -65,12 +65,12 @@ namespace Pavolle.MessageService.WebApp.Controllers
             }
         }
 
-        [HttpPost(MessageServiceApiUrlConsts.SchedulerRouteConsts.RunRoutePrefix)]
-        public ActionResult Run(long? oid, [FromBody] RunSchedulerRequest request)
+        [HttpPost(MessageServiceApiUrlConsts.JobRouteConsts.RunRoutePrefix)]
+        public ActionResult Run(long? oid, [FromBody] RunJobRequest request)
         {
             try
             {
-                var response = SchedulerManager.Instance.Run(oid, request);
+                var response = JobManager.Instance.Run(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }

@@ -97,12 +97,12 @@ namespace Pavolle.MessageService.Business.Manager
             }
         }
 
-        public object? List(ListSettingCriteria request)
+        public SettingListResponse List(ListSettingCriteria request)
         {
             throw new NotImplementedException();
         }
 
-        public object? Detail(long? oid, MessageServiceRequestBase request)
+        public SettingDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
         }
