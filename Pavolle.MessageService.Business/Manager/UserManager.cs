@@ -3,11 +3,6 @@ using Pavolle.Core.ViewModels.Response;
 using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
@@ -44,32 +39,32 @@ namespace Pavolle.MessageService.Business.Manager
         {
             throw new NotImplementedException();
         }
-        public object MyInfo(MessageServiceRequestBase request)
+        public MyInfoResponse MyInfo(MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object EditMyInfo(EditMyInfoRequest request)
+        public MessageServiceResponseBase EditMyInfo(EditMyInfoRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object VerifyPhone(VerifyPhoneRequest request)
+        public MessageServiceResponseBase VerifyPhone(VerifyPhoneRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object VerifyEmail(VerifyEmailRequest request)
+        public MessageServiceResponseBase VerifyEmail(VerifyEmailRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object SendVerificationCode(SendVerificationCodeRequest request)
+        public MessageServiceResponseBase SendVerificationCode(SendVerificationCodeRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object ChangePassword(ChangePasswordRequest request)
+        public MessageServiceResponseBase ChangePassword(ChangePasswordRequest request)
         {
             throw new NotImplementedException();
         }

@@ -2,10 +2,10 @@
 
 namespace Pavolle.MessageService.DbModels.Entities
 {
-    [Persistent("scheduler_logs")]
-    public class JobLog : BaseObject
+    [Persistent("job_run_logs")]
+    public class JobRunLog : BaseObject
     {
-        public JobLog(Session session) : base(session)
+        public JobRunLog(Session session) : base(session)
         {
         }
 

@@ -39,30 +39,6 @@ namespace Pavolle.MessageService.Business.Manager
             }
         }
 
-        private void SetupFirstSettings()
-        {
-            using (Session session = XpoManager.Instance.GetNewSession())
-            {
-                CreateSettingRow(session, ESettingType.SchedulerControlCron, "Scheduler Control Cron", "");
-                CreateSettingRow(session, ESettingType.SecurityLevel, "Security Level", ((int)ESecurityLevel.Master).ToString());
-                CreateSettingRow(session, ESettingType.DefaultLanguage, "Default Language", ((int)ELanguage.Turkce).ToString());
-                CreateSettingRow(session, ESettingType.ResetCodeLenght, "Reset Code Lenght", "6");
-            }
-        }
-
-        private void CreateSettingRow(Session session, ESettingType settingType, string name, string value)
-        {
-            if (!session.Query<Setting>().Any(t => t.SettingType == settingType))
-            {
-                new Setting(session)
-                {
-                    SettingType = settingType,
-                    Value = value,
-                    SettingName = name
-                }.Save();
-            }
-        }
-
         public ELanguage GetDefaultLanguage()
         {
             try

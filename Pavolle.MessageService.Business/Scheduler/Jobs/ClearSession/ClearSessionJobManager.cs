@@ -37,7 +37,7 @@ namespace Pavolle.MessageService.Business.Scheduler.Jobs.ClearSession
                 job.LastRunTime = DateTime.Now;
                 job.Save();
 
-                new JobLog(session)
+                new JobRunLog(session)
                 {
                     Job = job,
                     Success = success,

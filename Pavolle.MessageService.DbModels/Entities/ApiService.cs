@@ -3,7 +3,7 @@ using Pavolle.MessageService.Common.Enums;
 
 namespace Pavolle.MessageService.DbModels.Entities
 {
-    [Persistent("user_groups")]
+    [Persistent("api_service")]
     public class ApiService : BaseObject
     {
 

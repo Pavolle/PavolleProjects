@@ -1,0 +1,1 @@
+Setup uygulamasýnda postgres baðlantýsý saðlandý.
