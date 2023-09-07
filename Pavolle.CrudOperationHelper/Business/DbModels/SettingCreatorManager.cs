@@ -7,13 +7,18 @@ using System.Threading.Tasks;
 
 namespace Pavolle.CrudOperationHelper.Business.DbModels
 {
-    public class SettingCreatorManager : Singleton<BaseObjectCreatorManager>, ICreatorManager
+    public class SettingCreatorManager : Singleton<SettingCreatorManager>, ICreatorManager
     {
         DbModelCreatorManager creator;
 
-        private BaseObjectCreatorManager()
+        private SettingCreatorManager()
         {
 
+        }
+
+        public bool Write(string companyName, string projectName, string projectPath)
+        {
+            throw new NotImplementedException();
         }
     }
 }

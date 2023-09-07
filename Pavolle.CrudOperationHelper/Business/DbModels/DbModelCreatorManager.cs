@@ -17,7 +17,7 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
         public string Path { get; set; }
         public string DbClass { get; set; }
 
-        public DbModelCreatorManager(string companyName, string projectName, string projectPath, string className)
+        public DbModelCreatorManager(string companyName, string projectName, string projectPath, string className, string tableName)
         {
             ClassName = className;
             CompanyName = companyName;
@@ -26,7 +26,22 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
             ProjectNameRoot=CompanyName+"."+ProjectName;
             Namespace = "namespace " + ProjectNameRoot + ".DbModels.Entities" + Environment.NewLine;
             Path = ProjectNameRoot + "." + "DbModels/Entities";
+
             DbClass = "";
+            DbClass += "using DevExpress.Xpo;" + Environment.NewLine;
+            DbClass += "using " + ProjectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + ";" + Environment.NewLine;
+            DbClass += "" + Environment.NewLine;
+            DbClass += Namespace;
+            DbClass += "{" + Environment.NewLine;
+            DbClass += "    [Persistent(\""+tableName+"\")]" + Environment.NewLine;
+            DbClass += "    public class " + ClassName + " : " + AppConsts.DBModelsBaseObjectClassName + "" + Environment.NewLine;
+            DbClass += "    {" + Environment.NewLine;
+            DbClass += "" + Environment.NewLine;
+            DbClass += "        public " + ClassName + "(Session session) : base(session) {}" + Environment.NewLine;
+            DbClass += "" + Environment.NewLine;
+            DbClass += "//<DbClassContent>";        
+            DbClass += "    }" + Environment.NewLine;
+            DbClass += "}" + Environment.NewLine;
 
         }
     }
