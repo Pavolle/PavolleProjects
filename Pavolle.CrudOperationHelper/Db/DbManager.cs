@@ -40,7 +40,7 @@ namespace Pavolle.CrudOperationHelper.Db
             return response;
         }
 
-        public ProjectViewData? GetProjectDetal(string name)
+        public ProjectViewData? GetProjectDetail(string name)
         {
             var response=new ProjectViewData();
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -48,10 +48,9 @@ namespace Pavolle.CrudOperationHelper.Db
                 response = session.Query<Project>().Where(t => t.Name == name).Select(t => new ProjectViewData
                 {
                     Name = t.Name,
-                    Root = t.Root,
+                    Organization = t.OrganizationName,
                     Path = t.Path,
                     Intialize=t.Intialize,
-                    UserType=t.UserType,
                     Issuer=t.Issuer,
                     Audience=t.Audience,
                     TokenExpireMinute=t.TokenExpireMinute,
@@ -61,7 +60,7 @@ namespace Pavolle.CrudOperationHelper.Db
             return response;
         }
 
-        public bool SaveProject(string name, string root, string path, string userTypes, string issuer, string audience, int tokenExpireMinute,string language)
+        public bool SaveProject(string name, string organization, string path, string issuer, string audience, int tokenExpireMinute,string language)
         {
             bool response = true;
             using (Session session = XpoManager.Instance.GetNewSession())
@@ -75,9 +74,8 @@ namespace Pavolle.CrudOperationHelper.Db
                     new Project(session)
                     {
                         Name = name,
-                        Root = root,
+                        OrganizationName = organization,
                         Path = path,
-                        UserType= userTypes,
                         Issuer= issuer,
                         Audience= audience,
                         TokenExpireMinute=tokenExpireMinute,
@@ -89,17 +87,16 @@ namespace Pavolle.CrudOperationHelper.Db
             return response;
         }
 
-        internal bool EditProject(string name, string root, string path, string userType, string issuer, string audience, int tokenExpireMinute, string language)
+        internal bool EditProject(string name, string organization, string path, string issuer, string audience, int tokenExpireMinute, string language)
         {
             bool response = true;
             using (Session session = XpoManager.Instance.GetNewSession())
             {
                 var project = session.Query<Project>().Where(t => t.Name == name).FirstOrDefault();
 
-                project.Root=root;
+                project.OrganizationName =organization;
                 project.Path = path;
                 project.LastUpdateTime = DateTime.Now;
-                project.UserType= userType;
                 project.Issuer= issuer;
                 project.Audience= audience;
                 project.TokenExpireMinute=tokenExpireMinute;
@@ -160,7 +157,7 @@ namespace Pavolle.CrudOperationHelper.Db
     public class ProjectViewData
     {
         public string Name { get; internal set; }
-        public string Root { get; internal set; }
+        public string Organization { get; internal set; }
         public string Path { get; internal set; }
         public bool Intialize { get; internal set; }
         public string UserType { get; internal set; }

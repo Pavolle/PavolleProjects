@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxLanguage = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBoxTokenExpire = new System.Windows.Forms.TextBox();
             this.labelTokenExpire = new System.Windows.Forms.Label();
@@ -36,18 +38,14 @@
             this.labelAudience = new System.Windows.Forms.Label();
             this.textBoxIssuer = new System.Windows.Forms.TextBox();
             this.labelIssuer = new System.Windows.Forms.Label();
-            this.textBoxUserTypes = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.butttonCreate = new System.Windows.Forms.Button();
             this.textBoxProjectsPath = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelProjectName = new System.Windows.Forms.Label();
             this.textBoxProjectMame = new System.Windows.Forms.TextBox();
-            this.textBoxProjectNameRoot = new System.Windows.Forms.TextBox();
+            this.textBoxOrganizationName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxLanguage = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -57,15 +55,13 @@
             this.groupBox1.Controls.Add(this.textBoxLanguage);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.textBoxUserTypes);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.butttonCreate);
             this.groupBox1.Controls.Add(this.textBoxProjectsPath);
             this.groupBox1.Controls.Add(this.buttonCancel);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.labelProjectName);
             this.groupBox1.Controls.Add(this.textBoxProjectMame);
-            this.groupBox1.Controls.Add(this.textBoxProjectNameRoot);
+            this.groupBox1.Controls.Add(this.textBoxOrganizationName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -73,6 +69,22 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Project Settings";
+            // 
+            // textBoxLanguage
+            // 
+            this.textBoxLanguage.Location = new System.Drawing.Point(262, 268);
+            this.textBoxLanguage.Name = "textBoxLanguage";
+            this.textBoxLanguage.Size = new System.Drawing.Size(307, 31);
+            this.textBoxLanguage.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(41, 268);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 25);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Language(s)";
             // 
             // groupBox3
             // 
@@ -137,23 +149,6 @@
             this.labelIssuer.TabIndex = 10;
             this.labelIssuer.Text = "Issuer";
             // 
-            // textBoxUserTypes
-            // 
-            this.textBoxUserTypes.Location = new System.Drawing.Point(259, 163);
-            this.textBoxUserTypes.Multiline = true;
-            this.textBoxUserTypes.Name = "textBoxUserTypes";
-            this.textBoxUserTypes.Size = new System.Drawing.Size(307, 88);
-            this.textBoxUserTypes.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 166);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 25);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "User Types";
-            // 
             // butttonCreate
             // 
             this.butttonCreate.Location = new System.Drawing.Point(422, 452);
@@ -195,9 +190,9 @@
             this.labelProjectName.AutoSize = true;
             this.labelProjectName.Location = new System.Drawing.Point(38, 89);
             this.labelProjectName.Name = "labelProjectName";
-            this.labelProjectName.Size = new System.Drawing.Size(161, 25);
+            this.labelProjectName.Size = new System.Drawing.Size(166, 25);
             this.labelProjectName.TabIndex = 6;
-            this.labelProjectName.Text = "Project Name Root";
+            this.labelProjectName.Text = "Organization Name";
             // 
             // textBoxProjectMame
             // 
@@ -206,12 +201,12 @@
             this.textBoxProjectMame.Size = new System.Drawing.Size(307, 31);
             this.textBoxProjectMame.TabIndex = 9;
             // 
-            // textBoxProjectNameRoot
+            // textBoxOrganizationName
             // 
-            this.textBoxProjectNameRoot.Location = new System.Drawing.Point(259, 89);
-            this.textBoxProjectNameRoot.Name = "textBoxProjectNameRoot";
-            this.textBoxProjectNameRoot.Size = new System.Drawing.Size(307, 31);
-            this.textBoxProjectNameRoot.TabIndex = 7;
+            this.textBoxOrganizationName.Location = new System.Drawing.Point(259, 89);
+            this.textBoxOrganizationName.Name = "textBoxOrganizationName";
+            this.textBoxOrganizationName.Size = new System.Drawing.Size(307, 31);
+            this.textBoxOrganizationName.TabIndex = 7;
             // 
             // label1
             // 
@@ -221,22 +216,6 @@
             this.label1.Size = new System.Drawing.Size(118, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Project Name";
-            // 
-            // textBoxLanguage
-            // 
-            this.textBoxLanguage.Location = new System.Drawing.Point(262, 268);
-            this.textBoxLanguage.Name = "textBoxLanguage";
-            this.textBoxLanguage.Size = new System.Drawing.Size(307, 31);
-            this.textBoxLanguage.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(41, 268);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 25);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Language(s)";
             // 
             // CreateProject
             // 
@@ -263,10 +242,8 @@
         private Label label2;
         private Label labelProjectName;
         private TextBox textBoxProjectMame;
-        private TextBox textBoxProjectNameRoot;
+        private TextBox textBoxOrganizationName;
         private Label label1;
-        private TextBox textBoxUserTypes;
-        private Label label6;
         private GroupBox groupBox3;
         private TextBox textBoxTokenExpire;
         private Label labelTokenExpire;

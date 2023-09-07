@@ -1,4 +1,6 @@
 ﻿using Pavolle.CrudOperationHelper.Business;
+using Pavolle.CrudOperationHelper.Business.Common.Enums;
+using Pavolle.CrudOperationHelper.Business.DbModels;
 using Pavolle.CrudOperationHelper.Db;
 using System;
 using System.Collections.Generic;
@@ -33,9 +35,8 @@ namespace Pavolle.CrudOperationHelper
 
 
             textBoxProjectMame.Enabled = false;
-            textBoxProjectNameRoot.Enabled = false;
+            textBoxProjectOrganization.Enabled = false;
             textBoxProjectsPath.Enabled = false;
-            textBoxUserTypes.Enabled = false;
             textBoxIssuer.Enabled = false;
             textBoxAudience.Enabled = false;
             textBoxTokenExpire.Enabled = false;
@@ -66,12 +67,11 @@ namespace Pavolle.CrudOperationHelper
 
         void GetProjectDetail(string name)
         {
-            var detail = DbManager.Instance.GetProjectDetal(name);
+            var detail = DbManager.Instance.GetProjectDetail(name);
 
             textBoxProjectMame.Text = detail.Name;
-            textBoxProjectNameRoot.Text = detail.Root;
+            textBoxProjectOrganization.Text = detail.Organization;
             textBoxProjectsPath.Text = detail.Path;
-            textBoxUserTypes.Text = detail.UserType;
             textBoxIssuer.Text = detail.Issuer;
             textBoxAudience.Text = detail.Audience;
             textBoxTokenExpire.Text=detail.TokenExpireMinute.ToString();
@@ -121,23 +121,32 @@ namespace Pavolle.CrudOperationHelper
         private void butttonEditProjects_Click(object sender, EventArgs e)
         {
             string name = textBoxProjectMame.Text;
-            var detail = DbManager.Instance.GetProjectDetal(name);
-            EditProject editProject = new EditProject(detail.Name, detail.Root, detail.Path, detail.UserType, detail.Issuer, detail.Audience, detail.TokenExpireMinute, detail.Language);
+            var detail = DbManager.Instance.GetProjectDetail(name);
+            EditProject editProject = new EditProject(detail.Name, detail.Organization, detail.Path, detail.UserType, detail.Issuer, detail.Audience, detail.TokenExpireMinute, detail.Language);
             editProject.ShowDialog();
 
-            var detail1 = DbManager.Instance.GetProjectDetal(name);
+            var detail1 = DbManager.Instance.GetProjectDetail(name);
 
             textBoxProjectMame.Text = detail1.Name;
-            textBoxProjectNameRoot.Text = detail1.Root;
+            textBoxProjectOrganization.Text = detail1.Organization;
             textBoxProjectsPath.Text = detail1.Path;
-            textBoxUserTypes.Text = detail.UserType;
             GetProjectDetail(name);
         }
 
         private void buttonIntializeProject_Click(object sender, EventArgs e)
         {
-            bool createUserTypeEnumClassResult = ProjectInitializeManager.Instance.Start(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text, textBoxIssuer.Text, textBoxAudience.Text, Convert.ToInt32(textBoxTokenExpire.Text), textBoxLanguage.Text);
+            //bool createUserTypeEnumClassResult = ProjectInitializeManager.Instance.Start(textBoxProjectMame.Text, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text, textBoxIssuer.Text, textBoxAudience.Text, Convert.ToInt32(textBoxTokenExpire.Text), textBoxLanguage.Text);
+
+            ApiServiceMethodTypeCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            JobTypeCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            MessageCodeCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            SettingTypeCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            UserTypeCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+
+            ApiServiceCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
         }
+
+
 
         private void buttonEditTable_Click(object sender, EventArgs e)
         {

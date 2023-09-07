@@ -16,7 +16,6 @@ namespace Pavolle.MessageService.DbModels.Entities
         public string ApiKey { get; set; }
 
         [Persistent("api_definition_td_oid")]
-        [Size(255)]
         public TranslateData ApiDefinition { get; set; }
 
         [Persistent("method_type")]
@@ -28,7 +27,7 @@ namespace Pavolle.MessageService.DbModels.Entities
         [Persistent("editable_for_organization")]
         public bool EditableForOrganization { get; set; }
 
-        [Persistent("Anonymous")]
+        [Persistent("anonymous")]
         public bool Anonymous { get; set; }
     }
 }

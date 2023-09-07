@@ -659,7 +659,7 @@ namespace Pavolle.CrudOperationHelper.Business
             apiServiceClass += "" + Environment.NewLine;
             apiServiceClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
             apiServiceClass += "{" + Environment.NewLine;
-            apiServiceClass += "    [Persistent(\"user_groups\")]" + Environment.NewLine;
+            apiServiceClass += "    [Persistent(\"api_services\")]" + Environment.NewLine;
             apiServiceClass += "    public class " + AppConsts.ApiServiceClassName + " : " + AppConsts.DBModelsBaseObjectClassName + "" + Environment.NewLine;
             apiServiceClass += "    {" + Environment.NewLine;
             apiServiceClass += "" + Environment.NewLine;
@@ -697,7 +697,7 @@ namespace Pavolle.CrudOperationHelper.Business
             authClass += "" + Environment.NewLine;
             authClass += "namespace " + projectNameRoot + "." + AppConsts.DBModelsProjectName + "." + AppConsts.DBModelsEntitiesFolderName + Environment.NewLine;
             authClass += "{" + Environment.NewLine;
-            authClass += "    [Persistent(\"user_groups\")]" + Environment.NewLine;
+            authClass += "    [Persistent(\"authorizations\")]" + Environment.NewLine;
             authClass += "    public class " + AppConsts.DBModelsAuthClassName + " : " + AppConsts.DBModelsBaseObjectClassName + "" + Environment.NewLine;
             authClass += "    {" + Environment.NewLine;
             authClass += "" + Environment.NewLine;

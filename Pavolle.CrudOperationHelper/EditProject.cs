@@ -34,9 +34,8 @@ namespace Pavolle.CrudOperationHelper
             _language = language;
 
             this.Text = "Edit Project (" + name + ")";
-            textBoxProjectNameRoot.Text = _root;
+            textBoxProjectOrganization.Text = _root;
             textBoxProjectsPath.Text = _path;
-            textBoxUserTypes.Text = _userType;
             textBoxIssuer.Text = _issuer;
             textBoxAudience.Text = _auidence;
             textBoxTokenExpire.Text = _tokenExpireMinute;
@@ -50,7 +49,7 @@ namespace Pavolle.CrudOperationHelper
 
         private void butttonCreate_Click(object sender, EventArgs e)
         {
-            bool response = DbManager.Instance.EditProject(_name, textBoxProjectNameRoot.Text, textBoxProjectsPath.Text, textBoxUserTypes.Text, textBoxIssuer.Text, textBoxAudience.Text, Convert.ToInt32(textBoxTokenExpire.Text), textBoxLanguage.Text);
+            bool response = DbManager.Instance.EditProject(_name, textBoxProjectOrganization.Text, textBoxProjectsPath.Text, textBoxIssuer.Text, textBoxAudience.Text, Convert.ToInt32(textBoxTokenExpire.Text), textBoxLanguage.Text);
 
             if (response)
             {
