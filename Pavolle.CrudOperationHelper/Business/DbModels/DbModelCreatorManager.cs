@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pavolle.CrudOperationHelper.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,10 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
 {
     public class DbModelCreatorManager
     {
+        private List<ColumnModel> columns;
+        private string v1;
+        private string v2;
+
         public string CompanyName { get; set; }
         public string ProjectName { get; set; }
         public string ProjectPath { get; set; }
@@ -17,7 +22,7 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
         public string Path { get; set; }
         public string DbClass { get; set; }
 
-        public DbModelCreatorManager(string companyName, string projectName, string projectPath, string className, string tableName)
+        public DbModelCreatorManager(string companyName, string projectName, string projectPath, List<ColumnModel> columns, string className, string tableName)
         {
             ClassName = className;
             CompanyName = companyName;
@@ -36,10 +41,54 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
             DbClass += "    [Persistent(\""+tableName+"\")]" + Environment.NewLine;
             DbClass += "    public class " + ClassName + " : " + AppConsts.DBModelsBaseObjectClassName + "" + Environment.NewLine;
             DbClass += "    {" + Environment.NewLine;
-            DbClass += "" + Environment.NewLine;
             DbClass += "        public " + ClassName + "(Session session) : base(session) {}" + Environment.NewLine;
             DbClass += "" + Environment.NewLine;
-            DbClass += "//<DbClassContent>";        
+            foreach (var column in columns)
+            {
+                DbClass += "        [Persistent(\"" + column.DbName + "\")]" + Environment.NewLine;
+                if (column.Index)
+                {
+                    DbClass += "        [Indexed(Unique = " + (column.UniqueIndex ? "true" : "false") + ", Name = \"index_" + tableName + "_" + column.DbName + "\")]" + Environment.NewLine;
+                }
+                if (column.DataType == EDataType.STRING)
+                {
+                    DbClass += "        [Size(" + column.Size + ")]" + Environment.NewLine;
+                }
+                switch (column.DataType)
+                {
+                    case EDataType.LONG:
+                        DbClass += "        public long" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.STRING:
+                        DbClass += "        public string " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.INT:
+                        DbClass += "        public int" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.FLOAT:
+                        DbClass += "        public float" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.DOUBLE:
+                        DbClass += "        public double" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.BOOL:
+                        DbClass += "        public bool" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.DATETIME:
+                        DbClass += "        public DateTime" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.ENUM:
+                        DbClass += "        public " + column.EnumClass + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    case EDataType.CLASS:
+                        DbClass += "        public " + column.TableClass + " " + column.Name + " { get; set; }" + Environment.NewLine;
+                        break;
+                    default:
+                        break;
+                }
+
+                DbClass += "" + Environment.NewLine;
+            }
             DbClass += "    }" + Environment.NewLine;
             DbClass += "}" + Environment.NewLine;
 

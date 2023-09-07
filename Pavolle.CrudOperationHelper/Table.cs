@@ -41,8 +41,7 @@ namespace Pavolle.CrudOperationHelper
         public bool Addable { get; set; }
         public bool Editable { get; set; }
         public bool AddToCriteria { get; set; }
-
-
+        public bool TranslatableStringData { get; internal set; }
     }
 
     public enum EDataType

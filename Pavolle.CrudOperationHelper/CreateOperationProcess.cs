@@ -292,13 +292,13 @@ namespace Pavolle.CrudOperationHelper
             {
                 //TODO Bu kısım yazılacak.
                 classSinifi += "        [Persistent(\"" + column.DbName + "\")]" + Environment.NewLine;
-                if (column.DataType == EDataType.STRING)
-                {
-                    classSinifi += "        [Size(" + column.Size + ")]" + Environment.NewLine;
-                }
                 if (column.Index)
                 {
                     classSinifi += "        [Indexed(Unique = " + (column.UniqueIndex ? "true" : "false") + ", Name = \"index_" + table.TableDbName + "_" + column.DbName + "\")]" + Environment.NewLine;
+                }
+                if (column.DataType == EDataType.STRING)
+                {
+                    classSinifi += "        [Size(" + column.Size + ")]" + Environment.NewLine;
                 }
                 switch (column.DataType)
                 {
