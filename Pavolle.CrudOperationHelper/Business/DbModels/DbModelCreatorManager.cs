@@ -50,7 +50,7 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
                 {
                     DbClass += "        [Indexed(Unique = " + (column.UniqueIndex ? "true" : "false") + ", Name = \"index_" + tableName + "_" + column.DbName + "\")]" + Environment.NewLine;
                 }
-                if (column.DataType == EDataType.STRING)
+                if (column.DataType == EDataType.STRING && !column.TranslatableStringData)
                 {
                     DbClass += "        [Size(" + column.Size + ")]" + Environment.NewLine;
                 }
@@ -60,7 +60,14 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
                         DbClass += "        public long" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
                         break;
                     case EDataType.STRING:
-                        DbClass += "        public string " + column.Name + " { get; set; }" + Environment.NewLine;
+                        if (column.TranslatableStringData)
+                        {
+                            DbClass += "        public TranslateData " + column.Name + " { get; set; }" + Environment.NewLine;
+                        }
+                        else
+                        {
+                            DbClass += "        public string " + column.Name + " { get; set; }" + Environment.NewLine;
+                        }
                         break;
                     case EDataType.INT:
                         DbClass += "        public int" + (column.Nullable ? "?" : "").ToString() + " " + column.Name + " { get; set; }" + Environment.NewLine;
