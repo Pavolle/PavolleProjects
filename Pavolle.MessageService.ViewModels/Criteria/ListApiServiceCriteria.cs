@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pavolle.MessageService.ViewModels.Criteria
+﻿namespace Pavolle.MessageService.ViewModels.Criteria
 {
     public class ListApiServiceCriteria : MessageServiceCriteriaBase
     {
+        public string NameContains { get; set; }
+        public string ApiKeyContains { get; set; }
     }
 }

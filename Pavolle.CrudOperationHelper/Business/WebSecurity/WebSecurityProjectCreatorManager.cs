@@ -10,6 +10,8 @@ namespace Pavolle.CrudOperationHelper.Business.WebSecurity
     public class WebSecurityProjectCreatorManager : Singleton<WebSecurityProjectCreatorManager>
     {
         private WebSecurityProjectCreatorManager() { }
+
+        //TODO Daha sonra için bu altyapıyı tek tek classları oluşturacak hale getirmemiz gerekiyor.
         public bool Write(string companyName, string projectName, string projectPath, int tokenExpireHour, string issuer, string audience)
         {
             string projectNameRoot=companyName+"."+projectName;

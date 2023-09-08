@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pavolle.MessageService.ViewModels.Criteria
+﻿namespace Pavolle.MessageService.ViewModels.Criteria
 {
     public class LookupUserCriteria : MessageServiceCriteriaBase
     {
+        public long? UserGroupOid { get; set; }
+        public long? OganizationOid { get; set; }
     }
 }

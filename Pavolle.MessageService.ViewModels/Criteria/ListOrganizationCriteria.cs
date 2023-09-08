@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pavolle.MessageService.ViewModels.Criteria
+﻿namespace Pavolle.MessageService.ViewModels.Criteria
 {
     public class ListOrganizationCriteria : MessageServiceCriteriaBase
     {
+        public long? CountryOid { get; set; }
+        public long? CityOid { get; set; }
+        public long? UpperOrganizationOid { get; set; }
     }
 }

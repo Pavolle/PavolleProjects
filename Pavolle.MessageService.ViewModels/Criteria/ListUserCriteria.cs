@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pavolle.MessageService.ViewModels.Criteria
+﻿namespace Pavolle.MessageService.ViewModels.Criteria
 {
     public class ListUserCriteria : MessageServiceCriteriaBase
     {
+        public long? SelectedOrganizationOid { get; set; }
+        public long? UserGroupOid { get; set; }
+        public string UsernameContains { get; set; }
+        public string PhoneNumberContains { get; set; }
+        public string EmailContains { get; set; }
     }
 }
