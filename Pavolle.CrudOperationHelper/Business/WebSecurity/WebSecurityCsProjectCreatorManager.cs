@@ -9,7 +9,7 @@ namespace Pavolle.CrudOperationHelper.Business.WebSecurity
 {
     public class WebSecurityCsProjectCreatorManager : Singleton<WebSecurityCsProjectCreatorManager>
     {
-        private WebSecurityProjectCreatorManager()
+        private WebSecurityCsProjectCreatorManager()
         {
 
         }

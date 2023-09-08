@@ -71,6 +71,19 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
                 EnumClass = null,
                 TableClass = null
             });
+            columns.Add(new ColumnModel
+            {
+                Name = "SessionId",
+                DbName = "session_id",
+                Size = 50,
+                TranslatableStringData = false,
+                DataType = EDataType.STRING,
+                Nullable = false,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = null
+            });
             creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "UserSession", "user_sessions");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.DbClass);
         }
