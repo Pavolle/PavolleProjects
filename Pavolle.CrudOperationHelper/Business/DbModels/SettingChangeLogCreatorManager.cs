@@ -18,7 +18,22 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
 
         public bool Write(string companyName, string projectName, string projectPath)
         {
-            throw new NotImplementedException();
+            List<ColumnModel> columns = new List<ColumnModel>();
+            columns.Add(new ColumnModel
+            {
+                Name = "Job",
+                DbName = "job_oid",
+                Size = 0,
+                TranslatableStringData = false,
+                DataType = EDataType.CLASS,
+                Nullable = false,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = "Job"
+            });
+            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "JobRunLog", "job_run_logs");
+            return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.DbClass);
         }
     }
 }

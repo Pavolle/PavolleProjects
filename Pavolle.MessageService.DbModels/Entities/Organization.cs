@@ -33,8 +33,8 @@ namespace Pavolle.MessageService.DbModels.Entities
         [Persistent("latitude")]
         public double? Latitude { get; set; }
 
-        [Persistent("upper_organization")]
-        public int UpperOrganization { get; set; }
+        [Persistent("upper_organization_oid")]
+        public Organization UpperOrganization { get; set; }
 
         [Persistent("country_oid")]
         public Country Country { get; set; }

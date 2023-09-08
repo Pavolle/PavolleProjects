@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Pavolle.CrudOperationHelper.Business.DbModels
 {
-    public class JobLogCreatorManager : Singleton<JobLogCreatorManager>, ICreatorManager
+    public class JobRunLogCreatorManager : Singleton<JobRunLogCreatorManager>, ICreatorManager
     {
         DbModelCreatorManager creator;
 
-        private JobLogCreatorManager()
+        private JobRunLogCreatorManager()
         {
 
         }
@@ -87,7 +87,7 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
 
 
 
-            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "JobLog", "job_logs");
+            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "JobRunLog", "job_run_logs");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.DbClass);
         }
     }
