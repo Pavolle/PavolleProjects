@@ -1,6 +1,7 @@
 ﻿using Pavolle.CrudOperationHelper.Business;
 using Pavolle.CrudOperationHelper.Business.Common.Enums;
 using Pavolle.CrudOperationHelper.Business.DbModels;
+using Pavolle.CrudOperationHelper.Business.WebSecurity;
 using Pavolle.CrudOperationHelper.Db;
 using System;
 using System.Collections.Generic;
@@ -142,6 +143,8 @@ namespace Pavolle.CrudOperationHelper
             MessageCodeCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             SettingTypeCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             UserTypeCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+
+            WebSecurityProjectCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text, Convert.ToInt32(textBoxTokenExpire.Text), textBoxIssuer.Text, textBoxAudience.Text);
 
             DbModelsCsProjectCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             BaseObjectCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
