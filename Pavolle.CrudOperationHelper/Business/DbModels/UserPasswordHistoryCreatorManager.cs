@@ -19,10 +19,11 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
         public bool Write(string companyName, string projectName, string projectPath)
         {
             List<ColumnModel> columns = new List<ColumnModel>();
+
             columns.Add(new ColumnModel
             {
-                Name = "Job",
-                DbName = "job_oid",
+                Name = "User",
+                DbName = "user_oid",
                 Size = 0,
                 TranslatableStringData = false,
                 DataType = EDataType.CLASS,
@@ -30,9 +31,24 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
                 Index = false,
                 UniqueIndex = false,
                 EnumClass = null,
-                TableClass = "Job"
+                TableClass = "User"
             });
-            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "JobRunLog", "job_run_logs");
+
+            columns.Add(new ColumnModel
+            {
+                Name = "Password",
+                DbName = "password",
+                Size = 1000,
+                TranslatableStringData = false,
+                DataType = EDataType.STRING,
+                Nullable = false,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = null
+            });
+
+            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "UserPasswordHistory", "user_password_history");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.DbClass);
         }
     }

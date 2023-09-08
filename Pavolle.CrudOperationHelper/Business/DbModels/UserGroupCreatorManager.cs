@@ -21,18 +21,44 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
             List<ColumnModel> columns = new List<ColumnModel>();
             columns.Add(new ColumnModel
             {
-                Name = "Job",
-                DbName = "job_oid",
+                Name = "Organization",
+                DbName = "organization_oid",
                 Size = 0,
                 TranslatableStringData = false,
                 DataType = EDataType.CLASS,
+                Nullable = true,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = "Organization"
+            });
+            columns.Add(new ColumnModel
+            {
+                Name = "Name",
+                DbName = "name",
+                Size = 255,
+                TranslatableStringData = false,
+                DataType = EDataType.STRING,
                 Nullable = false,
                 Index = false,
                 UniqueIndex = false,
                 EnumClass = null,
-                TableClass = "Job"
+                TableClass = null
             });
-            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "JobRunLog", "job_run_logs");
+            columns.Add(new ColumnModel
+            {
+                Name = "UserType",
+                DbName = "user_type",
+                Size = 0,
+                TranslatableStringData = false,
+                DataType = EDataType.ENUM,
+                Nullable = false,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = "EUserType",
+                TableClass = null
+            });
+            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "UserGroup", "user_groups");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.DbClass);
         }
     }

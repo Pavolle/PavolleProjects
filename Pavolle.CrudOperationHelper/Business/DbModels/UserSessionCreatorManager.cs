@@ -21,18 +21,57 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
             List<ColumnModel> columns = new List<ColumnModel>();
             columns.Add(new ColumnModel
             {
-                Name = "Job",
-                DbName = "job_oid",
-                Size = 0,
+                Name = "Token",
+                DbName = "token",
+                Size = 1000,
                 TranslatableStringData = false,
-                DataType = EDataType.CLASS,
+                DataType = EDataType.STRING,
                 Nullable = false,
                 Index = false,
                 UniqueIndex = false,
                 EnumClass = null,
-                TableClass = "Job"
+                TableClass = null
             });
-            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "JobRunLog", "job_run_logs");
+            columns.Add(new ColumnModel
+            {
+                Name = "RequestIp",
+                DbName = "request_ip",
+                Size = 20,
+                TranslatableStringData = false,
+                DataType = EDataType.STRING,
+                Nullable = false,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = null
+            });
+            columns.Add(new ColumnModel
+            {
+                Name = "Active",
+                DbName = "active",
+                Size = 0,
+                TranslatableStringData = false,
+                DataType = EDataType.BOOL,
+                Nullable = false,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = null
+            });
+            columns.Add(new ColumnModel
+            {
+                Name = "Username",
+                DbName = "username",
+                Size = 50,
+                TranslatableStringData = false,
+                DataType = EDataType.STRING,
+                Nullable = false,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = null
+            });
+            creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "UserSession", "user_sessions");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.DbClass);
         }
     }
