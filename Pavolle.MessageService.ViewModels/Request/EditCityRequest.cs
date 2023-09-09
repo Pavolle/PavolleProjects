@@ -8,5 +8,8 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class EditCityRequest:MessageServiceRequestBase
     {
+        public long? CountryOid { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
     }
 }

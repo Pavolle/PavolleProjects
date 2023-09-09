@@ -2,6 +2,6 @@
 {
     public class ListUserGroupCriteria : MessageServiceCriteriaBase
     {
-        public long? OrganizationOid { get; set; }
+        public long? SelectedOrganizationOid { get; set; }
     }
 }

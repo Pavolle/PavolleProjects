@@ -3,5 +3,6 @@ namespace Pavolle.MessageService.ViewModels.Criteria
 {
     public class MessageServiceCriteriaBase:MessageServiceRequestBase
     {
+
     }
 }

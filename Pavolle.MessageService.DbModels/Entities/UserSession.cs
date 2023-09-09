@@ -23,5 +23,9 @@ namespace Pavolle.MessageService.DbModels.Entities
         [Persistent("username")]
         [Size(50)]
         public string Username { get; set; }
+
+        [Persistent("session_id")]
+        [Size(50)]
+        public string SessionId { get; set; }
     }
 }

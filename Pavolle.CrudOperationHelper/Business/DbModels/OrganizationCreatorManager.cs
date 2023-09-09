@@ -146,6 +146,20 @@ namespace Pavolle.CrudOperationHelper.Business.DbModels
                 TableClass = ""
             });
 
+            columns.Add(new ColumnModel
+            {
+                Name = "LogoBase64",
+                DbName = "logo_base64",
+                Size = 3000,
+                TranslatableStringData = false,
+                DataType = EDataType.STRING,
+                Nullable = true,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = ""
+            });
+
             creator = new DbModelCreatorManager(companyName, projectName, projectPath, columns, "Organization", "organizations");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.DbClass);
         }

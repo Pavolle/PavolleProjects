@@ -2,6 +2,6 @@
 {
     public class ListCityCriteria : MessageServiceCriteriaBase
     {
-        public List<long> CountryOid { get; set; }
+        public List<long> CountryOids{ get; set; }
     }
 }
