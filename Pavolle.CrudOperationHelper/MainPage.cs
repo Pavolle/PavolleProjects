@@ -2,6 +2,7 @@
 using Pavolle.CrudOperationHelper.Business.Common.Enums;
 using Pavolle.CrudOperationHelper.Business.DbModels;
 using Pavolle.CrudOperationHelper.Business.ViewModels.Criteria;
+using Pavolle.CrudOperationHelper.Business.ViewModels.Request;
 using Pavolle.CrudOperationHelper.Business.WebSecurity;
 using Pavolle.CrudOperationHelper.Db;
 using System;
@@ -188,6 +189,10 @@ namespace Pavolle.CrudOperationHelper
             LookupUserCriteriaCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             LookupUserGroupCriteriaCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
 
+            #endregion
+
+            #region Request
+            RequestBaseCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             #endregion
         }
 

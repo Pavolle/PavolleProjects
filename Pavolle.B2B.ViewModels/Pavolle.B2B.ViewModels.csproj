@@ -11,4 +11,8 @@
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Request\" />
+  </ItemGroup>
+
 </Project>
