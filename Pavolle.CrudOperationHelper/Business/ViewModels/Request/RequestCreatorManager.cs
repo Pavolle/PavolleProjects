@@ -17,7 +17,7 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.Request
         public string Path { get; set; }
         public string ClassString { get; set; }
 
-        public RequestCreatorManager(string companyName, string projectName, string projectPath, string properties, string className)
+        public RequestCreatorManager(string companyName, string projectName, string projectPath, string properties, string className, string inheritance)
         {
             CompanyName = companyName;
             ProjectName = projectName;
@@ -33,7 +33,7 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.Request
             ClassString += "" + Environment.NewLine;
             ClassString += Namespace;
             ClassString += "{" + Environment.NewLine;
-            ClassString += "    public class " + className + " : " + projectName + "RequestBase" + Environment.NewLine;
+            ClassString += "    public class " + className + " : "+ inheritance + Environment.NewLine;
             ClassString += "    {" + Environment.NewLine;
             ClassString += properties;
             ClassString += "    }" + Environment.NewLine;

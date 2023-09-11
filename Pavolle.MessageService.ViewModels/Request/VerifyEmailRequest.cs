@@ -8,5 +8,6 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class VerifyEmailRequest : MessageServiceRequestBase
     {
+        public string Code { get; set; }
     }
 }

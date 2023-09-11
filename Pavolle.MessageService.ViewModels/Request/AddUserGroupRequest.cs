@@ -10,8 +10,8 @@ namespace Pavolle.MessageService.ViewModels.Request
     public class AddUserGroupRequest:MessageServiceRequestBase
     {
 
-        public long OrganizationOid { get; set; }
+        public long? OrganizationOid { get; set; }
         public string Name { get; set; }
-        public EUserType UserType { get; set; }
+        public EUserType? UserType { get; set; }
     }
 }

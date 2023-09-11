@@ -8,5 +8,8 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class EditJobRequest:MessageServiceRequestBase
     {
+        public string Name { get; set; }
+        public string Cron { get; set; }
+        public bool? Active { get; set; }
     }
 }

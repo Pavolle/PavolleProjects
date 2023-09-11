@@ -8,5 +8,6 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class VerifyPhoneRequest : MessageServiceRequestBase
     {
+        public string Code { get; set; }
     }
 }

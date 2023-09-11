@@ -16,7 +16,7 @@ namespace Pavolle.MessageService.DbModels.Entities
         public string ApiKey { get; set; }
 
         [Persistent("api_definition_td_oid")]
-        public TranslateData ApiDefinition { get; set; }
+        public string ApiDefinition { get; set; }
 
         [Persistent("method_type")]
         public EApiServiceMethodType MethodType { get; set; }

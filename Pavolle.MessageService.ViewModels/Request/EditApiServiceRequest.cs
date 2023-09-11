@@ -8,5 +8,6 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class EditApiServiceRequest : MessageServiceRequestBase
     {
+        public string ApiDefinition { get; set; }
     }
 }

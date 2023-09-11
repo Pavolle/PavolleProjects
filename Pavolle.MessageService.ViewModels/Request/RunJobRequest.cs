@@ -8,5 +8,6 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class RunJobRequest:MessageServiceRequestBase
     {
+        public string MailToList { get; set; }
     }
 }

@@ -8,5 +8,7 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class EditTranslateDataRequest:MessageServiceRequestBase
     {
+        public string TR { get; set; }
+        public string EN { get; set; }
     }
 }
