@@ -9,7 +9,7 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class ResetPasswordRequest:VerifyCodeRequest
     {
-        public string? NewPassword { get; set; }
-        public string? NewPasswordAgain { get; set; }
+        public string NewPassword { get; set; }
+        public string NewPasswordAgain { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Pavolle.MessageService.Common.Enums;
+using Pavolle.MessageService.ViewModels.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Pavolle.MessageService.ViewModels.Request
     {
         public string Name { get; set; }
         public EUserType? UserType { get; set; }
+        public List<UserGroupAuthRequestModel> MyProperty { get; set; }
     }
 }

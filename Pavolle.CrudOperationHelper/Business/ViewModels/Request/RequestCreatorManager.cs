@@ -29,7 +29,8 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.Request
             Path = ProjectNameRoot + ".ViewModels/Request";
 
             ClassString = "";
-            ClassString += "using " + ProjectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + ";" + Environment.NewLine;
+            ClassString += "using " + ProjectNameRoot + ".Common.Enums;" + Environment.NewLine;
+            ClassString += "using " + ProjectNameRoot + ".ViewModels.Model;" + Environment.NewLine;
             ClassString += "" + Environment.NewLine;
             ClassString += Namespace;
             ClassString += "{" + Environment.NewLine;
