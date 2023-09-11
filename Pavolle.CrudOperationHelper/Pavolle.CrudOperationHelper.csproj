@@ -30,7 +30,6 @@
   <ItemGroup>
     <Folder Include="Business\Core\" />
     <Folder Include="Business\Security\" />
-    <Folder Include="Business\ViewModels\Model\" />
     <Folder Include="Business\ViewModels\ViewData\" />
     <Folder Include="Business\ViewModels\Response\" />
   </ItemGroup>
