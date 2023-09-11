@@ -191,6 +191,10 @@ namespace Pavolle.CrudOperationHelper
 
             #endregion
 
+            #region Model
+
+            #endregion
+
             #region Request
             RequestBaseCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             AddCityRequestCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
@@ -217,6 +221,7 @@ namespace Pavolle.CrudOperationHelper
             VerifyEmailRequestCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             VerifyPhoneRequestCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             #endregion
+
         }
 
 

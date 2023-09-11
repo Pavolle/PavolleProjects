@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.CrudOperationHelper.Business.ViewModels.Request
+namespace Pavolle.CrudOperationHelper.Business.ViewModels.Model
 {
-    public class RequestCreatorManager
+    public class ModelCreatorManager
     {
         public string CompanyName { get; set; }
         public string ProjectName { get; set; }
@@ -17,7 +17,7 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.Request
         public string Path { get; set; }
         public string ClassString { get; set; }
 
-        public RequestCreatorManager(string companyName, string projectName, string projectPath, string properties, string className, string inheritance)
+        public ModelCreatorManager(string companyName, string projectName, string projectPath, string properties, string className)
         {
             CompanyName = companyName;
             ProjectName = projectName;
@@ -25,18 +25,16 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.Request
             ClassName = className;
 
             ProjectNameRoot = CompanyName + "." + ProjectName;
-            Namespace = "namespace " + ProjectNameRoot + ".ViewModels.Request" + Environment.NewLine;
-            Path = ProjectNameRoot + ".ViewModels/Request";
+            Namespace = "namespace " + ProjectNameRoot + ".ViewModels.Model" + Environment.NewLine;
+            Path = ProjectNameRoot + ".ViewModels/Model";
 
             ClassString = "";
             ClassString += "using " + ProjectNameRoot + ".Common.Enums;" + Environment.NewLine;
-            ClassString += "using " + ProjectNameRoot + ".ViewModels.Model;" + Environment.NewLine;
-            ClassString += "using " + companyName + ".Core.ViewModels.Request;" + Environment.NewLine;
             ClassString += "using " + companyName + ".Core.Enums;" + Environment.NewLine;
             ClassString += "" + Environment.NewLine;
             ClassString += Namespace;
             ClassString += "{" + Environment.NewLine;
-            ClassString += "    public class " + className + " : "+ inheritance + Environment.NewLine;
+            ClassString += "    public class " + className + Environment.NewLine;
             ClassString += "    {" + Environment.NewLine;
             ClassString += properties;
             ClassString += "    }" + Environment.NewLine;
