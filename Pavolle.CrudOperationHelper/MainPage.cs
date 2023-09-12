@@ -252,7 +252,7 @@ namespace Pavolle.CrudOperationHelper
             SettingDetailViewDataCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             TranslateDataChangeLogViewDataCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             TranslateDataDetailViewDataCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
-            TranslateDataViewDataCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            TranslateDataViewDataCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text, textBoxLanguage.Text);
             UserAuthViewDataCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             UserDetailViewDataCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             UserGroupAuthViewDataCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
