@@ -12,7 +12,6 @@ namespace Pavolle.MessageService.ViewModels.ViewData
     {
 
         public EJobType JobType { get; set; }
-        public string JobTypeString { get; set; }
         public string Name { get; set; }
         public string Cron { get; set; }
         public DateTime LastRunTime { get; set; }

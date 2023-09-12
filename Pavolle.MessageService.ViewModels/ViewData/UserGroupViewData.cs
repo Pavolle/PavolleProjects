@@ -1,4 +1,5 @@
 ﻿using Pavolle.Core.ViewModels.ViewData;
+using Pavolle.MessageService.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

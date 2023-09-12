@@ -12,5 +12,6 @@ namespace Pavolle.MessageService.ViewModels.ViewData
         public string Name { get; set; }
         public string Code { get; set; }
         public string Address { get; set; }
+        public string LogoBase64 { get; set; }
     }
 }

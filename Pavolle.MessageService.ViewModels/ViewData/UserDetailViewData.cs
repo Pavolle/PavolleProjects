@@ -11,7 +11,7 @@ namespace Pavolle.MessageService.ViewModels.ViewData
     public class UserDetailViewData : ViewDataBase
     {
         public long UserGroupOid { get; set; }
-        public long UserGroupName{ get; set; }
+        public string UserGroupName{ get; set; }
         public string Username { get; set; }
         public EUserType UserType { get; set; }
         public string Name { get; set; }

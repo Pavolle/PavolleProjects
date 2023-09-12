@@ -16,7 +16,8 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.ViewData
         public bool Write(string companyName, string projectName, string projectPath)
         {
             string properties = "";
-            properties += "        public long UserGroupOid { get; set; }" + Environment.NewLine;
+            properties += "        public string SettingName { get; set; }" + Environment.NewLine;
+            properties += "        public string Value { get; set; }" + Environment.NewLine;
             var creator = new ViewDataCreatorManager(companyName, projectName, projectPath, properties, "SettingViewData", projectName + "ViewDataBase");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.ClassString);
         }
