@@ -25,7 +25,7 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.ViewData
 
             ProjectNameRoot = CompanyName + "." + ProjectName;
             Namespace = "namespace " + ProjectNameRoot + ".ViewModels.ViewData" + Environment.NewLine;
-            Path = ProjectNameRoot + ".ViewModels/ViewDataCreatorManager";
+            Path = ProjectNameRoot + ".ViewModels/ViewData";
 
             ClassString = "";
 
