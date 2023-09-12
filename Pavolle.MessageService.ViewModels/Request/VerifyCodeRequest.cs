@@ -10,6 +10,6 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class VerifyCodeRequest:ForgotPasswordRequest
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
     }
 }

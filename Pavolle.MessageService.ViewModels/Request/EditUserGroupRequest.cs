@@ -12,6 +12,6 @@ namespace Pavolle.MessageService.ViewModels.Request
     {
         public string Name { get; set; }
         public EUserType? UserType { get; set; }
-        public List<UserGroupAuthRequestModel> MyProperty { get; set; }
+        public List<UserGroupAuthRequestModel> Auhtorizations { get; set; }
     }
 }

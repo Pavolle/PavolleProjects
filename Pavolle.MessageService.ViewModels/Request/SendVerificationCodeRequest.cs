@@ -9,6 +9,6 @@ namespace Pavolle.MessageService.ViewModels.Request
 {
     public class SendVerificationCodeRequest : MessageServiceRequestBase
     {
-        public ECommunicationType CommunicationType { get; set; }
+        public ECommunicationType? CommunicationType { get; set; }
     }
 }
