@@ -9,5 +9,8 @@ namespace Pavolle.MessageService.ViewModels.ViewData
 {
     public class TranslateDataDetailViewData : ViewDataBase
     {
+        public string Variable { get; set; }
+        public string TR { get; set; }
+        public string EN { get; set; }
     }
 }

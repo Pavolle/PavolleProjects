@@ -9,5 +9,8 @@ namespace Pavolle.MessageService.ViewModels.ViewData
 {
     public class OrganizationViewData : ViewDataBase
     {
+        public string Name { get; set; }
+        public string Code { get; set; }
+        public string Address { get; set; }
     }
 }

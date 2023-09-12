@@ -9,5 +9,9 @@ namespace Pavolle.MessageService.ViewModels.ViewData
 {
     public class CountryViewData : ViewDataBase
     {
+        public string ISOCode2 { get; set; }
+        public string ISOCode3 { get; set; }
+        public string PhoneCode { get; set; }
+        public string Name { get; set; }
     }
 }

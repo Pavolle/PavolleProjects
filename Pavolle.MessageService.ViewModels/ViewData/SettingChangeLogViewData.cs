@@ -9,5 +9,9 @@ namespace Pavolle.MessageService.ViewModels.ViewData
 {
     public class SettingChangeLogViewData : ViewDataBase
     {
+
+        public string User { get; set; }
+        public string OldValue { get; set; }
+        public string NewValue { get; set; }
     }
 }

@@ -9,5 +9,13 @@ namespace Pavolle.MessageService.ViewModels.ViewData
 {
     public class CityDetailViewData : ViewDataBase
     {
+
+        public string Code { get; set; }
+        public long CountryOid { get; set; }
+        public string CountryName { get; set; }
+
+
+        public long NameTranslateDataOid { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -9,5 +9,9 @@ namespace Pavolle.MessageService.ViewModels.ViewData
 {
     public class JobLogViewData : ViewDataBase
     {
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public bool Success { get; set; }
+        public string Result { get; set; }
     }
 }
