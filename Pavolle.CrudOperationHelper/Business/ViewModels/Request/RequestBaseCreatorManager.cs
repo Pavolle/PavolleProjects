@@ -22,7 +22,7 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.Request
 
             string classString = "";
             classString += "using " + projectNameRoot + "." + AppConsts.CommonProjectName + "." + AppConsts.CommonEnumFolderName + ";" + Environment.NewLine;
-            classString += "using Pavolle.Core.ViewModels.Request"+Environment.NewLine;
+            classString += "using Pavolle.Core.ViewModels.Request;"+Environment.NewLine;
             classString += "" + Environment.NewLine;
             classString += Namespace;
             classString += "{" + Environment.NewLine;

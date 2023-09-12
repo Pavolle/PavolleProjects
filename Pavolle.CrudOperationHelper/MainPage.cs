@@ -2,6 +2,7 @@
 using Pavolle.CrudOperationHelper.Business.Common.Enums;
 using Pavolle.CrudOperationHelper.Business.DbModels;
 using Pavolle.CrudOperationHelper.Business.ViewModels.Criteria;
+using Pavolle.CrudOperationHelper.Business.ViewModels.Model;
 using Pavolle.CrudOperationHelper.Business.ViewModels.Request;
 using Pavolle.CrudOperationHelper.Business.WebSecurity;
 using Pavolle.CrudOperationHelper.Db;
@@ -192,7 +193,17 @@ namespace Pavolle.CrudOperationHelper
             #endregion
 
             #region Model
-
+            ApiServiceAuthRequestModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            AuhtorizationCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            CityCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text, textBoxLanguage.Text);
+            CountryCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text, textBoxLanguage.Text);
+            OrganizationCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            SettingCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            TranslateDataCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text, textBoxLanguage.Text);
+            UserCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            UserGroupAuthRequestModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            UserGroupCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            UserSessionCacheModelCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             #endregion
 
             #region Request
