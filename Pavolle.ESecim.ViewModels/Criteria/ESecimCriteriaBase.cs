@@ -1,4 +1,4 @@
-﻿using Pavolle.Core.ViewModels.Criteria;
+﻿
 using Pavolle.ESecim.ViewModels.Request;
 using System;
 using System.Collections.Generic;

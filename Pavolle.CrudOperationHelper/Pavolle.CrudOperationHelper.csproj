@@ -28,8 +28,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Business\Core\" />
-    <Folder Include="Business\Security\" />
+    <Folder Include="Business\Core\Enums\" />
+    <Folder Include="Business\Core\Helper\" />
+    <Folder Include="Business\Core\Utils\" />
+    <Folder Include="Business\Core\ViewModels\ViewData\" />
+    <Folder Include="Business\Core\ViewModels\Response\" />
+    <Folder Include="Business\Core\ViewModels\Request\" />
+    <Folder Include="Business\Security\Hash\" />
+    <Folder Include="Business\Security\Symmetric\" />
     <Folder Include="Business\ViewModels\Response\" />
   </ItemGroup>
 

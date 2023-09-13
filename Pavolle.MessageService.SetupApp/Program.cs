@@ -103,25 +103,13 @@ internal class Program
     {
         if (!session.Query<ApiService>().Any(t => t.ApiKey == apiKey))
         {
-            var translateData = new TranslateData(session)
-            {
-                Variable = apiDefinition,
-            };
-            if (defaultLanguage == ELanguage.Turkce)
-            {
-                translateData.TR = apiDefinition;
-            }
-            else if (defaultLanguage == ELanguage.Ingilizce)
-            {
-                translateData.EN = apiDefinition;
-            }
-            translateData.Save();
+            
 
 
             var apiService = new ApiService(session)
             {
                 ApiKey = apiKey,
-                ApiDefinition = translateData,
+                ApiDefinition = apiDefinition,
                 MethodType = methodType,
                 Anonymous = anonymous,
                 EditableForAdmin = editableForAdmin,
