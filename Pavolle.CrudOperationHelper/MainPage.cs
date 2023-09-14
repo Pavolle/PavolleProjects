@@ -5,6 +5,7 @@ using Pavolle.CrudOperationHelper.Business.ViewModels.Criteria;
 using Pavolle.CrudOperationHelper.Business.ViewModels.Model;
 using Pavolle.CrudOperationHelper.Business.ViewModels.Request;
 using Pavolle.CrudOperationHelper.Business.ViewModels.ViewData;
+using Pavolle.CrudOperationHelper.Business.WebApp.Controller;
 using Pavolle.CrudOperationHelper.Business.WebSecurity;
 using Pavolle.CrudOperationHelper.Db;
 using System;
@@ -262,6 +263,12 @@ namespace Pavolle.CrudOperationHelper
             ViewDataBaseCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
             #endregion
 
+            #region Business
+            #endregion
+
+            #region Controller
+            ApiServiceConrollerCreatorManager.Instance.Write(textBoxProjectOrganization.Text, textBoxProjectMame.Text, textBoxProjectsPath.Text);
+            #endregion
         }
 
 

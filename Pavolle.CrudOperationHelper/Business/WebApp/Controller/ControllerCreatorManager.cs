@@ -17,7 +17,7 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
         public string Path { get; set; }
         public string ClassString { get; set; }
 
-        public ControllerCreatorManager(string companyName, string projectName, string projectPath, string properties, string className)
+        public ControllerCreatorManager(string companyName, string projectName, string projectPath, string className)
         {
             CompanyName = companyName;
             ProjectName = projectName;
@@ -27,35 +27,30 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
             ProjectNameRoot = CompanyName + "." + ProjectName;
             Namespace = "namespace " + ProjectNameRoot + ".WebApp.Controllers" + Environment.NewLine;
             Path = ProjectNameRoot + ".WebApp/Controllers";
-
-            ClassString = "";
-            ClassString += "using log4net;" + Environment.NewLine;
-            ClassString += "using Microsoft.AspNetCore.Mvc;" + Environment.NewLine;
-            ClassString += "using System.Text.Json;" + Environment.NewLine;
-            ClassString += "using " + CompanyName + ".Core.Enums;" + Environment.NewLine;
-            ClassString += "using " + ProjectNameRoot + ".Business.Manager;" + Environment.NewLine;
-            ClassString += "using " + ProjectNameRoot + ".Common.Enums;" + Environment.NewLine;
-            ClassString += "using " + ProjectNameRoot + ".Common.Utils;" + Environment.NewLine;
-            ClassString += "using " + ProjectNameRoot + ".ViewModels.Criteria;" + Environment.NewLine;
-            ClassString += "using " + ProjectNameRoot + ".ViewModels.Request;" + Environment.NewLine;
-            ClassString += "using " + ProjectNameRoot + ".ViewModels.Response;" + Environment.NewLine;
-            ClassString += "" + Environment.NewLine;
-            ClassString += Namespace;
-            ClassString += "    [Produces(\"application/json\")]" + Environment.NewLine;
-            ClassString += "    [Route(" + projectName + "ApiUrlConsts." + ClassName + "RouteConsts.Route)]" + Environment.NewLine;
-            ClassString += "{" + Environment.NewLine;
-            ClassString += "    public class " + ClassName + "Controller : Controller" + Environment.NewLine;
-            ClassString += "    {" + Environment.NewLine;
-            ClassString += "        static readonly ILog _log = LogManager.GetLogger(typeof(" + ClassName + "Controller));" + Environment.NewLine;
-            ClassString += properties;
-            ClassString += "    }" + Environment.NewLine;
-            ClassString += "}" + Environment.NewLine;
         }
 
-        public string GenerateGenericService(bool list, bool lookup, bool detail, bool add, bool edit, bool delete)
+        public string GenerateGenericService(bool list, bool lookup, bool detail, bool add, bool edit, bool delete, string addedProperties)
         {
             string result = "";
-
+            result = "";
+            result += "using log4net;" + Environment.NewLine;
+            result += "using Microsoft.AspNetCore.Mvc;" + Environment.NewLine;
+            result += "using System.Text.Json;" + Environment.NewLine;
+            result += "using " + CompanyName + ".Core.Enums;" + Environment.NewLine;
+            result += "using " + ProjectNameRoot + ".Business.Manager;" + Environment.NewLine;
+            result += "using " + ProjectNameRoot + ".Common.Enums;" + Environment.NewLine;
+            result += "using " + ProjectNameRoot + ".Common.Utils;" + Environment.NewLine;
+            result += "using " + ProjectNameRoot + ".ViewModels.Criteria;" + Environment.NewLine;
+            result += "using " + ProjectNameRoot + ".ViewModels.Request;" + Environment.NewLine;
+            result += "using " + ProjectNameRoot + ".ViewModels.Response;" + Environment.NewLine;
+            result += "" + Environment.NewLine;
+            result += Namespace;
+            result += "{" + Environment.NewLine;
+            result += "    [Produces(\"application/json\")]" + Environment.NewLine;
+            result += "    [Route(" + ProjectName + "ApiUrlConsts." + ClassName + "RouteConsts.Route)]" + Environment.NewLine;
+            result += "    public class " + ClassName + "Controller : Controller" + Environment.NewLine;
+            result += "    {" + Environment.NewLine;
+            result += "        static readonly ILog _log = LogManager.GetLogger(typeof(" + ClassName + "Controller));" + Environment.NewLine;
             if (list)
             {
                 result += "" + Environment.NewLine;
@@ -175,6 +170,14 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
                 result += "            }" + Environment.NewLine;
                 result += "        }" + Environment.NewLine;
             }
+
+            if (!string.IsNullOrEmpty(addedProperties))
+            {
+                result += addedProperties;
+            }
+
+            result += "    }" + Environment.NewLine;
+            result += "}" + Environment.NewLine;
 
             return result;
         }

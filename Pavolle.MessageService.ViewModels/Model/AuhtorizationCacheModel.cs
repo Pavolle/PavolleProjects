@@ -1,14 +1,11 @@
-﻿using Pavolle.MessageService.Common.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Pavolle.MessageService.Common.Enums;
+using Pavolle.Core.Enums;
 
 namespace Pavolle.MessageService.ViewModels.Model
 {
-    internal class AuhtorizationCacheModel
+    public class AuhtorizationCacheModel
     {
+        public long Oid { get; set; }
         public long UserGroupOid { get; set; }
         public EApiServiceMethodType MethodType { get; set; }
         public string ApiKey { get; set; }

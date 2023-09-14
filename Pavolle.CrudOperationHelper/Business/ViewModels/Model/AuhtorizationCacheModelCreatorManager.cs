@@ -13,6 +13,7 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.Model
         public bool Write(string companyName, string projectName, string projectPath)
         {
             string properties = "";
+            properties += "        public long Oid { get; set; }" + Environment.NewLine;
             properties += "        public long UserGroupOid { get; set; }" + Environment.NewLine;
             properties += "        public EApiServiceMethodType MethodType { get; set; }" + Environment.NewLine;
             properties += "        public string ApiKey { get; set; }" + Environment.NewLine;
