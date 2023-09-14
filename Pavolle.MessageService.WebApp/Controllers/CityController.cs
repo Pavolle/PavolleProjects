@@ -65,12 +65,12 @@ namespace Pavolle.MessageService.WebApp.Controllers
             }
         }
 
-        [HttpPost(MessageServiceApiUrlConsts.EditRoutePrefix)]
-        public ActionResult Edit(long? oid, [FromBody] EditCityRequest request)
+        [HttpPost(MessageServiceApiUrlConsts.AddRoutePrefix)]
+        public ActionResult Add([FromBody] AddCityRequest request)
         {
             try
             {
-                var response = CityManager.Instance.Edit(oid, request);
+                var response = CityManager.Instance.Add(request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -81,12 +81,12 @@ namespace Pavolle.MessageService.WebApp.Controllers
             }
         }
 
-        [HttpPost(MessageServiceApiUrlConsts.AddRoutePrefix)]
-        public ActionResult Edit([FromBody] AddCityRequest request)
+        [HttpPost(MessageServiceApiUrlConsts.EditRoutePrefix)]
+        public ActionResult Edit(long? oid, [FromBody] EditCityRequest request)
         {
             try
             {
-                var response = CityManager.Instance.Add(request);
+                var response = CityManager.Instance.Edit(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
