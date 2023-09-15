@@ -50,9 +50,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Multilanguage", "Pavolle.Multilanguage\Pavolle.Multilanguage.csproj", "{00A8917B-B054-4E3D-8771-5D696420D515}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0000 Mobile Apps", "0000 Mobile Apps", "{570F66D8-60F4-453C-B10F-10F44B3CEEAD}"
-	ProjectSection(SolutionItems) = preProject
-		03.09.2023.txt = 03.09.2023.txt
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.VeggyMath", "Pavolle.VeggyMath\Pavolle.VeggyMath.csproj", "{C2FD59E2-0C27-4E76-8202-E5B262FE0CC3}"
 EndProject
@@ -372,6 +369,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMS Gönderim", "SMS Gönde
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Neleri Başardık", "00 - Neleri Başardık", "{AFD15187-5351-4186-889D-FA2486AD8F55}"
+	ProjectSection(SolutionItems) = preProject
+		Fikirler.txt = Fikirler.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.FaceMemory", "Pavolle.FaceMemory\Pavolle.FaceMemory.csproj", "{9F274E36-091D-421C-B8D5-96555BDA1E27}"
 EndProject
@@ -384,7 +384,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eylül", "Eylül", "{CAD7E3
 		04.09.2023.txt = 04.09.2023.txt
 		05.09.2023.txt = 05.09.2023.txt
 		06.09.2023.txt = 06.09.2023.txt
+		14.09.2023.txt = 14.09.2023.txt
+		15.09.2023.txt = 15.09.2023.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.Kalde", "Pavolle.Kalde\Pavolle.Kalde.csproj", "{DADCFF3B-F5EF-4264-BC35-FF1773EB685E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.Lahij", "Pavolle.Lahij\Pavolle.Lahij.csproj", "{F3D13A7A-730C-4415-BCFD-F19F8941816C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1058,6 +1064,18 @@ Global
 		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F274E36-091D-421C-B8D5-96555BDA1E27}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DADCFF3B-F5EF-4264-BC35-FF1773EB685E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADCFF3B-F5EF-4264-BC35-FF1773EB685E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADCFF3B-F5EF-4264-BC35-FF1773EB685E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DADCFF3B-F5EF-4264-BC35-FF1773EB685E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADCFF3B-F5EF-4264-BC35-FF1773EB685E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADCFF3B-F5EF-4264-BC35-FF1773EB685E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F3D13A7A-730C-4415-BCFD-F19F8941816C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D13A7A-730C-4415-BCFD-F19F8941816C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D13A7A-730C-4415-BCFD-F19F8941816C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F3D13A7A-730C-4415-BCFD-F19F8941816C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D13A7A-730C-4415-BCFD-F19F8941816C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D13A7A-730C-4415-BCFD-F19F8941816C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1229,6 +1247,8 @@ Global
 		{9F274E36-091D-421C-B8D5-96555BDA1E27} = {FCF10A3A-801C-4FFF-8395-4F932D1BA183}
 		{DCD33EEC-1756-41A8-9D34-F8B11274A59B} = {AFD15187-5351-4186-889D-FA2486AD8F55}
 		{CAD7E36D-BB0C-4447-A6B5-46D83C201BCD} = {DCD33EEC-1756-41A8-9D34-F8B11274A59B}
+		{DADCFF3B-F5EF-4264-BC35-FF1773EB685E} = {ACCB87E2-556B-4289-85B3-874386D07DB2}
+		{F3D13A7A-730C-4415-BCFD-F19F8941816C} = {ACCB87E2-556B-4289-85B3-874386D07DB2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB022668-0D9A-42CE-B969-F65E1AD40F7C}

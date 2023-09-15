@@ -1,22 +1,16 @@
-﻿using Pavolle.Core.Utils;
+﻿using DevExpress.Xpo;
+using log4net;
+using Pavolle.Core.Utils;
+using Pavolle.Core.Enums;
+using Pavolle.MessageService.Common.Enums;
+using Pavolle.MessageService.DbModels;
+using Pavolle.MessageService.DbModels.Entities;
 using Pavolle.MessageService.ViewModels.Criteria;
+using Pavolle.MessageService.ViewModels.Model;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
 using Pavolle.MessageService.ViewModels.ViewData;
-using Pavolle.MessageService.ViewModels.Model;
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.Xpo;
-using Pavolle.MessageService.DbModels;
-using Pavolle.MessageService.DbModels.Entities;
-using System.Security.Cryptography;
-using log4net;
-using Pavolle.Core.ViewModels.Request;
-using Pavolle.MessageService.Common.Enums;
 
 namespace Pavolle.MessageService.Business.Manager
 {
@@ -54,6 +48,7 @@ namespace Pavolle.MessageService.Business.Manager
         public ApiServiceListResponse List(ListApiServiceCriteria criteria)
         {
             var response=new ApiServiceListResponse();
+
             try
             {
                 if (criteria == null)
@@ -106,6 +101,7 @@ namespace Pavolle.MessageService.Business.Manager
         public ApiServiceDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             var response = new ApiServiceDetailResponse();
+
             try
             {
                 if (request == null)
@@ -154,6 +150,7 @@ namespace Pavolle.MessageService.Business.Manager
         public MessageServiceResponseBase Edit(long? oid, EditApiServiceRequest request)
         {
             var response = new ApiServiceDetailResponse();
+
             try
             {
                 if (request == null)
@@ -224,7 +221,7 @@ namespace Pavolle.MessageService.Business.Manager
                             if (dbAuthData.IsAuhtority != auth.IsAuthority)
                             {
                                 dbAuthData.IsAuhtority = auth.IsAuthority;
-                                data.LastUpdateTime = DateTime.Now;
+                                dbAuthData.LastUpdateTime = DateTime.Now;
                                 dbAuthData.Save();
                             }
                         }

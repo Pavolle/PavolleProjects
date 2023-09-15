@@ -1,0 +1,5 @@
+Kalde projesini oluþturduk.
+
+
+
+ApiServiceManager kýsmýný tamamladýk. Bu da bize business tarafýnda classlar için altyapýnýn çýkmasýna yardýmcý oldu. Bu sayede diðer classlarý da kolaylýkla yazabiriz.

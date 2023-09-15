@@ -1,3 +1,5 @@
+Bu hafta baþarýlmasý gerekenler.
+
 1. Business tarafýnýn kodlarýný yazmayý bitir.
 2. Mevcut altyapýnýn(business ve controller tarafýnýn) uygulama ile oluþturma altyapýsýný tamamla.
 3. Web Altyapýsýný oluþturmaya baþla. Uygulama altyapýsýnda modüler yapý ile mi yoksa sadece component þeklinde mi ilerleneceðine karar ver. Buna göre uygulama altyapýsýný oluþtur. 
