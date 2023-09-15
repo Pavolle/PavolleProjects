@@ -98,12 +98,12 @@ namespace Pavolle.MessageService.WebApp.Controllers
         }
 
         [HttpDelete(MessageServiceApiUrlConsts.DeleteRoutePrefix)]
-        public ActionResult Delete(long? oid, [FromQuery] DeleteCityCriteria request)
+        public ActionResult Delete(long? oid, [FromQuery] DeleteCityCriteria criteria)
         {
             try
             {
-                var response = CityManager.Instance.Delete(oid, request);
-                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                var response = CityManager.Instance.Delete(oid, criteria);
+                _log.Debug("Request IP: " + criteria.RequestIp + " Request: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
             catch (Exception ex)

@@ -160,22 +160,130 @@ namespace Pavolle.MessageService.Business.Manager
 
         public CityDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new CityDetailResponse();
+
+            try
+            {
+                if (request == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (request.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
         public MessageServiceResponseBase Add(AddCityRequest request)
         {
-            throw new NotImplementedException();
+            var response = new CityDetailResponse();
+
+            try
+            {
+                if (request == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (request.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
         public MessageServiceResponseBase Edit(long? oid, EditCityRequest request)
         {
-            throw new NotImplementedException();
+            var response = new CityDetailResponse();
+
+            try
+            {
+                if (request == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (request.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
-        public MessageServiceResponseBase Delete(long? oid, DeleteCityCriteria request)
+        public MessageServiceResponseBase Delete(long? oid, DeleteCityCriteria criteria)
         {
-            throw new NotImplementedException();
+            var response = new CityDetailResponse();
+
+            try
+            {
+                if (criteria == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (criteria.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    criteria.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, criteria.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
     }
 }
