@@ -218,7 +218,7 @@ namespace Pavolle.MessageService.Business.Manager
 
                     if (data == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.TranslateData);
+                        response.ErrorMessage = GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.TranslateData);
                         return response;
                     }
                     session.BeginTransaction();
@@ -235,7 +235,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -271,7 +271,7 @@ namespace Pavolle.MessageService.Business.Manager
             return message;
         }
 
-        internal string GetXNotFoundMessage(ELanguage language, EMessageServiceMessageCode messageCode)
+        public string GetXNotFoundMessage(ELanguage language, EMessageServiceMessageCode messageCode)
         {
             return string.Format(GetMessage(EMessageServiceMessageCode.XNotFound, language), messageCode);
         }
