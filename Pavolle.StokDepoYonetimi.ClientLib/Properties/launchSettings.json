@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Pavolle.StokDepoYonetimi.ClientLib": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:55947;http://localhost:55948"
+    }
+  }
+}

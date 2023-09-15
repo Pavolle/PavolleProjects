@@ -371,7 +371,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMS Gönderim", "SMS Gönde
 		Araştırma.txt = Araştırma.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00", "00", "{AFD15187-5351-4186-889D-FA2486AD8F55}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Neleri Başardık", "00 - Neleri Başardık", "{AFD15187-5351-4186-889D-FA2486AD8F55}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.FaceMemory", "Pavolle.FaceMemory\Pavolle.FaceMemory.csproj", "{9F274E36-091D-421C-B8D5-96555BDA1E27}"
 EndProject

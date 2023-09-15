@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Pavolle.BorsaNakliye.SetupApp": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:55964;http://localhost:55965"
+    }
+  }
+}

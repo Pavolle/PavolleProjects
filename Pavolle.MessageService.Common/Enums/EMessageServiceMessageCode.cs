@@ -18,6 +18,9 @@ namespace Pavolle.MessageService.Common.Enums
         CommunicationType = 8,
         UnexpectedError = 9,
         CodeSendedToEmailNumber = 10,
-        CodeSendedToPhoneNumber = 11
+        CodeSendedToPhoneNumber = 11,
+        ApiService = 12,
+        ApiDefinition = 13,
+        Auhtorizations = 14
     }
 }

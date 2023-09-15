@@ -11,8 +11,8 @@ namespace Pavolle.MessageService.ViewModels.Response
     {
         public int WrongTryCount { get; set; }
         public bool IsLocked { get; set; }
-        public string? Token { get; set; }
-        public List<UserAuthViewData>? Authorizations { get; set; }
-        public UserInfoViewData? UserInfo { get; set; }
+        public string Token { get; set; }
+        public List<UserAuthViewData> Authorizations { get; set; }
+        public UserInfoViewData UserInfo { get; set; }
     }
 }

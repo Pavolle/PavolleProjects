@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pavolle.MessageService.WebSecurity
 {
-    public class SecurityConstsManager : Singleton<SecurityConstsManager>
+    public class MessageServiceSecurityConstsManager : Singleton<MessageServiceSecurityConstsManager>
     {
         public const string SymmetricSecurityKeyString = "734df+5gdgaq@@&&www-3421-3-ff!dsfwwwdpavollefb34g7ugfdsfvfv--34sdewwe3er34rwwefd34ffssd5ww4545zss";
         public const string Issuer = "pavolle";
@@ -18,7 +18,7 @@ namespace Pavolle.MessageService.WebSecurity
         private readonly SymmetricSecurityKey key;
         private readonly string RequestIpKey;
 
-        private SecurityConstsManager()
+        private MessageServiceSecurityConstsManager()
         {
             UsernameKey = "Username";
             LanguageKey = "Language";

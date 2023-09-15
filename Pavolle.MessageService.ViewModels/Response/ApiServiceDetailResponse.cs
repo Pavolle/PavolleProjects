@@ -9,7 +9,7 @@ namespace Pavolle.MessageService.ViewModels.Response
 {
     public class ApiServiceDetailResponse : MessageServiceResponseBase
     {
-        public ApiServiceDetailViewData Detail { get; set; }
+        public ApiServiceDetailViewData? Detail { get; set; }
 
         public List<ApiServiceAuthViewData> Authorization { get; set; }
     }

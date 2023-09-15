@@ -1,0 +1,8 @@
+1. Business tarafýnýn kodlarýný yazmayý bitir.
+2. Mevcut altyapýnýn(business ve controller tarafýnýn) uygulama ile oluþturma altyapýsýný tamamla.
+3. Web Altyapýsýný oluþturmaya baþla. Uygulama altyapýsýnda modüler yapý ile mi yoksa sadece component þeklinde mi ilerleneceðine karar ver. Buna göre uygulama altyapýsýný oluþtur. 
+https://www.youtube.com/watch?v=ES8vJcUqE7s
+https://www.codingnepalweb.com/dropdown-sidebar-menu-html-css/
+4. Response Classlarýný oluþtur.
+5. Seyfali eminin web sitesi üçün yarým saat çalýþ
+6. Pavolle Websitesi üçün çalýþ

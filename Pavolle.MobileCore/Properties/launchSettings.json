@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Pavolle.MobileCore": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:55923;http://localhost:55924"
+    }
+  }
+}

@@ -103,14 +103,14 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username);
+                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
-                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue);
+                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -118,7 +118,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType);
+                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -218,14 +218,14 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username);
+                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
-                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue);
+                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -233,7 +233,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType);
+                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -312,7 +312,7 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username);
+                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -320,7 +320,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckString(request.Password, false, 8, 50, true, EMessageServiceMessageCode.Password);
+                checkResult = ValidationManager.Instance.CheckString(request.Password, false, 8, 50, true, EMessageServiceMessageCode.Password, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -383,7 +383,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                response.Token = MesssageServiceJwtTokenManager.Instance.CreateToken(request.Username, Guid.NewGuid().ToString(), userCache.UserGroupOid.ToString(), ((int)userCache.UserType).ToString(), ((int)request.Language.Value).ToString(), request.RequestIp);
+                response.Token = MessageServiceJwtTokenManager.Instance.CreateToken(request.Username, Guid.NewGuid().ToString(), userCache.UserGroupOid.ToString(), ((int)userCache.UserType).ToString(), ((int)request.Language.Value).ToString(), request.RequestIp);
 
                 response.Authorizations = ApiServiceManager.Instance.GetAuthList(userCache.UserGroupOid);
                 response.UserInfo = new UserInfoViewData
@@ -487,14 +487,14 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username);
+                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
-                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue);
+                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -502,7 +502,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType);
+                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);

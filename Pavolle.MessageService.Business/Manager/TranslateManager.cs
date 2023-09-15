@@ -36,12 +36,12 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        public string? GetMessage(EMessageServiceMessageCode messageCode, ELanguage turkce)
+        public string GetMessage(EMessageServiceMessageCode messageCode, ELanguage turkce)
         {
             throw new NotImplementedException();
         }
 
-        internal string? GetXNotFoundMessage(ELanguage? language, EMessageServiceMessageCode messageCode)
+        internal string GetXNotFoundMessage(ELanguage? language, EMessageServiceMessageCode messageCode)
         {
             throw new NotImplementedException();
         }
