@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Pavolle.MessageService.Common.Enums;
+using Pavolle.Core.Enums;
 
 namespace Pavolle.MessageService.ViewModels.Model
 {
     public class CityCacheModel
     {
-        public long? CityOid { get; set; }
+        public long Oid { get; set; }
         public string Code { get; set; }
-        public string TRName { get; set; }
-        public string ENName { get; set; }
+        public string Name { get; set; }
+        public long CountryOid { get; set; }
+        public string CountryName { get; set; }
     }
 }

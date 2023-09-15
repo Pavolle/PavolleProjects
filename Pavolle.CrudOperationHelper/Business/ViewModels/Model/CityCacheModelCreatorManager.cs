@@ -14,7 +14,7 @@ namespace Pavolle.CrudOperationHelper.Business.ViewModels.Model
         {
             string[] _languages = language.Split(',');
             string properties = "";
-            properties += "        public long? CityOid { get; set; }" + Environment.NewLine;
+            properties += "        public long Oid { get; set; }" + Environment.NewLine;
             properties += "        public string Code { get; set; }" + Environment.NewLine;
             foreach (var item in _languages)
             {

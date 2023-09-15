@@ -271,6 +271,35 @@ namespace Pavolle.MessageService.Business.Manager
             return message;
         }
 
+        public string GetMessage(string variable, ELanguage language)
+        {
+            string message = variable;
+            TranslateDataCacheModel data;
+            if (_translateData.ContainsKey(variable))
+            {
+                data = _translateData[variable];
+            }
+            else
+            {
+                return message;
+            }
+
+            switch (language)
+            {
+                case ELanguage.Turkce:
+                    message = data.TR;
+                    break;
+                case ELanguage.Ingilizce:
+                    message = data.EN;
+                    break;
+                default:
+                    message = data.EN;
+                    break;
+            }
+
+            return message;
+        }
+
         public string GetXNotFoundMessage(ELanguage language, EMessageServiceMessageCode messageCode)
         {
             return string.Format(GetMessage(EMessageServiceMessageCode.XNotFound, language), messageCode);

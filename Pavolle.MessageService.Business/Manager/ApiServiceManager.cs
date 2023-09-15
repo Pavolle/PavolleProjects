@@ -17,14 +17,14 @@ namespace Pavolle.MessageService.Business.Manager
     public class ApiServiceManager:Singleton<ApiServiceManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(ApiServiceManager));
-        ConcurrentDictionary<long, AuhtorizationCacheModel> _services;
+        ConcurrentDictionary<long, AuhtorizationCacheModel> _cacheData;
         private ApiServiceManager()
         {
-            LoadAuthorizations();
+            LoadCacheData();
             _log.Debug("Inialize " + nameof(ApiServiceManager));
         }
 
-        public void LoadAuthorizations()
+        public void LoadCacheData()
         {
             try
             {
@@ -39,10 +39,10 @@ namespace Pavolle.MessageService.Business.Manager
                         MethodType = t.ApiService.MethodType
                     }).ToList();
 
-                    _services = new ConcurrentDictionary<long, AuhtorizationCacheModel>();
+                    _cacheData = new ConcurrentDictionary<long, AuhtorizationCacheModel>();
                     foreach (var item in services)
                     {
-                        _services.TryAdd(item.Oid, item);
+                        _cacheData.TryAdd(item.Oid, item);
                     }
                 }
             }
@@ -238,7 +238,7 @@ namespace Pavolle.MessageService.Business.Manager
                     session.CommitTransaction();
                 }
 
-                LoadAuthorizations();
+                LoadCacheData();
             }
             catch (Exception ex)
             {
@@ -251,7 +251,7 @@ namespace Pavolle.MessageService.Business.Manager
 
         internal List<UserAuthViewData>? GetAuthList(long userGroupOid)
         {
-            return _services.ToList().Where(t => t.Value.UserGroupOid == userGroupOid).Select(t => new UserAuthViewData
+            return _cacheData.ToList().Where(t => t.Value.UserGroupOid == userGroupOid).Select(t => new UserAuthViewData
             {
                 ApiKey = t.Value.ApiKey,
                 IsAuthority = t.Value.IsAuthority

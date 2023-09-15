@@ -20,7 +20,7 @@ namespace Pavolle.MessageService.Business.Manager
     public class UserGroupManager : Singleton<UserGroupManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(UserGroupManager));
-        ConcurrentDictionary<long, UserGroupCacheModel> _userGroups;
+        ConcurrentDictionary<long, UserGroupCacheModel> _cacheData;
         private UserGroupManager(){}
 
         public void Initialize()
@@ -33,7 +33,7 @@ namespace Pavolle.MessageService.Business.Manager
         {
             using (Session session = XpoManager.Instance.GetNewSession())
             {
-                _userGroups = new ConcurrentDictionary<long, UserGroupCacheModel>();
+                _cacheData = new ConcurrentDictionary<long, UserGroupCacheModel>();
 
                 var _userGroupList = session.Query<UserGroup>().Select(t => new UserGroupCacheModel
                 {
@@ -46,7 +46,7 @@ namespace Pavolle.MessageService.Business.Manager
 
                 foreach (var item in _userGroupList)
                 {
-                    _userGroups.TryAdd(item.Oid, item);
+                    _cacheData.TryAdd(item.Oid, item);
                 }
             }
         }
@@ -71,8 +71,8 @@ namespace Pavolle.MessageService.Business.Manager
 
         internal string GetUserGroupDefinition(long userGroupOid)
         {
-            if (!_userGroups.ContainsKey(userGroupOid)) return "";
-            var userGroup = _userGroups[userGroupOid];
+            if (!_cacheData.ContainsKey(userGroupOid)) return "";
+            var userGroup = _cacheData[userGroupOid];
             if (userGroup == null) return "";
             if (userGroup.OrganizationOid == null) return userGroup.Name;
             return userGroup.OrganizationName + " - " + userGroup.Name;
