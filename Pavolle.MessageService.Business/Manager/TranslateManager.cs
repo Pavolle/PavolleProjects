@@ -22,7 +22,7 @@ namespace Pavolle.MessageService.Business.Manager
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(TranslateManager));
 
-        private ConcurrentDictionary<long, TranslateDataCacheModel> _translateData;
+        private ConcurrentDictionary<string, TranslateDataCacheModel> _translateData;
         private TranslateManager() 
         {
             LoadTranslateData();
@@ -44,10 +44,10 @@ namespace Pavolle.MessageService.Business.Manager
                         TR = t.TR
                     }).ToList();
 
-                    _translateData = new ConcurrentDictionary<long, TranslateDataCacheModel>();
+                    _translateData = new ConcurrentDictionary<string, TranslateDataCacheModel>();
                     foreach (var item in datas)
                     {
-                        _translateData.TryAdd(item.Oid, item);
+                        _translateData.TryAdd(item.Variable, item);
                     }
                 }
             }
@@ -58,11 +58,11 @@ namespace Pavolle.MessageService.Business.Manager
 
         }
 
-        public void AddTranslateData(TranslateDataCacheModel item)
+        private void AddTranslateData(TranslateDataCacheModel item)
         {
             try
             {
-                _translateData.TryAdd(item.Oid, item);
+                _translateData.TryAdd(item.Variable, item);
             }
             catch (Exception ex)
             {
@@ -70,17 +70,17 @@ namespace Pavolle.MessageService.Business.Manager
             }
         }
 
-        public void UpdateTranslateData(TranslateDataCacheModel item)
+        private void UpdateTranslateData(TranslateDataCacheModel item)
         {
             try
             {
-                if(_translateData.ContainsKey(item.Oid))
+                if(_translateData.ContainsKey(item.Variable))
                 {
-                    _translateData[item.Oid] = item;
+                    _translateData[item.Variable] = item;
                 }
                 else
                 {
-                    _translateData.TryAdd(item.Oid, item);
+                    _translateData.TryAdd(item.Variable, item);
                 }
             }
             catch (Exception ex)
@@ -104,14 +104,38 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
-        public string GetMessage(EMessageServiceMessageCode messageCode, ELanguage turkce)
+        public string GetMessage(EMessageServiceMessageCode messageCode, ELanguage language)
         {
-            throw new NotImplementedException();
+            string message=messageCode.ToString();
+            TranslateDataCacheModel data;
+            if(_translateData.ContainsKey(messageCode.ToString()))
+            {
+                data=_translateData[messageCode.ToString()];
+            }
+            else
+            {
+                return message;
+            }
+            
+            switch (language)
+            {
+                case ELanguage.Turkce:
+                    message = data.TR;
+                    break;
+                case ELanguage.Ingilizce:
+                    message = data.EN;
+                    break;
+                default:
+                    message = data.EN;
+                    break;
+            }
+
+            return message;
         }
 
-        internal string GetXNotFoundMessage(ELanguage? language, EMessageServiceMessageCode messageCode)
+        internal string GetXNotFoundMessage(ELanguage language, EMessageServiceMessageCode messageCode)
         {
-            throw new NotImplementedException();
+            return string.Format(GetMessage(EMessageServiceMessageCode.XNotFound, language), messageCode);
         }
     }
 }
