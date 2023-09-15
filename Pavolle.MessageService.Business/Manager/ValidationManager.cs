@@ -1,13 +1,6 @@
 ﻿using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
-using Pavolle.Core.ViewModels.Request;
 using Pavolle.MessageService.Common.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {

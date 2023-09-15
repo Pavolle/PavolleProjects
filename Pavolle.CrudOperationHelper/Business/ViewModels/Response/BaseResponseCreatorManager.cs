@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.CrudOperationHelper.Business.Business.Manager
+namespace Pavolle.CrudOperationHelper.Business.ViewModels.Response
 {
-    public class ApiServiceBusinessCreatorManager
+    internal class BaseResponseCreatorManager
     {
     }
 }

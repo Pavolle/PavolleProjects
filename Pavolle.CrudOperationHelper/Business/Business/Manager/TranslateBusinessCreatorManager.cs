@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.CrudOperationHelper.Business.Business.Manager
 {
-    public class ApiServiceBusinessCreatorManager
+    public class TranslateBusinessCreatorManager
     {
     }
 }

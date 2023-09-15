@@ -37,7 +37,6 @@
     <Folder Include="Business\Core\ViewModels\Request\" />
     <Folder Include="Business\Security\Hash\" />
     <Folder Include="Business\Security\Symmetric\" />
-    <Folder Include="Business\ViewModels\Response\" />
   </ItemGroup>
 
 </Project>

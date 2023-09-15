@@ -26,22 +26,29 @@ namespace Pavolle.MessageService.Business.Manager
 
         public void LoadAuthorizations()
         {
-            using (Session session = XpoManager.Instance.GetNewSession())
+            try
             {
-                var services = session.Query<Auth>().Select(t => new AuhtorizationCacheModel
+                using (Session session = XpoManager.Instance.GetNewSession())
                 {
-                    Oid=t.Oid,
-                    ApiKey = t.ApiService.ApiKey,
-                    IsAuthority = t.IsAuhtority,
-                    UserGroupOid = t.UserGroup.Oid,
-                    MethodType = t.ApiService.MethodType
-                }).ToList();
+                    var services = session.Query<Auth>().Select(t => new AuhtorizationCacheModel
+                    {
+                        Oid = t.Oid,
+                        ApiKey = t.ApiService.ApiKey,
+                        IsAuthority = t.IsAuhtority,
+                        UserGroupOid = t.UserGroup.Oid,
+                        MethodType = t.ApiService.MethodType
+                    }).ToList();
 
-                _services = new ConcurrentDictionary<long, AuhtorizationCacheModel>();
-                foreach (var item in services)
-                {
-                    _services.TryAdd(item.Oid, item);
+                    _services = new ConcurrentDictionary<long, AuhtorizationCacheModel>();
+                    foreach (var item in services)
+                    {
+                        _services.TryAdd(item.Oid, item);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! Error: " + ex);
             }
         }
 
@@ -199,6 +206,7 @@ namespace Pavolle.MessageService.Business.Manager
                         return response;
                     }
                     session.BeginTransaction();
+
                     data.ApiDefinition = request.ApiDefinition;
                     data.LastUpdateTime = DateTime.Now;
                     data.Save();
@@ -229,6 +237,8 @@ namespace Pavolle.MessageService.Business.Manager
 
                     session.CommitTransaction();
                 }
+
+                LoadAuthorizations();
             }
             catch (Exception ex)
             {
