@@ -9,6 +9,7 @@ using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Model;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
+using Pavolle.MessageService.ViewModels.ViewData;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -91,7 +92,44 @@ namespace Pavolle.MessageService.Business.Manager
 
         public TranslateDataListResponse List(ListTranslateDataCriteria criteria)
         {
-            throw new NotImplementedException();
+            var response = new TranslateDataListResponse();
+
+            try
+            {
+                if (criteria == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (criteria.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    criteria.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    IQueryable<TranslateData> query = session.Query<TranslateData>();
+                    response.DataList = query.Select(t => new TranslateDataViewData
+                    {
+                        Oid = t.Oid,
+                        CreatedTime = t.CreatedTime,
+                        LastUpdateTime = t.LastUpdateTime,
+                        Variable = t.Variable,
+                        TR=t.TR,
+                        EN=t.EN
+                    }).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, criteria.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
         public TranslateDataDetailResponse Detail(long? oid, MessageServiceRequestBase request)
