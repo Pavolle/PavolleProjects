@@ -21,6 +21,7 @@ namespace Pavolle.MessageService.Common.Enums
         CodeSendedToPhoneNumber = 11,
         ApiService = 12,
         ApiDefinition = 13,
-        Auhtorizations = 14
+        Auhtorizations = 14,
+        TranslateData = 15
     }
 }

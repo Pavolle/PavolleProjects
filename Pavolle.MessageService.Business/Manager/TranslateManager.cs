@@ -134,12 +134,113 @@ namespace Pavolle.MessageService.Business.Manager
 
         public TranslateDataDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new TranslateDataDetailResponse();
+
+            try
+            {
+                if (request == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (request.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    response.Detail = session.Query<TranslateData>().Where(t => t.Oid == oid).Select(t => new TranslateDataDetailViewData
+                    {
+                        Oid = t.Oid,
+                        CreatedTime = t.CreatedTime,
+                        LastUpdateTime = t.LastUpdateTime,
+                        Variable=t.Variable,
+                        TR=t.TR,
+                        EN=t.EN
+                    }).FirstOrDefault();
+
+                    if (response.Detail == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.TranslateData);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
         public MessageServiceResponseBase Edit(long? oid, EditTranslateDataRequest request)
         {
-            throw new NotImplementedException();
+            var response = new ApiServiceDetailResponse();
+
+            try
+            {
+                if (request == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (request.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                string checkResult = ValidationManager.Instance.CheckString(request.TR, true, 0, 1000, true, EMessageServiceMessageCode.TranslateData, request.Language.Value);
+                if (checkResult != null)
+                {
+                    _log.Error("Request Validation Error: " + checkResult);
+                    response.ErrorMessage = checkResult;
+                    return response;
+                }
+
+                checkResult = ValidationManager.Instance.CheckString(request.EN, true, 0, 1000, true, EMessageServiceMessageCode.TranslateData, request.Language.Value);
+                if (checkResult != null)
+                {
+                    _log.Error("Request Validation Error: " + checkResult);
+                    response.ErrorMessage = checkResult;
+                    return response;
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    var data = session.Query<TranslateData>().FirstOrDefault(t => t.Oid == oid);
+
+                    if (data == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.TranslateData);
+                        return response;
+                    }
+                    session.BeginTransaction();
+
+                    data.TR = request.TR;
+                    data.EN = request.EN;
+                    data.LastUpdateTime = DateTime.Now;
+                    data.Save();
+
+                    session.CommitTransaction();
+                }
+
+                LoadTranslateData();
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
         public string GetMessage(EMessageServiceMessageCode messageCode, ELanguage language)
