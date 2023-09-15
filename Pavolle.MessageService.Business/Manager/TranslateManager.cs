@@ -19,15 +19,14 @@ using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
-    public class TranslateManager:Singleton<TranslateManager>
+    public class TranslateManager : Singleton<TranslateManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(TranslateManager));
 
         private ConcurrentDictionary<string, TranslateDataCacheModel> _translateData;
-        private TranslateManager() 
+        private TranslateManager()
         {
             LoadTranslateData();
-
             _log.Debug("Initialize " + nameof(TranslateManager));
         }
 
@@ -75,7 +74,7 @@ namespace Pavolle.MessageService.Business.Manager
         {
             try
             {
-                if(_translateData.ContainsKey(item.Variable))
+                if (_translateData.ContainsKey(item.Variable))
                 {
                     _translateData[item.Variable] = item;
                 }
@@ -118,8 +117,8 @@ namespace Pavolle.MessageService.Business.Manager
                         CreatedTime = t.CreatedTime,
                         LastUpdateTime = t.LastUpdateTime,
                         Variable = t.Variable,
-                        TR=t.TR,
-                        EN=t.EN
+                        TR = t.TR,
+                        EN = t.EN
                     }).ToList();
                 }
             }
@@ -158,9 +157,9 @@ namespace Pavolle.MessageService.Business.Manager
                         Oid = t.Oid,
                         CreatedTime = t.CreatedTime,
                         LastUpdateTime = t.LastUpdateTime,
-                        Variable=t.Variable,
-                        TR=t.TR,
-                        EN=t.EN
+                        Variable = t.Variable,
+                        TR = t.TR,
+                        EN = t.EN
                     }).FirstOrDefault();
 
                     if (response.Detail == null)
@@ -245,17 +244,17 @@ namespace Pavolle.MessageService.Business.Manager
 
         public string GetMessage(EMessageServiceMessageCode messageCode, ELanguage language)
         {
-            string message=messageCode.ToString();
+            string message = messageCode.ToString();
             TranslateDataCacheModel data;
-            if(_translateData.ContainsKey(messageCode.ToString()))
+            if (_translateData.ContainsKey(messageCode.ToString()))
             {
-                data=_translateData[messageCode.ToString()];
+                data = _translateData[messageCode.ToString()];
             }
             else
             {
                 return message;
             }
-            
+
             switch (language)
             {
                 case ELanguage.Turkce:
