@@ -236,6 +236,8 @@ namespace Pavolle.MessageService.Business.Manager
                     }
 
                     session.CommitTransaction();
+
+                    response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageServiceMessageCode.ApiService);
                 }
 
                 LoadCacheData();

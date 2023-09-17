@@ -304,5 +304,20 @@ namespace Pavolle.MessageService.Business.Manager
         {
             return string.Format(GetMessage(EMessageServiceMessageCode.XNotFound, language), messageCode);
         }
+
+        public string? GetXSavedMessage(ELanguage language, EMessageServiceMessageCode messageCode)
+        {
+            return string.Format(GetMessage(EMessageServiceMessageCode.XSaved, language), messageCode);
+        }
+
+        public string? GetXCannotBeDeletedessage(ELanguage language, EMessageServiceMessageCode messageCode)
+        {
+            return string.Format(GetMessage(EMessageServiceMessageCode.XCannotBeDeleted, language), messageCode);
+        }
+
+        internal string? GetXDeletedMessage(ELanguage language, EMessageServiceMessageCode messageCode)
+        {
+            return string.Format(GetMessage(EMessageServiceMessageCode.XDeleted, language), messageCode);
+        }
     }
 }

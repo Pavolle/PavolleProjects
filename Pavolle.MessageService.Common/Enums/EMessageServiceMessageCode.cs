@@ -9,12 +9,12 @@ namespace Pavolle.MessageService.Common.Enums
     public enum EMessageServiceMessageCode
     {
         XNotFound = 1,
-        SecurityError = 2,
-        UsernameOrPasswordIsNotCorrect = 3,
-        UserIsLocked = 4,
-        Username = 5,
-        CommunicationValue = 6,
-        Password = 7,
+        XSaved = 2,
+        XCannotBeDeleted = 3,
+        XDeleted = 4,
+        SecurityError = 5,
+        UsernameOrPasswordIsNotCorrect = 6,
+        UserIsLocked = 7,
         CommunicationType = 8,
         UnexpectedError = 9,
         CodeSendedToEmailNumber = 10,
@@ -22,6 +22,11 @@ namespace Pavolle.MessageService.Common.Enums
         ApiService = 12,
         ApiDefinition = 13,
         Auhtorizations = 14,
-        TranslateData = 15
+        TranslateData = 15,
+        City = 16,
+        Country = 17,
+        Username = 18,
+        CommunicationValue = 19,
+        Password = 20,
     }
 }

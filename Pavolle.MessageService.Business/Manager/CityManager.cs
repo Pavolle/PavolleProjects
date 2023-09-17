@@ -2,6 +2,7 @@
 using log4net;
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Request;
 using Pavolle.Core.ViewModels.Response;
 using Pavolle.Core.ViewModels.ViewData;
 using Pavolle.MessageService.Common.Enums;
@@ -182,7 +183,7 @@ namespace Pavolle.MessageService.Business.Manager
                     var data = session.Query<City>().FirstOrDefault(t => t.Oid == oid);
                     if(data == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.ApiService);
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.City);
                         return response;
                     }
 
@@ -210,7 +211,7 @@ namespace Pavolle.MessageService.Business.Manager
 
         public MessageServiceResponseBase Add(AddCityRequest request)
         {
-            var response = new CityDetailResponse();
+            var response = new MessageServiceResponseBase();
 
             try
             {
@@ -229,6 +230,41 @@ namespace Pavolle.MessageService.Business.Manager
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
+                    var country = session.Query<Country>().FirstOrDefault(t => t.Oid == request.CountryOid);
+                    if (country == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Country);
+                        return response;
+                    }
+
+                    session.BeginTransaction();
+
+                    var nameTranslateData = new TranslateData(session)
+                    {
+                        Variable = request.Name
+                    };
+                    if(request.Language == ELanguage.Turkce)
+                    {
+                        nameTranslateData.TR = request.Name;
+                    }
+                    else if (request.Language == ELanguage.Ingilizce)
+                    {
+                        nameTranslateData.EN = request.Name;
+                    }
+
+                    nameTranslateData.Save();
+                    var city = new City(session)
+                    {
+                        Code = request.Code,
+                        Country = country,
+                        Name = nameTranslateData
+                    };
+                    city.Save();
+
+                    session.CommitTransaction();
+
+                    response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageServiceMessageCode.City);
+
                 }
             }
             catch (Exception ex)
@@ -242,7 +278,7 @@ namespace Pavolle.MessageService.Business.Manager
 
         public MessageServiceResponseBase Edit(long? oid, EditCityRequest request)
         {
-            var response = new CityDetailResponse();
+            var response = new MessageServiceResponseBase();
 
             try
             {
@@ -261,6 +297,50 @@ namespace Pavolle.MessageService.Business.Manager
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
+                    var city = session.Query<City>().FirstOrDefault(t => t.Oid ==oid);
+                    if (city == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.City);
+                        return response;
+                    }
+
+                    var country = session.Query<Country>().FirstOrDefault(t => t.Oid == request.CountryOid);
+                    if (country == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Country);
+                        return response;
+                    }
+
+                    var nameTranslateData = session.Query<TranslateData>().FirstOrDefault(t => t.Oid == request.NameTranslateDataOid);
+                    if (nameTranslateData == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.TranslateData);
+                        return response;
+                    }
+
+                    session.BeginTransaction();
+
+                    nameTranslateData.Variable = request.Name;
+                    if (request.Language == ELanguage.Turkce)
+                    {
+                        nameTranslateData.TR = request.Name;
+                    }
+                    else if (request.Language == ELanguage.Ingilizce)
+                    {
+                        nameTranslateData.EN = request.Name;
+                    }
+                    nameTranslateData.Save();
+
+                    city.Country = country;
+                    city.Name = nameTranslateData;
+                    city.Code = request.Code;
+                    city.LastUpdateTime = DateTime.Now;
+
+                    city.Save();
+
+                    session.CommitTransaction();
+
+                    response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageServiceMessageCode.City);
                 }
             }
             catch (Exception ex)
@@ -274,7 +354,7 @@ namespace Pavolle.MessageService.Business.Manager
 
         public MessageServiceResponseBase Delete(long? oid, DeleteCityCriteria criteria)
         {
-            var response = new CityDetailResponse();
+            var response = new MessageServiceResponseBase();
 
             try
             {
@@ -293,6 +373,27 @@ namespace Pavolle.MessageService.Business.Manager
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
+                    var city = session.Query<City>().FirstOrDefault(t => t.Oid == oid);
+                    if (city == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(criteria.Language.Value, EMessageServiceMessageCode.City);
+                        return response;
+                    }
+
+                    bool canDelete = true;
+                    canDelete = session.Query<Organization>().Any(t => t.City.Oid == oid);
+                    if(!canDelete && criteria.ForceDelete.HasValue && !criteria.ForceDelete.Value)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXCannotBeDeletedessage(criteria.Language.Value, EMessageServiceMessageCode.City);
+                        return response;
+                    }
+                    //Delete all organization or make Organization city to null!!!
+
+                    city.LastUpdateTime = DateTime.Now;
+                    city.Save();
+
+                    city.Delete();
+                    response.SuccessMessage = TranslateManager.Instance.GetXDeletedMessage(criteria.Language.Value, EMessageServiceMessageCode.City);
                 }
             }
             catch (Exception ex)

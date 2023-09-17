@@ -10,6 +10,7 @@ namespace Pavolle.MessageService.ViewModels.Request
     {
         public long? CountryOid { get; set; }
         public string Code { get; set; }
+        public long? NameTranslateDataOid { get; set; }
         public string Name { get; set; }
     }
 }
