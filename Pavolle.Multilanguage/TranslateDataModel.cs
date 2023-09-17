@@ -45,7 +45,7 @@ namespace Pavolle.Multilanguage
         public string Uygurca { get; set; }
         public string Vietnamca { get; set; }
         public string Rusca { get; set; }
-        public string Ingilizce { get; set; }
+        public string English { get; set; }
         public string Almanca { get; set; }
         public string Ispanyolca { get; set; }
         public string Portekizce { get; set; }

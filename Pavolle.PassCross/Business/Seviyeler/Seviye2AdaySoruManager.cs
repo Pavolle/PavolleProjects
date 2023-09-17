@@ -68,7 +68,7 @@ namespace Pavolle.PassCross.Business.Seviyeler
                 Sayi = birinciKuralSayisi
             };
 
-            if (dil == ELanguage.Turkce)
+            if (dil == ELanguage.Turkish)
             {
                 ipucu.Aciklama = parola[baslangicIndexi] + " rakamı var, ama yeri yanlış!";
             }
@@ -83,7 +83,7 @@ namespace Pavolle.PassCross.Business.Seviyeler
                 Sayi = ikinciKuralSayisi
             };
 
-            if (dil == ELanguage.Turkce)
+            if (dil == ELanguage.Turkish)
             {
                 ipucu.Aciklama ="Sayıdaki rakamların hiçbirini içermiyor!";
             }
@@ -102,7 +102,7 @@ namespace Pavolle.PassCross.Business.Seviyeler
                 Sayi = ucuncuKuralSayisi
             };
 
-            if (dil == ELanguage.Turkce)
+            if (dil == ELanguage.Turkish)
             {
                 ipucu.Aciklama = parola[baslangicIndexi] + " rakamı var ve yeri doğru";
             }

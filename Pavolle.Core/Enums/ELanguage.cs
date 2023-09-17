@@ -9,68 +9,25 @@ namespace Pavolle.Core.Enums
 {
     public enum ELanguage
     {
-        [Description("tr")]
-        Turkce=1,
-
-        [Description("az")]
-        Azerice,
-
-        Ermenice,
-        Gurcuce,
-        Bulgarca,
-        Cekce,
-        Belarusca,
-        Danca,
-        Estonyaca,
-        Fince,
-        Hirvatca,
-        Hintce,
-        Isvecce,
-        Kazakca,
-        Kurtce,
-        Lehce,
-        Macarca,
-        Makedonca,
-        Mogolca,
-        Ozbekce,
-        Pestuca,
-        Romence,
-        Sirpca,
-        Slovence,
-        Somalice,
-        Slovakca,
-        Letonca,
-        Turkmence,
-        Tacikce,
-        Tatarca,
-        Teluga,
-        Ukraynaca,
-        Uygurca,
-        Vietnamca,
-
-        [Description("ru")]
-        Rusca,
-
         [Description("en")]
-        Ingilizce,
+        English,
 
-        Almanca,
+        [Description("de")]
+        German,
 
         [Description("es")]
-        Ispanyolca,
-
-        Portekizce,
-        Italyanca,
+        Spanish,
 
         [Description("fr")]
-        Fransizca,
-        Ibranice,
-        Arapca,
-        Farsca,
-        BasitlestirilmisCince,
-        GelenekselCince,
-        Japonca,
-        Yunanca,
-        Korece
+        French,
+
+        [Description("ru")]
+        Russian,
+
+        [Description("tr")]
+        Turkish=1,
+
+        [Description("az")]
+        Azerbaijani,
     }
 }

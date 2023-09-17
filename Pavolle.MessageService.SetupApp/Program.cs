@@ -31,7 +31,7 @@ internal class Program
         bool status= DbManager.Instance.Initialize(connectionString);
         Console.WriteLine("Db connection " + (status ? "success. " : "fail!"));
 
-        ELanguage defaultLanguage = ELanguage.Turkce;
+        ELanguage defaultLanguage = ELanguage.Turkish;
 
         using (Session session = XpoManager.Instance.GetNewSession())
         {

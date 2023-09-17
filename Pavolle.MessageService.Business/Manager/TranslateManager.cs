@@ -257,10 +257,10 @@ namespace Pavolle.MessageService.Business.Manager
 
             switch (language)
             {
-                case ELanguage.Turkce:
+                case ELanguage.Turkish:
                     message = data.TR;
                     break;
-                case ELanguage.Ingilizce:
+                case ELanguage.English:
                     message = data.EN;
                     break;
                 default:
@@ -286,10 +286,10 @@ namespace Pavolle.MessageService.Business.Manager
 
             switch (language)
             {
-                case ELanguage.Turkce:
+                case ELanguage.Turkish:
                     message = data.TR;
                     break;
-                case ELanguage.Ingilizce:
+                case ELanguage.English:
                     message = data.EN;
                     break;
                 default:

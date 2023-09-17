@@ -22,7 +22,7 @@ namespace Pavolle.PassCross.Business
         {
             LookupResponse lookupResponse = new LookupResponse();
 
-            if (language == ELanguage.Turkce)
+            if (language == ELanguage.Turkish)
             {
                 lookupResponse = new LookupResponse
                 {
@@ -40,7 +40,7 @@ namespace Pavolle.PassCross.Business
                     }
                 };
             }
-            else if(language==ELanguage.Ingilizce)
+            else if(language==ELanguage.English)
             {
                 lookupResponse = new LookupResponse
                 {

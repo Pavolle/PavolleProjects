@@ -47,12 +47,12 @@ namespace Pavolle.MessageService.Business.Manager
                 {
                     return (ELanguage)Convert.ToInt32(_settings[ESettingType.DefaultLanguage].Value);
                 }
-                return ELanguage.Ingilizce;
+                return ELanguage.English;
             }
             catch (Exception ex)
             {
                 _log.Error("Fetch Default Language setting error: " + ex);
-                return ELanguage.Ingilizce;
+                return ELanguage.English;
             }
         }
 

@@ -243,11 +243,11 @@ namespace Pavolle.MessageService.Business.Manager
                     {
                         Variable = request.Name
                     };
-                    if(request.Language == ELanguage.Turkce)
+                    if(request.Language == ELanguage.Turkish)
                     {
                         nameTranslateData.TR = request.Name;
                     }
-                    else if (request.Language == ELanguage.Ingilizce)
+                    else if (request.Language == ELanguage.English)
                     {
                         nameTranslateData.EN = request.Name;
                     }
@@ -321,11 +321,11 @@ namespace Pavolle.MessageService.Business.Manager
                     session.BeginTransaction();
 
                     nameTranslateData.Variable = request.Name;
-                    if (request.Language == ELanguage.Turkce)
+                    if (request.Language == ELanguage.Turkish)
                     {
                         nameTranslateData.TR = request.Name;
                     }
-                    else if (request.Language == ELanguage.Ingilizce)
+                    else if (request.Language == ELanguage.English)
                     {
                         nameTranslateData.EN = request.Name;
                     }

@@ -66,7 +66,7 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
                 result += "            catch (Exception ex)" + Environment.NewLine;
                 result += "            {" + Environment.NewLine;
                 result += "                _log.Error(\"Unexpected exception occured! Ex: \" + ex);" + Environment.NewLine;
-                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.Ingilizce) });" + Environment.NewLine;
+                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.English) });" + Environment.NewLine;
                 result += "            }" + Environment.NewLine;
                 result += "        }" + Environment.NewLine;
             }
@@ -86,7 +86,7 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
                 result += "            catch (Exception ex)" + Environment.NewLine;
                 result += "            {" + Environment.NewLine;
                 result += "                _log.Error(\"Unexpected exception occured! Ex: \" + ex);" + Environment.NewLine;
-                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.Ingilizce) });" + Environment.NewLine;
+                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.English) });" + Environment.NewLine;
                 result += "            }" + Environment.NewLine;
                 result += "        }" + Environment.NewLine;
             }
@@ -106,7 +106,7 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
                 result += "            catch (Exception ex)" + Environment.NewLine;
                 result += "            {" + Environment.NewLine;
                 result += "                _log.Error(\"Unexpected exception occured! Ex: \" + ex);" + Environment.NewLine;
-                result += "                return Ok(new "+ProjectName+"ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.Ingilizce) });" + Environment.NewLine;
+                result += "                return Ok(new "+ProjectName+"ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.English) });" + Environment.NewLine;
                 result += "            }" + Environment.NewLine;
                 result += "        }" + Environment.NewLine;
             }
@@ -126,7 +126,7 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
                 result += "            catch (Exception ex)" + Environment.NewLine;
                 result += "            {" + Environment.NewLine;
                 result += "                _log.Error(\"Unexpected exception occured! Ex: \" + ex);" + Environment.NewLine;
-                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.Ingilizce) });" + Environment.NewLine;
+                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.English) });" + Environment.NewLine;
                 result += "            }" + Environment.NewLine;
                 result += "        }" + Environment.NewLine;
             }
@@ -146,7 +146,7 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
                 result += "            catch (Exception ex)" + Environment.NewLine;
                 result += "            {" + Environment.NewLine;
                 result += "                _log.Error(\"Unexpected exception occured! Ex: \" + ex);" + Environment.NewLine;
-                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.Ingilizce) });" + Environment.NewLine;
+                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.English) });" + Environment.NewLine;
                 result += "            }" + Environment.NewLine;
                 result += "        }" + Environment.NewLine;
             }
@@ -166,7 +166,7 @@ namespace Pavolle.CrudOperationHelper.Business.WebApp.Controller
                 result += "            catch (Exception ex)" + Environment.NewLine;
                 result += "            {" + Environment.NewLine;
                 result += "                _log.Error(\"Unexpected exception occured! Ex: \" + ex);" + Environment.NewLine;
-                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.Ingilizce) });" + Environment.NewLine;
+                result += "                return Ok(new " + ProjectName + "ResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(E" + ProjectName + "MessageCode.UnexpectedError, ELanguage.English) });" + Environment.NewLine;
                 result += "            }" + Environment.NewLine;
                 result += "        }" + Environment.NewLine;
             }
