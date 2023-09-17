@@ -10,24 +10,24 @@ namespace Pavolle.Core.Enums
     public enum ELanguage
     {
         [Description("en")]
-        English,
+        English = 1,
 
         [Description("de")]
-        German,
+        German = 2,
 
         [Description("es")]
-        Spanish,
+        Spanish = 3,
 
         [Description("fr")]
-        French,
+        French = 4,
 
         [Description("ru")]
-        Russian,
+        Russian = 5,
 
         [Description("tr")]
-        Turkish=1,
+        Turkish=6,
 
         [Description("az")]
-        Azerbaijani,
+        Azerbaijani = 7,
     }
 }
