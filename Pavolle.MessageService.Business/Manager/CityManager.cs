@@ -179,6 +179,24 @@ namespace Pavolle.MessageService.Business.Manager
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
+                    var data = session.Query<City>().FirstOrDefault(t => t.Oid == oid);
+                    if(data == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.ApiService);
+                        return response;
+                    }
+
+                    response.Detail = new CityDetailViewData
+                    {
+                        Oid = data.Oid,
+                        CreatedTime = data.CreatedTime,
+                        LastUpdateTime = data.LastUpdateTime,
+                        Code = data.Code,
+                        NameTranslateDataOid = data.Name.Oid,
+                        Name = TranslateManager.Instance.GetMessage(data.Name.Variable, request.Language.Value),
+                        CountryOid = data.Country.Oid,
+                        CountryName = TranslateManager.Instance.GetMessage(data.Country.Name.Variable, request.Language.Value)
+                    };
                 }
             }
             catch (Exception ex)
