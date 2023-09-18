@@ -5,7 +5,18 @@
              Title="MainPage">
     <StackLayout>
         <StackLayout x:Name="headerObject" VerticalOptions="Start"></StackLayout>
-        <StackLayout x:Name="mainObject" VerticalOptions="CenterAndExpand"></StackLayout>
+        <StackLayout x:Name="mainObject" VerticalOptions="CenterAndExpand">
+            <StackLayout x:Name="mainHeaderArea">
+                <!--Ikon and app name-->
+            </StackLayout>
+            <StackLayout x:Name="mainMenuArea">
+                <!--Menu items-->
+            </StackLayout>
+            <StackLayout x:Name="mainFooterArea">
+                <!--App Info-->
+                <!--Footer button-->
+            </StackLayout>
+        </StackLayout>
         <StackLayout x:Name="footerObject" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="AliceBlue" Opacity="0.8">
             <Label x:Name="companyNameObject" TextColor="#111c40"></Label>
         </StackLayout>
