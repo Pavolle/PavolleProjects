@@ -68,13 +68,13 @@ namespace Pavolle.Core.Helper
                         _languageNames.Add(new LanguageNameModel
                         {
                             Language = ELanguage.German,
-                            English = "English",
-                            German = "German",
-                            Spanish = "Spanish",
-                            French = "French",
-                            Russian = "Russian",
-                            Turkish = "Turkish",
-                            Azerbaijani = "Azerbaijani"
+                            English = "Englisch",
+                            German = "Deutsch",
+                            Spanish = "Spanisch",
+                            French = "Französisch",
+                            Russian = "Russisch",
+                            Turkish = "Türkisch",
+                            Azerbaijani = "Aserbaidschanisch"
                         });
                         break;
                     case ELanguage.Spanish:
@@ -107,13 +107,13 @@ namespace Pavolle.Core.Helper
                         _languageNames.Add(new LanguageNameModel
                         {
                             Language = ELanguage.Russian,
-                            English = "English",
-                            German = "German",
-                            Spanish = "Spanish",
-                            French = "French",
-                            Russian = "Russian",
-                            Turkish = "Turkish",
-                            Azerbaijani = "Azerbaijani"
+                            English = "Английский",
+                            German = "Немецкий",
+                            Spanish = "Испанский",
+                            French = "Французский",
+                            Russian = "Русский",
+                            Turkish = "Турецкий",
+                            Azerbaijani = "Aзербайджанский"
                         });
                         break;
                     case ELanguage.Turkish:
@@ -214,5 +214,6 @@ namespace Pavolle.Core.Helper
             }
             return response;
         }
+
     }
 }
