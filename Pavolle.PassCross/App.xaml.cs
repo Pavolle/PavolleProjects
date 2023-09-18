@@ -1,4 +1,5 @@
 ﻿using Pavolle.Core.Helper;
+using Pavolle.MobileCore.Common;
 using Pavolle.PassCross.Business;
 using Pavolle.PassCross.Page;
 using Pavolle.PassCross.Page.Game;
@@ -14,7 +15,9 @@ namespace Pavolle.PassCross
 
             //GameManager.Instance.YeniSoruOlustur(Enums.ELevel.Aday, Core.Enums.ELanguage.Turkce);
             //Aday seviyesi için soru hazırlandı. Buna göre tasarıma geçebiliriz.
-            MainPage = new AdayPlayGamePage();
+
+            AppInfoManager.Instance.SetAppVersion("1.0");
+            MainPage = new MainPage();
         }
     }
 }

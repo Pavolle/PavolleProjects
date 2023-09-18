@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pavolle.PassCross.Page.MainPage"
              Title="MainPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout>
+        <StackLayout x:Name="headerObject" VerticalOptions="Start"></StackLayout>
+        <StackLayout x:Name="mainObject" VerticalOptions="CenterAndExpand"></StackLayout>
+        <StackLayout x:Name="footerObject" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="AliceBlue" Opacity="0.8">
+            <Label x:Name="companyNameObject" TextColor="#111c40"></Label>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
