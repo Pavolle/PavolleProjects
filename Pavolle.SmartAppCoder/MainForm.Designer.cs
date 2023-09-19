@@ -38,7 +38,7 @@
             listBoxProjectList.ItemHeight = 25;
             listBoxProjectList.Location = new Point(28, 99);
             listBoxProjectList.Name = "listBoxProjectList";
-            listBoxProjectList.Size = new Size(463, 704);
+            listBoxProjectList.Size = new Size(463, 779);
             listBoxProjectList.TabIndex = 0;
             // 
             // buttonNewProject
@@ -55,7 +55,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1324, 818);
+            ClientSize = new Size(1544, 899);
             Controls.Add(buttonNewProject);
             Controls.Add(listBoxProjectList);
             Name = "MainForm";
