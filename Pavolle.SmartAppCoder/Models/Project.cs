@@ -33,6 +33,9 @@ namespace Pavolle.SmartAppCoder.Models
         [Persistent("db_technology")]
         public EDbTechnology DbTechnology { get; set; }
 
+        [Persistent("connection_string")]
+        public string ConnectionString { get; set; }
+
         [Persistent("mobile_technology")]
         public EMobileTechnology MobileTechnology { get; set; }
 

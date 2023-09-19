@@ -38,6 +38,8 @@
             comboBoxSecurity = new ComboBox();
             label7 = new Label();
             groupBox2 = new GroupBox();
+            textBoxConnectionString = new TextBox();
+            label11 = new Label();
             comboBoxMobile = new ComboBox();
             label6 = new Label();
             comboBoxDatabase = new ComboBox();
@@ -53,8 +55,6 @@
             textBoxProjectName = new TextBox();
             buttonCancel = new Button();
             buttonSave = new Button();
-            textBoxConnectionString = new TextBox();
-            label11 = new Label();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -159,6 +159,22 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Technology Options";
             // 
+            // textBoxConnectionString
+            // 
+            textBoxConnectionString.Location = new Point(216, 145);
+            textBoxConnectionString.Name = "textBoxConnectionString";
+            textBoxConnectionString.Size = new Size(352, 31);
+            textBoxConnectionString.TabIndex = 14;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(17, 148);
+            label11.Name = "label11";
+            label11.Size = new Size(153, 25);
+            label11.TabIndex = 15;
+            label11.Text = "Connection String";
+            // 
             // comboBoxMobile
             // 
             comboBoxMobile.FormattingEnabled = true;
@@ -247,6 +263,7 @@
             textBoxOrganization.Name = "textBoxOrganization";
             textBoxOrganization.Size = new Size(352, 31);
             textBoxOrganization.TabIndex = 2;
+            textBoxOrganization.TextChanged += textBoxOrganization_TextChanged;
             // 
             // label1
             // 
@@ -292,22 +309,6 @@
             buttonSave.Text = "Save";
             buttonSave.UseVisualStyleBackColor = true;
             buttonSave.Click += buttonSave_Click;
-            // 
-            // textBoxConnectionString
-            // 
-            textBoxConnectionString.Location = new Point(216, 145);
-            textBoxConnectionString.Name = "textBoxConnectionString";
-            textBoxConnectionString.Size = new Size(352, 31);
-            textBoxConnectionString.TabIndex = 14;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(17, 148);
-            label11.Name = "label11";
-            label11.Size = new Size(153, 25);
-            label11.TabIndex = 15;
-            label11.Text = "Connection String";
             // 
             // AddEditProject
             // 
