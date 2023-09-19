@@ -28,43 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonSave = new Button();
-            buttonCancel = new Button();
+            listBoxProjectList = new ListBox();
+            buttonNewProject = new Button();
             SuspendLayout();
             // 
-            // buttonSave
+            // listBoxProjectList
             // 
-            buttonSave.Location = new Point(744, 484);
-            buttonSave.Name = "buttonSave";
-            buttonSave.Size = new Size(112, 37);
-            buttonSave.TabIndex = 0;
-            buttonSave.Text = "Save";
-            buttonSave.UseVisualStyleBackColor = true;
+            listBoxProjectList.FormattingEnabled = true;
+            listBoxProjectList.ItemHeight = 25;
+            listBoxProjectList.Location = new Point(28, 99);
+            listBoxProjectList.Name = "listBoxProjectList";
+            listBoxProjectList.Size = new Size(463, 704);
+            listBoxProjectList.TabIndex = 0;
             // 
-            // buttonCancel
+            // buttonNewProject
             // 
-            buttonCancel.Location = new Point(616, 484);
-            buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(112, 37);
-            buttonCancel.TabIndex = 1;
-            buttonCancel.Text = "Cancel";
-            buttonCancel.UseVisualStyleBackColor = true;
+            buttonNewProject.Location = new Point(301, 32);
+            buttonNewProject.Name = "buttonNewProject";
+            buttonNewProject.Size = new Size(190, 48);
+            buttonNewProject.TabIndex = 1;
+            buttonNewProject.Text = "New Project";
+            buttonNewProject.UseVisualStyleBackColor = true;
+            buttonNewProject.Click += buttonNewProject_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 563);
-            Controls.Add(buttonCancel);
-            Controls.Add(buttonSave);
+            ClientSize = new Size(1324, 818);
+            Controls.Add(buttonNewProject);
+            Controls.Add(listBoxProjectList);
             Name = "MainForm";
-            Text = "MainForm";
+            Text = "Smart App Coder";
+            Load += MainForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button buttonSave;
-        private Button buttonCancel;
+        private ListBox listBoxProjectList;
+        private Button buttonNewProject;
     }
 }

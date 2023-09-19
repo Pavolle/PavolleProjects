@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pavolle.SmartAppCoder.Business;
+using Pavolle.SmartAppCoder.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,25 @@ namespace Pavolle.SmartAppCoder
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] text = File.ReadAllLines("appsettings.ini");
+                DbManager.Instance.Initialize(text[0]);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Veritabanı bağlantısı sağlanamadı!!!");
+            }
+        }
+
+        private void buttonNewProject_Click(object sender, EventArgs e)
+        {
+            AddEditProject project = new AddEditProject(null, false);
+            project.ShowDialog();
         }
     }
 }

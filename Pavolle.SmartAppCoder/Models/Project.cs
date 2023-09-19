@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.SmartAppCoder.Models
 {
+    [Persistent("projects")]
     public class Project : BaseObject
     {
         public Project(Session session) : base(session)
@@ -51,5 +52,8 @@ namespace Pavolle.SmartAppCoder.Models
 
         [Persistent("token_expire_minute")]
         public int TokenExpireMinute { get; set; }
+
+        [Persistent("initialize")]
+        public bool Initlaize { get; set; }
     }
 }
