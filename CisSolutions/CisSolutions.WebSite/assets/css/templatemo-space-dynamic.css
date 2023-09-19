@@ -1096,7 +1096,8 @@ Portfolio
 }
 
 .our-portfolio .item:hover .hidden-content {
-  top: -250px;
+  top: -200px;
+  right: -300px;
   opacity: 1;
   visibility: visible;
 }
