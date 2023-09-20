@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.Core.Enums
+namespace Pavolle.SmartAppCoder.Business.Core.ViewModels.ViewData
 {
-    public enum EMemberShipType
+    internal class LookupViewDataCreatorManager
     {
-        Community,
-        Enterprise,
-        Proffessional
     }
 }

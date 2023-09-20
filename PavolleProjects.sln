@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Smart App Coder", "Smart App Coder", "{E20A050E-3CC9-418E-A6F8-07CE4CD4B4B5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9B59BD4F-0B86-4E5D-A3B4-7B89201B0D62}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SmartAppCoder", "Pavolle.SmartAppCoder\Pavolle.SmartAppCoder.csproj", "{CBD68F50-35BA-4439-9A90-71CFF53D4ABA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0000", "0000", "{45FE0CE4-3424-40A8-A14F-28C427FF7E63}"
@@ -24,14 +22,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{93
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{FB8FEB6D-65F6-43E7-A4AD-DD6DA1F65CDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.PassCross", "Pavolle.PassCross\Pavolle.PassCross.csproj", "{6E725082-AEA6-44BD-9532-221F7AC7221A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross", "Pavolle.PassCross\Pavolle.PassCross.csproj", "{6E725082-AEA6-44BD-9532-221F7AC7221A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PassCross", "PassCross", "{F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}"
 	ProjectSection(SolutionItems) = preProject
 		BeyinFirtinasi.txt = BeyinFirtinasi.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MobileCore", "Pavolle.MobileCore\Pavolle.MobileCore.csproj", "{B16D245F-0779-49F0-9B7F-3ECDD913BDCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MobileCore", "Pavolle.MobileCore\Pavolle.MobileCore.csproj", "{B16D245F-0779-49F0-9B7F-3ECDD913BDCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B58E18F5-D166-483E-AFFE-EDC7DEA317F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.Core", "Pavolle.Core\Pavolle.Core.csproj", "{36932849-2244-4F65-9F8E-13756878456C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{B16D245F-0779-49F0-9B7F-3ECDD913BDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B16D245F-0779-49F0-9B7F-3ECDD913BDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B16D245F-0779-49F0-9B7F-3ECDD913BDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36932849-2244-4F65-9F8E-13756878456C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36932849-2244-4F65-9F8E-13756878456C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36932849-2244-4F65-9F8E-13756878456C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36932849-2244-4F65-9F8E-13756878456C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,7 +71,7 @@ Global
 		{F5A32C39-EB0B-422B-AA2E-484E65F752AE} = {5CA65C37-3496-447E-89F3-00F4529379D6}
 		{6E725082-AEA6-44BD-9532-221F7AC7221A} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 		{F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D} = {FB8FEB6D-65F6-43E7-A4AD-DD6DA1F65CDF}
-		{B16D245F-0779-49F0-9B7F-3ECDD913BDCB} = {9B59BD4F-0B86-4E5D-A3B4-7B89201B0D62}
+		{36932849-2244-4F65-9F8E-13756878456C} = {B58E18F5-D166-483E-AFFE-EDC7DEA317F4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

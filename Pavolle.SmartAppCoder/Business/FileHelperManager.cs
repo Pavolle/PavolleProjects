@@ -14,6 +14,19 @@ namespace Pavolle.SmartAppCoder.Business
 
         }
 
+        public bool RemoveFile(string path)
+        {
+            try
+            {
+                File.Delete(path);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool WriteFile(string projectPath, string projectFoldername, string fileName, string data)
         {
             bool response = true;

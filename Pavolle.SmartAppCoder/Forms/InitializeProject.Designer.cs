@@ -45,9 +45,11 @@
             // 
             // textBoxOutput
             // 
+            textBoxOutput.Font = new Font("Consolas", 11F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxOutput.Location = new Point(12, 80);
             textBoxOutput.Multiline = true;
             textBoxOutput.Name = "textBoxOutput";
+            textBoxOutput.ScrollBars = ScrollBars.Both;
             textBoxOutput.Size = new Size(776, 740);
             textBoxOutput.TabIndex = 1;
             // 

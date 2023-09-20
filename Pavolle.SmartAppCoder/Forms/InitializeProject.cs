@@ -1,5 +1,6 @@
 ﻿using DevExpress.Xpo;
 using Pavolle.SmartAppCoder.Business;
+using Pavolle.SmartAppCoder.Business.Core.Utils;
 using Pavolle.SmartAppCoder.Models;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,6 @@ namespace Pavolle.SmartAppCoder.Forms
             }
 
             labelProjectInfo.Text = _project.OrganizationName + "." + _project.ProjectName;
-
-            thread = new Thread(new ThreadStart(StartGenerating));
-            thread.Start();
         }
 
         private void StartGenerating()
@@ -47,15 +45,38 @@ namespace Pavolle.SmartAppCoder.Forms
                 //CommandHelperManager.Instance.RunCommand("dotnet , _project.ProjectPath");
 
                 bool result = CommandHelperManager.Instance.RunDotnetCommand("new classlib --framework \"net7.0\" -o " + _project.ProjectPath + "/" + _project.OrganizationName + ".Core").Result;
+                if (result)
+                {
+                    Output("Core projesi oluşturuldu. Proje eklemesi yapılıyor...");
+                }
 
-                bool addResult = CommandHelperManager.Instance.RunDotnetCommand("sln " + _project.ProjectPath + "\\" + _project.OrganizationName + "Projects.sln add " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Core.csproj --in-root").Result;
+                bool addResult = CommandHelperManager.Instance.RunDotnetCommand("sln " + _project.ProjectPath + "\\" + _project.OrganizationName + "Projects.sln add " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Core\\" + _project.OrganizationName + ".Core.csproj  --solution-folder Core").Result;
+                if (addResult)
+                {
+                    Output("Core projesi proje dosyasına eklendi.");
+                }
 
+                Output("Core class1 dosyası siliniyor...");
+                FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + _project.OrganizationName + ".Core\\" + "Class1.cs");
+                Output("Core projesi temizlendi. Proje sınıfları kontrol ediliyor...");
             }
+
+            if (EnumExtensionsCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create EnumExtensions Class => ok");
+            if (SingletonCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create Singleton Class => ok");
+
+
+
+            Output("Core projesi kontroller tamamlandı. Eksik dosyalar tekrar eklendi!");
+
+            Output("Proje oluşturma tamamlandı!");
         }
+
+
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-
+            thread = new Thread(new ThreadStart(StartGenerating));
+            thread.Start();
         }
 
         void Output(string message)

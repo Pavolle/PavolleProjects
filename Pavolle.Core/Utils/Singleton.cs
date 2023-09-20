@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Reflection;
 
 namespace Pavolle.Core.Utils
@@ -15,8 +15,6 @@ namespace Pavolle.Core.Utils
             {
                 if (_instance == null)
                 {
-                    lock (SyncRoot)
-                    {
                         if (_instance == null)
                         {
                             Type theType = typeof(T);
