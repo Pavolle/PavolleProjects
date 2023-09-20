@@ -70,9 +70,9 @@
             groupBox3.Controls.Add(textBoxAudience);
             groupBox3.Controls.Add(comboBoxSecurity);
             groupBox3.Controls.Add(label7);
-            groupBox3.Location = new Point(23, 513);
+            groupBox3.Location = new Point(23, 602);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(585, 225);
+            groupBox3.Size = new Size(741, 225);
             groupBox3.TabIndex = 15;
             groupBox3.TabStop = false;
             groupBox3.Text = "Security";
@@ -81,7 +81,7 @@
             // 
             textBoxTokenExpire.Location = new Point(216, 169);
             textBoxTokenExpire.Name = "textBoxTokenExpire";
-            textBoxTokenExpire.Size = new Size(352, 31);
+            textBoxTokenExpire.Size = new Size(502, 31);
             textBoxTokenExpire.TabIndex = 16;
             // 
             // label8
@@ -89,15 +89,15 @@
             label8.AutoSize = true;
             label8.Location = new Point(17, 172);
             label8.Name = "label8";
-            label8.Size = new Size(180, 25);
+            label8.Size = new Size(165, 25);
             label8.TabIndex = 17;
-            label8.Text = "Token Expire (Minute)";
+            label8.Text = "Token Expire (Hour)";
             // 
             // textBoxIssuer
             // 
             textBoxIssuer.Location = new Point(216, 74);
             textBoxIssuer.Name = "textBoxIssuer";
-            textBoxIssuer.Size = new Size(352, 31);
+            textBoxIssuer.Size = new Size(502, 31);
             textBoxIssuer.TabIndex = 12;
             // 
             // label9
@@ -122,7 +122,7 @@
             // 
             textBoxAudience.Location = new Point(216, 121);
             textBoxAudience.Name = "textBoxAudience";
-            textBoxAudience.Size = new Size(352, 31);
+            textBoxAudience.Size = new Size(502, 31);
             textBoxAudience.TabIndex = 14;
             // 
             // comboBoxSecurity
@@ -130,7 +130,7 @@
             comboBoxSecurity.FormattingEnabled = true;
             comboBoxSecurity.Location = new Point(216, 30);
             comboBoxSecurity.Name = "comboBoxSecurity";
-            comboBoxSecurity.Size = new Size(352, 33);
+            comboBoxSecurity.Size = new Size(502, 33);
             comboBoxSecurity.TabIndex = 11;
             // 
             // label7
@@ -154,7 +154,7 @@
             groupBox2.Controls.Add(label4);
             groupBox2.Location = new Point(23, 236);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(585, 253);
+            groupBox2.Size = new Size(741, 360);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
             groupBox2.Text = "Technology Options";
@@ -162,8 +162,9 @@
             // textBoxConnectionString
             // 
             textBoxConnectionString.Location = new Point(216, 145);
+            textBoxConnectionString.Multiline = true;
             textBoxConnectionString.Name = "textBoxConnectionString";
-            textBoxConnectionString.Size = new Size(352, 31);
+            textBoxConnectionString.Size = new Size(502, 121);
             textBoxConnectionString.TabIndex = 14;
             // 
             // label11
@@ -178,15 +179,15 @@
             // comboBoxMobile
             // 
             comboBoxMobile.FormattingEnabled = true;
-            comboBoxMobile.Location = new Point(216, 195);
+            comboBoxMobile.Location = new Point(216, 297);
             comboBoxMobile.Name = "comboBoxMobile";
-            comboBoxMobile.Size = new Size(352, 33);
+            comboBoxMobile.Size = new Size(502, 33);
             comboBoxMobile.TabIndex = 9;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(17, 198);
+            label6.Location = new Point(17, 300);
             label6.Name = "label6";
             label6.Size = new Size(67, 25);
             label6.TabIndex = 8;
@@ -197,8 +198,9 @@
             comboBoxDatabase.FormattingEnabled = true;
             comboBoxDatabase.Location = new Point(216, 95);
             comboBoxDatabase.Name = "comboBoxDatabase";
-            comboBoxDatabase.Size = new Size(352, 33);
+            comboBoxDatabase.Size = new Size(502, 33);
             comboBoxDatabase.TabIndex = 7;
+            comboBoxDatabase.SelectedIndexChanged += comboBoxDatabase_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -214,7 +216,7 @@
             comboBoxWeb.FormattingEnabled = true;
             comboBoxWeb.Location = new Point(216, 44);
             comboBoxWeb.Name = "comboBoxWeb";
-            comboBoxWeb.Size = new Size(352, 33);
+            comboBoxWeb.Size = new Size(502, 33);
             comboBoxWeb.TabIndex = 5;
             // 
             // label4
@@ -236,7 +238,7 @@
             groupBox1.Controls.Add(textBoxProjectName);
             groupBox1.Location = new Point(23, 26);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(585, 204);
+            groupBox1.Size = new Size(741, 204);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             groupBox1.Text = "Project";
@@ -245,7 +247,7 @@
             // 
             textBoxPath.Location = new Point(216, 133);
             textBoxPath.Name = "textBoxPath";
-            textBoxPath.Size = new Size(352, 31);
+            textBoxPath.Size = new Size(502, 31);
             textBoxPath.TabIndex = 6;
             // 
             // label3
@@ -261,7 +263,7 @@
             // 
             textBoxOrganization.Location = new Point(216, 38);
             textBoxOrganization.Name = "textBoxOrganization";
-            textBoxOrganization.Size = new Size(352, 31);
+            textBoxOrganization.Size = new Size(502, 31);
             textBoxOrganization.TabIndex = 2;
             textBoxOrganization.TextChanged += textBoxOrganization_TextChanged;
             // 
@@ -287,12 +289,12 @@
             // 
             textBoxProjectName.Location = new Point(216, 85);
             textBoxProjectName.Name = "textBoxProjectName";
-            textBoxProjectName.Size = new Size(352, 31);
+            textBoxProjectName.Size = new Size(502, 31);
             textBoxProjectName.TabIndex = 4;
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(175, 755);
+            buttonCancel.Location = new Point(272, 842);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(137, 46);
             buttonCancel.TabIndex = 12;
@@ -302,7 +304,7 @@
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(337, 755);
+            buttonSave.Location = new Point(439, 842);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(137, 46);
             buttonSave.TabIndex = 11;
@@ -314,7 +316,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(636, 830);
+            ClientSize = new Size(793, 911);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);

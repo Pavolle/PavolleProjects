@@ -12,8 +12,10 @@ namespace Pavolle.SmartAppCoder.Forms
 {
     public partial class InitializeProject : Form
     {
-        public InitializeProject()
+        long _projectOid;
+        public InitializeProject(long projectOid)
         {
+            _projectOid = projectOid;
             InitializeComponent();
         }
 

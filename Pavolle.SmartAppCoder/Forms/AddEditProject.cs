@@ -37,6 +37,8 @@ namespace Pavolle.SmartAppCoder.Forms
             }
             else
             {
+
+                textBoxTokenExpire.Text = (72).ToString();
                 foreach (var item in EnumHelperManager.Instance.GetWebAppTechnologyList())
                 {
                     comboBoxWeb.Items.Add(item);
@@ -88,13 +90,12 @@ namespace Pavolle.SmartAppCoder.Forms
                 {
 
                     project = new Project(session);
-
                 }
                 else
                 {
                     project = session.Query<Project>().FirstOrDefault(t => t.Oid == _projectOid);
                 }
-                if (project==null)
+                if (project == null)
                 {
                     return;
                 }
@@ -103,7 +104,54 @@ namespace Pavolle.SmartAppCoder.Forms
                 project.OrganizationName = textBoxOrganization.Text;
                 project.ProjectName = textBoxProjectName.Text;
                 project.ProjectPath = textBoxPath.Text;
+                try
+                {
+                    project.WebAppTecnology = (EWebAppTecnology)((LookupViewData)comboBoxWeb.SelectedItem).Key;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Web technology option error!");
+                    return;
+                }
+                try
+                {
+                    project.DbTechnology = (EDbTechnology)((LookupViewData)comboBoxDatabase.SelectedItem).Key;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Database technology option error!");
+                    return;
+                }
+                try
+                {
+                    project.SecurityLevel = (ESecurityLevel)((LookupViewData)comboBoxSecurity.SelectedItem).Key;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Security Level option error!");
+                    return;
+                }
+                try
+                {
+                    project.MobileTechnology = (EMobileTechnology)((LookupViewData)comboBoxMobile.SelectedItem).Key;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Mobile Technology option error!");
+                    return;
+                }
                 project.ConnectionString = textBoxConnectionString.Text;
+                project.Issuer = textBoxIssuer.Text;
+                project.Audience = textBoxAudience.Text;
+                try
+                {
+                    project.TokenExpireMinute = Convert.ToInt32(textBoxTokenExpire.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Token Expire value is not correct!");
+                    return;
+                }
 
                 project.Save();
             }
@@ -119,14 +167,42 @@ namespace Pavolle.SmartAppCoder.Forms
 
         private void textBoxOrganization_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxIssuer.Text == null)
-            {
+            string text = ((TextBoxBase)sender).Text;
+            textBoxIssuer.Text = text;
+            textBoxAudience.Text = text;
+        }
 
+        private void comboBoxDatabase_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                EDbTechnology dbTechnology = (EDbTechnology)((LookupViewData)comboBoxDatabase.SelectedItem).Key;
+
+                switch (dbTechnology)
+                {
+                    case EDbTechnology.Sqlite:
+                        textBoxConnectionString.Text = "XpoProvider=SQLite;Data Source=filename";
+                        break;
+                    case EDbTechnology.PostgreSQL:
+                        textBoxConnectionString.Text = "XpoProvider=Postgres;Server=127.0.0.1;User ID=MyUserName;Password=MyPassword;Database=MyDatabase;Encoding=UNICODE";
+                        break;
+                    case EDbTechnology.SQLServer:
+                        textBoxConnectionString.Text = "XpoProvider=MSSqlServer;Data Source=(local);User ID=username;Password=password;Initial Catalog=database;Persist Security Info=true";
+                        break;
+                    case EDbTechnology.Oracle:
+                        textBoxConnectionString.Text = "XpoProvider=Oracle;Data Source=source;User ID=MyUserName;Password=MyPassword";
+                        break;
+                    case EDbTechnology.MySql:
+                        textBoxConnectionString.Text = "XpoProvider=MySql;Server=MyServerAddress;User ID=MyUserName;Password=MyPassword;Database=MyDatabase;Persist Security Info= true;Charset=utf8";
+                        break;
+                    default:
+                        break;
+                }
             }
-
-            if(textBoxAudience.Text == null)
+            catch (Exception)
             {
 
+                throw;
             }
         }
     }
