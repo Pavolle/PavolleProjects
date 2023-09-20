@@ -2,3 +2,5 @@ Smart app coder uygulamasý için uygulama bilgilerinin girilmesi ve bu bilgilerin
 Passcross uygulamasý oluþturuldu.
 Logolar oluþturuldu. Bu verilere göre katvizit tasarýmlarýný yapabiliriz.
 Son olarak elifle konuyu konuþ
+dotnet komutlarý ile proje oluþturma ve bu projenin sln dosyasýnýn içine ekleme süreçleri test edildi. Core projesinin oluþturulmasý ve bu projenin sln dosyasýna eklenmesi baþarýyla test edildi. 
+Ben mükemmelim o yeeee
