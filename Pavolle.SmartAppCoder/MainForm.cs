@@ -17,6 +17,7 @@ namespace Pavolle.SmartAppCoder
 {
     public partial class MainForm : Form
     {
+        long? _selectedProjectOid;
         public MainForm()
         {
             InitializeComponent();
@@ -60,14 +61,15 @@ namespace Pavolle.SmartAppCoder
 
             if (project != null)
             {
-                textBoxOrganization.Text = project.OrganizationName; 
+                _selectedProjectOid=project.Oid;
+                textBoxOrganization.Text = project.OrganizationName;
                 textBoxOrganization.ReadOnly = true;
-                textBoxProjectName.Text=project.ProjectName; 
+                textBoxProjectName.Text = project.ProjectName;
                 textBoxProjectName.ReadOnly = true;
                 textBoxPath.Text = project.ProjectPath;
                 textBoxPath.ReadOnly = true;
 
-                comboBoxWeb.Text = EnumHelperManager.Instance.GetWebAppTechnologyList().FirstOrDefault(t => t.Key == (int)project.WebAppTecnology).Value; 
+                comboBoxWeb.Text = EnumHelperManager.Instance.GetWebAppTechnologyList().FirstOrDefault(t => t.Key == (int)project.WebAppTecnology).Value;
                 comboBoxWeb.Enabled = false;
                 comboBoxDatabase.Text = EnumHelperManager.Instance.GetDbTechnologyList().FirstOrDefault(t => t.Key == (int)project.DbTechnology).Value;
                 comboBoxDatabase.Enabled = false;
@@ -79,13 +81,13 @@ namespace Pavolle.SmartAppCoder
                 textBoxConnectionString.Text = project.ConnectionString;
                 textBoxConnectionString.ReadOnly = true;
 
-                textBoxIssuer.Text=project.Issuer;
+                textBoxIssuer.Text = project.Issuer;
                 textBoxIssuer.ReadOnly = true;
 
-                textBoxAudience.Text=project.Audience;
+                textBoxAudience.Text = project.Audience;
                 textBoxAudience.ReadOnly = true;
 
-                textBoxTokenExpire.Text=project.TokenExpireMinute.ToString();
+                textBoxTokenExpire.Text = project.TokenExpireMinute.ToString();
                 textBoxTokenExpire.ReadOnly = true;
 
                 if (project.Initlaize)
@@ -100,6 +102,15 @@ namespace Pavolle.SmartAppCoder
                     buttonEdit.Enabled = true;
                     buttonIntialize.Enabled = true;
                 }
+            }
+        }
+
+        private void buttonIntialize_Click(object sender, EventArgs e)
+        {
+            if(_selectedProjectOid!=null)
+            {
+                InitializeProject project = new InitializeProject(_selectedProjectOid.Value);
+                project.ShowDialog();
             }
         }
     }

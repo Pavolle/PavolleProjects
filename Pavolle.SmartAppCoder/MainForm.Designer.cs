@@ -330,6 +330,7 @@
             buttonIntialize.TabIndex = 20;
             buttonIntialize.Text = "Initialize";
             buttonIntialize.UseVisualStyleBackColor = true;
+            buttonIntialize.Click += buttonIntialize_Click;
             // 
             // buttonDevelopment
             // 
