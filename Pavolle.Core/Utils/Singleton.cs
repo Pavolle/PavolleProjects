@@ -15,17 +15,16 @@ namespace Pavolle.Core.Utils
             {
                 if (_instance == null)
                 {
-                        if (_instance == null)
+                    if (_instance == null)
+                    {
+                        Type theType = typeof(T);
+                        try
                         {
-                            Type theType = typeof(T);
-                            try
-                            {
-                                _instance = (T)theType.InvokeMember(theType.Name, BindingFlags.CreateInstance | BindingFlags.Instance | BindingFlags.NonPublic, null, null, null, CultureInfo.InvariantCulture);
-                            }
-                            catch (MissingMethodException ex)
-                            {
-                                throw new TypeLoadException(string.Format(CultureInfo.CurrentCulture, "The type '{0}' singleton tasarım örüntüsünde private constructor kullanılmalıdır.", theType.FullName), ex);
-                            }
+                            _instance = (T)theType.InvokeMember(theType.Name, BindingFlags.CreateInstance | BindingFlags.Instance | BindingFlags.NonPublic, null, null, null, CultureInfo.InvariantCulture);
+                        }
+                        catch (MissingMethodException ex)
+                        {
+                            throw new TypeLoadException(string.Format(CultureInfo.CurrentCulture, "The type '{0}' singleton tasarım örüntüsünde private constructor kullanılmalıdır.", theType.FullName), ex);
                         }
                     }
                 }
