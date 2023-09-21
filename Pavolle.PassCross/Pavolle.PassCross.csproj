@@ -53,11 +53,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Common\Enums\" />
 	  <Folder Include="Common\Utils\" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
 	  <ProjectReference Include="..\Pavolle.MobileCore\Pavolle.MobileCore.csproj" />
 	</ItemGroup>
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pavolle.MobileCore.Models;
+using Pavolle.PassCross.Common.Enums;
 
 namespace Pavolle.PassCross.Models
 {
@@ -11,6 +12,6 @@ namespace Pavolle.PassCross.Models
     {
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public int MyProperty { get; set; }
+        public EGameLevel Level { get; set; }
     }
 }

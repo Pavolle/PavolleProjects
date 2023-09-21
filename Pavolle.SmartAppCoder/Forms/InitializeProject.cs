@@ -1,5 +1,6 @@
 ﻿using DevExpress.Xpo;
 using Pavolle.SmartAppCoder.Business;
+using Pavolle.SmartAppCoder.Business.Core.Enum;
 using Pavolle.SmartAppCoder.Business.Core.Utils;
 using Pavolle.SmartAppCoder.Models;
 using System;
@@ -63,6 +64,11 @@ namespace Pavolle.SmartAppCoder.Forms
 
             if (EnumExtensionsCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create EnumExtensions Class => ok");
             if (SingletonCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create Singleton Class => ok");
+
+            if (CommunicationTypeCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ECommunicationType Class => ok");
+            if (JobStatusCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create EJobStatus Class => ok");
+            if (LanguageCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ELanguage Class => ok");
+            if (SecurityLevelCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ESecurityLevel Class => ok");
 
 
 

@@ -1,0 +1,20 @@
+Liderlikle ilgili eðitim izledik.
+Bu eðitim doðrultusunda baþarýlý þirket yönetimi için bir sistem oluþturmanýn zorunlu olduðunu gördük.
+Bu anlamda hangi konuda çalýþýlmasý gerekiyorsa mutlaka bu iþin nasýl yapýlacaðýna dair bir sistem oluþturulmasýnýn zorunlu olduðuna karar verdik.
+
+Kural 1 => Þirkete her zaman 0 dan baþlayan kiþileri iþe alýyoruz. Baþka yerde çalýþmýþ kiþileri çalýþan olarak almýyoruz. Baþka yerde çalýþmýþ kiþilerle sadece sözleþmeli danýþmanlýk yöntemi ile çalýþýlabilir. Bir kiþi ile çalýþabilmek için tutku(deneme süresi), çalýþkanlýk(deneme süresi), baðlýlýk(ölçemiyoruz), yenetek ölçüm için 2 haftalýk deneme süresi kuralý uygulanacaktýr. Þirkette her kes eþittir.
+Kural 2 => Maaþ stratejimiz x = asgari ücret, diðer çalýþanlar için x = 0.6 * asgari ucret, y => cocuk sayýsýna göre ödenecek ücret, n => Çocuk sayýsý
+0 - 1 sene => 2x + n * y + yemek/yol/elbise/kreþ senelik toplam kardan %2 daðýtým payý
+1 - 3 sene => 3x + n * y + yemek/yol/elbise/telefon-hat/kreþ senelik toplam kardan %2 daðýtým payý
+3 - 5 sene => 4x + n * y + yemek/yol/elbise/telefon-hat/kreþ senelik toplam kardan %2 daðýtým payý
+5 - 7 sene => 5x + n * y + yemek/yol/elbise/telefon-hat/araba/kreþ senelik toplam kardan %3 daðýtým payý
+7 - 10 sene => 6x + n * y + yemek/yol/elbise/telefon-hat/araba/tatil/kreþ senelik toplam kardan %3 daðýtým payý
+10 sene => 8x + n * y + yemek/yol/elbise/telefon-hat/araba/ev/tatil/kreþ senelik toplam karýn %5 daðýtým payý
+Kural 3 => Senede iki defa elbise parasý veriyoruz. 1/4x
+Kural 4 => Yol yardýmý aylýk 1/8x
+Kural 5 => Yemek yardýmý aylýk 1/4x
+Kural 6 => Çocuk yardým ücreti y = 1/8x
+Kural 7 => Kreþ Yardýmý(3-7 yaþ çocuklarý olanlar için) 1/8x
+Kural 8 => Þirkette akrabalýk iliþkileri olan kimse çalýþamaz.
+Kural 9 => Prim usulü ile çalýþýlamaz.
+Kural 10 => Ýþ dýþý tartýþma, kavga durumunda bütün taraflarýn sözleþmesi tazminatsýz feshedilir.
