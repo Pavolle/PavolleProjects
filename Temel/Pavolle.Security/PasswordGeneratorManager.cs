@@ -16,7 +16,6 @@ namespace Pavolle.Security
 
         }
 
-
         public string GeneratePassword(string key)
         {
             string result = "";
@@ -26,13 +25,11 @@ namespace Pavolle.Security
                 return result;
             }
 
-
             AESAlgorithm aesAlgorithm = new AESAlgorithm();
             var aesResult = aesAlgorithm.Encrypt(key, aeskey);
             result = SecurityHelperManager.Instance.GetEncryptedPassword(aesResult, key).Substring(13, 24);
 
             return result;
         }
-
     }
 }

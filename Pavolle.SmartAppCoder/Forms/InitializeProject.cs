@@ -102,9 +102,33 @@ namespace Pavolle.SmartAppCoder.Forms
 
             if (LanguageHelperManagerCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LanguageHelperManager Class => ok");
 
-
-
             Output("Core projesi kontroller tamamlandı. Eksik dosyalar tekrar eklendi!");
+
+            Output("Core security projesi kontrol ediliyor...");
+
+            Output("Security projesi oluşturma/güncelleme süreci tamamlandı.");
+            bool securityProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + _project.OrganizationName + ".Security");
+            if (!securityProjesiOlusturulmus)
+            {
+                Output("Security projesi oluşturulmamış! Proje oluşturma başlatıldı");
+                //CommandHelperManager.Instance.RunCommand("dotnet , _project.ProjectPath");
+
+                bool result = CommandHelperManager.Instance.RunDotnetCommand("new classlib --framework \"net7.0\" -o " + _project.ProjectPath + "/" + _project.OrganizationName + ".Security").Result;
+                if (result)
+                {
+                    Output("Security projesi oluşturuldu. Proje eklemesi yapılıyor...");
+                }
+
+                bool addResult = CommandHelperManager.Instance.RunDotnetCommand("sln " + _project.ProjectPath + "\\" + _project.OrganizationName + "Projects.sln add " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Security\\" + _project.OrganizationName + ".Security.csproj  --solution-folder Core").Result;
+                if (addResult)
+                {
+                    Output("Security projesi proje dosyasına eklendi.");
+                }
+
+                Output("Security class1 dosyası siliniyor...");
+                FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + _project.OrganizationName + ".Security\\" + "Class1.cs");
+                Output("Security projesi temizlendi. Proje sınıfları kontrol ediliyor...");
+            }
 
             Output("Proje oluşturma tamamlandı!");
         }

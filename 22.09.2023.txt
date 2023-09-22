@@ -1,0 +1,1 @@
+Pavolle.Core projesinin oluþturma sürecini tamamen tamamladýk.
