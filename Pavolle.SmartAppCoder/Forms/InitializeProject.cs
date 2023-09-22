@@ -4,6 +4,8 @@ using Pavolle.SmartAppCoder.Business.Core.Enum;
 using Pavolle.SmartAppCoder.Business.Core.Utils;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Model;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Request;
+using Pavolle.SmartAppCoder.Business.Core.ViewModels.Response;
+using Pavolle.SmartAppCoder.Business.Core.ViewModels.ViewData;
 using Pavolle.SmartAppCoder.Models;
 using System;
 using System.Collections.Generic;
@@ -75,11 +77,21 @@ namespace Pavolle.SmartAppCoder.Forms
 
             if(!FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + _project.OrganizationName + ".Core" + "/ViewModels"))
             {
+                Output("Create Core\\ViewModels directory => ok");
                 Directory.CreateDirectory(_project.ProjectPath + "/" + _project.OrganizationName + ".Core" + "/ViewModels");
             }
 
             if (LanguageNameModelCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LanguageNameModel Class => ok");
             if (IRequestCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create IRequest Class => ok");
+            if (RequestBaseCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create RequestBase Class => ok");
+
+
+            if (ViewDataBaseCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ViewDataBase Class => ok");
+            if (LookupViewDataCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LookupViewData Class => ok");
+            if (ImageLookupViewDataCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ImageLookupViewData Class => ok");
+
+
+            if (IResponseCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create IResponse Class => ok");
 
             Output("Core projesi kontroller tamamlandı. Eksik dosyalar tekrar eklendi!");
 
