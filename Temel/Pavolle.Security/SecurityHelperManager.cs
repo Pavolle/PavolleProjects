@@ -13,13 +13,13 @@ namespace Pavolle.Security
     {
         private string _key = "aT{s8x56f!'dfYuPAVOLLE-s9we3''3*0AspE#wr";
 
-        public string NumericRasgteleKodOlustur(int uzunluk)
+        public string GenerateRandomCode(int length)
         {
             string kod = "";
             var random = new Random();
-            for (int i = 0; i < uzunluk; i++)
+            for (int i = 0; i < length; i++)
             {
-                kod += _rakamlar[random.Next(0, _rakamlar.Count)];
+                kod += _numbers[random.Next(0, _numbers.Count)];
             }
 
             return kod;
@@ -29,62 +29,62 @@ namespace Pavolle.Security
 
         private SecurityHelperManager() { }
 
-        List<char> _ozerlKarakterler = new List<char>
+        List<char> _specialCharacters = new List<char>
         {
             '?','.', '#', '+' , '*',  '-', '!', '$', '%', '@'
         };
 
-        List<char> _rakamlar = new List<char>
+        List<char> _numbers = new List<char>
         {
             '1', '2', '3' , '4',  '5', '6', '7', '8', '9'
         };
          
 
-        List<char> _buyukHarfler = new List<char>
+        List<char> _upperCaseLetter = new List<char>
         {
             'A','B', 'C', 'D' , 'E',  'F', 'G', 'H', 'J','K','L', 'M', 'N' , 'P', 'R', 'S', 'T','U','V','Y','Z'
         };
 
 
-        List<char> _kucukHarfler = new List<char>
+        List<char> _lowerCaseLetter = new List<char>
         {
             'a','b', 'c', 'd' , 'e',  'f', 'g', 'h', 'j','k', 'm', 'n' , 'p', 'r', 's', 't','u','v','y','z'
         };
 
-        public string SistemKullanicisiSifreUret()
+        public string GenerateAdminPassword()
         {
             //Örnek Şifre A@3-a2yF
             string sifre = "";
             var random = new Random();
-            sifre += _buyukHarfler[random.Next(0, _buyukHarfler.Count)];
-            sifre += _ozerlKarakterler[random.Next(0, _ozerlKarakterler.Count)];
-            sifre += _rakamlar[random.Next(0, _rakamlar.Count)];
-            sifre += _ozerlKarakterler[random.Next(0, _ozerlKarakterler.Count)];
-            sifre += _kucukHarfler[random.Next(0, _kucukHarfler.Count)];
-            sifre += _rakamlar[random.Next(0, _rakamlar.Count)];
-            sifre += _kucukHarfler[random.Next(0, _kucukHarfler.Count)];
-            sifre += _buyukHarfler[random.Next(0, _buyukHarfler.Count)];
+            sifre += _upperCaseLetter[random.Next(0, _upperCaseLetter.Count)];
+            sifre += _specialCharacters[random.Next(0, _specialCharacters.Count)];
+            sifre += _numbers[random.Next(0, _numbers.Count)];
+            sifre += _specialCharacters[random.Next(0, _specialCharacters.Count)];
+            sifre += _lowerCaseLetter[random.Next(0, _lowerCaseLetter.Count)];
+            sifre += _numbers[random.Next(0, _numbers.Count)];
+            sifre += _lowerCaseLetter[random.Next(0, _lowerCaseLetter.Count)];
+            sifre += _upperCaseLetter[random.Next(0, _upperCaseLetter.Count)];
 
             return sifre;
 
         }
-        public string SistemYoneticisiSifreUret()
+        public string GenerateUserPassword()
         {
             //Örnek Şifre A@3b-a2yF#5R
             string sifre = "";
             var random = new Random();
-            sifre += _buyukHarfler[random.Next(0, _buyukHarfler.Count)];
-            sifre += _ozerlKarakterler[random.Next(0, _ozerlKarakterler.Count)];
-            sifre += _rakamlar[random.Next(0, _rakamlar.Count)];
-            sifre += _kucukHarfler[random.Next(0, _kucukHarfler.Count)];
-            sifre += _ozerlKarakterler[random.Next(0, _ozerlKarakterler.Count)];
-            sifre += _kucukHarfler[random.Next(0, _kucukHarfler.Count)];
-            sifre += _rakamlar[random.Next(0, _rakamlar.Count)];
-            sifre += _kucukHarfler[random.Next(0, _kucukHarfler.Count)];
-            sifre += _buyukHarfler[random.Next(0, _buyukHarfler.Count)];
-            sifre += _ozerlKarakterler[random.Next(0, _ozerlKarakterler.Count)];
-            sifre += _rakamlar[random.Next(0, _rakamlar.Count)];
-            sifre += _buyukHarfler[random.Next(0, _buyukHarfler.Count)];
+            sifre += _upperCaseLetter[random.Next(0, _upperCaseLetter.Count)];
+            sifre += _specialCharacters[random.Next(0, _specialCharacters.Count)];
+            sifre += _numbers[random.Next(0, _numbers.Count)];
+            sifre += _lowerCaseLetter[random.Next(0, _lowerCaseLetter.Count)];
+            sifre += _specialCharacters[random.Next(0, _specialCharacters.Count)];
+            sifre += _lowerCaseLetter[random.Next(0, _lowerCaseLetter.Count)];
+            sifre += _numbers[random.Next(0, _numbers.Count)];
+            sifre += _lowerCaseLetter[random.Next(0, _lowerCaseLetter.Count)];
+            sifre += _upperCaseLetter[random.Next(0, _upperCaseLetter.Count)];
+            sifre += _specialCharacters[random.Next(0, _specialCharacters.Count)];
+            sifre += _numbers[random.Next(0, _numbers.Count)];
+            sifre += _upperCaseLetter[random.Next(0, _upperCaseLetter.Count)];
 
             return sifre;
         }
@@ -94,7 +94,7 @@ namespace Pavolle.Security
             return Regex.Match(password, @"((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})").Success;
         }
 
-        public bool KarakterTekrariniKontrolEt(string password)
+        public bool CheckCharacterRepeat(string password)
         {
             bool tekrarIceriyor = false;
             for (int i = 0; i < password.Length; i++)
@@ -111,7 +111,7 @@ namespace Pavolle.Security
             return tekrarIceriyor;
         }
 
-        public bool ArdisikKarakterIceriyorMu(string password)
+        public bool CheckCharacterSequence(string password)
         {
             bool iceriyor = false;
             for (int i = 0; i < password.Length; i++)

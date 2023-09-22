@@ -9,15 +9,6 @@ using Pavolle.SmartAppCoder.Business.Core.ViewModels.Response;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.ViewData;
 using Pavolle.SmartAppCoder.Business.Security;
 using Pavolle.SmartAppCoder.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -43,6 +34,8 @@ namespace Pavolle.SmartAppCoder.Forms
         private void StartGenerating()
         {
             Output("Proje oluşturma başlatılıyor...");
+
+            #region Core
             Output("Core projesi kontrol ediliyor...");
 
             bool coreProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + _project.OrganizationName + ".Core");
@@ -104,10 +97,10 @@ namespace Pavolle.SmartAppCoder.Forms
             if (LanguageHelperManagerCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LanguageHelperManager Class => ok");
 
             Output("Core projesi kontroller tamamlandı. Eksik dosyalar tekrar eklendi!");
+            #endregion
 
-            Output("Core security projesi kontrol ediliyor...");
-
-            Output("Security projesi oluşturma/güncelleme süreci tamamlandı.");
+            #region Security
+            Output("Security projesi kontrol ediliyor...");
             bool securityProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + _project.OrganizationName + ".Security");
             if (!securityProjesiOlusturulmus)
             {
@@ -132,6 +125,9 @@ namespace Pavolle.SmartAppCoder.Forms
             }
 
             if (SecurityHelperCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create SecurityHelper Class => ok");
+
+            Output("Security projesi oluşturma/güncelleme süreci tamamlandı.");
+            #endregion
 
             Output("Proje oluşturma tamamlandı!");
         }
