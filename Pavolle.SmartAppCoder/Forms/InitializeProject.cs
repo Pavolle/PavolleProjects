@@ -7,6 +7,7 @@ using Pavolle.SmartAppCoder.Business.Core.ViewModels.Model;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Request;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Response;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.ViewData;
+using Pavolle.SmartAppCoder.Business.Security;
 using Pavolle.SmartAppCoder.Models;
 using System;
 using System.Collections.Generic;
@@ -129,6 +130,8 @@ namespace Pavolle.SmartAppCoder.Forms
                 FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + _project.OrganizationName + ".Security\\" + "Class1.cs");
                 Output("Security projesi temizlendi. Proje sınıfları kontrol ediliyor...");
             }
+
+            if (SecurityHelperCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create SecurityHelper Class => ok");
 
             Output("Proje oluşturma tamamlandı!");
         }

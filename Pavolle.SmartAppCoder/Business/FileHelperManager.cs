@@ -33,18 +33,27 @@ namespace Pavolle.SmartAppCoder.Business
 
             try
             {
-                if (!Directory.Exists(projectPath + "/" + projectFoldername))
+                if (!string.IsNullOrWhiteSpace(projectFoldername))
                 {
-                    Directory.CreateDirectory(projectPath + "/" + projectFoldername);
+                    if (!Directory.Exists(projectPath + "/" + projectFoldername))
+                    {
+                        Directory.CreateDirectory(projectPath + "/" + projectFoldername);
+                    }
                 }
 
-                if (!File.Exists(projectPath + "/" + projectFoldername + "/" + fileName))
+                if (!string.IsNullOrWhiteSpace(projectFoldername))
                 {
-                    File.WriteAllText(projectPath + "/" + projectFoldername + "/" + fileName, data);
+                    if (!File.Exists(projectPath + "/" + projectFoldername + "/" + fileName))
+                    {
+                        File.WriteAllText(projectPath + "/" + projectFoldername + "/" + fileName, data);
+                    }
                 }
                 else
                 {
-                    return false;
+                    if (!File.Exists(projectPath + "/" + fileName))
+                    {
+                        File.WriteAllText(projectPath + "/" + fileName, data);
+                    }
                 }
             }
             catch (Exception ex)
