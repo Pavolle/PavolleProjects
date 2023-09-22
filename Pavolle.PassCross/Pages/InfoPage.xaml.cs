@@ -1,4 +1,5 @@
 using Mopups.Pages;
+using Mopups.Services;
 
 namespace Pavolle.PassCross.Pages;
 
@@ -11,6 +12,6 @@ public partial class InfoPage : PopupPage
 
     private void blahButton_Clicked(object sender, EventArgs e)
     {
-
+		MopupService.Instance.PopAsync();
     }
 }
