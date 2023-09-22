@@ -2,6 +2,8 @@
 using Pavolle.SmartAppCoder.Business;
 using Pavolle.SmartAppCoder.Business.Core.Enum;
 using Pavolle.SmartAppCoder.Business.Core.Utils;
+using Pavolle.SmartAppCoder.Business.Core.ViewModels.Model;
+using Pavolle.SmartAppCoder.Business.Core.ViewModels.Request;
 using Pavolle.SmartAppCoder.Models;
 using System;
 using System.Collections.Generic;
@@ -71,6 +73,13 @@ namespace Pavolle.SmartAppCoder.Forms
             if (SecurityLevelCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ESecurityLevel Class => ok");
 
 
+            if(!FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + _project.OrganizationName + ".Core" + "/ViewModels"))
+            {
+                Directory.CreateDirectory(_project.ProjectPath + "/" + _project.OrganizationName + ".Core" + "/ViewModels");
+            }
+
+            if (LanguageNameModelCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LanguageNameModel Class => ok");
+            if (IRequestCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create IRequest Class => ok");
 
             Output("Core projesi kontroller tamamlandı. Eksik dosyalar tekrar eklendi!");
 

@@ -17,4 +17,8 @@ Kural 6 => Çocuk yardým ücreti y = 1/8x
 Kural 7 => Kreþ Yardýmý(3-7 yaþ çocuklarý olanlar için) 1/8x
 Kural 8 => Þirkette akrabalýk iliþkileri olan kimse çalýþamaz.
 Kural 9 => Prim usulü ile çalýþýlamaz.
-Kural 10 => Ýþ dýþý tartýþma, kavga durumunda bütün taraflarýn sözleþmesi tazminatsýz feshedilir.
+Kural 10 => Ýþ veya iþ dýþý tartýþma, fiziksel kavga durumunda taraflarýn sözleþmesi tazminatsýz feshedilir. Fiziksel Kavgaya karýþanlarlar 5x tazminat alýnýr.
+Kural 11 => Çalýþanlar baþka bir iþveren yanýnda çalýþamaz, ama kendi þirketlerini kurabilirler. Sahibi olduklarý þirketin faaliyet alaný çalýþtýklarý iþle ayný olamaz. Tespit edilmesi halinde 20x tazminat öderler.
+
+Pascross için uygulamanýn 3 seçeneði için sayýlar oluþturuldu.
+Bu tamamlandýktan sonra arayüz tasarýmýna baþlayýp gün için uygulamanýn 2 seviye þeklinde oyananabilir hale getireceðiz.
