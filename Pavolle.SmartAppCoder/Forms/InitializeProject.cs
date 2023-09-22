@@ -119,7 +119,6 @@ namespace Pavolle.SmartAppCoder.Forms
         {
             try
             {
-
                 string message = (string)state;
                 textBoxOutput.BeginInvoke((MethodInvoker)(() =>
                 {

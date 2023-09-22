@@ -1,4 +1,7 @@
-﻿namespace Pavolle.PassCross
+﻿using Mopups.Services;
+using Pavolle.PassCross.Pages;
+
+namespace Pavolle.PassCross
 {
     public partial class MainPage : ContentPage
     {
@@ -11,6 +14,8 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
+
+            MopupService.Instance.PushAsync(new InfoPage());
             count++;
 
             if (count == 1)
