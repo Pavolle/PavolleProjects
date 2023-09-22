@@ -1,6 +1,7 @@
 ﻿using DevExpress.Xpo;
 using Pavolle.SmartAppCoder.Business;
 using Pavolle.SmartAppCoder.Business.Core.Enum;
+using Pavolle.SmartAppCoder.Business.Core.Helper;
 using Pavolle.SmartAppCoder.Business.Core.Utils;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Model;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Request;
@@ -82,6 +83,9 @@ namespace Pavolle.SmartAppCoder.Forms
             }
 
             if (LanguageNameModelCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LanguageNameModel Class => ok");
+            if (LanguageModelCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LanguageModel Class => ok");
+
+
             if (IRequestCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create IRequest Class => ok");
             if (RequestBaseCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create RequestBase Class => ok");
 
@@ -95,6 +99,10 @@ namespace Pavolle.SmartAppCoder.Forms
             if (ResponseBaseCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ResponseBase Class => ok");
             if (LookupResponsCreatorManagere.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LookupRespons Class => ok");
             if (ImageLookupResponseCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ImageLookupResponse Class => ok");
+
+            if (LanguageHelperManagerCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create LanguageHelperManager Class => ok");
+
+
 
             Output("Core projesi kontroller tamamlandı. Eksik dosyalar tekrar eklendi!");
 

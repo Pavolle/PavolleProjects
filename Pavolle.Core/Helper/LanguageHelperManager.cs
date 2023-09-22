@@ -1,4 +1,4 @@
-﻿using Pavolle.Core.Enums;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Model;
 using Pavolle.Core.ViewModels.Response;
@@ -10,6 +10,7 @@ namespace Pavolle.Core.Helper
     public class LanguageHelperManager : Singleton<LanguageHelperManager>
     {
         List<LanguageNameModel> _languageNames;
+
         private LanguageHelperManager() 
         {
             _languageNames = new List<LanguageNameModel>()
@@ -42,6 +43,30 @@ namespace Pavolle.Core.Helper
         public string GetTwoLetterISOLanguageNameFromCulureInfo()
         {
             return CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+        }
+
+        public LanguageModel GetCurrentCultureLanguage()
+        {
+            string languageCode = GetTwoLetterISOLanguageNameFromCulureInfo();
+            switch (languageCode)
+            {
+                case "tr":
+                    return new LanguageModel{ Code = ELanguage.Turkish, Name="Turkish"};
+                case "az":
+                    return new LanguageModel{ Code = ELanguage.Azerbaijani, Name="Azerbaijani"};
+                case "en":
+                    return new LanguageModel{ Code = ELanguage.English, Name="English"};
+                case "fr":
+                    return new LanguageModel{ Code = ELanguage.French, Name="French"};
+                case "ru":
+                    return new LanguageModel{ Code = ELanguage.Russian, Name="Russian"};
+                case "de":
+                    return new LanguageModel{ Code = ELanguage.German, Name="German"};
+                case "es":
+                    return new LanguageModel{ Code = ELanguage.Spanish, Name="Spanish"};
+                default:
+                    return new LanguageModel{ Code = ELanguage.English, Name="English"};
+            }
         }
 
         public void Intialize(List<ELanguage> languages)
@@ -139,7 +164,7 @@ namespace Pavolle.Core.Helper
                             French = "Fransızca",
                             Russian = "Rusca",
                             Turkish = "Türkcə",
-                            Azerbaijani = "Azərbaycan Dili"
+                            Azerbaijani = "Azərbaycanca"
                         });
                         break;
                     default:
