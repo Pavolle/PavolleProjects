@@ -13,5 +13,6 @@ namespace Pavolle.MobileCore.Models
         public bool SetupDone { get; set; }
         public bool TransitionSound { get; set; }
         public bool BackgroundSound { get; set; }
+
     }
 }

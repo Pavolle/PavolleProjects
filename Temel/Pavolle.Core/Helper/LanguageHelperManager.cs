@@ -10,7 +10,7 @@ namespace Pavolle.Core.Helper
     public class LanguageHelperManager : Singleton<LanguageHelperManager>
     {
         List<LanguageNameModel> _languageNames;
-        private LanguageHelperManager() 
+        private LanguageHelperManager()
         {
             _languageNames = new List<LanguageNameModel>()
             {

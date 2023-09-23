@@ -4,7 +4,7 @@ using Pavolle.PassCross.Common.Enums;
 
 namespace Pavolle.PassCross.Models
 {
-    public class SettingsDbModel :BaseDbObject
+    public class SettingsDbModel : BaseSettingDbModel
     {
         public string Username { get; set; }
         public long? CountryOid { get; set; }

@@ -9,7 +9,7 @@ namespace Pavolle.PassCross
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new LoadingPage();
         }
     }
 }

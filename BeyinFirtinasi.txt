@@ -1,6 +1,6 @@
 Seviyeler belirlemiþtik. 
 2-10 rakamlý þifrelerin çözümü
 Seviye isimlendirmelerini de yaptýk.
-Her dil için alfabeye uygun olarak þifre karakter seti seçilecek.
-Ayný zamanda daha önce rakamlar ile ilgili de çalýþma yapmýþtýk.
-Sqlite kullanýlacaðý için veritabaný core nesneleri üst katmana taþýnsýn.
+Her dil için alfabeye uygun olarak þifre karakter seti seçilecek. Birinci versiyonda sadece ingilizce ve türkçe karakter seti olacak. 
+Ayný zamanda daha önce rakamlar ile ilgili de çalýþma yapmýþtýk. Bunu da eklenen alfabe ile birlikte yapacaðýz. Invento trafýnda bu arge çalýþmasýný yaptýk.
+Sqlite kullanýlacaðý için veritabaný core nesneleri üst katmana taþýnsýn. Bunu yaptýk. Bütün uygulamalar için Mobil Core projesi için veritabaný barýndýracak.
