@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Pavolle.Security.Symmetric
+﻿namespace Pavolle.Security.Symmetric
 {
     public interface ISymmetric
     {

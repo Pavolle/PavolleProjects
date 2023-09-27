@@ -1,25 +1,25 @@
-﻿using System.Security.Cryptography;
+using System.Security.Cryptography;
 
 namespace Pavolle.Security.Hash
 {
-    public class SHA1HashAlgorithm : AHashAlgorithm
+    public class SHA256HashAlgorithm : AbstractHashAlgorithm
     {
         public override byte[] ExecuteHashAlgorithm(byte[] plaintext)
         {
             byte[] result;
-            using (var sha1provider = new SHA1CryptoServiceProvider())
+            using (var provider = new SHA256CryptoServiceProvider())
             {
-                result = sha1provider.ComputeHash(plaintext);
+                result = provider.ComputeHash(plaintext);
             }
             return result;
         }
-        
+
         public override byte[] ExecuteHMACHashAlgorithm(byte[] plaintext, byte[] password)
         {
             byte[] result;
-            using (var hmacsha1provider = new HMACSHA1(password))
+            using (var provider = new HMACSHA256(password))
             {
-                result = hmacsha1provider.ComputeHash(plaintext);
+                result = provider.ComputeHash(plaintext);
             }
             return result;
         }

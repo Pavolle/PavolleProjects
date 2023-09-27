@@ -29,7 +29,7 @@ namespace Pavolle.SmartAppCoder.Business
 
         public bool WriteFile(string projectPath, string projectFoldername, string fileName, string data)
         {
-            bool response = true;
+            bool response = false;
 
             try
             {
@@ -46,6 +46,7 @@ namespace Pavolle.SmartAppCoder.Business
                     if (!File.Exists(projectPath + "/" + projectFoldername + "/" + fileName))
                     {
                         File.WriteAllText(projectPath + "/" + projectFoldername + "/" + fileName, data);
+                        response = true;
                     }
                 }
                 else
@@ -53,6 +54,7 @@ namespace Pavolle.SmartAppCoder.Business
                     if (!File.Exists(projectPath + "/" + fileName))
                     {
                         File.WriteAllText(projectPath + "/" + fileName, data);
+                        response = true;
                     }
                 }
             }
