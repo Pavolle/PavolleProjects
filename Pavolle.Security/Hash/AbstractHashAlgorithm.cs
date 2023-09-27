@@ -1,6 +1,6 @@
-﻿namespace Pavolle.Security.Hash
+namespace Pavolle.Security.Hash
 {
-    public abstract class AHashAlgorithm : IHashAlgorithm
+    public abstract class AbstractHashAlgorithm : IHashAlgorithm
     {
         public string ExecuteHashAlgorithm(string plaintext)
         {
