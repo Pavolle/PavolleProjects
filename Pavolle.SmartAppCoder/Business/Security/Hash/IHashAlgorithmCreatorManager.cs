@@ -14,8 +14,18 @@ namespace Pavolle.SmartAppCoder.Business.Security.Hash
         public bool Create(string projectPath, string organizationName)
         {
             string classString = "";
-            classString += "" + Environment.NewLine;
-            return FileHelperManager.Instance.WriteFile(projectPath + "\\" + organizationName + ".Security", "Hash", "LanguageModel.cs", classString);
+            classString += "namespace " + organizationName + ".Security.Hash" + Environment.NewLine;
+            classString += "{" + Environment.NewLine;
+            classString += "    internal interface IHashAlgorithm" + Environment.NewLine;
+            classString += "    {" + Environment.NewLine;
+            classString += "        byte[] ExecuteHashAlgorithm(byte[] plaintext);" + Environment.NewLine;
+            classString += "        string ExecuteHashAlgorithm(string plaintext);" + Environment.NewLine;
+            classString += "        byte[] ExecuteHMACHashAlgorithm(byte[] plaintext, byte[] password);" + Environment.NewLine;
+            classString += "        byte[] ExecuteHMACHashAlgorithm(byte[] plaintext, string password);" + Environment.NewLine;
+            classString += "        string ExecuteHMACHashAlgorithm(string plaintext, string password);" + Environment.NewLine;
+            classString += "    }" + Environment.NewLine;
+            classString += "}" + Environment.NewLine;
+            return FileHelperManager.Instance.WriteFile(projectPath + "\\" + organizationName + ".Security", "Hash", "IHashAlgorithm.cs", classString);
 
         }
     }

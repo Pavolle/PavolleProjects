@@ -8,6 +8,7 @@ using Pavolle.SmartAppCoder.Business.Core.ViewModels.Request;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Response;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.ViewData;
 using Pavolle.SmartAppCoder.Business.Security;
+using Pavolle.SmartAppCoder.Business.Security.Hash;
 using Pavolle.SmartAppCoder.Models;
 
 namespace Pavolle.SmartAppCoder.Forms
@@ -125,6 +126,8 @@ namespace Pavolle.SmartAppCoder.Forms
             }
 
             if (SecurityHelperCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create SecurityHelper Class => ok");
+
+            if (IHashAlgorithmCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create IHashAlgorithm Class => ok");
 
             Output("Security projesi oluşturma/güncelleme süreci tamamlandı.");
             #endregion

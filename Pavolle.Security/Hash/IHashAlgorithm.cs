@@ -1,4 +1,4 @@
-﻿namespace Pavolle.Security.Hash
+namespace Pavolle.Security.Hash
 {
     internal interface IHashAlgorithm
     {

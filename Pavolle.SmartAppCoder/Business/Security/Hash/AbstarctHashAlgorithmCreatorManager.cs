@@ -16,7 +16,7 @@ namespace Pavolle.SmartAppCoder.Business.Security.Hash
         {
             string classString = "";
             classString += "" + Environment.NewLine;
-            return FileHelperManager.Instance.WriteFile(projectPath + "\\" + organizationName + ".Security", "Hash", "LanguageModel.cs", classString);
+            return FileHelperManager.Instance.WriteFile(projectPath + "\\" + organizationName + ".Security", "Hash", "IHashAlgorithm.cs", classString);
 
         }
     }
