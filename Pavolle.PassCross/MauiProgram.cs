@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Mopups.Hosting;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace Pavolle.PassCross
 {
@@ -11,6 +12,7 @@ namespace Pavolle.PassCross
             builder
                 .UseMauiApp<App>()
                 .ConfigureMopups()
+                .UseSkiaSharp()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

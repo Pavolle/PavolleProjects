@@ -13,10 +13,8 @@ public partial class LoadingPage : ContentPage
 	bool loadingDone;
 	public LoadingPage()
 	{
+		loadingDone=false;
 		InitializeComponent();
-
-		thread = new Thread(new ThreadStart(StartApplication));	
-		thread.Start();
 
 
         IDispatcherTimer timer;
@@ -25,7 +23,7 @@ public partial class LoadingPage : ContentPage
         timer.Interval = TimeSpan.FromMilliseconds(1000);
         timer.Tick += (s, e) =>
         {
-            if (_settings != null)
+            if (loadingDone)
             {
                 if (!_settings.SetupDone)
                 {
@@ -43,8 +41,11 @@ public partial class LoadingPage : ContentPage
         };
         timer.Start();
 
-        
-	}
+
+
+        thread = new Thread(new ThreadStart(StartApplication));
+        thread.Start();
+    }
 
     private void StartApplication()
     {
@@ -85,7 +86,7 @@ public partial class LoadingPage : ContentPage
 			}
 		});
 
-        Thread.Sleep(2000);
+        Thread.Sleep(10000);
 
 		loadingDone = true;
 

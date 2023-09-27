@@ -31,11 +31,11 @@ namespace Pavolle.MobileCore.Manager
             switch (language)
             {
                 case ELanguage.English:
-                    return "©Pavolle " + DateTime.Now.Year.ToString() + "V" + GetAppVersion();
+                    return "©Pavolle " + DateTime.Now.Year.ToString() + " V" + GetAppVersion();
                 case ELanguage.Turkish:
-                    return "©Pavolle Bilişim " + DateTime.Now.Year.ToString() + "V" + GetAppVersion();
+                    return "©Pavolle Bilişim " + DateTime.Now.Year.ToString() + " V" + GetAppVersion();
                 default:
-                    return "©Pavolle " + "V" + DateTime.Now.Year.ToString() + GetAppVersion();
+                    return "©Pavolle "  + DateTime.Now.Year.ToString() + " V" + GetAppVersion();
             }
         }
 
