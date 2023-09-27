@@ -9,6 +9,7 @@ using Pavolle.SmartAppCoder.Business.Core.ViewModels.Response;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.ViewData;
 using Pavolle.SmartAppCoder.Business.Security;
 using Pavolle.SmartAppCoder.Business.Security.Hash;
+using Pavolle.SmartAppCoder.Business.Security.Symmetric;
 using Pavolle.SmartAppCoder.Models;
 
 namespace Pavolle.SmartAppCoder.Forms
@@ -133,6 +134,12 @@ namespace Pavolle.SmartAppCoder.Forms
             if (SHA256HashAlgorithmCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create SHA256HashAlgorithm Class => ok");
             if (SHA384HashAlgorithmCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create SHA384HashAlgorithm Class => ok");
             if (SHA512HashAlgorithmCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create SHA512HashAlgorithm Class => ok");
+
+            if (ISymmetricCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create ISymmetric Class => ok");
+            if (AESAlgorithmCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create AESAlgorithm Class => ok");
+            if (RC2AlgorithmCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create RC2Algorithm Class => ok");
+
+
 
             Output("Security projesi oluşturma/güncelleme süreci tamamlandı.");
             #endregion
