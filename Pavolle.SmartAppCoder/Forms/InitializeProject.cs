@@ -7,6 +7,7 @@ using Pavolle.SmartAppCoder.Business.Core.ViewModels.Model;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Request;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Response;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.ViewData;
+using Pavolle.SmartAppCoder.Business.Projects.Common.Utils;
 using Pavolle.SmartAppCoder.Business.Projects.Common.Enums;
 using Pavolle.SmartAppCoder.Business.Security;
 using Pavolle.SmartAppCoder.Business.Security.Hash;
@@ -154,6 +155,7 @@ namespace Pavolle.SmartAppCoder.Forms
             #region Project
 
             string projectRoot = _project.OrganizationName + "." + _project.ProjectName;
+
             #region Project Common
 
             bool commonProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + projectRoot + ".Common");
@@ -202,6 +204,11 @@ namespace Pavolle.SmartAppCoder.Forms
             if (UserTypeCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath))
             {
                 Output("Create EUserType Class => ok");
+            }
+
+            if(ApiUrlConstsCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath))
+            {
+                Output("Create ApiUrlConsts Class => ok");
             }
 
             #endregion

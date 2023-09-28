@@ -28,7 +28,7 @@ namespace Pavolle.SmartAppCoder.Business
             }
         }
 
-        internal Project? GetProject(long projectOid)
+        internal Project GetProject(long projectOid)
         {
             using (Session session = XpoManager.Instance.GetNewSession())
             {

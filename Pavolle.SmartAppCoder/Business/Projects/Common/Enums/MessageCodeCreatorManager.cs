@@ -27,16 +27,16 @@ namespace Pavolle.SmartAppCoder.Business.Projects.Common.Enums
             icerik += "        CommunicationType = 8," + Environment.NewLine;
             icerik += "        UnexpectedError = 9," + Environment.NewLine;
             icerik += "        CodeSendedToEmailNumber = 10," + Environment.NewLine;
-            icerik += "        CodeSendedToPhoneNumber = 11" + Environment.NewLine;
-            icerik += "        ApiService = 12" + Environment.NewLine;
-            icerik += "        ApiDefinition = 13" + Environment.NewLine;
-            icerik += "        Auhtorizations = 14" + Environment.NewLine;
-            icerik += "        TranslateData = 15" + Environment.NewLine;
-            icerik += "        City = 16" + Environment.NewLine;
-            icerik += "        Country = 17" + Environment.NewLine;
-            icerik += "        Username = 18" + Environment.NewLine;
-            icerik += "        CommunicationValue = 19" + Environment.NewLine;
-            icerik += "        Password = 20" + Environment.NewLine;
+            icerik += "        CodeSendedToPhoneNumber = 11," + Environment.NewLine;
+            icerik += "        ApiService = 12," + Environment.NewLine;
+            icerik += "        ApiDefinition = 13," + Environment.NewLine;
+            icerik += "        Auhtorizations = 14," + Environment.NewLine;
+            icerik += "        TranslateData = 15," + Environment.NewLine;
+            icerik += "        City = 16," + Environment.NewLine;
+            icerik += "        Country = 17," + Environment.NewLine;
+            icerik += "        Username = 18," + Environment.NewLine;
+            icerik += "        CommunicationValue = 19," + Environment.NewLine;
+            icerik += "        Password = 20," + Environment.NewLine;
             return FileHelperManager.Instance.WriteFile(projectPath, _creator.Path, _creator.ClassName + ".cs", _creator.EnumClass.Replace("//<EnumContent>", icerik));
         }
     }

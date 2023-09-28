@@ -24,13 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Business\Project\Common\Enums\" />
-    <Folder Include="Business\Project\Common\Utils\" />
-    <Folder Include="Business\Project\DbModels\" />
-    <Folder Include="Business\Project\MobileApp\" />
-    <Folder Include="Business\Project\WebApp\" />
-    <Folder Include="Business\Project\ViewModels\" />
-    <Folder Include="Business\Project\WebSecurity\" />
+    <Folder Include="Business\Projects\DbModels\" />
+    <Folder Include="Business\Projects\MobileApp\" />
+    <Folder Include="Business\Projects\WebApp\" />
+    <Folder Include="Business\Projects\ViewModels\" />
+    <Folder Include="Business\Projects\WebSecurity\" />
   </ItemGroup>
 
 </Project>

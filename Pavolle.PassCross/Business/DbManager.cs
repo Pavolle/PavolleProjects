@@ -54,18 +54,8 @@ namespace Pavolle.PassCross.Business
 
         private SQLiteConnection GetDb(string appName)
         {
-            //string applicationFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-
-            //if(!Directory.Exists(applicationFolderPath))
-            //{
-            //    System.IO.Directory.CreateDirectory(applicationFolderPath);
-            //}
-            string databaseFileName = System.IO.Path.Combine(FileSystem.AppDataDirectory, appName + ".db3");
-
-            var db = new SQLiteConnection(databaseFileName);
-
-            return db;
-
+            string databaseFileName = Path.Combine(FileSystem.AppDataDirectory, appName + ".db3");
+            return new SQLiteConnection(databaseFileName);
         }
     }
 }
