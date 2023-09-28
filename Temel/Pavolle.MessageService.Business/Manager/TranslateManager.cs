@@ -97,7 +97,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (criteria == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -124,7 +124,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, criteria.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, criteria.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -139,7 +139,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -164,13 +164,13 @@ namespace Pavolle.MessageService.Business.Manager
 
                     if (response.Detail == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.TranslateData);
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.TranslateData);
                     }
                 }
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -185,7 +185,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -196,7 +196,7 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.TR, true, 0, 1000, true, EMessageServiceMessageCode.TranslateData, request.Language.Value);
+                string checkResult = ValidationManager.Instance.CheckString(request.TR, true, 0, 1000, true, EMessageCode.TranslateData, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -204,7 +204,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckString(request.EN, true, 0, 1000, true, EMessageServiceMessageCode.TranslateData, request.Language.Value);
+                checkResult = ValidationManager.Instance.CheckString(request.EN, true, 0, 1000, true, EMessageCode.TranslateData, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -218,7 +218,7 @@ namespace Pavolle.MessageService.Business.Manager
 
                     if (data == null)
                     {
-                        response.ErrorMessage = GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.TranslateData);
+                        response.ErrorMessage = GetXNotFoundMessage(request.Language.Value, EMessageCode.TranslateData);
                         return response;
                     }
                     session.BeginTransaction();
@@ -235,14 +235,14 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
             return response;
         }
 
-        public string GetMessage(EMessageServiceMessageCode messageCode, ELanguage language)
+        public string GetMessage(EMessageCode messageCode, ELanguage language)
         {
             string message = messageCode.ToString();
             TranslateDataCacheModel data;
@@ -300,24 +300,24 @@ namespace Pavolle.MessageService.Business.Manager
             return message;
         }
 
-        public string GetXNotFoundMessage(ELanguage language, EMessageServiceMessageCode messageCode)
+        public string GetXNotFoundMessage(ELanguage language, EMessageCode messageCode)
         {
-            return string.Format(GetMessage(EMessageServiceMessageCode.XNotFound, language), messageCode);
+            return string.Format(GetMessage(EMessageCode.XNotFound, language), messageCode);
         }
 
-        public string? GetXSavedMessage(ELanguage language, EMessageServiceMessageCode messageCode)
+        public string? GetXSavedMessage(ELanguage language, EMessageCode messageCode)
         {
-            return string.Format(GetMessage(EMessageServiceMessageCode.XSaved, language), messageCode);
+            return string.Format(GetMessage(EMessageCode.XSaved, language), messageCode);
         }
 
-        public string? GetXCannotBeDeletedessage(ELanguage language, EMessageServiceMessageCode messageCode)
+        public string? GetXCannotBeDeletedessage(ELanguage language, EMessageCode messageCode)
         {
-            return string.Format(GetMessage(EMessageServiceMessageCode.XCannotBeDeleted, language), messageCode);
+            return string.Format(GetMessage(EMessageCode.XCannotBeDeleted, language), messageCode);
         }
 
-        internal string? GetXDeletedMessage(ELanguage language, EMessageServiceMessageCode messageCode)
+        internal string? GetXDeletedMessage(ELanguage language, EMessageCode messageCode)
         {
-            return string.Format(GetMessage(EMessageServiceMessageCode.XDeleted, language), messageCode);
+            return string.Format(GetMessage(EMessageCode.XDeleted, language), messageCode);
         }
     }
 }

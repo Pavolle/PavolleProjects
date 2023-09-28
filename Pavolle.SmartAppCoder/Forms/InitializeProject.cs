@@ -7,6 +7,7 @@ using Pavolle.SmartAppCoder.Business.Core.ViewModels.Model;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Request;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.Response;
 using Pavolle.SmartAppCoder.Business.Core.ViewModels.ViewData;
+using Pavolle.SmartAppCoder.Business.Projects.Common.Enums;
 using Pavolle.SmartAppCoder.Business.Security;
 using Pavolle.SmartAppCoder.Business.Security.Hash;
 using Pavolle.SmartAppCoder.Business.Security.Symmetric;
@@ -148,6 +149,63 @@ namespace Pavolle.SmartAppCoder.Forms
 
 
             Output("Security projesi oluşturma/güncelleme süreci tamamlandı.");
+            #endregion
+
+            #region Project
+
+            string projectRoot = _project.OrganizationName + "." + _project.ProjectName;
+            #region Project Common
+
+            bool commonProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + projectRoot + ".Common");
+            if (!commonProjesiOlusturulmus)
+            {
+                Output("Common projesi oluşturulmamış! Proje oluşturma başlatıldı");
+                //CommandHelperManager.Instance.RunCommand("dotnet , _project.ProjectPath");
+
+                bool result = CommandHelperManager.Instance.RunDotnetCommand("new classlib --framework \"net7.0\" -o " + _project.ProjectPath + "/" + projectRoot + ".Common").Result;
+                if (result)
+                {
+                    Output("Common projesi oluşturuldu. Proje eklemesi yapılıyor...");
+                }
+
+                bool addResult = CommandHelperManager.Instance.RunDotnetCommand("sln " + _project.ProjectPath + "\\" + _project.OrganizationName + "Projects.sln add " + _project.ProjectPath + "\\" + projectRoot + ".Common\\" + projectRoot + ".Common.csproj  --solution-folder " + _project.ProjectName).Result;
+                if (addResult)
+                {
+                    Output("Common projesi proje dosyasına eklendi.");
+                }
+
+                Output("Common class1 dosyası siliniyor...");
+                FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" +projectRoot + ".Common\\" + "Class1.cs");
+                Output("Common projesi temizlendi. Proje sınıfları kontrol ediliyor...");
+            }
+
+            if(ApiServiceMethodTypeCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath))
+            {
+                Output("Create EApiServiceMethodType Class => ok");
+            }
+
+            if (JobTypeCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath))
+            {
+                Output("Create EJobType Class => ok");
+            }
+
+            if (MessageCodeCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath))
+            {
+                Output("Create EMessageCode Class => ok");
+            }
+
+            if (SettingTypeCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath))
+            {
+                Output("Create ESettingType Class => ok");
+            }
+
+            if (UserTypeCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath))
+            {
+                Output("Create EUserType Class => ok");
+            }
+
+            #endregion
+
             #endregion
 
             Output("Proje oluşturma tamamlandı!");

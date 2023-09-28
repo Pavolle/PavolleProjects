@@ -69,7 +69,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (criteria == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -105,7 +105,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, criteria.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, criteria.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -120,7 +120,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (criteria == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -152,7 +152,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, criteria.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, criteria.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -167,7 +167,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -183,7 +183,7 @@ namespace Pavolle.MessageService.Business.Manager
                     var data = session.Query<City>().FirstOrDefault(t => t.Oid == oid);
                     if(data == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.City);
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.City);
                         return response;
                     }
 
@@ -202,7 +202,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -217,7 +217,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -233,7 +233,7 @@ namespace Pavolle.MessageService.Business.Manager
                     var country = session.Query<Country>().FirstOrDefault(t => t.Oid == request.CountryOid);
                     if (country == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Country);
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.Country);
                         return response;
                     }
 
@@ -263,13 +263,13 @@ namespace Pavolle.MessageService.Business.Manager
 
                     session.CommitTransaction();
 
-                    response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageServiceMessageCode.City);
+                    response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageCode.City);
 
                 }
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -284,7 +284,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -300,21 +300,21 @@ namespace Pavolle.MessageService.Business.Manager
                     var city = session.Query<City>().FirstOrDefault(t => t.Oid ==oid);
                     if (city == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.City);
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.City);
                         return response;
                     }
 
                     var country = session.Query<Country>().FirstOrDefault(t => t.Oid == request.CountryOid);
                     if (country == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Country);
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.Country);
                         return response;
                     }
 
                     var nameTranslateData = session.Query<TranslateData>().FirstOrDefault(t => t.Oid == request.NameTranslateDataOid);
                     if (nameTranslateData == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.TranslateData);
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.TranslateData);
                         return response;
                     }
 
@@ -340,12 +340,12 @@ namespace Pavolle.MessageService.Business.Manager
 
                     session.CommitTransaction();
 
-                    response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageServiceMessageCode.City);
+                    response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageCode.City);
                 }
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -360,7 +360,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (criteria == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Criteria is null");
                     return response;
                 }
@@ -376,7 +376,7 @@ namespace Pavolle.MessageService.Business.Manager
                     var city = session.Query<City>().FirstOrDefault(t => t.Oid == oid);
                     if (city == null)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(criteria.Language.Value, EMessageServiceMessageCode.City);
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(criteria.Language.Value, EMessageCode.City);
                         return response;
                     }
 
@@ -384,7 +384,7 @@ namespace Pavolle.MessageService.Business.Manager
                     canDelete = session.Query<Organization>().Any(t => t.City.Oid == oid);
                     if(!canDelete && criteria.ForceDelete.HasValue && !criteria.ForceDelete.Value)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXCannotBeDeletedessage(criteria.Language.Value, EMessageServiceMessageCode.City);
+                        response.ErrorMessage = TranslateManager.Instance.GetXCannotBeDeletedessage(criteria.Language.Value, EMessageCode.City);
                         return response;
                     }
                     //Delete all organization or make Organization city to null!!!
@@ -393,12 +393,12 @@ namespace Pavolle.MessageService.Business.Manager
                     city.Save();
 
                     city.Delete();
-                    response.SuccessMessage = TranslateManager.Instance.GetXDeletedMessage(criteria.Language.Value, EMessageServiceMessageCode.City);
+                    response.SuccessMessage = TranslateManager.Instance.GetXDeletedMessage(criteria.Language.Value, EMessageCode.City);
                 }
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, criteria.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, criteria.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 

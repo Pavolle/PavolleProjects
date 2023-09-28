@@ -92,7 +92,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Request is null");
                     return response;
                 }
@@ -103,14 +103,14 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username, request.Language.Value);
+                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
-                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue, request.Language.Value);
+                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageCode.CommunicationValue, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -118,7 +118,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType, request.Language.Value);
+                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageCode.CommunicationType, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -129,7 +129,7 @@ namespace Pavolle.MessageService.Business.Manager
                 if (!_users.ContainsKey(request.Username))
                 {
                     _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, request.Language.Value);
                     return response;
                 }
 
@@ -137,7 +137,7 @@ namespace Pavolle.MessageService.Business.Manager
                 if (userCache == null)
                 {
                     _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
-                    response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Username);
+                    response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.Username);
                     return response;
                 }
 
@@ -168,10 +168,10 @@ namespace Pavolle.MessageService.Business.Manager
                     switch (request.CommunicationType.Value)
                     {
                         case ECommunicationType.Phone:
-                            response.InfoMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.CodeSendedToPhoneNumber, request.Language.Value);
+                            response.InfoMessage = TranslateManager.Instance.GetMessage(EMessageCode.CodeSendedToPhoneNumber, request.Language.Value);
                             break;
                         case ECommunicationType.Mail:
-                            response.InfoMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.CodeSendedToEmailNumber, request.Language.Value);
+                            response.InfoMessage = TranslateManager.Instance.GetMessage(EMessageCode.CodeSendedToEmailNumber, request.Language.Value);
                             break;
                         default:
                             break;
@@ -181,19 +181,19 @@ namespace Pavolle.MessageService.Business.Manager
                 {
                     if (!communicationVerify)
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                        response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, request.Language.Value);
                         return response;
                     }
                     else
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                        response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                         return response;
                     }
                 }
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -207,7 +207,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Request is null");
                     return response;
                 }
@@ -218,14 +218,14 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username, request.Language.Value);
+                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
-                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue, request.Language.Value);
+                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageCode.CommunicationValue, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -233,7 +233,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType, request.Language.Value);
+                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageCode.CommunicationType, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -244,7 +244,7 @@ namespace Pavolle.MessageService.Business.Manager
                 if (!_users.ContainsKey(request.Username))
                 {
                     _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, request.Language.Value);
                     return response;
                 }
 
@@ -252,7 +252,7 @@ namespace Pavolle.MessageService.Business.Manager
                 if (userCache == null)
                 {
                     //todo nameof(request.Username test edilecek.)
-                    response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Username);
+                    response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.Username);
                     return response;
                 }
 
@@ -270,7 +270,7 @@ namespace Pavolle.MessageService.Business.Manager
                 }
                 if (communicationVerify)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, request.Language.Value);
                     return response;
                 }
 
@@ -287,7 +287,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
             return response;
@@ -301,7 +301,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Request is null");
                     return response;
                 }
@@ -312,7 +312,7 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username, request.Language.Value);
+                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -320,7 +320,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckString(request.Password, false, 8, 50, true, EMessageServiceMessageCode.Password, request.Language.Value);
+                checkResult = ValidationManager.Instance.CheckString(request.Password, false, 8, 50, true, EMessageCode.Password, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -331,7 +331,7 @@ namespace Pavolle.MessageService.Business.Manager
                 if (!_users.ContainsKey(request.Username))
                 {
                     _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, request.Language.Value);
                     return response;
                 }
 
@@ -339,7 +339,7 @@ namespace Pavolle.MessageService.Business.Manager
                 if (userCache == null)
                 {
                     //todo nameof(request.Username test edilecek.)
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UsernameOrPasswordIsNotCorrect, request.Language.Value);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UsernameOrPasswordIsNotCorrect, request.Language.Value);
                     response.WrongTryCount = 0;
                     response.IsLocked = false;
                     return response;
@@ -347,7 +347,7 @@ namespace Pavolle.MessageService.Business.Manager
 
                 if (userCache.IsLocked)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UserIsLocked, request.Language.Value);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UserIsLocked, request.Language.Value);
                     response.IsLocked = true;
                     response.WrongTryCount = userCache.WrongTryCount;
                     return response;
@@ -379,7 +379,7 @@ namespace Pavolle.MessageService.Business.Manager
                         response.IsLocked = false;
                         response.WrongTryCount = userCache.WrongTryCount;
                     }
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UsernameOrPasswordIsNotCorrect, request.Language.Value);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UsernameOrPasswordIsNotCorrect, request.Language.Value);
                     return response;
                 }
 
@@ -435,7 +435,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 
@@ -449,7 +449,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Request is null");
                     return response;
                 }
@@ -462,7 +462,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
             return response;
@@ -476,7 +476,7 @@ namespace Pavolle.MessageService.Business.Manager
             {
                 if (request == null)
                 {
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
                     _log.Error("Request is null");
                     return response;
                 }
@@ -487,14 +487,14 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageServiceMessageCode.Username, request.Language.Value);
+                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
                     response.ErrorMessage = checkResult;
                     return response;
                 }
-                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageServiceMessageCode.CommunicationValue, request.Language.Value);
+                checkResult = ValidationManager.Instance.CheckString(request.CommunicationValue, false, 5, 50, true, EMessageCode.CommunicationValue, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -502,7 +502,7 @@ namespace Pavolle.MessageService.Business.Manager
                     return response;
                 }
 
-                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageServiceMessageCode.CommunicationType, request.Language.Value);
+                checkResult = ValidationManager.Instance.CheckEnum<ECommunicationType>((int?)request.CommunicationType, false, EMessageCode.CommunicationType, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -513,7 +513,7 @@ namespace Pavolle.MessageService.Business.Manager
                 if (!_users.ContainsKey(request.Username))
                 {
                     _log.Warn("Security Warning : " + request.Username + " is not defined!!!");
-                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.SecurityError, request.Language.Value);
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, request.Language.Value);
                     return response;
                 }
 
@@ -521,14 +521,14 @@ namespace Pavolle.MessageService.Business.Manager
                 if (userCache == null)
                 {
                     //todo nameof(request.Username test edilecek.)
-                    response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageServiceMessageCode.Username);
+                    response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.Username);
                     _log.Error("Error: " + response.ErrorMessage);
                     return response;
                 }
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageServiceMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Error("Unexpected error occured!!! Error: " + ex);
             }
 

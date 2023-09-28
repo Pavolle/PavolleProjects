@@ -8,7 +8,7 @@ namespace Pavolle.MessageService.Business.Manager
     {
         private ValidationManager() { }
 
-        public string CheckString(string? text, bool nullable, int minLength, int maxLength, bool xssControl, EMessageServiceMessageCode messageCode, ELanguage language)
+        public string CheckString(string? text, bool nullable, int minLength, int maxLength, bool xssControl, EMessageCode messageCode, ELanguage language)
         {
             string response=null;
             if (!nullable)
@@ -21,13 +21,13 @@ namespace Pavolle.MessageService.Business.Manager
             return response;
         }
 
-        public string CheckEnum<T>(int? enumValue, bool nullable, EMessageServiceMessageCode messageCode, ELanguage language)
+        public string CheckEnum<T>(int? enumValue, bool nullable, EMessageCode messageCode, ELanguage language)
         {
             string response = null;
             return response;
         }
 
-        public string CheckForNull(object objectData, EMessageServiceMessageCode messageCode, ELanguage language)
+        public string CheckForNull(object objectData, EMessageCode messageCode, ELanguage language)
         {
             string response = null;
             if (objectData == null)
@@ -37,7 +37,7 @@ namespace Pavolle.MessageService.Business.Manager
             return response;
         }
 
-        internal string CheckForOidNull(long? oid, EMessageServiceMessageCode messageCode, ELanguage language)
+        internal string CheckForOidNull(long? oid, EMessageCode messageCode, ELanguage language)
         {
             string response = null;
             if(oid == null)

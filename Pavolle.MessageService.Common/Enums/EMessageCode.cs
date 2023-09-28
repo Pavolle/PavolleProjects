@@ -1,0 +1,28 @@
+using System.ComponentModel;
+
+namespace Pavolle.MessageService.Common.Enums
+{
+    public enum EMessageCode
+    {
+        XNotFound = 1,
+        XSaved = 2,
+        XCannotBeDeleted = 3,
+        XDeleted = 4,
+        SecurityError = 5,
+        UsernameOrPasswordIsNotCorrect = 6,
+        UserIsLocked = 7,
+        CommunicationType = 8,
+        UnexpectedError = 9,
+        CodeSendedToEmailNumber = 10,
+        CodeSendedToPhoneNumber = 11
+        ApiService = 12
+        ApiDefinition = 13
+        Auhtorizations = 14
+        TranslateData = 15
+        City = 16
+        Country = 17
+        Username = 18
+        CommunicationValue = 19
+        Password = 20
+    }
+}

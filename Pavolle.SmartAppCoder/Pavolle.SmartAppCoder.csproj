@@ -23,4 +23,14 @@
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Business\Project\Common\Enums\" />
+    <Folder Include="Business\Project\Common\Utils\" />
+    <Folder Include="Business\Project\DbModels\" />
+    <Folder Include="Business\Project\MobileApp\" />
+    <Folder Include="Business\Project\WebApp\" />
+    <Folder Include="Business\Project\ViewModels\" />
+    <Folder Include="Business\Project\WebSecurity\" />
+  </ItemGroup>
+
 </Project>
