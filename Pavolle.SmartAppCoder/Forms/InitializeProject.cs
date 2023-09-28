@@ -121,12 +121,18 @@ namespace Pavolle.SmartAppCoder.Forms
                     Output("Security projesi proje dosyasına eklendi.");
                 }
 
+                Output("Security kütüphanesine Core uygulama referansı ekleniyor...");
+
+                bool addCoreReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Security\\" + _project.OrganizationName + ".Security.csproj  reference " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Core\\" + _project.OrganizationName + ".Core.csproj").Result;
+
                 Output("Security class1 dosyası siliniyor...");
                 FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + _project.OrganizationName + ".Security\\" + "Class1.cs");
                 Output("Security projesi temizlendi. Proje sınıfları kontrol ediliyor...");
             }
 
             if (SecurityHelperCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create SecurityHelper Class => ok");
+            if (PasswordGeneratorManagerCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create PasswordGeneratorManager Class => ok");
+            if (SecurityHelperManagerCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create SecurityHelperManager Class => ok");
 
             if (IHashAlgorithmCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create IHashAlgorithm Class => ok");
             if (AbstractHashAlgorithmCreatorManager.Instance.Create(_project.ProjectPath, _project.OrganizationName)) Output("Create AbstarctHashAlgorithm Class => ok");

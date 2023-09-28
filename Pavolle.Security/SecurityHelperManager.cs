@@ -1,4 +1,4 @@
-﻿using Pavolle.Core.Utils;
+using Pavolle.Core.Utils;
 using Pavolle.Security.Hash;
 using System.Text.RegularExpressions;
 
@@ -12,6 +12,7 @@ namespace Pavolle.Security
         List<char> _numbers = new List<char> { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
         List<char> _upperCaseLetter = new List<char> { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'U', 'V', 'Y', 'Z' };
         List<char> _lowerCaseLetter = new List<char> { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p', 'r', 's', 't', 'u', 'v', 'y', 'z' };
+
         private SecurityHelperManager() { }
 
         public string GenerateRandomCode(int length)
@@ -37,10 +38,9 @@ namespace Pavolle.Security
             sifre += _numbers[random.Next(0, _numbers.Count)];
             sifre += _lowerCaseLetter[random.Next(0, _lowerCaseLetter.Count)];
             sifre += _upperCaseLetter[random.Next(0, _upperCaseLetter.Count)];
-
             return sifre;
-
         }
+
         public string GenerateAdminassword()
         {
             string sifre = "";
@@ -57,7 +57,6 @@ namespace Pavolle.Security
             sifre += _specialCharacters[random.Next(0, _specialCharacters.Count)];
             sifre += _numbers[random.Next(0, _numbers.Count)];
             sifre += _upperCaseLetter[random.Next(0, _upperCaseLetter.Count)];
-
             return sifre;
         }
 
@@ -97,7 +96,7 @@ namespace Pavolle.Security
                     if (password[i + 1] == nextCharacter && twoNextCharacter == password[i + 2])
                     {
                         isSequence = true;
-                        return isSequence;
+                        break;
                     }
                 }
             }
