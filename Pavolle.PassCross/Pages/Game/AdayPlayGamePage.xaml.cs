@@ -1,3 +1,4 @@
+using Mopups.Services;
 using Pavolle.Core.Enums;
 using Pavolle.MobileCore.Manager;
 using Pavolle.PassCross.Business;
@@ -65,7 +66,7 @@ public partial class AdayPlayGamePage : ContentPage
         string girilenSifre = entry1Object.Text + entry2Object.Text;
         if(girilenSifre == _question.Password)
         {
-            //Doðru
+            MopupService.Instance.PushAsync(new BasariliPage());
         }
         else
         {
