@@ -24,7 +24,7 @@ public partial class LoadingPage : ContentPage
         {
             if (loadingDone)
             {
-                if (!_settings.SetupDone)
+                if (_settings.SetupDone)
                 {
                     Application.Current.MainPage = new SetupPage();
 					timer.Stop();
@@ -85,7 +85,7 @@ public partial class LoadingPage : ContentPage
 			}
 		});
 
-        Thread.Sleep(10000);
+        Thread.Sleep(2000);
 
 		loadingDone = true;
 

@@ -79,8 +79,8 @@ namespace Pavolle.PassCross.Business
         private void BirinciKuraliOlustur(int baslangicIndexi)
         {
             string sonuc = "";
-            int birinciRastgeleSayi = GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password);
-            int ikinciRastgeleSayi = GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + birinciRastgeleSayi.ToString());
+            int birinciRastgeleSayi = PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password);
+            int ikinciRastgeleSayi = PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + birinciRastgeleSayi.ToString());
             var random = new Random();
             int index = random.Next(0, 2);
 
@@ -159,24 +159,14 @@ namespace Pavolle.PassCross.Business
             });
         }
 
-        private int GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(string parola)
-        {
-            List<int> _kullanilabilirSayilar = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            for (int i = 0; i < parola.Length; i++)
-            {
-                int sayi = int.Parse(parola[i].ToString());
-                _kullanilabilirSayilar.Remove(sayi);
-            }
-            Random random = new Random();
-            return _kullanilabilirSayilar[random.Next(0, _kullanilabilirSayilar.Count + 1)];
-        }
+
 
         private void IkinciKuraliOlustur()
         {
             string sonuc = "";
-            sonuc += GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password).ToString();
-            sonuc += GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + sonuc.ToString());
-            sonuc += GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + sonuc.ToString());
+            sonuc += PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password).ToString();
+            sonuc += PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + sonuc.ToString());
+            sonuc += PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + sonuc.ToString());
 
             string aciklama = "";
             switch (_language)
@@ -212,8 +202,8 @@ namespace Pavolle.PassCross.Business
         {
 
             string sonuc = "";
-            int birinciRastgeleSayi = GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password);
-            int ikinciRastgeleSayi = GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + birinciRastgeleSayi.ToString());
+            int birinciRastgeleSayi = PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password);
+            int ikinciRastgeleSayi = PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + birinciRastgeleSayi.ToString());
             if (baslangicIndexi == 0)
             {
 

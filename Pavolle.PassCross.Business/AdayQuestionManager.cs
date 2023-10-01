@@ -20,11 +20,11 @@ namespace Pavolle.PassCross.Business
         public QuestionModel GenerateQuestion(ELanguage language)
         {
             _language= language;
-            var question = new QuestionModel()
+            _question = new QuestionModel()
             {
                 Tips = new List<QuestionTipModel>()
             };
-            question.Password = TekrarsizSayiUret(2);
+            _question.Password = PasswordGeneratorManager.Instance.TekrarsizSayiUret(2);
 
             //1 ci kural => içeren bir rakam var ama yeri yanlış           
             //2 ci kural => tüm rakamlar yanlış                            
@@ -48,13 +48,22 @@ namespace Pavolle.PassCross.Business
             AdayIkinciKuralIcinSayiOlustur();
             AdayUcuncuKuralIcinSayiOlustur(baslangicIndexi);
 
-            return question;
+            return _question;
         }
 
         private void AdayBirinciKuralIcinSayiOlustur(int baslangicIndexi)
         {
-            string parola = _question.Password;
-            string birinciKuralSayisi = NinciBasamagiXOlmayanAmaXRakaminiIcerenVeParolayaEsitOlmayanSayiUret(baslangicIndexi, parola);
+            string sonuc="";
+            int birinciKuralSayisi = PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password);
+            if (baslangicIndexi == 0)
+            {
+                sonuc = birinciKuralSayisi.ToString() + _question.Password[0];
+            }
+            else
+            {
+                sonuc = _question.Password[1] + birinciKuralSayisi.ToString();
+            }
+           
             string aciklama = "";
             switch (_language)
             {
@@ -69,7 +78,7 @@ namespace Pavolle.PassCross.Business
                 case ELanguage.Russian:
                     break;
                 case ELanguage.Turkish:
-                    aciklama = parola[baslangicIndexi] + " rakamı var, ama yeri yanlış!";
+                    aciklama = _question.Password[baslangicIndexi] + " var, ama yeri yanlış!";
                     break;
                 case ELanguage.Azerbaijani:
                     break;
@@ -79,37 +88,18 @@ namespace Pavolle.PassCross.Business
 
             _question.Tips.Add(new QuestionTipModel
             {
-                Password = birinciKuralSayisi,
+                Password = sonuc,
                 Tip = aciklama,
             });
         }
 
-        private string NinciBasamagiXOlmayanAmaXRakaminiIcerenVeParolayaEsitOlmayanSayiUret(int baslangicIndexi, string parola)
-        {
-            string sonuc = "";
-            List<int> _kullanilmayanSayilar = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            for (int i = 0; i < parola.Length; i++)
-            {
-                int sayi = int.Parse(parola[i].ToString());
-                _kullanilmayanSayilar.Remove(sayi);
-            }
-            Random random = new Random();
-
-            if (baslangicIndexi == 0)
-            {
-                sonuc = _kullanilmayanSayilar[random.Next(0, _kullanilmayanSayilar.Count + 1)].ToString() + parola[0];
-            }
-            else
-            {
-                sonuc = parola[1] + _kullanilmayanSayilar[random.Next(0, _kullanilmayanSayilar.Count + 1)].ToString();
-            }
-            return sonuc;
-        }
+       
 
         private void AdayIkinciKuralIcinSayiOlustur()
         {
-            string parola = _question.Password;
-            string ikinciKuralSayisi = ParolaninIcermedigiRakamlardanSayiUret(parola);
+            string sonuc = "";
+            sonuc += PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password).ToString();
+            sonuc += PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password + sonuc.ToString());
             string tip = "";
 
             switch (_language)
@@ -125,7 +115,7 @@ namespace Pavolle.PassCross.Business
                 case ELanguage.Russian:
                     break;
                 case ELanguage.Turkish:
-                    tip = "Sayıdaki rakamların hiçbirini içermiyor!";
+                    tip = "Tüm karakterler yanlış!";
                     break;
                 case ELanguage.Azerbaijani:
                     break;
@@ -134,102 +124,55 @@ namespace Pavolle.PassCross.Business
             }
             _question.Tips.Add(new QuestionTipModel
             {
-                Password = ikinciKuralSayisi,
+                Password = sonuc,
                 Tip = tip,
             });
         }
 
-        private string ParolaninIcermedigiRakamlardanSayiUret(string parola)
-        {
-            List<int> _kullanilmayanSayilar = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-            for (int i = 0; i < parola.Length; i++)
-            {
-                _kullanilmayanSayilar.Remove(Convert.ToInt32(parola[i]));
-            }
-            Random random = new Random();
-            string sonuc = "";
-            for (int i = 0; i < parola.Length; i++)
-            {
-                var index = random.Next(0, _kullanilmayanSayilar.Count + 1);
-                sonuc += _kullanilmayanSayilar[index].ToString();
-                _kullanilmayanSayilar.Remove(_kullanilmayanSayilar[index]);
-            }
-            return sonuc;
-        }
-
+        
         private void AdayUcuncuKuralIcinSayiOlustur(int baslangicIndexi)
         {
-            if (baslangicIndexi == 0) baslangicIndexi = 1;
-            else baslangicIndexi = 0;
-            string parola = _question.Password;
-            string ucuncuKuralSayisi = NinciBasamagiXOlanVeParolayaEsitOlmayanSayiUret(baslangicIndexi, parola);
-            string tip = "";
-
-            switch (_language)
-            {
-                case ELanguage.English:
-                    break;
-                case ELanguage.German:
-                    break;
-                case ELanguage.Spanish:
-                    break;
-                case ELanguage.French:
-                    break;
-                case ELanguage.Russian:
-                    break;
-                case ELanguage.Turkish:
-                    tip = parola[baslangicIndexi] + " rakamı var ve yeri doğru";
-                    break;
-                case ELanguage.Azerbaijani:
-                    break;
-                default:
-                    break;
-            }
-            _question.Tips.Add(new QuestionTipModel
-            {
-                Password = ucuncuKuralSayisi,
-                Tip = tip,
-            });
-        }
-
-        private string NinciBasamagiXOlanVeParolayaEsitOlmayanSayiUret(int baslangicIndexi, string parola)
-        {
+            int index = 0; if (baslangicIndexi == 0) { index = 1; }
             string sonuc = "";
-            List<int> _kullanilmayanSayilar = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            for (int i = 0; i < parola.Length; i++)
+            int birinciKuralSayisi = PasswordGeneratorManager.Instance.GonderilenSayidakiRakamlariIcermeyenRastgeleRakamOlustur(_question.Password);
+            if (index == 0)
             {
-                int sayi = int.Parse(parola[i].ToString());
-                _kullanilmayanSayilar.Remove(sayi);
-            }
-            Random random = new Random();
-
-
-            if (baslangicIndexi == 0)
-            {
-                sonuc = parola[0] + _kullanilmayanSayilar[random.Next(0, _kullanilmayanSayilar.Count + 1)].ToString();
+                sonuc = _question.Password[0] + birinciKuralSayisi.ToString();
             }
             else
             {
-                sonuc = _kullanilmayanSayilar[random.Next(0, _kullanilmayanSayilar.Count + 1)].ToString() + parola[1];
+                sonuc = birinciKuralSayisi.ToString() + _question.Password[1];
             }
 
-            return sonuc;
-        }
-
-        public string TekrarsizSayiUret(int length)
-        {
-            List<int> _kullanilmayanSayilar = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-            Random random = new Random();
-            string sonuc = "";
-            for (int i = 0; i < length; i++)
+            string aciklama = "";
+            switch (_language)
             {
-                var index = random.Next(0, _kullanilmayanSayilar.Count + 1);
-                sonuc += _kullanilmayanSayilar[index].ToString();
-                _kullanilmayanSayilar.Remove(_kullanilmayanSayilar[index]);
+                case ELanguage.English:
+                    break;
+                case ELanguage.German:
+                    break;
+                case ELanguage.Spanish:
+                    break;
+                case ELanguage.French:
+                    break;
+                case ELanguage.Russian:
+                    break;
+                case ELanguage.Turkish:
+                    aciklama = _question.Password[index] + " var ve yeri doğru.";
+                    break;
+                case ELanguage.Azerbaijani:
+                    break;
+                default:
+                    break;
             }
-            return sonuc;
+
+            _question.Tips.Add(new QuestionTipModel
+            {
+                Password = sonuc,
+                Tip = aciklama,
+            });
         }
+
+        
     }
 }

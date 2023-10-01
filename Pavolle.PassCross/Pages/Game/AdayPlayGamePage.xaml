@@ -2,10 +2,76 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pavolle.PassCross.Pages.Game.AdayPlayGamePage"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              Title="AdayPlayGamePage">
-    <StackLayout>
+    <StackLayout BackgroundColor="Black" Opacity="0.9">
         <StackLayout x:Name="HeaderObject" VerticalOptions="StartAndExpand"></StackLayout>
-        <StackLayout x:Name="MainObject" VerticalOptions="CenterAndExpand"></StackLayout>
+        <StackLayout x:Name="MainObject" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+
+            <Border x:Name="SureAciklamaBorder"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 40,40,40,40"
+                Background="#111c40"
+                Padding="16,8"
+                HorizontalOptions="EndAndExpand"> 
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="LightCyan"
+                          Offset="0.1" />
+                            <GradientStop Color="Aqua"
+                          Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+                <Label x:Name="SureAciklama" Text="10" HorizontalTextAlignment="Center" Margin="10"></Label>
+            </Border>
+
+            <Label x:Name="AciklamaLabelObject" Text="Şifreyi Çöz" HorizontalTextAlignment="Center" Margin="10" TextColor="Aqua"></Label>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10">
+                <Frame CornerRadius="10" Padding="2" BorderColor="#111c40">
+                    <Entry x:Name="entry1Object" Keyboard="Numeric" TextColor="#111c40" TextChanged="entry1Object_TextChanged" HorizontalTextAlignment="Center" MaxLength="1"></Entry>
+                </Frame>
+                <Frame CornerRadius="10" Padding="2" BorderColor="#111c40" >
+                    <Entry x:Name="entry2Object" Keyboard="Numeric" TextColor="#111c40" TextChanged="entry2Object_TextChanged" HorizontalTextAlignment="Center" MaxLength="1"></Entry>
+                </Frame>
+            </StackLayout>
+
+            <Button Text="Onayla" TextColor="Cyan" BorderColor="Cyan" BackgroundColor="#111c40" CornerRadius="15"  Clicked="OnaylaButton_Clicked" x:Name="OnaylaButton"></Button>
+
+            <Border StrokeThickness="4"
+                StrokeShape="RoundRectangle 40,0,0,40"
+                Background="#111c40"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="LightCyan"
+              Offset="0.1" />
+                        <GradientStop Color="Cyan"
+              Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+
+                <ScrollView>
+                    <StackLayout x:Name="tipsObject" Padding="10,5, 10,5">
+                        <StackLayout Orientation="Vertical">
+
+                            <skia:SKLottieView 
+                                HorizontalOptions="Start"
+                                HeightRequest="0" 
+                                WidthRequest="0" 
+                                Source="tips.json"
+                                RepeatCount="-1"
+                                />      
+
+                        </StackLayout>
+                        <Label x:Name="tips1Object" TextColor="Aqua"></Label>
+                        <Label x:Name="tips2Object" TextColor="Aqua"></Label>
+                        <Label x:Name="tips3Object" TextColor="Aqua"></Label>
+                    </StackLayout>
+                </ScrollView>
+            </Border>
+        </StackLayout>
         <StackLayout x:Name="FooterObject" VerticalOptions="EndAndExpand">
             <StackLayout x:Name="FooterButtonObject"></StackLayout>
             <Label x:Name="FooterCopyRigthLabelObject" HorizontalTextAlignment="Center"></Label>
