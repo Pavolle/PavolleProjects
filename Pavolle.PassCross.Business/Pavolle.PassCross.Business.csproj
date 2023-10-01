@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+    <ProjectReference Include="..\Pavolle.PassCross.Common\Pavolle.PassCross.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.PassCross.Models\Pavolle.PassCross.Models.csproj" />
+  </ItemGroup>
+
+</Project>

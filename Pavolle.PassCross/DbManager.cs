@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.PassCross.Business
+namespace Pavolle.PassCross
 {
     public class DbManager : Singleton<DbManager>
     {

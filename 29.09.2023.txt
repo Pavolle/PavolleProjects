@@ -1,0 +1,1 @@
+Project için Common projesinin oluþturulmasý, slnye eklenmesi ve ayný zamanda projeye refarans eklemesini yaptýk. Bu þekilde projenin altyapýsý ile ilgili ilerleme de kayettik.

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.MobileCore\Pavolle.MobileCore.csproj" />
+    <ProjectReference Include="..\Pavolle.PassCross.Common\Pavolle.PassCross.Common.csproj" />
+  </ItemGroup>
+
+</Project>

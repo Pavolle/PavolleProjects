@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Agha", "Agha", "{F5A32C39-E
 		20.09.2023.txt = 20.09.2023.txt
 		21.09.2023.txt = 21.09.2023.txt
 		22.09.2023.txt = 22.09.2023.txt
+		29.09.2023.txt = 29.09.2023.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{9328F32F-9C58-4238-A833-423E5AC98614}"
@@ -47,7 +48,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.Security", "Pavolle
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageService", "MessageService", "{D4FCF9D2-3CC0-4778-A2CA-E4C11D1B80B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.Common", "Pavolle.MessageService.Common\Pavolle.MessageService.Common.csproj", "{75FE6C03-0D99-41C1-8C2A-6FE09DE2FE0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MessageService.Common", "Pavolle.MessageService.Common\Pavolle.MessageService.Common.csproj", "{75FE6C03-0D99-41C1-8C2A-6FE09DE2FE0B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross.Business", "Pavolle.PassCross.Business\Pavolle.PassCross.Business.csproj", "{F66BED77-9E2A-43C9-ABCE-51DFFFFDC44A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross.Models", "Pavolle.PassCross.Models\Pavolle.PassCross.Models.csproj", "{EF52BEFB-37E5-45DE-A3DB-00CFBB5F340C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross.Common", "Pavolle.PassCross.Common\Pavolle.PassCross.Common.csproj", "{29A78E7A-C023-41F8-B8F3-EE3E81C94A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.PassCross.UnitTests", "Pavolle.PassCross.UnitTests\Pavolle.PassCross.UnitTests.csproj", "{DDCD473B-2AD5-4786-9E49-2BB086189D75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +94,22 @@ Global
 		{75FE6C03-0D99-41C1-8C2A-6FE09DE2FE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75FE6C03-0D99-41C1-8C2A-6FE09DE2FE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75FE6C03-0D99-41C1-8C2A-6FE09DE2FE0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66BED77-9E2A-43C9-ABCE-51DFFFFDC44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66BED77-9E2A-43C9-ABCE-51DFFFFDC44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66BED77-9E2A-43C9-ABCE-51DFFFFDC44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66BED77-9E2A-43C9-ABCE-51DFFFFDC44A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF52BEFB-37E5-45DE-A3DB-00CFBB5F340C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF52BEFB-37E5-45DE-A3DB-00CFBB5F340C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF52BEFB-37E5-45DE-A3DB-00CFBB5F340C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF52BEFB-37E5-45DE-A3DB-00CFBB5F340C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29A78E7A-C023-41F8-B8F3-EE3E81C94A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A78E7A-C023-41F8-B8F3-EE3E81C94A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A78E7A-C023-41F8-B8F3-EE3E81C94A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A78E7A-C023-41F8-B8F3-EE3E81C94A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDCD473B-2AD5-4786-9E49-2BB086189D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCD473B-2AD5-4786-9E49-2BB086189D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDCD473B-2AD5-4786-9E49-2BB086189D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDCD473B-2AD5-4786-9E49-2BB086189D75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +128,10 @@ Global
 		{869C1337-297E-4338-B12D-39217BCB5A03} = {B58E18F5-D166-483E-AFFE-EDC7DEA317F4}
 		{EAB4264E-8939-458B-A5EA-1751AEF221BF} = {B58E18F5-D166-483E-AFFE-EDC7DEA317F4}
 		{75FE6C03-0D99-41C1-8C2A-6FE09DE2FE0B} = {D4FCF9D2-3CC0-4778-A2CA-E4C11D1B80B5}
+		{F66BED77-9E2A-43C9-ABCE-51DFFFFDC44A} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
+		{EF52BEFB-37E5-45DE-A3DB-00CFBB5F340C} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
+		{29A78E7A-C023-41F8-B8F3-EE3E81C94A71} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
+		{DDCD473B-2AD5-4786-9E49-2BB086189D75} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

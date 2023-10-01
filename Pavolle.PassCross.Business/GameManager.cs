@@ -19,9 +19,9 @@ namespace Pavolle.PassCross.Business
             switch (gameLevel)
             {
                 case EGameLevel.Aday:
-                    return AdayQuestionManager.Instance.GenerateAdayQuestion(language);
+                    return AdayQuestionManager.Instance.GenerateQuestion(language);
                 case EGameLevel.Acemi:
-                    return AcemiQuestionManager.Instance.GenerateAdayQuestion(language);
+                    return AcemiQuestionManager.Instance.GenerateQuestion(language);
                 case EGameLevel.Orta:
                     break;
                 case EGameLevel.Tecrubeli:

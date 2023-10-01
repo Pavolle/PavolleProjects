@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.PassCross.Business
 {
-    public class AdayQuestionManager :Singleton<AdayQuestionManager>
+    internal class AdayQuestionManager :Singleton<AdayQuestionManager>
     {
         private AdayQuestionManager() { }
 
@@ -17,7 +17,7 @@ namespace Pavolle.PassCross.Business
         private QuestionModel _question;
         ELanguage _language;
 
-        public QuestionModel GenerateAdayQuestion(ELanguage language)
+        public QuestionModel GenerateQuestion(ELanguage language)
         {
             _language= language;
             var question = new QuestionModel()

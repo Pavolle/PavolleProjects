@@ -57,16 +57,30 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Common\Utils\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
 	  <ProjectReference Include="..\Pavolle.MobileCore\Pavolle.MobileCore.csproj" />
+	  <ProjectReference Include="..\Pavolle.PassCross.Business\Pavolle.PassCross.Business.csproj" />
+	  <ProjectReference Include="..\Pavolle.PassCross.Common\Pavolle.PassCross.Common.csproj" />
+	  <ProjectReference Include="..\Pavolle.PassCross.Models\Pavolle.PassCross.Models.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="Pages\ChampionShipPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Game\AdayPlayGamePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Game\BasariliPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Game\HataliPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Game\SureDolduPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Game\YeniSeviyeAktifEdildiPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\InfoPage.xaml">
