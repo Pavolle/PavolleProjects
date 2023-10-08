@@ -22,6 +22,7 @@ namespace Pavolle.PassCross.Business
             _language= language;
             _question = new QuestionModel()
             {
+                Level=Common.Enums.EGameLevel.Aday,
                 Tips = new List<QuestionTipModel>()
             };
             _question.Password = PasswordGeneratorManager.Instance.TekrarsizSayiUret(2);

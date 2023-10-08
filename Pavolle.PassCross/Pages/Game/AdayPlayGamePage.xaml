@@ -39,7 +39,7 @@
             <Button Text="Onayla" TextColor="Cyan" BorderColor="Cyan" BackgroundColor="#111c40" CornerRadius="15"  Clicked="OnaylaButton_Clicked" x:Name="OnaylaButton"></Button>
 
             <Border StrokeThickness="4"
-                StrokeShape="RoundRectangle 40,0,0,40"
+                StrokeShape="RoundRectangle 10,0,0,10"
                 Background="#111c40"
                 Padding="16,8"
                 HorizontalOptions="Center">

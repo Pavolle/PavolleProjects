@@ -34,6 +34,7 @@ public partial class AdayPlayGamePage : ContentPage
             if(timeout == 0)
             {
                 _timer.Stop();
+                SureDoldu();
             }
         };
         _timer.Start();
@@ -58,11 +59,16 @@ public partial class AdayPlayGamePage : ContentPage
         tips3Object.FontSize = SizeManager.Instance.GetRealSize(18);
         OnaylaButton.WidthRequest = SizeManager.Instance.GetRealSize(150);
         OnaylaButton.FontSize = SizeManager.Instance.GetRealSize(18);
+    }
 
+    private void SureDoldu()
+    {
+        MopupService.Instance.PushAsync(new SureDolduPage(_question.Level, _question.Password, -10));
     }
 
     private void OnaylaButton_Clicked(object sender, EventArgs e)
     {
+        _timer.Stop();
         string girilenSifre = entry1Object.Text + entry2Object.Text;
         if(girilenSifre == _question.Password)
         {
@@ -70,7 +76,7 @@ public partial class AdayPlayGamePage : ContentPage
         }
         else
         {
-            //yanlýþ
+            MopupService.Instance.PushAsync(new HataliPage());
         }
     }
 
