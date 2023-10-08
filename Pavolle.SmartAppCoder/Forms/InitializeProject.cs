@@ -271,7 +271,54 @@ namespace Pavolle.SmartAppCoder.Forms
             if (PrincipalCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create Principal Class => ok");
             if (JwtTokenManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.TokenExpireMinute.ToString())) Output("Create JwtTokenManager Class => ok");
             if (SecurityConstsManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Issuer, _project.Audience, "73{0}4df+5gdgaq@@&&www-3421-3-ff!dsfwwwd{1}fb34g7ugfdsfvfv-PAVOLLE-34sde-w!we3e!7/r34r@w*wefd{2}ssd5ww4545zss")) Output("Create SecurityConstsManager Class => ok");
-            Output("JwtTokenManager projesi oluşturma ve kontrol tamamlandı.");
+            Output("WebSecurity projesi oluşturma ve kontrol tamamlandı.");
+
+            #endregion
+
+            #region DbModels
+            Output("DbModels projesi kontrol ediliyor...");
+            bool dbModelsProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + projectRoot + ".DbModels");
+            if (!dbModelsProjesiOlusturulmus)
+            {
+                Output("DbModels projesi oluşturulmamış! Proje oluşturma başlatıldı");
+                //CommandHelperManager.Instance.RunCommand("dotnet , _project.ProjectPath");
+
+                bool result = CommandHelperManager.Instance.RunDotnetCommand("new classlib --framework \"net7.0\" -o " + _project.ProjectPath + "/" + projectRoot + ".DbModels").Result;
+                if (result)
+                {
+                    Output("DbModels projesi oluşturuldu. Proje eklemesi yapılıyor...");
+                }
+
+                bool addResult = CommandHelperManager.Instance.RunDotnetCommand("sln " + _project.ProjectPath + "\\" + _project.OrganizationName + "Projects.sln add " + _project.ProjectPath + "\\" + projectRoot + ".DbModels\\" + projectRoot + ".DbModels.csproj  --solution-folder " + _project.ProjectName).Result;
+                if (addResult)
+                {
+                    Output("DbModels projesi proje dosyasına eklendi.");
+                }
+
+                bool addCoreReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".DbModels\\" + projectRoot + ".DbModels.csproj  reference " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Core\\" + _project.OrganizationName + ".Core.csproj").Result;
+                if (addCoreReferanceResult)
+                {
+                    Output("DbModels Projesine Core referansı eklendi.");
+                }
+
+                bool addCommonReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".DbModels\\" + projectRoot + ".DbModels.csproj  reference " + _project.ProjectPath + "\\" + projectRoot + ".Common\\" + projectRoot + ".Common.csproj").Result;
+                if (addCoreReferanceResult)
+                {
+                    Output("DbModels Projesine Common referansı eklendi.");
+                }
+
+                bool addPackageIdentityModelTokens = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".DbModels\\" + projectRoot + ".DbModels.csproj  package DevExpress.Xpo -v 23.1.3").Result;
+                if (addPackageIdentityModelTokens)
+                {
+                    Output("DbModels Projesine DevExpress.Xpo kütüphanesi eklendi.");
+                }
+
+                Output("DbModels class1 dosyası siliniyor...");
+                FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + projectRoot + ".DbModels\\" + "Class1.cs");
+                Output("DbModels projesi temizlendi. Proje sınıfları kontrol ediliyor...");
+            }
+
+            Output("DbModels projesi oluşturma ve kontrol tamamlandı.");
 
             #endregion
             #endregion
