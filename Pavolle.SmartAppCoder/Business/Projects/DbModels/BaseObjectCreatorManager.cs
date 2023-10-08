@@ -52,7 +52,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.DbModels
             baseObjectClass += "    }" + Environment.NewLine;
             baseObjectClass += "}" + Environment.NewLine;
 
-            return FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + ".DbModels/Entities", "BaseObject", baseObjectClass);
+            return FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + ".DbModels/Entities", "BaseObject.cs", baseObjectClass);
         }
     }
 }

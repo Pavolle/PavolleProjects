@@ -108,7 +108,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.DbModels
             xpoManagerClass += "    }" + Environment.NewLine;
             xpoManagerClass += "}" + Environment.NewLine;
 
-            return FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + ".DbModels/Manager", "XpoManager", xpoManagerClass);
+            return FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + ".DbModels/Manager", "XpoManager.cs", xpoManagerClass);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.DbModels
 
         public bool Write(string companyName, string projectName, string projectPath, string language)
         {
+            if (language == null) language = "en, tr";
             string projectNameRoot = companyName + "."  +projectName;
             string[] _languages = language.Split(',');
             string translateDataClass = "";
@@ -43,7 +44,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.DbModels
             translateDataClass += "    }" + Environment.NewLine;
             translateDataClass += "}" + Environment.NewLine;
 
-            return FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + ".DbModels/Entities", "TranslateData", translateDataClass);
+            return FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + ".DbModels/Entities", "TranslateData.cs", translateDataClass);
         }
     }
 }

@@ -14,6 +14,7 @@ using Pavolle.SmartAppCoder.Business.Security.Hash;
 using Pavolle.SmartAppCoder.Business.Security.Symmetric;
 using Pavolle.SmartAppCoder.Models;
 using Pavolle.SmartAppCoder.Business.Projects.WebSecurity;
+using Pavolle.SmartAppCoder.Business.Projects.DbModels;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -318,8 +319,26 @@ namespace Pavolle.SmartAppCoder.Forms
                 Output("DbModels projesi temizlendi. Proje sınıfları kontrol ediliyor...");
             }
 
-            Output("DbModels projesi oluşturma ve kontrol tamamlandı.");
 
+
+            Output("DbModels projesi oluşturma ve kontrol tamamlandı.");
+            if (ApiServiceCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ApiService Class => ok");
+            if (AuthCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create Auth Class => ok");
+            if (BaseObjectCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create BaseObject Class => ok");
+            if (CityCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create City Class => ok");
+            if (CountryCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create Country Class => ok");
+            if (JobChangeLogCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create JobChnageLog Class => ok");
+            if (JobCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create Job Class => ok");
+            if (JobRunLogCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create JobRunLog Class => ok");
+            if (OrganizationCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create Organization Class => ok");
+            if (SettingChangeLogCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingChangeLog Class => ok");
+            if (SettingCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create Setting Class => ok");
+            if (TranslateDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create TranslateData Class => ok");
+            if (UserCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create User Class => ok");
+            if (UserGroupCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroup Class => ok");
+            if (UserPasswordHistoryCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserPasswordHistory Class => ok");
+            if (UserSessionCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserSession Class => ok");
+            if (XpoManagerCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create XpoManager Class => ok");
             #endregion
             #endregion
 
