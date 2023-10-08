@@ -13,6 +13,7 @@ using Pavolle.SmartAppCoder.Business.Security;
 using Pavolle.SmartAppCoder.Business.Security.Hash;
 using Pavolle.SmartAppCoder.Business.Security.Symmetric;
 using Pavolle.SmartAppCoder.Models;
+using Pavolle.SmartAppCoder.Business.Projects.WebSecurity;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -265,7 +266,12 @@ namespace Pavolle.SmartAppCoder.Forms
                 Output("WebSecurity projesi temizlendi. Proje sınıfları kontrol ediliyor...");
             }
 
-            Output("WebSecurity projesi oluşturma ve kontrol tamamlandı.");
+
+            if (IdentityCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create Identity Class => ok");
+            if (PrincipalCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create Principal Class => ok");
+            if (JwtTokenManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.TokenExpireMinute.ToString())) Output("Create JwtTokenManager Class => ok");
+            if (SecurityConstsManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Issuer, _project.Audience, "73{0}4df+5gdgaq@@&&www-3421-3-ff!dsfwwwd{1}fb34g7ugfdsfvfv-PAVOLLE-34sde-w!we3e!7/r34r@w*wefd{2}ssd5ww4545zss")) Output("Create SecurityConstsManager Class => ok");
+            Output("JwtTokenManager projesi oluşturma ve kontrol tamamlandı.");
 
             #endregion
             #endregion

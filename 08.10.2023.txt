@@ -1,1 +1,2 @@
 Passcross ile ilgili günlük çalýþma yapýldý.
+Web security projesinin oluþturulmasý ve projeye referans ve kütüphanelerin eklenmesini tamamladýk.
