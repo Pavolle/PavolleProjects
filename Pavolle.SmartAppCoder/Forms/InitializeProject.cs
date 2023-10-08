@@ -157,6 +157,7 @@ namespace Pavolle.SmartAppCoder.Forms
             string projectRoot = _project.OrganizationName + "." + _project.ProjectName;
 
             #region Project Common
+            Output("Common projesi kontrol ediliyor...");
 
             bool commonProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + projectRoot + ".Common");
             if (!commonProjesiOlusturulmus)
@@ -210,9 +211,63 @@ namespace Pavolle.SmartAppCoder.Forms
             {
                 Output("Create ApiUrlConsts Class => ok");
             }
+            Output("Common projesi oluşturma ve kontrol tamamlandı.");
 
             #endregion
 
+            #region Web Security
+
+            Output("WebSecurity projesi kontrol ediliyor...");
+            bool webSecurityProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + projectRoot + ".WebSecurity");
+            if (!webSecurityProjesiOlusturulmus)
+            {
+                Output("WebSecurity projesi oluşturulmamış! Proje oluşturma başlatıldı");
+                //CommandHelperManager.Instance.RunCommand("dotnet , _project.ProjectPath");
+
+                bool result = CommandHelperManager.Instance.RunDotnetCommand("new classlib --framework \"net7.0\" -o " + _project.ProjectPath + "/" + projectRoot + ".WebSecurity").Result;
+                if (result)
+                {
+                    Output("WebSecurity projesi oluşturuldu. Proje eklemesi yapılıyor...");
+                }
+
+                bool addResult = CommandHelperManager.Instance.RunDotnetCommand("sln " + _project.ProjectPath + "\\" + _project.OrganizationName + "Projects.sln add " + _project.ProjectPath + "\\" + projectRoot + ".WebSecurity\\" + projectRoot + ".WebSecurity.csproj  --solution-folder " + _project.ProjectName).Result;
+                if (addResult)
+                {
+                    Output("WebSecurity projesi proje dosyasına eklendi.");
+                }
+
+                bool addCoreReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".WebSecurity\\" + projectRoot + ".WebSecurity.csproj  reference " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Core\\" + _project.OrganizationName + ".Core.csproj").Result;
+                if (addCoreReferanceResult)
+                {
+                    Output("WebSecurity Projesine Core referansı eklendi.");
+                }
+
+                bool addCommonReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".WebSecurity\\" + projectRoot + ".WebSecurity.csproj  reference " + _project.ProjectPath + "\\" + projectRoot + ".Common\\" + projectRoot + ".Common.csproj").Result;
+                if (addCoreReferanceResult)
+                {
+                    Output("WebSecurity Projesine Common referansı eklendi.");
+                }
+
+                bool addPackageIdentityModelTokens = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".WebSecurity\\" + projectRoot + ".WebSecurity.csproj  package Microsoft.IdentityModel.Tokens -v 6.32.0").Result;
+                if(addPackageIdentityModelTokens)
+                {
+                    Output("WebSecurity Projesine Microsoft.IdentityModel.Tokens kütüphanesi eklendi.");
+                }
+
+                bool addPackageIdentityJWTTokens = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".WebSecurity\\" + projectRoot + ".WebSecurity.csproj  package System.IdentityModel.Tokens.Jwt -v 6.32.0").Result;
+                if (addPackageIdentityJWTTokens)
+                {
+                    Output("WebSecurity Projesine System.IdentityModel.Tokens.Jwt kütüphanesi eklendi.");
+                }
+
+                Output("WebSecurity class1 dosyası siliniyor...");
+                FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + projectRoot + ".WebSecurity\\" + "Class1.cs");
+                Output("WebSecurity projesi temizlendi. Proje sınıfları kontrol ediliyor...");
+            }
+
+            Output("WebSecurity projesi oluşturma ve kontrol tamamlandı.");
+
+            #endregion
             #endregion
 
             Output("Proje oluşturma tamamlandı!");

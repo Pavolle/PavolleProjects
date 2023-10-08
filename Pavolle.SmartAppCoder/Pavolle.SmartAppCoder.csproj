@@ -28,7 +28,6 @@
     <Folder Include="Business\Projects\MobileApp\" />
     <Folder Include="Business\Projects\WebApp\" />
     <Folder Include="Business\Projects\ViewModels\" />
-    <Folder Include="Business\Projects\WebSecurity\" />
   </ItemGroup>
 
 </Project>
