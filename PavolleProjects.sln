@@ -56,7 +56,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross.Models", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross.Common", "Pavolle.PassCross.Common\Pavolle.PassCross.Common.csproj", "{29A78E7A-C023-41F8-B8F3-EE3E81C94A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.PassCross.UnitTests", "Pavolle.PassCross.UnitTests\Pavolle.PassCross.UnitTests.csproj", "{DDCD473B-2AD5-4786-9E49-2BB086189D75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross.UnitTests", "Pavolle.PassCross.UnitTests\Pavolle.PassCross.UnitTests.csproj", "{DDCD473B-2AD5-4786-9E49-2BB086189D75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ekim", "Ekim", "{2396AC3C-8BB9-4383-8581-A3A2CA19775B}"
+	ProjectSection(SolutionItems) = preProject
+		08.10.2023.txt = 08.10.2023.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -132,6 +137,7 @@ Global
 		{EF52BEFB-37E5-45DE-A3DB-00CFBB5F340C} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 		{29A78E7A-C023-41F8-B8F3-EE3E81C94A71} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 		{DDCD473B-2AD5-4786-9E49-2BB086189D75} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
+		{2396AC3C-8BB9-4383-8581-A3A2CA19775B} = {59CD6A3D-7959-4CE0-9D4E-B65927D030DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
