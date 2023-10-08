@@ -8,9 +8,4 @@ public partial class BasariliPage : PopupPage
 	{
 		InitializeComponent();
 	}
-
-    private void button_Clicked(object sender, EventArgs e)
-    {
-
-    }
 }

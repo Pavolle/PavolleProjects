@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
              xmlns:Animations="clr-namespace:Mopups.Animations;assembly=Mopups"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              x:Class="Pavolle.PassCross.Pages.Game.BasariliPage"
-             Title="BasariliPage" CloseWhenBackgroundIsClicked="True" Opacity="0.9" BackgroundColor="Transparent">
+             Title="BasariliPage" CloseWhenBackgroundIsClicked="True" Opacity="0.8" BackgroundColor="Black" BackgroundImageSource="back1.jpg">
 
     <Mopups:PopupPage.Animation>
         <Animations:MoveAnimation PositionIn="Left" PositionOut="Right" />
@@ -20,7 +21,8 @@
         VerticalOptions="CenterAndExpand">
         <VerticalStackLayout
             Padding="20"
-            BackgroundColor="Green"
+            IsClippedToBounds="True"
+            BackgroundColor="Black"
             HorizontalOptions="FillAndExpand"
             Spacing="20"
             VerticalOptions="End">
@@ -28,10 +30,11 @@
                 HorizontalOptions="Center"
                 Text="Süpersin"
                 VerticalOptions="Center" />
-            <Button
-                x:Name="buttonObject"
-                Clicked="button_Clicked"
-                Text="Tekrar Oyna" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <skia:SKLottieView Margin="10" HeightRequest="50" WidthRequest="50" Source="home.json" RepeatCount="-1"/>
+                <skia:SKLottieView Margin="10" HeightRequest="50" WidthRequest="50" Source="play.json" RepeatCount="-1" />
+            </StackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </Mopups:PopupPage>
