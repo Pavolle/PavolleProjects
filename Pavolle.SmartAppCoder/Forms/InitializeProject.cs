@@ -16,6 +16,7 @@ using Pavolle.SmartAppCoder.Models;
 using Pavolle.SmartAppCoder.Business.Projects.WebSecurity;
 using Pavolle.SmartAppCoder.Business.Projects.DbModels;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Criteria;
+using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -402,6 +403,29 @@ namespace Pavolle.SmartAppCoder.Forms
             if (LookupUserCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create LookupUserCriteria Class => ok");
             if (LookupUserGroupCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create LookupUserGroupCriteria Class => ok");
             Output("Criteria tamamlandı.");
+            #endregion
+
+            #region Model
+            Output("Model classları kontrol ediliyor...");
+            if (ApiServiceAuthRequestModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ApiServiceAuthRequestModel Class => ok");
+            if (AuhtorizationCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create AuhtorizationCacheModel Class => ok");
+            if (CityCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create CityCacheModel Class => ok");
+            if (CountryCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create CountryCacheModel Class => ok");
+            if (OrganizationCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create OrganizationCacheModel Class => ok");
+            if (SettingCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingCacheModel Class => ok");
+            if (TranslateDataCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create TranslateDataCacheModel Class => ok");
+            if (UserCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserCacheModel Class => ok");
+            if (UserGroupAuthRequestModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ApiServiceAuthRequestModel Class => ok");
+            if (UserGroupCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroupCacheModel Class => ok");
+            if (UserSessionCacheModelCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserSessionCacheModel Class => ok");
+
+            Output("Model tamamlandı.");
+            #endregion
+
+            #region Request
+            Output("Request classları kontrol ediliyor...");
+
+            Output("Request tamamlandı.");
             #endregion
 
             Output("WebSecurity projesi oluşturma ve kontrol tamamlandı.");
