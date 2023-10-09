@@ -15,6 +15,7 @@ using Pavolle.SmartAppCoder.Business.Security.Symmetric;
 using Pavolle.SmartAppCoder.Models;
 using Pavolle.SmartAppCoder.Business.Projects.WebSecurity;
 using Pavolle.SmartAppCoder.Business.Projects.DbModels;
+using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Criteria;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -377,6 +378,31 @@ namespace Pavolle.SmartAppCoder.Forms
                 FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + projectRoot + ".ViewModels\\" + "Class1.cs");
                 Output("ViewModels projesi temizlendi. Proje sınıfları kontrol ediliyor...");
             }
+
+            #region Criteria
+            Output("Criteria classları kontrol ediliyor...");
+            if (CriteriaBaseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CriteriaBase Class => ok");
+            if (DeleteCityCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create DeleteCity Class => ok");
+            if (DeleteCountryCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create DeleteCountry Class => ok");
+            if (DeleteOrganizationCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create DeleteOrganization Class => ok");
+            if (DeleteUserCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create DeleteUser Class => ok");
+            if (DeleteUserGroupCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create DeleteUserGroup Class => ok");
+            if (ListApiServiceCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListApiService Class => ok");
+            if (ListCityCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListCityCriteria Class => ok");
+            if (ListCountryCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListCountryCriteria Class => ok");
+            if (ListJobCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListJobCriteria Class => ok");
+            if (ListOrganizationCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListOrganizationCriteria Class => ok");
+            if (ListSettingCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListSettingCriteria Class => ok");
+            if (ListTranslateDataCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListTranslateDataCriteria Class => ok");
+            if (ListUserCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListUserCriteria Class => ok");
+            if (ListUserGroupCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ListUserGroupCriteria Class => ok");
+            if (LookupCityCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create LookupCityCriteria Class => ok");
+            if (LookupCountryCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create LookupCountryCriteria Class => ok");
+            if (LookupOrganizationCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create LookupOrganizationCriteria Class => ok");
+            if (LookupUserCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create LookupUserCriteria Class => ok");
+            if (LookupUserGroupCriteriaCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create LookupUserGroupCriteria Class => ok");
+            Output("Criteria tamamlandı.");
+            #endregion
 
             Output("WebSecurity projesi oluşturma ve kontrol tamamlandı.");
             #endregion
