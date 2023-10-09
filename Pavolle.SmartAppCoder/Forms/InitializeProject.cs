@@ -340,6 +340,47 @@ namespace Pavolle.SmartAppCoder.Forms
             if (UserSessionCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserSession Class => ok");
             if (XpoManagerCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create XpoManager Class => ok");
             #endregion
+
+            #region ViewModels
+            Output("ViewModels projesi kontrol ediliyor...");
+            bool viewModelsProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + projectRoot + ".ViewModels");
+            if (!viewModelsProjesiOlusturulmus)
+            {
+                Output("ViewModels projesi oluşturulmamış! Proje oluşturma başlatıldı");
+                //CommandHelperManager.Instance.RunCommand("dotnet , _project.ProjectPath");
+
+                bool result = CommandHelperManager.Instance.RunDotnetCommand("new classlib --framework \"net7.0\" -o " + _project.ProjectPath + "/" + projectRoot + ".ViewModels").Result;
+                if (result)
+                {
+                    Output("ViewModels projesi oluşturuldu. Proje eklemesi yapılıyor...");
+                }
+
+                bool addResult = CommandHelperManager.Instance.RunDotnetCommand("sln " + _project.ProjectPath + "\\" + _project.OrganizationName + "Projects.sln add " + _project.ProjectPath + "\\" + projectRoot + ".ViewModels\\" + projectRoot + ".ViewModels.csproj  --solution-folder " + _project.ProjectName).Result;
+                if (addResult)
+                {
+                    Output("ViewModels projesi proje dosyasına eklendi.");
+                }
+
+                bool addCoreReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".ViewModels\\" + projectRoot + ".ViewModels.csproj  reference " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Core\\" + _project.OrganizationName + ".Core.csproj").Result;
+                if (addCoreReferanceResult)
+                {
+                    Output("ViewModels Projesine Core referansı eklendi.");
+                }
+
+                bool addCommonReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".ViewModels\\" + projectRoot + ".ViewModels.csproj  reference " + _project.ProjectPath + "\\" + projectRoot + ".Common\\" + projectRoot + ".Common.csproj").Result;
+                if (addCoreReferanceResult)
+                {
+                    Output("ViewModels Projesine Common referansı eklendi.");
+                }
+
+                Output("ViewModels class1 dosyası siliniyor...");
+                FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + projectRoot + ".ViewModels\\" + "Class1.cs");
+                Output("ViewModels projesi temizlendi. Proje sınıfları kontrol ediliyor...");
+            }
+
+            Output("WebSecurity projesi oluşturma ve kontrol tamamlandı.");
+            #endregion
+
             #endregion
 
             Output("Proje oluşturma tamamlandı!");
