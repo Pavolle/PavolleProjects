@@ -60,20 +60,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ekim", "Ekim", "{2396AC3C-8
 		10.10.2023.txt = 10.10.2023.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageService", "MessageService", "{E0D5E7E9-5B7A-4DD8-BA4B-22BE3253C1BB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MessageService.Common", "Pavolle.MessageService.Common\Pavolle.MessageService.Common.csproj", "{03C3659D-198E-49FB-838D-9C97648B28A5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MessageService.WebSecurity", "Pavolle.MessageService.WebSecurity\Pavolle.MessageService.WebSecurity.csproj", "{234C6D50-A31E-46E1-959C-E6932F0F7B45}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MessageService.DbModels", "Pavolle.MessageService.DbModels\Pavolle.MessageService.DbModels.csproj", "{3D613603-24B3-4A0C-A839-2233C597C16C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.MessageService.ViewModels", "Pavolle.MessageService.ViewModels\Pavolle.MessageService.ViewModels.csproj", "{44F1EE8D-8204-4C6F-BE2F-030A747E4C65}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Supplera", "Supplera", "{463F100C-D612-4E53-A67E-BAB6A55E859E}"
 	ProjectSection(SolutionItems) = preProject
 		ProjePlanlama.txt = ProjePlanlama.txt
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageService", "MessageService", "{F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.Common", "Pavolle.MessageService.Common\Pavolle.MessageService.Common.csproj", "{6D72AC8A-9AFC-4E8E-85B3-D324661F658C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.WebSecurity", "Pavolle.MessageService.WebSecurity\Pavolle.MessageService.WebSecurity.csproj", "{88D73612-14F6-4040-8594-95E1056397C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.DbModels", "Pavolle.MessageService.DbModels\Pavolle.MessageService.DbModels.csproj", "{83345A7E-12F9-44E2-AF9C-C8C3C3B5036E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.ViewModels", "Pavolle.MessageService.ViewModels\Pavolle.MessageService.ViewModels.csproj", "{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,22 +123,22 @@ Global
 		{DDCD473B-2AD5-4786-9E49-2BB086189D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDCD473B-2AD5-4786-9E49-2BB086189D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDCD473B-2AD5-4786-9E49-2BB086189D75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{03C3659D-198E-49FB-838D-9C97648B28A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03C3659D-198E-49FB-838D-9C97648B28A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03C3659D-198E-49FB-838D-9C97648B28A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03C3659D-198E-49FB-838D-9C97648B28A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{234C6D50-A31E-46E1-959C-E6932F0F7B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{234C6D50-A31E-46E1-959C-E6932F0F7B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{234C6D50-A31E-46E1-959C-E6932F0F7B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{234C6D50-A31E-46E1-959C-E6932F0F7B45}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D613603-24B3-4A0C-A839-2233C597C16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D613603-24B3-4A0C-A839-2233C597C16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D613603-24B3-4A0C-A839-2233C597C16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D613603-24B3-4A0C-A839-2233C597C16C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{44F1EE8D-8204-4C6F-BE2F-030A747E4C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44F1EE8D-8204-4C6F-BE2F-030A747E4C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44F1EE8D-8204-4C6F-BE2F-030A747E4C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44F1EE8D-8204-4C6F-BE2F-030A747E4C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D72AC8A-9AFC-4E8E-85B3-D324661F658C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D72AC8A-9AFC-4E8E-85B3-D324661F658C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D72AC8A-9AFC-4E8E-85B3-D324661F658C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D72AC8A-9AFC-4E8E-85B3-D324661F658C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88D73612-14F6-4040-8594-95E1056397C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D73612-14F6-4040-8594-95E1056397C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D73612-14F6-4040-8594-95E1056397C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D73612-14F6-4040-8594-95E1056397C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83345A7E-12F9-44E2-AF9C-C8C3C3B5036E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83345A7E-12F9-44E2-AF9C-C8C3C3B5036E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83345A7E-12F9-44E2-AF9C-C8C3C3B5036E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83345A7E-12F9-44E2-AF9C-C8C3C3B5036E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -161,10 +161,10 @@ Global
 		{29A78E7A-C023-41F8-B8F3-EE3E81C94A71} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 		{DDCD473B-2AD5-4786-9E49-2BB086189D75} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 		{2396AC3C-8BB9-4383-8581-A3A2CA19775B} = {59CD6A3D-7959-4CE0-9D4E-B65927D030DB}
-		{03C3659D-198E-49FB-838D-9C97648B28A5} = {E0D5E7E9-5B7A-4DD8-BA4B-22BE3253C1BB}
-		{234C6D50-A31E-46E1-959C-E6932F0F7B45} = {E0D5E7E9-5B7A-4DD8-BA4B-22BE3253C1BB}
-		{3D613603-24B3-4A0C-A839-2233C597C16C} = {E0D5E7E9-5B7A-4DD8-BA4B-22BE3253C1BB}
-		{44F1EE8D-8204-4C6F-BE2F-030A747E4C65} = {E0D5E7E9-5B7A-4DD8-BA4B-22BE3253C1BB}
+		{6D72AC8A-9AFC-4E8E-85B3-D324661F658C} = {F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}
+		{88D73612-14F6-4040-8594-95E1056397C3} = {F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}
+		{83345A7E-12F9-44E2-AF9C-C8C3C3B5036E} = {F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}
+		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7} = {F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

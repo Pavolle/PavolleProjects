@@ -1,4 +1,4 @@
 Request tarafý projeye eklendi.
-View Data eklenecek
-Response tarafý eklenecek.
-Controller taraflarý eklenecek.
+View Datalarýn oluþturulmasý tamamlandý
+Response oluþturma tamamlandý.
+Controller taraflarý eklenecek. Proje oluþturulmasý. Referanslarýn eklenmesi.

@@ -19,6 +19,7 @@ using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Criteria;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Request;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.ViewData;
+using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Response;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -475,17 +476,19 @@ namespace Pavolle.SmartAppCoder.Forms
             if (MyInfoViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create MyInfoViewData Class => ok");
             if (OrganizationDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create OrganizationDetailViewData Class => ok");
             if (OrganizationViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create OrganizationViewData Class => ok");
-            if (SettingChangeLogCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingChangeLog Class => ok");
+            if (SettingChangeLogViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingChangeLog Class => ok");
             if (SettingDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingDetailViewData Class => ok");
             if (SettingViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create VerifyPhoneRequest Class => ok");
             if (TranslateDataChangeLogViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create TranslateDataChangeLogView Class => ok");
             if (TranslateDataDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath,  _project.Languages)) Output("Create TranslateDataDetailViewData Class => ok");
             if (TranslateDataViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create TranslateDataViewData Class => ok");
             if (UserAuthViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserAuthViewData Class => ok");
+            if (UserGroupAuthViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroupAuthViewData Class => ok");
             if (UserGroupDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroupDetailViewData Class => ok");
             if (UserGroupViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroupViewData Class => ok");
             if (UserInfoViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserInfoViewData Class => ok");
             if (UserViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserViewData Class => ok");
+            if (UserDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserDetailViewData Class => ok");
             if (ProjectViewDataBaseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ProjectViewDataBase Class => ok");
 
             Output("ViewData tamamlandı.");
@@ -494,6 +497,28 @@ namespace Pavolle.SmartAppCoder.Forms
             #region Response
 
             Output("Response classları kontrol ediliyor...");
+
+            if (ApiServiceDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ApiServiceDetailResponse Class => ok");
+            if (ApiServiceListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ApiServiceListResponse Class => ok");
+            if (CityDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CityDetailResponse Class => ok");
+            if (CityListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CityListResponse Class => ok");
+            if (CountryDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CountryDetailResponse Class => ok");
+            if (CountryListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CountryListResponse Class => ok");
+            if (JobDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create JobDetailResponse Class => ok");
+            if (JobListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create JobListResponse Class => ok");
+            if (ProjectResponseBaseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ProjectResponseBase Class => ok");
+            if (MyInfoResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create MyInfoResponse Class => ok");
+            if (OrganizationDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create OrganizationDetailResponse Class => ok");
+            if (OrganizationListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create OrganizationListResponse Class => ok");
+            if (SettingDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingDetailResponse Class => ok");
+            if (SettingListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingListResponse Class => ok");
+            if (TokenResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create TokenResponse Class => ok");
+            if (TranslateDataDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create TranslateDataDetailResponse Class => ok");
+            if (TranslateDataListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create TranslateDataListResponse Class => ok");
+            if (UserDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserDetailResponse Class => ok");
+            if (UserGroupDetailResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroupDetailResponse Class => ok");
+            if (UserGroupListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroupListResponse Class => ok");
+            if (UserListResponseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserListResponse Class => ok");
             Output("Response tamamlandı.");
             #endregion
 

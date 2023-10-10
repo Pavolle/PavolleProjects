@@ -1,9 +1,7 @@
-﻿using Pavolle.MessageService.ViewModels.ViewData;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Pavolle.Core.Enums;
+using Pavolle.MessageService.Common.Enums;
+using Pavolle.MessageService.ViewModels.ViewData;
+using Pavolle.Core.ViewModels.Response;
 
 namespace Pavolle.MessageService.ViewModels.Response
 {
