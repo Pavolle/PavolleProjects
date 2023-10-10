@@ -44,10 +44,13 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "        static readonly ILog _log = LogManager.GetLogger(typeof(TranslateManager));" + Environment.NewLine;
             classString += "        private ConcurrentDictionary<string, TranslateDataCacheModel> _translateData;" + Environment.NewLine;
             classString += "        private TranslateManager()" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            _log.Debug(\"Initialize \" + nameof(TranslateManager));" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
             classString += "" + Environment.NewLine;
+            classString += "        public void Initialize()" + Environment.NewLine;
             classString += "        {" + Environment.NewLine;
             classString += "            LoadTranslateData();" + Environment.NewLine;
-            classString += "            _log.Debug(\"Initialize \" + nameof(TranslateManager));" + Environment.NewLine;
             classString += "        }" + Environment.NewLine;
             classString += "" + Environment.NewLine;
             classString += "        private void LoadTranslateData()" + Environment.NewLine;

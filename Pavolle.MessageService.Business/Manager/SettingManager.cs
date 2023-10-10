@@ -1,18 +1,20 @@
-﻿using DevExpress.Xpo;
+using DevExpress.Xpo;
 using log4net;
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
 using Pavolle.MessageService.DbModels;
 using Pavolle.MessageService.DbModels.Entities;
+using Pavolle.MessageService.DbModels.Manager;
 using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Model;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
+using Pavolle.MessageService.ViewModels.ViewData;
+using System.Linq;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +24,7 @@ namespace Pavolle.MessageService.Business.Manager
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(SettingManager));
         private ConcurrentDictionary<ESettingType, SettingCacheModel> _settings;
+
         private SettingManager()
         {
             _log.Debug("Initialize "+nameof(SettingManager));
@@ -30,7 +33,6 @@ namespace Pavolle.MessageService.Business.Manager
         public void Intialize()
         {
             _settings = new ConcurrentDictionary<ESettingType, SettingCacheModel>();
-
             using (Session session = XpoManager.Instance.GetNewSession())
             {
                 var settingList = session.Query<Setting>().Select(t => new SettingCacheModel
@@ -73,7 +75,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                _log.Error("Fetch Default Language setting error: " + ex);
+                _log.Error("Fetch Deufault Setting error: " + ex);
                 return ELanguage.English;
             }
         }
@@ -106,7 +108,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                _log.Error("Fetch Security Level setting error: " + ex);
+                _log.Error("Fetch setting error: " + ex);
             }
             return "";
         }

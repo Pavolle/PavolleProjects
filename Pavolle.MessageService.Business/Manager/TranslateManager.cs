@@ -25,10 +25,13 @@ namespace Pavolle.MessageService.Business.Manager
         static readonly ILog _log = LogManager.GetLogger(typeof(TranslateManager));
         private ConcurrentDictionary<string, TranslateDataCacheModel> _translateData;
         private TranslateManager()
+        {
+            _log.Debug("Initialize " + nameof(TranslateManager));
+        }
 
+        public void Initialize()
         {
             LoadTranslateData();
-            _log.Debug("Initialize " + nameof(TranslateManager));
         }
 
         private void LoadTranslateData()
