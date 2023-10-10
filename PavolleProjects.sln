@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.DbMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.ViewModels", "Pavolle.MessageService.ViewModels\Pavolle.MessageService.ViewModels.csproj", "{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.MessageService.Business", "Pavolle.MessageService.Business\Pavolle.MessageService.Business.csproj", "{BD0BCF43-36CE-4204-AAC3-564A5FE2FC32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD0BCF43-36CE-4204-AAC3-564A5FE2FC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD0BCF43-36CE-4204-AAC3-564A5FE2FC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD0BCF43-36CE-4204-AAC3-564A5FE2FC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD0BCF43-36CE-4204-AAC3-564A5FE2FC32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +171,7 @@ Global
 		{88D73612-14F6-4040-8594-95E1056397C3} = {F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}
 		{83345A7E-12F9-44E2-AF9C-C8C3C3B5036E} = {F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}
 		{0B022A3C-F5CD-4B1A-9D3C-10273FE3DDA7} = {F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}
+		{BD0BCF43-36CE-4204-AAC3-564A5FE2FC32} = {F9B0E569-A3E0-4712-BC30-9C2C5CA6F6DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

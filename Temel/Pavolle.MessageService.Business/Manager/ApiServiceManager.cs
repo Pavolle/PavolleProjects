@@ -126,22 +126,25 @@ namespace Pavolle.MessageService.Business.Manager
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
-                    response.Detail = session.Query<ApiService>().Where(t=>t.Oid==oid).Select(t=>new ApiServiceDetailViewData
-                    {
-                        Oid = t.Oid,
-                        CreatedTime = t.CreatedTime,
-                        LastUpdateTime = t.LastUpdateTime,
-                        ApiKey = t.ApiKey,
-                        ApiDefinition = t.ApiDefinition,
-                        MethodType = t.MethodType,
-                        EditableForAdmin = t.EditableForAdmin,
-                        EditableForOrganization = t.EditableForOrganization,
-                        Anonymous = t.Anonymous
-                    }).FirstOrDefault();
-
-                    if (response.Detail == null)
+                    var t = session.Query<ApiService>().Where(t => t.Oid == oid).FirstOrDefault();
+                    if (t == null)
                     {
                         response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.ApiService);
+                    }
+                    else
+                    {
+                        response.Detail = new ApiServiceDetailViewData
+                        {
+                            Oid = t.Oid,
+                            CreatedTime = t.CreatedTime,
+                            LastUpdateTime = t.LastUpdateTime,
+                            ApiKey = t.ApiKey,
+                            ApiDefinition = t.ApiDefinition,
+                            MethodType = t.MethodType,
+                            EditableForAdmin = t.EditableForAdmin,
+                            EditableForOrganization = t.EditableForOrganization,
+                            Anonymous = t.Anonymous
+                        };
                     }
                 }
             }

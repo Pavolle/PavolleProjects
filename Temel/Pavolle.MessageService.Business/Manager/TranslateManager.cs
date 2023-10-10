@@ -152,19 +152,22 @@ namespace Pavolle.MessageService.Business.Manager
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
-                    response.Detail = session.Query<TranslateData>().Where(t => t.Oid == oid).Select(t => new TranslateDataDetailViewData
+                    var t = session.Query<TranslateData>().FirstOrDefault(t => t.Oid == oid);
+                    if(t == null)
                     {
-                        Oid = t.Oid,
-                        CreatedTime = t.CreatedTime,
-                        LastUpdateTime = t.LastUpdateTime,
-                        Variable = t.Variable,
-                        TR = t.TR,
-                        EN = t.EN
-                    }).FirstOrDefault();
-
-                    if (response.Detail == null)
+                        response.ErrorMessage = GetXNotFoundMessage(request.Language.Value, EMessageCode.TranslateData);
+                    }
+                    else
                     {
-                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.TranslateData);
+                        response.Detail = new TranslateDataDetailViewData
+                        {
+                            Oid = t.Oid,
+                            CreatedTime = t.CreatedTime,
+                            LastUpdateTime = t.LastUpdateTime,
+                            Variable = t.Variable,
+                            TR = t.TR,
+                            EN = t.EN
+                        };
                     }
                 }
             }

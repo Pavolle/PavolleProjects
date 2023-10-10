@@ -522,9 +522,86 @@ namespace Pavolle.SmartAppCoder.Forms
             Output("Response tamamlandı.");
             #endregion
 
-            Output("WebSecurity projesi oluşturma ve kontrol tamamlandı.");
             #endregion
 
+
+            #region Business
+            Output("DbModels projesi kontrol ediliyor...");
+            bool businessProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + projectRoot + ".Business");
+            if (!businessProjesiOlusturulmus)
+            {
+                Output("DbModels projesi oluşturulmamış! Proje oluşturma başlatıldı");
+                //CommandHelperManager.Instance.RunCommand("dotnet , _project.ProjectPath");
+
+                bool result = CommandHelperManager.Instance.RunDotnetCommand("new classlib --framework \"net7.0\" -o " + _project.ProjectPath + "/" + projectRoot + ".Business").Result;
+                if (result)
+                {
+                    Output("Business projesi oluşturuldu. Proje eklemesi yapılıyor...");
+                }
+
+                bool addResult = CommandHelperManager.Instance.RunDotnetCommand("sln " + _project.ProjectPath + "\\" + _project.OrganizationName + "Projects.sln add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  --solution-folder " + _project.ProjectName).Result;
+                if (addResult)
+                {
+                    Output("DbModels projesi proje dosyasına eklendi.");
+                }
+
+                bool addCoreReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  reference " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Core\\" + _project.OrganizationName + ".Core.csproj").Result;
+                if (addCoreReferanceResult)
+                {
+                    Output("Business Projesine Core referansı eklendi.");
+                }
+
+                bool addCoreSecurityeReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  reference " + _project.ProjectPath + "\\" + _project.OrganizationName + ".Security\\" + _project.OrganizationName + ".Security.csproj").Result;
+                if (addCoreSecurityeReferanceResult)
+                {
+                    Output("Business Projesine Security referansı eklendi.");
+                }
+
+                bool addCommonReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  reference " + _project.ProjectPath + "\\" + projectRoot + ".Common\\" + projectRoot + ".Common.csproj").Result;
+                if (addCommonReferanceResult)
+                {
+                    Output("Business Projesine Common referansı eklendi.");
+                }
+
+                bool adddbModelsReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  reference " + _project.ProjectPath + "\\" + projectRoot + ".DbModels\\" + projectRoot + ".DbModels.csproj").Result;
+                if (adddbModelsReferanceResult)
+                {
+                    Output("Business Projesine DbModels referansı eklendi.");
+                }
+
+                bool addViewModelsReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  reference " + _project.ProjectPath + "\\" + projectRoot + ".ViewModels\\" + projectRoot + ".ViewModels.csproj").Result;
+                if (addViewModelsReferanceResult)
+                {
+                    Output("Business Projesine ViewModels referansı eklendi.");
+                }
+
+                bool addWebSecurirtReferanceResult = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  reference " + _project.ProjectPath + "\\" + projectRoot + ".WebSecurity\\" + projectRoot + ".WebSecurity.csproj").Result;
+                if (addWebSecurirtReferanceResult)
+                {
+                    Output("Business Projesine WebSecurity referansı eklendi.");
+                }
+
+                bool addXpoReferance = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  package DevExpress.Xpo -v 23.1.3").Result;
+                if (addXpoReferance)
+                {
+                    Output("Business Projesine DevExpress.Xpo kütüphanesi eklendi.");
+                }
+                bool log4netReferance = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  package log4net -v 2.0.15").Result;
+                if (log4netReferance)
+                {
+                    Output("Business Projesine log4net kütüphanesi eklendi.");
+                }
+                bool quartzReferance = CommandHelperManager.Instance.RunDotnetCommand("add " + _project.ProjectPath + "\\" + projectRoot + ".Business\\" + projectRoot + ".Business.csproj  package Quartz -v 3.6.3").Result;
+                if (quartzReferance)
+                {
+                    Output("Business Projesine Quartz kütüphanesi eklendi.");
+                }
+
+                Output("Business class1 dosyası siliniyor...");
+                FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + projectRoot + ".Business\\" + "Class1.cs");
+                Output("Business projesi temizlendi. Proje sınıfları kontrol ediliyor...");
+            }
+            #endregion
             #endregion
 
             Output("Proje oluşturma tamamlandı!");
