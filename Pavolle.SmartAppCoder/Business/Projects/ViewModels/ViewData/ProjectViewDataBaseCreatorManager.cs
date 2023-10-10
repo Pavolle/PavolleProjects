@@ -2,9 +2,9 @@
 
 namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.ViewData
 {
-    public class ViewDataBaseCreatorManager : Singleton<ViewDataBaseCreatorManager>
+    public class ProjectViewDataBaseCreatorManager : Singleton<ProjectViewDataBaseCreatorManager>
     {
-        private ViewDataBaseCreatorManager()
+        private ProjectViewDataBaseCreatorManager()
         {
 
         }

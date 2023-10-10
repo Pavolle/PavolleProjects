@@ -10,6 +10,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.ViewData
         }
         public bool Write(string companyName, string projectName, string projectPath, string language)
         {
+            if (language == null) language = "en, tr";
             string[] _languages = language.Split(',');
             string properties = "";
             properties += "        public string Variable { get; set; }" + Environment.NewLine;

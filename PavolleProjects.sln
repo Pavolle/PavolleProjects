@@ -57,6 +57,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ekim", "Ekim", "{2396AC3C-8BB9-4383-8581-A3A2CA19775B}"
 	ProjectSection(SolutionItems) = preProject
 		08.10.2023.txt = 08.10.2023.txt
+		10.10.2023.txt = 10.10.2023.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageService", "MessageService", "{E0D5E7E9-5B7A-4DD8-BA4B-22BE3253C1BB}"

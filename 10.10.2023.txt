@@ -1,0 +1,4 @@
+Request tarafý projeye eklendi.
+View Data eklenecek
+Response tarafý eklenecek.
+Controller taraflarý eklenecek.

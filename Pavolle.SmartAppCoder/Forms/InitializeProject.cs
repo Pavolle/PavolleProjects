@@ -18,6 +18,7 @@ using Pavolle.SmartAppCoder.Business.Projects.DbModels;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Criteria;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Request;
+using Pavolle.SmartAppCoder.Business.Projects.ViewModels.ViewData;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -455,6 +456,45 @@ namespace Pavolle.SmartAppCoder.Forms
 
 
             Output("Request tamamlandı.");
+            #endregion
+
+            #region View Data
+
+            Output("ViewData classları kontrol ediliyor...");
+            if (ApiServiceAuthViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ApiServiceAuthViewData Class => ok");
+            if (ApiServiceDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ApiServiceDetailViewData Class => ok");
+            if (ApiServiceViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ApiServiceViewData Class => ok");
+            if (CityDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CityDetailViewData Class => ok");
+            if (CityViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CityViewData Class => ok");
+            if (CountryDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CountryDetailViewData Class => ok");
+            if (CountryViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create CountryViewData Class => ok");
+
+            if (JobDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create JobDetailViewData Class => ok");
+            if (JobLogViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create JobLogViewData Class => ok");
+            if (JobViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create JobViewData Class => ok");
+            if (MyInfoViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create MyInfoViewData Class => ok");
+            if (OrganizationDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create OrganizationDetailViewData Class => ok");
+            if (OrganizationViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create OrganizationViewData Class => ok");
+            if (SettingChangeLogCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingChangeLog Class => ok");
+            if (SettingDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SettingDetailViewData Class => ok");
+            if (SettingViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create VerifyPhoneRequest Class => ok");
+            if (TranslateDataChangeLogViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create TranslateDataChangeLogView Class => ok");
+            if (TranslateDataDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath,  _project.Languages)) Output("Create TranslateDataDetailViewData Class => ok");
+            if (TranslateDataViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create TranslateDataViewData Class => ok");
+            if (UserAuthViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserAuthViewData Class => ok");
+            if (UserGroupDetailViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroupDetailViewData Class => ok");
+            if (UserGroupViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserGroupViewData Class => ok");
+            if (UserInfoViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserInfoViewData Class => ok");
+            if (UserViewDataCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserViewData Class => ok");
+            if (ProjectViewDataBaseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ProjectViewDataBase Class => ok");
+
+            Output("ViewData tamamlandı.");
+            #endregion
+
+            #region Response
+
+            Output("Response classları kontrol ediliyor...");
+            Output("Response tamamlandı.");
             #endregion
 
             Output("WebSecurity projesi oluşturma ve kontrol tamamlandı.");
