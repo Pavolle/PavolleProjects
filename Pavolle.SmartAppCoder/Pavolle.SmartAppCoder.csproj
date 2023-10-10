@@ -27,7 +27,6 @@
     <Folder Include="Business\Projects\DbModels\" />
     <Folder Include="Business\Projects\MobileApp\" />
     <Folder Include="Business\Projects\WebApp\" />
-    <Folder Include="Business\Projects\ViewModels\" />
   </ItemGroup>
 
 </Project>

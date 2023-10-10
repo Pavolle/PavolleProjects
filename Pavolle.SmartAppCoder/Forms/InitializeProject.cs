@@ -17,6 +17,7 @@ using Pavolle.SmartAppCoder.Business.Projects.WebSecurity;
 using Pavolle.SmartAppCoder.Business.Projects.DbModels;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Criteria;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model;
+using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Request;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -424,6 +425,34 @@ namespace Pavolle.SmartAppCoder.Forms
 
             #region Request
             Output("Request classları kontrol ediliyor...");
+
+            if (AddCityRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create AddCityRequest Class => ok");
+            if (AddCountryRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create AddCountryRequest Class => ok");
+            if (AddOrganizationRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create UserSessionCacheModel Class => ok");
+            if (AddOrganizationRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create AddOrganizationRequest Class => ok");
+            if (AddUserGroupRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create AddUserGroupRequest Class => ok");
+            if (AddUserRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create AddUserRequest Class => ok");
+            if (ChangePasswordRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ChangePasswordRequest Class => ok");
+            if (EditApiServiceRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditApiServiceRequest Class => ok");
+            if (EditCityRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditCityRequest Class => ok");
+            if (EditCountryRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditCountryRequest Class => ok");
+            if (EditJobRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditJobRequest Class => ok");
+            if (EditMyInfoRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditMyInfoRequest Class => ok");
+            if (EditOrganizationRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditOrganizationRequest Class => ok");
+            if (EditSettingRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditSettingRequest Class => ok");
+            if (EditTranslateDataRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create UserSessionCacheModel Class => ok");
+            if (EditUserGroupRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditUserGroupRequest Class => ok");
+            if (EditUserRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create EditUserRequest Class => ok");
+            if (ForgotPasswordRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ForgotPasswordRequest Class => ok");
+            if (LoginRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create LoginRequest Class => ok");
+            if (ProjectRequestBaseCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ProjectRequestBase Class => ok");
+            if (ResetPasswordRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create ResetPassword Class => ok");
+            if (RunJobRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create RunJobRequest Class => ok");
+            if (SendVerificationCodeRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create SendVerificationCodeRequest Class => ok");
+            if (VerifyCodeRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create VerifyCodeRequest Class => ok");
+            if (VerifyEmailRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create VerifyEmailRequest Class => ok");
+            if (VerifyPhoneRequestCreatorManager.Instance.Write(_project.OrganizationName, _project.ProjectName, _project.ProjectPath)) Output("Create VerifyPhoneRequest Class => ok");
+
 
             Output("Request tamamlandı.");
             #endregion

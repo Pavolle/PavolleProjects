@@ -2,9 +2,9 @@
 
 namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.Request
 {
-    public class RequestBaseCreatorManager : Singleton<RequestBaseCreatorManager>
+    public class ProjectRequestBaseCreatorManager : Singleton<ProjectRequestBaseCreatorManager>
     {
-        private RequestBaseCreatorManager()
+        private ProjectRequestBaseCreatorManager()
         {
 
         }
