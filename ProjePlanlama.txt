@@ -1,0 +1,36 @@
+Lisanslama ve ücretlendirme
+
+Full Mode Local Kurulum + Yýllýk Bakým Maliyeti
+
+Multi Tenant her zaman kurum giriþi
+Community 1
+Proffessianal 10
+Enterprise n
+Lisanslama türüne göre maximum kullanýcý sayýsý da yer alacak
+
+Organizasyonun lisans türü, baþlangýç ve bitiþ tarihleri olacak. Lisans süresi bitmeden ilgili kullanýcýlara mail ve bildirim gönderilecek.
+
+Kim Kullanacak?
+SuperUser
+Admin
+Teknik testek hizmeti, canlý destek hizmeti gibi hizmetler?
+Organization Admin
+Organization User
+
+Kim Satýn alacak?
+Eloktronik üretimi yapan firmalar.
+Elektronik stok takibi yapmak isteyen firmalar.
+
+Organisayon bilgileri alýnýrken sipariþi verebilecek þekilde adres bilgileri dahil gerekli tüm bilgileri girilmesi lazým.
+
+Organizayon ürün tanýmlayabilecek ve bu ürün için bom listesi yükleyebilecek.
+Örnek bomun uygulamaya yüklenmesi.
+
+Yönetim
+Ürün Yönetimi
+	->Ürünler
+
+	Ürünün özellerikleri,  ürün adý, açýklamasý, bom listesi ve ürün versiyonu yüklenerek uygulama oluþturulacak
+	Düzenleme yapýlmayacak yerine yeni versiyon oluþturulabilecek.
+
+Diji Key entegrasyonu için çalýþmaya baþlayalým.
