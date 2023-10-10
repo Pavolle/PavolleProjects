@@ -23,7 +23,8 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "using " + organizationName + ".Core.Utils;" + Environment.NewLine;
             classString += "using " + projectNameRoot + ".Common.Enums;" + Environment.NewLine;
             classString += "using " + projectNameRoot + ".DbModels;" + Environment.NewLine;
-            classString += "using " + projectNameRoot + ".DbModels.Entities" + Environment.NewLine;
+            classString += "using " + projectNameRoot + ".DbModels.Entities;" + Environment.NewLine;
+            classString += "using " + projectNameRoot + ".DbModels.Manager;" + Environment.NewLine;
             classString += "using " + projectNameRoot + ".ViewModels.Criteria;" + Environment.NewLine;
             classString += "using " + projectNameRoot + ".ViewModels.Model;" + Environment.NewLine;
             classString += "using " + projectNameRoot + ".ViewModels.Request;" + Environment.NewLine;
@@ -109,86 +110,103 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "            }" + Environment.NewLine;
             classString += "        }" + Environment.NewLine;
             classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
-            classString += "" + Environment.NewLine;
+            classString += "        public string GetMessage(EMessageCode messageCode, ELanguage language)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return GetMessage(messageCode.ToString(), language);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        public string GetMessage(string messageCode, ELanguage language)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            string message = messageCode;" + Environment.NewLine;
+            classString += "            TranslateDataCacheModel data;" + Environment.NewLine;
+            classString += "            if (_translateData.ContainsKey(messageCode.ToString()))" + Environment.NewLine;
+            classString += "            {" + Environment.NewLine;
+            classString += "                data = _translateData[messageCode.ToString()];" + Environment.NewLine;
+            classString += "            }" + Environment.NewLine;
+            classString += "            else" + Environment.NewLine;
+            classString += "            {" + Environment.NewLine;
+            classString += "                return message;" + Environment.NewLine;
+            classString += "            }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "            switch (language)" + Environment.NewLine;
+            classString += "            {" + Environment.NewLine;
+            foreach(var item in _languages)
+            {
+                string name = item.Replace(" ", "");
+                if(name == "en")
+                {
+                    classString += "                case ELanguage.English:" + Environment.NewLine;
+                    classString += "                    message = data.EN;" + Environment.NewLine;
+                    classString += "                    break;" + Environment.NewLine;
+                }
+                else if (name == "de")
+                {
+                    classString += "                case ELanguage.German:" + Environment.NewLine;
+                    classString += "                    message = data.DE;" + Environment.NewLine;
+                    classString += "                    break;" + Environment.NewLine;
+                }
+                else if (name == "es")
+                {
+                    classString += "                case ELanguage.Spanish:" + Environment.NewLine;
+                    classString += "                    message = data.ES;" + Environment.NewLine;
+                    classString += "                    break;" + Environment.NewLine;
+                }
+                else if (name == "fr")
+                {
+                    classString += "                case ELanguage.French:" + Environment.NewLine;
+                    classString += "                    message = data.FR;" + Environment.NewLine;
+                    classString += "                    break;" + Environment.NewLine;
+                }
+                else if (name == "ru")
+                {
+                    classString += "                case ELanguage.Russian:" + Environment.NewLine;
+                    classString += "                    message = data.RU;" + Environment.NewLine;
+                    classString += "                    break;" + Environment.NewLine;
+                }
+                else if (name == "tr")
+                {
+                    classString += "                case ELanguage.Turkish:" + Environment.NewLine;
+                    classString += "                    message = data.TR;" + Environment.NewLine;
+                    classString += "                    break;" + Environment.NewLine;
+                }
+                else if (name == "az")
+                {
+                    classString += "                case ELanguage.Azerbaijani:" + Environment.NewLine;
+                    classString += "                    message = data.AZ;" + Environment.NewLine;
+                    classString += "                    break;" + Environment.NewLine;
+                }
+            }
+            classString += "                default:" + Environment.NewLine;
+            classString += "                    message = data.EN;" + Environment.NewLine;
+            classString += "                    break;" + Environment.NewLine;
+            classString += "            }" + Environment.NewLine;
+            classString += "            return message;" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        public string GetXNotFoundMessage(ELanguage language, EMessageCode messageCode)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return string.Format(GetMessage(EMessageCode.XNotFound, language), messageCode);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        public string? GetXSavedMessage(ELanguage language, EMessageCode messageCode)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return string.Format(GetMessage(EMessageCode.XSaved, language), messageCode);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        public string? GetXCannotBeDeletedessage(ELanguage language, EMessageCode messageCode)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return string.Format(GetMessage(EMessageCode.XCannotBeDeleted, language), messageCode);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        internal string? GetXDeletedMessage(ELanguage language, EMessageCode messageCode)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return string.Format(GetMessage(EMessageCode.XDeleted, language), messageCode);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "    }" + Environment.NewLine;
+            classString += "}" + Environment.NewLine;
 
-            return true;
+
+            return FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + ".Business/Manager", "TranslateManager.cs", classString);
         }
     }
 }

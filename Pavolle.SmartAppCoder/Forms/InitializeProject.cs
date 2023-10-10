@@ -20,6 +20,7 @@ using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Request;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.ViewData;
 using Pavolle.SmartAppCoder.Business.Projects.ViewModels.Response;
+using Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness;
 
 namespace Pavolle.SmartAppCoder.Forms
 {
@@ -526,7 +527,7 @@ namespace Pavolle.SmartAppCoder.Forms
 
 
             #region Business
-            Output("DbModels projesi kontrol ediliyor...");
+            Output("Business projesi kontrol ediliyor...");
             bool businessProjesiOlusturulmus = FileHelperManager.Instance.CheckFolderExisting(_project.ProjectPath + "/" + projectRoot + ".Business");
             if (!businessProjesiOlusturulmus)
             {
@@ -601,6 +602,11 @@ namespace Pavolle.SmartAppCoder.Forms
                 FileHelperManager.Instance.RemoveFile(_project.ProjectPath + "\\" + projectRoot + ".Business\\" + "Class1.cs");
                 Output("Business projesi temizlendi. Proje sınıfları kontrol ediliyor...");
             }
+
+
+            if (TranslateManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create TranslateManager Class => ok");
+
+            Output("Business Tamamlandı.");
             #endregion
             #endregion
 

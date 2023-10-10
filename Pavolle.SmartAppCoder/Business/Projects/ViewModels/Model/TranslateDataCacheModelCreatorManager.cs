@@ -11,7 +11,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model
             string[] _languages = language.Split(',');
             string properties = "";
             properties += "        public long Oid { get; set; }" + Environment.NewLine;
-            properties += "        public bool Variable { get; set; }" + Environment.NewLine;
+            properties += "        public string Variable { get; set; }" + Environment.NewLine;
             foreach (var item in _languages)
             {
                 properties += "        public string " + item.Replace(" ", "").ToUpper() + " { get; set; }" + Environment.NewLine;

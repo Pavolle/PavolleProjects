@@ -22,7 +22,7 @@ namespace Pavolle.MessageService.WebApp.Controllers
         {
             try
             {
-                var response = TranslateManager.Instance.List(criteria);
+                var response = TranslateServiceManager.Instance.List(criteria);
                 _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -38,7 +38,7 @@ namespace Pavolle.MessageService.WebApp.Controllers
         {
             try
             {
-                var response = TranslateManager.Instance.Detail(oid, request);
+                var response = TranslateServiceManager.Instance.Detail(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -54,7 +54,7 @@ namespace Pavolle.MessageService.WebApp.Controllers
         {
             try
             {
-                var response = TranslateManager.Instance.Edit(oid, request);
+                var response = TranslateServiceManager.Instance.Edit(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
