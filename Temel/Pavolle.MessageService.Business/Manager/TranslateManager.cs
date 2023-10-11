@@ -143,9 +143,19 @@ namespace Pavolle.MessageService.Business.Manager
             return string.Format(GetMessage(EMessageCode.XDeleted, language), messageCode);
         }
 
-        internal string GetXCannotBeLeftBlank(ELanguage language, EMessageCode messageCode)
+        internal string GetXCannotBeLeftBlankMessage(ELanguage language, EMessageCode messageCode)
         {
             return string.Format(GetMessage(EMessageCode.XCannotBeLeftBlank, language), messageCode);
+        }
+
+        internal string GetXNotTheExpectedLengthMessage(ELanguage language, EMessageCode messageCode)
+        {
+            return string.Format(GetMessage(EMessageCode.XNotTheExpectedLength, language), messageCode);
+        }
+
+        internal string GetXNotValidMessage(ELanguage language, EMessageCode messageCode)
+        {
+            return string.Format(GetMessage(EMessageCode.XNotValid, language), messageCode);
         }
     }
 }

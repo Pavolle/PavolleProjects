@@ -22,6 +22,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.Common.Enums
             icerik += "        XCannotBeDeleted," + Environment.NewLine;
             icerik += "        XDeleted," + Environment.NewLine;
             icerik += "        XCannotBeLeftBlank," + Environment.NewLine;
+            icerik += "        XNotTheExpectedLength," + Environment.NewLine;
             icerik += "        SecurityError," + Environment.NewLine;
             icerik += "        UsernameOrPasswordIsNotCorrect," + Environment.NewLine;
             icerik += "        UserIsLocked," + Environment.NewLine;
