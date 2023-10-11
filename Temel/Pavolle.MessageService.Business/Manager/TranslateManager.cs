@@ -142,5 +142,10 @@ namespace Pavolle.MessageService.Business.Manager
         {
             return string.Format(GetMessage(EMessageCode.XDeleted, language), messageCode);
         }
+
+        internal string GetXCannotBeLeftBlank(ELanguage language, EMessageCode messageCode)
+        {
+            return string.Format(GetMessage(EMessageCode.XCannotBeLeftBlank, language), messageCode);
+        }
     }
 }

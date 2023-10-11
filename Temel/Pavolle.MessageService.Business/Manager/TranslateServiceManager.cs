@@ -177,7 +177,7 @@ namespace Pavolle.MessageService.Business.Manager
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
 

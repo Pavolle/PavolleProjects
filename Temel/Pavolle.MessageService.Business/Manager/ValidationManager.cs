@@ -8,28 +8,28 @@ namespace Pavolle.MessageService.Business.Manager
     {
         private ValidationManager() { }
 
-        public string CheckString(string? text, bool nullable, int minLength, int maxLength, bool xssControl, EMessageCode messageCode, ELanguage language)
+        public string? CheckString(string? text, bool nullable, int minLength, int maxLength, bool xssControl, EMessageCode messageCode, ELanguage language)
         {
-            string response=null;
+            string? response=null;
             if (!nullable)
             {
                 if (string.IsNullOrWhiteSpace(text))
                 {
-
+                    response = string.Format(TranslateManager.Instance.GetXCannotBeLeftBlank(language, messageCode));
                 }
             }
             return response;
         }
 
-        public string CheckEnum<T>(int? enumValue, bool nullable, EMessageCode messageCode, ELanguage language)
+        public string? CheckEnum<T>(int? enumValue, bool nullable, EMessageCode messageCode, ELanguage language)
         {
-            string response = null;
+            string? response = null;
             return response;
         }
 
-        public string CheckForNull(object objectData, EMessageCode messageCode, ELanguage language)
+        public string? CheckForNull(object objectData, EMessageCode messageCode, ELanguage language)
         {
-            string response = null;
+            string? response = null;
             if (objectData == null)
             {
                 response = TranslateManager.Instance.GetXNotFoundMessage(language, messageCode);
@@ -37,9 +37,9 @@ namespace Pavolle.MessageService.Business.Manager
             return response;
         }
 
-        internal string CheckForOidNull(long? oid, EMessageCode messageCode, ELanguage language)
+        internal string? CheckForOidNull(long? oid, EMessageCode messageCode, ELanguage language)
         {
-            string response = null;
+            string? response = null;
             if(oid == null)
             {
                 response = TranslateManager.Instance.GetXNotFoundMessage(language, messageCode);
