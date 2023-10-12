@@ -205,6 +205,21 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "        {" + Environment.NewLine;
             classString += "            return string.Format(GetMessage(EMessageCode.XDeleted, language), messageCode);" + Environment.NewLine;
             classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        internal string GetXCannotBeLeftBlankMessage(ELanguage language, EMessageCode messageCode)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return string.Format(GetMessage(EMessageCode.XCannotBeLeftBlank, language), messageCode);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        internal string GetXNotTheExpectedLengthMessage(ELanguage language, EMessageCode messageCode)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return string.Format(GetMessage(EMessageCode.XNotTheExpectedLength, language), messageCode);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        internal string GetXNotValidMessage(ELanguage language, EMessageCode messageCode)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return string.Format(GetMessage(EMessageCode.XNotValid, language), messageCode);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
             classString += "    }" + Environment.NewLine;
             classString += "}" + Environment.NewLine;
 
