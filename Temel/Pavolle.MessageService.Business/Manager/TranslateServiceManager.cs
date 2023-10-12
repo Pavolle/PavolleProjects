@@ -27,7 +27,6 @@ namespace Pavolle.MessageService.Business.Manager
             _log.Debug("Initialize " + nameof(TranslateServiceManager));
         }
 
-
         public TranslateDataListResponse List(ListTranslateDataCriteria criteria)
         {
             var response = new TranslateDataListResponse();
@@ -138,7 +137,7 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.TR, true, 0, 1000, true, EMessageCode.TranslateData, request.Language.Value);
+                string? checkResult = ValidationManager.Instance.CheckString(request.TR, true, 0, 1000, true, EMessageCode.TranslateData, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -183,7 +182,6 @@ namespace Pavolle.MessageService.Business.Manager
 
             return response;
         }
-
 
     }
 }

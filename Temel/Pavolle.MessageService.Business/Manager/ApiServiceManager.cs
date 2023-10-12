@@ -176,7 +176,7 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.ApiDefinition, false, 5, 255, true, EMessageCode.ApiDefinition, request.Language.Value);
+                string? checkResult = ValidationManager.Instance.CheckString(request.ApiDefinition, false, 5, 255, true, EMessageCode.ApiDefinition, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);

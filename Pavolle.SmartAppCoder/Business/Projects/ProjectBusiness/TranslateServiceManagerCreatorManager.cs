@@ -37,6 +37,9 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "using System.Text;" + Environment.NewLine;
             classString += "using System.Threading.Tasks;" + Environment.NewLine;
             classString += "" + Environment.NewLine;
+            classString += "namespace " + projectNameRoot + ".Business.Manager" + Environment.NewLine;
+            classString += "{" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
 
 
             return FileHelperManager.Instance.WriteFile(projectPath, projectNameRoot + ".Business/Manager", "TranslateServiceManager.cs", classString);

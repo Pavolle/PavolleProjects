@@ -30,7 +30,7 @@ namespace Pavolle.MessageService.Business.Manager
             _log.Debug("Initialize " + nameof(TranslateManager));
         }
 
-        private void LoadTranslateData()
+        public void LoadTranslateData()
         {
             try
             {

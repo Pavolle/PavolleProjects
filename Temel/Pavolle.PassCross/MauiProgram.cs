@@ -1,4 +1,4 @@
-﻿using Mopups.Hosting;
+﻿
 
 namespace Pavolle.PassCross
 {
@@ -9,7 +9,6 @@ namespace Pavolle.PassCross
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .ConfigureMopups()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

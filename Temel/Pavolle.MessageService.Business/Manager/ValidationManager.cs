@@ -1,4 +1,5 @@
-﻿using Pavolle.Core.Enums;
+﻿using log4net;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
 using System.Linq;
@@ -7,120 +8,156 @@ namespace Pavolle.MessageService.Business.Manager
 {
     public class ValidationManager:Singleton<ValidationManager>
     {
-        private ValidationManager() { }
+        static readonly ILog _log = LogManager.GetLogger(typeof(ValidationManager));
+        private ValidationManager() 
+        {
+            _log.Debug("Initialize "+nameof(ValidationManager));
+        }
 
         public string? CheckString(string? text, bool nullable, int minLength, int maxLength, bool xssControl, EMessageCode messageCode, ELanguage language)
         {
-            string? response=null;
-            if (!nullable)
+            try
             {
-                if (string.IsNullOrWhiteSpace(text))
+                string? response = null;
+                if (!nullable)
                 {
-                    response = string.Format(TranslateManager.Instance.GetXCannotBeLeftBlankMessage(language, messageCode));
-                    return response;
+                    if (string.IsNullOrWhiteSpace(text))
+                    {
+                        response = string.Format(TranslateManager.Instance.GetXCannotBeLeftBlankMessage(language, messageCode));
+                        return response;
+                    }
+                    else
+                    {
+                        if (text.Length < minLength)
+                        {
+                            response = string.Format(TranslateManager.Instance.GetXNotTheExpectedLengthMessage(language, messageCode));
+                            return response;
+                        }
+
+                        if (text.Length > maxLength)
+                        {
+                            response = string.Format(TranslateManager.Instance.GetXNotTheExpectedLengthMessage(language, messageCode));
+                            return response;
+                        }
+
+                        if (xssControl && text.Contains("<") && text.Contains(">"))
+                        {
+                            return TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, language);
+                        }
+                    }
                 }
                 else
                 {
-                    if(text.Length<minLength)
+                    if (string.IsNullOrWhiteSpace(text))
                     {
-                        response = string.Format(TranslateManager.Instance.GetXNotTheExpectedLengthMessage(language, messageCode));
-                        return response;
+                        return null;
                     }
-
-                    if (text.Length > maxLength)
+                    else
                     {
-                        response = string.Format(TranslateManager.Instance.GetXNotTheExpectedLengthMessage(language, messageCode));
-                        return response;
-                    }
+                        if (text.Length < minLength)
+                        {
+                            response = string.Format(TranslateManager.Instance.GetXNotTheExpectedLengthMessage(language, messageCode));
+                            return response;
+                        }
 
-                    if (xssControl && text.Contains("<") && text.Contains(">"))
-                    {
-                        return TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, language);
+                        if (text.Length > maxLength)
+                        {
+                            response = string.Format(TranslateManager.Instance.GetXNotTheExpectedLengthMessage(language, messageCode));
+                            return response;
+                        }
+
+                        if (xssControl && text.Contains("<") && text.Contains(">"))
+                        {
+                            return TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, language);
+                        }
                     }
                 }
+                return response;
             }
-            else
+            catch (Exception ex)
             {
-                if (string.IsNullOrWhiteSpace(text))
-                {
-                    return null;
-                }
-                else
-                {
-                    if (text.Length < minLength)
-                    {
-                        response = string.Format(TranslateManager.Instance.GetXNotTheExpectedLengthMessage(language, messageCode));
-                        return response;
-                    }
-
-                    if (text.Length > maxLength)
-                    {
-                        response = string.Format(TranslateManager.Instance.GetXNotTheExpectedLengthMessage(language, messageCode));
-                        return response;
-                    }
-
-                    if (xssControl && text.Contains("<") && text.Contains(">"))
-                    {
-                        return TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, language);
-                    }
-                }
+                _log.Error("Unexpected error occured! Error: " + ex);
+                return null;
             }
-            return response;
         }
 
         public string? CheckEnum<T>(int? enumValue, bool nullable, EMessageCode messageCode, ELanguage language)
         {
-            string? response = null;
-            if (nullable)
+            try
             {
-                if(!enumValue.HasValue) { return null; }
-                else
+                string? response = null;
+                if (nullable)
                 {
-                    if(!Enum.GetValues(typeof(T)).Cast<T>().Select(t => Convert.ToInt32(t)).ToList().Contains(enumValue.Value))
+                    if (!enumValue.HasValue) { return null; }
+                    else
                     {
-                        response = string.Format(TranslateManager.Instance.GetXNotValidMessage(language, messageCode));
-                        return response;
-                    }
+                        if (!Enum.GetValues(typeof(T)).Cast<T>().Select(t => Convert.ToInt32(t)).ToList().Contains(enumValue.Value))
+                        {
+                            response = string.Format(TranslateManager.Instance.GetXNotValidMessage(language, messageCode));
+                            return response;
+                        }
 
-                }
-            }
-            else
-            {
-                if (enumValue == null)
-                {
-                    response = string.Format(TranslateManager.Instance.GetXCannotBeLeftBlankMessage(language, messageCode));
-                    return response;
+                    }
                 }
                 else
                 {
-                    if (!Enum.GetValues(typeof(T)).Cast<T>().Select(t => Convert.ToInt32(t)).ToList().Contains(enumValue.Value))
+                    if (enumValue == null)
                     {
-                        response = string.Format(TranslateManager.Instance.GetXNotValidMessage(language, messageCode));
+                        response = string.Format(TranslateManager.Instance.GetXCannotBeLeftBlankMessage(language, messageCode));
                         return response;
                     }
+                    else
+                    {
+                        if (!Enum.GetValues(typeof(T)).Cast<T>().Select(t => Convert.ToInt32(t)).ToList().Contains(enumValue.Value))
+                        {
+                            response = string.Format(TranslateManager.Instance.GetXNotValidMessage(language, messageCode));
+                            return response;
+                        }
+                    }
                 }
+                return response;
             }
-            return response;
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! Error: " + ex);
+                return null;
+            }
         }
 
         public string? CheckForNull(object objectData, EMessageCode messageCode, ELanguage language)
         {
-            string? response = null;
-            if (objectData == null)
+            try
             {
-                response = TranslateManager.Instance.GetXNotFoundMessage(language, messageCode);
+                string? response = null;
+                if (objectData == null)
+                {
+                    response = TranslateManager.Instance.GetXNotFoundMessage(language, messageCode);
+                }
+                return response;
             }
-            return response;
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! Error: " + ex);
+                return null;
+            }
         }
 
         internal string? CheckForOidNull(long? oid, EMessageCode messageCode, ELanguage language)
         {
-            string? response = null;
-            if(oid == null)
+            try
             {
-                response = TranslateManager.Instance.GetXNotFoundMessage(language, messageCode);
+                string? response = null;
+                if (oid == null)
+                {
+                    response = TranslateManager.Instance.GetXNotFoundMessage(language, messageCode);
+                }
+                return response;
             }
-            return response;
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! Error: " + ex);
+                return null;
+            }
         }
     }
 }
