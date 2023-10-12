@@ -103,7 +103,7 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
+                string? checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);
@@ -218,7 +218,7 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
+                string? checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);

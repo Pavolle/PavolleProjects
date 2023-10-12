@@ -607,6 +607,7 @@ namespace Pavolle.SmartAppCoder.Forms
             if (TranslateManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create TranslateManager Class => ok");
             if (SettingManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create SettingManager Class => ok");
             if (ValidationManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create ValidationManager Class => ok");
+            if (DbManagerCreatorManager.Instance.Create(_project.OrganizationName, _project.ProjectName, _project.ProjectPath, _project.Languages)) Output("Create DbManager Class => ok");
 
             Output("Business Tamamlandı.");
             #endregion
