@@ -39,5 +39,21 @@ namespace Pavolle.MessageService.UnitTests
             var checkResult = ValidationManager.Instance.CheckString("Test", true, 5, 100, true, EMessageCode.ApiService, ELanguage.English);
             Assert.IsNotNull(checkResult);
         }
+
+
+
+        [Test]
+        public void EnumTestSuccess()
+        {
+            var checkResult = ValidationManager.Instance.CheckEnum<EMessageCode>((int)EMessageCode.ApiService, false, EMessageCode.ApiService, ELanguage.English);
+            Assert.IsNull(checkResult);
+        }
+
+        [Test]
+        public void EnumTestFail()
+        {
+            var checkResult = ValidationManager.Instance.CheckEnum<EMessageCode>(-1, false, EMessageCode.ApiService, ELanguage.English);
+            Assert.IsNotNull(checkResult);
+        }
     }
 }
