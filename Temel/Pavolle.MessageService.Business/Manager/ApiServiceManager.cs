@@ -17,40 +17,12 @@ namespace Pavolle.MessageService.Business.Manager
     public class ApiServiceManager:Singleton<ApiServiceManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(ApiServiceManager));
-        ConcurrentDictionary<long, AuhtorizationCacheModel> _cacheData;
         private ApiServiceManager()
         {
-            LoadCacheData();
             _log.Debug("Inialize " + nameof(ApiServiceManager));
         }
 
-        public void LoadCacheData()
-        {
-            try
-            {
-                using (Session session = XpoManager.Instance.GetNewSession())
-                {
-                    var services = session.Query<Auth>().Select(t => new AuhtorizationCacheModel
-                    {
-                        Oid = t.Oid,
-                        ApiKey = t.ApiService.ApiKey,
-                        IsAuthority = t.IsAuhtority,
-                        UserGroupOid = t.UserGroup.Oid,
-                        MethodType = t.ApiService.MethodType
-                    }).ToList();
 
-                    _cacheData = new ConcurrentDictionary<long, AuhtorizationCacheModel>();
-                    foreach (var item in services)
-                    {
-                        _cacheData.TryAdd(item.Oid, item);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                _log.Error("Unexpected error occured! Error: " + ex);
-            }
-        }
 
         public ApiServiceListResponse List(ListApiServiceCriteria criteria)
         {
@@ -126,8 +98,8 @@ namespace Pavolle.MessageService.Business.Manager
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
-                    var t = session.Query<ApiService>().Where(t => t.Oid == oid).FirstOrDefault();
-                    if (t == null)
+                    var data = session.Query<ApiService>().Where(t => t.Oid == oid).FirstOrDefault();
+                    if (data == null)
                     {
                         response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.ApiService);
                     }
@@ -135,15 +107,15 @@ namespace Pavolle.MessageService.Business.Manager
                     {
                         response.Detail = new ApiServiceDetailViewData
                         {
-                            Oid = t.Oid,
-                            CreatedTime = t.CreatedTime,
-                            LastUpdateTime = t.LastUpdateTime,
-                            ApiKey = t.ApiKey,
-                            ApiDefinition = t.ApiDefinition,
-                            MethodType = t.MethodType,
-                            EditableForAdmin = t.EditableForAdmin,
-                            EditableForOrganization = t.EditableForOrganization,
-                            Anonymous = t.Anonymous
+                            Oid = data.Oid,
+                            CreatedTime = data.CreatedTime,
+                            LastUpdateTime = data.LastUpdateTime,
+                            ApiKey = data.ApiKey,
+                            ApiDefinition = data.ApiDefinition,
+                            MethodType = data.MethodType,
+                            EditableForAdmin = data.EditableForAdmin,
+                            EditableForOrganization = data.EditableForOrganization,
+                            Anonymous = data.Anonymous
                         };
                     }
                 }
@@ -243,7 +215,7 @@ namespace Pavolle.MessageService.Business.Manager
                     response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageCode.ApiService);
                 }
 
-                LoadCacheData();
+                AuthManager.Instance.Initialize();
             }
             catch (Exception ex)
             {
@@ -252,15 +224,6 @@ namespace Pavolle.MessageService.Business.Manager
             }
 
             return response;
-        }
-
-        internal List<UserAuthViewData>? GetAuthList(long userGroupOid)
-        {
-            return _cacheData.ToList().Where(t => t.Value.UserGroupOid == userGroupOid).Select(t => new UserAuthViewData
-            {
-                ApiKey = t.Value.ApiKey,
-                IsAuthority = t.Value.IsAuthority
-            }).ToList();
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "" + Environment.NewLine;
             classString += "        private DbManager()" + Environment.NewLine;
             classString += "        {" + Environment.NewLine;
-            classString += "            _log.Debug(\"Initialize \"+nameof(DbManager));" + Environment.NewLine;
+            classString += "            _log.Debug(\"Initialize \" + nameof(DbManager));" + Environment.NewLine;
             classString += "        }" + Environment.NewLine;
             classString += "" + Environment.NewLine;
             classString += "        public bool Initialize(string connectionString)" + Environment.NewLine;

@@ -13,6 +13,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model
             properties += "        public EApiServiceMethodType MethodType { get; set; }" + Environment.NewLine;
             properties += "        public string ApiKey { get; set; }" + Environment.NewLine;
             properties += "        public bool IsAuthority { get; set; }" + Environment.NewLine;
+            properties += "        public bool Anonymous { get; set; }" + Environment.NewLine;
             var creator = new ModelCreatorManager(companyName, projectName, projectPath, properties, "AuhtorizationCacheModel");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.ClassString);
         }

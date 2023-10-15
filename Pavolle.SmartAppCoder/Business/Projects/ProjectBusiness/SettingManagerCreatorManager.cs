@@ -39,7 +39,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "" + Environment.NewLine; 
             classString += "namespace " + projectNameRoot + ".Business.Manager" + Environment.NewLine;
             classString += "{" + Environment.NewLine;
-            classString += "    public class SettingManager:Singleton<SettingManager>" + Environment.NewLine;
+            classString += "    public class SettingManager : Singleton<SettingManager>" + Environment.NewLine;
             classString += "    {" + Environment.NewLine;
             classString += "        static readonly ILog _log = LogManager.GetLogger(typeof(SettingManager));" + Environment.NewLine;
             classString += "        private ConcurrentDictionary<ESettingType, SettingCacheModel> _settings;" + Environment.NewLine;

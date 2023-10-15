@@ -39,12 +39,12 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "" + Environment.NewLine;
             classString += "namespace " + projectNameRoot + ".Business.Manager" + Environment.NewLine;
             classString += "{" + Environment.NewLine;
-            classString += "    public class ValidationManager:Singleton<ValidationManager>" + Environment.NewLine;
+            classString += "    public class ValidationManager : Singleton<ValidationManager>" + Environment.NewLine;
             classString += "    {" + Environment.NewLine;
             classString += "        static readonly ILog _log = LogManager.GetLogger(typeof(ValidationManager));" + Environment.NewLine;
             classString += "        private ValidationManager() " + Environment.NewLine;
             classString += "        {" + Environment.NewLine;
-            classString += "            _log.Debug(\"Initialize \"+nameof(ValidationManager));" + Environment.NewLine;
+            classString += "            _log.Debug(\"Initialize \" + nameof(ValidationManager));" + Environment.NewLine;
             classString += "        }" + Environment.NewLine;
             classString += "" + Environment.NewLine;
             classString += "        public string? CheckString(string? text, bool nullable, int minLength, int maxLength, bool xssControl, EMessageCode messageCode, ELanguage language)" + Environment.NewLine;

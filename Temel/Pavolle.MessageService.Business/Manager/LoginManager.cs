@@ -385,7 +385,7 @@ namespace Pavolle.MessageService.Business.Manager
 
                 response.Token = MessageServiceJwtTokenManager.Instance.CreateToken(request.Username, Guid.NewGuid().ToString(), userCache.UserGroupOid.ToString(), ((int)userCache.UserType).ToString(), ((int)request.Language.Value).ToString(), request.RequestIp);
 
-                response.Authorizations = ApiServiceManager.Instance.GetAuthList(userCache.UserGroupOid);
+                response.Authorizations = AuthManager.Instance.GetAuthList(userCache.UserGroupOid);
                 response.UserInfo = new UserInfoViewData
                 {
                     Username = userCache.Username,
@@ -399,10 +399,13 @@ namespace Pavolle.MessageService.Business.Manager
                     using (Session session = XpoManager.Instance.GetNewSession())
                     {
                         var user = session.Query<User>().FirstOrDefault(t => t.Username == request.Username);
-                        user.IsLocked = false;
-                        user.WrongTryCount = 0;
-                        user.LastUpdateTime = DateTime.Now;
-                        user.Save();
+                        if(user != null)
+                        {
+                            user.IsLocked = false;
+                            user.WrongTryCount = 0;
+                            user.LastUpdateTime = DateTime.Now;
+                            user.Save();
+                        }
                     }
                 }
 
@@ -487,7 +490,7 @@ namespace Pavolle.MessageService.Business.Manager
                     request.Language = SettingManager.Instance.GetDefaultLanguage();
                 }
 
-                string checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
+                string? checkResult = ValidationManager.Instance.CheckString(request.Username, false, 5, 50, true, EMessageCode.Username, request.Language.Value);
                 if (checkResult != null)
                 {
                     _log.Error("Request Validation Error: " + checkResult);

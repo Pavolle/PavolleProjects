@@ -10,5 +10,6 @@ namespace Pavolle.MessageService.ViewModels.Model
         public EApiServiceMethodType MethodType { get; set; }
         public string ApiKey { get; set; }
         public bool IsAuthority { get; set; }
+        public bool Anonymous { get; set; }
     }
 }

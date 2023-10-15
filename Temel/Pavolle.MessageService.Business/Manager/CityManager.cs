@@ -28,9 +28,12 @@ namespace Pavolle.MessageService.Business.Manager
         ConcurrentDictionary<long, CityCacheModel> _cacheData;
         private CityManager() 
         {
-
-            LoadCacheData();
             _log.Debug("Inialize " + nameof(CityManager));
+        }
+
+        void Initialize()
+        {
+            LoadCacheData();
         }
 
         private void LoadCacheData()
