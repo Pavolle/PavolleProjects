@@ -68,6 +68,19 @@ namespace Pavolle.SmartAppCoder.Business.Projects.DbModels
                 EnumClass = null,
                 TableClass = null
             });
+            columns.Add(new ColumnModel
+            {
+                Name = "FlagBase64",
+                DbName = "flag_base64",
+                Size = 3000,
+                TranslatableStringData = false,
+                DataType = EDataType.STRING,
+                Nullable = false,
+                Index = false,
+                UniqueIndex = false,
+                EnumClass = null,
+                TableClass = null
+            });
 
 
 

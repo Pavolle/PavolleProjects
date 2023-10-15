@@ -49,6 +49,22 @@ namespace Pavolle.MessageService.WebApp.Controllers
             }
         }
 
+        [HttpGet(MessageServiceApiUrlConsts.ImageLookupRoutePrefix)]
+        public ActionResult ImageLookup([FromQuery] LookupCountryCriteria criteria)
+        {
+            try
+            {
+                var response = CountryManager.Instance.ImageLookup(criteria);
+                _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new MessageServiceResponseBase { ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, ELanguage.English) });
+            }
+        }
+
         [HttpGet(MessageServiceApiUrlConsts.DetailRoutePrefix)]
         public ActionResult Detail(long? oid, MessageServiceRequestBase request)
         {

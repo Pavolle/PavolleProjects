@@ -4,6 +4,7 @@
     {
         public const string ListRoutePrefix = "list";
         public const string LookupRoutePrefix = "lookup";
+        public const string ImageLookupRoutePrefix = "imagelookup";
         public const string DetailRoutePrefix = "detail/{oid}";
         public const string AddRoutePrefix = "add";
         public const string EditRoutePrefix = "edit/{oid}";

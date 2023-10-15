@@ -76,6 +76,11 @@ namespace Pavolle.MessageService.Business.Manager
             throw new NotImplementedException();
         }
 
+        public object ImageLookup(LookupCountryCriteria criteria)
+        {
+            throw new NotImplementedException();
+        }
+
         public CountryDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             throw new NotImplementedException();
