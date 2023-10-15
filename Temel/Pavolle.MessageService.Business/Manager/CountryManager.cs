@@ -73,12 +73,89 @@ namespace Pavolle.MessageService.Business.Manager
 
         public LookupResponse Lookup(LookupCountryCriteria criteria)
         {
-            throw new NotImplementedException();
+            var response = new LookupResponse();
+
+            try
+            {
+                if (criteria == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (criteria.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    criteria.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    List<Country> query = session.Query<Country>().ToList();
+                    response.DataList = new List<LookupViewData>();
+                    foreach (var item in query.ToList())
+                    {
+                        response.DataList.Add(new LookupViewData
+                        {
+                            Key = item.Oid,
+                            Value = TranslateManager.Instance.GetMessage(item.Name.Variable, criteria.Language.Value),
+                            IsDefault = false
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, criteria.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
-        public object ImageLookup(LookupCountryCriteria criteria)
+        public ImageLookupResponse ImageLookup(LookupCountryCriteria criteria)
         {
-            throw new NotImplementedException();
+            var response = new ImageLookupResponse();
+
+            try
+            {
+                if (criteria == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (criteria.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    criteria.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    List<Country> query = session.Query<Country>().ToList();
+                    response.DataList = new List<ImageLookupViewData>();
+                    foreach (var item in query.ToList())
+                    {
+                        response.DataList.Add(new ImageLookupViewData
+                        {
+                            Key = item.Oid,
+                            Value = TranslateManager.Instance.GetMessage(item.Name.Variable, criteria.Language.Value),
+                            ImageBase64=item.FlagBase64,
+                            IsDefault = false
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, criteria.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
         public CountryDetailResponse Detail(long? oid, MessageServiceRequestBase request)
