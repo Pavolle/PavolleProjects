@@ -24,5 +24,9 @@ namespace Pavolle.MessageService.DbModels.Entities
         [Persistent("name_td_oid")]
         public TranslateData Name { get; set; }
 
+        [Persistent("flag_base64")]
+        [Size(3000)]
+        public string FlagBase64 { get; set; }
+
     }
 }
