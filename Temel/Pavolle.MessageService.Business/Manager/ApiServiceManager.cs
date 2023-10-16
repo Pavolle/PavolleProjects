@@ -119,7 +119,7 @@ namespace Pavolle.MessageService.Business.Manager
                         };
 
                         //Authorization
-
+                        response.Authorization= AuthManager.Instance.GetAuthListForApi(long apiServiceOid)
                     }
                 }
             }
