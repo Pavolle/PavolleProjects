@@ -158,9 +158,62 @@ namespace Pavolle.MessageService.Business.Manager
             return response;
         }
 
-        public CountryDetailResponse Detail(long? oid, MessageServiceRequestBase request)
+        public CountryDetailResponse Detail(long? oid, MessageServiceRequestBase criteria)
         {
-            throw new NotImplementedException();
+            var response = new CountryDetailResponse();
+
+            try
+            {
+                if (criteria == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (criteria.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    criteria.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    var data = session.Query<Country>().FirstOrDefault(t => t.Oid == oid);
+                    if (data == null)
+                    {
+                        response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(criteria.Language.Value, EMessageCode.City);
+                        return response;
+                    }
+
+                    response.Detail = new CountryDetailViewData
+                    {
+                        Oid = data.Oid,
+                        CreatedTime = data.CreatedTime,
+                        LastUpdateTime = data.LastUpdateTime,
+                        NameTranslateDataOid = data.Name.Oid,
+                        Name = TranslateManager.Instance.GetMessage(data.Name.Variable, criteria.Language.Value)
+                    };
+
+                    response.CityList = CityManager.Instance.List(new ListCityCriteria
+                    {
+                        CountryOids = new List<long> { data.Oid },
+                        Language = criteria.Language,
+                        RequestIp = criteria.RequestIp,
+                        SessionId = criteria.SessionId,
+                        UserGroupOid = criteria.UserGroupOid,
+                        Username = criteria.Username,
+                        UserType = criteria.UserType
+                    }).DataList;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, criteria.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
         public MessageServiceResponseBase Add(AddCountryRequest request)
