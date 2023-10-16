@@ -11,5 +11,6 @@ namespace Pavolle.MessageService.ViewModels.Model
         public string ApiKey { get; set; }
         public bool IsAuthority { get; set; }
         public bool Anonymous { get; set; }
+        public string UserGroupName { get; set; }
     }
 }

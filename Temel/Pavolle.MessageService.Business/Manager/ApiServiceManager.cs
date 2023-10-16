@@ -117,6 +117,9 @@ namespace Pavolle.MessageService.Business.Manager
                             EditableForOrganization = data.EditableForOrganization,
                             Anonymous = data.Anonymous
                         };
+
+                        //Authorization
+
                     }
                 }
             }

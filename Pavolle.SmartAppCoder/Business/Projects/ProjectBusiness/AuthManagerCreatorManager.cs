@@ -65,6 +65,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "                        ApiKey = t.ApiService.ApiKey," + Environment.NewLine;
             classString += "                        IsAuthority = t.IsAuhtority," + Environment.NewLine;
             classString += "                        UserGroupOid = t.UserGroup.Oid," + Environment.NewLine;
+            classString += "                        UserGroupName = t.UserGroup.Name," + Environment.NewLine;
             classString += "                        MethodType = t.ApiService.MethodType," + Environment.NewLine;
             classString += "                        Anonymous=t.ApiService.Anonymous" + Environment.NewLine;
             classString += "                    }).ToList();" + Environment.NewLine;

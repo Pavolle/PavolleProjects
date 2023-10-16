@@ -10,6 +10,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model
             string properties = "";
             properties += "        public long Oid { get; set; }" + Environment.NewLine;
             properties += "        public long UserGroupOid { get; set; }" + Environment.NewLine;
+            properties += "        public string UserGroupName { get; set; }" + Environment.NewLine;
             properties += "        public EApiServiceMethodType MethodType { get; set; }" + Environment.NewLine;
             properties += "        public string ApiKey { get; set; }" + Environment.NewLine;
             properties += "        public bool IsAuthority { get; set; }" + Environment.NewLine;
