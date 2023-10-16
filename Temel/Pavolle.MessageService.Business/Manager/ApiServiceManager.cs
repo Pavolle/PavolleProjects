@@ -118,8 +118,7 @@ namespace Pavolle.MessageService.Business.Manager
                             Anonymous = data.Anonymous
                         };
 
-                        //Authorization
-                        response.Authorization= AuthManager.Instance.GetAuthListForApi(long apiServiceOid)
+                        response.Authorization = AuthManager.Instance.GetAuthListForApi(data.Oid);
                     }
                 }
             }

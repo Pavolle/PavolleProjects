@@ -87,7 +87,7 @@ namespace Pavolle.MessageService.Business.Manager
             return _cacheData.ToList().Where(t => t.Value.UserGroupOid == apiServiceOid).Select(t => new ApiServiceAuthViewData
             {
                 UserGroupOid = t.Value.UserGroupOid,
-                UserGroupName = t.Value.UserGroupName,
+                UserGroupName=t.Value.UserGroupName,
                 IsAuthority = t.Value.IsAuthority
             }).ToList();
         }
