@@ -8,5 +8,7 @@ namespace Pavolle.MessageService.ViewModels.ViewData
     public class ApiServiceAuthViewData : MessageServiceViewDataBase
     {
         public long UserGroupOid { get; set; }
+        public string UserGroupName { get; set; }
+        public bool IsAuthority { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.ViewData
         {
             string properties = "";
             properties += "        public long UserGroupOid { get; set; }" + Environment.NewLine;
+            properties += "        public string UserGroupName { get; set; }" + Environment.NewLine;
+            properties += "        public bool IsAuthority { get; set; }" + Environment.NewLine;
             var creator = new ViewDataCreatorManager(companyName, projectName, projectPath, properties, "ApiServiceAuthViewData", projectName + "ViewDataBase");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.ClassString);
         }

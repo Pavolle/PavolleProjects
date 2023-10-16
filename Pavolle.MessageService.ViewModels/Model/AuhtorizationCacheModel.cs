@@ -7,8 +7,10 @@ namespace Pavolle.MessageService.ViewModels.Model
     {
         public long Oid { get; set; }
         public long UserGroupOid { get; set; }
+        public string UserGroupName { get; set; }
         public EApiServiceMethodType MethodType { get; set; }
         public string ApiKey { get; set; }
+        public long ApiServiceOid { get; set; }
         public bool IsAuthority { get; set; }
         public bool Anonymous { get; set; }
     }

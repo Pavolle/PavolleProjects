@@ -44,10 +44,12 @@ namespace Pavolle.MessageService.Business.Manager
                     {
                         Oid = t.Oid,
                         ApiKey = t.ApiService.ApiKey,
+                        ApiServiceOid = t.ApiService.Oid,
                         IsAuthority = t.IsAuhtority,
                         UserGroupOid = t.UserGroup.Oid,
+                        UserGroupName = t.UserGroup.Name,
                         MethodType = t.ApiService.MethodType,
-                        Anonymous=t.ApiService.Anonymous
+                        Anonymous = t.ApiService.Anonymous
                     }).ToList();
 
                     _cacheData = new ConcurrentDictionary<string, AuhtorizationCacheModel>();
@@ -85,6 +87,16 @@ namespace Pavolle.MessageService.Business.Manager
                 _log.Error("Unexpected error occured! Error: " + ex);
                 return false;
             }
+        }
+
+        internal List<ApiServiceAuthViewData> GetAuthListForApi(long apiServiceOid)
+        {
+            return _cacheData.ToList().Where(t => t.Value.UserGroupOid == apiServiceOid).Select(t => new ApiServiceAuthViewData
+            {
+                UserGroupOid = t.Value.UserGroupOid,
+                UserGroupName = t.Value.UserGroupName,
+                IsAuthority = t.Value.IsAuthority
+            }).ToList();
         }
     }
 }
