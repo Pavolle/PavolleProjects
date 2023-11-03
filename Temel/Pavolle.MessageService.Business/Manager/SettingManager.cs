@@ -37,7 +37,10 @@ namespace Pavolle.MessageService.Business.Manager
                 {
                     Oid = t.Oid,
                     SettingType = t.SettingType,
-                    Value = t.Value
+                    Value = t.Value,
+                    SettingName = t.SettingName,
+                    CreatedTime = t.CreatedTime,
+                    LastUpdateTime = t.LastUpdateTime
                 });
             }
         }
@@ -109,6 +112,12 @@ namespace Pavolle.MessageService.Business.Manager
                 _log.Error("Fetch Security Level setting error: " + ex);
             }
             return "";
+        }
+
+        public List<SettingCacheModel> GetSettings()
+        {
+            if (_settings != null)return _settings.Select(t => t.Value).ToList();
+            return new List<SettingCacheModel>();
         }
     }
 }

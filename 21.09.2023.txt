@@ -2,10 +2,11 @@ Liderlikle ilgili eðitim izledik.
 Bu eðitim doðrultusunda baþarýlý þirket yönetimi için bir sistem oluþturmanýn zorunlu olduðunu gördük.
 Bu anlamda hangi konuda çalýþýlmasý gerekiyorsa mutlaka bu iþin nasýl yapýlacaðýna dair bir sistem oluþturulmasýnýn zorunlu olduðuna karar verdik.
 
-Kural 1 => Þirkete her zaman 0 dan baþlayan kiþileri iþe alýyoruz. Baþka yerde çalýþmýþ kiþileri çalýþan olarak almýyoruz. Baþka yerde çalýþmýþ kiþilerle sadece sözleþmeli danýþmanlýk yöntemi ile çalýþýlabilir. Bir kiþi ile çalýþabilmek için tutku(deneme süresi), çalýþkanlýk(deneme süresi), baðlýlýk(ölçemiyoruz), yenetek ölçüm için 2 haftalýk deneme süresi kuralý uygulanacaktýr. Þirkette her kes eþittir.
+Kural 1 => Proje gereklilikleri dýþýnda þirkete her zaman 0 dan baþlayan kiþileri iþe alýyoruz. Baþka yerde çalýþmýþ kiþileri çalýþan olarak almýyoruz. Baþka yerde çalýþmýþ kiþilerle sadece sözleþmeli danýþmanlýk yöntemi ile çalýþýlabilir. Bir kiþi ile çalýþabilmek için tutku(deneme süresi), çalýþkanlýk(deneme süresi), baðlýlýk(ölçemiyoruz), yenetek ölçüm için 2 haftalýk deneme süresi kuralý uygulanacaktýr. Þirkette her kes eþittir.
 Kural 2 => Maaþ stratejimiz x = asgari ücret, diðer çalýþanlar için x = 0.6 * asgari ucret, y => cocuk sayýsýna göre ödenecek ücret, n => Çocuk sayýsý
-0 - 1 sene => 2x + n * y + yemek/yol/elbise/kreþ senelik toplam kardan %2 daðýtým payý
-1 - 3 sene => 3x + n * y + yemek/yol/elbise/telefon-hat/kreþ senelik toplam kardan %2 daðýtým payý
+0 - 1 sene => 1.5x + n * y + yemek/yol/elbise/kreþ senelik toplam kardan %1 daðýtým payý
+1 - 2 sene => 2x + n * y + yemek/yol/elbise/kreþ senelik toplam kardan %1 daðýtým payý
+2 - 3 sene => 3x + n * y + yemek/yol/elbise/telefon-hat/kreþ senelik toplam kardan %2 daðýtým payý
 3 - 5 sene => 4x + n * y + yemek/yol/elbise/telefon-hat/kreþ senelik toplam kardan %2 daðýtým payý
 5 - 7 sene => 5x + n * y + yemek/yol/elbise/telefon-hat/araba/kreþ senelik toplam kardan %3 daðýtým payý
 7 - 10 sene => 6x + n * y + yemek/yol/elbise/telefon-hat/araba/tatil/kreþ senelik toplam kardan %3 daðýtým payý
@@ -17,8 +18,17 @@ Kural 6 => Çocuk yardým ücreti y = 1/8x
 Kural 7 => Kreþ Yardýmý(3-7 yaþ çocuklarý olanlar için) 1/8x
 Kural 8 => Þirkette akrabalýk iliþkileri olan kimse çalýþamaz.
 Kural 9 => Prim usulü ile çalýþýlamaz.
-Kural 10 => Ýþ veya iþ dýþý tartýþma, fiziksel kavga durumunda taraflarýn sözleþmesi tazminatsýz feshedilir. Fiziksel Kavgaya karýþanlarlar 5x tazminat alýnýr.
+Kural 10 => Ýþ veya iþ dýþý tartýþma, fiziksel kavga durumunda taraflarýn sözleþmesi tazminatsýz feshedilir. Fiziksel kavgaya karýþanlarlar 5x tazminat alýnýr.
 Kural 11 => Çalýþanlar baþka bir iþveren yanýnda çalýþamaz, ama kendi þirketlerini kurabilirler. Sahibi olduklarý þirketin faaliyet alaný çalýþtýklarý iþle ayný olamaz. Tespit edilmesi halinde 20x tazminat öderler.
 
 Pascross için uygulamanýn 3 seçeneði için sayýlar oluþturuldu.
 Bu tamamlandýktan sonra arayüz tasarýmýna baþlayýp gün için uygulamanýn 2 seviye þeklinde oyananabilir hale getireceðiz.
+
+Eski Yazýlým => 
+Sr + Jr => 6x+2x (Oracle Db konusunda tecrübeli, mevcut operasyonel süreçleri yürütebilecek, Windows ve Linux sunucular ile çalýþmýþ .net ve Java yazýlým dillerine hakim full stack developer. Jr => Js, html, css hakim, SQL sorgularý yazabilen)
+Yeni Yazýlým => 
+Db Uzmaný Senior => 6x (Oracle ve PostgreSQL konusunda çalýþmýþ, DB göç konusunda tecrübeli, tercihen DB yönetimi ve geliþtirilmesi ile ilgili sertifika sahibi)
+Senior Developer => 6x (Kamu projelerinde yer almýþ, Raporlama konusunda uzman, Yazýlým projelesi yönetimi konusunda tecrübeli. Senior .net developer)
+Middle Developer => 4x * 2 (Full Stack Middle Developer, Analiz Uzmaný + Ui/Ux)
+Jr Developer => 2x
+Devops => 3x

@@ -14,5 +14,6 @@ namespace Pavolle.MessageService.ViewModels.ViewData
         public string PhoneCode { get; set; }
         public long NameTranslateDataOid { get; set; }
         public string Name { get; set; }
+        public string FlagBase64 { get; set; }
     }
 }

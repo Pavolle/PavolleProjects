@@ -11,6 +11,9 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model
             properties += "        public long Oid { get; set; }" + Environment.NewLine;
             properties += "        public ESettingType SettingType { get; set; }" + Environment.NewLine;
             properties += "        public string Value { get; set; }" + Environment.NewLine;
+            properties += "        public DateTime? LastUpdateTime { get; set; }" + Environment.NewLine;
+            properties += "        public DateTime CreatedTime { get; set; }" + Environment.NewLine;
+            properties += "        public string SettingName { get; set; }" + Environment.NewLine;
             var creator = new ModelCreatorManager(companyName, projectName, projectPath, properties, "SettingCacheModel");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.ClassString);
         }

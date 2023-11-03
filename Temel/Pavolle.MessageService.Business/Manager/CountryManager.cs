@@ -25,7 +25,18 @@ namespace Pavolle.MessageService.Business.Manager
     public class CountryManager:Singleton<CountryManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(CountryManager));
+        ConcurrentDictionary<long, CountryCacheModel> _cacheData;
         private CountryManager() { }
+
+        public void Initialize()
+        {
+            LoadCacheData();
+        }
+
+        private void LoadCacheData()
+        {
+            throw new NotImplementedException();
+        }
 
         public CountryListResponse List(ListCountryCriteria criteria)
         {
@@ -218,7 +229,63 @@ namespace Pavolle.MessageService.Business.Manager
 
         public MessageServiceResponseBase Add(AddCountryRequest request)
         {
-            throw new NotImplementedException();
+            var response = new MessageServiceResponseBase();
+
+            try
+            {
+                if (request == null)
+                {
+                    response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
+                    _log.Error("Criteria is null");
+                    return response;
+                }
+
+                if (request.Language == null)
+                {
+                    _log.Warn("Request language is null. Setted default language.");
+                    request.Language = SettingManager.Instance.GetDefaultLanguage();
+                }
+
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    session.BeginTransaction();
+
+                    var nameTranslateData = new TranslateData(session)
+                    {
+                        Variable = request.Name
+                    };
+                    if (request.Language == ELanguage.Turkish)
+                    {
+                        nameTranslateData.TR = request.Name;
+                    }
+                    else if (request.Language == ELanguage.English)
+                    {
+                        nameTranslateData.EN = request.Name;
+                    }
+
+                    nameTranslateData.Save();
+                    var city = new Country(session)
+                    {
+                        ISOCode2=request.ISOCode2,
+                        ISOCode3 = request.ISOCode3,
+                        FlagBase64=request.FlagBase64,
+                        Name = nameTranslateData
+                    };
+                    city.Save();
+
+                    session.CommitTransaction();
+
+                    response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageCode.City);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
+                _log.Debug("Unexpected error occured!!! Error: " + ex);
+            }
+
+            return response;
         }
 
         public MessageServiceResponseBase Edit(long? oid, EditCountryRequest request)

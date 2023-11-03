@@ -15,6 +15,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.ViewData
             properties += "        public string ISOCode3 { get; set; }" + Environment.NewLine;
             properties += "        public string PhoneCode { get; set; }" + Environment.NewLine;
             properties += "        public string Name { get; set; }" + Environment.NewLine;
+            properties += "        public string FlagBase64 { get; set; }" + Environment.NewLine;
             var creator = new ViewDataCreatorManager(companyName, projectName, projectPath, properties, "CountryViewData", projectName + "ViewDataBase");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.ClassString);
         }

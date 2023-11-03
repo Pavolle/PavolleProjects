@@ -131,6 +131,13 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "            }" + Environment.NewLine;
             classString += "            return \"\";" + Environment.NewLine;
             classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        List<SettingCacheModel> GetSettings()" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            if (_settings != null) return _settings.Select(t => t.Value).ToList();" + Environment.NewLine;
+            classString += "            return new List<SettingCacheModel>();" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
             classString += "    }" + Environment.NewLine;
             classString += "}" + Environment.NewLine;
 

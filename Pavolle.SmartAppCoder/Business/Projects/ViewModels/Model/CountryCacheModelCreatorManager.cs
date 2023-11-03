@@ -13,6 +13,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.Model
             properties += "        public string ISOCode2 { get; set; }" + Environment.NewLine;
             properties += "        public string ISOCode3 { get; set; }" + Environment.NewLine;
             properties += "        public string PhoneCode { get; set; }" + Environment.NewLine;
+            properties += "        public string FlagBase64 { get; set; }" + Environment.NewLine;
 
             foreach (var item in _languages)
             {

@@ -12,6 +12,7 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ViewModels.Request
             properties += "        public string ISOCode3 { get; set; }" + Environment.NewLine;
             properties += "        public string PhoneCode { get; set; }" + Environment.NewLine;
             properties += "        public string Name { get; set; }" + Environment.NewLine;
+            properties += "        public string FlagBase64 { get; set; }" + Environment.NewLine;
             var creator = new RequestCreatorManager(companyName, projectName, projectPath, properties, "AddCountryRequest", projectName + "RequestBase");
             return FileHelperManager.Instance.WriteFile(projectPath, creator.Path, creator.ClassName + ".cs", creator.ClassString);
         }

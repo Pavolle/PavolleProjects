@@ -13,5 +13,6 @@ namespace Pavolle.MessageService.ViewModels.Model
         public string PhoneCode { get; set; }
         public string TRName { get; set; }
         public string ENName { get; set; }
+        public string FlagBase64 { get; set; }
     }
 }
