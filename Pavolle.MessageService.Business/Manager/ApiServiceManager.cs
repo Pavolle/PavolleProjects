@@ -1,20 +1,26 @@
-﻿using DevExpress.Xpo;
+using DevExpress.Xpo;
 using log4net;
-using Pavolle.Core.Utils;
 using Pavolle.Core.Enums;
+using Pavolle.Core.Utils;
 using Pavolle.MessageService.Common.Enums;
 using Pavolle.MessageService.DbModels;
 using Pavolle.MessageService.DbModels.Entities;
+using Pavolle.MessageService.DbModels.Manager;
 using Pavolle.MessageService.ViewModels.Criteria;
 using Pavolle.MessageService.ViewModels.Model;
 using Pavolle.MessageService.ViewModels.Request;
 using Pavolle.MessageService.ViewModels.Response;
 using Pavolle.MessageService.ViewModels.ViewData;
+using System.Linq;
+using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Pavolle.MessageService.Business.Manager
 {
-    public class ApiServiceManager:Singleton<ApiServiceManager>
+    public class ApiServiceManager : Singleton<ApiServiceManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(ApiServiceManager));
         private ApiServiceManager()
@@ -22,12 +28,9 @@ namespace Pavolle.MessageService.Business.Manager
             _log.Debug("Inialize " + nameof(ApiServiceManager));
         }
 
-
-
         public ApiServiceListResponse List(ListApiServiceCriteria criteria)
         {
             var response=new ApiServiceListResponse();
-
             try
             {
                 if (criteria == null)
@@ -54,6 +57,7 @@ namespace Pavolle.MessageService.Business.Manager
                     {
                         query = query.Where(t => t.ApiDefinition.Contains(criteria.DefinitionContains));
                     }
+
                     response.DataList = query.Select(t => new ApiServiceViewData
                     {
                         Oid = t.Oid,
@@ -73,14 +77,12 @@ namespace Pavolle.MessageService.Business.Manager
                 response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, criteria.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
-
             return response;
         }
 
         public ApiServiceDetailResponse Detail(long? oid, MessageServiceRequestBase request)
         {
             var response = new ApiServiceDetailResponse();
-
             try
             {
                 if (request == null)
@@ -117,7 +119,6 @@ namespace Pavolle.MessageService.Business.Manager
                             EditableForOrganization = data.EditableForOrganization,
                             Anonymous = data.Anonymous
                         };
-
                         response.Authorization = AuthManager.Instance.GetAuthListForApi(data.Oid);
                     }
                 }
@@ -127,7 +128,6 @@ namespace Pavolle.MessageService.Business.Manager
                 response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
-
             return response;
         }
 
@@ -165,18 +165,10 @@ namespace Pavolle.MessageService.Business.Manager
                     response.ErrorMessage = checkResult;
                     return response;
                 }
-                checkResult = ValidationManager.Instance.CheckForOidNull(oid, EMessageCode.ApiService, request.Language.Value);
-                if (checkResult != null)
-                {
-                    _log.Error("Request Validation Error: " + checkResult);
-                    response.ErrorMessage = checkResult;
-                    return response;
-                }
 
                 using (Session session = XpoManager.Instance.GetNewSession())
                 {
                     var data = session.Query<ApiService>().FirstOrDefault(t => t.Oid == oid);
-
                     if (data == null)
                     {
                         response.ErrorMessage = TranslateManager.Instance.GetXNotFoundMessage(request.Language.Value, EMessageCode.ApiService);
@@ -207,7 +199,6 @@ namespace Pavolle.MessageService.Business.Manager
                     }
 
                     session.BeginTransaction();
-
                     data.ApiDefinition = request.ApiDefinition;
                     data.LastUpdateTime = DateTime.Now;
                     data.Save();
@@ -237,10 +228,8 @@ namespace Pavolle.MessageService.Business.Manager
                     }
 
                     session.CommitTransaction();
-
                     response.SuccessMessage = TranslateManager.Instance.GetXSavedMessage(request.Language.Value, EMessageCode.ApiService);
                 }
-
                 AuthManager.Instance.Initialize();
             }
             catch (Exception ex)
@@ -248,7 +237,6 @@ namespace Pavolle.MessageService.Business.Manager
                 response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.UnexpectedError, request.Language.Value);
                 _log.Debug("Unexpected error occured!!! Error: " + ex);
             }
-
             return response;
         }
     }

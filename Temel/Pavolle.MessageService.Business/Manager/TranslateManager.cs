@@ -157,5 +157,10 @@ namespace Pavolle.MessageService.Business.Manager
         {
             return string.Format(GetMessage(EMessageCode.XNotValid, language), messageCode);
         }
+
+        internal string GetXCanNotBeChanged(ELanguage language, EMessageCode messageCode)
+        {
+            return string.Format(GetMessage(EMessageCode.XCanNotBeChanged, language), messageCode);
+        }
     }
 }

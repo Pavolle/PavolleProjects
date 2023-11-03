@@ -11,6 +11,7 @@ namespace Pavolle.MessageService.Common.Enums
         XCannotBeLeftBlank,
         XNotTheExpectedLength,
         XNotValid,
+        XCanNotBeChanged,
         SecurityError,
         UsernameOrPasswordIsNotCorrect,
         UserIsLocked,

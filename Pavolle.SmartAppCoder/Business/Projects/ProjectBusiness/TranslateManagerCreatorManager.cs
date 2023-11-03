@@ -220,6 +220,11 @@ namespace Pavolle.SmartAppCoder.Business.Projects.ProjectBusiness
             classString += "        {" + Environment.NewLine;
             classString += "            return string.Format(GetMessage(EMessageCode.XNotValid, language), messageCode);" + Environment.NewLine;
             classString += "        }" + Environment.NewLine;
+            classString += "" + Environment.NewLine;
+            classString += "        internal string GetXCanNotBeChanged(ELanguage language, EMessageCode messageCode)" + Environment.NewLine;
+            classString += "        {" + Environment.NewLine;
+            classString += "            return string.Format(GetMessage(EMessageCode.XCanNotBeChanged, language), messageCode);" + Environment.NewLine;
+            classString += "        }" + Environment.NewLine;
             classString += "    }" + Environment.NewLine;
             classString += "}" + Environment.NewLine;
 
