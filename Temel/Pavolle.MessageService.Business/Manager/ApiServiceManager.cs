@@ -140,7 +140,7 @@ namespace Pavolle.MessageService.Business.Manager
                 if (request == null)
                 {
                     response.ErrorMessage = TranslateManager.Instance.GetMessage(EMessageCode.SecurityError, SettingManager.Instance.GetDefaultLanguage());
-                    _log.Error("Request is null");
+                    _log.Error("Criteria is null");
                     return response;
                 }
 
