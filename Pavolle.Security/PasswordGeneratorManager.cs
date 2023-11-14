@@ -14,7 +14,7 @@ namespace Pavolle.Security
             if (string.IsNullOrWhiteSpace(key)) return "";
             var aesAlgorithm = new AESAlgorithm();
             var aesResult = aesAlgorithm.Encrypt(key, _key);
-            return SecurityHelperManager.Instance.GetEncryptedPassword(aesResult, key).Substring(13, 24);
+            return SecurityHelperManager.Instance.GetEncryptedPassword(aesResult, key).Substring(13, 16);
         }
     }
 }

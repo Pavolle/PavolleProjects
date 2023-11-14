@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
+    <PackageReference Include="Npgsql" Version="7.0.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.Business\Pavolle.BES.SettingServer.Business.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.Common\Pavolle.BES.SettingServer.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ViewModels\Pavolle.BES.SettingServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.WebSecurity\Pavolle.BES.SettingServer.WebSecurity.csproj" />
+  </ItemGroup>
+
+</Project>
