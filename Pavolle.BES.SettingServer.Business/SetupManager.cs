@@ -45,50 +45,100 @@ namespace Pavolle.BES.SettingServer.Business
 
                                 _log.Info("LogServerUrl değeri https:localhost:1212 olarak ayarlandı.");
                                 break;
-                            case ESettingType.RabbitMQUsername:
+                            case ESettingType.LogServerRabbitMQUsername:
                                 new Setting(session)
                                 {
                                     SettingType = item,
                                     Value = "guest",
                                 }.Save();
 
-                                _log.Info("RabbitMQUsername değeri guest olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQUsername değeri guest olarak ayarlandı.");
                                 break;
-                            case ESettingType.RabbitMQPassword:
+                            case ESettingType.LogServerRabbitMQPassword:
                                 new Setting(session)
                                 {
                                     SettingType = item,
                                     Value = "guest",
                                 }.Save();
 
-                                _log.Info("RabbitMQPassword değeri guest olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQPassword değeri guest olarak ayarlandı.");
                                 break;
-                            case ESettingType.RabbitMQVHost:
+                            case ESettingType.LogServerRabbitMQVHost:
                                 new Setting(session)
                                 {
                                     SettingType = item,
                                     Value = "/",
                                 }.Save();
 
-                                _log.Info("RabbitMQVHost değeri \"/\" olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQVHost değeri \"/\" olarak ayarlandı.");
                                 break;
-                            case ESettingType.RabbitMQHostname:
+                            case ESettingType.LogServerRabbitMQHostname:
                                 new Setting(session)
                                 {
                                     SettingType = item,
                                     Value = "localhost",
                                 }.Save();
 
-                                _log.Info("RabbitMQHostname değeri localhost olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQHostname değeri localhost olarak ayarlandı.");
                                 break;
-                            case ESettingType.RabbitMQPort:
+                            case ESettingType.LogServerRabbitMQPort:
                                 new Setting(session)
                                 {
                                     SettingType = item,
                                     Value = "5672",
                                 }.Save();
 
-                                _log.Info("RabbitMQPort değeri 5672 olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQPort değeri 5672 olarak ayarlandı.");
+                                break;
+
+                            case ESettingType.LogServerExchangeName:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "logserver",
+                                }.Save();
+
+                                _log.Info("LogServerExchangeName değeri logserver olarak ayarlandı.");
+                                break;
+
+                            case ESettingType.LogServerLogQueueKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "LOGS",
+                                }.Save();
+
+                                _log.Info("LogServerLogQueueKey değeri LOGS olarak ayarlandı.");
+                                break;
+
+                            case ESettingType.LogServerLogRoutingKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "LOGS",
+                                }.Save();
+
+                                _log.Info("LogServerLogRoutingKey değeri LOGS olarak ayarlandı.");
+                                break;
+
+                            case ESettingType.LogServerLogErrorQueueKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "LOG_ERRORS",
+                                }.Save();
+
+                                _log.Info("LogServerLogErrorQueueKey değeri LOG_ERRORS olarak ayarlandı.");
+                                break;
+
+                            case ESettingType.LogServerLogErrorRoutingKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "LOG_ERRORS",
+                                }.Save();
+
+                                _log.Info("LogServerLogErrorRoutingKey değeri LOG_ERRORS olarak ayarlandı.");
                                 break;
 
                         }

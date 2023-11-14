@@ -15,19 +15,34 @@ namespace Pavolle.BES.SettingServer.Common.Enums
         [Description("Log Server Url")]
         LogServerUrl = 1,
 
-        [Description("RabbitMQ Username")]
-        RabbitMQUsername,
+        [Description("Log Server - RabbitMQ Username")]
+        LogServerRabbitMQUsername,
 
-        [Description("RabbitMQ Password")]
-        RabbitMQPassword,
+        [Description("Log Server - RabbitMQ Password")]
+        LogServerRabbitMQPassword,
 
-        [Description("RabbitMQ VHost")]
-        RabbitMQVHost,
+        [Description("Log Server - RabbitMQ VHost")]
+        LogServerRabbitMQVHost,
 
-        [Description("RabbitMQ Hostname")]
-        RabbitMQHostname,
+        [Description("Log Server - RabbitMQ Hostname")]
+        LogServerRabbitMQHostname,
 
-        [Description("RabbitMQ Port")]
-        RabbitMQPort,
+        [Description("Log Server - RabbitMQ Port")]
+        LogServerRabbitMQPort,
+
+        [Description("Log Server - Exchange Name")]
+        LogServerExchangeName,
+
+        [Description("Log Server - Log Queue Key")]
+        LogServerLogQueueKey,
+
+        [Description("Log Server - Log Routing Key")]
+        LogServerLogRoutingKey,
+
+        [Description("Log Server - Log Error Queue Key")]
+        LogServerLogErrorQueueKey,
+
+        [Description("Log Server - Log Error Routing Key")]
+        LogServerLogErrorRoutingKey,
     }
 }

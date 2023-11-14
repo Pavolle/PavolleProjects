@@ -16,8 +16,8 @@ namespace Pavolle.BES.SettingServer.UnitTests
             var response = SettingServiceManager.Instance.GetServerStatus();
             Assert.IsNotNull(response);
             Assert.IsTrue(response.Success);
-            Assert.IsTrue(response.DbStatus == "Ready");
-            Assert.IsTrue(response.ServerStatus == "Ready");
+            Assert.IsTrue(response.DbStatus);
+            Assert.IsTrue(response.ServerStatus);
         }
     }
 }

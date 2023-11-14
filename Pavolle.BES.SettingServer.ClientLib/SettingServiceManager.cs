@@ -30,5 +30,20 @@ namespace Pavolle.BES.SettingServer.ClientLib
             }
         }
 
+        public SettingListResponse GetSettingsList()
+        {
+            if (string.IsNullOrEmpty(_serviceUrl))
+            {
+                return new SettingListResponse
+                {
+                    ErrorMessage = "Setting Service is not initialized!"
+                };
+            }
+            else
+            {
+                return ServiceHelperManager.Instance.Get<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.Route + "/" + SettingServerConsts.SettingsUrlConst.ListRoutePrefix);
+            }
+        }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.LogServer.ViewModels.Request
 {
-    public class LogRequest
+    public class LogRequest : LogServerRequestBase
     {
         public string AppId { get; set; }
         public string ServerRequestIp { get; set; }
@@ -18,5 +18,6 @@ namespace Pavolle.BES.LogServer.ViewModels.Request
         public bool SystemLog { get; set; }
         public bool UserOperationLog { get; set; }
         public DateTime SendToLogServerTime { get; set; }
+        public DateTime? TimeToArrive { get; set; }
     }
 }

@@ -7,12 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Filter\" />
+    <ProjectReference Include="..\Pavolle.BES.LogServer.Business\Pavolle.BES.LogServer.Business.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.LogServer.Common\Pavolle.BES.LogServer.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.LogServer.ViewModels\Pavolle.BES.LogServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.LogServer.WebSecurity\Pavolle.BES.LogServer.WebSecurity.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ViewModels\Pavolle.BES.SettingServer.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

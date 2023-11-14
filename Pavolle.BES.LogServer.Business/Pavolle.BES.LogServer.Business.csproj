@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.LogServer.RabbitClient\Pavolle.BES.LogServer.RabbitClient.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.LogServer.ViewModels\Pavolle.BES.LogServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ViewModels\Pavolle.BES.SettingServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+  </ItemGroup>
+
 </Project>

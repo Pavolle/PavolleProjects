@@ -13,19 +13,17 @@ namespace Pavolle.BES.SettingServer.Business
     {
         private ServerStatusManager() { }
 
-        string _dbStatus = "Connection Error";
-        string _serverStatus = "Not Ready";
+        bool _dbStatus = false;
+        bool _serverStatus = false;
 
         public void SetDbStatus(bool status)
         {
-            if(status) { _dbStatus = "Ready"; }
-            else { _dbStatus = "Connection Error"; }
+            _dbStatus = status;
         }
 
         public void SetSeverStatus(bool status)
         {
-            if (status) { _serverStatus = "Ready"; }
-            else { _serverStatus = "Not Ready"; }
+            _serverStatus = status;
         }
 
         public SettingsServerStatusResponse GetServerStatus(SettingsServerRequestBase request)
@@ -33,7 +31,9 @@ namespace Pavolle.BES.SettingServer.Business
             return new SettingsServerStatusResponse
             {
                 DbStatus = _dbStatus,
-                ServerStatus = _serverStatus
+                DbStatusString=_dbStatus?"Ready":"Connection Error",
+                ServerStatus = _serverStatus,
+                ServerStatusString = _dbStatus ? "Ready" : "Not Ready",
             };
         }
     }

@@ -9,7 +9,10 @@ namespace Pavolle.BES.SettingServer.ViewModels.Response
 {
     public class SettingsServerStatusResponse : ResponseBase
     {
-        public string DbStatus { get; set; }
-        public string ServerStatus { get; set; }
+        public bool DbStatus { get; set; }
+        public string DbStatusString { get; set; }
+
+        public bool ServerStatus { get; set; }
+        public string ServerStatusString { get; set; }
     }
 }
