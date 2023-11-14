@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ViewModels\Pavolle.BES.SettingServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+  </ItemGroup>
+
 </Project>
