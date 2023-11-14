@@ -16,6 +16,13 @@ namespace Pavolle.BES.LogServer.Common.Utils
             public const string Route = "api/logsserver/serverstatus";
 
             public const string ServerDetailRoutePrefix = "detail";
+            public const string ServerSettingsRoutePrefix = "settings";
+        }
+
+        public class LogUrlConst
+        {
+            public const string Route = "api/logsserver/log";
+            public const string SaveRoutePrefix = "save";
         }
     }
 }

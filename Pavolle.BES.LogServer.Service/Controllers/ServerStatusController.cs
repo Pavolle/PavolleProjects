@@ -29,5 +29,21 @@ namespace Pavolle.BES.LogServer.Service.Controllers
                 return Ok(new LogServerStatusResponse { ErrorMessage = "Unexpected error occured! Error Code: 500" });
             }
         }
+
+        [HttpGet(LogServerConsts.ServerStatusUrlConst.ServerSettingsRoutePrefix)]
+        public ActionResult Settings(LogServerRequestBase request)
+        {
+            try
+            {
+                var response = LogServerStatusManager.Instance.GetServerSettings(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new LogServerSettingsResponse { ErrorMessage = "Unexpected error occured! Error Code: 500" });
+            }
+        }
     }
 }

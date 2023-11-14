@@ -45,5 +45,9 @@ namespace Pavolle.BES.SettingServer.ClientLib
             }
         }
 
+        public string GetServerUrl()
+        {
+            return _serviceUrl;
+        }
     }
 }

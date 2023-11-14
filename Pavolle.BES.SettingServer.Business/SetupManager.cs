@@ -40,7 +40,7 @@ namespace Pavolle.BES.SettingServer.Business
                                 new Setting(session)
                                 {
                                     SettingType = item,
-                                    Value = "https:localhost:1212",
+                                    Value = "https://localhost:7120",
                                 }.Save();
 
                                 _log.Info("LogServerUrl değeri https:localhost:1212 olarak ayarlandı.");
@@ -95,7 +95,7 @@ namespace Pavolle.BES.SettingServer.Business
                                 new Setting(session)
                                 {
                                     SettingType = item,
-                                    Value = "logserver",
+                                    Value = "LOG_SERVER",
                                 }.Save();
 
                                 _log.Info("LogServerExchangeName değeri logserver olarak ayarlandı.");

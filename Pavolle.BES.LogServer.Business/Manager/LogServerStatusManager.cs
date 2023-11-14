@@ -1,5 +1,7 @@
 ﻿using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.LogServer.ViewModels.Response;
+using Pavolle.BES.SettingServer.ClientLib;
+using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -51,6 +53,24 @@ namespace Pavolle.BES.LogServer.Business.Manager
         public void SetSettingServerConnectionStatus(bool status)
         {
             _settingServerConnectionStatus = status;
+        }
+
+        public LogServerSettingsResponse GetServerSettings(LogServerRequestBase request)
+        {
+            return new LogServerSettingsResponse
+            {
+                SettingServerUrl = SettingServiceManager.Instance.GetServerUrl(),
+                LogServerRabbitMQUsername = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQUsername),
+                LogServerRabbitMQPassword = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPassword),
+                LogServerRabbitMQHostname = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQHostname),
+                LogServerRabbitMQVHost = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQVHost),
+                LogServerRabbitMQPort = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPort),
+                LogServerExchangeName = LogServerManager.Instance.GetSetting(ESettingType.LogServerExchangeName),
+                LogServerLogQueueKey = LogServerManager.Instance.GetSetting(ESettingType.LogServerLogQueueKey),
+                LogServerLogRoutingKey = LogServerManager.Instance.GetSetting(ESettingType.LogServerLogRoutingKey),
+                LogServerLogErrorQueueKey = LogServerManager.Instance.GetSetting(ESettingType.LogServerLogErrorQueueKey),
+                LogServerLogErrorRoutingKey = LogServerManager.Instance.GetSetting(ESettingType.LogServerLogErrorRoutingKey)
+            };
         }
     }
 }

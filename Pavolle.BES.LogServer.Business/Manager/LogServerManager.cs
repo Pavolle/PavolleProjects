@@ -1,8 +1,10 @@
 ﻿using Pavolle.BES.LogServer.RabbitClient;
+using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.SettingServer.ViewModels.ViewData;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +34,27 @@ namespace Pavolle.BES.LogServer.Business.Manager
         public string GetSetting(ESettingType settingType)
         {
             return _settingList.FirstOrDefault(t=>t.SettingType == settingType).Value;
+        }
+
+        public ResponseBase Save(LogRequest request)
+        {
+            if(request==null)
+            {
+                return new ResponseBase
+                {
+                    ErrorMessage = "Data format is not correct!"
+                };
+            }
+            request.TimeToArrive=DateTime.Now;
+            bool writeResult= RabbitMQManager.Instance.ProduceLogMessage(request);
+            if (!writeResult)
+            {
+                return new ResponseBase
+                {
+                    ErrorMessage = "Log could not write to queue!"
+                };
+            }
+            return new ResponseBase() { SuccessMessage = "OK" };
         }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using log4net;
+using Newtonsoft.Json;
+using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
@@ -81,6 +84,34 @@ namespace Pavolle.BES.LogServer.RabbitClient
                 status = DeclareQueue();
             }
             return status;
+        }
+
+        public bool ProduceLogMessage(LogRequest request)
+        {
+            var response = true;
+            try
+            {
+                if (_channel == null || _channel.IsClosed)
+                {
+                    OpenChannel();
+                }
+
+                string messageString = JsonConvert.SerializeObject(request);
+                byte[] messageBodyBytes = Encoding.UTF8.GetBytes(messageString);
+
+                IBasicProperties props = _channel.CreateBasicProperties();
+                props.ContentType = "javascript/json";
+                props.DeliveryMode = 2;
+                _channel.BasicPublish(_exchangeName, _logRoutingKey, props, messageBodyBytes);
+                _log.Info("Message sended to Rabbit MQ. Message=> " + messageString);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("RabbitMQ error: Log Request Message could not write to queue! Message: " + JsonConvert.SerializeObject(request) + " Error: " + ex);
+                response = false;
+            }
+
+            return response;
         }
 
         private bool DeclareQueue()
