@@ -2,7 +2,7 @@
 
 namespace Pavolle.BES.LogServer.Service.Controllers
 {
-    public class LogController : Controller
+    public class ServerStatusController : Controller
     {
 
     }

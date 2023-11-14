@@ -17,7 +17,7 @@ internal class Program
         _log.Info("******** Pavolle - Settings Server *********");
         _log.Info("********************************************");
         _log.Info("  ");
-        _log.Info("Uygulama baþlatýlýyor...");
+        _log.Info("Application starting...");
 
         var settings = builder.Configuration.GetSection("Settings").Get<Settings>();
 
@@ -25,18 +25,19 @@ internal class Program
         ServerStatusManager.Instance.SetDbStatus(dbConnection);
         if(!dbConnection)
         {
-            _log.Error("Veritabaný baðlantýsý saðlanamadýðý için uygulama baþlatýlamadý.");
+            _log.Error("Db connection error! Db is not ready!");
+            return;
         }
         else
         {
-            _log.Info("Kurulum ayarlarý kontrol ediliyor...");
+            _log.Info("Checking setup configuration...");
             SetupManager.Instance.Initialize();
-            _log.Info("Kurulum ayarlarý kontrol edildi");
+            _log.Info("Setup configuration done.");
 
 
-            _log.Info("Sunucu için cache db çalýþtýrýlýyor...");
+            _log.Info("Starting settings cache server...");
             SettingsServerManager.Instance.Initialize();
-            _log.Info("Sunucu için cache db aktif");
+            _log.Info("Settings Cache DB is ready");
         }
 
         // Add services to the container.
@@ -46,11 +47,16 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+
+
+        _log.Info("Starting filter....");
         builder.Services.AddControllersWithViews(options =>
         {
             options.Filters.Add<CustomAuthorizeAttribute>();
             options.Filters.Add<FillRequestBaseActionFilterAttribute>();
         });
+
+        _log.Info("Service filter ready.");
 
 
         builder.Services.AddCors(options =>
@@ -64,11 +70,11 @@ internal class Program
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+        //if (app.Environment.IsDevelopment())
+        //{
+        //}
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
         app.UseHttpsRedirection();
 
@@ -77,6 +83,7 @@ internal class Program
         app.MapControllers();
 
         ServerStatusManager.Instance.SetSeverStatus(true);
+        _log.Info("Settings Server is Ready");
         app.Run();
     }
 

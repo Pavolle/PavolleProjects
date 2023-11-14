@@ -24,14 +24,14 @@ namespace Pavolle.BES.SettingServer.Business
             try
             {
                 _connectionString = connectionString;
-                _log.Info("Veritabanı bağlantısı yapılıyor...");
+                _log.Info("Connecting to DB...");
                 XpoManager.Instance.InitXpo(connectionString);
-                _log.Info("Veritabanı bağlantısı sağlandı...");
+                _log.Info("Connected to DB successfully.");
                 return true;
             }
             catch (Exception ex)
             {
-                _log.Error("Veritabanına bağlanırken beklenmedik hata oluştu: Hata: " + ex);
+                _log.Error("Db connection error: Detail: " + ex);
                 return false;
             }
         }
