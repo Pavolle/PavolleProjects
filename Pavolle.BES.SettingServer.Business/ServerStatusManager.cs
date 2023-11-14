@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.SettingServer.ViewModels.Response;
+﻿using Pavolle.BES.SettingServer.ViewModels.Request;
+using Pavolle.BES.SettingServer.ViewModels.Response;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace Pavolle.BES.SettingServer.Business
             else { _serverStatus = "Not Ready"; }
         }
 
-        public SettingsServerStatusResponse GetServerStatus()
+        public SettingsServerStatusResponse GetServerStatus(SettingsServerRequestBase request)
         {
             return new SettingsServerStatusResponse
             {

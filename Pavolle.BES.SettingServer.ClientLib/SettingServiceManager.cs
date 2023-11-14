@@ -1,5 +1,7 @@
-﻿using Pavolle.BES.SettingServer.ViewModels.Response;
+﻿using Pavolle.BES.SettingServer.Common.Utils;
+using Pavolle.BES.SettingServer.ViewModels.Response;
 using Pavolle.Core.Utils;
+using System;
 
 namespace Pavolle.BES.SettingServer.ClientLib
 {
@@ -7,6 +9,11 @@ namespace Pavolle.BES.SettingServer.ClientLib
     {
         public string _serviceUrl ="";
         private SettingServiceManager() { }
+
+        public void Initialize(string servciceUrl)
+        {
+            _serviceUrl = servciceUrl;
+        }
 
         public SettingsServerStatusResponse GetServerStatus()
         {
@@ -19,7 +26,7 @@ namespace Pavolle.BES.SettingServer.ClientLib
             }
             else
             {
-                return new SettingsServerStatusResponse();
+                return ServiceHelperManager.Instance.Get<SettingsServerStatusResponse>(_serviceUrl, SettingServerConsts.ServerStatusUrlConst.Route + "/" + SettingServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix);
             }
         }
 
