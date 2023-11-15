@@ -160,21 +160,39 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMS Server", "SMS Server", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mail Server", "Mail Server", "{BA224DF4-A08D-44C6-88D3-CD03E53FB4C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.Business", "Pavolle.BES.MailServer.Business\Pavolle.BES.MailServer.Business.csproj", "{63826C34-287A-42C8-BEB0-52E7AD0153F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.Business", "Pavolle.BES.MailServer.Business\Pavolle.BES.MailServer.Business.csproj", "{63826C34-287A-42C8-BEB0-52E7AD0153F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.Common", "Pavolle.BES.MailServer.Common\Pavolle.BES.MailServer.Common.csproj", "{61E0A6F9-C483-4003-A921-752EA1968ABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.Common", "Pavolle.BES.MailServer.Common\Pavolle.BES.MailServer.Common.csproj", "{61E0A6F9-C483-4003-A921-752EA1968ABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.ViewModels", "Pavolle.BES.MailServer.ViewModels\Pavolle.BES.MailServer.ViewModels.csproj", "{8ADE2759-4A71-48F1-BF3A-FF7460AB6CED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.ViewModels", "Pavolle.BES.MailServer.ViewModels\Pavolle.BES.MailServer.ViewModels.csproj", "{8ADE2759-4A71-48F1-BF3A-FF7460AB6CED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.WebSecurity", "Pavolle.BES.MailServer.WebSecurity\Pavolle.BES.MailServer.WebSecurity.csproj", "{5C2DD89B-2CA9-4C2C-8A16-567F18906BD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.WebSecurity", "Pavolle.BES.MailServer.WebSecurity\Pavolle.BES.MailServer.WebSecurity.csproj", "{5C2DD89B-2CA9-4C2C-8A16-567F18906BD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.DbModels", "Pavolle.BES.MailServer.DbModels\Pavolle.BES.MailServer.DbModels.csproj", "{A02456B0-1BA3-41AB-AFA8-D86BD3C334E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.DbModels", "Pavolle.BES.MailServer.DbModels\Pavolle.BES.MailServer.DbModels.csproj", "{A02456B0-1BA3-41AB-AFA8-D86BD3C334E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.Service", "Pavolle.BES.MailServer.Service\Pavolle.BES.MailServer.Service.csproj", "{832D518B-232F-4DE3-B300-04D9967B5AB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.Service", "Pavolle.BES.MailServer.Service\Pavolle.BES.MailServer.Service.csproj", "{832D518B-232F-4DE3-B300-04D9967B5AB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.UnitTests", "Pavolle.BES.MailServer.UnitTests\Pavolle.BES.MailServer.UnitTests.csproj", "{00C18DB9-E3A7-4A7D-A91E-414A54B514BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.UnitTests", "Pavolle.BES.MailServer.UnitTests\Pavolle.BES.MailServer.UnitTests.csproj", "{00C18DB9-E3A7-4A7D-A91E-414A54B514BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.ClientLib", "Pavolle.BES.MailServer.ClientLib\Pavolle.BES.MailServer.ClientLib.csproj", "{80CFC61D-F6E8-4DCD-901D-F98A88BBE2CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.ClientLib", "Pavolle.BES.MailServer.ClientLib\Pavolle.BES.MailServer.ClientLib.csproj", "{80CFC61D-F6E8-4DCD-901D-F98A88BBE2CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.Business", "Pavolle.BES.SMSServer.Business\Pavolle.BES.SMSServer.Business.csproj", "{D5F55974-55E0-41D6-89BB-13EBA8E2B5DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.Common", "Pavolle.BES.SMSServer.Common\Pavolle.BES.SMSServer.Common.csproj", "{627DF703-5AEA-4872-9A22-B57BFAEF5327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.ViewModels", "Pavolle.BES.SMSServer.ViewModels\Pavolle.BES.SMSServer.ViewModels.csproj", "{55C2CB1D-8EF9-44D0-B930-211E30EA93BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.DbModels", "Pavolle.BES.SMSServer.DbModels\Pavolle.BES.SMSServer.DbModels.csproj", "{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.RabbitMQClient", "Pavolle.BES.SMSServer.RabbitMQClient\Pavolle.BES.SMSServer.RabbitMQClient.csproj", "{CEBA8E84-30C1-4813-A9C8-302A497FD539}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.WebSecurity", "Pavolle.BES.SMSServer.WebSecurity\Pavolle.BES.SMSServer.WebSecurity.csproj", "{522145EF-81B9-4141-9E33-A40CAD13B84F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.Service", "Pavolle.BES.SMSServer.Service\Pavolle.BES.SMSServer.Service.csproj", "{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.UnitTests", "Pavolle.BES.SMSServer.UnitTests\Pavolle.BES.SMSServer.UnitTests.csproj", "{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.ClientLib", "Pavolle.BES.SMSServer.ClientLib\Pavolle.BES.SMSServer.ClientLib.csproj", "{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -408,6 +426,42 @@ Global
 		{80CFC61D-F6E8-4DCD-901D-F98A88BBE2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80CFC61D-F6E8-4DCD-901D-F98A88BBE2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80CFC61D-F6E8-4DCD-901D-F98A88BBE2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F55974-55E0-41D6-89BB-13EBA8E2B5DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F55974-55E0-41D6-89BB-13EBA8E2B5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F55974-55E0-41D6-89BB-13EBA8E2B5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F55974-55E0-41D6-89BB-13EBA8E2B5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627DF703-5AEA-4872-9A22-B57BFAEF5327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627DF703-5AEA-4872-9A22-B57BFAEF5327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627DF703-5AEA-4872-9A22-B57BFAEF5327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627DF703-5AEA-4872-9A22-B57BFAEF5327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C2CB1D-8EF9-44D0-B930-211E30EA93BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C2CB1D-8EF9-44D0-B930-211E30EA93BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C2CB1D-8EF9-44D0-B930-211E30EA93BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C2CB1D-8EF9-44D0-B930-211E30EA93BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBA8E84-30C1-4813-A9C8-302A497FD539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEBA8E84-30C1-4813-A9C8-302A497FD539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEBA8E84-30C1-4813-A9C8-302A497FD539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEBA8E84-30C1-4813-A9C8-302A497FD539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522145EF-81B9-4141-9E33-A40CAD13B84F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522145EF-81B9-4141-9E33-A40CAD13B84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522145EF-81B9-4141-9E33-A40CAD13B84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522145EF-81B9-4141-9E33-A40CAD13B84F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -484,6 +538,15 @@ Global
 		{832D518B-232F-4DE3-B300-04D9967B5AB0} = {BA224DF4-A08D-44C6-88D3-CD03E53FB4C1}
 		{00C18DB9-E3A7-4A7D-A91E-414A54B514BC} = {BA224DF4-A08D-44C6-88D3-CD03E53FB4C1}
 		{80CFC61D-F6E8-4DCD-901D-F98A88BBE2CF} = {BA224DF4-A08D-44C6-88D3-CD03E53FB4C1}
+		{D5F55974-55E0-41D6-89BB-13EBA8E2B5DA} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
+		{627DF703-5AEA-4872-9A22-B57BFAEF5327} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
+		{55C2CB1D-8EF9-44D0-B930-211E30EA93BD} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
+		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
+		{CEBA8E84-30C1-4813-A9C8-302A497FD539} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
+		{522145EF-81B9-4141-9E33-A40CAD13B84F} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
+		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
+		{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
+		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
