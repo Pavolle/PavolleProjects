@@ -7,10 +7,37 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels.Entities
 {
+    [Persistent("organizations")]
     public class Organization : BaseObject
     {
         public Organization(Session session) : base(session)
         {
         }
+
+        [Persistent("name")]
+        [Size(255)]
+        public string Name { get; set; }
+
+        [Persistent("code")]
+        [Size(5)]
+        public string Code { get; set; }
+
+
+        //Zorunlu değil
+        [Persistent("duns_number")]
+        public string DunsNumber { get; set; }
+
+        [Persistent("address")]
+        [Size(1000)]
+        public string Address { get; set; }
+
+        [Persistent("langitude")]
+        public double? Langitude { get; set; }
+
+        [Persistent("latitude")]
+        public double? Latitude { get; set; }
+
+        [Persistent("zip_code")]
+        public string ZipCode { get; set; }
     }
 }

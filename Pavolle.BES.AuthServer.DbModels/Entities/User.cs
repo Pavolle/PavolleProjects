@@ -26,6 +26,7 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         public string Surname { get; set; }
 
         [Persistent("password")]
+        [Size(1000)]
         public string Password { get; set; }
     }
 }

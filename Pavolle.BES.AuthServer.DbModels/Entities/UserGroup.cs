@@ -8,23 +8,22 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels.Entities
 {
-    [Persistent("apps")]
-    public class App : BaseObject
+    [Persistent("user_groups")]
+    public class UserGroup : BaseObject
     {
-        public App(Session session) : base(session)
+
+        public UserGroup(Session session) : base(session)
         {
         }
 
-        [Persistent("app_type")]
-        public EBesAppType AppType { get; set; }
+        [Persistent("organization_oid")]
+        public Organization Organization { get; set; }
 
         [Persistent("name")]
+        [Size(255)]
         public string Name { get; set; }
 
-        [Persistent("app_id")]
-        public string AppId { get; set; }
-
-        [Persistent("activated")]
-        public bool Activated { get; set; }
+        [Persistent("user_type")]
+        public EUserType UserType { get; set; }
     }
 }
