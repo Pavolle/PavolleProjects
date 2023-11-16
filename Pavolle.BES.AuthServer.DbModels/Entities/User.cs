@@ -19,14 +19,11 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         [Indexed(Name = "index_users_username", Unique = true)]
         public string Username { get; set; }
 
-        [Persistent("name")]
-        public string Name { get; set; }
-
-        [Persistent("surname")]
-        public string Surname { get; set; }
-
         [Persistent("password")]
         [Size(1000)]
         public string Password { get; set; }
+
+        [Persistent("person_oid")]
+        public Person Person { get; set; }
     }
 }

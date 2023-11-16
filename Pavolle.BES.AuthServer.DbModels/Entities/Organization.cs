@@ -22,20 +22,9 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         [Size(5)]
         public string Code { get; set; }
 
-
         //Zorunlu değil
         [Persistent("duns_number")]
         public string DunsNumber { get; set; }
-
-        [Persistent("address")]
-        [Size(1000)]
-        public string Address { get; set; }
-
-        [Persistent("langitude")]
-        public double? Langitude { get; set; }
-
-        [Persistent("latitude")]
-        public double? Latitude { get; set; }
 
         [Persistent("zip_code")]
         public string ZipCode { get; set; }
