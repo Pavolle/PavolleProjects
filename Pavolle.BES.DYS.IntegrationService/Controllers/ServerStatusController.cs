@@ -1,5 +1,6 @@
 ﻿using log4net;
 using Microsoft.AspNetCore.Mvc;
+using Pavolle.BES.DYS.Business.Integration;
 using Pavolle.BES.DYS.Business.Manager;
 using Pavolle.BES.DYS.Common.Utils;
 using Pavolle.BES.DYS.ViewModels.Integration.Request;
@@ -18,7 +19,7 @@ namespace Pavolle.BES.DYS.IntegrationService.Controllers
         {
             try
             {
-                var response = DYSServerStatusManager.Instance.GetServerStatus(request);
+                var response = DYSIntegrationServerStatusManager.Instance.GetServerStatus(request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -34,7 +35,7 @@ namespace Pavolle.BES.DYS.IntegrationService.Controllers
         {
             try
             {
-                var response = DYSServerStatusManager.Instance.GetServerSettings(request);
+                var response = DYSIntegrationServerStatusManager.Instance.GetServerSettings(request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }

@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.DYS.ViewModels.Integration.Request;
+﻿using Pavolle.BES.DYS.Business.Integration;
+using Pavolle.BES.DYS.ViewModels.Integration.Request;
 using Pavolle.BES.DYS.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
@@ -16,12 +17,14 @@ namespace Pavolle.BES.DYS.Business.Manager
 
         public DYSSettingsResponse GetServerSettings(BesRequestBase request)
         {
-            throw new NotImplementedException();
+            //Check request base;
+            return DYSIntegrationServerStatusManager.Instance.GetServerSettings(new DYSIntegrationRequestBase { RequestIp=request.RequestIp });
         }
 
         public DysStatusResponse GetServerStatus(BesRequestBase request)
         {
-            throw new NotImplementedException();
+            //Check request base;
+            return DYSIntegrationServerStatusManager.Instance.GetServerStatus(new DYSIntegrationRequestBase { RequestIp = request.RequestIp });
         }
     }
 }

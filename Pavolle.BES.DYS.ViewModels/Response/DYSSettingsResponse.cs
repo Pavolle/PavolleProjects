@@ -9,5 +9,6 @@ namespace Pavolle.BES.DYS.ViewModels.Response
 {
     public class DYSSettingsResponse :ResponseBase
     {
+        public string BaseFilePath { get; set; }
     }
 }

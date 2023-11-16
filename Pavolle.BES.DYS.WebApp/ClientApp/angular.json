@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "Pavolle.BES.DYS.WebApp"
+  "defaultProject": "Pavolle.BES.DYS.WebApp",
+  "cli": {
+    "analytics": "30333846-9a2b-430f-862e-e4530dfce9fe"
+  }
 }
