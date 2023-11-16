@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.AuthServer.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         [Size(255)]
         public string Surname { get; set; }
 
-        [Persistent("birthday")]
-        public DateTime? Birthday { get; set; }
+        [Persistent("gender_type")]
+        public EGenderType GenderType { get; set; }
     }
 }
