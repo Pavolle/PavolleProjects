@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Pavolle.BES.AuthServer.WebApp.Controllers
+namespace Pavolle.BES.AppServer.WebApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]

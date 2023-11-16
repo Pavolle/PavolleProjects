@@ -2,5 +2,5 @@ Bu sistem aþaðýdaki iþlemler için servis hizmeti verebilecektir.
 
 1. Local sistem olarak çalýþacak. 
 2. Sunucuya eriþim yetkilendirme altyapýsý olacak. Bunu uygulamalar farklý iplerden geldiðinde yapacaðýz. Bu altyapý sistemin farklý sunucularda çalýþmasýný saðlamak için tasarlandý.
-3. Bu uygulamanýn amacý, kullanýcý, organizasyon, kullanýcý gruplarý, login ve yetkilendirme süreçlerini yönetmektir.
+3. Bu uygulamanýn amacý, kullanýcý, organizasyon, bayi, kullanýcý gruplarý, login ve yetkilendirme süreçlerini yönetmektir.
 4. Yeni kullanýcý tanýmlanabilecek ve kullanýcý bilgileri düzenlenebilecek.

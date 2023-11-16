@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <SpaRoot>ClientApp\</SpaRoot>
-    <SpaProxyServerUrl>https://localhost:44427</SpaProxyServerUrl>
+    <SpaProxyServerUrl>https://localhost:44487</SpaProxyServerUrl>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -19,10 +19,6 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Pavolle.BES.AuthServer.Common\Pavolle.BES.AuthServer.Common.csproj" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

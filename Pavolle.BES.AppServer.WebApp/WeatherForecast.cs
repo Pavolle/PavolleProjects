@@ -1,4 +1,4 @@
-namespace Pavolle.BES.AuthServer.WebApp
+namespace Pavolle.BES.AppServer.WebApp
 {
     public class WeatherForecast
     {
