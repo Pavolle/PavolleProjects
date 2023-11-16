@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.IK.DbModels.Entities
 {
+    //todo her departman tanımlamasında aynı zamanda bir kullanıcının bu departmanın yöneticisi olacak tanımlamamız lazım.
+    //İzin Yönetimi için izin talebinde departman yöneticisinin onayı önemli olacak.
     [Persistent("employee_titles")]
     public class EmployeeTitle : BaseObject
     {
@@ -19,6 +21,9 @@ namespace Pavolle.BES.IK.DbModels.Entities
 
         [Persistent("title_oid")]
         public Title Title { get; set; }
+
+        [Persistent("manager")]
+        public bool Manager { get; set; }
 
         [Persistent("start_date")]
         public DateTime StartDate { get; set; }

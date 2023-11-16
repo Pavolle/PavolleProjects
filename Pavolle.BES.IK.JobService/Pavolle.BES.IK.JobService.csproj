@@ -7,15 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Pavolle.BES.DYS.Business\Pavolle.BES.DYS.Business.csproj" />
-    <ProjectReference Include="..\Pavolle.BES.DYS.Common\Pavolle.BES.DYS.Common.csproj" />
-    <ProjectReference Include="..\Pavolle.BES.DYS.ViewModels\Pavolle.BES.DYS.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

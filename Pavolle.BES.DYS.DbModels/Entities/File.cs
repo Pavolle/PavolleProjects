@@ -23,6 +23,9 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         [Persistent("name")]
         public string Name { get; set; }
 
+        [Persistent("key")]
+        public string Key { get; set; }
+
         [Persistent("parrent_folder")]
         public File ParrentFolder { get; set; }
     }

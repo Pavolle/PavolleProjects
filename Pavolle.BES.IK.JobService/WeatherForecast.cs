@@ -1,4 +1,4 @@
-namespace Pavolle.BES.DYS.IntegrationService
+namespace Pavolle.BES.IK.JobService
 {
     public class WeatherForecast
     {

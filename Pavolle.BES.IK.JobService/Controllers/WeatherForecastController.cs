@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Pavolle.BES.DYS.IntegrationService.Controllers
+namespace Pavolle.BES.IK.JobService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
