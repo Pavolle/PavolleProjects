@@ -6,17 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.DYS.Common.Utils
 {
-    public class DYSIntegrationsConsts
+    public class DYSConsts
     {
-        public class SuppleraIntegrationUrlConsts
-        {
-            public const string Route = "api/dys/integration/supplera";
-            public const string SaveBomRoutePrefix = "savebom";
-        }
-
         public class ServerStatusUrlConst
         {
-            public const string Route = "api/dys/integration/serverstatus";
+            public const string Route = "api/dysserver/serverstatus";
 
             public const string ServerDetailRoutePrefix = "detail";
             public const string ServerSettingsRoutePrefix = "settings";

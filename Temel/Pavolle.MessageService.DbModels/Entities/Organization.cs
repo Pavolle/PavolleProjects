@@ -41,8 +41,5 @@ namespace Pavolle.MessageService.DbModels.Entities
 
         [Persistent("city_oid")]
         public City City { get; set; }
-
-        [Persistent("zip_code")]
-        public string ZipCode { get; set; }
     }
 }

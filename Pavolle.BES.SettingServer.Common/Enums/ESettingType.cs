@@ -44,5 +44,8 @@ namespace Pavolle.BES.SettingServer.Common.Enums
 
         [Description("Log Server - Log Error Routing Key")]
         LogServerLogErrorRoutingKey,
+
+        [Description("DYS - Base File Path")]
+        DYSBaseFilePath,
     }
 }

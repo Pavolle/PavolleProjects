@@ -141,6 +141,16 @@ namespace Pavolle.BES.SettingServer.Business
                                 _log.Info("LogServerLogErrorRoutingKey değeri LOG_ERRORS olarak ayarlandı.");
                                 break;
 
+                            case ESettingType.DYSBaseFilePath:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "C://pavolle//bes//dys",
+                                }.Save();
+
+                                _log.Info("DYSBaseFilePath değeri C://pavolle//bes//dys olarak ayarlandı.");
+                                break;
+
                         }
                     }
                 }

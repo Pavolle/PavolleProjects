@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pavolle.BES.DYS.ViewModels\Pavolle.BES.DYS.ViewModels.csproj" />
-    <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 

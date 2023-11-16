@@ -176,25 +176,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.Unit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.ClientLib", "Pavolle.BES.MailServer.ClientLib\Pavolle.BES.MailServer.ClientLib.csproj", "{80CFC61D-F6E8-4DCD-901D-F98A88BBE2CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.Business", "Pavolle.BES.SMSServer.Business\Pavolle.BES.SMSServer.Business.csproj", "{D5F55974-55E0-41D6-89BB-13EBA8E2B5DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.Business", "Pavolle.BES.SMSServer.Business\Pavolle.BES.SMSServer.Business.csproj", "{D5F55974-55E0-41D6-89BB-13EBA8E2B5DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.Common", "Pavolle.BES.SMSServer.Common\Pavolle.BES.SMSServer.Common.csproj", "{627DF703-5AEA-4872-9A22-B57BFAEF5327}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.Common", "Pavolle.BES.SMSServer.Common\Pavolle.BES.SMSServer.Common.csproj", "{627DF703-5AEA-4872-9A22-B57BFAEF5327}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.ViewModels", "Pavolle.BES.SMSServer.ViewModels\Pavolle.BES.SMSServer.ViewModels.csproj", "{55C2CB1D-8EF9-44D0-B930-211E30EA93BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.ViewModels", "Pavolle.BES.SMSServer.ViewModels\Pavolle.BES.SMSServer.ViewModels.csproj", "{55C2CB1D-8EF9-44D0-B930-211E30EA93BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.DbModels", "Pavolle.BES.SMSServer.DbModels\Pavolle.BES.SMSServer.DbModels.csproj", "{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.DbModels", "Pavolle.BES.SMSServer.DbModels\Pavolle.BES.SMSServer.DbModels.csproj", "{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.RabbitMQClient", "Pavolle.BES.SMSServer.RabbitMQClient\Pavolle.BES.SMSServer.RabbitMQClient.csproj", "{CEBA8E84-30C1-4813-A9C8-302A497FD539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.RabbitMQClient", "Pavolle.BES.SMSServer.RabbitMQClient\Pavolle.BES.SMSServer.RabbitMQClient.csproj", "{CEBA8E84-30C1-4813-A9C8-302A497FD539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.WebSecurity", "Pavolle.BES.SMSServer.WebSecurity\Pavolle.BES.SMSServer.WebSecurity.csproj", "{522145EF-81B9-4141-9E33-A40CAD13B84F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.WebSecurity", "Pavolle.BES.SMSServer.WebSecurity\Pavolle.BES.SMSServer.WebSecurity.csproj", "{522145EF-81B9-4141-9E33-A40CAD13B84F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.Service", "Pavolle.BES.SMSServer.Service\Pavolle.BES.SMSServer.Service.csproj", "{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.Service", "Pavolle.BES.SMSServer.Service\Pavolle.BES.SMSServer.Service.csproj", "{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.UnitTests", "Pavolle.BES.SMSServer.UnitTests\Pavolle.BES.SMSServer.UnitTests.csproj", "{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.UnitTests", "Pavolle.BES.SMSServer.UnitTests\Pavolle.BES.SMSServer.UnitTests.csproj", "{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SMSServer.ClientLib", "Pavolle.BES.SMSServer.ClientLib\Pavolle.BES.SMSServer.ClientLib.csproj", "{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.ClientLib", "Pavolle.BES.SMSServer.ClientLib\Pavolle.BES.SMSServer.ClientLib.csproj", "{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MailServer.RabbitMQClient", "Pavolle.BES.MailServer.RabbitMQClient\Pavolle.BES.MailServer.RabbitMQClient.csproj", "{FB151F35-0D69-48C0-878B-4B44B9B3222E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.RabbitMQClient", "Pavolle.BES.MailServer.RabbitMQClient\Pavolle.BES.MailServer.RabbitMQClient.csproj", "{FB151F35-0D69-48C0-878B-4B44B9B3222E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D72213C1-859B-4A8E-BC3F-A69DE4B8C68E}"
 EndProject
@@ -236,125 +236,129 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Teknik Destek", "Teknik Des
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{F2267536-B7FF-4846-84E9-52237DCA4903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.Business", "Pavolle.BES.Supplera.Business\Pavolle.BES.Supplera.Business.csproj", "{D9638C9E-5B4D-411D-BE97-EC595462E1DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.Business", "Pavolle.BES.Supplera.Business\Pavolle.BES.Supplera.Business.csproj", "{D9638C9E-5B4D-411D-BE97-EC595462E1DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.Common", "Pavolle.BES.Supplera.Common\Pavolle.BES.Supplera.Common.csproj", "{6B2DC005-06D5-4CA8-B000-4DC5179E0C45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.Common", "Pavolle.BES.Supplera.Common\Pavolle.BES.Supplera.Common.csproj", "{6B2DC005-06D5-4CA8-B000-4DC5179E0C45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.DbModels", "Pavolle.BES.Supplera.DbModels\Pavolle.BES.Supplera.DbModels.csproj", "{483D0E6E-371D-4E7B-B407-4F1B50E65D42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.DbModels", "Pavolle.BES.Supplera.DbModels\Pavolle.BES.Supplera.DbModels.csproj", "{483D0E6E-371D-4E7B-B407-4F1B50E65D42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.ViewModels", "Pavolle.BES.Supplera.ViewModels\Pavolle.BES.Supplera.ViewModels.csproj", "{D1F653C3-A57F-4AF7-8AED-BED9E6DA5564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.ViewModels", "Pavolle.BES.Supplera.ViewModels\Pavolle.BES.Supplera.ViewModels.csproj", "{D1F653C3-A57F-4AF7-8AED-BED9E6DA5564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.UnitTests", "Pavolle.BES.Supplera.UnitTests\Pavolle.BES.Supplera.UnitTests.csproj", "{ED0267F4-EBD7-4CDA-B77B-7EC97B69E865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.UnitTests", "Pavolle.BES.Supplera.UnitTests\Pavolle.BES.Supplera.UnitTests.csproj", "{ED0267F4-EBD7-4CDA-B77B-7EC97B69E865}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.WebApp", "Pavolle.BES.Supplera.WebApp\Pavolle.BES.Supplera.WebApp.csproj", "{E834D65E-18BD-4F5F-9D0A-7188311D2F4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.WebApp", "Pavolle.BES.Supplera.WebApp\Pavolle.BES.Supplera.WebApp.csproj", "{E834D65E-18BD-4F5F-9D0A-7188311D2F4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.ClientLib", "Pavolle.BES.Supplera.ClientLib\Pavolle.BES.Supplera.ClientLib.csproj", "{447C5BD7-6660-4B5B-8B49-91BE259755C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.ClientLib", "Pavolle.BES.Supplera.ClientLib\Pavolle.BES.Supplera.ClientLib.csproj", "{447C5BD7-6660-4B5B-8B49-91BE259755C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.JobService", "Pavolle.BES.Supplera.JobService\Pavolle.BES.Supplera.JobService.csproj", "{E48904F1-9413-4FB5-B32A-5328A7CE878D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.JobService", "Pavolle.BES.Supplera.JobService\Pavolle.BES.Supplera.JobService.csproj", "{E48904F1-9413-4FB5-B32A-5328A7CE878D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.IntegrationService", "Pavolle.BES.Supplera.IntegrationService\Pavolle.BES.Supplera.IntegrationService.csproj", "{71136EBA-EB42-409D-A463-78C8EDA95E3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.IntegrationService", "Pavolle.BES.Supplera.IntegrationService\Pavolle.BES.Supplera.IntegrationService.csproj", "{71136EBA-EB42-409D-A463-78C8EDA95E3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.Business", "Pavolle.BES.ERP.Business\Pavolle.BES.ERP.Business.csproj", "{C8023BD6-9747-4133-974A-B725812F5561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.Business", "Pavolle.BES.ERP.Business\Pavolle.BES.ERP.Business.csproj", "{C8023BD6-9747-4133-974A-B725812F5561}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.Common", "Pavolle.BES.ERP.Common\Pavolle.BES.ERP.Common.csproj", "{B4C2BE81-B7F9-42AF-970C-6A6021487245}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.Common", "Pavolle.BES.ERP.Common\Pavolle.BES.ERP.Common.csproj", "{B4C2BE81-B7F9-42AF-970C-6A6021487245}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.ViewModels", "Pavolle.BES.ERP.ViewModels\Pavolle.BES.ERP.ViewModels.csproj", "{DF78AAF0-5C62-4319-B32D-D111DFF28819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.ViewModels", "Pavolle.BES.ERP.ViewModels\Pavolle.BES.ERP.ViewModels.csproj", "{DF78AAF0-5C62-4319-B32D-D111DFF28819}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.DbModels", "Pavolle.BES.ERP.DbModels\Pavolle.BES.ERP.DbModels.csproj", "{08E7432F-3E9E-4DD6-B517-758B5425CA6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.DbModels", "Pavolle.BES.ERP.DbModels\Pavolle.BES.ERP.DbModels.csproj", "{08E7432F-3E9E-4DD6-B517-758B5425CA6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.ClientLib", "Pavolle.BES.ERP.ClientLib\Pavolle.BES.ERP.ClientLib.csproj", "{08910B10-197D-4075-8B4E-3FC6B1338315}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.ClientLib", "Pavolle.BES.ERP.ClientLib\Pavolle.BES.ERP.ClientLib.csproj", "{08910B10-197D-4075-8B4E-3FC6B1338315}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.WebSecurity", "Pavolle.BES.ERP.WebSecurity\Pavolle.BES.ERP.WebSecurity.csproj", "{A33E3D6D-B600-4197-B059-9D2B86892F2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.WebSecurity", "Pavolle.BES.ERP.WebSecurity\Pavolle.BES.ERP.WebSecurity.csproj", "{A33E3D6D-B600-4197-B059-9D2B86892F2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.IntegrationService", "Pavolle.BES.ERP.IntegrationService\Pavolle.BES.ERP.IntegrationService.csproj", "{82E6B19D-7B15-4017-8039-F583E61F2FFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.IntegrationService", "Pavolle.BES.ERP.IntegrationService\Pavolle.BES.ERP.IntegrationService.csproj", "{82E6B19D-7B15-4017-8039-F583E61F2FFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.WebApp", "Pavolle.BES.ERP.WebApp\Pavolle.BES.ERP.WebApp.csproj", "{FD18FF16-D915-42DF-A968-B707C5107DA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.WebApp", "Pavolle.BES.ERP.WebApp\Pavolle.BES.ERP.WebApp.csproj", "{FD18FF16-D915-42DF-A968-B707C5107DA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ERP.UnitTests", "Pavolle.BES.ERP.UnitTests\Pavolle.BES.ERP.UnitTests.csproj", "{349681CD-2451-4DAB-9F27-E6425266FCB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ERP.UnitTests", "Pavolle.BES.ERP.UnitTests\Pavolle.BES.ERP.UnitTests.csproj", "{349681CD-2451-4DAB-9F27-E6425266FCB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.Business", "Pavolle.BES.StokDepo.Business\Pavolle.BES.StokDepo.Business.csproj", "{8D4F86FC-54D6-4F63-8DE4-1A76A31940A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.Business", "Pavolle.BES.StokDepo.Business\Pavolle.BES.StokDepo.Business.csproj", "{8D4F86FC-54D6-4F63-8DE4-1A76A31940A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.ClientLib", "Pavolle.BES.StokDepo.ClientLib\Pavolle.BES.StokDepo.ClientLib.csproj", "{CD057B8D-4FB3-4E8B-A25E-38C75A1A7E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.ClientLib", "Pavolle.BES.StokDepo.ClientLib\Pavolle.BES.StokDepo.ClientLib.csproj", "{CD057B8D-4FB3-4E8B-A25E-38C75A1A7E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.Common", "Pavolle.BES.StokDepo.Common\Pavolle.BES.StokDepo.Common.csproj", "{0FFD4E3E-0907-4FAA-9624-E0018049BD94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.Common", "Pavolle.BES.StokDepo.Common\Pavolle.BES.StokDepo.Common.csproj", "{0FFD4E3E-0907-4FAA-9624-E0018049BD94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.WebSecurity", "Pavolle.BES.StokDepo.WebSecurity\Pavolle.BES.StokDepo.WebSecurity.csproj", "{6362BD7D-B610-4673-A6E0-631FD37F5361}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.WebSecurity", "Pavolle.BES.StokDepo.WebSecurity\Pavolle.BES.StokDepo.WebSecurity.csproj", "{6362BD7D-B610-4673-A6E0-631FD37F5361}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.ViewModels", "Pavolle.BES.StokDepo.ViewModels\Pavolle.BES.StokDepo.ViewModels.csproj", "{DD6674AE-3D50-47FE-9A97-09E8C2A8E4ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.ViewModels", "Pavolle.BES.StokDepo.ViewModels\Pavolle.BES.StokDepo.ViewModels.csproj", "{DD6674AE-3D50-47FE-9A97-09E8C2A8E4ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.DbModels", "Pavolle.BES.StokDepo.DbModels\Pavolle.BES.StokDepo.DbModels.csproj", "{90730CA6-BCB9-4F32-9750-B3463E28F08E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.DbModels", "Pavolle.BES.StokDepo.DbModels\Pavolle.BES.StokDepo.DbModels.csproj", "{90730CA6-BCB9-4F32-9750-B3463E28F08E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.JobService", "Pavolle.BES.StokDepo.JobService\Pavolle.BES.StokDepo.JobService.csproj", "{7211D744-0B3D-443B-9527-8CCC7845F16F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.JobService", "Pavolle.BES.StokDepo.JobService\Pavolle.BES.StokDepo.JobService.csproj", "{7211D744-0B3D-443B-9527-8CCC7845F16F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.IntegrationService", "Pavolle.BES.StokDepo.IntegrationService\Pavolle.BES.StokDepo.IntegrationService.csproj", "{C95B4EC4-690C-428A-97A6-408C74A7A024}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.IntegrationService", "Pavolle.BES.StokDepo.IntegrationService\Pavolle.BES.StokDepo.IntegrationService.csproj", "{C95B4EC4-690C-428A-97A6-408C74A7A024}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.WebApp", "Pavolle.BES.StokDepo.WebApp\Pavolle.BES.StokDepo.WebApp.csproj", "{241404E5-BBBA-47CE-A830-7C16312E87D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.WebApp", "Pavolle.BES.StokDepo.WebApp\Pavolle.BES.StokDepo.WebApp.csproj", "{241404E5-BBBA-47CE-A830-7C16312E87D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.StokDepo.UnitTests", "Pavolle.BES.StokDepo.UnitTests\Pavolle.BES.StokDepo.UnitTests.csproj", "{552E22B0-6538-46B9-9883-72AEB051291A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.StokDepo.UnitTests", "Pavolle.BES.StokDepo.UnitTests\Pavolle.BES.StokDepo.UnitTests.csproj", "{552E22B0-6538-46B9-9883-72AEB051291A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.Business", "Pavolle.BES.PDKS.Business\Pavolle.BES.PDKS.Business.csproj", "{AC279897-1A1F-40DA-BD06-E44E8E75A174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.Business", "Pavolle.BES.PDKS.Business\Pavolle.BES.PDKS.Business.csproj", "{AC279897-1A1F-40DA-BD06-E44E8E75A174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.ClientLib", "Pavolle.BES.PDKS.ClientLib\Pavolle.BES.PDKS.ClientLib.csproj", "{9D6FD6ED-58A5-476E-9DA4-D4E3AA651CC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.ClientLib", "Pavolle.BES.PDKS.ClientLib\Pavolle.BES.PDKS.ClientLib.csproj", "{9D6FD6ED-58A5-476E-9DA4-D4E3AA651CC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.DbModels", "Pavolle.BES.PDKS.DbModels\Pavolle.BES.PDKS.DbModels.csproj", "{61277179-ABFA-4649-BA05-0700F2F54899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.DbModels", "Pavolle.BES.PDKS.DbModels\Pavolle.BES.PDKS.DbModels.csproj", "{61277179-ABFA-4649-BA05-0700F2F54899}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.WebSecurity", "Pavolle.BES.PDKS.WebSecurity\Pavolle.BES.PDKS.WebSecurity.csproj", "{69D56C4D-BDD8-40F9-9559-E50030728556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.WebSecurity", "Pavolle.BES.PDKS.WebSecurity\Pavolle.BES.PDKS.WebSecurity.csproj", "{69D56C4D-BDD8-40F9-9559-E50030728556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.ViewModels", "Pavolle.BES.PDKS.ViewModels\Pavolle.BES.PDKS.ViewModels.csproj", "{A9B5247D-B91B-45CC-A969-D4F53F50C8AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.ViewModels", "Pavolle.BES.PDKS.ViewModels\Pavolle.BES.PDKS.ViewModels.csproj", "{A9B5247D-B91B-45CC-A969-D4F53F50C8AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.EndPointIntegrationService", "Pavolle.BES.PDKS.EndPointIntegrationService\Pavolle.BES.PDKS.EndPointIntegrationService.csproj", "{5086A9FA-B2AC-4D72-BD41-49B0B33CD8B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.EndPointIntegrationService", "Pavolle.BES.PDKS.EndPointIntegrationService\Pavolle.BES.PDKS.EndPointIntegrationService.csproj", "{5086A9FA-B2AC-4D72-BD41-49B0B33CD8B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.IntegrationService", "Pavolle.BES.PDKS.IntegrationService\Pavolle.BES.PDKS.IntegrationService.csproj", "{4B2EC2D2-D04F-4792-AC3B-D93FC27E589E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.IntegrationService", "Pavolle.BES.PDKS.IntegrationService\Pavolle.BES.PDKS.IntegrationService.csproj", "{4B2EC2D2-D04F-4792-AC3B-D93FC27E589E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.WebApp", "Pavolle.BES.PDKS.WebApp\Pavolle.BES.PDKS.WebApp.csproj", "{E3898408-D404-4BC8-9BDE-0F2ACBDA794C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.WebApp", "Pavolle.BES.PDKS.WebApp\Pavolle.BES.PDKS.WebApp.csproj", "{E3898408-D404-4BC8-9BDE-0F2ACBDA794C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PDKS.Common", "Pavolle.BES.PDKS.Common\Pavolle.BES.PDKS.Common.csproj", "{03F6895F-627C-4841-AC06-9D2B6AE5AC5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PDKS.Common", "Pavolle.BES.PDKS.Common\Pavolle.BES.PDKS.Common.csproj", "{03F6895F-627C-4841-AC06-9D2B6AE5AC5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.Business", "Pavolle.BES.DYS.Business\Pavolle.BES.DYS.Business.csproj", "{34F8A752-AB3D-4086-BEA0-F778A6C24AC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.Business", "Pavolle.BES.DYS.Business\Pavolle.BES.DYS.Business.csproj", "{34F8A752-AB3D-4086-BEA0-F778A6C24AC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.ClientLib", "Pavolle.BES.DYS.ClientLib\Pavolle.BES.DYS.ClientLib.csproj", "{AD04C72F-C87C-495D-BC0E-C042A0D71C11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.ClientLib", "Pavolle.BES.DYS.ClientLib\Pavolle.BES.DYS.ClientLib.csproj", "{AD04C72F-C87C-495D-BC0E-C042A0D71C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.Common", "Pavolle.BES.DYS.Common\Pavolle.BES.DYS.Common.csproj", "{E218D7C9-29E7-42BD-89FB-2293DEE7DC30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.Common", "Pavolle.BES.DYS.Common\Pavolle.BES.DYS.Common.csproj", "{E218D7C9-29E7-42BD-89FB-2293DEE7DC30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.ViewModels", "Pavolle.BES.DYS.ViewModels\Pavolle.BES.DYS.ViewModels.csproj", "{DCCE0915-896E-480C-8884-1C975EB05DE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.ViewModels", "Pavolle.BES.DYS.ViewModels\Pavolle.BES.DYS.ViewModels.csproj", "{DCCE0915-896E-480C-8884-1C975EB05DE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.WebSecurity", "Pavolle.BES.DYS.WebSecurity\Pavolle.BES.DYS.WebSecurity.csproj", "{E7A50FE6-D030-4957-B6CE-C96F7DD06443}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.WebSecurity", "Pavolle.BES.DYS.WebSecurity\Pavolle.BES.DYS.WebSecurity.csproj", "{E7A50FE6-D030-4957-B6CE-C96F7DD06443}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.DbModels", "Pavolle.BES.DYS.DbModels\Pavolle.BES.DYS.DbModels.csproj", "{2E687F49-E980-4A6C-8C0F-5E68E04AB46F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.DbModels", "Pavolle.BES.DYS.DbModels\Pavolle.BES.DYS.DbModels.csproj", "{2E687F49-E980-4A6C-8C0F-5E68E04AB46F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.IntegrationService", "Pavolle.BES.DYS.IntegrationService\Pavolle.BES.DYS.IntegrationService.csproj", "{DD052848-0D44-49A5-A6A5-4DED7987515F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.IntegrationService", "Pavolle.BES.DYS.IntegrationService\Pavolle.BES.DYS.IntegrationService.csproj", "{DD052848-0D44-49A5-A6A5-4DED7987515F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.WebApp", "Pavolle.BES.DYS.WebApp\Pavolle.BES.DYS.WebApp.csproj", "{D4116AC4-9F87-4B31-95FD-EEEBFA84E1DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.WebApp", "Pavolle.BES.DYS.WebApp\Pavolle.BES.DYS.WebApp.csproj", "{D4116AC4-9F87-4B31-95FD-EEEBFA84E1DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.UnitTests", "Pavolle.BES.DYS.UnitTests\Pavolle.BES.DYS.UnitTests.csproj", "{DDB6DE6B-9756-4D17-BDE1-1307C7C7561D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.UnitTests", "Pavolle.BES.DYS.UnitTests\Pavolle.BES.DYS.UnitTests.csproj", "{DDB6DE6B-9756-4D17-BDE1-1307C7C7561D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.WebApp", "Pavolle.BES.WebApp\Pavolle.BES.WebApp.csproj", "{565BB9BF-FC13-4F5D-8160-948DEF638CC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.WebApp", "Pavolle.BES.WebApp\Pavolle.BES.WebApp.csproj", "{565BB9BF-FC13-4F5D-8160-948DEF638CC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.DYS.EndPointIntegrationService", "Pavolle.BES.DYS.EndPointIntegrationService\Pavolle.BES.DYS.EndPointIntegrationService.csproj", "{D93528B2-EFED-4C39-833E-725E3157BD83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.EndPointIntegrationService", "Pavolle.BES.DYS.EndPointIntegrationService\Pavolle.BES.DYS.EndPointIntegrationService.csproj", "{D93528B2-EFED-4C39-833E-725E3157BD83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.DbModels", "Pavolle.BES.IK.DbModels\Pavolle.BES.IK.DbModels.csproj", "{45284276-20DE-40C3-80D2-D775AF1CB177}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.DbModels", "Pavolle.BES.IK.DbModels\Pavolle.BES.IK.DbModels.csproj", "{45284276-20DE-40C3-80D2-D775AF1CB177}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.Common", "Pavolle.BES.IK.Common\Pavolle.BES.IK.Common.csproj", "{BEAE5492-B934-4573-9F48-1F007BE82046}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.Common", "Pavolle.BES.IK.Common\Pavolle.BES.IK.Common.csproj", "{BEAE5492-B934-4573-9F48-1F007BE82046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.Business", "Pavolle.BES.IK.Business\Pavolle.BES.IK.Business.csproj", "{596687F9-EA3E-4B35-925A-0A9876A202DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.Business", "Pavolle.BES.IK.Business\Pavolle.BES.IK.Business.csproj", "{596687F9-EA3E-4B35-925A-0A9876A202DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.IntegrationService", "Pavolle.BES.IK.IntegrationService\Pavolle.BES.IK.IntegrationService.csproj", "{D86EE131-15C0-4ADF-ABCB-7030E5C73B87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.IntegrationService", "Pavolle.BES.IK.IntegrationService\Pavolle.BES.IK.IntegrationService.csproj", "{D86EE131-15C0-4ADF-ABCB-7030E5C73B87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.ClientLib", "Pavolle.BES.IK.ClientLib\Pavolle.BES.IK.ClientLib.csproj", "{B140303E-9F4D-4CF2-A831-7DE793BBC6B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.ClientLib", "Pavolle.BES.IK.ClientLib\Pavolle.BES.IK.ClientLib.csproj", "{B140303E-9F4D-4CF2-A831-7DE793BBC6B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.ViewModels", "Pavolle.BES.IK.ViewModels\Pavolle.BES.IK.ViewModels.csproj", "{0B75F84F-50D8-4C5D-AA33-DD6407627840}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.ViewModels", "Pavolle.BES.IK.ViewModels\Pavolle.BES.IK.ViewModels.csproj", "{0B75F84F-50D8-4C5D-AA33-DD6407627840}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.WebApp", "Pavolle.BES.IK.WebApp\Pavolle.BES.IK.WebApp.csproj", "{62DC019C-70DC-40E7-846A-493457EA0809}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.WebApp", "Pavolle.BES.IK.WebApp\Pavolle.BES.IK.WebApp.csproj", "{62DC019C-70DC-40E7-846A-493457EA0809}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.WebSecurity", "Pavolle.BES.IK.WebSecurity\Pavolle.BES.IK.WebSecurity.csproj", "{3595C3DD-6693-4566-9ED9-328E62EBF4FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.WebSecurity", "Pavolle.BES.IK.WebSecurity\Pavolle.BES.IK.WebSecurity.csproj", "{3595C3DD-6693-4566-9ED9-328E62EBF4FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.UnitTests", "Pavolle.BES.IK.UnitTests\Pavolle.BES.IK.UnitTests.csproj", "{F8C1C625-353A-4B4F-B3A8-9359F4F54726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.UnitTests", "Pavolle.BES.IK.UnitTests\Pavolle.BES.IK.UnitTests.csproj", "{F8C1C625-353A-4B4F-B3A8-9359F4F54726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.IK.JobService", "Pavolle.BES.IK.JobService\Pavolle.BES.IK.JobService.csproj", "{09FC50B9-F438-4692-A16A-1885F74B89AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.IK.JobService", "Pavolle.BES.IK.JobService\Pavolle.BES.IK.JobService.csproj", "{09FC50B9-F438-4692-A16A-1885F74B89AD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Password Server", "Password Server", "{20872673-FF96-4179-A0E2-EC0B7741D725}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PasswordServer.DbModels", "Pavolle.BES.PasswordServer.DbModels\Pavolle.BES.PasswordServer.DbModels.csproj", "{6D48FCBD-9963-48E5-A744-826FC26E2F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PasswordServer.DbModels", "Pavolle.BES.PasswordServer.DbModels\Pavolle.BES.PasswordServer.DbModels.csproj", "{6D48FCBD-9963-48E5-A744-826FC26E2F9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ViewModels", "Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj", "{8D0E82B4-7D7F-456E-AA15-7CD4B3B91F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.WebSecurity", "Pavolle.BES.WebSecurity\Pavolle.BES.WebSecurity.csproj", "{DFD6F2E3-2DF9-4B47-95F2-0060670DA2FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -864,6 +868,14 @@ Global
 		{6D48FCBD-9963-48E5-A744-826FC26E2F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D48FCBD-9963-48E5-A744-826FC26E2F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D48FCBD-9963-48E5-A744-826FC26E2F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0E82B4-7D7F-456E-AA15-7CD4B3B91F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0E82B4-7D7F-456E-AA15-7CD4B3B91F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0E82B4-7D7F-456E-AA15-7CD4B3B91F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0E82B4-7D7F-456E-AA15-7CD4B3B91F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFD6F2E3-2DF9-4B47-95F2-0060670DA2FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD6F2E3-2DF9-4B47-95F2-0060670DA2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD6F2E3-2DF9-4B47-95F2-0060670DA2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD6F2E3-2DF9-4B47-95F2-0060670DA2FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1016,7 +1028,7 @@ Global
 		{DD052848-0D44-49A5-A6A5-4DED7987515F} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
 		{D4116AC4-9F87-4B31-95FD-EEEBFA84E1DC} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
 		{DDB6DE6B-9756-4D17-BDE1-1307C7C7561D} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
-		{565BB9BF-FC13-4F5D-8160-948DEF638CC2} = {F3A72CCD-3804-40AC-8479-9D6E59356FF5}
+		{565BB9BF-FC13-4F5D-8160-948DEF638CC2} = {9362482A-2A9C-4109-AD5E-53D018922511}
 		{D93528B2-EFED-4C39-833E-725E3157BD83} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
 		{45284276-20DE-40C3-80D2-D775AF1CB177} = {FC2E5897-E1BC-4311-BF86-BF783051E5FC}
 		{BEAE5492-B934-4573-9F48-1F007BE82046} = {FC2E5897-E1BC-4311-BF86-BF783051E5FC}
@@ -1030,6 +1042,8 @@ Global
 		{09FC50B9-F438-4692-A16A-1885F74B89AD} = {FC2E5897-E1BC-4311-BF86-BF783051E5FC}
 		{20872673-FF96-4179-A0E2-EC0B7741D725} = {F3A72CCD-3804-40AC-8479-9D6E59356FF5}
 		{6D48FCBD-9963-48E5-A744-826FC26E2F9C} = {20872673-FF96-4179-A0E2-EC0B7741D725}
+		{8D0E82B4-7D7F-456E-AA15-7CD4B3B91F5F} = {9362482A-2A9C-4109-AD5E-53D018922511}
+		{DFD6F2E3-2DF9-4B47-95F2-0060670DA2FD} = {9362482A-2A9C-4109-AD5E-53D018922511}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
