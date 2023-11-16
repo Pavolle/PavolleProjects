@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pavolle.BES.AuthServer.Common\Pavolle.BES.AuthServer.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 
 </Project>

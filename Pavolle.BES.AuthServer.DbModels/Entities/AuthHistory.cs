@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels.Entities
 {
-    public class UserSession : BaseObject
+    public class AuthHistory : BaseObject
     {
-        public UserSession(Session session) : base(session)
+        public AuthHistory(Session session) : base(session)
         {
         }
     }
