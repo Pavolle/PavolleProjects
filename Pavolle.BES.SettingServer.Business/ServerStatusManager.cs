@@ -1,5 +1,7 @@
 ﻿using Pavolle.BES.SettingServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ViewModels.Response;
+using Pavolle.BES.ViewModels.Request;
+using Pavolle.Core.Manager;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -26,10 +28,11 @@ namespace Pavolle.BES.SettingServer.Business
             _serverStatus = status;
         }
 
-        public SettingsServerStatusResponse GetServerStatus(SettingsServerRequestBase request)
+        public SettingsServerStatusResponse GetServerStatus(IntegrationAppRequestBase request)
         {
             return new SettingsServerStatusResponse
             {
+                AppInfo = AppInfoManager.Instance.GetAppCode(),
                 DbStatus = _dbStatus,
                 DbStatusString=_dbStatus?"Ready":"Connection Error",
                 ServerStatus = _serverStatus,

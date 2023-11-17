@@ -14,5 +14,6 @@ namespace Pavolle.BES.SettingServer.ViewModels.Response
 
         public bool ServerStatus { get; set; }
         public string ServerStatusString { get; set; }
+        public string AppInfo { get; set; }
     }
 }

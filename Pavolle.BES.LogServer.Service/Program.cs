@@ -1,9 +1,10 @@
 using log4net;
 using Pavolle.BES.LogServer.Business.Manager;
 using Pavolle.BES.LogServer.RabbitClient;
-using Pavolle.BES.LogServer.Service.Filter;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.BES.WebFilter;
+using Pavolle.Core.Manager;
 
 internal class Program
 {
@@ -14,18 +15,21 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         ILog _log = LogManager.GetLogger(typeof(Program));
+        AppInfoManager.Instance.Initialize("Log Server", "1.0.0", "LRGOS-PLLE-112317-TA", new DateTime(2023, 11, 17));
 
         _log.Info("  ");
         _log.Info("********************************************");
-        _log.Info("********** Pavolle - Log Server ************");
+        _log.Info("Pavolle - " + AppInfoManager.Instance.GetAppCode() + " ");
+        _log.Info("Version Release Date => " + AppInfoManager.Instance.GetReleaseDate());
+        _log.Info("App ID => " + AppInfoManager.Instance.GetId());
         _log.Info("********************************************");
-        _log.Info("  ");
-        _log.Info("Application starting...");
 
 
         var settings = builder.Configuration.GetSection("Settings").Get<Settings>();
         _log.Info("Setting Server URL is " + settings.SettingServerUrl);
-        SettingServiceManager.Instance.Initialize(settings.SettingServerUrl);
+
+
+        SettingServiceManager.Instance.Initialize(settings.SettingServerUrl, AppInfoManager.Instance.GetAppCode(), AppInfoManager.Instance.GetId());
         var settingServerStatus= SettingServiceManager.Instance.GetServerStatus();
         if(settingServerStatus == null || !settingServerStatus.ServerStatus || !settingServerStatus.DbStatus)
         {
@@ -74,8 +78,8 @@ internal class Program
         _log.Info("Starting filter....");
         builder.Services.AddControllersWithViews(options =>
         {
-            options.Filters.Add<CustomAuthorizeAttribute>();
-            options.Filters.Add<FillRequestBaseActionFilterAttribute>();
+            options.Filters.Add<IntegrationAppAuthorizeAttribute>();
+            options.Filters.Add<IntegrationAppFillRequestBaseActionFilterAttribute>();
         });
 
         _log.Info("Service filter ready.");

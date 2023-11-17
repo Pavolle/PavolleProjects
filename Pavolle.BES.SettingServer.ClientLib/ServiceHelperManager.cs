@@ -11,6 +11,15 @@ namespace Pavolle.BES.SettingServer.ClientLib
 {
     internal class ServiceHelperManager : Singleton<ServiceHelperManager>
     {
+        public string _appCode = "";
+        public string _appId = "";
+
+        public void Initialize(string appCode, string appId)
+        {
+            _appCode = appCode;
+            _appId = appId;
+
+        }
         private ServiceHelperManager()
         {
 
@@ -25,6 +34,8 @@ namespace Pavolle.BES.SettingServer.ClientLib
                     client.BaseAddress = new Uri(apiUri);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Add("AppCode", _appCode);
+                    client.DefaultRequestHeaders.Add("AppId", _appId);
 
                     Task<HttpResponseMessage> response = client.GetAsync(string.Format("{0}/{1}", apiUri, uri));
 

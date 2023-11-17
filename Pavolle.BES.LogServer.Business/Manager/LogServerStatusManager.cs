@@ -2,6 +2,7 @@
 using Pavolle.BES.LogServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Pavolle.BES.LogServer.Business.Manager
         bool _serverStatus = false;
         bool _settingServerConnectionStatus=false;
 
-        public LogServerStatusResponse GetServerStatus(LogServerRequestBase request)
+        public LogServerStatusResponse GetServerStatus(IntegrationAppRequestBase request)
         {
             return new LogServerStatusResponse
             {
@@ -55,7 +56,7 @@ namespace Pavolle.BES.LogServer.Business.Manager
             _settingServerConnectionStatus = status;
         }
 
-        public LogServerSettingsResponse GetServerSettings(LogServerRequestBase request)
+        public LogServerSettingsResponse GetServerSettings(IntegrationAppRequestBase request)
         {
             return new LogServerSettingsResponse
             {

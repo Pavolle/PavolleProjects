@@ -20,7 +20,7 @@ namespace Pavolle.BES.LogServer.Service.Controllers
             try
             {
                 var response = LogServerManager.Instance.Save(request);
-                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                _log.Debug(request.LogBase + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
             catch (Exception ex)

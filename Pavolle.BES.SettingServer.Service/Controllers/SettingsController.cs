@@ -6,6 +6,7 @@ using Pavolle.BES.SettingServer.Common.Utils;
 using Pavolle.BES.SettingServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ViewModels.ViewData;
+using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Enums;
 using Pavolle.Core.ViewModels.Response;
 using System.Text.Json;
@@ -23,7 +24,7 @@ namespace Pavolle.BES.SettingServer.Service.Controllers
         static readonly ILog _log = LogManager.GetLogger(typeof(SettingsController));
 
         [HttpGet(SettingServerConsts.SettingsUrlConst.ListRoutePrefix)]
-        public ActionResult List(SettingsServerRequestBase request)
+        public ActionResult List(IntegrationAppRequestBase request)
         {
             try
             {
@@ -39,7 +40,7 @@ namespace Pavolle.BES.SettingServer.Service.Controllers
         }
 
         [HttpGet(SettingServerConsts.SettingsUrlConst.DetailRoutePrefix)]
-        public ActionResult Detail(int setting_type, SettingsServerRequestBase request)
+        public ActionResult Detail(int setting_type, IntegrationAppRequestBase request)
         {
             try
             {

@@ -7,7 +7,7 @@ namespace Pavolle.BES.SettingServer.UnitTests
         [SetUp]
         public void Setup()
         {
-            SettingServiceManager.Instance.Initialize("https://localhost:7023");
+            SettingServiceManager.Instance.Initialize("https://localhost:7023", "Unit Test", "Test-App");
         }
 
         [Test]

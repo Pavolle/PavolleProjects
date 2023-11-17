@@ -17,7 +17,7 @@
     <ProjectReference Include="..\Pavolle.BES.SettingServer.Business\Pavolle.BES.SettingServer.Business.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.Common\Pavolle.BES.SettingServer.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.ViewModels\Pavolle.BES.SettingServer.ViewModels.csproj" />
-    <ProjectReference Include="..\Pavolle.BES.SettingServer.WebSecurity\Pavolle.BES.SettingServer.WebSecurity.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.WebFilter\Pavolle.BES.WebFilter.csproj" />
   </ItemGroup>
 
 </Project>

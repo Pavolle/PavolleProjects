@@ -4,6 +4,7 @@ using Pavolle.BES.LogServer.Business.Manager;
 using Pavolle.BES.LogServer.Common.Utils;
 using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.LogServer.ViewModels.Response;
+using Pavolle.BES.ViewModels.Request;
 using System.Text.Json;
 
 namespace Pavolle.BES.LogServer.Service.Controllers
@@ -15,12 +16,12 @@ namespace Pavolle.BES.LogServer.Service.Controllers
 
         static readonly ILog _log = LogManager.GetLogger(typeof(ServerStatusController));
         [HttpGet(LogServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix)]
-        public ActionResult Detail(LogServerRequestBase request)
+        public ActionResult Detail(IntegrationAppRequestBase request)
         {
             try
             {
                 var response = LogServerStatusManager.Instance.GetServerStatus(request);
-                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                _log.Debug(request.LogBase+ " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
             catch (Exception ex)
@@ -31,12 +32,12 @@ namespace Pavolle.BES.LogServer.Service.Controllers
         }
 
         [HttpGet(LogServerConsts.ServerStatusUrlConst.ServerSettingsRoutePrefix)]
-        public ActionResult Settings(LogServerRequestBase request)
+        public ActionResult Settings(IntegrationAppRequestBase request)
         {
             try
             {
                 var response = LogServerStatusManager.Instance.GetServerSettings(request);
-                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                _log.Debug(request.LogBase+ " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
             catch (Exception ex)

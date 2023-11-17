@@ -11,6 +11,8 @@ namespace Pavolle.BES.ViewModels.Response
     {
         //Bu bilgi varsa token geçerlilik süresi bitmek üzere. 10 dakika kala tekrar üretilir.
         //Bir kullanıcı ile ilgili 1 den fazla token'a izin verecek miyiz? evet!
+
+        public bool ValidSession { get; set; }
         public string RefreshToken { get; set; }
     }
 }

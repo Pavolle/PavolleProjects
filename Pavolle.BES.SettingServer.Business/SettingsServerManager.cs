@@ -7,6 +7,7 @@ using Pavolle.BES.SettingServer.ViewModels.Model;
 using Pavolle.BES.SettingServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ViewModels.ViewData;
+using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
 using System;
@@ -63,7 +64,7 @@ namespace Pavolle.BES.SettingServer.Business
             _log.Debug("Done Initialize " + nameof(SettingsServerManager));
         }
 
-        public SettingDetailResponse Detail(int setting_type, SettingsServerRequestBase request)
+        public SettingDetailResponse Detail(int setting_type, IntegrationAppRequestBase request)
         {
             var response = new SettingDetailResponse()
             {
@@ -138,7 +139,7 @@ namespace Pavolle.BES.SettingServer.Business
             };
         }
 
-        public SettingListResponse List(SettingsServerRequestBase request)
+        public SettingListResponse List(IntegrationAppRequestBase request)
         {
             return new SettingListResponse
             {

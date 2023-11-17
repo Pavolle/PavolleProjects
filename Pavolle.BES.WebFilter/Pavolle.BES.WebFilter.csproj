@@ -7,12 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
-    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.WebSecurity\Pavolle.BES.WebSecurity.csproj" />
   </ItemGroup>
 
 </Project>

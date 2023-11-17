@@ -4,6 +4,7 @@ using Pavolle.BES.SettingServer.Business;
 using Pavolle.BES.SettingServer.Common.Utils;
 using Pavolle.BES.SettingServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ViewModels.Response;
+using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.ViewModels.Request;
 using System.Text.Json;
 
@@ -15,12 +16,12 @@ namespace Pavolle.BES.SettingServer.Service.Controllers
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(ServerStatusController));
         [HttpGet(SettingServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix)]
-        public ActionResult Detail(SettingsServerRequestBase request)
+        public ActionResult Detail(IntegrationAppRequestBase request)
         {
             try
             {
                 var response = ServerStatusManager.Instance.GetServerStatus(request);
-                _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
             catch (Exception ex)

@@ -1,6 +1,7 @@
 using log4net;
 using Pavolle.BES.SettingServer.Business;
-using Pavolle.BES.SettingServer.Service.Filter;
+using Pavolle.BES.WebFilter;
+using Pavolle.Core.Manager;
 
 internal class Program
 {
@@ -10,14 +11,17 @@ internal class Program
         log4net.Config.XmlConfigurator.Configure(log4netRepository, new FileInfo("log4net.config"));
         var builder = WebApplication.CreateBuilder(args);
 
+        AppInfoManager.Instance.Initialize("Settings Server", "1.1.0", "SESER-PLLE-112317-TA", new DateTime(2023, 11, 17));
+
         ILog _log = LogManager.GetLogger(typeof(Program));
 
         _log.Info("  ");
         _log.Info("********************************************");
-        _log.Info("******** Pavolle - Settings Server *********");
+        _log.Info("Pavolle - "+ AppInfoManager.Instance.GetAppCode() + " ");
+        _log.Info("Version Release Date => " + AppInfoManager.Instance.GetReleaseDate());
+        _log.Info("App ID => " + AppInfoManager.Instance.GetId());
         _log.Info("********************************************");
-        _log.Info("  ");
-        _log.Info("Application starting...");
+
 
         var settings = builder.Configuration.GetSection("Settings").Get<Settings>();
 
@@ -52,8 +56,8 @@ internal class Program
         _log.Info("Starting filter....");
         builder.Services.AddControllersWithViews(options =>
         {
-            options.Filters.Add<CustomAuthorizeAttribute>();
-            options.Filters.Add<FillRequestBaseActionFilterAttribute>();
+            options.Filters.Add<IntegrationAppAuthorizeAttribute>();
+            options.Filters.Add<IntegrationAppFillRequestBaseActionFilterAttribute>();
         });
 
         _log.Info("Service filter ready.");

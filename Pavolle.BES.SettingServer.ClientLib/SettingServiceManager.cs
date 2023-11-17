@@ -10,9 +10,11 @@ namespace Pavolle.BES.SettingServer.ClientLib
         public string _serviceUrl ="";
         private SettingServiceManager() { }
 
-        public void Initialize(string servciceUrl)
+        public void Initialize(string servciceUrl, string appCode, string appId)
         {
             _serviceUrl = servciceUrl;
+            ServiceHelperManager.Instance.Initialize(appCode, appId);
+
         }
 
         public SettingsServerStatusResponse GetServerStatus()

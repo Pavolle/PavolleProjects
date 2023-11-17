@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.LogServer.ViewModels.Request
+namespace Pavolle.BES.Surrvey.DbModels.Entities
 {
-    public class LogServerRequestBase
+    internal class Question
     {
-        public string RequestIp { get; set; }
     }
 }
