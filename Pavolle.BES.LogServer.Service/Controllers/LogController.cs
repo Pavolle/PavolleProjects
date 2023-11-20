@@ -17,6 +17,10 @@ namespace Pavolle.BES.LogServer.Service.Controllers
         [HttpPost(LogServerConsts.LogUrlConst.SaveRoutePrefix)]
         public ActionResult Save([FromBody] LogRequest request)
         {
+            if(request == null)
+            {
+                return BadRequest(new ResponseBase { ErrorMessage = "Request format error! ", StatusCode = 400 });
+            }
             try
             {
                 var response = LogServerManager.Instance.Save(request);
@@ -26,7 +30,7 @@ namespace Pavolle.BES.LogServer.Service.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new ResponseBase { ErrorMessage = "Unexpected error occured! Error Code: 500" });
+                return Ok(new ResponseBase { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
             }
 
         }

@@ -6,6 +6,7 @@ using Pavolle.BES.SettingServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.ViewModels.Request;
+using Pavolle.Core.ViewModels.Response;
 using System.Text.Json;
 
 namespace Pavolle.BES.SettingServer.Service.Controllers
@@ -18,6 +19,10 @@ namespace Pavolle.BES.SettingServer.Service.Controllers
         [HttpGet(SettingServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix)]
         public ActionResult Detail(IntegrationAppRequestBase request)
         {
+            if (request == null)
+            {
+                return BadRequest(new ResponseBase { ErrorMessage = "Request format error!", StatusCode = 400 });
+            }
             try
             {
                 var response = ServerStatusManager.Instance.GetServerStatus(request);
@@ -27,7 +32,7 @@ namespace Pavolle.BES.SettingServer.Service.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new SettingsServerStatusResponse { ErrorMessage = "Unexpected error occured! Error Code: 500" });
+                return Ok(new SettingsServerStatusResponse { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
             }
         }
     }

@@ -5,6 +5,7 @@ using Pavolle.BES.LogServer.Common.Utils;
 using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.LogServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.Core.ViewModels.Response;
 using System.Text.Json;
 
 namespace Pavolle.BES.LogServer.Service.Controllers
@@ -18,6 +19,10 @@ namespace Pavolle.BES.LogServer.Service.Controllers
         [HttpGet(LogServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix)]
         public ActionResult Detail(IntegrationAppRequestBase request)
         {
+            if (request == null)
+            {
+                return BadRequest(new ResponseBase { ErrorMessage = "Request format error!", StatusCode = 400 });
+            }
             try
             {
                 var response = LogServerStatusManager.Instance.GetServerStatus(request);
@@ -27,13 +32,17 @@ namespace Pavolle.BES.LogServer.Service.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new LogServerStatusResponse { ErrorMessage = "Unexpected error occured! Error Code: 500" });
+                return Ok(new LogServerStatusResponse { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
             }
         }
 
         [HttpGet(LogServerConsts.ServerStatusUrlConst.ServerSettingsRoutePrefix)]
         public ActionResult Settings(IntegrationAppRequestBase request)
         {
+            if (request == null)
+            {
+                return BadRequest(new ResponseBase { ErrorMessage = "Request format error!", StatusCode = 400 });
+            }
             try
             {
                 var response = LogServerStatusManager.Instance.GetServerSettings(request);
@@ -43,7 +52,7 @@ namespace Pavolle.BES.LogServer.Service.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new LogServerSettingsResponse { ErrorMessage = "Unexpected error occured! Error Code: 500" });
+                return Ok(new LogServerSettingsResponse { ErrorMessage = "Unexpected error occured!", StatusCode=500});
             }
         }
     }

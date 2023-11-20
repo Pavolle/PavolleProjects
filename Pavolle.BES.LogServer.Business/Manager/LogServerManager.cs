@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.LogServer.RabbitClient;
+﻿using log4net;
+using Pavolle.BES.LogServer.RabbitClient;
 using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
@@ -15,6 +16,7 @@ namespace Pavolle.BES.LogServer.Business.Manager
 {
     public class LogServerManager : Singleton<LogServerManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(LogServerManager));
         List<SettingViewData> _settingList;
         private LogServerManager() { }
 
@@ -54,6 +56,7 @@ namespace Pavolle.BES.LogServer.Business.Manager
                     ErrorMessage = "Log could not write to queue!"
                 };
             }
+            _log.Debug(request.LogBase + "Log writed to queue");
             return new ResponseBase() { SuccessMessage = "OK" };
         }
     }

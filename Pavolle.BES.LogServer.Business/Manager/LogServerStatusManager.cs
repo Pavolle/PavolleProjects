@@ -1,8 +1,10 @@
-﻿using Pavolle.BES.LogServer.ViewModels.Request;
+﻿using log4net;
+using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.LogServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.Core.Manager;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,7 @@ namespace Pavolle.BES.LogServer.Business.Manager
 {
     public class LogServerStatusManager : Singleton<LogServerStatusManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(LogServerStatusManager));
         private LogServerStatusManager() { }
 
         bool _elastichSearchStatus = false;
@@ -25,6 +28,7 @@ namespace Pavolle.BES.LogServer.Business.Manager
         {
             return new LogServerStatusResponse
             {
+                AppInfo = AppInfoManager.Instance.GetAppCode(),
                 ElasticSearchStatus = _elastichSearchStatus,
                 ElasticSearchStatusString = _elastichSearchStatus ? "Ready" : "Not Ready",
                 RabbitMQStatus = _rabbitMQStatus,

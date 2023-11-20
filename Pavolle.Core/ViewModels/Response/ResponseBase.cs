@@ -21,5 +21,6 @@ namespace Pavolle.Core.ViewModels.Response
         public string? SuccessMessage { get; set; }
         public string? InfoMessage { get; set; }
         public string? WarningMessage { get; set; }
+        public int StatusCode { get; set; }
     }
 }

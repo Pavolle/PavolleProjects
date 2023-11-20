@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.SettingServer.ViewModels.Request;
+﻿using log4net;
+using Pavolle.BES.SettingServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Manager;
@@ -13,6 +14,7 @@ namespace Pavolle.BES.SettingServer.Business
 {
     public class ServerStatusManager : Singleton<ServerStatusManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(ServerStatusManager));
         private ServerStatusManager() { }
 
         bool _dbStatus = false;
