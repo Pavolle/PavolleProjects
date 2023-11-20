@@ -20,8 +20,9 @@ namespace Pavolle.BES.LogServer.ViewModels.Response
         public string LogServerLogErrorQueueKey { get; set; }
         public string LogServerLogQueueKey { get; set; }
         public string LogServerLogErrorRoutingKey { get; set; }
-        public string SettingServerUrl { get; set; }
+        public string SettingServerBaseUrl { get; set; }
         public ELanguage SystemLanguage { get; set; }
         public ELanguage Language { get; set; }
+        public string TranslateServerBaseUrl { get; set; }
     }
 }
