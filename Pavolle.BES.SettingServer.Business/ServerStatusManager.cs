@@ -34,7 +34,7 @@ namespace Pavolle.BES.SettingServer.Business
         {
             return new SettingsServerStatusResponse
             {
-                AppInfo = AppInfoManager.Instance.GetAppCode(),
+                AppInfo = WebAppInfoManager.Instance.GetAppCode(),
                 DbStatus = _dbStatus,
                 DbStatusString=_dbStatus?"Ready":"Connection Error",
                 ServerStatus = _serverStatus,

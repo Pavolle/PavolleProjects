@@ -15,13 +15,13 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         ILog _log = LogManager.GetLogger(typeof(Program));
-        AppInfoManager.Instance.Initialize("Log Server", "1.0.0", "LRGOS-PLLE-112317-TA", new DateTime(2023, 11, 17));
+        WebAppInfoManager.Instance.Initialize("Log Server", "1.0.0", "LRGOS-PLLE-112317-TA", new DateTime(2023, 11, 17));
 
         _log.Info("  ");
         _log.Info("********************************************");
-        _log.Info("Pavolle - " + AppInfoManager.Instance.GetAppCode() + " ");
-        _log.Info("Version Release Date => " + AppInfoManager.Instance.GetReleaseDate());
-        _log.Info("App ID => " + AppInfoManager.Instance.GetId());
+        _log.Info("Pavolle - " + WebAppInfoManager.Instance.GetAppCode() + " ");
+        _log.Info("Version Release Date => " + WebAppInfoManager.Instance.GetReleaseDate());
+        _log.Info("App ID => " + WebAppInfoManager.Instance.GetId());
         _log.Info("********************************************");
 
 
@@ -29,7 +29,7 @@ internal class Program
         _log.Info("Setting Server URL is " + settings.SettingServerUrl);
 
 
-        SettingServiceManager.Instance.Initialize(settings.SettingServerUrl, AppInfoManager.Instance.GetAppCode(), AppInfoManager.Instance.GetId());
+        SettingServiceManager.Instance.Initialize(settings.SettingServerUrl, WebAppInfoManager.Instance.GetAppCode(), WebAppInfoManager.Instance.GetId());
         var settingServerStatus= SettingServiceManager.Instance.GetServerStatus();
         if(settingServerStatus == null || !settingServerStatus.ServerStatus || !settingServerStatus.DbStatus)
         {

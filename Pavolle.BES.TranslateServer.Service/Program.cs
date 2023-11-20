@@ -12,13 +12,13 @@ internal class Program
 
 
         ILog _log = LogManager.GetLogger(typeof(Program));
-        AppInfoManager.Instance.Initialize("Translate Server", "1.0.0", "TRTES-PLLE-112320-TA", new DateTime(2023, 11, 20));
+        WebAppInfoManager.Instance.Initialize("Translate Server", "1.0.0", "TRTES-PLLE-112320-TA", new DateTime(2023, 11, 20));
 
         _log.Info("  ");
         _log.Info("********************************************");
-        _log.Info("Pavolle - " + AppInfoManager.Instance.GetAppCode() + " ");
-        _log.Info("Version Release Date => " + AppInfoManager.Instance.GetReleaseDate());
-        _log.Info("App ID => " + AppInfoManager.Instance.GetId());
+        _log.Info("Pavolle - " + WebAppInfoManager.Instance.GetAppCode() + " ");
+        _log.Info("Version Release Date => " + WebAppInfoManager.Instance.GetReleaseDate());
+        _log.Info("App ID => " + WebAppInfoManager.Instance.GetId());
         _log.Info("********************************************");
 
         var settings = builder.Configuration.GetSection("Settings").Get<Settings>();

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Pavolle.Core.Manager
 {
-    public class AppInfoManager : Singleton<AppInfoManager>
+    public class WebAppInfoManager : Singleton<WebAppInfoManager>
     {
-        private AppInfoManager() { }
+        private WebAppInfoManager() { }
 
         private string _name = "";
         private string _version = "";
