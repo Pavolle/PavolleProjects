@@ -3,6 +3,7 @@ using log4net;
 using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.SettingServer.DbModels;
 using Pavolle.BES.SettingServer.DbModels.Entities;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "https://localhost:7120",
                                 }.Save();
 
-                                _log.Info("LogServerUrl değeri https:localhost:1212 olarak ayarlandı.");
+                                _log.Info("LogServerUrl  value is https:localhost:1212");
                                 break;
                             case ESettingType.LogServerRabbitMQUsername:
                                 new Setting(session)
@@ -52,7 +53,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "guest",
                                 }.Save();
 
-                                _log.Info("LogServerRabbitMQUsername değeri guest olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQUsername value is guest");
                                 break;
                             case ESettingType.LogServerRabbitMQPassword:
                                 new Setting(session)
@@ -61,7 +62,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "guest",
                                 }.Save();
 
-                                _log.Info("LogServerRabbitMQPassword değeri guest olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQPassword value is guest");
                                 break;
                             case ESettingType.LogServerRabbitMQVHost:
                                 new Setting(session)
@@ -70,7 +71,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "/",
                                 }.Save();
 
-                                _log.Info("LogServerRabbitMQVHost değeri \"/\" olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQVHost value is \"/\"");
                                 break;
                             case ESettingType.LogServerRabbitMQHostname:
                                 new Setting(session)
@@ -79,7 +80,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "localhost",
                                 }.Save();
 
-                                _log.Info("LogServerRabbitMQHostname değeri localhost olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQHostname value is localhost");
                                 break;
                             case ESettingType.LogServerRabbitMQPort:
                                 new Setting(session)
@@ -88,7 +89,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "5672",
                                 }.Save();
 
-                                _log.Info("LogServerRabbitMQPort değeri 5672 olarak ayarlandı.");
+                                _log.Info("LogServerRabbitMQPort value is 5672");
                                 break;
 
                             case ESettingType.LogServerExchangeName:
@@ -98,7 +99,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "LOG_SERVER",
                                 }.Save();
 
-                                _log.Info("LogServerExchangeName değeri logserver olarak ayarlandı.");
+                                _log.Info("LogServerExchangeName value is LOG_SERVER");
                                 break;
 
                             case ESettingType.LogServerLogQueueKey:
@@ -108,7 +109,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "LOGS",
                                 }.Save();
 
-                                _log.Info("LogServerLogQueueKey değeri LOGS olarak ayarlandı.");
+                                _log.Info("LogServerLogQueueKey value is LOGS");
                                 break;
 
                             case ESettingType.LogServerLogRoutingKey:
@@ -118,7 +119,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "LOGS",
                                 }.Save();
 
-                                _log.Info("LogServerLogRoutingKey değeri LOGS olarak ayarlandı.");
+                                _log.Info("LogServerLogRoutingKey value is LOGS");
                                 break;
 
                             case ESettingType.LogServerLogErrorQueueKey:
@@ -128,7 +129,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "LOG_ERRORS",
                                 }.Save();
 
-                                _log.Info("LogServerLogErrorQueueKey değeri LOG_ERRORS olarak ayarlandı.");
+                                _log.Info("LogServerLogErrorQueueKey value is LOG_ERRORS");
                                 break;
 
                             case ESettingType.LogServerLogErrorRoutingKey:
@@ -138,7 +139,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "LOG_ERRORS",
                                 }.Save();
 
-                                _log.Info("LogServerLogErrorRoutingKey değeri LOG_ERRORS olarak ayarlandı.");
+                                _log.Info("LogServerLogErrorRoutingKey value is LOG_ERRORS");
                                 break;
 
                             case ESettingType.DYSBaseFilePath:
@@ -148,7 +149,37 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "C://pavolle//bes//dys",
                                 }.Save();
 
-                                _log.Info("DYSBaseFilePath değeri C://pavolle//bes//dys olarak ayarlandı.");
+                                _log.Info("DYSBaseFilePath value is C://pavolle//bes//dys");
+                                break;
+
+                            case ESettingType.TranslateServerBaseUrl:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "https://localhost:7118/",
+                                }.Save();
+
+                                _log.Info("TranslateServerBaseUrl value is https://localhost:7118/");
+                                break;
+
+                            case ESettingType.DefaultLanguage:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = ((int)ELanguage.English).ToString(),
+                                }.Save();
+
+                                _log.Info("DefaultLanguage value is English");
+                                break;
+
+                            case ESettingType.SystemLanguage:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = ((int)ELanguage.English).ToString(),
+                                }.Save();
+
+                                _log.Info("SystemLanguage value is English");
                                 break;
 
                         }

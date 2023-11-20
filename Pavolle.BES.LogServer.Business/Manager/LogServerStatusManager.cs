@@ -64,6 +64,8 @@ namespace Pavolle.BES.LogServer.Business.Manager
         {
             return new LogServerSettingsResponse
             {
+                Language= LogServerManager.Instance.GetDefaultLanguage(),
+                SystemLanguage = LogServerManager.Instance.GetSystemLanguage(),
                 SettingServerUrl = SettingServiceManager.Instance.GetServerUrl(),
                 LogServerRabbitMQUsername = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQUsername),
                 LogServerRabbitMQPassword = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPassword),

@@ -1,4 +1,5 @@
-﻿using Pavolle.Core.ViewModels.Response;
+﻿using Pavolle.Core.Enums;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,7 @@ namespace Pavolle.BES.LogServer.ViewModels.Response
         public string LogServerLogQueueKey { get; set; }
         public string LogServerLogErrorRoutingKey { get; set; }
         public string SettingServerUrl { get; set; }
+        public ELanguage SystemLanguage { get; set; }
+        public ELanguage Language { get; set; }
     }
 }

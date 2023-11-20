@@ -47,5 +47,14 @@ namespace Pavolle.BES.SettingServer.Common.Enums
 
         [Description("DYS - Base File Path")]
         DYSBaseFilePath,
+
+        [Description("Translate Server Base Url")]
+        TranslateServerBaseUrl,
+
+        [Description("Default Language")]
+        DefaultLanguage,
+
+        [Description("System Language")]
+        SystemLanguage
     }
 }

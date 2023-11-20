@@ -4,6 +4,7 @@ using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.SettingServer.ViewModels.ViewData;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
 using System;
@@ -58,6 +59,22 @@ namespace Pavolle.BES.LogServer.Business.Manager
             }
             _log.Debug(request.LogBase + "Log writed to queue");
             return new ResponseBase() { SuccessMessage = "OK" };
+        }
+
+        internal ELanguage GetDefaultLanguage()
+        {
+            var data = _settingList.FirstOrDefault(t => t.SettingType == ESettingType.DefaultLanguage);
+            if (data == null)
+                return ELanguage.English;
+            return (ELanguage)Convert.ToInt32(data.Value);
+        }
+
+        internal ELanguage GetSystemLanguage()
+        {
+            var data = _settingList.FirstOrDefault(t => t.SettingType == ESettingType.SystemLanguage);
+            if (data == null)
+                return ELanguage.English;
+            return (ELanguage)Convert.ToInt32(data.Value);
         }
     }
 }

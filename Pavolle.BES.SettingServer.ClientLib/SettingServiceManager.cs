@@ -1,5 +1,6 @@
 ﻿using Pavolle.BES.SettingServer.Common.Utils;
 using Pavolle.BES.SettingServer.ViewModels.Response;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using System;
 
