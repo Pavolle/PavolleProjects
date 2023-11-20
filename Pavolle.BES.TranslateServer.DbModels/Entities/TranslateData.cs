@@ -24,5 +24,25 @@ namespace Pavolle.BES.TranslateServer.DbModels.Entities
         [Persistent("en")]
         [Size(2000)]
         public string EN { get; set; }
+
+        [Persistent("es")]
+        [Size(2000)]
+        public string ES { get; set; }
+
+        [Persistent("fr")]
+        [Size(2000)]
+        public string FR { get; set; }
+
+        [Persistent("ru")]
+        [Size(2000)]
+        public string RU { get; set; }
+
+        [Persistent("de")]
+        [Size(2000)]
+        public string DE { get; set; }
+
+        [Persistent("az")]
+        [Size(2000)]
+        public string AZ { get; set; }
     }
 }
