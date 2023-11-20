@@ -55,6 +55,70 @@ namespace Pavolle.BES.SettingServer.Common.Enums
         DefaultLanguage,
 
         [Description("System Language")]
-        SystemLanguage
+        SystemLanguage,
+
+
+
+        [Description("Mail Server - RabbitMQ Username")]
+        MailServerRabbitMQUsername,
+
+        [Description("Mail Server - RabbitMQ Password")]
+        MailServerRabbitMQPassword,
+
+        [Description("Mail Server - RabbitMQ VHost")]
+        MailServerRabbitMQVHost,
+
+        [Description("Mail Server - RabbitMQ Hostname")]
+        MailServerRabbitMQHostname,
+
+        [Description("Mail Server - RabbitMQ Port")]
+        MailServerRabbitMQPort,
+
+        [Description("Mail Server - Exchange Name")]
+        MailServerExchangeName,
+
+        [Description("Mail Server - Mail Queue Key")]
+        MailServerMailQueueKey,
+
+        [Description("Mail Server - Mail Routing Key")]
+        MailServerMailRoutingKey,
+
+        [Description("Mail Server - Mail Error Queue Key")]
+        MailServerMailErrorQueueKey,
+
+        [Description("Mail Server - Mail Error Routing Key")]
+        MailServerMailErrorRoutingKey,
+
+
+
+        [Description("SMS Server - RabbitMQ Username")]
+        SMSServerRabbitMQUsername,
+
+        [Description("SMS Server - RabbitMQ Password")]
+        SMSServerRabbitMQPassword,
+
+        [Description("SMS Server - RabbitMQ VHost")]
+        SMSServerRabbitMQVHost,
+
+        [Description("SMS Server - RabbitMQ Hostname")]
+        SMSServerRabbitMQHostname,
+
+        [Description("SMS Server - RabbitMQ Port")]
+        SMSServerRabbitMQPort,
+
+        [Description("SMS Server - Exchange Name")]
+        SMSServerExchangeName,
+
+        [Description("SMS Server - SMS Queue Key")]
+        SMSServerSMSQueueKey,
+
+        [Description("SMS Server - SMS Routing Key")]
+        SMSServerSMSRoutingKey,
+
+        [Description("SMS Server - SMS Error Queue Key")]
+        SMSServerSMSErrorQueueKey,
+
+        [Description("SMS Server - SMS Error Routing Key")]
+        SMSServerSMSErrorRoutingKey,
     }
 }

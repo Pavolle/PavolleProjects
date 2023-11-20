@@ -2,7 +2,7 @@
 
 namespace Pavolle.BES.TranslateServer.Service.Controllers
 {
-    public class TranslateController : Controller
+    public class TranslateDataController : Controller
     {
         public IActionResult Index()
         {

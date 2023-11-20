@@ -13,6 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.TranslateServer.Business\Pavolle.BES.TranslateServer.Business.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.TranslateServer.Common\Pavolle.BES.TranslateServer.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.TranslateServer.ViewModels\Pavolle.BES.TranslateServer.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.BES.WebFilter\Pavolle.BES.WebFilter.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
