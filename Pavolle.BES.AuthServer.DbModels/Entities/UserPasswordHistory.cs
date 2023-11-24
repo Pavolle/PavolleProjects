@@ -13,5 +13,14 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         public UserPasswordHistory(Session session) : base(session)
         {
         }
+
+        [Persistent("user_oid")]
+        public User User { get; set; }
+
+        [Persistent("password")]
+        public string Password { get; set; }
+
+        [Persistent("change_time")]
+        public DateTime ChangeTime { get; set; }
     }
 }

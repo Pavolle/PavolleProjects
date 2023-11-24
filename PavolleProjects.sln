@@ -376,7 +376,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TranslateServer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TranslateServer.UnitTests", "Pavolle.BES.TranslateServer.UnitTests\Pavolle.BES.TranslateServer.UnitTests.csproj", "{8FFC2EAD-82E7-4809-94E2-F4869495A88C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmgucvTests", "EmgucvTests\EmgucvTests.csproj", "{E36FFBEC-0625-423F-A7B9-D826986FE844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmgucvTests", "EmgucvTests\EmgucvTests.csproj", "{E36FFBEC-0625-423F-A7B9-D826986FE844}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Talep Takip Sistemi", "Talep Takip Sistemi", "{5849F6B0-1628-4B19-98EE-41181F461CE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.AppServer.DbModels", "Pavolle.BES.AppServer.DbModels\Pavolle.BES.AppServer.DbModels.csproj", "{E6913297-CC66-46B7-A00C-D8490AE2C7DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -926,6 +930,10 @@ Global
 		{E36FFBEC-0625-423F-A7B9-D826986FE844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E36FFBEC-0625-423F-A7B9-D826986FE844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E36FFBEC-0625-423F-A7B9-D826986FE844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6913297-CC66-46B7-A00C-D8490AE2C7DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6913297-CC66-46B7-A00C-D8490AE2C7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6913297-CC66-46B7-A00C-D8490AE2C7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6913297-CC66-46B7-A00C-D8490AE2C7DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1103,6 +1111,8 @@ Global
 		{5D9EA3C7-E408-42CF-B63D-A680840C3C50} = {7B8A5DB6-EB15-43A2-A4E4-4593ACA6A7FC}
 		{8FFC2EAD-82E7-4809-94E2-F4869495A88C} = {7B8A5DB6-EB15-43A2-A4E4-4593ACA6A7FC}
 		{E36FFBEC-0625-423F-A7B9-D826986FE844} = {8AC250C4-4F76-4AD1-B202-5D8EC5168023}
+		{5849F6B0-1628-4B19-98EE-41181F461CE0} = {F3A72CCD-3804-40AC-8479-9D6E59356FF5}
+		{E6913297-CC66-46B7-A00C-D8490AE2C7DD} = {4B3560EB-D565-47E4-9674-C30C6EF52ACC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

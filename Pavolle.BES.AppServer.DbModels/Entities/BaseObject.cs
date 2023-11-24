@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.AuthServer.Common.Enums
+namespace Pavolle.BES.AppServer.DbModels.Entities
 {
-    public enum EGenderType
+    internal class BaseObject
     {
-        Male=1, 
-        Female=2
     }
 }
