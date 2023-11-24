@@ -44,7 +44,7 @@ namespace Pavolle.BES.SettingServer.Business
                                     Value = "https://localhost:7120",
                                 }.Save();
 
-                                _log.Info("LogServerUrl  value is https:localhost:1212");
+                                _log.Info("LogServerUrl  value is https://localhost:7120");
                                 break;
                             case ESettingType.LogServerRabbitMQUsername:
                                 new Setting(session)
@@ -180,6 +180,220 @@ namespace Pavolle.BES.SettingServer.Business
                                 }.Save();
 
                                 _log.Info("SystemLanguage value is English");
+                                break;
+
+
+                            case ESettingType.MailServerUrl:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "https://localhost:7065",
+                                }.Save();
+
+                                _log.Info("MailServerUrl  value is https://localhost:7065");
+                                break;
+                            case ESettingType.MailServerRabbitMQUsername:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "guest",
+                                }.Save();
+
+                                _log.Info("MailServerRabbitMQUsername value is guest");
+                                break;
+                            case ESettingType.MailServerRabbitMQPassword:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "guest",
+                                }.Save();
+
+                                _log.Info("MailServerRabbitMQPassword value is guest");
+                                break;
+                            case ESettingType.MailServerRabbitMQVHost:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "/",
+                                }.Save();
+
+                                _log.Info("MailServerRabbitMQVHost value is \"/\"");
+                                break;
+                            case ESettingType.MailServerRabbitMQHostname:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "localhost",
+                                }.Save();
+
+                                _log.Info("MailServerRabbitMQHostname value is localhost");
+                                break;
+                            case ESettingType.MailServerRabbitMQPort:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "5672",
+                                }.Save();
+
+                                _log.Info("MailServerRabbitMQPort value is 5672");
+                                break;
+
+                            case ESettingType.MailServerExchangeName:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "MAIL_SERVER",
+                                }.Save();
+
+                                _log.Info("MailServerExchangeName value is MAIL_SERVER");
+                                break;
+
+                            case ESettingType.MailServerMailQueueKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "MAILS",
+                                }.Save();
+
+                                _log.Info("MailServerMailQueueKey value is MAILS");
+                                break;
+
+                            case ESettingType.MailServerMailRoutingKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "MAILS",
+                                }.Save();
+
+                                _log.Info("MailServerMailRoutingKey value is MAILS");
+                                break;
+
+                            case ESettingType.MailServerMailErrorQueueKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "MAIL_ERRORS",
+                                }.Save();
+
+                                _log.Info("MailServerMailErrorQueueKey value is MAIL_ERRORS");
+                                break;
+
+                            case ESettingType.MailServerMailErrorRoutingKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "MAIL_ERRORS",
+                                }.Save();
+
+                                _log.Info("MailServerMailErrorRoutingKey value is MAIL_ERRORS");
+                                break;
+
+
+
+
+                            case ESettingType.SMSServerUrl:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "https://localhost:7231",
+                                }.Save();
+
+                                _log.Info("SMSServerUrl  value is https://localhost:7231");
+                                break;
+                            case ESettingType.SMSServerRabbitMQUsername:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "guest",
+                                }.Save();
+
+                                _log.Info("SMSServerRabbitMQUsername value is guest");
+                                break;
+                            case ESettingType.SMSServerRabbitMQPassword:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "guest",
+                                }.Save();
+
+                                _log.Info("SMSServerRabbitMQPassword value is guest");
+                                break;
+                            case ESettingType.SMSServerRabbitMQVHost:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "/",
+                                }.Save();
+
+                                _log.Info("SMSServerRabbitMQVHost value is \"/\"");
+                                break;
+                            case ESettingType.SMSServerRabbitMQHostname:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "localhost",
+                                }.Save();
+
+                                _log.Info("SMSServerRabbitMQHostname value is localhost");
+                                break;
+                            case ESettingType.SMSServerRabbitMQPort:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "5672",
+                                }.Save();
+
+                                _log.Info("SMSServerRabbitMQPort value is 5672");
+                                break;
+
+                            case ESettingType.SMSServerExchangeName:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "SMS_SERVER",
+                                }.Save();
+
+                                _log.Info("SMSServerExchangeName value is SMS_SERVER");
+                                break;
+
+                            case ESettingType.SMSServerSMSQueueKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "SMS",
+                                }.Save();
+
+                                _log.Info("SMSServerSMSQueueKey value is SMS");
+                                break;
+
+                            case ESettingType.SMSServerSMSRoutingKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "SMS",
+                                }.Save();
+
+                                _log.Info("SMSServerSMSRoutingKey value is SMS");
+                                break;
+
+                            case ESettingType.SMSServerSMSErrorQueueKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "SMS_ERRORS",
+                                }.Save();
+
+                                _log.Info("SMSServerSMSErrorQueueKey value is SMS_ERRORS");
+                                break;
+
+                            case ESettingType.SMSServerSMSErrorRoutingKey:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "SMS_ERRORS",
+                                }.Save();
+
+                                _log.Info("SMSServerSMSErrorRoutingKey value is SMS_ERRORS");
                                 break;
 
                         }

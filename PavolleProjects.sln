@@ -364,17 +364,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.WebFilter", "Pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Surrvey.Common", "Pavolle.BES.Surrvey.Common\Pavolle.BES.Surrvey.Common.csproj", "{274E9BE3-DAA6-4B74-A097-CBD560256B0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TranslateServer.ClientLib", "Pavolle.BES.TranslateServer.ClientLib\Pavolle.BES.TranslateServer.ClientLib.csproj", "{4045A62B-EE88-45D9-8E26-375AB7FA2800}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TranslateServer.ClientLib", "Pavolle.BES.TranslateServer.ClientLib\Pavolle.BES.TranslateServer.ClientLib.csproj", "{4045A62B-EE88-45D9-8E26-375AB7FA2800}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TranslateServer.ViewModels", "Pavolle.BES.TranslateServer.ViewModels\Pavolle.BES.TranslateServer.ViewModels.csproj", "{9E8416E8-D567-49B3-AB05-F54ADF7352D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TranslateServer.ViewModels", "Pavolle.BES.TranslateServer.ViewModels\Pavolle.BES.TranslateServer.ViewModels.csproj", "{9E8416E8-D567-49B3-AB05-F54ADF7352D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TranslateServer.Common", "Pavolle.BES.TranslateServer.Common\Pavolle.BES.TranslateServer.Common.csproj", "{80241D6D-AE07-4834-A5C7-FB142220DBAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TranslateServer.Common", "Pavolle.BES.TranslateServer.Common\Pavolle.BES.TranslateServer.Common.csproj", "{80241D6D-AE07-4834-A5C7-FB142220DBAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TranslateServer.DbModels", "Pavolle.BES.TranslateServer.DbModels\Pavolle.BES.TranslateServer.DbModels.csproj", "{507A1E94-06A7-4274-842D-78A603691F90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TranslateServer.DbModels", "Pavolle.BES.TranslateServer.DbModels\Pavolle.BES.TranslateServer.DbModels.csproj", "{507A1E94-06A7-4274-842D-78A603691F90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TranslateServer.Service", "Pavolle.BES.TranslateServer.Service\Pavolle.BES.TranslateServer.Service.csproj", "{5D9EA3C7-E408-42CF-B63D-A680840C3C50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TranslateServer.Service", "Pavolle.BES.TranslateServer.Service\Pavolle.BES.TranslateServer.Service.csproj", "{5D9EA3C7-E408-42CF-B63D-A680840C3C50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TranslateServer.UnitTests", "Pavolle.BES.TranslateServer.UnitTests\Pavolle.BES.TranslateServer.UnitTests.csproj", "{8FFC2EAD-82E7-4809-94E2-F4869495A88C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TranslateServer.UnitTests", "Pavolle.BES.TranslateServer.UnitTests\Pavolle.BES.TranslateServer.UnitTests.csproj", "{8FFC2EAD-82E7-4809-94E2-F4869495A88C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmgucvTests", "EmgucvTests\EmgucvTests.csproj", "{E36FFBEC-0625-423F-A7B9-D826986FE844}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -920,6 +922,10 @@ Global
 		{8FFC2EAD-82E7-4809-94E2-F4869495A88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FFC2EAD-82E7-4809-94E2-F4869495A88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FFC2EAD-82E7-4809-94E2-F4869495A88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E36FFBEC-0625-423F-A7B9-D826986FE844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36FFBEC-0625-423F-A7B9-D826986FE844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36FFBEC-0625-423F-A7B9-D826986FE844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36FFBEC-0625-423F-A7B9-D826986FE844}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1096,6 +1102,7 @@ Global
 		{507A1E94-06A7-4274-842D-78A603691F90} = {7B8A5DB6-EB15-43A2-A4E4-4593ACA6A7FC}
 		{5D9EA3C7-E408-42CF-B63D-A680840C3C50} = {7B8A5DB6-EB15-43A2-A4E4-4593ACA6A7FC}
 		{8FFC2EAD-82E7-4809-94E2-F4869495A88C} = {7B8A5DB6-EB15-43A2-A4E4-4593ACA6A7FC}
+		{E36FFBEC-0625-423F-A7B9-D826986FE844} = {8AC250C4-4F76-4AD1-B202-5D8EC5168023}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

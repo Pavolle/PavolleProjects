@@ -58,6 +58,8 @@ namespace Pavolle.BES.SettingServer.Common.Enums
         SystemLanguage,
 
 
+        [Description("Mail Server URL")]
+        MailServerUrl,
 
         [Description("Mail Server - RabbitMQ Username")]
         MailServerRabbitMQUsername,
@@ -90,6 +92,8 @@ namespace Pavolle.BES.SettingServer.Common.Enums
         MailServerMailErrorRoutingKey,
 
 
+        [Description("SMS Server URL")]
+        SMSServerUrl,
 
         [Description("SMS Server - RabbitMQ Username")]
         SMSServerRabbitMQUsername,
