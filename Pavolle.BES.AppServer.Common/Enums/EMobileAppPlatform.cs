@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AppServer.Common.Enums
 {
-    public enum EApplicationType
+    public enum EMobileAppPlatform
     {
-        SystemCoreService =1,
-        MobileApplication,
-        WebApplication,
-        WebSite,
+        PlayConsole =1,
+        HuaweiAppGalery=2,
+        AppleAppStore=3
     }
 }

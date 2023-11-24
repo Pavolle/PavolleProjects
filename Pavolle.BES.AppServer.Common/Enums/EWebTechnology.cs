@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AppServer.Common.Enums
 {
-    public enum EApplicationType
+    public enum EWebTechnology
     {
-        SystemCoreService =1,
-        MobileApplication,
-        WebApplication,
-        WebSite,
+        Angular,
+        ReactJS,
+        VueJS
     }
 }
