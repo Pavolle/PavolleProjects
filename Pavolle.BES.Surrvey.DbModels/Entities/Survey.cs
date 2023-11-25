@@ -16,10 +16,17 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         {
         }
 
+        [Persistent("code")]
+        [Size(50)]
+        //Her araştırmaya özgü kod üretilecek. Bu kod daha sonra web sitelerinde kullanılabilmek için eklendi.
+        public string Code { get; set; }
+
         [Persistent("header")]
+        [Size(500)]
         public string Header { get; set; }
 
         [Persistent("about")]
+        [Size(2000)]
         public string About { get; set; }
 
         [Persistent("organization_oid")]
@@ -38,6 +45,7 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         public long CreaterUserOid { get; set; }
 
         [Persistent("base64_image_file_path")]
+        [Size(255)]
         public string Base64ImageFilePath { get; set; }
 
 

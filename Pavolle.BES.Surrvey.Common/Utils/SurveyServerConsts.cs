@@ -8,24 +8,49 @@ namespace Pavolle.BES.Surrvey.Common.Utils
 {
     public class SurveyServerConsts
     {
-        public class SurveyIntegrationServiceConsts
+        public const string ListRoutePrefix = "list";
+        public const string LookupRoutePrefix = "lookup";
+        public const string ImageLookupRoutePrefix = "imagelookup";
+        public const string AddRoutePrefix = "add";
+        public const string EditRoutePrefix = "edit/{oid}";
+        public const string DetailRoutePrefix = "detail/{oid}";
+
+        public class ServerStatusUrlConst
         {
-            public const string SurveyRoute = "api/surveyintegrationservice/survey";
-            public const string PrintSurveyRoute = "api/surveyintegrationservice/printsurvey";
-            public const string AnswerRoute= "api/surveyintegrationservice/answer";
-            public const string QuestionRoute = "api/surveyintegrationservice/question";
-            public const string QuestionGroupRoute = "api/surveyintegrationservice/questiongroup";
-            public const string ServerStatusRoute = "api/surveyintegrationservice/serverstatus";
+            public const string BaseRoute = "api/surrveyserver/serverstatus";
+
+            public const string ServerDetailRoutePrefix = "detail";
+            public const string ServerSettingsRoutePrefix = "settings";
         }
 
 
+        public class AnswerConsts
+        {
+            public const string BaseRoute = "api/surrveyserver/answer";
+        }
+
+        public class QuestionConsts
+        {
+            public const string BaseRoute = "api/surrveyserver/question";
+        }
+
+        public class PrintSurveyConsts
+        {
+            public const string BaseRoute = "api/surrveyserver/printsurvey";
+        }
+
+        public class QuestionGroupConsts
+        {
+            public const string BaseRoute = "api/surrveyserver/questiongroup";
+        }
+
         public class SurveyConsts
         {
-            public const string AddRoutePrefix = "add";
-            public const string EditRoutePrefix = "edit/{oid}";
-            public const string DetailRoutePrefix = "detail/{oid}";
+            public const string BaseRoute = "api/surrveyserver/survey";
+
             public const string ApproveRoutePrefix = "approve/{oid}";
             public const string CompleteRoutePrefix = "complete/{oid}";
+            public const string ResultRoutePrefix = "result";
         }
     }
 }

@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="7.0.11" />
   </ItemGroup>
 
@@ -19,6 +20,13 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.Surrvey.Business\Pavolle.BES.Surrvey.Business.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.Surrvey.Common\Pavolle.BES.Surrvey.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.Surrvey.ViewModels\Pavolle.BES.Surrvey.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
