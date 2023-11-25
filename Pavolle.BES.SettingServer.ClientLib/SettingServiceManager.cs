@@ -18,6 +18,11 @@ namespace Pavolle.BES.SettingServer.ClientLib
 
         }
 
+        public ELanguage GetDefaultLanguage()
+        {
+            return ELanguage.English;
+        }
+
         public SettingsServerStatusResponse GetServerStatus()
         {
             if(string.IsNullOrEmpty(_serviceUrl))

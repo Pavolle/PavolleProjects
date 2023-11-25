@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.Business\Pavolle.BES.Surrvey.Business.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.Common\Pavolle.BES.Surrvey.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.ViewModels\Pavolle.BES.Surrvey.ViewModels.csproj" />

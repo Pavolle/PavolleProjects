@@ -1,4 +1,5 @@
 ﻿using Pavolle.BES.Surrvey.Common.Enums;
+using Pavolle.BES.ViewModels.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.Surrvey.ViewModels.Criteria
 {
-    public class ListSurveyCriteria : SurveyCriteriaBase
+    public class ListSurveyCriteria : BesRequestBase
     {
-        public long? OrganizationOid { get; set; }
         public ESurveyStatus ServeyStatus { get; set; }
     }
 }

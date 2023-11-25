@@ -8,12 +8,14 @@
 
   <ItemGroup>
     <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
+    <PackageReference Include="log4net" Version="2.0.15" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Pavolle.BES.Surrvey.Common\Pavolle.BES.Surrvey.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.DbModels\Pavolle.BES.Surrvey.DbModels.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.ViewModels\Pavolle.BES.Surrvey.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.TranslateServer.ClientLib\Pavolle.BES.TranslateServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>

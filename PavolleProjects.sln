@@ -404,23 +404,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Surrvey.UnitTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Surrvey.RabbitMQClient", "Pavolle.BES.Surrvey.RabbitMQClient\Pavolle.BES.Surrvey.RabbitMQClient.csproj", "{02F3DF30-087D-4510-AD1F-E2311EFE8F02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Surrvey.MobileApp", "Pavolle.BES.Surrvey.MobileApp\Pavolle.BES.Surrvey.MobileApp.csproj", "{8AF2C66C-0F9B-4C13-95F7-2A47F0A2AFDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Surrvey.MobileApp", "Pavolle.BES.Surrvey.MobileApp\Pavolle.BES.Surrvey.MobileApp.csproj", "{8AF2C66C-0F9B-4C13-95F7-2A47F0A2AFDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{7BCDF354-C786-43C1-B7B9-627DA266D2C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.RequestValidation", "Pavolle.BES.RequestValidation\Pavolle.BES.RequestValidation.csproj", "{C28BE826-A695-4688-822F-61F24EA03507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.RequestValidation", "Pavolle.BES.RequestValidation\Pavolle.BES.RequestValidation.csproj", "{C28BE826-A695-4688-822F-61F24EA03507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.ViewModels", "Pavolle.BES.TeknikDestek.ViewModels\Pavolle.BES.TeknikDestek.ViewModels.csproj", "{84C17729-E050-4C29-B638-F38F05A69140}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.ViewModels", "Pavolle.BES.TeknikDestek.ViewModels\Pavolle.BES.TeknikDestek.ViewModels.csproj", "{84C17729-E050-4C29-B638-F38F05A69140}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.DbModels", "Pavolle.BES.TeknikDestek.DbModels\Pavolle.BES.TeknikDestek.DbModels.csproj", "{3121DBC6-7E78-420F-9EF3-A4AA9271888E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.DbModels", "Pavolle.BES.TeknikDestek.DbModels\Pavolle.BES.TeknikDestek.DbModels.csproj", "{3121DBC6-7E78-420F-9EF3-A4AA9271888E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.Common", "Pavolle.BES.TeknikDestek.Common\Pavolle.BES.TeknikDestek.Common.csproj", "{8848B0EA-5AEC-4264-9BA5-12BE47486218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.Common", "Pavolle.BES.TeknikDestek.Common\Pavolle.BES.TeknikDestek.Common.csproj", "{8848B0EA-5AEC-4264-9BA5-12BE47486218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.ClientLib", "Pavolle.BES.TeknikDestek.ClientLib\Pavolle.BES.TeknikDestek.ClientLib.csproj", "{52E18BA3-901D-41E1-8455-793BCAC4979C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.ClientLib", "Pavolle.BES.TeknikDestek.ClientLib\Pavolle.BES.TeknikDestek.ClientLib.csproj", "{52E18BA3-901D-41E1-8455-793BCAC4979C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.WebApp", "Pavolle.BES.TeknikDestek.WebApp\Pavolle.BES.TeknikDestek.WebApp.csproj", "{52082211-2D9E-40A3-A9C7-55D5BB5FB89A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.WebApp", "Pavolle.BES.TeknikDestek.WebApp\Pavolle.BES.TeknikDestek.WebApp.csproj", "{52082211-2D9E-40A3-A9C7-55D5BB5FB89A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.UnitTests", "Pavolle.BES.TeknikDestek.UnitTests\Pavolle.BES.TeknikDestek.UnitTests.csproj", "{559E92BD-56DA-45D1-B35F-D936C7E167D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.UnitTests", "Pavolle.BES.TeknikDestek.UnitTests\Pavolle.BES.TeknikDestek.UnitTests.csproj", "{559E92BD-56DA-45D1-B35F-D936C7E167D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

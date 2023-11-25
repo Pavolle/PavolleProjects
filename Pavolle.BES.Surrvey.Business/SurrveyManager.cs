@@ -1,5 +1,4 @@
-﻿using DevExpress.Xpo;
-using Pavolle.Core.Utils;
+﻿using Pavolle.Core.Utils;
 using Pavolle.BES.Surrvey.DbModels;
 using Pavolle.BES.Surrvey.DbModels.Entities;
 using Pavolle.BES.Surrvey.ViewModels.Criteria;
@@ -9,37 +8,98 @@ using Pavolle.BES.Surrvey.ViewModels.Request;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.BES.Surrvey.ViewModels.ViewData;
 using Pavolle.BES.ViewModels.Response;
+using log4net;
+using DevExpress.Xpo;
+using Pavolle.BES.TranslateServer.ClientLib;
+using Pavolle.BES.TranslateServer.Common.Enums;
+using Pavolle.Core.ViewModels.Request;
 
 namespace Pavolle.BES.Surrvey.Business
 {
     //Araştırma bilgiler cache'de tutulacak.
     public class SurrveyManager : Singleton<SurrveyManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(SurrveyManager));
         private SurrveyManager() { }
-
-        public BesResponseBase Edit(long? oid, EditSurveyRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public BesResponseBase Add(AddSurveyRequest request)
-        {
-            throw new NotImplementedException();
-        }
 
         public SurveyListResponse List(ListSurveyCriteria criteria)
         {
-            throw new NotImplementedException();
+            var response = new SurveyListResponse();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unecpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value);
+                response.StatusCode = 500;
+            }
+            return response;
         }
 
         public LookupResponse Lookup(LookupSurveyCriteria criteria)
         {
-            throw new NotImplementedException();
+            var response = new LookupResponse();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unecpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value);
+                response.StatusCode = 500;
+            }
+            return response;
         }
 
         public SurveyDetailResponse Detail(long? oid, BesRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new SurveyDetailResponse();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unecpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+            return response;
+        }
+
+        public BesResponseBase Add(AddSurveyRequest request)
+        {
+            var response=new BesResponseBase();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unecpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+            return response;
+        }
+
+        public BesResponseBase Edit(long? oid, EditSurveyRequest request)
+        {
+            var response = new BesResponseBase();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unecpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+            return response;
         }
 
 

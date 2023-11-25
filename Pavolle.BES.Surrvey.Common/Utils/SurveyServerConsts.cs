@@ -24,6 +24,11 @@ namespace Pavolle.BES.Surrvey.Common.Utils
         }
 
 
+        public class DefinitionConsts
+        {
+            public const string BaseRoute = "api/surrveyserver/definition";
+        }
+
         public class AnswerConsts
         {
             public const string BaseRoute = "api/surrveyserver/answer";

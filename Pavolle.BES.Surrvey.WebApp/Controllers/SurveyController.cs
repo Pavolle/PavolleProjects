@@ -1,10 +1,13 @@
 ﻿using log4net;
 using Microsoft.AspNetCore.Mvc;
+using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.Surrvey.Business;
 using Pavolle.BES.Surrvey.Common.Utils;
 using Pavolle.BES.Surrvey.ViewModels.Criteria;
 using Pavolle.BES.Surrvey.ViewModels.Request;
 using Pavolle.BES.Surrvey.ViewModels.Response;
+using Pavolle.BES.TranslateServer.ClientLib;
+using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Enums;
@@ -25,7 +28,15 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
         {
             if (criteria == null)
             {
-                return BadRequest(new SurveyListResponse { ErrorMessage = "Request format error! ", StatusCode = 400 });
+                return BadRequest(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 400
+                });
+            }
+            if (criteria.Language == null)
+            {
+                criteria.Language = SettingServiceManager.Instance.GetDefaultLanguage();
             }
             try
             {
@@ -36,7 +47,11 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new SurveyListResponse { ErrorMessage = "Unexptected error occured!", StatusCode=500 });
+                return Ok(new SurveyListResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value),
+                    StatusCode = 500
+                });
             }
         }
 
@@ -45,7 +60,15 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
         {
             if (criteria == null)
             {
-                return BadRequest(new LookupResponse { ErrorMessage = "Request format error! ", StatusCode = 400 });
+                return BadRequest(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 400
+                });
+            }
+            if (criteria.Language == null)
+            {
+                criteria.Language = SettingServiceManager.Instance.GetDefaultLanguage();
             }
             try
             {
@@ -56,7 +79,11 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new LookupResponse { ErrorMessage = "Unexptected error occured!", StatusCode = 500 });
+                return Ok(new LookupResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value),
+                    StatusCode = 500
+                });
             }
         }
 
@@ -65,7 +92,15 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
         {
             if (request == null || oid == null || oid == 0)
             {
-                return BadRequest(new LookupResponse { ErrorMessage = "Request format error! ", StatusCode = 400 });
+                return BadRequest(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 400
+                });
+            }
+            if (request.Language == null)
+            {
+                request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
             }
             try
             {
@@ -76,7 +111,11 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new SurveyDetailResponse { ErrorMessage = "Unexptected error occured!", StatusCode = 500 });
+                return Ok(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value),
+                    StatusCode = 500
+                });
             }
         }
 
@@ -85,7 +124,15 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
         {
             if (request == null)
             {
-                return BadRequest(new LookupResponse { ErrorMessage = "Request format error! ", StatusCode = 400 });
+                return BadRequest(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 400
+                });
+            }
+            if (request.Language == null)
+            {
+                request.Language= SettingServiceManager.Instance.GetDefaultLanguage();
             }
             try
             {
@@ -96,7 +143,11 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new BesResponseBase { ErrorMessage = "Unexptected error occured!", StatusCode = 500 });
+                return Ok(new BesResponseBase
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value),
+                    StatusCode = 500
+                });
             }
         }
 
@@ -105,9 +156,16 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
         {
             if (request == null ||oid==null || oid== 0)
             {
-                return BadRequest(new LookupResponse { ErrorMessage = "Request format error! ", StatusCode = 400 });
+                return BadRequest(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 400
+                });
             }
-
+            if (request.Language == null)
+            {
+                request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
+            }
             try
             {
                 var response = SurrveyManager.Instance.Edit(oid, request);
@@ -117,8 +175,13 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new BesResponseBase { ErrorMessage = "Unexptected error occured!", StatusCode = 500 });
+                return Ok(new BesResponseBase
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value),
+                    StatusCode = 500
+                });
             }
         }
+    
     }
 }

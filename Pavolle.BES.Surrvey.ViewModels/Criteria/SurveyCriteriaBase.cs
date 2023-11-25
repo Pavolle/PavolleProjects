@@ -9,5 +9,7 @@ namespace Pavolle.BES.Surrvey.ViewModels.Criteria
 {
     public class SurveyCriteriaBase : BesRequestBase
     {
+        public long? SelectedOrganizationOid { get; set; }
+        public long? SurveyOid { get; set; }
     }
 }
