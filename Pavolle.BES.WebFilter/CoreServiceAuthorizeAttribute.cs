@@ -19,7 +19,7 @@ namespace Pavolle.BES.WebFilter
             var ip = context.HttpContext.Connection.RemoteIpAddress.ToString();
             var appCode = context.HttpContext.Request.Headers["AppCode"];
             var appId = context.HttpContext.Request.Headers["AppId"];
-            Thread.CurrentPrincipal = new SystemIntegrationPrincipal(new BesIdentity(null, null), ip, appCode, appId);
+            Thread.CurrentPrincipal = new CoreServicePrincipal(new BesIdentity(null, null), ip, appCode, appId);
         }
     }
 }

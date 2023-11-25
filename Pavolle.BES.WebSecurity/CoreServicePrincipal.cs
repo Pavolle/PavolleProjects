@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.WebSecurity
 {
-    public class SystemIntegrationPrincipal : IPrincipal
+    public class CoreServicePrincipal : IPrincipal
     {
         public IIdentity Identity { get; private set; }
         public string Ip { get; private set; }
         public string AppCode { get; private set; }
         public string AppId { get; private set; }
 
-        public SystemIntegrationPrincipal(BesIdentity identity, string ip, string appCode, string appId)
+        public CoreServicePrincipal(BesIdentity identity, string ip, string appCode, string appId)
         {
             this.Ip = ip;
             this.AppCode = appCode;
