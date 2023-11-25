@@ -404,6 +404,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Surrvey.UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Surrvey.IntegrationService", "Pavolle.BES.Surrvey.IntegrationService\Pavolle.BES.Surrvey.IntegrationService.csproj", "{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Surrvey.RabbitMQClient", "Pavolle.BES.Surrvey.RabbitMQClient\Pavolle.BES.Surrvey.RabbitMQClient.csproj", "{02F3DF30-087D-4510-AD1F-E2311EFE8F02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -996,6 +998,10 @@ Global
 		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F3DF30-087D-4510-AD1F-E2311EFE8F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F3DF30-087D-4510-AD1F-E2311EFE8F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F3DF30-087D-4510-AD1F-E2311EFE8F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F3DF30-087D-4510-AD1F-E2311EFE8F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1186,6 +1192,7 @@ Global
 		{7AA0B09F-3EE3-418B-8CF8-E32A0C543636} = {890B187A-8826-4E04-95B6-399254DD9092}
 		{A1C636CA-84D1-464B-8552-350BAECB5A90} = {890B187A-8826-4E04-95B6-399254DD9092}
 		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB} = {890B187A-8826-4E04-95B6-399254DD9092}
+		{02F3DF30-087D-4510-AD1F-E2311EFE8F02} = {890B187A-8826-4E04-95B6-399254DD9092}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

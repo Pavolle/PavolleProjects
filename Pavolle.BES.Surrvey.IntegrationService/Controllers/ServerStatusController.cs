@@ -4,8 +4,8 @@ using Pavolle.BES.Surrvey.Common.Utils;
 namespace Pavolle.BES.Surrvey.IntegrationService.Controllers
 {
     [Produces("application/json")]
-    [Route(SurveyServerConsts.SurveyIntegrationServiceConsts.QuestionGroupRoute)]
-    public class QuestionGroupController : Controller
+    [Route(SurveyServerConsts.SurveyIntegrationServiceConsts.ServerStatusRoute)]
+    public class ServerStatusController : Controller
     {
 
     }

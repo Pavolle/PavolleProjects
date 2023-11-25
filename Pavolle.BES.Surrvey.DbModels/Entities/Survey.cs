@@ -51,6 +51,11 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         public DateTime? ApprovedTime { get; set; }
 
 
+
+        [Persistent("started")]
+        public bool Started { get; set; }
+
+
         [Persistent("completed")]
         public bool Completed { get; set; }
 
