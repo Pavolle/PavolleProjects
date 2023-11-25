@@ -17,7 +17,7 @@ namespace Pavolle.BES.WebFilter
         }
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            var principal = Thread.CurrentPrincipal as BesIntegrationPrincipal;
+            var principal = Thread.CurrentPrincipal as SystemIntegrationPrincipal;
             var keyList = context.ActionArguments.Keys.ToList();
 
             foreach (string keyy in keyList)
@@ -44,7 +44,7 @@ namespace Pavolle.BES.WebFilter
             }
         }
 
-        private IntegrationAppRequestBase SetRequestBaseParameter(IntegrationAppRequestBase requestBase, BesIntegrationPrincipal principal)
+        private IntegrationAppRequestBase SetRequestBaseParameter(IntegrationAppRequestBase requestBase, SystemIntegrationPrincipal principal)
         {
             requestBase.RequestIp = principal.Ip;
             requestBase.AppCode=principal.AppCode;

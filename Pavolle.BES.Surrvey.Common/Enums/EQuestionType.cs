@@ -24,6 +24,10 @@ namespace Pavolle.BES.Surrvey.Common.Enums
         NumberRanges,
 
         //Seviyeli soru. Örneğin 1 den 5 kadar klasik derecelendirme
-        ClassicLevels
+        ClassicLevels,
+
+        EntryText,
+
+        EntryNumber
     }
 }

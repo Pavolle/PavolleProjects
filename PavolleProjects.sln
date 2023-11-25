@@ -380,23 +380,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmgucvTests", "EmgucvTests\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Talep Takip Sistemi", "Talep Takip Sistemi", "{5849F6B0-1628-4B19-98EE-41181F461CE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.AppServer.DbModels", "Pavolle.BES.AppServer.DbModels\Pavolle.BES.AppServer.DbModels.csproj", "{E6913297-CC66-46B7-A00C-D8490AE2C7DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.AppServer.DbModels", "Pavolle.BES.AppServer.DbModels\Pavolle.BES.AppServer.DbModels.csproj", "{E6913297-CC66-46B7-A00C-D8490AE2C7DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.Business", "Pavolle.BES.TeknikDestek.Business\Pavolle.BES.TeknikDestek.Business.csproj", "{AD9FEA6D-2DAC-448D-93D0-855D6C1FC96B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.Business", "Pavolle.BES.TeknikDestek.Business\Pavolle.BES.TeknikDestek.Business.csproj", "{AD9FEA6D-2DAC-448D-93D0-855D6C1FC96B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "E-Ticaret", "E-Ticaret", "{DABBC012-6ADA-4F14-93F0-3F793CCB9831}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.FirstPartner.Business", "Pavolle.BES.FirstPartner.Business\Pavolle.BES.FirstPartner.Business.csproj", "{D39BAE20-7B8A-49E0-BE99-1831ECDFF818}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.FirstPartner.Business", "Pavolle.BES.FirstPartner.Business\Pavolle.BES.FirstPartner.Business.csproj", "{D39BAE20-7B8A-49E0-BE99-1831ECDFF818}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.FirstPartner.DbModels", "Pavolle.BES.FirstPartner.DbModels\Pavolle.BES.FirstPartner.DbModels.csproj", "{6E5B113E-177F-4063-90A3-29E03FAA9C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.FirstPartner.DbModels", "Pavolle.BES.FirstPartner.DbModels\Pavolle.BES.FirstPartner.DbModels.csproj", "{6E5B113E-177F-4063-90A3-29E03FAA9C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.FirstPartner.Common", "Pavolle.BES.FirstPartner.Common\Pavolle.BES.FirstPartner.Common.csproj", "{3EB531F3-C27C-448D-A5FB-7B5BEB292406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.FirstPartner.Common", "Pavolle.BES.FirstPartner.Common\Pavolle.BES.FirstPartner.Common.csproj", "{3EB531F3-C27C-448D-A5FB-7B5BEB292406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.FirstPartner.WebApp", "Pavolle.BES.FirstPartner.WebApp\Pavolle.BES.FirstPartner.WebApp.csproj", "{D3BEEA2E-1957-435E-A24C-F8ECF458E5DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.FirstPartner.WebApp", "Pavolle.BES.FirstPartner.WebApp\Pavolle.BES.FirstPartner.WebApp.csproj", "{D3BEEA2E-1957-435E-A24C-F8ECF458E5DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.FirstPartner.ViewModels", "Pavolle.BES.FirstPartner.ViewModels\Pavolle.BES.FirstPartner.ViewModels.csproj", "{99E7077F-8A49-43DC-82DE-10338A5C9473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.FirstPartner.ViewModels", "Pavolle.BES.FirstPartner.ViewModels\Pavolle.BES.FirstPartner.ViewModels.csproj", "{99E7077F-8A49-43DC-82DE-10338A5C9473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.FirstPartner.UnitTests", "Pavolle.BES.FirstPartner.UnitTests\Pavolle.BES.FirstPartner.UnitTests.csproj", "{56EF735B-5E4A-43F7-BD07-18AA24DAB065}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.FirstPartner.UnitTests", "Pavolle.BES.FirstPartner.UnitTests\Pavolle.BES.FirstPartner.UnitTests.csproj", "{56EF735B-5E4A-43F7-BD07-18AA24DAB065}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Surrvey.WebApp", "Pavolle.BES.Surrvey.WebApp\Pavolle.BES.Surrvey.WebApp.csproj", "{7AA0B09F-3EE3-418B-8CF8-E32A0C543636}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Surrvey.UnitTests", "Pavolle.BES.Surrvey.UnitTests\Pavolle.BES.Surrvey.UnitTests.csproj", "{A1C636CA-84D1-464B-8552-350BAECB5A90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Surrvey.IntegrationService", "Pavolle.BES.Surrvey.IntegrationService\Pavolle.BES.Surrvey.IntegrationService.csproj", "{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -978,6 +984,18 @@ Global
 		{56EF735B-5E4A-43F7-BD07-18AA24DAB065}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56EF735B-5E4A-43F7-BD07-18AA24DAB065}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56EF735B-5E4A-43F7-BD07-18AA24DAB065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA0B09F-3EE3-418B-8CF8-E32A0C543636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA0B09F-3EE3-418B-8CF8-E32A0C543636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA0B09F-3EE3-418B-8CF8-E32A0C543636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA0B09F-3EE3-418B-8CF8-E32A0C543636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C636CA-84D1-464B-8552-350BAECB5A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C636CA-84D1-464B-8552-350BAECB5A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C636CA-84D1-464B-8552-350BAECB5A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C636CA-84D1-464B-8552-350BAECB5A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1165,6 +1183,9 @@ Global
 		{D3BEEA2E-1957-435E-A24C-F8ECF458E5DA} = {E4843C08-824A-44D7-9CE7-E90C1885C54F}
 		{99E7077F-8A49-43DC-82DE-10338A5C9473} = {E4843C08-824A-44D7-9CE7-E90C1885C54F}
 		{56EF735B-5E4A-43F7-BD07-18AA24DAB065} = {E4843C08-824A-44D7-9CE7-E90C1885C54F}
+		{7AA0B09F-3EE3-418B-8CF8-E32A0C543636} = {890B187A-8826-4E04-95B6-399254DD9092}
+		{A1C636CA-84D1-464B-8552-350BAECB5A90} = {890B187A-8826-4E04-95B6-399254DD9092}
+		{007895F3-4656-4FA4-BBD0-7AA90FAB02EB} = {890B187A-8826-4E04-95B6-399254DD9092}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
