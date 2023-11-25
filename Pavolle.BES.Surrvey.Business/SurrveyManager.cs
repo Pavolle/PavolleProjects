@@ -75,7 +75,35 @@ namespace Pavolle.BES.Surrvey.Business
             var response=new BesResponseBase();
             try
             {
+                using(Session session= XpoManager.Instance.GetNewSession())
+                {
+                    string code = "";
+                    do
+                    {
+                        code = GenerateSurveyCode(session).Item2;
+                    } while (!string.IsNullOrWhiteSpace(code));
 
+                    if(code != null)
+                    {
+                        var survey = new Survey(session)
+                        {
+                            Header = request.Header,
+                            About = request.About,
+                            MultiLanguage = request.MultiLanguage,
+                            CreatedLanguage = request.CreatedLanguage,
+                            EncryptStringContent = request.EncryptStringContent,
+                            Base64ImageFilePath = request.Base64Image,
+                            CreatorOrganizationOid = request.OrganizationOid.Value,
+                            ResearchOwnerOrganizationOid = request.ResearchOwnerOrganizationOid,
+                            Code = code,
+                            Approved=false,
+                            Completed=false,
+                            Started=false,
+                            TransactionCount=0
+                        };
+                        survey.Save();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -107,16 +135,16 @@ namespace Pavolle.BES.Surrvey.Business
         private Tuple<bool, string> GenerateSurveyCode(Session session)
         {
             bool isSuccess = false;
-            string code = "";
+            string? code = null;
 
-            code = Guid.NewGuid().ToString().ToUpper().Replace("-", "").Substring(2, 16);
+            code = Guid.NewGuid().ToString().ToLower().Replace("-", "").Substring(2, 16);
             isSuccess = !session.Query<Survey>().Any(t => t.Code == code);
-            if (!isSuccess) { code = ""; }
+            if (!isSuccess) { code = string.Empty; }
 
             return new Tuple<bool, string>(isSuccess, code);
         }
 
-        public List<DailyTransactionCountViewData> GetDailyTransactionCountForSurvey(Session session, long surveyOid)
+        private List<DailyTransactionCountViewData> GetDailyTransactionCountForSurvey(Session session, long surveyOid)
         {
             return session.Query<SurveyResult>()
                 .Where(t=>t.Survey.Oid== surveyOid)
