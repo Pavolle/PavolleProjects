@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.Surrvey.DbModels\Pavolle.BES.Surrvey.DbModels.csproj" />
     <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>

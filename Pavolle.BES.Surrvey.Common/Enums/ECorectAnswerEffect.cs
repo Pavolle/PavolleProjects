@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.Surrvey.Common.Enums
 {
-    public enum ECorectAnswerAffect
+    public enum ECorectAnswerEffect
     {
+        
+        Noneffective = 1,
     }
 }

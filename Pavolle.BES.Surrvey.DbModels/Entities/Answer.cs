@@ -18,7 +18,7 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         public string Text { get; set; }
 
         [Persistent("correct_answer")]
-        public bool CorrectAnswer { get; set; }
+        public bool? CorrectAnswer { get; set; }
 
         [Persistent("base64_image_file_path")]
         public string Base64ImagePath { get; set; }
