@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.Surrvey.ViewModels.Request
+namespace Pavolle.BES.Surrvey.ViewModels.Criteria
 {
-    public class EditSurveyRequest : BesRequestBase
+    public class SurveyCriteriaBase : BesRequestBase
     {
     }
 }
