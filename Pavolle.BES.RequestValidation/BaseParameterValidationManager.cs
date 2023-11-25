@@ -12,9 +12,9 @@ namespace Pavolle.BES.RequestValidation
     {
         private BaseParameterValidationManager() { }
 
-        public ValidationResult Validate(BesRequestBase requestBase) 
+        public BesValidationResult Validate(BesRequestBase requestBase) 
         {
-            return new ValidationResult { Validated = true };
+            return new BesValidationResult { Validated = true };
         }
     }
 }

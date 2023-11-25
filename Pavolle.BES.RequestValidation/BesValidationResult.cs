@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.RequestValidation
 {
-    public class ValidationResult
+    public class BesValidationResult
     {
         public bool Validated { get; set; }
         public string Message { get; set; }

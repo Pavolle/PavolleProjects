@@ -13,6 +13,8 @@ using DevExpress.Xpo;
 using Pavolle.BES.TranslateServer.ClientLib;
 using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.Core.ViewModels.Request;
+using System.ComponentModel.DataAnnotations;
+using Pavolle.BES.RequestValidation;
 
 namespace Pavolle.BES.Surrvey.Business
 {
@@ -73,6 +75,19 @@ namespace Pavolle.BES.Surrvey.Business
         public BesResponseBase Add(AddSurveyRequest request)
         {
             var response=new BesResponseBase();
+
+            //Request Check
+            BesValidationResult validationResult = new BesValidationResult();
+            validationResult = StringValidationManager.Instance.Validate(request.Header, false, 2, 500, EMessageCode.Header, request.Language);
+            if(!validationResult.Validated)
+            {
+                return new BesResponseBase
+                {
+                    ErrorMessage = validationResult.Message,
+                    StatusCode = 400
+                };
+            }
+
             try
             {
                 using(Session session= XpoManager.Instance.GetNewSession())

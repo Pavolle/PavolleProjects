@@ -216,6 +216,7 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
+
                 return Ok(new BesResponseBase
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value),

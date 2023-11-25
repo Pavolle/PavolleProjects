@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.RequestValidation\Pavolle.BES.RequestValidation.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.Common\Pavolle.BES.Surrvey.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.DbModels\Pavolle.BES.Surrvey.DbModels.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.ViewModels\Pavolle.BES.Surrvey.ViewModels.csproj" />
