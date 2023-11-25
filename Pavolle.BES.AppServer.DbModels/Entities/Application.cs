@@ -16,9 +16,11 @@ namespace Pavolle.BES.AppServer.DbModels.Entities
         }
 
         [Persistent("name")]
+        [Size(500)]
         public string Name { get; set; }
 
         [Persistent("about")]
+        [Size(2000)]
         public string About { get; set; }
 
         [Persistent("application_type")]

@@ -32,8 +32,14 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         [Size(2000)]
         public string About { get; set; }
 
-        [Persistent("organization_oid")]
-        public long OrganizationOid { get; set; }
+        [Persistent("creator_organization_oid")]
+        public long CreatorOrganizationOid { get; set; }
+
+        [Persistent("research_owner_organization_oid")]
+        public long? ResearchOwnerOrganizationOid { get; set; }
+
+        [Persistent("creator_user_oid")]
+        public long CreatorUserOid { get; set; }
 
 
         //Bütün string verileri translate servera atacak Cevaplar dışında
@@ -44,9 +50,6 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
 
         [Persistent("createdlanguage")]
         public ELanguage? CreatedLanguage { get; set; }
-
-        [Persistent("creater_user_oid")]
-        public long CreaterUserOid { get; set; }
 
         [Persistent("base64_image_file_path")]
         [Size(255)]
