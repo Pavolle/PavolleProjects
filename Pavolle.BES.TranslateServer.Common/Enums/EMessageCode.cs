@@ -13,6 +13,7 @@ namespace Pavolle.BES.TranslateServer.Common.Enums
         UnexpectedExceptionOccured=1,
 
         [Description("Request Data Type Error!")]
-        RequestDataTypeError
+        RequestDataTypeError,
+        UnauthorizedException
     }
 }

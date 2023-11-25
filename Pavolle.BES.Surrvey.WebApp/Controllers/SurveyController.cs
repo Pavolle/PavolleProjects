@@ -1,5 +1,6 @@
 ﻿using log4net;
 using Microsoft.AspNetCore.Mvc;
+using Pavolle.BES.RequestValidation;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.Surrvey.Business;
 using Pavolle.BES.Surrvey.Common.Utils;
@@ -38,6 +39,14 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             {
                 criteria.Language = SettingServiceManager.Instance.GetDefaultLanguage();
             }
+            if (!BaseParameterValidationManager.Instance.Validate(criteria).Validated)
+            {
+                return Unauthorized(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnauthorizedException, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 401
+                });
+            }
             try
             {
                 var response = SurrveyManager.Instance.List(criteria);
@@ -69,6 +78,14 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             if (criteria.Language == null)
             {
                 criteria.Language = SettingServiceManager.Instance.GetDefaultLanguage();
+            }
+            if (!BaseParameterValidationManager.Instance.Validate(criteria).Validated)
+            {
+                return Unauthorized(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnauthorizedException, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 401
+                });
             }
             try
             {
@@ -102,6 +119,14 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             {
                 request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
             }
+            if (!BaseParameterValidationManager.Instance.Validate(request).Validated)
+            {
+                return Unauthorized(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnauthorizedException, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 401
+                });
+            }
             try
             {
                 var response = SurrveyManager.Instance.Detail(oid, request);
@@ -134,6 +159,14 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             {
                 request.Language= SettingServiceManager.Instance.GetDefaultLanguage();
             }
+            if (!BaseParameterValidationManager.Instance.Validate(request).Validated)
+            {
+                return Unauthorized(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnauthorizedException, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 401
+                });
+            }
             try
             {
                 var response = SurrveyManager.Instance.Add(request);
@@ -165,6 +198,14 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             if (request.Language == null)
             {
                 request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
+            }
+            if (!BaseParameterValidationManager.Instance.Validate(request).Validated)
+            {
+                return Unauthorized(new SurveyDetailResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnauthorizedException, SettingServiceManager.Instance.GetDefaultLanguage()),
+                    StatusCode = 401
+                });
             }
             try
             {
