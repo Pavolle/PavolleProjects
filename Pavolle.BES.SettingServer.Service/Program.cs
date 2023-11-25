@@ -56,8 +56,8 @@ internal class Program
         _log.Info("Starting filter....");
         builder.Services.AddControllersWithViews(options =>
         {
-            options.Filters.Add<IntegrationAppAuthorizeAttribute>();
-            options.Filters.Add<IntegrationAppFillRequestBaseActionFilterAttribute>();
+            options.Filters.Add<CoreServiceAuthorizeAttribute>();
+            options.Filters.Add<CoreServiceFillRequestBaseActionFilterAttribute>();
         });
 
         _log.Info("Service filter ready.");

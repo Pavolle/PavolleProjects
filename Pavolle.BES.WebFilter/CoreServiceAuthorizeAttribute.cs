@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.WebFilter
 {
-    public class IntegrationAppAuthorizeAttribute : AuthorizeAttribute, IAuthorizationFilter
+    public class CoreServiceAuthorizeAttribute : AuthorizeAttribute, IAuthorizationFilter
     {
-        static readonly ILog _log = LogManager.GetLogger(typeof(IntegrationAppAuthorizeAttribute));
+        static readonly ILog _log = LogManager.GetLogger(typeof(CoreServiceAuthorizeAttribute));
         //TODO Exception Ayarlanacak
         public void OnAuthorization(AuthorizationFilterContext context)
         {

@@ -29,6 +29,8 @@ namespace Pavolle.BES.LogServer.Business.Manager
             return new LogServerStatusResponse
             {
                 AppInfo = WebAppInfoManager.Instance.GetAppCode(),
+                Version=WebAppInfoManager.Instance.GetVersion(),
+                ReleaseDate=WebAppInfoManager.Instance.GetReleaseDate(),
                 ElasticSearchStatus = _elastichSearchStatus,
                 ElasticSearchStatusString = _elastichSearchStatus ? "Ready" : "Not Ready",
                 RabbitMQStatus = _rabbitMQStatus,

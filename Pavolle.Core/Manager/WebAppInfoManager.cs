@@ -34,6 +34,11 @@ namespace Pavolle.Core.Manager
             return _id;
         }
 
+        public string GetVersion() 
+        { 
+            return _version;
+        }
+
         public string GetReleaseDate()
         {
             return _versionReleaseDate.ToShortDateString();

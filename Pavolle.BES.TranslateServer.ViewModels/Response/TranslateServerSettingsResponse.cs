@@ -1,4 +1,5 @@
-﻿using Pavolle.Core.ViewModels.Response;
+﻿using Pavolle.BES.ViewModels.Response;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.TranslateServer.ViewModels.Response
 {
-    public class TranslateServerSettingsResponse : ResponseBase
+    public class TranslateServerSettingsResponse : ServerStatusResponseBase
     {
+
     }
 }

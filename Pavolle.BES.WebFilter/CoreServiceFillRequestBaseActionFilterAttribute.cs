@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.WebFilter
 {
-    public class IntegrationAppFillRequestBaseActionFilterAttribute : IActionFilter
+    public class CoreServiceFillRequestBaseActionFilterAttribute : IActionFilter
     {
         public void OnActionExecuted(ActionExecutedContext context)
         {
