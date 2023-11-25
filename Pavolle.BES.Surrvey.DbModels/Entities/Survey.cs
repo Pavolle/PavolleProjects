@@ -16,10 +16,13 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         {
         }
 
+        //Her araştırmaya özgü kod üretilecek. Bu kod daha sonra web sitelerinde kullanılabilmek için eklendi.
         [Persistent("code")]
         [Size(50)]
-        //Her araştırmaya özgü kod üretilecek. Bu kod daha sonra web sitelerinde kullanılabilmek için eklendi.
         public string Code { get; set; }
+
+        [Persistent("encrypt_string_content")]
+        public bool EncryptStringContent { get; set; }
 
         [Persistent("header")]
         [Size(500)]
@@ -33,8 +36,9 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         public long OrganizationOid { get; set; }
 
 
-        //Bütün string verileri translate servera atacak
+        //Bütün string verileri translate servera atacak Cevaplar dışında
         //Aynı zamanda form oluştururken bu dilde veriler olacak.
+        //Sadece belirli 
         [Persistent("multilanguage")]
         public bool MultiLanguage { get; set; } 
 
@@ -59,7 +63,6 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         public DateTime? ApprovedTime { get; set; }
 
 
-
         [Persistent("started")]
         public bool Started { get; set; }
 
@@ -68,7 +71,7 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         public bool Completed { get; set; }
 
         [Persistent("completed_user_oid")]
-        public long? CompletedOid { get; set; }
+        public long? CompletedUserOid { get; set; }
 
         [Persistent("completed_time")]
         public DateTime? CompletedTime { get; set; }

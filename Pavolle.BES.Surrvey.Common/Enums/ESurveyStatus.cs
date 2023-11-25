@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.Surrvey.Common.Enums
 {
-    public enum ESurveyType
+    public enum ESurveyStatus
     {
-        Research = 1,
-        Test = 2,
+        WaitingForApprove =1,
+        Canceled=2,
+        Continues = 3,
+        Completed = 4
     }
 }

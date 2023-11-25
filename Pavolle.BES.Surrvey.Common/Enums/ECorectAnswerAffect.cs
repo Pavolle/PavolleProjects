@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.Surrvey.Common.Enums
 {
-    public enum ESurveyType
+    public enum ECorectAnswerAffect
     {
-        Research = 1,
-        Test = 2,
     }
 }

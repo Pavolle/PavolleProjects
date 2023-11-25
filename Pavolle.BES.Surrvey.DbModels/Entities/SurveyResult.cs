@@ -18,15 +18,13 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         [Indexed(Name = "index_survey_results_survey", Unique = false)]
         public long SurveyOid { get; set; }
 
-        [Persistent("question_oid")]
-        [Indexed(Name = "index_survey_results_question", Unique = false)]
-        public long QuestionOid { get; set; }
+        [Persistent("anonymous")]
+        public bool Anonymous { get; set; }
 
-        [Persistent("answer_oid")]
-        public long? AnswerOid { get; set; }
+        [Persistent("answering_organization_oid")]
+        public long? AnsweringOrganization { get; set; }
 
-        [Persistent("answer_entry")]
-        [Size(2000)]
-        public string AnswerEntry { get; set; }
+        [Persistent("answering_person_oid")]
+        public long? AnsweringPerson { get; set; }
     }
 }

@@ -14,9 +14,6 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         {
         }
 
-        [Persistent("use_for_analyze")]
-        public bool UseForAnalyze { get; set; }
-
         [Persistent("question_group_oid")]
         public QuestionGroup QuestionGroup { get; set; }
 
@@ -25,5 +22,11 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
 
         [Persistent("base64_image_file_path")]
         public string Base64ImagePath { get; set; }
+
+        [Persistent("use_for_analyze")]
+        public bool UseForAnalyze { get; set; }
+
+        [Persistent("show_only_image")]
+        public bool ShowOnlyImage { get; set; }
     }
 }
