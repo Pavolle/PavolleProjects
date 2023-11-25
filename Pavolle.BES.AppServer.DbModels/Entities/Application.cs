@@ -24,6 +24,9 @@ namespace Pavolle.BES.AppServer.DbModels.Entities
         [Persistent("application_type")]
         public EApplicationType ApplicationType { get; set; }
 
+        [Persistent("application_type")]
+        public EBesAppType? BesAppType { get; set; }
+
         [Persistent("mobile_app_platform")]
         public EMobileAppPlatform? MobileAppPlatform { get; set; }
     }
