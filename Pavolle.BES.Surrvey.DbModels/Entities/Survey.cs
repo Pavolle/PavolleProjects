@@ -69,6 +69,9 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
         [Persistent("started")]
         public bool Started { get; set; }
 
+        [Persistent("transaction_count")]
+        public long TransactionCount { get; set; }
+
 
         [Persistent("completed")]
         public bool Completed { get; set; }

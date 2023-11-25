@@ -7,6 +7,8 @@ using Pavolle.BES.Surrvey.ViewModels.Response;
 using Pavolle.Core.ViewModels.Response;
 using Pavolle.BES.Surrvey.ViewModels.Request;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.BES.Surrvey.ViewModels.ViewData;
+using Pavolle.BES.ViewModels.Response;
 
 namespace Pavolle.BES.Surrvey.Business
 {
@@ -15,12 +17,12 @@ namespace Pavolle.BES.Surrvey.Business
     {
         private SurrveyManager() { }
 
-        public object Edit(long? oid, EditSurveyRequest request)
+        public BesResponseBase Edit(long? oid, EditSurveyRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object Add(AddSurveyRequest request)
+        public BesResponseBase Add(AddSurveyRequest request)
         {
             throw new NotImplementedException();
         }
@@ -35,21 +37,35 @@ namespace Pavolle.BES.Surrvey.Business
             throw new NotImplementedException();
         }
 
-        private Tuple<bool,string> GenerateSurveyCode(Session session)
+        public SurveyDetailResponse Detail(long? oid, BesRequestBase request)
         {
-            bool isSuccess=false;
+            throw new NotImplementedException();
+        }
+
+
+
+        private Tuple<bool, string> GenerateSurveyCode(Session session)
+        {
+            bool isSuccess = false;
             string code = "";
 
             code = Guid.NewGuid().ToString().ToUpper().Replace("-", "").Substring(2, 16);
             isSuccess = !session.Query<Survey>().Any(t => t.Code == code);
-            if(!isSuccess) { code = ""; }
+            if (!isSuccess) { code = ""; }
 
             return new Tuple<bool, string>(isSuccess, code);
         }
 
-        public object Detail(long? oid, BesRequestBase request)
+        public List<DailyTransactionCountViewData> GetDailyTransactionCountForSurvey(Session session, long surveyOid)
         {
-            throw new NotImplementedException();
+            return session.Query<SurveyResult>()
+                .Where(t=>t.Survey.Oid== surveyOid)
+                .GroupBy(m => new { m.SurveyTime })
+                .Select(t => new DailyTransactionCountViewData
+                    {
+                        Date = t.Key.SurveyTime,
+                        TransactionCount=t.Count()
+                    }).ToList();
         }
     }
 }
