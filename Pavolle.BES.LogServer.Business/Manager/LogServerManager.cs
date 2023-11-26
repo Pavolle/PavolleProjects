@@ -21,24 +21,6 @@ namespace Pavolle.BES.LogServer.Business.Manager
         List<SettingViewData> _settingList;
         private LogServerManager() { }
 
-        public bool InitializeSettings()
-        {
-            var settingListResponse = SettingServiceManager.Instance.GetSettingsList();
-            if (settingListResponse == null)
-            {
-                return false;
-            }
-            if (!settingListResponse.Success) { return false; }
-            if (settingListResponse.DataList == null) { return false; }
-            _settingList = settingListResponse.DataList;
-            return true;
-        }
-
-        public string GetSetting(ESettingType settingType)
-        {
-            return _settingList.FirstOrDefault(t=>t.SettingType == settingType).Value;
-        }
-
         public ResponseBase Save(LogRequest request)
         {
             if(request==null)
@@ -61,20 +43,6 @@ namespace Pavolle.BES.LogServer.Business.Manager
             return new ResponseBase() { SuccessMessage = "OK" };
         }
 
-        internal ELanguage GetDefaultLanguage()
-        {
-            var data = _settingList.FirstOrDefault(t => t.SettingType == ESettingType.DefaultLanguage);
-            if (data == null)
-                return ELanguage.English;
-            return (ELanguage)Convert.ToInt32(data.Value);
-        }
 
-        internal ELanguage GetSystemLanguage()
-        {
-            var data = _settingList.FirstOrDefault(t => t.SettingType == ESettingType.SystemLanguage);
-            if (data == null)
-                return ELanguage.English;
-            return (ELanguage)Convert.ToInt32(data.Value);
-        }
     }
 }

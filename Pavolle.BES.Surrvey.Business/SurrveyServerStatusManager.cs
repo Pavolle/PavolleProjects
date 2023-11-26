@@ -14,8 +14,6 @@ namespace Pavolle.BES.Surrvey.Business
     public class SurrveyServerStatusManager : Singleton<SurrveyServerStatusManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(SurrveyServerStatusManager));
-        bool _settingServerConnectionStatus = false;
-        List<SettingViewData> _settingList;
         private SurrveyServerStatusManager() { }
 
         public object GetServerSettings(IntegrationAppRequestBase request)
@@ -28,23 +26,9 @@ namespace Pavolle.BES.Surrvey.Business
             throw new NotImplementedException();
         }
 
-        public bool InitializeSettings()
-        {
-            var settingListResponse = SettingServiceManager.Instance.GetSettingsList();
-            if (settingListResponse == null)
-            {
-                return false;
-            }
-            if (!settingListResponse.Success) { return false; }
-            if (settingListResponse.DataList == null) { return false; }
-            _settingList = settingListResponse.DataList;
-            return true;
-        }
-
 
         public void SetSettingServerConnectionStatus(bool status)
         {
-            _settingServerConnectionStatus=status;
         }
     }
 }

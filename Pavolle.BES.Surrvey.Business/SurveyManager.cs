@@ -15,6 +15,7 @@ using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.Core.ViewModels.Request;
 using System.ComponentModel.DataAnnotations;
 using Pavolle.BES.RequestValidation;
+using Pavolle.BES.LogServer.ClientLib;
 
 namespace Pavolle.BES.Surrvey.Business
 {
@@ -33,7 +34,8 @@ namespace Pavolle.BES.Surrvey.Business
             }
             catch (Exception ex)
             {
-                _log.Error("Unecpected error occured! " + ex);
+                _log.Error("Unexpected error occured! " + ex);
+                LogServiceManager.Instance.SystemError("Unexpected error occured! Message: " + ex.Message + " StackTrace: " + ex.StackTrace);
                 response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value);
                 response.StatusCode = 500;
             }
@@ -45,11 +47,14 @@ namespace Pavolle.BES.Surrvey.Business
             var response = new LookupResponse();
             try
             {
+                using(Session session =XpoManager.Instance.GetNewSession())
+                {
 
+                }
             }
             catch (Exception ex)
             {
-                _log.Error("Unecpected error occured! " + ex);
+                _log.Error("Unexpected error occured! " + ex);
                 response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value);
                 response.StatusCode = 500;
             }
@@ -65,7 +70,7 @@ namespace Pavolle.BES.Surrvey.Business
             }
             catch (Exception ex)
             {
-                _log.Error("Unecpected error occured! " + ex);
+                _log.Error("Unexpected error occured! " + ex);
                 response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
                 response.StatusCode = 500;
             }
@@ -129,7 +134,7 @@ namespace Pavolle.BES.Surrvey.Business
             }
             catch (Exception ex)
             {
-                _log.Error("Unecpected error occured! " + ex);
+                _log.Error("Unexpected error occured! " + ex);
                 response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
                 response.StatusCode = 500;
             }
@@ -157,7 +162,7 @@ namespace Pavolle.BES.Surrvey.Business
             }
             catch (Exception ex)
             {
-                _log.Error("Unecpected error occured! " + ex);
+                _log.Error("Unexpected error occured! " + ex);
                 response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
                 response.StatusCode = 500;
             }

@@ -66,20 +66,20 @@ namespace Pavolle.BES.LogServer.Business.Manager
         {
             return new LogServerSettingsResponse
             {
-                Language= LogServerManager.Instance.GetDefaultLanguage(),
-                SystemLanguage = LogServerManager.Instance.GetSystemLanguage(),
+                Language= SettingServiceManager.Instance.GetDefaultLanguage(),
+                SystemLanguage = SettingServiceManager.Instance.GetSystemLanguage(),
                 SettingServerBaseUrl = SettingServiceManager.Instance.GetServerUrl(),
-                TranslateServerBaseUrl = LogServerManager.Instance.GetSetting(ESettingType.TranslateServerBaseUrl),
-                LogServerRabbitMQUsername = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQUsername),
-                LogServerRabbitMQPassword = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPassword),
-                LogServerRabbitMQHostname = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQHostname),
-                LogServerRabbitMQVHost = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQVHost),
-                LogServerRabbitMQPort = LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPort),
-                LogServerExchangeName = LogServerManager.Instance.GetSetting(ESettingType.LogServerExchangeName),
-                LogServerLogQueueKey = LogServerManager.Instance.GetSetting(ESettingType.LogServerLogQueueKey),
-                LogServerLogRoutingKey = LogServerManager.Instance.GetSetting(ESettingType.LogServerLogRoutingKey),
-                LogServerLogErrorQueueKey = LogServerManager.Instance.GetSetting(ESettingType.LogServerLogErrorQueueKey),
-                LogServerLogErrorRoutingKey = LogServerManager.Instance.GetSetting(ESettingType.LogServerLogErrorRoutingKey)
+                TranslateServerBaseUrl = SettingServiceManager.Instance.GetSetting(ESettingType.TranslateServerBaseUrl),
+                LogServerRabbitMQUsername = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQUsername),
+                LogServerRabbitMQPassword = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPassword),
+                LogServerRabbitMQHostname = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQHostname),
+                LogServerRabbitMQVHost = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQVHost),
+                LogServerRabbitMQPort = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPort),
+                LogServerExchangeName = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerExchangeName),
+                LogServerLogQueueKey = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerLogQueueKey),
+                LogServerLogRoutingKey = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerLogRoutingKey),
+                LogServerLogErrorQueueKey = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerLogErrorQueueKey),
+                LogServerLogErrorRoutingKey = SettingServiceManager.Instance.GetSetting(ESettingType.LogServerLogErrorRoutingKey)
             };
         }
     }

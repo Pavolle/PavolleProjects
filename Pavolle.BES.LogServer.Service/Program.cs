@@ -41,25 +41,17 @@ internal class Program
             LogServerStatusManager.Instance.SetSettingServerConnectionStatus(true);
         }
 
-        bool initializeStatus = LogServerManager.Instance.InitializeSettings();
-        LogServerStatusManager.Instance.SetSettingServerConnectionStatus(initializeStatus);
-        if (!initializeStatus)
-        {
-            _log.Error("Fetch settings from Setting Server error. Application Closing...");
-            return;
-        }
-
         bool rabbitMQStatus= RabbitMQManager.Instance.Initilize(
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQUsername),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPassword),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQHostname),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQVHost),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPort),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerExchangeName),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerLogQueueKey),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerLogRoutingKey),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerLogErrorQueueKey),
-            LogServerManager.Instance.GetSetting(ESettingType.LogServerLogErrorRoutingKey));
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQUsername),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPassword),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQHostname),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQVHost),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerRabbitMQPort),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerExchangeName),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerLogQueueKey),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerLogRoutingKey),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerLogErrorQueueKey),
+            SettingServiceManager.Instance.GetSetting(ESettingType.LogServerLogErrorRoutingKey));
 
         LogServerStatusManager.Instance.SetRabbitMQStatus(rabbitMQStatus);
         if (!rabbitMQStatus)

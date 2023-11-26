@@ -38,14 +38,7 @@ internal class Program
             SurrveyServerStatusManager.Instance.SetSettingServerConnectionStatus(true);
         }
 
-        bool initializeStatus = SurrveyServerStatusManager.Instance.InitializeSettings();
-        SurrveyServerStatusManager.Instance.SetSettingServerConnectionStatus(initializeStatus);
-        if (!initializeStatus)
-        {
-            _log.Error("Fetch settings from Setting Server error. Application Closing...");
-            return;
-        }
-
+       
         // Add services to the container.
 
         builder.Services.AddControllersWithViews();
