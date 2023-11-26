@@ -43,7 +43,8 @@ namespace Pavolle.BES.SettingServer.Business
                     Value = t.Value,
                     SettingName = t.SettingType.Description(),
                     CreatedTime = t.CreatedTime,
-                    LastUpdateTime = t.LastUpdateTime
+                    LastUpdateTime = t.LastUpdateTime,
+                    BesAppType = t.BesAppType
                 });
 
                 foreach (var setting in settingList)

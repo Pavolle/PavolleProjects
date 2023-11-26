@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.SettingServer.Common.Enums;
+﻿using Pavolle.BES.AppServer.Common.Enums;
+using Pavolle.BES.SettingServer.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace Pavolle.BES.SettingServer.ViewModels.Model
         public string Value { get; set; }
         public DateTime? LastUpdateTime { get; set; }
         public DateTime CreatedTime { get; set; }
+        public EBesAppType? BesAppType { get; set; }
     }
 }

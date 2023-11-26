@@ -19,10 +19,10 @@ using Pavolle.BES.RequestValidation;
 namespace Pavolle.BES.Surrvey.Business
 {
     //Araştırma bilgiler cache'de tutulacak.
-    public class SurrveyManager : Singleton<SurrveyManager>
+    public class SurveyManager : Singleton<SurveyManager>
     {
-        static readonly ILog _log = LogManager.GetLogger(typeof(SurrveyManager));
-        private SurrveyManager() { }
+        static readonly ILog _log = LogManager.GetLogger(typeof(SurveyManager));
+        private SurveyManager() { }
 
         public SurveyListResponse List(ListSurveyCriteria criteria)
         {
@@ -107,7 +107,6 @@ namespace Pavolle.BES.Surrvey.Business
                             MultiLanguage = request.MultiLanguage,
                             CreatedLanguage = request.CreatedLanguage,
                             EncryptStringContent = request.EncryptStringContent,
-                            Base64ImageFilePath = request.Base64Image,
                             CreatorOrganizationOid = request.OrganizationOid.Value,
                             ResearchOwnerOrganizationOid = request.ResearchOwnerOrganizationOid,
                             Code = code,
@@ -116,6 +115,14 @@ namespace Pavolle.BES.Surrvey.Business
                             Started=false,
                             TransactionCount=0
                         };
+
+
+                        if (!string.IsNullOrEmpty(request.Base64Image))
+                        {
+                            string fileName = Guid.NewGuid().ToString() + ".besdata";
+                            File.AppendAllText(fileName, request.Base64Image);
+                            survey.Base64ImageFilePath = fileName;
+                        }
                         survey.Save();
                     }
                 }
@@ -134,7 +141,19 @@ namespace Pavolle.BES.Surrvey.Business
             var response = new BesResponseBase();
             try
             {
+                using (Session session = XpoManager.Instance.GetNewSession())
+                {
+                    var survey = session.Query<Survey>().FirstOrDefault(t=>t.Oid == oid);
+                    if(survey == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 400;
+                    }
+                    else
+                    {
 
+                    }
+                }
             }
             catch (Exception ex)
             {

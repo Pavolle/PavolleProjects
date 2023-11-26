@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.AppServer.Common.Enums;
 using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.SettingServer.Common.Utils;
 using System;
@@ -18,6 +19,9 @@ namespace Pavolle.BES.SettingServer.DbModels.Entities
 
         [Persistent("setting_type")]
         public ESettingType SettingType { get; set; }
+
+        [Persistent("bes_app_type")]
+        public EBesAppType? BesAppType { get; set; }
 
         [Persistent("value")]
         [Size(1000)]

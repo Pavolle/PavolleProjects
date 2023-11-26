@@ -49,7 +49,7 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             }
             try
             {
-                var response = SurrveyManager.Instance.List(criteria);
+                var response = SurveyManager.Instance.List(criteria);
                 _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -89,7 +89,7 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             }
             try
             {
-                var response = SurrveyManager.Instance.Lookup(criteria);
+                var response = SurveyManager.Instance.Lookup(criteria);
                 _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -129,7 +129,7 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             }
             try
             {
-                var response = SurrveyManager.Instance.Detail(oid, request);
+                var response = SurveyManager.Instance.Detail(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -169,7 +169,7 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             }
             try
             {
-                var response = SurrveyManager.Instance.Add(request);
+                var response = SurveyManager.Instance.Add(request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
@@ -209,7 +209,7 @@ namespace Pavolle.BES.Surrvey.WebApp.Controllers
             }
             try
             {
-                var response = SurrveyManager.Instance.Edit(oid, request);
+                var response = SurveyManager.Instance.Edit(oid, request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }

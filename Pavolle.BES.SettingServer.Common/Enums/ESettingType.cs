@@ -124,5 +124,12 @@ namespace Pavolle.BES.SettingServer.Common.Enums
 
         [Description("SMS Server - SMS Error Routing Key")]
         SMSServerSMSErrorRoutingKey,
+
+
+        [Description("Surrvey Server - Image Base File Path")] 
+        SurrveyServerImageBaseFilePath,
+
+        [Description("Surrvey Server - URL")]
+        SurrveyServerlURL
     }
 }

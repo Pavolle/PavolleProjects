@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.AppServer.Common\Pavolle.BES.AppServer.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.Common\Pavolle.BES.SettingServer.Common.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>

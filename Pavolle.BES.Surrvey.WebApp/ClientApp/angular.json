@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "Pavolle.BES.Surrvey.WebApp"
+  "defaultProject": "Pavolle.BES.Surrvey.WebApp",
+  "cli": {
+    "analytics": "d85654e0-3025-455d-a48b-4107f7a85d04"
+  }
 }
