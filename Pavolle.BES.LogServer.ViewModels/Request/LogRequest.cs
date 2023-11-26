@@ -9,7 +9,6 @@ namespace Pavolle.BES.LogServer.ViewModels.Request
 {
     public class LogRequest : IntegrationAppRequestBase
     {
-        public string AppId { get; set; }
         public string RequestIp { get; set; }
         public string UserRequestIp { get; set; }
         public string Username { get; set; }

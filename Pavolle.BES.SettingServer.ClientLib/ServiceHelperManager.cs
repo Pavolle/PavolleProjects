@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.SettingServer.ClientLib
 {
-    internal class ServiceHelperManager : Singleton<ServiceHelperManager>
+    public class ServiceHelperManager : Singleton<ServiceHelperManager>
     {
-        public string _appCode = "";
-        public string _appId = "";
+        string _appCode = "";
+        string _appId = "";
 
         public void Initialize(string appCode, string appId)
         {

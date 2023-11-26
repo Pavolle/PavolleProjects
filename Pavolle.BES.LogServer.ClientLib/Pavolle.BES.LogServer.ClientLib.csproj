@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Pavolle.BES.LogServer.Common\Pavolle.BES.LogServer.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.LogServer.ViewModels\Pavolle.BES.LogServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 
