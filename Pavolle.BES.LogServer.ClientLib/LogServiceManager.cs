@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
 using Pavolle.BES.LogServer.Common.Enums;
+using Pavolle.BES.LogServer.Common.Utils;
 using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -26,8 +28,6 @@ namespace Pavolle.BES.LogServer.ClientLib
         {
             Log(new LogRequest
             {
-                AppCode = _appCode,
-                AppId = _appId,
                 LogContent = message,
                 LogLevel = ELogLevel.Debug.ToString(),
                 SystemLog = true,
@@ -40,8 +40,6 @@ namespace Pavolle.BES.LogServer.ClientLib
         {
             Log(new LogRequest
             {
-                AppCode = _appCode,
-                AppId = _appId,
                 LogContent = message,
                 LogLevel = ELogLevel.Info.ToString(),
                 SystemLog = true,
@@ -54,8 +52,6 @@ namespace Pavolle.BES.LogServer.ClientLib
         {
             Log(new LogRequest
             {
-                AppCode = _appCode,
-                AppId = _appId,
                 LogContent = message,
                 LogLevel = ELogLevel.Info.ToString(),
                 SystemLog = true,
@@ -68,8 +64,6 @@ namespace Pavolle.BES.LogServer.ClientLib
         {
             Log(new LogRequest
             {
-                AppCode = _appCode,
-                AppId = _appId,
                 LogContent = message,
                 LogLevel = ELogLevel.Error.ToString(),
                 SystemLog = true,
@@ -80,10 +74,7 @@ namespace Pavolle.BES.LogServer.ClientLib
 
         private void Log(LogRequest request)
         {
-            if (request == null)
-            {
-                return;
-            }
+            Post<ResponseBase>(_serviceUrl, LogServerConsts.LogUrlConst.Route + "/" + LogServerConsts.LogUrlConst.SaveRoutePrefix, request);
         }
 
 
