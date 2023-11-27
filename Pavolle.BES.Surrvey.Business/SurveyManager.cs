@@ -17,6 +17,7 @@ using System.ComponentModel.DataAnnotations;
 using Pavolle.BES.RequestValidation;
 using Pavolle.BES.LogServer.ClientLib;
 using Pavolle.BES.AuthServer.Common.Enums;
+using Pavolle.BES.AuthServer.ClientLib;
 
 namespace Pavolle.BES.Surrvey.Business
 {
@@ -47,6 +48,11 @@ namespace Pavolle.BES.Surrvey.Business
                         query = query.Where(t => t.CreatorOrganizationOid == criteria.OrganizationOid);
                     }
 
+                    if(criteria.StatusList !=null && criteria.StatusList.Count> 0)
+                    {
+                        query=query.Where(t=>criteria.StatusList.Contains(t.Status));
+                    }
+
                     var dataList = query.Select(t => new
                     {
                         t.Oid,
@@ -56,6 +62,7 @@ namespace Pavolle.BES.Surrvey.Business
                         t.Status,
                         t.CreatorOrganizationOid,
                         t.ResearchOwnerOrganizationOid,
+                        t.CreatorUserOid,
                         t.MultiLanguage,
                         t.TransactionCount,
                         t.Header
@@ -76,8 +83,18 @@ namespace Pavolle.BES.Surrvey.Business
 
                         if (item.MultiLanguage)
                         {
-                            TranslateServiceManager.Instance.GetMessage(item.Header, criteria.Language.Value);
+                            data.Header= TranslateServiceManager.Instance.GetMessage(item.Header, criteria.Language.Value);
                         }
+                        else
+                        {
+                            data.Header=item.Header;
+                        }
+
+                        data.OrganizationName = AuthServerOrganizationServiceManager.Instance.GetOrganizationNameFromOid(item.CreatorOrganizationOid);
+                        data.CreatorUser= AuthServerUserServiceManager.Instance.GetUserNameAndSurnameFromOid(item.CreatorUserOid);
+                        data.SurveyOwnerOrganizationName = item.ResearchOwnerOrganizationOid.HasValue ? AuthServerOrganizationServiceManager.Instance.GetOrganizationNameFromOid(item.ResearchOwnerOrganizationOid.Value) : "";
+
+                        response.DataList.Add(data);
 
                     }
                 }

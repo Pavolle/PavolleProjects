@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.WebFilter
 {
-    internal class BesFillRequestBaseActionFilterAttribute
+    public class BesFillRequestBaseActionFilterAttribute
     {
     }
 }

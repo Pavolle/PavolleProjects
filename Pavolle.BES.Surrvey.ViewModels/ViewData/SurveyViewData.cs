@@ -15,5 +15,9 @@ namespace Pavolle.BES.Surrvey.ViewModels.ViewData
         public ESurveyStatus Status { get; set; }
         public bool Multilanguage { get; set; }
         public long TransactionCount { get; set; }
+        public string Header { get; set; }
+        public string OrganizationName { get; set; }
+        public string CreatorUser { get; set; }
+        public string SurveyOwnerOrganizationName { get; set; }
     }
 }

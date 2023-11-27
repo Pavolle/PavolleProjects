@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.AuthServer.ClientLib\Pavolle.BES.AuthServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.LogServer.ClientLib\Pavolle.BES.LogServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.RequestValidation\Pavolle.BES.RequestValidation.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
