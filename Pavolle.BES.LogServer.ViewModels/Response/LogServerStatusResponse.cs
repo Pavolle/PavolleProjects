@@ -18,5 +18,6 @@ namespace Pavolle.BES.LogServer.ViewModels.Response
         public long WriteErrorCount { get; set; }
         public bool SettingServerConnectionStatus { get; set; }
         public string SettingServerConnectionStatusString { get; set; }
+        public DateTime SettingsReloadTime { get; set; }
     }
 }

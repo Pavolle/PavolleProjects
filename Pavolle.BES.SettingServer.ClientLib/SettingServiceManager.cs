@@ -1,9 +1,11 @@
 ﻿using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.SettingServer.Common.Utils;
+using Pavolle.BES.SettingServer.ViewModels.Request;
 using Pavolle.BES.SettingServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ViewModels.ViewData;
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using System;
 
 namespace Pavolle.BES.SettingServer.ClientLib
@@ -12,13 +14,20 @@ namespace Pavolle.BES.SettingServer.ClientLib
     {
         public string _serviceUrl ="";
         List<SettingViewData> _settingList;
+        DateTime _lastLoadTime = DateTime.Now;
         private SettingServiceManager() { }
 
         public void Initialize(string servciceUrl, string appCode, string appId)
         {
             _serviceUrl = servciceUrl;
             ServiceHelperManager.Instance.Initialize(appCode, appId);
+            ReloadAllSettings();
+        }
 
+        public void ReloadAllSettings()
+        {
+            GetSettingsList();
+            _lastLoadTime = DateTime.Now;
         }
 
         public SettingsServerStatusResponse GetServerStatus()
@@ -80,6 +89,36 @@ namespace Pavolle.BES.SettingServer.ClientLib
         public string GetServerUrl()
         {
             return _serviceUrl;
+        }
+
+        public ResponseBase UpdateSetting(ESettingType settingType, string value)
+        {
+            if (string.IsNullOrEmpty(_serviceUrl))
+            {
+                return new ResponseBase { StatusCode = 500, ErrorMessage = "Service Not Initialized!" };
+            }
+
+
+            var response = ServiceHelperManager.Instance.Post<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.Route + "/" + SettingServerConsts.SettingsUrlConst.EditRoutePrefix.Replace("{setting_type}", settingType.ToString()), new SettingRequest
+            {
+                Value = value
+            });
+            return response;
+        }
+
+        public ResponseBase DetailSetting(ESettingType settingType)
+        {
+            if (string.IsNullOrEmpty(_serviceUrl))
+            {
+                return new ResponseBase { StatusCode = 500, ErrorMessage = "Service Not Initialized!" };
+            }
+            var response = ServiceHelperManager.Instance.Get<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.Route + "/" + SettingServerConsts.SettingsUrlConst.DetailRoutePrefix.Replace("{setting_type}", settingType.ToString()));
+            return response;
+        }
+
+        public DateTime GetSettingsReloadTime()
+        {
+            return _lastLoadTime;
         }
     }
 }

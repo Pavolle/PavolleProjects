@@ -17,6 +17,7 @@ namespace Pavolle.BES.LogServer.Common.Utils
 
             public const string ServerDetailRoutePrefix = "detail";
             public const string ServerSettingsRoutePrefix = "settings";
+            public const string ReloadAllServerSettingsRoutePrefix = "reloadallsettings";
         }
 
         public class LogUrlConst

@@ -35,10 +35,11 @@ namespace Pavolle.BES.LogServer.Business.Manager
                 ElasticSearchStatusString = _elastichSearchStatus ? "Ready" : "Not Ready",
                 RabbitMQStatus = _rabbitMQStatus,
                 RabbitMQStatusString = _rabbitMQStatus ? "Ready" : "Not Ready",
-                ServerStatus = _serverStatus,
-                ServerStatusString = _serverStatus ? "Ready" : "Not Ready",
+                ServerStatus = _serverStatus && _rabbitMQStatus && _elastichSearchStatus,
+                ServerStatusString = _serverStatus && _rabbitMQStatus && _elastichSearchStatus ? "Ready" : "Not Ready",
                 SettingServerConnectionStatus = _settingServerConnectionStatus,
-                SettingServerConnectionStatusString = _settingServerConnectionStatus ? "Connected" : "Not Connected"
+                SettingServerConnectionStatusString = _settingServerConnectionStatus ? "Connected" : "Not Connected",
+                SettingsReloadTime=SettingServiceManager.Instance.GetSettingsReloadTime()
             };
         }
 

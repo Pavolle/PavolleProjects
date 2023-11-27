@@ -4,6 +4,7 @@ using Pavolle.BES.LogServer.Business.Manager;
 using Pavolle.BES.LogServer.Common.Utils;
 using Pavolle.BES.LogServer.ViewModels.Request;
 using Pavolle.BES.LogServer.ViewModels.Response;
+using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.ViewModels.Response;
 using System.Text.Json;
@@ -55,5 +56,25 @@ namespace Pavolle.BES.LogServer.Service.Controllers
                 return Ok(new LogServerSettingsResponse { ErrorMessage = "Unexpected error occured!", StatusCode=500});
             }
         }
+
+        [HttpPost(LogServerConsts.ServerStatusUrlConst.ReloadAllServerSettingsRoutePrefix)]
+        public ActionResult ReloadAllSettings(IntegrationAppRequestBase request)
+        {
+            if (request == null)
+            {
+                return BadRequest(new ResponseBase { ErrorMessage = "Request format error!", StatusCode = 400 });
+            }
+            try
+            {
+                SettingServiceManager.Instance.ReloadAllSettings();
+                return Ok(new ResponseBase());
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new ResponseBase { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
+            }
+        }
+
     }
 }

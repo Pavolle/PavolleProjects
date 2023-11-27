@@ -82,6 +82,8 @@ namespace Pavolle.BES.SettingServer.ClientLib
                     client.BaseAddress = new Uri(apiUri);
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Add("AppCode", _appCode);
+                    client.DefaultRequestHeaders.Add("AppId", _appId);
 
                     var json = JsonConvert.SerializeObject(param);
                     var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");

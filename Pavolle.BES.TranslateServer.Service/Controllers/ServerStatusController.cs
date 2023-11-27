@@ -1,5 +1,6 @@
 ﻿using log4net;
 using Microsoft.AspNetCore.Mvc;
+using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.TranslateServer.Business.Manager;
 using Pavolle.BES.TranslateServer.Common.Utils;
 using Pavolle.BES.TranslateServer.ViewModels.Response;
@@ -54,5 +55,26 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
                 return Ok(new TranslateServerSettingsResponse { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
             }
         }
+
+
+        [HttpPost(TranslateServerConsts.ServerStatusUrlConst.ReloadAllServerSettingsRoutePrefix)]
+        public ActionResult ReloadAllSettings(IntegrationAppRequestBase request)
+        {
+            if (request == null)
+            {
+                return BadRequest(new ResponseBase { ErrorMessage = "Request format error!", StatusCode = 400 });
+            }
+            try
+            {
+                SettingServiceManager.Instance.ReloadAllSettings();
+                return Ok(new ResponseBase());
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new ResponseBase { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
+            }
+        }
+
     }
 }

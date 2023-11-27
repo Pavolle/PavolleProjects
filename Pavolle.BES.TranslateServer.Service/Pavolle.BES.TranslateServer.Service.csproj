@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.TranslateServer.Business\Pavolle.BES.TranslateServer.Business.csproj" />
     <ProjectReference Include="..\Pavolle.BES.TranslateServer.Common\Pavolle.BES.TranslateServer.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.TranslateServer.ViewModels\Pavolle.BES.TranslateServer.ViewModels.csproj" />

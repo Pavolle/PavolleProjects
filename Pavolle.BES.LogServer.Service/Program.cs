@@ -15,7 +15,7 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         ILog _log = LogManager.GetLogger(typeof(Program));
-        WebAppInfoManager.Instance.Initialize("Log Server", "1.0.0", "LRGOS-PLLE-112317-TA", new DateTime(2023, 11, 17));
+        WebAppInfoManager.Instance.Initialize("Log Server", "1.0.1", "LRGOS-PLLE-112317-TA", new DateTime(2023, 11, 28));
 
         _log.Info("  ");
         _log.Info("********************************************");
