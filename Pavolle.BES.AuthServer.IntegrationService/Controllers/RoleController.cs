@@ -2,7 +2,7 @@
 
 namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
 {
-    public class UserGroupController : Controller
+    public class RoleController : Controller
     {
         public IActionResult Index()
         {

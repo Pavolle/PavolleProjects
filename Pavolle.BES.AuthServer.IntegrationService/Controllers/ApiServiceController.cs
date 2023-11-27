@@ -2,7 +2,7 @@
 
 namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
 {
-    public class AppController : Controller
+    public class ApiServiceController : Controller
     {
         public IActionResult Index()
         {
