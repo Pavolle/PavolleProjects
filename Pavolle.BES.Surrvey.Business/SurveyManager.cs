@@ -16,6 +16,7 @@ using Pavolle.Core.ViewModels.Request;
 using System.ComponentModel.DataAnnotations;
 using Pavolle.BES.RequestValidation;
 using Pavolle.BES.LogServer.ClientLib;
+using Pavolle.BES.AuthServer.Common.Enums;
 
 namespace Pavolle.BES.Surrvey.Business
 {
@@ -30,7 +31,30 @@ namespace Pavolle.BES.Surrvey.Business
             var response = new SurveyListResponse();
             try
             {
+                using(Session session = XpoManager.Instance.GetNewSession())
+                {
+                    IQueryable<Survey> query = session.Query<Survey>();
+                    long? organizationOid = criteria.OrganizationOid;
+                    if(criteria.UserType==EUserType.Admin ||criteria.UserType==EUserType.SystemAdmin)
+                    {
+                        if (criteria.SelectedOrganizationOid != null)
+                        {
+                            query = query.Where(t => t.CreatorOrganizationOid == criteria.SelectedOrganizationOid);
+                        }
+                    }
+                    else
+                    {
+                        query = query.Where(t => t.CreatorOrganizationOid == criteria.OrganizationOid);
+                    }
 
+                    response.DataList = query.Select(t => new SurveyViewData
+                    {
+                        Oid= t.CreatorOrganizationOid,
+                        CreatedTime =t.CreatedTime,
+                        LastUpdateTime=t.LastUpdateTime,
+                        Code=t.Code,
+                    }).ToList();
+                }
             }
             catch (Exception ex)
             {

@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.Surrvey.ViewModels.Criteria
 {
-    public class ListSurveyCriteria : BesRequestBase
+    public class ListSurveyCriteria : SurveyCriteriaBase
     {
-        public ESurveyStatus ServeyStatus { get; set; }
+        public List<ESurveyStatus>? StatusList { get; set; }
     }
 }
