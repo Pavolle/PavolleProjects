@@ -81,5 +81,9 @@ namespace Pavolle.BES.Surrvey.DbModels.Entities
 
         [Persistent("completed_time")]
         public DateTime? CompletedTime { get; set; }
+
+
+        [Persistent("status")]
+        public ESurveyStatus Status { get; set; }
     }
 }

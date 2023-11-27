@@ -47,13 +47,39 @@ namespace Pavolle.BES.Surrvey.Business
                         query = query.Where(t => t.CreatorOrganizationOid == criteria.OrganizationOid);
                     }
 
-                    response.DataList = query.Select(t => new SurveyViewData
+                    var dataList = query.Select(t => new
                     {
-                        Oid= t.CreatorOrganizationOid,
-                        CreatedTime =t.CreatedTime,
-                        LastUpdateTime=t.LastUpdateTime,
-                        Code=t.Code,
+                        t.Oid,
+                        t.CreatedTime,
+                        t.LastUpdateTime,
+                        t.Code,
+                        t.Status,
+                        t.CreatorOrganizationOid,
+                        t.ResearchOwnerOrganizationOid,
+                        t.MultiLanguage,
+                        t.TransactionCount,
+                        t.Header
                     }).ToList();
+
+
+                    response.DataList = new List<SurveyViewData>();
+                    foreach (var item in dataList)
+                    {
+                        var data = new SurveyViewData();
+                        data.Oid = item.Oid;
+                        data.CreatedTime = item.CreatedTime;
+                        data.LastUpdateTime = item.LastUpdateTime;
+                        data.Code = item.Code;
+                        data.Status = item.Status;
+                        data.Multilanguage = item.MultiLanguage;
+                        data.TransactionCount=item.TransactionCount;
+
+                        if (item.MultiLanguage)
+                        {
+                            TranslateServiceManager.Instance.GetMessage(item.Header, criteria.Language.Value);
+                        }
+
+                    }
                 }
             }
             catch (Exception ex)
