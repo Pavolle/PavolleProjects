@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels
 {
-    public class XpoManager : Singleton<XpoManager>
+    public class AuthServerXpoManager : Singleton<AuthServerXpoManager>
     {
         private string _connectionString;
         public string ConnectionString
@@ -22,7 +22,7 @@ namespace Pavolle.BES.AuthServer.DbModels
 
         private readonly object LockObject = new object();
 
-        private XpoManager()
+        private AuthServerXpoManager()
         {
         }
 

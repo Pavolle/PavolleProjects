@@ -25,5 +25,6 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
 
         [Persistent("person_oid")]
         public Person Person { get; set; }
+
     }
 }

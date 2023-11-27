@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.AuthServer.DbModels\Pavolle.BES.AuthServer.DbModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.Surrvey.Common\Pavolle.BES.Surrvey.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+    <ProjectReference Include="..\Pavolle.Security\Pavolle.Security.csproj" />
+  </ItemGroup>
+
 </Project>

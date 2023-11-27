@@ -38,9 +38,9 @@ namespace Pavolle.BES.SettingServer.Business
                 Version = WebAppInfoManager.Instance.GetVersion(),
                 ReleaseDate = WebAppInfoManager.Instance.GetReleaseDate(),
                 DbStatus = _dbStatus,
-                DbStatusString=_dbStatus?"Ready":"Connection Error",
-                ServerStatus = _serverStatus,
-                ServerStatusString = _dbStatus ? "Ready" : "Not Ready",
+                DbStatusString=_dbStatus?"Connected":"Connection Error Occured!",
+                ServerStatus = _serverStatus && _dbStatus,
+                ServerStatusString = _serverStatus && _dbStatus ? "Ready" : "Not Ready!",
             };
         }
     }

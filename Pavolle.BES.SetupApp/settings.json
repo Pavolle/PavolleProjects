@@ -1,3 +1,8 @@
 {
-    ""
+  "DbConnection": "XpoProvider=Postgres;Server=127.0.0.1;User ID=postgres;Password=pavollebilisim;Database=bes;Encoding=UNICODE",
+  "SystemAdminName": "sysadmin",
+  "SystemAdminPassword": "tc!2Apll@ex?4-Ai!az",
+  "AppServerSetupAuth": true,
+  "SurrveyServerSetupAuth": true,
+  "FirstPartnersSetupAuth": true
 }

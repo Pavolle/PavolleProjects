@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels.Entities
 {
-    [Persistent("user_groups")]
-    public class UserGroup : BaseObject
+    [Persistent("roles")]
+    public class Role : BaseObject
     {
 
-        public UserGroup(Session session) : base(session)
+        public Role(Session session) : base(session)
         {
         }
 

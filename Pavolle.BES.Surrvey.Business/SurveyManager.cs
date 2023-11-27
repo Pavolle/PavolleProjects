@@ -236,8 +236,6 @@ namespace Pavolle.BES.Surrvey.Business
             return response;
         }
 
-
-
         private Tuple<bool, string> GenerateSurveyCode(Session session)
         {
             bool isSuccess = false;

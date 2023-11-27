@@ -14,7 +14,7 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         }
 
         public ApiService ApiService { get; set; }
-        public UserGroup UserGroup { get; set; }
+        public Role UserGroup { get; set; }
         public bool IsAuthority { get; set; }
     }
 }

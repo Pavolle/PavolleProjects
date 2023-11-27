@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.AppServer.Common.Enums;
 using Pavolle.BES.AuthServer.Common.Enums;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,9 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         [Persistent("api_key")]
         [Size(255)]
         public string ApiKey { get; set; }
+
+        [Persistent("bes_app_type")]
+        public EBesAppType BesAppType { get; set; }
 
         [Persistent("api_definition")]
         public string ApiDefinition { get; set; }

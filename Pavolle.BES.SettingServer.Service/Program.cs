@@ -11,7 +11,7 @@ internal class Program
         log4net.Config.XmlConfigurator.Configure(log4netRepository, new FileInfo("log4net.config"));
         var builder = WebApplication.CreateBuilder(args);
 
-        WebAppInfoManager.Instance.Initialize("Settings Server", "1.1.0", "SESER-PLLE-112317-TA", new DateTime(2023, 11, 17));
+        WebAppInfoManager.Instance.Initialize("Settings Server", "1.1.1", "SESER-PLLE-112317-TA", new DateTime(2023, 11, 28));
 
         ILog _log = LogManager.GetLogger(typeof(Program));
 
