@@ -7,8 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.AuthServer.Business\Pavolle.BES.AuthServer.Business.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.AuthServer.Common\Pavolle.BES.AuthServer.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.AuthServer.ViewModels\Pavolle.BES.AuthServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.WebFilter\Pavolle.BES.WebFilter.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 
 </Project>

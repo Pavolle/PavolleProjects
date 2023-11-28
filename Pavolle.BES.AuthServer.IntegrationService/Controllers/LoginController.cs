@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Pavolle.BES.AuthServer.Common.Utils;
 
 namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
 {
+    [Produces("application/json")]
+    [Route(BesAuthServerApiUrlConsts.LoginUrlConsts.BaseRoute)]
     public class LoginController : Controller
     {
-        //login, logout, token check service
-        public IActionResult Index()
-        {
-            return View();
-        }
     }
 }

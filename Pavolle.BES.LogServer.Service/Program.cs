@@ -31,7 +31,7 @@ internal class Program
 
         SettingServiceManager.Instance.Initialize(settings.SettingServerUrl, WebAppInfoManager.Instance.GetAppCode(), WebAppInfoManager.Instance.GetId());
         var settingServerStatus= SettingServiceManager.Instance.GetServerStatus();
-        if(settingServerStatus == null || !settingServerStatus.ServerStatus || !settingServerStatus.DbStatus)
+        if(settingServerStatus == null || !settingServerStatus.ServerStatus)
         {
             _log.Error("Setting server is not active! Application closing!");
             return;

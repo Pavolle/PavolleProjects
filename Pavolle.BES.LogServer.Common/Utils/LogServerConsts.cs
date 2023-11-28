@@ -13,7 +13,7 @@ namespace Pavolle.BES.LogServer.Common.Utils
 
         public class ServerStatusUrlConst
         {
-            public const string Route = "api/logsserver/serverstatus";
+            public const string BaseRoute = "api/logsserver/serverstatus";
 
             public const string ServerDetailRoutePrefix = "detail";
             public const string ServerSettingsRoutePrefix = "settings";
@@ -22,7 +22,7 @@ namespace Pavolle.BES.LogServer.Common.Utils
 
         public class LogUrlConst
         {
-            public const string Route = "api/logsserver/log";
+            public const string BaseRoute = "api/logsserver/log";
             public const string SaveRoutePrefix = "save";
         }
     }

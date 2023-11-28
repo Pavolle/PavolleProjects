@@ -14,7 +14,7 @@ using System.Text.Json;
 namespace Pavolle.BES.SettingServer.Service.Controllers
 {
     [Produces("application/json")]
-    [Route(SettingServerConsts.SettingsUrlConst.Route)]
+    [Route(SettingServerConsts.SettingsUrlConst.BaseRoute)]
     public class SettingsController : Controller
     {
         //list

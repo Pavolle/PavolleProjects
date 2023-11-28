@@ -41,7 +41,7 @@ namespace Pavolle.BES.SettingServer.ClientLib
             }
             else
             {
-                return ServiceHelperManager.Instance.Get<SettingsServerStatusResponse>(_serviceUrl, SettingServerConsts.ServerStatusUrlConst.Route + "/" + SettingServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix);
+                return ServiceHelperManager.Instance.Get<SettingsServerStatusResponse>(_serviceUrl, SettingServerConsts.ServerStatusUrlConst.BaseRoute + "/" + SettingServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix);
             }
         }
 
@@ -53,7 +53,7 @@ namespace Pavolle.BES.SettingServer.ClientLib
             }
             else
             {
-                var response= ServiceHelperManager.Instance.Get<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.Route + "/" + SettingServerConsts.SettingsUrlConst.ListRoutePrefix);
+                var response= ServiceHelperManager.Instance.Get<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.BaseRoute + "/" + SettingServerConsts.SettingsUrlConst.ListRoutePrefix);
                 if(response == null)
                 {
                     _settingList = new List<SettingViewData>();
@@ -99,7 +99,7 @@ namespace Pavolle.BES.SettingServer.ClientLib
             }
 
 
-            var response = ServiceHelperManager.Instance.Post<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.Route + "/" + SettingServerConsts.SettingsUrlConst.EditRoutePrefix.Replace("{setting_type}", settingType.ToString()), new SettingRequest
+            var response = ServiceHelperManager.Instance.Post<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.BaseRoute + "/" + SettingServerConsts.SettingsUrlConst.EditRoutePrefix.Replace("{setting_type}", settingType.ToString()), new SettingRequest
             {
                 Value = value
             });
@@ -112,7 +112,7 @@ namespace Pavolle.BES.SettingServer.ClientLib
             {
                 return new ResponseBase { StatusCode = 500, ErrorMessage = "Service Not Initialized!" };
             }
-            var response = ServiceHelperManager.Instance.Get<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.Route + "/" + SettingServerConsts.SettingsUrlConst.DetailRoutePrefix.Replace("{setting_type}", settingType.ToString()));
+            var response = ServiceHelperManager.Instance.Get<SettingListResponse>(_serviceUrl, SettingServerConsts.SettingsUrlConst.BaseRoute + "/" + SettingServerConsts.SettingsUrlConst.DetailRoutePrefix.Replace("{setting_type}", settingType.ToString()));
             return response;
         }
 

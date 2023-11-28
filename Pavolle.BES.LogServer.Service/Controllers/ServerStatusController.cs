@@ -12,7 +12,7 @@ using System.Text.Json;
 namespace Pavolle.BES.LogServer.Service.Controllers
 {
     [Produces("application/json")]
-    [Route(LogServerConsts.ServerStatusUrlConst.Route)]
+    [Route(LogServerConsts.ServerStatusUrlConst.BaseRoute)]
     public class ServerStatusController : Controller
     {
 

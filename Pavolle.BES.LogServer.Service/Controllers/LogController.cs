@@ -10,7 +10,7 @@ using System.Text.Json;
 namespace Pavolle.BES.LogServer.Service.Controllers
 {
     [Produces("application/json")]
-    [Route(LogServerConsts.LogUrlConst.Route)]
+    [Route(LogServerConsts.LogUrlConst.BaseRoute)]
     public class LogController : Controller
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(LogController));

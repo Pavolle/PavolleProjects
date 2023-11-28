@@ -74,7 +74,7 @@ namespace Pavolle.BES.LogServer.ClientLib
 
         private void Log(LogRequest request)
         {
-            Post<ResponseBase>(_serviceUrl, LogServerConsts.LogUrlConst.Route + "/" + LogServerConsts.LogUrlConst.SaveRoutePrefix, request);
+            Post<ResponseBase>(_serviceUrl, LogServerConsts.LogUrlConst.BaseRoute + "/" + LogServerConsts.LogUrlConst.SaveRoutePrefix, request);
         }
 
 
