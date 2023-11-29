@@ -4,6 +4,8 @@ using Pavolle.BES.AuthServer.Business.Manager;
 using Pavolle.BES.AuthServer.Common.Utils;
 using Pavolle.BES.AuthServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ClientLib;
+using Pavolle.BES.TranslateServer.ClientLib;
+using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.ViewModels.Response;
 using System.Text.Json;
@@ -21,7 +23,11 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
         {
             if (request == null)
             {
-                return BadRequest(new ResponseBase { ErrorMessage = "Request format error!", StatusCode = 400 });
+                return BadRequest(new ResponseBase
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 400
+                });
             }
             try
             {
@@ -32,7 +38,11 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new AuthServerStatusResponse { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
+                return Ok(new AuthServerStatusResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 500
+                });
             }
         }
 
@@ -41,7 +51,11 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
         {
             if (request == null)
             {
-                return BadRequest(new ResponseBase { ErrorMessage = "Request format error!", StatusCode = 400 });
+                return BadRequest(new ResponseBase
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 400
+                });
             }
             try
             {
@@ -52,7 +66,11 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new AuthServerSettingsResponse { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
+                return Ok(new AuthServerSettingsResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 500
+                });
             }
         }
 
@@ -61,7 +79,11 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
         {
             if (request == null)
             {
-                return BadRequest(new ResponseBase { ErrorMessage = "Request format error!", StatusCode = 400 });
+                return BadRequest(new ResponseBase
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 400
+                });
             }
             try
             {
@@ -71,7 +93,11 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new ResponseBase { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
+                return Ok(new ResponseBase
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 500
+                });
             }
         }
 
