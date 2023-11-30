@@ -17,8 +17,18 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
         [Persistent("user_oid")]
         public long UserOid { get; set; }
 
+
         [Persistent("password")]
-        public Pasword Pasword { get; set; }
+        public Password Pasword { get; set; }
+
+
+        [Persistent("can_chnage")]
+        public bool CanChange { get; set; }
+
+
+        [Persistent("is_owner")]
+        public bool IsOwner { get; set; }
+
 
         [Persistent("is_authority")]
         public bool IsAuthority { get; set; }
