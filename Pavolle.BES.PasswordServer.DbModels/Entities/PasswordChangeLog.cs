@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.PasswordServer.DbModels.Entities
 {
-    [Persistent("password_histories")]
-    public class PasswordHistory : BaseObject
+    [Persistent("ps_password_change_log")]
+    public class PasswordChangeLog : BaseObject
     {
-        public PasswordHistory(Session session) : base(session)
+        public PasswordChangeLog(Session session) : base(session)
         {
         }
 
