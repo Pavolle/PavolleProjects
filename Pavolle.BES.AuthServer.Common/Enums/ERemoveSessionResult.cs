@@ -8,6 +8,8 @@ namespace Pavolle.BES.AuthServer.Common.Enums
 {
     public enum ERemoveSessionResult
     {
-        Success
+        Success,
+        SessionNotExist,
+        Fail
     }
 }

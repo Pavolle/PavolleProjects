@@ -8,6 +8,8 @@ namespace Pavolle.BES.AuthServer.Common.Enums
 {
     public enum EAddSessionResult
     {
-        Success
+        Success,
+        SessionAddedBefore,
+        Fail
     }
 }
