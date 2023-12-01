@@ -19,6 +19,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             _sessions=new ConcurrentDictionary<string, TokenCacheModel>();
         }
 
+
         public EAddSessionResult AddSession(string sessionId, TokenCacheModel session)
         {
             EAddSessionResult result = EAddSessionResult.Success;
@@ -33,6 +34,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             }
             return result;
         }
+
 
         public ERemoveSessionResult RemoveSession(string sessionId)
         {
@@ -51,13 +53,14 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             return result;
         }
 
+
         private bool IsSessionExist(string sessionId)
         {
             return _sessions.ContainsKey(sessionId);
         }
 
 
-        private bool IsSessionValid(string sessionId)
+        public bool IsSessionValid(string sessionId)
         {
             bool valid= _sessions.ContainsKey(sessionId);
             if(!valid) return false;
@@ -67,6 +70,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             }
             return valid;
         }
+
 
         public void CleanExpireSession()
         {
