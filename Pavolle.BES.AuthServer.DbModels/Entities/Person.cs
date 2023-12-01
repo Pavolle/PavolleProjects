@@ -24,6 +24,9 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         public string Surname { get; set; }
 
         [Persistent("gender_type")]
-        public EGenderType GenderType { get; set; }
+        public EGenderType? GenderType { get; set; }
+
+        [Persistent("base64_image_file_path")]
+        public string Base64ImageFilePath { get; set; }
     }
 }
