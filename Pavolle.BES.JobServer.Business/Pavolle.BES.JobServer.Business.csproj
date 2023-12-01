@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="Quartz" Version="3.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.Common\Pavolle.BES.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.JobServer.DbModels\Pavolle.BES.JobServer.DbModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.JobServer.ViewModels\Pavolle.BES.JobServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Pavolle.Security\Pavolle.Security.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Scheduler\" />
-  </ItemGroup>
-
 </Project>
