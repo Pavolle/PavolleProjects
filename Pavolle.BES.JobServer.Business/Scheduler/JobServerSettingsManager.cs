@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.JobServer.Business
+namespace Pavolle.BES.JobServer.Business.Scheduler
 {
-    public class JobServerSettingsManager :Singleton<JobServerSettingsManager>
+    public class JobServerSettingsManager : Singleton<JobServerSettingsManager>
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof(JobServerManager));
         string _prodCrlUrl;

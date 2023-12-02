@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.JobServer.Business
+namespace Pavolle.BES.JobServer.Business.Scheduler
 {
     [DisallowConcurrentExecution]
     [PersistJobDataAfterExecution]

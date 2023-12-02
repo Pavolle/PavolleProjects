@@ -8,40 +8,40 @@ using System.Linq;
 using System.Text;
 using Pavolle.BES.JobServer.DbModels;
 using Pavolle.BES.JobServer.ViewModels.Response;
+using Pavolle.BES.Common.Enums;
 
-namespace Pavolle.BES.JobServer.Business
+namespace Pavolle.BES.JobServer.Business.Scheduler
 {
-    public class JobManager:Singleton<JobManager>
+    public class JobCacheManager : Singleton<JobCacheManager>
     {
 
         List<JobViewData> _jobs;
-        private JobManager() 
+        private JobCacheManager()
         {
             LoadJobs();
+        }
+
+        public JobViewData? GetJobDetail(EBesJobType besJobType)
+        {
+            return _jobs.FirstOrDefault(t => t.JobType == besJobType);
         }
 
         public void LoadJobs()
         {
             using (Session session = XpoManager.Instance.GetNewSession())
             {
-
                 _jobs = session.Query<Job>().Select(t => new JobViewData
                 {
-                    Oid=t.Oid,
+                    Oid = t.Oid,
+                    BesAppType = t.BesAppType,
+                    RunServiceUrl = t.RunServiceUrl,
                     Active = t.Active,
                     JobType = t.JobType,
                     Cron = t.Cron,
-                    ReadableName=t.ReadableName,
-                    LastRunTime=t.LastRunTime,
+                    ReadableName = t.ReadableName,
+                    LastRunTime = t.LastRunTime,
                 }).ToList();
             }
-        }
-
-
-
-        public bool Run(long oid)
-        {
-            throw new NotImplementedException();
         }
 
         public JobListResponse GetList()

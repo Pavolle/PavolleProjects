@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.JobServer.Business
+namespace Pavolle.BES.JobServer.Business.Scheduler
 {
     public class JobServerManager : Singleton<JobServerManager>
     {

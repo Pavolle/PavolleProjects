@@ -9,7 +9,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 
-namespace Pavolle.BES.JobServer.Business
+namespace Pavolle.BES.JobServer.Business.Scheduler
 {
     public abstract class ServiceJobBase<T> : IServiceJobBase where T : class
     {

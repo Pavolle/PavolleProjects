@@ -1,6 +1,6 @@
 ﻿using log4net;
 using Pavolle.BES.Common.Enums;
-using Pavolle.BES.JobServer.Business.AuthServerCleanSession;
+using Pavolle.BES.JobServer.Business.Scheduler.AuthServerCleanSession;
 using Pavolle.Core.Enums;
 using Quartz;
 using System;
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pavolle.BES.JobServer.Business
+namespace Pavolle.BES.JobServer.Business.Scheduler
 {
     public class JobControlManager : ServiceJobBase<JobControlManager>
     {
@@ -63,7 +63,7 @@ namespace Pavolle.BES.JobServer.Business
         {
             try
             {
-                var response = JobManager.Instance.GetList();
+                var response = JobCacheManager.Instance.GetList();
 
                 if (response != null)
                 {

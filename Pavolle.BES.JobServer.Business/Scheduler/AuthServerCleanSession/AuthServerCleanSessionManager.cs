@@ -1,6 +1,7 @@
 ﻿using DevExpress.Xpo;
 using log4net;
 using Pavolle.BES.Common.Enums;
+using Pavolle.BES.JobServer.Business.Scheduler;
 using Pavolle.Core.Utils;
 using Quartz;
 using System;
@@ -8,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pavolle.BES.JobServer.Business.AuthServerCleanSession
+namespace Pavolle.BES.JobServer.Business.Scheduler.AuthServerCleanSession
 {
     public class AuthServerCleanSessionManager : Singleton<AuthServerCleanSessionManager>, IRunnableJobManager
     {
@@ -24,7 +25,7 @@ namespace Pavolle.BES.JobServer.Business.AuthServerCleanSession
             bool success = true;
             try
             {
-                
+
             }
             catch (Exception ex)
             {
