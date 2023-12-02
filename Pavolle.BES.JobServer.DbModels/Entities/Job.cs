@@ -36,6 +36,20 @@ namespace Pavolle.BES.JobServer.DbModels.Entities
         [Persistent("last_run_time")]
         public DateTime LastRunTime { get; set; }
 
+        [Persistent("send_mail_after_run")]
+        public bool SendMailAfterRun { get; set; }
+
+        [Persistent("mail_to")]
+        [Size(500)]
+        public string MailTo { get; set; }
+
+        [Persistent("send_sms_after_run")]
+        public bool SendSMSAfterRun { get; set; }
+
+        [Persistent("send_sms_after_run")]
+        [Size(500)]
+        public string SMSTo { get; set; }
+
         [Persistent("active")]
         public bool Active { get; set; }
     }

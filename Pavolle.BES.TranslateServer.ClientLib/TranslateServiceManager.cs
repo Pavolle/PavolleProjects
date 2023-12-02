@@ -27,6 +27,10 @@ namespace Pavolle.BES.TranslateServer.ClientLib
 
         public string GetMessage(string messageCode, ELanguage language)
         {
+            if(_translateData == null)
+            {
+                return messageCode;
+            }
             var data = _translateData.FirstOrDefault(t => t.Variable == messageCode);
             if(data == null)
             {

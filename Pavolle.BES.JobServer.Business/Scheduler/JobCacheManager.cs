@@ -28,7 +28,7 @@ namespace Pavolle.BES.JobServer.Business.Scheduler
 
         public void LoadJobs()
         {
-            using (Session session = XpoManager.Instance.GetNewSession())
+            using (Session session = JobServerXpoManager.Instance.GetNewSession())
             {
                 _jobs = session.Query<Job>().Select(t => new JobViewData
                 {
@@ -40,6 +40,10 @@ namespace Pavolle.BES.JobServer.Business.Scheduler
                     Cron = t.Cron,
                     ReadableName = t.ReadableName,
                     LastRunTime = t.LastRunTime,
+                    MailTo=t.MailTo,
+                    SendMailAfterRun=t.SendMailAfterRun,
+                    SMSTo=t.SMSTo,
+                    SendSMSAfterRun=t.SendSMSAfterRun,
                 }).ToList();
             }
         }

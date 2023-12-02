@@ -16,6 +16,7 @@
     <ProjectReference Include="..\Pavolle.BES.Common\Pavolle.BES.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.JobServer.DbModels\Pavolle.BES.JobServer.DbModels.csproj" />
     <ProjectReference Include="..\Pavolle.BES.JobServer.ViewModels\Pavolle.BES.JobServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 

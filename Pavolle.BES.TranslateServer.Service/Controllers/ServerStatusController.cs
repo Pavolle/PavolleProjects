@@ -15,6 +15,8 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
     public class ServerStatusController : Controller
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(ServerStatusController));
+
+
         [HttpGet(TranslateServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix)]
         public ActionResult Detail(IntegrationAppRequestBase request)
         {
@@ -35,6 +37,7 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
                 return Ok(new TranslateServerStatusResponse { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
             }
         }
+
 
         [HttpGet(TranslateServerConsts.ServerStatusUrlConst.ServerSettingsRoutePrefix)]
         public ActionResult Settings(IntegrationAppRequestBase request)

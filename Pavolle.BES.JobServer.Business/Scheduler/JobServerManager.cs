@@ -19,17 +19,17 @@ namespace Pavolle.BES.JobServer.Business.Scheduler
         public void StartSchedulerServer()
         {
 
-            _log.Info("Zamanlanmis görevler başlatılıyor...");
+            _log.Info("Jobs starting...");
 
             string kontrolKron = "*/2 * * * * ?";
 
-            _log.Info("Zamanlanmış görev konrtrol cron: " + kontrolKron);
+            _log.Info("Job control cron: " + kontrolKron);
 
             JobControlManager.Instance.Init();
 
             JobControlManager.Instance.Start(kontrolKron);
 
-            _log.Info("Zamanlanmış görevler başlatıldı.");
+            _log.Info("Job Started.");
         }
     }
 }

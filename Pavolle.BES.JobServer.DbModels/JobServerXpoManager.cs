@@ -12,7 +12,7 @@ using Pavolle.BES.JobServer.DbModels.Entities;
 
 namespace Pavolle.BES.JobServer.DbModels
 {
-    public class XpoManager : Singleton<XpoManager>
+    public class JobServerXpoManager : Singleton<JobServerXpoManager>
     {
 
         private string _connectionString;
@@ -23,7 +23,7 @@ namespace Pavolle.BES.JobServer.DbModels
 
         private readonly object LockObject = new object();
 
-        private XpoManager()
+        private JobServerXpoManager()
         {
         }
 
