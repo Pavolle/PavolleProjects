@@ -34,7 +34,7 @@ namespace Pavolle.BES.JobServer.DbModels.Entities
         public string ReadableName { get; set; }
 
         [Persistent("last_run_time")]
-        public DateTime LastRunTime { get; set; }
+        public DateTime? LastRunTime { get; set; }
 
         [Persistent("send_mail_after_run")]
         public bool SendMailAfterRun { get; set; }

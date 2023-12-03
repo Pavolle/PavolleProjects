@@ -16,7 +16,7 @@ namespace Pavolle.BES.JobServer.ViewModels.ViewData
         public EBesJobType JobType { get; set; }
         public string Cron { get; set; }
         public string ReadableName { get; set; }
-        public DateTime LastRunTime { get; set; }
+        public DateTime? LastRunTime { get; set; }
         public EBesAppType BesAppType { get; set; }
         public string RunServiceUrl { get; set; }
         public string MailTo { get; set; }

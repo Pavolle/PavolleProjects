@@ -14,8 +14,17 @@ namespace Pavolle.BES.TranslateServer.Common.Enums
 
         [Description("Request Data Type Error!")]
         RequestDataTypeError,
+
+        [Description("Unauthorized Exception!")]
         UnauthorizedException,
+
+        [Description("Header")]
         Header,
-        RecordNotFoundException
+
+        [Description("Record Not Found Exception!")]
+        RecordNotFoundException,
+
+        [Description("Data Saved Successfully")]
+        DataSavedSuccessfully
     }
 }
