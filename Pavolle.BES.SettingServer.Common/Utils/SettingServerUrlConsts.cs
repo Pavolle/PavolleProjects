@@ -15,7 +15,7 @@ namespace Pavolle.BES.SettingServer.Common.Utils
 
         public class DefinitionUrlConst
         {
-            public const string BaseRoute = "api/settingsserver/definition";
+            public const string BaseRoute = "api/settingserver/definition";
 
             public const string GetSettingsTypeListRoutePrefix = "getsettingstypelist";
             public const string GetSettingsCategoriesListRoutePrefix = "getsettingcategorieslist";
@@ -23,7 +23,7 @@ namespace Pavolle.BES.SettingServer.Common.Utils
 
         public class SettingsUrlConst
         {
-            public const string BaseRoute = "api/settingsserver/settings";
+            public const string BaseRoute = "api/settingserver/settings";
 
             public const string ListRoutePrefix = "list";
             public const string DetailRoutePrefix = "detail/{setting_type}";
@@ -32,7 +32,7 @@ namespace Pavolle.BES.SettingServer.Common.Utils
 
         public class ServerStatusUrlConst
         {
-            public const string BaseRoute = "api/settingsserver/serverstatus";
+            public const string BaseRoute = "api/settingserver/serverstatus";
 
             public const string ServerDetailRoutePrefix = "detail";
         }
