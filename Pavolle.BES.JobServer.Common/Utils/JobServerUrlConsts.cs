@@ -8,7 +8,6 @@ namespace Pavolle.BES.JobServer.Common.Utils
 {
     public class JobServerUrlConsts
     {
-
         public class ServerStatusUrlConst
         {
             public const string BaseRoute = "api/jobserver/serverstatus";

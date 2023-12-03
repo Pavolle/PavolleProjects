@@ -58,7 +58,7 @@ namespace Pavolle.BES.SettingServer.Business
                     Oid = 0,
                     SettingType = ESettingType.DbConnection,
                     SettingName = "Db Connection",
-                    Value = DbManager.Instance.GetConnectionString(),
+                    Value = SettingsServerDbManager.Instance.GetConnectionString(),
                 });
 
             }

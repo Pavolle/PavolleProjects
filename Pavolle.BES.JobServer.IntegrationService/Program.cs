@@ -39,11 +39,13 @@ internal class Program
         {
             JobServerStatusManager.Instance.SetSettingServerConnectionStatus(true);
         }
-        bool dbStatus = true;
-        JobServerStatusManager.Instance.SetDbStatus(dbStatus);
-        if (!dbStatus)
+
+
+        bool dbConnection = JobServerDbManager.Instance.InitializeDb(SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection));
+        JobServerStatusManager.Instance.SetDbStatus(dbConnection);
+        if (!dbConnection)
         {
-            _log.Error("DB Connection error! Application Closing...");
+            _log.Error("Db connection error! Db is not ready!");
             return;
         }
 

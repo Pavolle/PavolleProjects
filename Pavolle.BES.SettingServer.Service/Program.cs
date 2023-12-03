@@ -25,7 +25,7 @@ internal class Program
 
         var settings = builder.Configuration.GetSection("Settings").Get<Settings>();
 
-        bool dbConnection= DbManager.Instance.InitializeDb(settings.DbConnection);
+        bool dbConnection= SettingsServerDbManager.Instance.InitializeDb(settings.DbConnection);
         ServerStatusManager.Instance.SetDbStatus(dbConnection);
         if(!dbConnection)
         {

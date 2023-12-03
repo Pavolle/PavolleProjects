@@ -1,5 +1,5 @@
 ﻿using log4net;
-using Pavolle.BES.SettingServer.DbModels;
+using Pavolle.BES.JobServer.DbModels;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.SettingServer.Business
+namespace Pavolle.BES.JobServer.Business.Manager
 {
-    public class DbManager : Singleton<DbManager>
+    public class JobServerDbManager : Singleton<JobServerDbManager>
     {
-        static readonly ILog _log = LogManager.GetLogger(typeof(DbManager));
+        static readonly ILog _log = LogManager.GetLogger(typeof(JobServerDbManager));
 
         public string _connectionString;
-        private DbManager()
+        private JobServerDbManager()
         {
 
         }
@@ -25,7 +25,7 @@ namespace Pavolle.BES.SettingServer.Business
             {
                 _connectionString = connectionString;
                 _log.Info("Connecting to DB...");
-                XpoManager.Instance.InitXpo(connectionString);
+                JobServerXpoManager.Instance.InitXpo(connectionString);
                 _log.Info("Connected to DB successfully.");
                 return true;
             }

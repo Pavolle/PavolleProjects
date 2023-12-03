@@ -46,7 +46,7 @@ namespace Pavolle.BES.JobServer.DbModels.Entities
         [Persistent("send_sms_after_run")]
         public bool SendSMSAfterRun { get; set; }
 
-        [Persistent("send_sms_after_run")]
+        [Persistent("sms_to")]
         [Size(500)]
         public string SMSTo { get; set; }
 
