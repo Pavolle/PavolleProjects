@@ -13,6 +13,13 @@ namespace Pavolle.BES.SettingServer.Common.Utils
             public const bool IsPostgres=true;
         }
 
+        public class DefinitionUrlConst
+        {
+            public const string BaseRoute = "api/settingsserver/definition";
+
+            public const string GetSettingsTypeListRoutePrefix = "getsettingstypelist";
+            public const string GetSettingsCategoriesListRoutePrefix = "getsettingcategorieslist";
+        }
 
         public class SettingsUrlConst
         {

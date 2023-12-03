@@ -16,6 +16,6 @@ namespace Pavolle.BES.SettingServer.ViewModels.Model
         public string Value { get; set; }
         public DateTime? LastUpdateTime { get; set; }
         public DateTime CreatedTime { get; set; }
-        public EBesAppType? BesAppType { get; set; }
+        public ESettingCategory Category { get; set; }
     }
 }

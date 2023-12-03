@@ -20,8 +20,8 @@ namespace Pavolle.BES.SettingServer.DbModels.Entities
         [Persistent("setting_type")]
         public ESettingType SettingType { get; set; }
 
-        [Persistent("bes_app_type")]
-        public EBesAppType? BesAppType { get; set; }
+        [Persistent("category")]
+        public ESettingCategory Category { get; set; }
 
         [Persistent("value")]
         [Size(1000)]

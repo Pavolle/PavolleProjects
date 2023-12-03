@@ -10,4 +10,9 @@
     <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.ERP.Common\Pavolle.BES.ERP.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
+  </ItemGroup>
+
 </Project>

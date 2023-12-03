@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "Pavolle.BES.PasswordServer.WebApp"
+  "defaultProject": "Pavolle.BES.PasswordServer.WebApp",
+  "cli": {
+    "analytics": "27727884-72e0-4ca9-bda9-359e15e02c74"
+  }
 }

@@ -44,6 +44,7 @@ namespace Pavolle.BES.SettingServer.Service.Controllers
             }
         }
 
+
         [HttpGet(SettingServerConsts.SettingsUrlConst.DetailRoutePrefix)]
         public ActionResult Detail(int setting_type, IntegrationAppRequestBase request)
         {

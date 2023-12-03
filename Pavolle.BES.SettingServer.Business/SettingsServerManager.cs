@@ -44,7 +44,7 @@ namespace Pavolle.BES.SettingServer.Business
                     SettingName = t.SettingType.Description(),
                     CreatedTime = t.CreatedTime,
                     LastUpdateTime = t.LastUpdateTime,
-                    BesAppType = t.BesAppType
+                    Category = t.Category
                 });
 
                 foreach (var setting in settingList)
@@ -59,6 +59,7 @@ namespace Pavolle.BES.SettingServer.Business
                     SettingType = ESettingType.DbConnection,
                     SettingName = "Db Connection",
                     Value = SettingsServerDbManager.Instance.GetConnectionString(),
+                    Category=ESettingCategory.General
                 });
 
             }
@@ -80,7 +81,8 @@ namespace Pavolle.BES.SettingServer.Business
                     {
                         SettingType = t.SettingType,
                         Value = t.Value,
-                        SettingTypeName = t.SettingType.Description()
+                        SettingTypeName = t.SettingType.Description(),
+                        Category=t.Category.Description(),
                     }).FirstOrDefault();
 
                 response.ChangeLogs = session.Query<SettingChangeLog>().Where(t => t.Setting.SettingType == (ESettingType)setting_type).Select(t => new SettingChangeLogViewData
@@ -148,8 +150,9 @@ namespace Pavolle.BES.SettingServer.Business
                 {
                     SettingType = t.SettingType,
                     Value = t.Value,
-                    SettingTypeName = t.SettingName
-                }).ToList()
+                    SettingTypeName = t.SettingName,
+                    Category = t.Category.Description(),
+                }).OrderBy(t=>t.SettingType).ToList()
             };
         }
     }

@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.ERP.DbModels.Entities
 {
-    public class ProductVersion : BaseObject
+    public class RowMaterials : BaseObject
     {
-        public ProductVersion(Session session) : base(session)
+        public RowMaterials(Session session) : base(session)
         {
         }
-
-        public Product Product { get; set; }
-        public string VersionCode { get; set; }
     }
 }

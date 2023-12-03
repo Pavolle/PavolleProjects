@@ -12,5 +12,6 @@ namespace Pavolle.BES.SettingServer.ViewModels.ViewData
         public ESettingType SettingType { get; set; }
         public string SettingTypeName { get; set; }
         public string Value { get; set; }
+        public string Category { get; set; }
     }
 }

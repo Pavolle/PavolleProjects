@@ -9,127 +9,138 @@ namespace Pavolle.BES.SettingServer.Common.Enums
 {
     public enum ESettingType
     {
+        #region General
         [Description("Db Connection")]
-        DbConnection = 0,
-
-        [Description("Log Server Url")]
-        LogServerUrl = 1,
-
-        [Description("Log Server - RabbitMQ Username")]
-        LogServerRabbitMQUsername,
-
-        [Description("Log Server - RabbitMQ Password")]
-        LogServerRabbitMQPassword,
-
-        [Description("Log Server - RabbitMQ VHost")]
-        LogServerRabbitMQVHost,
-
-        [Description("Log Server - RabbitMQ Hostname")]
-        LogServerRabbitMQHostname,
-
-        [Description("Log Server - RabbitMQ Port")]
-        LogServerRabbitMQPort,
-
-        [Description("Log Server - Exchange Name")]
-        LogServerExchangeName,
-
-        [Description("Log Server - Log Queue Key")]
-        LogServerLogQueueKey,
-
-        [Description("Log Server - Log Routing Key")]
-        LogServerLogRoutingKey,
-
-        [Description("Log Server - Log Error Queue Key")]
-        LogServerLogErrorQueueKey,
-
-        [Description("Log Server - Log Error Routing Key")]
-        LogServerLogErrorRoutingKey,
-
-        [Description("DYS - Base File Path")]
-        DYSBaseFilePath,
-
-        [Description("Translate Server Base Url")]
-        TranslateServerBaseUrl,
+        DbConnection = 100,
 
         [Description("Default Language")]
-        DefaultLanguage,
+        DefaultLanguage=101,
 
         [Description("System Language")]
-        SystemLanguage,
+        SystemLanguage=102,
+        #endregion
 
+        #region Log Server
+        [Description("Log Server Url")]
+        LogServerUrl = 201,
 
+        [Description("Log Server - RabbitMQ Username")]
+        LogServerRabbitMQUsername = 202,
+
+        [Description("Log Server - RabbitMQ Password")]
+        LogServerRabbitMQPassword =203,
+
+        [Description("Log Server - RabbitMQ VHost")]
+        LogServerRabbitMQVHost = 204,
+
+        [Description("Log Server - RabbitMQ Hostname")]
+        LogServerRabbitMQHostname = 205,
+
+        [Description("Log Server - RabbitMQ Port")]
+        LogServerRabbitMQPort = 206,
+
+        [Description("Log Server - Exchange Name")]
+        LogServerExchangeName = 207,
+
+        [Description("Log Server - Log Queue Key")]
+        LogServerLogQueueKey = 208,
+
+        [Description("Log Server - Log Routing Key")]
+        LogServerLogRoutingKey = 209,
+
+        [Description("Log Server - Log Error Queue Key")]
+        LogServerLogErrorQueueKey=210,
+
+        [Description("Log Server - Log Error Routing Key")]
+        LogServerLogErrorRoutingKey = 211,
+        #endregion
+
+        #region DYS
+        [Description("DYS - Base File Path")]
+        DYSBaseFilePath = 300,
+        #endregion
+
+        #region Translate Server
+        [Description("Translate Server Base Url")]
+        TranslateServerBaseUrl = 400,
+        #endregion
+
+        #region Mail Server
         [Description("Mail Server URL")]
-        MailServerUrl,
+        MailServerUrl = 500,
 
         [Description("Mail Server - RabbitMQ Username")]
-        MailServerRabbitMQUsername,
+        MailServerRabbitMQUsername = 501,
 
         [Description("Mail Server - RabbitMQ Password")]
-        MailServerRabbitMQPassword,
+        MailServerRabbitMQPassword =502,
 
         [Description("Mail Server - RabbitMQ VHost")]
-        MailServerRabbitMQVHost,
+        MailServerRabbitMQVHost =503,
 
         [Description("Mail Server - RabbitMQ Hostname")]
-        MailServerRabbitMQHostname,
+        MailServerRabbitMQHostname = 504,
 
         [Description("Mail Server - RabbitMQ Port")]
-        MailServerRabbitMQPort,
+        MailServerRabbitMQPort = 505,
 
         [Description("Mail Server - Exchange Name")]
-        MailServerExchangeName,
+        MailServerExchangeName = 506,
 
         [Description("Mail Server - Mail Queue Key")]
-        MailServerMailQueueKey,
+        MailServerMailQueueKey =507,
 
         [Description("Mail Server - Mail Routing Key")]
-        MailServerMailRoutingKey,
+        MailServerMailRoutingKey = 508,
 
         [Description("Mail Server - Mail Error Queue Key")]
-        MailServerMailErrorQueueKey,
+        MailServerMailErrorQueueKey = 509,
 
         [Description("Mail Server - Mail Error Routing Key")]
-        MailServerMailErrorRoutingKey,
+        MailServerMailErrorRoutingKey=510,
+        #endregion
 
-
+        #region SMS Server
         [Description("SMS Server URL")]
-        SMSServerUrl,
+        SMSServerUrl = 600,
 
         [Description("SMS Server - RabbitMQ Username")]
-        SMSServerRabbitMQUsername,
+        SMSServerRabbitMQUsername = 601,
 
         [Description("SMS Server - RabbitMQ Password")]
-        SMSServerRabbitMQPassword,
+        SMSServerRabbitMQPassword = 602,
 
         [Description("SMS Server - RabbitMQ VHost")]
-        SMSServerRabbitMQVHost,
+        SMSServerRabbitMQVHost =603,
 
         [Description("SMS Server - RabbitMQ Hostname")]
-        SMSServerRabbitMQHostname,
+        SMSServerRabbitMQHostname =604,
 
         [Description("SMS Server - RabbitMQ Port")]
-        SMSServerRabbitMQPort,
+        SMSServerRabbitMQPort =605,
 
         [Description("SMS Server - Exchange Name")]
-        SMSServerExchangeName,
+        SMSServerExchangeName =606,
 
         [Description("SMS Server - SMS Queue Key")]
-        SMSServerSMSQueueKey,
+        SMSServerSMSQueueKey = 607,
 
         [Description("SMS Server - SMS Routing Key")]
-        SMSServerSMSRoutingKey,
+        SMSServerSMSRoutingKey =608,
 
         [Description("SMS Server - SMS Error Queue Key")]
-        SMSServerSMSErrorQueueKey,
+        SMSServerSMSErrorQueueKey = 609,
 
         [Description("SMS Server - SMS Error Routing Key")]
-        SMSServerSMSErrorRoutingKey,
+        SMSServerSMSErrorRoutingKey =610,
+        #endregion
 
-
+        #region Surrvey
         [Description("Surrvey Server - Image Base File Path")] 
-        SurrveyServerImageBaseFilePath,
+        SurrveyServerImageBaseFilePath = 700,
 
         [Description("Surrvey Server - URL")]
-        SurrveyServerlURL
+        SurrveyServerlURL =701,
+        #endregion
     }
 }
