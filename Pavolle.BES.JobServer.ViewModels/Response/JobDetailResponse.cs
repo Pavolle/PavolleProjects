@@ -1,4 +1,5 @@
-﻿using Pavolle.Core.ViewModels.Response;
+﻿using Pavolle.BES.JobServer.ViewModels.ViewData;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Pavolle.BES.JobServer.ViewModels.Response
 {
     public class JobDetailResponse : ResponseBase
     {
+        public JobDetailViewData Detail { get; set; }
     }
 }

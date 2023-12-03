@@ -35,26 +35,29 @@ namespace Pavolle.BES.JobServer.Business.Manager
                 {
                     if (session.Query<Job>().Any(t => t.JobType == request.JobType))
                     {
-                        return response;
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.DataCreatedBefore, request.Language.Value);
+                        response.StatusCode = 400;
                     }
-
-                    var job = new Job(session)
+                    else
                     {
-                        BesAppType = request.BesAppType.Value,
-                        Active = request.Active.Value,
-                        ReadableName = request.ReadableName,
-                        Cron = request.Cron,
-                        RunServiceUrl = request.RunServiceUrl,
-                        JobType = request.JobType.Value,
-                        LastRunTime = null,
-                        MailTo = request.MailTo,
-                        SendMailAfterRun = request.SendMailAfterRun.Value,
-                        SendSMSAfterRun = request.SendSMSAfterRun.Value,
-                        SMSTo = request.SMSTo
-                    };
-                    job.Save();
-                    _log.Info("New job createad. Job Type => "+request.JobType.Value.ToString());
-                    response.SuccessMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.DataSavedSuccessfully, request.Language.Value);
+                        var job = new Job(session)
+                        {
+                            BesAppType = request.BesAppType.Value,
+                            Active = request.Active.Value,
+                            ReadableName = request.ReadableName,
+                            Cron = request.Cron,
+                            RunServiceUrl = request.RunServiceUrl,
+                            JobType = request.JobType.Value,
+                            LastRunTime = null,
+                            MailTo = request.MailTo,
+                            SendMailAfterRun = request.SendMailAfterRun.Value,
+                            SendSMSAfterRun = request.SendSMSAfterRun.Value,
+                            SMSTo = request.SMSTo
+                        };
+                        job.Save();
+                        _log.Info("New job createad. Job Type => " + request.JobType.Value.ToString());
+                        response.SuccessMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.DataSavedSuccessfully, request.Language.Value);
+                    }
             }
             }
             catch (Exception ex)
@@ -68,14 +71,95 @@ namespace Pavolle.BES.JobServer.Business.Manager
             return response;
         }
 
-        public ResponseBase Detail(long? oid, IntegrationAppRequestBase request)
+        public JobDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new JobDetailResponse();
+            //TODO Request Kontrolleri
+            try
+            {
+                using (Session session = JobServerXpoManager.Instance.GetNewSession())
+                {
+                    var job = session.Query<Job>().FirstOrDefault(t => t.Oid == oid);
+                    if (job == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 400;
+                    }
+                    else
+                    {
+                        response.Detail = new JobDetailViewData
+                        {
+                            Active = job.Active,
+                            BesAppType = job.BesAppType,
+                            CreatedTime = job.CreatedTime,
+                            LastRunTime = job.LastRunTime,
+                            Cron = job.Cron,
+                            JobType = job.JobType,
+                            LastUpdateTime = job.LastUpdateTime,
+                            MailTo = job.MailTo,
+                            Oid = job.Oid,
+                            ReadableName = job.ReadableName,
+                            RunServiceUrl = job.RunServiceUrl,
+                            SendMailAfterRun = job.SendMailAfterRun,
+                            SendSMSAfterRun = job.SendSMSAfterRun,
+                            SMSTo = job.SMSTo
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            return response;
+
+
+
+            
         }
 
         public ResponseBase Edit(long? oid, EditJobRequest request)
         {
-            throw new NotImplementedException();
+            var response = new ResponseBase();
+            //TODO Request Kontrolleri
+            try
+            {
+                using (Session session = JobServerXpoManager.Instance.GetNewSession())
+                {
+                    var job = session.Query<Job>().FirstOrDefault(t => t.Oid == oid);
+                    if (job == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 400;
+                    }
+                    else
+                    {
+                        //todo değişikliklerle ilgili log oluşturulacak.
+                        job.Active = request.Active.Value;
+                        job.ReadableName = request.ReadableName;
+                        job.Cron = request.Cron;
+                        job.RunServiceUrl = request.RunServiceUrl;
+                        job.SendMailAfterRun = request.SendMailAfterRun.Value;
+                        job.MailTo = request.MailTo;
+                        job.SendSMSAfterRun = request.SendSMSAfterRun.Value;
+                        job.SMSTo = request.SMSTo;
+                        job.Save();
+                        _log.Info("Job data updated. Job Type => " + job.JobType.ToString());
+                        response.SuccessMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.DataSavedSuccessfully, request.Language.Value);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            return response;
         }
 
         public JobListResponse List(ListJobCriteria criteria)
@@ -115,7 +199,32 @@ namespace Pavolle.BES.JobServer.Business.Manager
 
         public ResponseBase Run(long? oid, RunJobRequest request)
         {
-            throw new NotImplementedException();
+            var response = new JobDetailResponse();
+            //TODO Request Kontrolleri
+            try
+            {
+                using (Session session = JobServerXpoManager.Instance.GetNewSession())
+                {
+                    var job = session.Query<Job>().FirstOrDefault(t => t.Oid == oid);
+                    if (job == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 400;
+                    }
+                    else
+                    {
+                        //todo manuel çalıştırma yönlendirme. Belki aktif olup olmadığı gibi sürelere bakıp bu süreye göre kararlar verebiliriz.
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            return response;
         }
     }
 }

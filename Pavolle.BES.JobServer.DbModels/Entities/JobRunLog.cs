@@ -17,6 +17,13 @@ namespace Pavolle.BES.JobServer.DbModels.Entities
         [Persistent("job_oid")]
         public Job Job { get; set; }
 
+
+        [Persistent("start_time")]
+        public DateTime StartTime { get; set; }
+
+        [Persistent("end_time")]
+        public DateTime? EndTime { get; set; }
+
         [Persistent("success")]
         public bool Success { get; set; }
 

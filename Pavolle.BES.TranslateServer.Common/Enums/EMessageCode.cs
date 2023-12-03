@@ -25,6 +25,9 @@ namespace Pavolle.BES.TranslateServer.Common.Enums
         RecordNotFoundException,
 
         [Description("Data Saved Successfully")]
-        DataSavedSuccessfully
+        DataSavedSuccessfully,
+
+        [Description("Data Created Before")]
+        DataCreatedBefore
     }
 }
