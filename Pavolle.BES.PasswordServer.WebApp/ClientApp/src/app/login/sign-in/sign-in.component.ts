@@ -24,6 +24,23 @@ export class SignInComponent {
   baseApiUrl: String =`${getBaseUrl()}api/passwordserver/login/`;
 
   login(){
+    if(this.request.username==null || this.request.username.length==0){
+      this.alertifyService.errorCenter("Kullanıcı Adı boş bırakılamaz!");
+      return;
+    }
+    if(this.request.username.length<5)
+    {
+      this.alertifyService.errorCenter("Kullanıcı Adı uzunluğu hatalı!");
+      return;
+    }
+    if(this.request.password==null || this.request.password.length==0){
+      this.alertifyService.errorCenter("Parola boş bırakılamaz!");
+      return;
+    }
+    if(this.request.password.length<6){
+      this.alertifyService.errorCenter("Parola hatalı!");
+      return;
+    }
     const path = this.baseApiUrl +"signin";
 	  let headers = new HttpHeaders();
 	  headers = headers.append("Content-Type","application/json");

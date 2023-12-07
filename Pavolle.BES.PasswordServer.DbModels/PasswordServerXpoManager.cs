@@ -12,7 +12,7 @@ using Pavolle.BES.PasswordServer.DbModels.Entities;
 
 namespace Pavolle.BES.PasswordServer.DbModels
 {
-    public class XpoManager : Singleton<XpoManager>
+    public class PasswordServerXpoManager : Singleton<PasswordServerXpoManager>
     {
         private string _connectionString;
         public string ConnectionString
@@ -22,7 +22,7 @@ namespace Pavolle.BES.PasswordServer.DbModels
 
         private readonly object LockObject = new object();
 
-        private XpoManager()
+        private PasswordServerXpoManager()
         {
         }
 

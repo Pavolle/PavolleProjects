@@ -18,6 +18,8 @@ export class AlertifyService {
     alertify.error(message)
   }
   errorCenter(message:string | null ){
+    alertify.set('notifier','delay', 3);
+    alertify.set('notifier','position', 'bottom-center');
     if(message==null){return;}
     alertify.error(message)
   }
