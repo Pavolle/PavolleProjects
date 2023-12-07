@@ -72,6 +72,8 @@ namespace Pavolle.BES.SettingServer.ClientLib
 
         public ELanguage GetDefaultLanguage()
         {
+            if (_settingList == null) { return ELanguage.English; }
+            if (_settingList.Count == 0) { return ELanguage.English; }
             var data = _settingList.FirstOrDefault(t => t.SettingType == ESettingType.DefaultLanguage);
             if (data == null)
                 return ELanguage.English;
@@ -80,6 +82,8 @@ namespace Pavolle.BES.SettingServer.ClientLib
 
         public ELanguage GetSystemLanguage()
         {
+            if (_settingList == null) {  return ELanguage.English; }
+            if(_settingList.Count==0) { return ELanguage.English; }
             var data = _settingList.FirstOrDefault(t => t.SettingType == ESettingType.SystemLanguage);
             if (data == null)
                 return ELanguage.English;

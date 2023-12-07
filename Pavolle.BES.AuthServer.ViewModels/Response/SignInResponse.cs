@@ -1,4 +1,5 @@
-﻿using Pavolle.Core.ViewModels.Response;
+﻿using Pavolle.BES.AuthServer.ViewModels.ViewData;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace Pavolle.BES.AuthServer.ViewModels.Response
         public string Token { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
+
+        public List<UserAuthorizationViewData> Authorizations { get; set; }
     }
 }

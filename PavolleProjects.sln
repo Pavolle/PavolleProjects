@@ -167,15 +167,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.ViewM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.DbModels", "Pavolle.BES.SMSServer.DbModels\Pavolle.BES.SMSServer.DbModels.csproj", "{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.RabbitMQClient", "Pavolle.BES.SMSServer.RabbitMQClient\Pavolle.BES.SMSServer.RabbitMQClient.csproj", "{CEBA8E84-30C1-4813-A9C8-302A497FD539}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.Service", "Pavolle.BES.SMSServer.Service\Pavolle.BES.SMSServer.Service.csproj", "{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.UnitTests", "Pavolle.BES.SMSServer.UnitTests\Pavolle.BES.SMSServer.UnitTests.csproj", "{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.SMSServer.ClientLib", "Pavolle.BES.SMSServer.ClientLib\Pavolle.BES.SMSServer.ClientLib.csproj", "{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MailServer.RabbitMQClient", "Pavolle.BES.MailServer.RabbitMQClient\Pavolle.BES.MailServer.RabbitMQClient.csproj", "{FB151F35-0D69-48C0-878B-4B44B9B3222E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D72213C1-859B-4A8E-BC3F-A69DE4B8C68E}"
 EndProject
@@ -506,21 +502,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Journal.ViewMod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Journal.ClientLib", "Pavolle.BES.Journal.ClientLib\Pavolle.BES.Journal.ClientLib.csproj", "{775BBF55-CF57-465E-8C16-B07CF6F4ED90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.CRM.Business", "Pavolle.BES.CRM.Business\Pavolle.BES.CRM.Business.csproj", "{D146099D-BFFC-434D-A924-B088D010B01D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.CRM.Business", "Pavolle.BES.CRM.Business\Pavolle.BES.CRM.Business.csproj", "{D146099D-BFFC-434D-A924-B088D010B01D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Industry4dot0.Business", "Pavolle.BES.Industry4dot0.Business\Pavolle.BES.Industry4dot0.Business.csproj", "{B7E84657-3832-403A-A96D-56868C62A994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Industry4dot0.Business", "Pavolle.BES.Industry4dot0.Business\Pavolle.BES.Industry4dot0.Business.csproj", "{B7E84657-3832-403A-A96D-56868C62A994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Muhasebe.Business", "Pavolle.BES.Muhasebe.Business\Pavolle.BES.Muhasebe.Business.csproj", "{1CEFE57F-E4C7-4E0F-A45F-2AF82DD7CB29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Muhasebe.Business", "Pavolle.BES.Muhasebe.Business\Pavolle.BES.Muhasebe.Business.csproj", "{1CEFE57F-E4C7-4E0F-A45F-2AF82DD7CB29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.KDS.Business", "Pavolle.BES.KDS.Business\Pavolle.BES.KDS.Business.csproj", "{942250F1-5458-4B2A-A2F2-206368A7B3F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.KDS.Business", "Pavolle.BES.KDS.Business\Pavolle.BES.KDS.Business.csproj", "{942250F1-5458-4B2A-A2F2-206368A7B3F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.NetworkMarketing.Business", "Pavolle.BES.NetworkMarketing.Business\Pavolle.BES.NetworkMarketing.Business.csproj", "{CEB56BBD-5EA4-41C4-A836-44346E799B5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.NetworkMarketing.Business", "Pavolle.BES.NetworkMarketing.Business\Pavolle.BES.NetworkMarketing.Business.csproj", "{CEB56BBD-5EA4-41C4-A836-44346E799B5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.OSint.Business", "Pavolle.BES.OSint.Business\Pavolle.BES.OSint.Business.csproj", "{1B345F67-6282-431E-B66F-101A3577DE9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.OSint.Business", "Pavolle.BES.OSint.Business\Pavolle.BES.OSint.Business.csproj", "{1B345F67-6282-431E-B66F-101A3577DE9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.QRM.Business", "Pavolle.BES.QRM.Business\Pavolle.BES.QRM.Business.csproj", "{D41939B6-96EB-4CA3-AD90-FED0043191A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.QRM.Business", "Pavolle.BES.QRM.Business\Pavolle.BES.QRM.Business.csproj", "{D41939B6-96EB-4CA3-AD90-FED0043191A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TalepTakip.Business", "Pavolle.BES.TalepTakip.Business\Pavolle.BES.TalepTakip.Business.csproj", "{92BAC722-FE4D-45F7-8B4A-EA02A9EADCF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TalepTakip.Business", "Pavolle.BES.TalepTakip.Business\Pavolle.BES.TalepTakip.Business.csproj", "{92BAC722-FE4D-45F7-8B4A-EA02A9EADCF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -746,10 +742,6 @@ Global
 		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CEBA8E84-30C1-4813-A9C8-302A497FD539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEBA8E84-30C1-4813-A9C8-302A497FD539}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEBA8E84-30C1-4813-A9C8-302A497FD539}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEBA8E84-30C1-4813-A9C8-302A497FD539}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -762,10 +754,6 @@ Global
 		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB151F35-0D69-48C0-878B-4B44B9B3222E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB151F35-0D69-48C0-878B-4B44B9B3222E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB151F35-0D69-48C0-878B-4B44B9B3222E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB151F35-0D69-48C0-878B-4B44B9B3222E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D9638C9E-5B4D-411D-BE97-EC595462E1DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D9638C9E-5B4D-411D-BE97-EC595462E1DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9638C9E-5B4D-411D-BE97-EC595462E1DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -1389,11 +1377,9 @@ Global
 		{627DF703-5AEA-4872-9A22-B57BFAEF5327} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
 		{55C2CB1D-8EF9-44D0-B930-211E30EA93BD} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
 		{F5EE6CFB-7B8F-4F46-B56C-A0BA8C14605C} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
-		{CEBA8E84-30C1-4813-A9C8-302A497FD539} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
 		{BE61F1DD-76F5-4EB8-8F7A-23C820BFE5B4} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
 		{FDF37A88-A9FF-49F3-BA39-C884FDCB0F6C} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
 		{C2B8BA55-5CC1-4443-BAA3-18A8347718E5} = {51F3E92B-AB8A-47C9-8B6F-ADCD11DCA7C1}
-		{FB151F35-0D69-48C0-878B-4B44B9B3222E} = {BA224DF4-A08D-44C6-88D3-CD03E53FB4C1}
 		{D72213C1-859B-4A8E-BC3F-A69DE4B8C68E} = {9362482A-2A9C-4109-AD5E-53D018922511}
 		{3EAC0F7E-7D86-4BED-B412-859D5A00C372} = {F3A72CCD-3804-40AC-8479-9D6E59356FF5}
 		{F083D74F-06F8-4322-9708-EB57F8A3B413} = {F3A72CCD-3804-40AC-8479-9D6E59356FF5}

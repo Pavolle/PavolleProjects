@@ -8,6 +8,7 @@ namespace Pavolle.BES.SMSServer.Common.Enums
 {
     public enum ESmsIntegration
     {
-        TurkcellMesajUssu=1
+        TurkcellMesajUssu=1,
+        NetGSM=2
     }
 }

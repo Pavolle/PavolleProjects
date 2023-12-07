@@ -18,6 +18,17 @@ namespace Pavolle.BES.PasswordServer.Common.Utils
             public const string ReloadAllServerSettingsRoutePrefix = "reloadallsettings";
         }
 
+        public class LoginUrlConsts
+        {
+            public const string BaseRoute = "api/passwordserver/login";
+
+            public const string SignInRoutePrefix = "signin";
+            public const string SignOutRoutePrefix = "signout";
+            public const string ForgotPaswordRoutePrefix = "forgotpassword";
+            public const string ResetPaswordRoutePrefix = "resetpassword";
+
+        }
+
         public class PasswordConsts
         {
             public const string BaseRoute = "api/passwordserver/password";
