@@ -2,10 +2,10 @@
 <div class="backimage">
 
   <form class="box" action="index.html" method="post">
-    <h4>Kullanıcı Girişi</h4>
-    <input type="text" name="" [(ngModel)]="request.username" [ngModelOptions]="{standalone: true}" placeholder="Kullanıcı Adı">
-    <input type="password" name="" [(ngModel)]="request.password" [ngModelOptions]="{standalone: true}" placeholder="Parola">
-    <a style="text-decoration: none; font-weight: bold;" (click)="login()" type="submit">Giriş</a>
+    <h4>{{kullaniciGirisiAciklamaString}}</h4>
+    <input type="text" name="" [(ngModel)]="request.username" [ngModelOptions]="{standalone: true}" placeholder="{{kullaniciAdiString}}">
+    <input type="password" name="" [(ngModel)]="request.password" [ngModelOptions]="{standalone: true}" placeholder="{{parolaString}}">
+    <a style="text-decoration: none; font-weight: bold;" (click)="login()" type="submit">{{kullaniciGirisiString}}</a>
   </form>
 
 

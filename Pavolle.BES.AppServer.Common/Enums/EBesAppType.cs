@@ -24,6 +24,7 @@ namespace Pavolle.BES.AppServer.Common.Enums
         CoreTranslateServer = 14,
         Core = 15,
         CoreMailServer = 16,
-        CoreSMSServer = 17
+        CoreSMSServer = 17,
+        PasswordServer = 18
     }
 }

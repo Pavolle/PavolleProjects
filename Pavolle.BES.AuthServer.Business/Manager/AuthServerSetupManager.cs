@@ -3,6 +3,7 @@ using Pavolle.BES.AppServer.Common.Enums;
 using Pavolle.BES.AuthServer.Common.Enums;
 using Pavolle.BES.AuthServer.DbModels;
 using Pavolle.BES.AuthServer.DbModels.Entities;
+using Pavolle.BES.PasswordServer.Common.Utils;
 using Pavolle.BES.Surrvey.Common.Utils;
 using Pavolle.Core.Utils;
 using Pavolle.Security;
@@ -38,6 +39,19 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             Add(session, EBesAppType.Surrvey, SurveyServerConsts.SurveyConsts.BaseRoute + "/" + SurveyServerConsts.LookupRoutePrefix, "Survey Lookup", EApiServiceMethodType.Get, true, true, false);
             Add(session, EBesAppType.Surrvey, SurveyServerConsts.SurveyConsts.BaseRoute + "/" + SurveyServerConsts.AddRoutePrefix, "Add Survey", EApiServiceMethodType.Post, true, true, false);
             Add(session, EBesAppType.Surrvey, SurveyServerConsts.SurveyConsts.BaseRoute + "/" + SurveyServerConsts.EditRoutePrefix, "Edit Survey", EApiServiceMethodType.Post, true, true, false);
+            #endregion
+
+
+            /*
+            public const string SignOutRoutePrefix = "signout";
+            public const string ForgotPaswordRoutePrefix = "forgotpassword";
+            public const string ResetPaswordRoutePrefix = "resetpassword";
+            */
+            #region Password Server
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignInRoutePrefix, "Password Server - Sign In", EApiServiceMethodType.Post, false, false, true);
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignOutRoutePrefix, "Password Server - Sign Out", EApiServiceMethodType.Post, false, false, false);
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.ForgotPaswordRoutePrefix, "Password Server - Sign Out", EApiServiceMethodType.Post, false, false, true);
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.ResetPaswordRoutePrefix, "Password Server - Sign Out", EApiServiceMethodType.Post, false, false, true);
             #endregion
         }
 
