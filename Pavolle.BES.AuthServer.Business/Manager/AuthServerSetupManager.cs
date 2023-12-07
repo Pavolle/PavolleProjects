@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using log4net;
 using Pavolle.BES.AppServer.Common.Enums;
 using Pavolle.BES.AuthServer.Common.Enums;
 using Pavolle.BES.AuthServer.DbModels;
@@ -17,6 +18,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 {
     public class AuthServerSetupManager : Singleton<AuthServerSetupManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(AuthServerSetupManager));
         private AuthServerSetupManager() { }
 
         List<string> _apiKeys;

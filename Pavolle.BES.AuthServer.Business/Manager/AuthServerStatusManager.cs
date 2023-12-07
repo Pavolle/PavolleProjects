@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.AuthServer.ViewModels.Response;
+﻿using log4net;
+using Pavolle.BES.AuthServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
@@ -14,6 +15,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 {
     public class AuthServerStatusManager : Singleton<AuthServerStatusManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(AuthServerStatusManager));
         bool _settingServerConnectionStatus = false;
         bool _serverStatus =false;
         bool _dbStatus = false;

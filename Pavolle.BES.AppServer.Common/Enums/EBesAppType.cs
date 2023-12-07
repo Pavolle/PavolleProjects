@@ -8,6 +8,7 @@ namespace Pavolle.BES.AppServer.Common.Enums
 {
     public enum EBesAppType
     {
+        Undefined = 0,
         Supplera = 1,
         DokumanYonetimSistemi = 2,
         B2B = 3,
@@ -25,6 +26,8 @@ namespace Pavolle.BES.AppServer.Common.Enums
         Core = 15,
         CoreMailServer = 16,
         CoreSMSServer = 17,
-        PasswordServer = 18
+        PasswordServer = 18,
+        CoreAuthServer = 19,
+        CoreSettingServer = 20,
     }
 }

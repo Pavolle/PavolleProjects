@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using log4net;
 using Pavolle.BES.AuthServer.Common.Enums;
 using Pavolle.BES.AuthServer.ViewModels.Model;
 using Pavolle.Core.Utils;
@@ -13,6 +14,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 {
     public class SessionManager : Singleton<SessionManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(SessionManager));
         ConcurrentDictionary<string, TokenCacheModel> _sessions;
         private SessionManager()
         {

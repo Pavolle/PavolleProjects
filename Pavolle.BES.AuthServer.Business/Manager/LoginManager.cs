@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.AuthServer.ViewModels.Request;
+﻿using log4net;
+using Pavolle.BES.AuthServer.ViewModels.Request;
 using Pavolle.BES.AuthServer.ViewModels.Response;
 using Pavolle.Core.Utils;
 using System;
@@ -11,6 +12,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 {
     public class LoginManager : Singleton<LoginManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(LoginManager));
         private LoginManager() { }
 
         public SignInResponse SignIn(LoginRequest request)
