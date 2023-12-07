@@ -78,7 +78,7 @@
           })
           $(this).addClass('active');
         
-          var target = this.hash,
+          //var target = this.hash,
           menu = target;
           var target = $(this.hash);
           $('html, body').stop().animate({
