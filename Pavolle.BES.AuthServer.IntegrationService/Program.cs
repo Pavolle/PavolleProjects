@@ -1,6 +1,7 @@
 using log4net;
 using Pavolle.BES.AuthServer.Business.Manager;
 using Pavolle.BES.SettingServer.ClientLib;
+using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.WebFilter;
 using Pavolle.Core.Manager;
 
@@ -38,6 +39,9 @@ internal class Program
         {
             AuthServerStatusManager.Instance.SetSettingServerConnectionStatus(true);
         }
+
+        var dbStatus = AuthServerDbManager.Instance.InitializeDb(SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection));
+        AuthServerStatusManager.Instance.SetDbStatus(dbStatus);
 
         // Add services to the container.
 

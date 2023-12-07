@@ -19,7 +19,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         bool _dbStatus = false;
         private AuthServerStatusManager() { }
 
-        public AuthServerStatusResponse GetServerSettings(IntegrationAppRequestBase request)
+        public AuthServerStatusResponse GetServerStatus(IntegrationAppRequestBase request)
         {
             return new AuthServerStatusResponse
             {
@@ -36,7 +36,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             };
         }
 
-        public AuthServerSettingsResponse GetServerStatus(IntegrationAppRequestBase request)
+        public AuthServerSettingsResponse GetServerSettings(IntegrationAppRequestBase request)
         {
             return new AuthServerSettingsResponse
             {
@@ -46,6 +46,11 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                 TranslateServerBaseUrl = SettingServiceManager.Instance.GetSetting(ESettingType.TranslateServerBaseUrl),
                 DbConnectionString=SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection)
             };
+        }
+
+        public void SetDbStatus(bool dbStatus)
+        {
+            _dbStatus = dbStatus;
         }
 
         public void SetServerStatus(bool status)
