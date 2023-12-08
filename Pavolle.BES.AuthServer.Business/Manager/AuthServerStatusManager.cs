@@ -19,6 +19,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         bool _settingServerConnectionStatus = false;
         bool _serverStatus =false;
         bool _dbStatus = false;
+        bool _userLoaded = false;
         private AuthServerStatusManager() { }
 
         public AuthServerStatusResponse GetServerStatus(IntegrationAppRequestBase request)
@@ -30,8 +31,10 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                 ReleaseDate = WebAppInfoManager.Instance.GetReleaseDate(),
                 DbStatus = _dbStatus,
                 DbStatusString = _dbStatus ? "Connected" : "Connection Error",
+                LoadUserStatus = _userLoaded,
+                LoadUserStatusString = _userLoaded ? "Loaded" : "Connection Error",
                 ServerStatus = _serverStatus && _dbStatus,
-                ServerStatusString = _serverStatus && _dbStatus ? "Ready" : "Not Ready",
+                ServerStatusString = _serverStatus && _dbStatus && _userLoaded ? "Ready" : "Not Ready",
                 SettingServerConnectionStatus = _settingServerConnectionStatus,
                 SettingServerConnectionStatusString = _settingServerConnectionStatus ? "Connected" : "Not Connected",
                 SettingsReloadTime = SettingServiceManager.Instance.GetSettingsReloadTime()
@@ -46,7 +49,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                 SystemLanguage = SettingServiceManager.Instance.GetSystemLanguage(),
                 SettingServerBaseUrl = SettingServiceManager.Instance.GetServerUrl(),
                 TranslateServerBaseUrl = SettingServiceManager.Instance.GetSetting(ESettingType.TranslateServerBaseUrl),
-                DbConnectionString=SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection)
+                DbConnectionString = SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection) != null ? "Ok" : "Error!"
             };
         }
 
@@ -63,6 +66,11 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         public void SetSettingServerConnectionStatus(bool status)
         {
             _settingServerConnectionStatus = status;
+        }
+
+        public void SetUserLoaded(bool status)
+        {
+            _userLoaded = status;
         }
     }
 }

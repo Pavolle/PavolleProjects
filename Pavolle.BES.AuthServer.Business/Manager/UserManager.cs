@@ -20,24 +20,33 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         ConcurrentDictionary<string, UserCacheModel> _users;
         private UserManager() { }
 
-        public void LoadCacheData()
+        public bool LoadCacheData()
         {
-            using(Session session = AuthServerXpoManager.Instance.GetNewSession())
+            try
             {
-                var users = session.Query<User>().Select(t => new UserCacheModel
+                using (Session session = AuthServerXpoManager.Instance.GetNewSession())
                 {
-                    Oid = t.Oid,
-                    Username = t.Username,
-                    Name = t.Person.Name,
-                    Surname = t.Person.Surname,
-                    Password = t.Password
-                });
+                    var users = session.Query<User>().Select(t => new UserCacheModel
+                    {
+                        Oid = t.Oid,
+                        Username = t.Username,
+                        Name = t.Person.Name,
+                        Surname = t.Person.Surname,
+                        Password = t.Password
+                    });
 
-                _users = new ConcurrentDictionary<string, UserCacheModel>();
-                foreach (var user in users)
-                {
-                    _users.TryAdd(user.Username, user);
+                    _users = new ConcurrentDictionary<string, UserCacheModel>();
+                    foreach (var user in users)
+                    {
+                        _users.TryAdd(user.Username, user);
+                    }
                 }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //TODO Log eklenecek
+                return false;
             }
         }
 

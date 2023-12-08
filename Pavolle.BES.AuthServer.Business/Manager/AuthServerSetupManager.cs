@@ -43,12 +43,6 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             Add(session, EBesAppType.Surrvey, SurveyServerConsts.SurveyConsts.BaseRoute + "/" + SurveyServerConsts.EditRoutePrefix, "Edit Survey", EApiServiceMethodType.Post, true, true, false);
             #endregion
 
-
-            /*
-            public const string SignOutRoutePrefix = "signout";
-            public const string ForgotPaswordRoutePrefix = "forgotpassword";
-            public const string ResetPaswordRoutePrefix = "resetpassword";
-            */
             #region Password Server
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignInRoutePrefix, "Password Server - Sign In", EApiServiceMethodType.Post, false, false, true);
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignOutRoutePrefix, "Password Server - Sign Out", EApiServiceMethodType.Post, false, false, false);

@@ -83,6 +83,12 @@ internal class Program
 
         app.MapControllers();
 
+        #region Loading Cache Data
+        bool loadUserStatus=UserManager.Instance.LoadCacheData();
+        AuthServerStatusManager.Instance.SetUserLoaded(loadUserStatus);
+        
+        #endregion
+
         AuthServerStatusManager.Instance.SetServerStatus(true);
 
         app.Run();
