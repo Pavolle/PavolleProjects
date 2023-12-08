@@ -41,9 +41,9 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             }
         }
 
-        public UserCacheModel? GetUserCacheDataByOid(long oid)
+        public UserCacheModel? GetUserCacheDataByUsername(string username)
         {
-            if (_users.ContainsKey(oid)) { return _users[oid]; }
+            if (_users.ContainsKey(username)) { return _users[username]; }
             return null;
         }
 
