@@ -30,9 +30,10 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                     {
                         Oid = t.Oid,
                         Username = t.Username,
+                        Password = t.Password,
+                        PersonOid = t.Person.Oid,
                         Name = t.Person.Name,
                         Surname = t.Person.Surname,
-                        Password = t.Password
                     });
 
                     _users = new ConcurrentDictionary<string, UserCacheModel>();

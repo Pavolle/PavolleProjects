@@ -15,5 +15,6 @@ namespace Pavolle.BES.AuthServer.ViewModels.Response
         public string Surname { get; set; }
 
         public List<UserAuthorizationViewData> Authorizations { get; set; }
+        public SingInUserDetailViewData UserDetail { get; set; }
     }
 }

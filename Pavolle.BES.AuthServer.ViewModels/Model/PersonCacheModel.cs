@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.ViewModels.Model
 {
-    public class UserCacheModel
+    public class PersonCacheModel
     {
-        public long Oid { get; set; }
-        public string Username { get; set; }
+        public string Oid { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Password { get; set; }
-        public long PersonOid { get; set; }
     }
 }

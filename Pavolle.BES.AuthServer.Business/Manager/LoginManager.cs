@@ -1,6 +1,10 @@
 ﻿using log4net;
 using Pavolle.BES.AuthServer.ViewModels.Request;
 using Pavolle.BES.AuthServer.ViewModels.Response;
+using Pavolle.BES.AuthServer.ViewModels.ViewData;
+using Pavolle.BES.LogServer.ClientLib;
+using Pavolle.BES.TranslateServer.ClientLib;
+using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -18,7 +22,39 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         public SignInResponse SignIn(LoginRequest request)
         {
             var response = new SignInResponse();
+            try
+            {
+                //TODO Request Controls
+                if (!UserManager.Instance.ValidateUser(request.Username, request.Password))
+                {
+                    response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UsernameOrPasswordNotCorrect, request.Language.Value);
+                    response.StatusCode = 401;
+                }
 
+                var userInfo=UserManager.Instance.GetUserCacheDataByUsername(request.Username);
+                if (userInfo == null)
+                {
+                    response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UsernameOrPasswordNotCorrect, request.Language.Value);
+                    response.StatusCode = 401;
+                }
+
+                response.UserDetail = new SingInUserDetailViewData
+                {
+                    Name = userInfo.Name,
+                    Surname = userInfo.Surname,
+                    PhoneNumber=CommunicationInfoManager.Instance.GetPersonDefaultPhoneNumber(userInfo.PersonOid),
+                    Email = CommunicationInfoManager.Instance.GetPersonDefaultEmailAddress(userInfo.PersonOid),
+                    UserRoleList=RoleManager.Instance.GetUserRolesString(request.Username)
+                };
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                LogServiceManager.Instance.SystemError("Unexpected error occured! Message: " + ex.Message + " StackTrace: " + ex.StackTrace);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
             return response;
         }
     }

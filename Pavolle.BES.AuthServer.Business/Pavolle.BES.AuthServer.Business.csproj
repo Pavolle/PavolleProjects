@@ -14,9 +14,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Pavolle.BES.AuthServer.DbModels\Pavolle.BES.AuthServer.DbModels.csproj" />
     <ProjectReference Include="..\Pavolle.BES.AuthServer.ViewModels\Pavolle.BES.AuthServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.LogServer.ClientLib\Pavolle.BES.LogServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.PasswordServer.Common\Pavolle.BES.PasswordServer.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Surrvey.Common\Pavolle.BES.Surrvey.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.TranslateServer.ClientLib\Pavolle.BES.TranslateServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
     <ProjectReference Include="..\Pavolle.Security\Pavolle.Security.csproj" />
