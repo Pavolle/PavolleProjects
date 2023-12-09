@@ -43,6 +43,8 @@ internal class Program
         var dbStatus = AuthServerDbManager.Instance.InitializeDb(SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection));
         AuthServerStatusManager.Instance.SetDbStatus(dbStatus);
 
+        AuthServerSetupManager.Instance.Initialize();
+
         // Add services to the container.
 
         builder.Services.AddControllers();

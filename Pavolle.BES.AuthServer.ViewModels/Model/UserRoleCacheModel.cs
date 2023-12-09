@@ -14,5 +14,6 @@ namespace Pavolle.BES.AuthServer.ViewModels.Model
         public long? OrganizationOid { get; set; }
         public long? RoleOid { get; set; }
         public string RoleName { get; set; }
+        public string OrganizationName { get; set; }
     }
 }

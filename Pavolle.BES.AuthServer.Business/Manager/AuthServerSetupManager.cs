@@ -69,7 +69,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         private void SetupAdminUser(Session session)
         {
             var sysAdmin = session.Query<User>().FirstOrDefault(t => t.Username == "sysadmin");
-            if (sysAdmin != null)
+            if (sysAdmin == null)
             {
                 var person = new Person(session)
                 {
@@ -78,27 +78,51 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                 };
                 person.Save();
 
+                new CommunicationInfo(session)
+                {
+                    Person = person,
+                    CommunicationType = ECommunicationType.MobilePhoneNumber,
+                    VerifyCode = "",
+                    IsVerified = true,
+                    IsDefault = true,
+                    Value="+90 530 730 26 90"
+                }.Save();
+
+                new CommunicationInfo(session)
+                {
+                    Person = person,
+                    CommunicationType = ECommunicationType.WorkEmailAddress,
+                    VerifyCode = "",
+                    IsVerified = true,
+                    IsDefault = true,
+                    Value="agha.alizade@pavolle.com"
+                }.Save();
+
                 sysAdmin = new User(session)
                 {
                     Person = person,
                     Password = SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin"),
                     Username = "sysadmin"
                 };
-            }
-            if (sysAdmin.Password != SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin"))
-            {
-                sysAdmin.Password = SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin");
-                sysAdmin.LastUpdateTime = DateTime.Now;
                 sysAdmin.Save();
+            }
+            else
+            {
+                if (sysAdmin.Password != SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin"))
+                {
+                    sysAdmin.Password = SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin");
+                    sysAdmin.LastUpdateTime = DateTime.Now;
+                    sysAdmin.Save();
+                }
             }
 
             var adminRole = session.Query<Role>().FirstOrDefault(t => t.UserType == EUserType.SystemAdmin);
-            if(adminRole != null)
+            if(adminRole == null)
             {
                 adminRole = new Role(session)
                 {
                     UserType = EUserType.SystemAdmin,
-                    Name = "System Admin"
+                    Name = "System Administrator"
                 };
                 adminRole.Save();
 

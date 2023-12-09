@@ -14,5 +14,6 @@ namespace Pavolle.BES.AuthServer.ViewModels.Model
         public string Value { get; set; }
         public bool IsVerified { get; set; }
         public bool IsDefault { get; set; }
+        public long Oid { get; set; }
     }
 }

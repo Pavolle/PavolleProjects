@@ -30,6 +30,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                 {
                     response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UsernameOrPasswordNotCorrect, request.Language.Value);
                     response.StatusCode = 401;
+                    return response;
                 }
 
                 var userInfo=UserManager.Instance.GetUserCacheDataByUsername(request.Username);
@@ -37,6 +38,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                 {
                     response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UsernameOrPasswordNotCorrect, request.Language.Value);
                     response.StatusCode = 401;
+                    return response;
                 }
 
                 response.UserDetail = new SingInUserDetailViewData

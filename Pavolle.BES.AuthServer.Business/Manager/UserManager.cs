@@ -24,7 +24,10 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         {
             return _lastRefreshTime;
         }
-        private UserManager() { }
+        private UserManager()
+        {
+            _users = new ConcurrentDictionary<string, UserCacheModel>();
+        }
 
         public bool LoadCacheData()
         {

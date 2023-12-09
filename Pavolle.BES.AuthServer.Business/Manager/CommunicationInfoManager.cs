@@ -23,7 +23,11 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         {
             return _lastRefreshTime;
         }
-        private CommunicationInfoManager() { }
+
+        private CommunicationInfoManager() 
+        {
+            _communicationInfo = new ConcurrentDictionary<long, List<CommunicationInfoCacheModel>>();
+        }
 
         public bool LoadCacheData()
         {
@@ -33,7 +37,8 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             {
                 var dataList = session.Query<CommunicationInfo>().Select(t => new CommunicationInfoCacheModel
                 {
-                    PersonOid = t.Oid,
+                    PersonOid = t.Person.Oid,
+                    Oid=t.Oid,
                     CommunicationType = t.CommunicationType,
                     IsDefault = t.IsDefault,
                     IsVerified = t.IsVerified,
@@ -52,7 +57,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                     }
                 }
             }
-
+            _lastRefreshTime=DateTime.Now;
             return success;
         }
 
