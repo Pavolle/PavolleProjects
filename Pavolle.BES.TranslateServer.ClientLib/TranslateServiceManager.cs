@@ -55,5 +55,10 @@ namespace Pavolle.BES.TranslateServer.ClientLib
                     default: return messageCode;
             }
         }
+
+        public bool SaveNewData(string header, ELanguage? language)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

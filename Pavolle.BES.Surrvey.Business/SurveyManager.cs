@@ -225,6 +225,11 @@ namespace Pavolle.BES.Surrvey.Business
                             TransactionCount=0
                         };
 
+                        if(request.MultiLanguage)
+                        {
+                            bool translateServiceStatus=TranslateServiceManager.Instance.SaveNewData(request.Header, request.Language);
+                        }
+
 
                         if (!string.IsNullOrEmpty(request.Base64Image))
                         {
