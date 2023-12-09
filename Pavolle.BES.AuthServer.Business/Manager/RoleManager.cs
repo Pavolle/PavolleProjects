@@ -11,18 +11,19 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 {
     public class RoleManager : Singleton<RoleManager>
     {
+        //Username Roles
         ConcurrentDictionary<string, List<UserRoleCacheModel>> _userRoles;
 
         private RoleManager() { }
 
         public bool LoadCacheData()
         {
-            bool success = true;
+            bool success = false;
 
             return success;
         }
 
-        internal string GetUserRolesString(string username)
+        internal List<string> GetUserRolesString(string username)
         {
             throw new NotImplementedException();
         }

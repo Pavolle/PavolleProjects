@@ -22,6 +22,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 
         public bool LoadCacheData()
         {
+            bool success = false;
             try
             {
                 using (Session session = AuthServerXpoManager.Instance.GetNewSession())
@@ -42,13 +43,14 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                         _users.TryAdd(user.Username, user);
                     }
                 }
-                return true;
+                success = true;
             }
             catch (Exception ex)
             {
                 //TODO Log eklenecek
-                return false;
+                success = false;
             }
+            return success;
         }
 
         public UserCacheModel? GetUserCacheDataByUsername(string username)

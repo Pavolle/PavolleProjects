@@ -94,7 +94,7 @@ internal class Program
         AuthServerStatusManager.Instance.SetRolesLoaded(loadRolesStatus);
 
         bool loadCommunicationInfoStatus = CommunicationInfoManager.Instance.LoadCacheData();
-        AuthServerStatusManager.Instance.SetCommunicationInfoLoaded(loadUserStatus);
+        AuthServerStatusManager.Instance.SetCommunicationInfoLoaded(loadCommunicationInfoStatus);
 
         #endregion
 

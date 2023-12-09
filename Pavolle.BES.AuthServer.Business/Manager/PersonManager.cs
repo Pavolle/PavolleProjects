@@ -15,7 +15,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 
         public bool LoadCacheData()
         {
-            bool success =true;
+            bool success =false;
 
             return success;
         }
