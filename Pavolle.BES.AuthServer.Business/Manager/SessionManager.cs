@@ -16,6 +16,12 @@ namespace Pavolle.BES.AuthServer.Business.Manager
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(SessionManager));
         ConcurrentDictionary<string, TokenCacheModel> _sessions;
+        DateTime _lastRefreshTime = DateTime.Now;
+
+        public DateTime GetLastRefreshTime()
+        {
+            return _lastRefreshTime;
+        }
         private SessionManager()
         {
             _sessions=new ConcurrentDictionary<string, TokenCacheModel>();

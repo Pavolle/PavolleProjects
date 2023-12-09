@@ -14,6 +14,12 @@ namespace Pavolle.BES.AuthServer.Business.Manager
     {
         //Username Roles
         ConcurrentDictionary<string, List<UserRoleCacheModel>> _userRoles;
+        DateTime _lastRefreshTime = DateTime.Now;
+
+        public DateTime GetLastRefreshTime()
+        {
+            return _lastRefreshTime;
+        }
 
         private RoleManager() { }
 

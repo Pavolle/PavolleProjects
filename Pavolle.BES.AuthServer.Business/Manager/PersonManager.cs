@@ -11,6 +11,12 @@ namespace Pavolle.BES.AuthServer.Business.Manager
     public class PersonManager : Singleton<PersonManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(PersonManager));
+        DateTime _lastRefreshTime = DateTime.Now;
+
+        public DateTime GetLastRefreshTime()
+        {
+            return _lastRefreshTime;
+        }
         private PersonManager() { }
 
         public bool LoadCacheData()

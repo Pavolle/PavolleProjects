@@ -18,6 +18,12 @@ namespace Pavolle.BES.AuthServer.Business.Manager
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(UserManager));
         ConcurrentDictionary<string, UserCacheModel> _users;
+        DateTime _lastRefreshTime = DateTime.Now;
+
+        public DateTime GetLastRefreshTime()
+        {
+            return _lastRefreshTime;
+        }
         private UserManager() { }
 
         public bool LoadCacheData()
@@ -43,6 +49,7 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                         _users.TryAdd(user.Username, user);
                     }
                 }
+                _lastRefreshTime=DateTime.Now;
                 success = true;
             }
             catch (Exception ex)

@@ -17,6 +17,12 @@ namespace Pavolle.BES.AuthServer.Business.Manager
     {
         //Add //Edit //Delete eklenecek
         ConcurrentDictionary<long, List<CommunicationInfoCacheModel>> _communicationInfo;
+        DateTime _lastRefreshTime = DateTime.Now;
+
+        public DateTime GetLastRefreshTime()
+        {
+            return _lastRefreshTime;
+        }
         private CommunicationInfoManager() { }
 
         public bool LoadCacheData()
