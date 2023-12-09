@@ -20,10 +20,16 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         bool _serverStatus =false;
         bool _dbStatus = false;
         bool _userLoaded = false;
+
+        bool _loadPersoneStatus =false;
+        bool _loadRolesStatus = false;
+        bool _loadCommunicationInfo = false;
+
         private AuthServerStatusManager() { }
 
         public AuthServerStatusResponse GetServerStatus(IntegrationAppRequestBase request)
         {
+            bool serverRealStatus = _settingServerConnectionStatus && _serverStatus && _dbStatus && _userLoaded && _loadPersoneStatus && _loadRolesStatus && _loadCommunicationInfo;
             return new AuthServerStatusResponse
             {
                 AppInfo = WebAppInfoManager.Instance.GetAppCode(),
@@ -33,8 +39,14 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                 DbStatusString = _dbStatus ? "Connected" : "Connection Error",
                 LoadUserStatus = _userLoaded,
                 LoadUserStatusString = _userLoaded ? "Loaded" : "Connection Error",
-                ServerStatus = _serverStatus && _dbStatus,
-                ServerStatusString = _serverStatus && _dbStatus && _userLoaded ? "Ready" : "Not Ready",
+                LoadPersonStatus = _loadPersoneStatus,
+                LoadPersonStatusString = _loadPersoneStatus ? "Loaded" : "Connection Error",
+                LoadRoleStatus = _loadRolesStatus,
+                LoadRoleStatusString = _loadRolesStatus ? "Loaded" : "Connection Error",
+                LoadCommunicationInfoStatus = _loadCommunicationInfo,
+                LoadCommunicationInfoStatusString = _loadCommunicationInfo ? "Loaded" : "Connection Error",
+                ServerStatus = serverRealStatus,
+                ServerStatusString = serverRealStatus ? "Ready" : "Not Ready",
                 SettingServerConnectionStatus = _settingServerConnectionStatus,
                 SettingServerConnectionStatusString = _settingServerConnectionStatus ? "Connected" : "Not Connected",
                 SettingsReloadTime = SettingServiceManager.Instance.GetSettingsReloadTime()
@@ -71,6 +83,20 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         public void SetUserLoaded(bool status)
         {
             _userLoaded = status;
+        }
+        public void SetPersonLoaded(bool status)
+        {
+            _loadPersoneStatus = status;
+        }
+
+        public void SetRolesLoaded(bool status)
+        {
+            _loadRolesStatus = status;
+        }
+
+        public void SetCommunicationInfoLoaded(bool status)
+        {
+            _loadCommunicationInfo = status;
         }
     }
 }

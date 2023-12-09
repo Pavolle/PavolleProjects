@@ -11,6 +11,14 @@ namespace Pavolle.BES.AuthServer.Business.Manager
     {
         private CommunicationInfoManager() { }
 
+
+        public bool LoadCacheData()
+        {
+            bool success = true;
+
+            return success;
+        }
+
         internal string GetPersonDefaultEmailAddress(long personOid)
         {
             throw new NotImplementedException();

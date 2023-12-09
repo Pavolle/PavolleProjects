@@ -21,5 +21,11 @@ namespace Pavolle.BES.AuthServer.ViewModels.Response
         public DateTime SettingsReloadTime { get; set; }
         public bool LoadUserStatus { get; set; }
         public string LoadUserStatusString { get; set; }
+        public string LoadPersonStatusString { get; set; }
+        public bool LoadPersonStatus { get; set; }
+        public bool LoadRoleStatus { get; set; }
+        public string LoadRoleStatusString { get; set; }
+        public string LoadCommunicationInfoStatusString { get; set; }
+        public bool LoadCommunicationInfoStatus { get; set; }
     }
 }

@@ -86,7 +86,16 @@ internal class Program
         #region Loading Cache Data
         bool loadUserStatus=UserManager.Instance.LoadCacheData();
         AuthServerStatusManager.Instance.SetUserLoaded(loadUserStatus);
-        
+
+        bool loadPersoneStatus = PersonManager.Instance.LoadCacheData();
+        AuthServerStatusManager.Instance.SetPersonLoaded(loadPersoneStatus);
+
+        bool loadRolesStatus = RoleManager.Instance.LoadCacheData();
+        AuthServerStatusManager.Instance.SetRolesLoaded(loadRolesStatus);
+
+        bool loadCommunicationInfoStatus = CommunicationInfoManager.Instance.LoadCacheData();
+        AuthServerStatusManager.Instance.SetCommunicationInfoLoaded(loadUserStatus);
+
         #endregion
 
         AuthServerStatusManager.Instance.SetServerStatus(true);

@@ -12,5 +12,12 @@ namespace Pavolle.BES.AuthServer.Business.Manager
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(PersonManager));
         private PersonManager() { }
+
+        public bool LoadCacheData()
+        {
+            bool success =true;
+
+            return success;
+        }
     }
 }
