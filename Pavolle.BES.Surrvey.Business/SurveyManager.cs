@@ -18,6 +18,7 @@ using Pavolle.BES.RequestValidation;
 using Pavolle.BES.LogServer.ClientLib;
 using Pavolle.BES.AuthServer.Common.Enums;
 using Pavolle.BES.AuthServer.ClientLib;
+using Pavolle.Core.ViewModels.ViewData;
 
 namespace Pavolle.BES.Surrvey.Business
 {
@@ -116,7 +117,42 @@ namespace Pavolle.BES.Surrvey.Business
             {
                 using(Session session =XpoManager.Instance.GetNewSession())
                 {
+                    IQueryable<Survey> query = session.Query<Survey>();
+                    long? organizationOid = criteria.OrganizationOid;
+                    if (criteria.UserType == EUserType.Admin || criteria.UserType == EUserType.SystemAdmin)
+                    {
+                        if (criteria.SelectedOrganizationOid != null)
+                        {
+                            query = query.Where(t => t.CreatorOrganizationOid == criteria.SelectedOrganizationOid);
+                        }
+                    }
+                    else
+                    {
+                        query = query.Where(t => t.CreatorOrganizationOid == criteria.OrganizationOid);
+                    }
 
+                    var dataList = query.Select(t => new
+                    {
+                        t.Oid,
+                        t.CreatedTime,
+                        t.LastUpdateTime,
+                        t.Code,
+                        t.Status,
+                        t.CreatorOrganizationOid,
+                        t.ResearchOwnerOrganizationOid,
+                        t.CreatorUserOid,
+                        t.MultiLanguage,
+                        t.TransactionCount,
+                        t.Header
+                    }).ToList();
+
+                    //TODO Kontrol edip gerekirse burada foreach ile döneceğiz.
+                    response.DataList = dataList.Select(t => new LookupViewData
+                    {
+                        IsDefault = false,
+                        Key = t.Oid,
+                        Value = TranslateServiceManager.Instance.GetMessage(t.Header, criteria.Language.Value),
+                    }).ToList();
                 }
             }
             catch (Exception ex)
@@ -172,6 +208,7 @@ namespace Pavolle.BES.Surrvey.Business
 
                     if(code != null)
                     {
+                        //TODO multilanguage altyapısı eklenmemiş
                         var survey = new Survey(session)
                         {
                             Header = request.Header,

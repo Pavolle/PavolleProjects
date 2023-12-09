@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Pavolle.BES.Surrvey.Common\Pavolle.BES.Surrvey.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.TranslateServer.ClientLib\Pavolle.BES.TranslateServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.WebSecurity\Pavolle.BES.WebSecurity.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
     <ProjectReference Include="..\Pavolle.Security\Pavolle.Security.csproj" />
   </ItemGroup>

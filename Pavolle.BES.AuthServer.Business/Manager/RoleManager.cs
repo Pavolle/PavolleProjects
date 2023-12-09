@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.AuthServer.ViewModels.Model;
+﻿using Pavolle.BES.AuthServer.Common.Enums;
+using Pavolle.BES.AuthServer.ViewModels.Model;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Concurrent;
@@ -23,9 +24,23 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             return success;
         }
 
+        internal long GetUserRoleOid(string username)
+        {
+            long roleOid = 0;
+            return roleOid;
+        }
+
         internal List<string> GetUserRolesString(string username)
         {
-            throw new NotImplementedException();
+            //Burda eğer organizasyon kullanıcı varsa onun da adını eklememiz lazım. Örneğin Pavolle - Organization Admin
+            List<string> userRoles = new List<string>();
+            return userRoles;
+        }
+
+        internal EUserType GetUserType(string username)
+        {
+            EUserType userType = EUserType.NotUser ;
+            return userType;
         }
     }
 }

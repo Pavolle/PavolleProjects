@@ -15,9 +15,9 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 {
     public class CommunicationInfoManager : Singleton<CommunicationInfoManager>
     {
+        //Add //Edit //Delete eklenecek
         ConcurrentDictionary<long, List<CommunicationInfoCacheModel>> _communicationInfo;
         private CommunicationInfoManager() { }
-
 
         public bool LoadCacheData()
         {
@@ -48,6 +48,18 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             }
 
             return success;
+        }
+
+        public bool AddCommunicationInfo(CommunicationInfoCacheModel communicationInfo)
+        {
+            bool result=false;
+            return result;
+        }
+
+        public bool EditCommunicationInfo(CommunicationInfoCacheModel communicationInfo)
+        {
+            bool result = false;
+            return result;
         }
 
         public string GetPersonDefaultEmailAddress(long personOid)

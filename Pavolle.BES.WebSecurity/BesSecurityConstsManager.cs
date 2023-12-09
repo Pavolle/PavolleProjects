@@ -16,7 +16,7 @@ namespace Pavolle.BES.WebSecurity
 
         private readonly string UsernameKey;
         private readonly string SesionIdKey;
-        private readonly string UserGroupOidKey;
+        private readonly string RoleOidKey;
         private readonly string UserTypeKey;
         private readonly string LanguageKey;
         private readonly SymmetricSecurityKey key;
@@ -26,10 +26,10 @@ namespace Pavolle.BES.WebSecurity
         private BesSecurityConstsManager()
         {
             UsernameKey = "UN";
-            LanguageKey = "L";
+            LanguageKey = "LK";
             SesionIdKey = "SID";
             UserTypeKey = "UT";
-            UserGroupOidKey = "UG";
+            RoleOidKey = "RL";
             RequestIpKey = "RIP";
             CreatedTime = "CT";
             key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SymmetricSecurityKeyString)) { KeyId = "1000" };
@@ -70,9 +70,9 @@ namespace Pavolle.BES.WebSecurity
             return key;
         }
 
-        public string GetUserGroupOidKey()
+        public string GetRoleOidKey()
         {
-            return UserGroupOidKey;
+            return RoleOidKey;
         }
 
         public string GetUserTypeKey()

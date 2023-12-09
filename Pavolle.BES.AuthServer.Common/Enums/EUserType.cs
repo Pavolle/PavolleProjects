@@ -11,6 +11,7 @@ namespace Pavolle.BES.AuthServer.Common.Enums
         SystemAdmin=1,
         Admin=2,
         OrganizationAdmin=3,
-        OrganizationUser=4
+        OrganizationUser=4,
+        NotUser = 5
     }
 }

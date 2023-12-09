@@ -15,24 +15,14 @@ namespace Pavolle.BES.WebSecurity
 
         private BesJwtTokenManager() { }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="username"></param>
-        /// <param name="sessionId"></param>
-        /// <param name="userGroupOid"></param>
-        /// <param name="userType"></param>
-        /// <param name="language"></param>
-        /// <param name="requestIp"></param>
-        /// <param name="createdTime">Epoch time</param>
-        /// <returns></returns>
-        public string CreateToken(string username, string sessionId, string userGroupOid, string userType, string language, string requestIp, string createdTime)
+
+        public string CreateToken(string username, string sessionId, string roleOid, string userType, string language, string requestIp, string createdTime)
         {
             var subject = new ClaimsIdentity(new[]
             {
                 new Claim(BesSecurityConstsManager.Instance.GetUsernameKey(), username),
                 new Claim(BesSecurityConstsManager.Instance.GetSesionIdKey(), sessionId),
-                new Claim(BesSecurityConstsManager.Instance.GetUserGroupOidKey(), userGroupOid),
+                new Claim(BesSecurityConstsManager.Instance.GetRoleOidKey(), roleOid),
                 new Claim(BesSecurityConstsManager.Instance.GetUserTypeKey(), userType),
                 new Claim(BesSecurityConstsManager.Instance.GetLanguageKey(), language),
                 new Claim(BesSecurityConstsManager.Instance.GetCreatedTime(), language),
@@ -42,7 +32,7 @@ namespace Pavolle.BES.WebSecurity
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = subject,
-                Expires = DateTime.Now.AddHours(2),
+                Expires = DateTime.Now.AddDays(1),
                 Issuer = BesSecurityConstsManager.Issuer,
                 Audience = BesSecurityConstsManager.Audience,
                 SigningCredentials = new SigningCredentials(BesSecurityConstsManager.Instance.GetKey(), SecurityAlgorithms.HmacSha512Signature)
