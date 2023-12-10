@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.AppServer.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,9 @@ namespace Pavolle.BES.TranslateServer.DbModels.Entities
         [Persistent("variable")]
         [Size(2000)]
         public string Variable { get; set; }
+
+        [Persistent("bes_app_type")]
+        public EBesAppType? AppType { get; set; }
 
         [Persistent("tr")]
         [Size(2000)]

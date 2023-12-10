@@ -1,4 +1,6 @@
-﻿using Pavolle.BES.TranslateServer.ViewModels.Request;
+﻿using Pavolle.BES.TranslateServer.Common.Enums;
+using Pavolle.BES.TranslateServer.ViewModels.Model;
+using Pavolle.BES.TranslateServer.ViewModels.Request;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
 using System;
@@ -34,6 +36,16 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
         }
 
         public object GetData(string variable, IntegrationAppRequestBase request)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void AddCacheDataFromMessageCodeEnum(EMessageCode messageCode)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void AddTranslateCacheData(TranslateDataCacheModel item)
         {
             throw new NotImplementedException();
         }

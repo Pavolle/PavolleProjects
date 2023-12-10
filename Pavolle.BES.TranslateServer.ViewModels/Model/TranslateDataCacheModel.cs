@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pavolle.BES.AppServer.Common.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Pavolle.BES.TranslateServer.ViewModels.Model
     public class TranslateDataCacheModel
     {
         public string Variable { get; set; }
+        public EBesAppType? AppType { get; set; }
         public string TR { get; set; }
         public string EN { get; set; }
         public string ES { get; set; }
