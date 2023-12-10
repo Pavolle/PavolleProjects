@@ -22,6 +22,7 @@ namespace Pavolle.BES.TranslateServer.Common.Utils
             public const string BaseRoute = "api/translateserver/translatedata";
 
             public const string EditRoutePrefix = "edit/{oid}";
+            public const string AddRoutePrefix = "add";
             public const string GetRoutePrefix = "get/{variable}";
             public const string DetailRoutePrefix = "detail/{oid}";
             public const string GetAllDataRoutePrefix = "all";
