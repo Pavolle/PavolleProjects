@@ -1,4 +1,7 @@
 using log4net;
+using Pavolle.BES.SettingServer.ClientLib;
+using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.BES.TranslateServer.Business.Manager;
 using Pavolle.BES.WebFilter;
 using Pavolle.Core.Manager;
 
@@ -12,7 +15,7 @@ internal class Program
 
 
         ILog _log = LogManager.GetLogger(typeof(Program));
-        WebAppInfoManager.Instance.Initialize("Translate Server", "1.0.0", "TRTES-PLLE-112320-TA", new DateTime(2023, 11, 20));
+        WebAppInfoManager.Instance.Initialize("Translate Server", "1.0.1", "TRTES-PLLE-112320-TA", new DateTime(2023, 12, 10));
 
         _log.Info("  ");
         _log.Info("********************************************");
@@ -23,6 +26,24 @@ internal class Program
 
         var settings = builder.Configuration.GetSection("Settings").Get<Settings>();
         _log.Info("Setting Server URL is " + settings.SettingServerUrl);
+
+        SettingServiceManager.Instance.Initialize(settings.SettingServerUrl, WebAppInfoManager.Instance.GetAppCode(), WebAppInfoManager.Instance.GetId());
+        var settingServerStatus = SettingServiceManager.Instance.GetServerStatus();
+        if (settingServerStatus == null || !settingServerStatus.ServerStatus)
+        {
+            _log.Error("Setting server is not active! Application is closing!");
+            return;
+        }
+        else
+        {
+            TranslateStatusManager.Instance.SetSettingServerConnectionStatus(true);
+        }
+        var dbStatus = TransateServerDbManager.Instance.InitializeDb(SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection));
+        TranslateStatusManager.Instance.SetDbStatus(dbStatus);
+
+        TranslateServerSetupManager.Instance.Initialize();
+
+
         // Add services to the container.
 
         builder.Services.AddControllers();

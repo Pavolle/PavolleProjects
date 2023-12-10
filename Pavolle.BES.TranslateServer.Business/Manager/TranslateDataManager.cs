@@ -18,7 +18,22 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
             throw new NotImplementedException();
         }
 
+        public object Detail(long? oid, IntegrationAppRequestBase request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object EditTranslateData(long? oid, EditTranslateDataRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
         public object GetAllData(IntegrationAppRequestBase request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetData(string variable, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }

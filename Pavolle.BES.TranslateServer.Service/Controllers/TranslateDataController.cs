@@ -37,6 +37,51 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
             }
         }
 
+
+        [HttpGet(TranslateServerConsts.TranslateDataUrlConst.GetRoutePrefix)]
+        public ActionResult GetData(string variable, IntegrationAppRequestBase request)
+        {
+            if (request == null)
+            {
+                return BadRequest(new TranslateDataResponse { ErrorMessage = "Request format error!", StatusCode = 400 });
+            }
+            try
+            {
+                var response = TranslateDataManager.Instance.GetData(variable, request);
+
+                _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new TranslateDataResponse { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
+            }
+        }
+
+
+        [HttpGet(TranslateServerConsts.TranslateDataUrlConst.DetailRoutePrefix)]
+        public ActionResult Detail(long? oid, IntegrationAppRequestBase request)
+        {
+            if (request == null)
+            {
+                return BadRequest(new TranslateDataResponse { ErrorMessage = "Request format error!", StatusCode = 400 });
+            }
+            try
+            {
+                var response = TranslateDataManager.Instance.Detail(oid, request);
+
+                _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new TranslateDataDetailResponse { ErrorMessage = "Unexpected error occured!", StatusCode = 500 });
+            }
+        }
+        
+
         [HttpPost(TranslateServerConsts.TranslateDataUrlConst.AddRoutePrefix)]
         public ActionResult AddTranslateData([FromBody]AddTranslateDataRequest request)
         {
@@ -58,6 +103,8 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
             }
         }
 
+
+
         [HttpPost(TranslateServerConsts.TranslateDataUrlConst.EditRoutePrefix)]
         public ActionResult EditTranslateData(long? oid, [FromBody] EditTranslateDataRequest request)
         {
@@ -67,7 +114,7 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
             }
             try
             {
-                var response = TranslateDataManager.Instance.GetAllData(request);
+                var response = TranslateDataManager.Instance.EditTranslateData(oid, request);
 
                 _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);

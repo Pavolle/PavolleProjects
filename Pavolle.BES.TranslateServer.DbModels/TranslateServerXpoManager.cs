@@ -12,7 +12,7 @@ using Pavolle.BES.TranslateServer.DbModels.Entities;
 
 namespace Pavolle.BES.TranslateServer.DbModels
 {
-    public class XpoManager : Singleton<XpoManager>
+    public class TranslateServerXpoManager : Singleton<TranslateServerXpoManager>
     {
         private string _connectionString;
         public string ConnectionString
@@ -22,7 +22,7 @@ namespace Pavolle.BES.TranslateServer.DbModels
 
         private readonly object LockObject = new object();
 
-        private XpoManager()
+        private TranslateServerXpoManager()
         {
         }
 

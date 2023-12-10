@@ -22,5 +22,15 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
         {
             throw new NotImplementedException();
         }
+
+        public void SetDbStatus(bool dbStatus)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetSettingServerConnectionStatus(bool v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

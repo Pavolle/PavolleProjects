@@ -13,5 +13,10 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
         {
 
         }
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
