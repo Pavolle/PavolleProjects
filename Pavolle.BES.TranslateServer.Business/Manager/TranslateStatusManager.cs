@@ -11,6 +11,10 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
 {
     public class TranslateStatusManager : Singleton<TranslateStatusManager>
     {
+
+        bool _dbStatus = false;
+        bool _settingServerStatus = false;
+        bool _serverStatus = false;
         private TranslateStatusManager() { }
 
         public TranslateServerSettingsResponse GetServerSettings(IntegrationAppRequestBase request)
@@ -25,12 +29,12 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
 
         public void SetDbStatus(bool dbStatus)
         {
-            throw new NotImplementedException();
+            _dbStatus = dbStatus;
         }
 
-        public void SetSettingServerConnectionStatus(bool v)
+        public void SetSettingServerConnectionStatus(bool settingServerStatus)
         {
-            throw new NotImplementedException();
+            _settingServerStatus = settingServerStatus;
         }
     }
 }

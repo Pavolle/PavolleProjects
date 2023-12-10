@@ -41,6 +41,7 @@ internal class Program
         var dbStatus = TransateServerDbManager.Instance.InitializeDb(SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection));
         TranslateStatusManager.Instance.SetDbStatus(dbStatus);
 
+        TranslateDataManager.Instance.Initialize();
         TranslateServerSetupManager.Instance.Initialize();
 
 

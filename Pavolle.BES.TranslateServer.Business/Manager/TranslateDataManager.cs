@@ -1,9 +1,14 @@
-﻿using Pavolle.BES.TranslateServer.Common.Enums;
+﻿using log4net;
+using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.TranslateServer.ViewModels.Model;
 using Pavolle.BES.TranslateServer.ViewModels.Request;
+using Pavolle.BES.TranslateServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,41 +18,69 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
 {
     public class TranslateDataManager : Singleton<TranslateDataManager>
     {
-        private TranslateDataManager() { }
+        static readonly ILog _log = LogManager.GetLogger(typeof(TranslateDataManager));
 
-        public object AddTranslateData(AddTranslateDataRequest request)
+        ConcurrentDictionary<string, TranslateDataCacheModel> _translateDataList;
+        private TranslateDataManager() 
+        {
+        }
+
+        public void Initialize()
+        {
+            _translateDataList = new ConcurrentDictionary<string, TranslateDataCacheModel>();
+        }
+
+        public ResponseBase AddTranslateData(AddTranslateDataRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object Detail(long? oid, IntegrationAppRequestBase request)
+        public TranslateDataDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object EditTranslateData(long? oid, EditTranslateDataRequest request)
+        public ResponseBase EditTranslateData(long? oid, EditTranslateDataRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object GetAllData(IntegrationAppRequestBase request)
+        public TranslateDataListResponse GetAllData(IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object GetData(string variable, IntegrationAppRequestBase request)
+        public TranslateDataResponse GetData(string variable, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
         internal void AddCacheDataFromMessageCodeEnum(EMessageCode messageCode)
         {
-            throw new NotImplementedException();
+            AddTranslateCacheData(new TranslateDataCacheModel
+            {
+                Variable = messageCode.ToString(),
+                EN = messageCode.Description()
+            });
         }
 
         internal void AddTranslateCacheData(TranslateDataCacheModel item)
         {
-            throw new NotImplementedException();
+            if(!_translateDataList.ContainsKey(item.Variable))
+            {
+                _translateDataList.TryAdd(item.Variable, item);
+            }
+        }
+
+        internal void AddCacheDataFromLanguageEnum(ELanguage language)
+        {
+            var data = new TranslateDataCacheModel
+            {
+                Variable = language.ToString(),
+                EN = language.ToString()
+            };
+
+            AddTranslateCacheData(data);
         }
     }
 }

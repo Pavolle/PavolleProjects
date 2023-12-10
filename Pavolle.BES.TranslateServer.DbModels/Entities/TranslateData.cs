@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.TranslateServer.DbModels.Entities
 {
+    [Persistent("translate_datas")]
     public class TranslateData : BaseObject
     {
         public TranslateData(Session session) : base(session)
