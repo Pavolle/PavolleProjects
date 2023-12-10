@@ -19,6 +19,8 @@ namespace Pavolle.BES.AuthServer.Business.Manager
     public class AuthServerSetupManager : Singleton<AuthServerSetupManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(AuthServerSetupManager));
+        //const string sysAdminPassword = "tc!2Apll@ex?4-Ai!az";
+        const string sysAdminPassword = "123456";
         private AuthServerSetupManager() { }
 
         List<string> _apiKeys;
@@ -101,16 +103,17 @@ namespace Pavolle.BES.AuthServer.Business.Manager
                 sysAdmin = new User(session)
                 {
                     Person = person,
-                    Password = SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin"),
+                    //Password = SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin"),
+                    Password = SecurityHelperManager.Instance.GetEncryptedPassword(sysAdminPassword, "sysadmin"),
                     Username = "sysadmin"
                 };
                 sysAdmin.Save();
             }
             else
             {
-                if (sysAdmin.Password != SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin"))
+                if (sysAdmin.Password != SecurityHelperManager.Instance.GetEncryptedPassword(sysAdminPassword, "sysadmin"))
                 {
-                    sysAdmin.Password = SecurityHelperManager.Instance.GetEncryptedPassword("tc!2Apll@ex?4-Ai!az", "sysadmin");
+                    sysAdmin.Password = SecurityHelperManager.Instance.GetEncryptedPassword(sysAdminPassword, "sysadmin");
                     sysAdmin.LastUpdateTime = DateTime.Now;
                     sysAdmin.Save();
                 }

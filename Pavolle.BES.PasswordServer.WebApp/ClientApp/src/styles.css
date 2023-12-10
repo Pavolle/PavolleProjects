@@ -20,3 +20,29 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+app-header{
+  position: fixed; /* normalde fixed */
+  top:0px;
+  height: 4rem;
+  z-index: 2;
+}
+
+.mainarea{
+  position: absolute;
+  top: 4rem;
+  z-index: 1;
+}
+
+app-footer{
+  position: fixed;
+  left:0;
+  bottom: 0;
+  height: 3.5rem;
+  text-align:center;
+  color:white
+}
+
+.mainPageArea{
+  margin: 10px;
+}

@@ -1,5 +1,12 @@
 <body>
-  <main class="container">
-    <router-outlet></router-outlet>
-  </main>
+  <div class="mainPageArea">
+    <main *ngIf="!isAuthenticate()">
+      <router-outlet></router-outlet>
+    </main>
+    <main *ngIf="isAuthenticate()" class="mainarea">
+      <app-header></app-header>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </main>
+  </div>
 </body>

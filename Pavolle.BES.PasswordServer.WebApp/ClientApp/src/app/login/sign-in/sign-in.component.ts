@@ -7,6 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { getBaseUrl } from 'src/main';
 import { SignInResponse } from 'src/app/viewmodels/response/sign-in-response';
 import { EMessageCode } from 'src/app/viewmodels/enums/e-message-code.enum';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -21,7 +23,11 @@ export class SignInComponent {
   kullaniciGirisiAciklamaString:String;
   kullaniciAdiString:String;
 EMessageCode: any;
-  constructor(@Inject(HttpClient)http: HttpClient, private httpClient: HttpClient, private alertifyService: AlertifyService, private translateService: TranslateService){
+  constructor(@Inject(HttpClient)http: HttpClient, private httpClient: HttpClient,
+  private router: Router,
+  private authService: AuthService,
+  private alertifyService: AlertifyService,
+  private translateService: TranslateService){
     this.kullaniciGirisiAciklamaString=translateService.getMessage(EMessageCode.KullaniciGirisiAciklama);
     this.kullaniciGirisiString=translateService.getMessage(EMessageCode.KullaniciGirisi);
     this.parolaString=translateService.getMessage(EMessageCode.Parola);
@@ -58,9 +64,13 @@ EMessageCode: any;
     this.httpClient.post<SignInResponse>(path, JSON.stringify(this.request),{headers: headers}).subscribe(result => {
        if(!result.success){
         this.alertifyService.errorCenter(result.errorMessage);
+        console.log("Kullanıcı Adı veya Şifre hatalı!");
        }
        else{
-
+        sessionStorage.setItem("token", result.token);
+        this.authService.setIsAuthenticate(true);
+        this.router.navigate([('/main')]);
+        console.log("Kullanıcı Girişi Başarılı.");
        }
     }, error => console.error(error));
   }

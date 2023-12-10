@@ -9,10 +9,15 @@ import { PasswordManagerModule } from './password-manager/password-manager.modul
 import { AppComponent } from './app.component';
 import { SignInComponent } from './login/sign-in/sign-in.component';
 import { ListPasswordComponent } from './password-manager/list-password/list-password.component';
+import { HeaderComponent } from './include/header/header.component';
+import { FooterComponent } from './include/footer/footer.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -11,7 +11,7 @@ using System.Text.Json;
 namespace Pavolle.BES.TranslateServer.Service.Controllers
 {
     [Produces("application/json")]
-    [Route(TranslateServerConsts.ServerStatusUrlConst.Route)]
+    [Route(TranslateServerConsts.ServerStatusUrlConst.BaseRoute)]
     public class ServerStatusController : Controller
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(ServerStatusController));
