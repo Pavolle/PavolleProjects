@@ -1,4 +1,6 @@
 using log4net;
+using Pavolle.BES.Business;
+using Pavolle.BES.Common.Enums;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.TranslateServer.Business.Manager;
@@ -15,7 +17,7 @@ internal class Program
 
 
         ILog _log = LogManager.GetLogger(typeof(Program));
-        WebAppInfoManager.Instance.Initialize("Translate Server", "1.0.1", "TRTES-PLLE-112320-TA", new DateTime(2023, 12, 10));
+        WebAppInfoManager.Instance.Initialize("Translate Server", "1.0.2", AppIdManager.Instance.GetBesAppIdByBesType(EBesAppType.CoreTranslateServer), new DateTime(2023, 12, 11));
 
         _log.Info("  ");
         _log.Info("********************************************");

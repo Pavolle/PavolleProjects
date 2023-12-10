@@ -1,6 +1,7 @@
 ﻿using DevExpress.Xpo;
 using Pavolle.BES.AppServer.Common.Enums;
 using Pavolle.BES.AuthServer.Common.Enums;
+using Pavolle.BES.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pavolle.BES.AppServer.Common\Pavolle.BES.AppServer.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.Common\Pavolle.BES.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>

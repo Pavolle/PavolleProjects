@@ -1,13 +1,14 @@
-﻿using Pavolle.BES.Common.Enums;
+﻿using Pavolle.BES.AppServer.Common.Enums;
+using Pavolle.BES.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.TranslateServer.ViewModels.Model
+namespace Pavolle.BES.TranslateServer.ViewModels.ViewData
 {
-    public class TranslateDataCacheModel
+    public class TranslateDataViewData
     {
         public string Variable { get; set; }
         public EBesAppType? AppType { get; set; }

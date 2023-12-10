@@ -1,4 +1,4 @@
-﻿using Pavolle.BES.AppServer.Common.Enums;
+﻿using Pavolle.BES.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,8 @@
-﻿using Pavolle.BES.TranslateServer.ViewModels.Response;
+﻿using Pavolle.BES.SettingServer.ClientLib;
+using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.BES.TranslateServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.Core.Manager;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -19,12 +22,31 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
 
         public TranslateServerSettingsResponse GetServerSettings(IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            return new TranslateServerSettingsResponse
+            {
+                Language = SettingServiceManager.Instance.GetDefaultLanguage(),
+                SystemLanguage = SettingServiceManager.Instance.GetSystemLanguage(),
+                SettingServerBaseUrl = SettingServiceManager.Instance.GetServerUrl(),
+                DbConnectionString = SettingServiceManager.Instance.GetSetting(ESettingType.DbConnection) != null ? "Ok" : "Error!"
+            };
         }
 
         public TranslateServerStatusResponse GetServerStatus(IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            bool serverStatus = _serverStatus && _settingServerStatus && _dbStatus;
+            return new TranslateServerStatusResponse
+            {
+                AppInfo = WebAppInfoManager.Instance.GetAppCode(),
+                Version = WebAppInfoManager.Instance.GetVersion(),
+                ReleaseDate = WebAppInfoManager.Instance.GetReleaseDate(),
+                ServerStatus = serverStatus,
+                ServerStatusString = serverStatus ? "Ready" : "Not Ready",
+                DbStatus = _dbStatus,
+                DbStatusString = _dbStatus ? "Connected" : "Connection Error!",
+                SettingServerConnectionStatus = _settingServerStatus,
+                SettingServerConnectionStatusString = _settingServerStatus ? "Connected" : "Not Connected",
+                SettingsReloadTime = SettingServiceManager.Instance.GetSettingsReloadTime()
+            };
         }
 
         public void SetDbStatus(bool dbStatus)

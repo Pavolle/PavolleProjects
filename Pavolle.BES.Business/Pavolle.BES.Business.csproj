@@ -7,12 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
+    <PackageReference Include="log4net" Version="2.0.15" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pavolle.BES.AppServer.Common\Pavolle.BES.AppServer.Common.csproj" />
-    <ProjectReference Include="..\Pavolle.BES.AuthServer.Common\Pavolle.BES.AuthServer.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.Common\Pavolle.BES.Common.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>

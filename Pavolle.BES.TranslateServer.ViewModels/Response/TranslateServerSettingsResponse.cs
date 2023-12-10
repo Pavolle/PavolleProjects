@@ -1,4 +1,5 @@
 ﻿using Pavolle.BES.ViewModels.Response;
+using Pavolle.Core.Enums;
 using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,11 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.TranslateServer.ViewModels.Response
 {
-    public class TranslateServerSettingsResponse : ServerStatusResponseBase
+    public class TranslateServerSettingsResponse : ResponseBase
     {
-
+        public ELanguage Language { get; set; }
+        public ELanguage SystemLanguage { get; set; }
+        public string SettingServerBaseUrl { get; set; }
+        public string DbConnectionString { get; set; }
     }
 }

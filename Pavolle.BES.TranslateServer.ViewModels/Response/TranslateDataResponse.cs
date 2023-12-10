@@ -1,4 +1,5 @@
-﻿using Pavolle.Core.ViewModels.Response;
+﻿using Pavolle.BES.TranslateServer.ViewModels.ViewData;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Pavolle.BES.TranslateServer.ViewModels.Response
 {
     public class TranslateDataResponse : ResponseBase
     {
+        public TranslateDataViewData Data { get; set; }
     }
 }

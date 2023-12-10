@@ -4,6 +4,7 @@ using Pavolle.BES.AppServer.Common.Enums;
 using Pavolle.BES.AuthServer.Common.Enums;
 using Pavolle.BES.AuthServer.DbModels;
 using Pavolle.BES.AuthServer.DbModels.Entities;
+using Pavolle.BES.Common.Enums;
 using Pavolle.BES.PasswordServer.Common.Utils;
 using Pavolle.BES.Surrvey.Common.Utils;
 using Pavolle.Core.Utils;

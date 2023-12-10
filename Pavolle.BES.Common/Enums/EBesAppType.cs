@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.AppServer.Common.Enums
+namespace Pavolle.BES.Common.Enums
 {
     public enum EBesAppType
     {
