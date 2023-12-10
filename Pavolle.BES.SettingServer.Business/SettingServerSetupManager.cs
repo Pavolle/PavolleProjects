@@ -14,10 +14,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.SettingServer.Business
 {
-    public class SetupManager : Singleton<SetupManager>
+    public class SettingServerSetupManager : Singleton<SettingServerSetupManager>
     {
-        static readonly ILog _log = LogManager.GetLogger(typeof(SetupManager));
-        private SetupManager()
+        static readonly ILog _log = LogManager.GetLogger(typeof(SettingServerSetupManager));
+        private SettingServerSetupManager()
         {
 
         }
@@ -455,6 +455,17 @@ namespace Pavolle.BES.SettingServer.Business
                                 }.Save();
 
                                 _log.Info("SurrveyServerImageBaseFilePath value is C://pavolle//surrvey//images//");
+                                break;
+
+                            case ESettingType.AuthServerUrl:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "https://localhost:7157",
+                                    Category = ESettingCategory.Surrvey
+                                }.Save();
+
+                                _log.Info("AuthServerUrl value is https://localhost:7157");
                                 break;
 
                         }

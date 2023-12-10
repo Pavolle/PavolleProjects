@@ -141,6 +141,13 @@ namespace Pavolle.BES.SettingServer.Common.Enums
 
         [Description("Surrvey Server - URL")]
         SurrveyServerlURL =701,
+
+        #endregion
+
+        #region Auth Server
+
+        [Description("Auth Server - URL")]
+        AuthServerUrl = 800,
         #endregion
     }
 }

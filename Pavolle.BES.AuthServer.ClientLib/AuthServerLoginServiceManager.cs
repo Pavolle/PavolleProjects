@@ -1,6 +1,9 @@
-﻿using Pavolle.BES.AuthServer.ViewModels.Request;
+﻿using Newtonsoft.Json.Linq;
+using Pavolle.BES.AuthServer.Common.Utils;
+using Pavolle.BES.AuthServer.ViewModels.Request;
 using Pavolle.BES.AuthServer.ViewModels.Response;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +18,8 @@ namespace Pavolle.BES.AuthServer.ClientLib
 
         public SignInResponse SignIn(LoginRequest request)
         {
-            throw new NotImplementedException();
+            var response = AuthServiceHelperManager.Instance.Post<SignInResponse>(BesAuthServerApiUrlConsts.LoginUrlConsts.BaseRoute + "/" + BesAuthServerApiUrlConsts.LoginUrlConsts.SignInRoutePrefix, request);
+            return response;
         }
     }
 }

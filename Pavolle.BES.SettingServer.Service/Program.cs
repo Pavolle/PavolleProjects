@@ -35,7 +35,7 @@ internal class Program
         else
         {
             _log.Info("Checking setup configuration...");
-            SetupManager.Instance.Initialize();
+            SettingServerSetupManager.Instance.Initialize();
             _log.Info("Setup configuration done.");
 
 
