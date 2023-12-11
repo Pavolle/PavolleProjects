@@ -9,5 +9,12 @@ namespace Pavolle.BES.TranslateServer.ViewModels.Request
 {
     public class EditTranslateDataRequest : IntegrationAppRequestBase
     {
+        public string TR { get; set; }
+        public string EN { get; set; }
+        public string ES { get; set; }
+        public string FR { get; set; }
+        public string RU { get; set; }
+        public string DE { get; set; }
+        public string AZ { get; set; }
     }
 }

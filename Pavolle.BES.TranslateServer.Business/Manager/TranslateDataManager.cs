@@ -94,12 +94,81 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
 
         public TranslateDataDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new TranslateDataDetailResponse();
+            using (Session session = TranslateServerXpoManager.Instance.GetNewSession())
+            {
+                var data = session.Query<TranslateData>().FirstOrDefault(t => t.Oid == oid);
+                if (data == null)
+                {
+                    response.ErrorMessage = GetMessageFromMessageCode(EMessageCode.RecordNotFoundException, request.Language.Value);
+                    response.StatusCode = 400;
+                    return response;
+                }
+                response.Detail = new TranslateDataViewData
+                {
+                    Variable = data.Variable,
+                    AppType = data.AppType,
+                    EN = data.EN,
+                    FR = data.FR,
+                    ES = data.ES,
+                    RU = data.RU,
+                    AZ = data.AZ,
+                    TR = data.TR,
+                    DE = data.DE,
+                };
+            }
+            return response;
         }
 
         public ResponseBase EditTranslateData(long? oid, EditTranslateDataRequest request)
         {
-            throw new NotImplementedException();
+            var response = new ResponseBase();
+            using (Session session = TranslateServerXpoManager.Instance.GetNewSession())
+            {
+                var data = session.Query<TranslateData>().FirstOrDefault(t => t.Oid == oid);
+                if (data == null)
+                {
+                    response.ErrorMessage = GetMessageFromMessageCode(EMessageCode.RecordNotFoundException, request.Language.Value);
+                    response.StatusCode = 400;
+                    return response;
+                }
+
+                data.EN = request.EN;
+                data.FR = request.FR;
+                data.ES = request.ES;
+                data.RU = request.RU;
+                data.AZ = request.AZ;
+                data.TR = request.TR;
+                data.DE = request.DE;
+
+                data.LastUpdateTime=DateTime.Now;
+
+                UpdateCacheData(new TranslateDataCacheModel
+                {
+                    Variable = data.Variable,
+                    AppType = data.AppType,
+                    EN = data.EN,
+                    FR = data.FR,
+                    ES = data.ES,
+                    RU = data.RU,
+                    AZ = data.AZ,
+                    TR = data.TR,
+                    DE = data.DE,
+                });
+            }
+            return response;
+        }
+
+        private void UpdateCacheData(TranslateDataCacheModel item)
+        {
+            if (!_translateDataList.ContainsKey(item.Variable))
+            {
+                _translateDataList.TryAdd(item.Variable, item);
+            }
+            else
+            {
+                _translateDataList[item.Variable] = item;
+            }
         }
 
         public TranslateDataListResponse GetAllData(IntegrationAppRequestBase request)
