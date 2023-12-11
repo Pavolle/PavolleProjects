@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.Business\Pavolle.BES.Business.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.Business\Pavolle.BES.SettingServer.Business.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.Common\Pavolle.BES.SettingServer.Common.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.ViewModels\Pavolle.BES.SettingServer.ViewModels.csproj" />

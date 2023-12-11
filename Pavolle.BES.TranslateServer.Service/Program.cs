@@ -17,7 +17,7 @@ internal class Program
 
 
         ILog _log = LogManager.GetLogger(typeof(Program));
-        WebAppInfoManager.Instance.Initialize("Translate Server", "1.0.2", AppIdManager.Instance.GetBesAppIdByBesType(EBesAppType.CoreTranslateServer), new DateTime(2023, 12, 11));
+        WebAppInfoManager.Instance.Initialize("Translate Server", "1.0.0", AppIdManager.Instance.GetBesAppIdByBesType(EBesAppType.CoreTranslateServer), new DateTime(2023, 12, 11));
 
         _log.Info("  ");
         _log.Info("********************************************");
