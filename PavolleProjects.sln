@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SmartAppCoder", "Pavolle.SmartAppCoder\Pavolle.SmartAppCoder.csproj", "{CBD68F50-35BA-4439-9A90-71CFF53D4ABA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0000 Neleri Başardık", "0000 Neleri Başardık", "{45FE0CE4-3424-40A8-A14F-28C427FF7E63}"
+	ProjectSection(SolutionItems) = preProject
+		projefikirleri.txt = projefikirleri.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2023", "2023", "{59CD6A3D-7959-4CE0-9D4E-B65927D030DB}"
 EndProject
@@ -522,19 +525,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Business", "Pav
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectS", "ProjectS", "{3EBB45CB-DA59-43B9-9F4A-906EB72DD614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Projects.Business", "Pavolle.BES.Projects.Business\Pavolle.BES.Projects.Business.csproj", "{BFF3B235-DCDB-499E-8C5E-D9AAA7F85FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Projects.Business", "Pavolle.BES.Projects.Business\Pavolle.BES.Projects.Business.csproj", "{BFF3B235-DCDB-499E-8C5E-D9AAA7F85FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Projects.ViewModels", "Pavolle.BES.Projects.ViewModels\Pavolle.BES.Projects.ViewModels.csproj", "{4683AFCE-A75C-4899-B21C-DED0A1DF6B15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Projects.ViewModels", "Pavolle.BES.Projects.ViewModels\Pavolle.BES.Projects.ViewModels.csproj", "{4683AFCE-A75C-4899-B21C-DED0A1DF6B15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Projects.ClientLib", "Pavolle.BES.Projects.ClientLib\Pavolle.BES.Projects.ClientLib.csproj", "{71B4731C-0BC4-4CDA-BF6B-B0D657D20EC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Projects.ClientLib", "Pavolle.BES.Projects.ClientLib\Pavolle.BES.Projects.ClientLib.csproj", "{71B4731C-0BC4-4CDA-BF6B-B0D657D20EC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Projects.Common", "Pavolle.BES.Projects.Common\Pavolle.BES.Projects.Common.csproj", "{8B65727C-2299-4DA9-9293-D442890B6153}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Projects.Common", "Pavolle.BES.Projects.Common\Pavolle.BES.Projects.Common.csproj", "{8B65727C-2299-4DA9-9293-D442890B6153}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Projects.DbModels", "Pavolle.BES.Projects.DbModels\Pavolle.BES.Projects.DbModels.csproj", "{6232AD18-0B45-4ED6-AD21-C142023282A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Projects.DbModels", "Pavolle.BES.Projects.DbModels\Pavolle.BES.Projects.DbModels.csproj", "{6232AD18-0B45-4ED6-AD21-C142023282A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Projects.UnitTests", "Pavolle.BES.Projects.UnitTests\Pavolle.BES.Projects.UnitTests.csproj", "{EF86D9D8-5FA1-466D-983B-F59575898C21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Projects.UnitTests", "Pavolle.BES.Projects.UnitTests\Pavolle.BES.Projects.UnitTests.csproj", "{EF86D9D8-5FA1-466D-983B-F59575898C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Projects.WebApp", "Pavolle.BES.Projects.WebApp\Pavolle.BES.Projects.WebApp.csproj", "{DB298B51-3B57-434C-8F64-4BD9C64560C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Projects.WebApp", "Pavolle.BES.Projects.WebApp\Pavolle.BES.Projects.WebApp.csproj", "{DB298B51-3B57-434C-8F64-4BD9C64560C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EkapIhaleArama", "EkapIhaleArama\EkapIhaleArama.csproj", "{C2148D85-7A6C-4E8A-9427-FE5D8E7CB599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1354,6 +1359,10 @@ Global
 		{DB298B51-3B57-434C-8F64-4BD9C64560C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB298B51-3B57-434C-8F64-4BD9C64560C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB298B51-3B57-434C-8F64-4BD9C64560C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2148D85-7A6C-4E8A-9427-FE5D8E7CB599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2148D85-7A6C-4E8A-9427-FE5D8E7CB599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2148D85-7A6C-4E8A-9427-FE5D8E7CB599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2148D85-7A6C-4E8A-9427-FE5D8E7CB599}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1609,6 +1618,7 @@ Global
 		{6232AD18-0B45-4ED6-AD21-C142023282A6} = {3EBB45CB-DA59-43B9-9F4A-906EB72DD614}
 		{EF86D9D8-5FA1-466D-983B-F59575898C21} = {3EBB45CB-DA59-43B9-9F4A-906EB72DD614}
 		{DB298B51-3B57-434C-8F64-4BD9C64560C3} = {3EBB45CB-DA59-43B9-9F4A-906EB72DD614}
+		{C2148D85-7A6C-4E8A-9427-FE5D8E7CB599} = {8AC250C4-4F76-4AD1-B202-5D8EC5168023}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
