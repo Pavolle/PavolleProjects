@@ -11,14 +11,14 @@ using System.Text.Json;
 namespace Pavolle.BES.TranslateServer.Service.Controllers
 {
     [Produces("application/json")]
-    [Route(TranslateServerConsts.ServerStatusUrlConst.BaseRoute)]
+    [Route(TranslateServerUrlConsts.ServerStatusUrlConst.BaseRoute)]
     public class ServerStatusController : Controller
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(ServerStatusController));
 
         
 
-        [HttpGet(TranslateServerConsts.ServerStatusUrlConst.ServerDetailRoutePrefix)]
+        [HttpGet(TranslateServerUrlConsts.ServerStatusUrlConst.ServerDetailRoutePrefix)]
         public ActionResult Detail(IntegrationAppRequestBase request)
         {
             if (request == null)
@@ -40,7 +40,7 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
         }
 
 
-        [HttpGet(TranslateServerConsts.ServerStatusUrlConst.ServerSettingsRoutePrefix)]
+        [HttpGet(TranslateServerUrlConsts.ServerStatusUrlConst.ServerSettingsRoutePrefix)]
         public ActionResult Settings(IntegrationAppRequestBase request)
         {
             if (request == null)
@@ -61,7 +61,7 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
         }
 
 
-        [HttpPost(TranslateServerConsts.ServerStatusUrlConst.ReloadAllServerSettingsRoutePrefix)]
+        [HttpPost(TranslateServerUrlConsts.ServerStatusUrlConst.ReloadAllServerSettingsRoutePrefix)]
         public ActionResult ReloadAllSettings(IntegrationAppRequestBase request)
         {
             if (request == null)

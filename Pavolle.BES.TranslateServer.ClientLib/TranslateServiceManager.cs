@@ -1,5 +1,8 @@
 ﻿using Pavolle.BES.TranslateServer.Common.Enums;
+using Pavolle.BES.TranslateServer.Common.Utils;
 using Pavolle.BES.TranslateServer.ViewModels.Model;
+using Pavolle.BES.TranslateServer.ViewModels.Response;
+using Pavolle.BES.TranslateServer.ViewModels.ViewData;
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using System;
@@ -12,12 +15,15 @@ namespace Pavolle.BES.TranslateServer.ClientLib
 {
     public class TranslateServiceManager : Singleton<TranslateServiceManager>
     {
-        List<TranslateDataCacheModel> _translateData;
+        List<TranslateDataViewData> _translateData;
         private TranslateServiceManager() { }
-        string _serverUrl;
-        public void Initialize(string serverUrl) 
+        public void Initialize() 
         {
-            _serverUrl = serverUrl;
+            var response = TranslateServerHelperManager.Instance.Get<TranslateDataListResponse>(TranslateServerUrlConsts.TranslateDataUrlConst.BaseRoute + "/" + TranslateServerUrlConsts.TranslateDataUrlConst.GetAllDataRoutePrefix);
+            if (response != null)
+            {
+                _translateData = response.DataList;
+            }
         }
 
         public string GetMessage(EMessageCode messageCode, ELanguage language)

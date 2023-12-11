@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.TranslateServer.Common.Utils
 {
-    public class TranslateServerConsts
+    public class TranslateServerUrlConsts
     {
         public class ServerStatusUrlConst
         {

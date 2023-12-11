@@ -169,11 +169,11 @@ namespace Pavolle.BES.SettingServer.Business
                                 new Setting(session)
                                 {
                                     SettingType = item,
-                                    Value = "https://localhost:7118/",
+                                    Value = "https://localhost:7118",
                                     Category = ESettingCategory.TranslateServer
                                 }.Save();
 
-                                _log.Info("TranslateServerBaseUrl value is https://localhost:7118/");
+                                _log.Info("TranslateServerBaseUrl value is https://localhost:7118");
                                 break;
 
                             case ESettingType.DefaultLanguage:

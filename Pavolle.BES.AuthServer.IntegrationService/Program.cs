@@ -2,6 +2,7 @@ using log4net;
 using Pavolle.BES.AuthServer.Business.Manager;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.BES.TranslateServer.ClientLib;
 using Pavolle.BES.WebFilter;
 using Pavolle.Core.Manager;
 
@@ -44,6 +45,9 @@ internal class Program
         AuthServerStatusManager.Instance.SetDbStatus(dbStatus);
 
         AuthServerSetupManager.Instance.Initialize();
+
+        TranslateServerHelperManager.Instance.Initialize(SettingServiceManager.Instance.GetSetting(ESettingType.TranslateServerBaseUrl), WebAppInfoManager.Instance.GetAppCode(), WebAppInfoManager.Instance.GetId());
+        TranslateServiceManager.Instance.Initialize();
 
         // Add services to the container.
 

@@ -11,12 +11,12 @@ using System.Text.Json;
 namespace Pavolle.BES.TranslateServer.Service.Controllers
 {
     [Produces("application/json")]
-    [Route(TranslateServerConsts.TranslateDataUrlConst.BaseRoute)]
+    [Route(TranslateServerUrlConsts.TranslateDataUrlConst.BaseRoute)]
     public class TranslateDataController : Controller
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(TranslateDataController));
 
-        [HttpGet(TranslateServerConsts.TranslateDataUrlConst.GetAllDataRoutePrefix)]
+        [HttpGet(TranslateServerUrlConsts.TranslateDataUrlConst.GetAllDataRoutePrefix)]
         public ActionResult GetAllData(IntegrationAppRequestBase request)
         {
             if (request == null)
@@ -38,7 +38,7 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
         }
 
 
-        [HttpGet(TranslateServerConsts.TranslateDataUrlConst.GetRoutePrefix)]
+        [HttpGet(TranslateServerUrlConsts.TranslateDataUrlConst.GetRoutePrefix)]
         public ActionResult GetData(string variable, IntegrationAppRequestBase request)
         {
             if (request == null)
@@ -60,7 +60,7 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
         }
 
 
-        [HttpGet(TranslateServerConsts.TranslateDataUrlConst.DetailRoutePrefix)]
+        [HttpGet(TranslateServerUrlConsts.TranslateDataUrlConst.DetailRoutePrefix)]
         public ActionResult Detail(long? oid, IntegrationAppRequestBase request)
         {
             if (request == null)
@@ -82,7 +82,7 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
         }
         
 
-        [HttpPost(TranslateServerConsts.TranslateDataUrlConst.AddRoutePrefix)]
+        [HttpPost(TranslateServerUrlConsts.TranslateDataUrlConst.AddRoutePrefix)]
         public ActionResult AddTranslateData([FromBody]AddTranslateDataRequest request)
         {
             if (request == null)
@@ -105,7 +105,7 @@ namespace Pavolle.BES.TranslateServer.Service.Controllers
 
 
 
-        [HttpPost(TranslateServerConsts.TranslateDataUrlConst.EditRoutePrefix)]
+        [HttpPost(TranslateServerUrlConsts.TranslateDataUrlConst.EditRoutePrefix)]
         public ActionResult EditTranslateData(long? oid, [FromBody] EditTranslateDataRequest request)
         {
             if (request == null)
