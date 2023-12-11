@@ -1,7 +1,10 @@
-﻿using log4net;
+﻿using DevExpress.Xpo;
+using log4net;
 using Pavolle.BES.Business;
 using Pavolle.BES.Common.Enums;
 using Pavolle.BES.TranslateServer.Common.Enums;
+using Pavolle.BES.TranslateServer.DbModels;
+using Pavolle.BES.TranslateServer.DbModels.Entities;
 using Pavolle.BES.TranslateServer.ViewModels.Model;
 using Pavolle.BES.TranslateServer.ViewModels.Request;
 using Pavolle.BES.TranslateServer.ViewModels.Response;
@@ -36,7 +39,57 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
 
         public ResponseBase AddTranslateData(AddTranslateDataRequest request)
         {
-            throw new NotImplementedException();
+            var response=new ResponseBase();    
+            using(Session session = TranslateServerXpoManager.Instance.GetNewSession())
+            {
+                var data = new TranslateData(session)
+                {
+                    Variable = request.Variable,
+                    AppType = AppIdManager.Instance.GetBesAppTypeByAppId(request.AppId),
+                };
+                switch (request.CurrentLanguage.Value)
+                {
+                    case ELanguage.English:
+                        data.EN = request.Value;
+                        break;
+                    case ELanguage.German:
+                        data.DE = request.Value;
+                        break;
+                    case ELanguage.Spanish:
+                        data.ES = request.Value;
+                        break;
+                    case ELanguage.French:
+                        data.FR = request.Value;
+                        break;
+                    case ELanguage.Russian:
+                        data.RU = request.Value;
+                        break;
+                    case ELanguage.Turkish:
+                        data.TR = request.Value;
+                        break;
+                    case ELanguage.Azerbaijani:
+                        data.AZ = request.Value;
+                        break;
+                    default:
+                        data.EN = request.Value;
+                        break;
+                }
+                data.Save();
+
+                AddTranslateCacheData(new TranslateDataCacheModel
+                {
+                    Variable = data.Variable,
+                    DE = data.DE,
+                    FR = data.FR,
+                    RU = data.RU,
+                    AZ = data.AZ,
+                    EN = data.EN,
+                    TR = data.TR,
+                    ES = data.ES,
+                    AppType = data.AppType
+                });
+            }
+            return response;
         }
 
         public TranslateDataDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
@@ -97,15 +150,6 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
             throw new NotImplementedException();
         }
 
-        internal void AddCacheDataFromMessageCodeEnum(EMessageCode messageCode)
-        {
-            AddTranslateCacheData(new TranslateDataCacheModel
-            {
-                Variable = messageCode.ToString(),
-                EN = messageCode.Description()
-            });
-        }
-
         internal void AddTranslateCacheData(TranslateDataCacheModel item)
         {
             if(!_translateDataList.ContainsKey(item.Variable))
@@ -114,15 +158,5 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
             }
         }
 
-        internal void AddCacheDataFromLanguageEnum(ELanguage language)
-        {
-            var data = new TranslateDataCacheModel
-            {
-                Variable = language.ToString(),
-                EN = language.ToString()
-            };
-
-            AddTranslateCacheData(data);
-        }
     }
 }
