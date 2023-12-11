@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.Surrvey.DbModels.Entities
 {
-    [Persistent("answers")]
+    [Persistent("surs_answers")]
     public class Answer : BaseObject
     {
         public Answer(Session session) : base(session)

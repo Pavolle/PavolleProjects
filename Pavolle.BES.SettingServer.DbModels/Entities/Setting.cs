@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.SettingServer.DbModels.Entities
 {
-    [Persistent(SettingServerConsts.DbConsts.IsPostgres ? "settings" : "settings")]
+    [Persistent(SettingServerConsts.DbConsts.IsPostgres ? "ss_settings" : "ss_settings")]
     public class Setting : BaseObject
     {
         public Setting(Session session) : base(session)

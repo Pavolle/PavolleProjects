@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AppServer.DbModels.Entities
 {
-    [Persistent("applications")]
+    [Persistent("apps_applications")]
     public class Application : BaseObject
     {
         public Application(Session session) : base(session)

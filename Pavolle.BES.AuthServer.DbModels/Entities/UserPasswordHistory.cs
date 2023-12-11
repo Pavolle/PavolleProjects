@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels.Entities
 {
-    [Persistent("user_password_histories")]
+    [Persistent("as_user_password_histories")]
     public class UserPasswordHistory : BaseObject
     {
         public UserPasswordHistory(Session session) : base(session)

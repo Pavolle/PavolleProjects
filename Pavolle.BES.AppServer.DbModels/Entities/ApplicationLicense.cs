@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AppServer.DbModels.Entities
 {
-    [Persistent("applicatation_license")]
+    [Persistent("apps_applicatation_license")]
     public class ApplicationLicense : BaseObject
     {
         public ApplicationLicense(Session session) : base(session)
