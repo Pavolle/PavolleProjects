@@ -2,33 +2,19 @@
 
 Dijital Garanti Belgesi: Garanti belgeleriyle uðraþmak ve onlarý faturanýn yanýnda saklamak zorunda olmak sýkýntý verici. Kaybolabiliyorlar ve yer kaplýyorlar. Keþke bu belgeler de dijital olsaydý. Fatura kesildiðinde sisteme otomatik bir garanti belgesi tanýmlansaydý. Ürün elimize ulaþýnca da biz onaylayabilseydik.
 
-Glisemik indeks: Bir mobil uygulamayla gýdalarýn glisemik indeksleri kolayca aranabilseydi. Mevcut uygulamalar var ama kullanýcý dostu deðil ve arama özelliði yok ya da geliþmemiþ.
-
-Kiþiye Özel SMS: Bayram ve özel günlerde kiþiye ismiyle mesaj gönderebilen bir mobil uygulama güzel olurdu. Kiþilere nasýl hitap edildiði (dostum, X amca, kardeþim vs) girildikten sonra hitap þablona yerleþtirilir ve telefon üzerinden SMS gönderilir. (Yapýlmýþ: SMS Merge)
-
 Muhasebeciler için fiþ OCR mobil uygulama: Muhasebeciler masraf fiþlerini tek tek okuyup topluyorlar. Bunun yerine yan yana dizip fotoðrafýný çeksinler ya da kendilerine müþterileri tarafýndan gönderilen taranmýþ fiþleri sisteme yüklesinler. Sistem de bu fotoðraflarý otomatik analiz edip tutarlarýný ve içeriklerini tablo halinde sunsun. Böylelikle masraf gösterme sürecinde muhasebecilerin iþi kolaylaþsýn. Bu iþi yapmakta olan firmalar (expensify ve yerli bir firma) olduðunu duydum ama hala fýrsat var (fiþler piyasadan kalkmadan önce).
 
 Akýllý Haberci: Haber sitelerini gezerken sizi takip edip hangi habere ne kadar vakit harcadýðýnýzý, etiketleri ve metniyle birlikte takip eden bir Chrome eklentisi. Zamanla hangi haberleri sevip hangilerini sevmediðini öðrenmiþ olur ve tavsiyelerde bulunabilir.
 
 Freelance Öðrenci: Öðrencilerin ufak tefek iþleri uygun ücretlere yaparak kendilerini geliþtirebileceði platform.
 
-Düðüniptal: Son anda iptal edilen düðün mekan anlaþmalarýnýn bir baþkasýna devredilebilmesi için ilan verilen bir platform
+Organizasyon(Düðün, Niþan): Son anda iptal edilen düðün mekan anlaþmalarýnýn bir baþkasýna devredilebilmesi için ilan verilen bir platform. Reservasyon, ödeme, tarih
 
 Ucuz Muhasebe: Çok fazla iþlemi ya da istisnalarý olmayan küçük iþletmeler için ucuz muhasebe hizmeti. Ortaklaþa kullansýn. Basit olmayan istisnai durumlarda ek ücret alýnabilir. Benzer bir proje: Pilot.
 
-Ortak Ofis Haritasý: Ortak ofis kullanan freelancer'lar her geçen gün artýyor. Bu kiþilerin sosyalleþebileceði bir platform olsaydý, hangi bölgelerde ihtiyaç olduðu daha iyi görülüp yeni ofisler buna göre açýlabilirdi.
-
-Not arþivi paylaþým sitesi: Eski ders notlarýnýn paylaþýlabileceði bir sistem. Þu anda not arþivleri fotokopicilerin basýlý tekelinde. Var olan online sistemler ise son derece yetersiz görünüyor.
-
 Kiracý sicili: Ev ve dükkan kiracýlarýnýn sicillerinin tutulabildiði bir sistem. Ev/dükkan sahipleri kiracýlarý hakkýnda olumlu/olumsuz görüþlerini belirtebilirler. Böylelikle kötü niyetli/kira ödemeyen kiþiler baþkalarýnýn canýný yakamaz.
 
-Online CV hazýrlayýcý: Birçok acemi, CV hazýrlamaya nasýl baþlamasý gerektiðini bilemiyor. Bir CV’de ne yer alýr, ne yer almaz, hangi programla yazmalýyým, þablonu nereden bulacaðým vs. Bu iþleri ortadan kaldýracak bir  Online CV hazýrlayýcý yapýlabilir. Hoþuma giden ve kullandýðým CV þablonu, webde verilen bilgilere göre doldurulabilir ve kullanýcýya pdf yahut doc olarak sunulabilir.
-
 Nasýl Baþlarým? Rehber sitesi: Bir þey öðrenmeye nasýl baþlarým sorusu hepimizin sýk sýk kendimize veya baþkalarýna sorduðumuz bir soru. Bilmediðiniz bir konuya, mesleðe ilk adýmý atmak her zaman zor gelir. Ne yapacaðýmýzý bilmeyiz. Tecrübeli olanlardan fikir sorarýz. Tabi bulabilirsek. Herkesin böyle bir imkaný olmaz pekala. Aklýma gelen site ise wiki tarzýnda bir site. Bir þeye nasýl baþlanacaðýný, ilk adýmlarýn neler olabileceðini anlatan bir sistem. Böylelikle insanlar “kime sorsam” “nereden baþlasam” derdinden kurtulabilir.
-
-SAR Tarayýcý: Birçok kiþi için telefonlarýnýn SAR (radyasyon) deðerleri benim için önem teþkil etmekte. Bir telefon satýn alacakken bu deðerin düþük olmasýna dikkat ediyorum. Ancak telefon modeli bakarken her model için tektek internette araþtýrma yapmak gerekiyor. Güncel bir SAR veritabaný olsaydý güzel olabilirdi. Ayrýca alýþveriþ siteleriyle entegrasyonu saðlanabilir. Böylelikle sayfalarda her telefon için SAR deðeri görülebilir.
-
-Ortakbul: Bir hizmet / ürünün ortaklaþa alýnmasý ve maliyetin düþürülmesi için “ortak arýyorum” ilaný verilebilecek bir site. Tabi yasal sorunlara dikkat edilmesi gerekli.
 
 Online MMPI Testleri: Psikologlarýn MMPI testi yapma süreci sancýlý. Hala form doldurup onlarý elle bilgisayara geçme ya da taratma gibi durumlar söz konusu. Bunun yerine web service olarak böyle bir hizmet sunulabilir. (Yapýldý)
 
@@ -43,7 +29,5 @@ Akademik rota önerici: Akademik bir konuya baþlayanlar hangi makaleleri okuyarak
 Hava – Ruh hali korelasyonu üzerine araþtýrma: Meteoroloji verileriyle twitter verilerini birleþtirip hava durumu insanlarýn ruh durumunu ve yazdýklarýný nasýl etkiliyor? araþtýrýlabilir.
 
 Otistik Trainer: Otistik insanlarýn oldukça zeki olduklarý söyleniyor. Günümüz yapay zeka / makine öðrenmesi çalýþmalarýnda bu insanlar öðretmen (trainer) olarak hayata kazandýrýlabilir. Onlarýn kullanabileceði tarzda görsel bir arayüz ile bir veritabaný oluþturulabilir. Bakýnýz: Open Mind Common Sense
-
-Gölge Yapan Drone: Siz yürürken üzerinizde gölge yapan drone
 
 Anýz Yakan Tespiti: Anadolu’da anýz yakýmlarý yasaklanmasýna raðmen devam ediyor ve büyük tehlikeler arz ediyor. Yanan tarlalar ve hatta ormanlar uydudan tespit edilebilir (Orman yangýný tespiti için böyle bir projeye baþlanmýþ sanýrým).
