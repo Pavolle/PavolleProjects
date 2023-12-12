@@ -23,16 +23,16 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
         [HttpGet(AuthServerApiUrlConsts.ListRoutePrefix)]
         public ActionResult List([FromQuery]ApiServiceCriteria request)
         {
-            if (request == null)
-            {
-                return BadRequest(new ResponseBase
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
-                    StatusCode = 400
-                });
-            }
             try
             {
+                if (request == null)
+                {
+                    return BadRequest(new ApiServiceListResponse
+                    {
+                        ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                        StatusCode = 400
+                    });
+                }
                 var response = ApiServiceManager.Instance.List(request);
                 _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
@@ -51,24 +51,24 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
         [HttpGet(AuthServerApiUrlConsts.DetailRoutePrefix)]
         public ActionResult Detail(long? oid,  IntegrationAppRequestBase request)
         {
-            if (request == null)
-            {
-                return BadRequest(new ResponseBase
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
-                    StatusCode = 400
-                });
-            }
-            if(oid == null)
-            {
-                return BadRequest(new ResponseBase
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, SettingServiceManager.Instance.GetSystemLanguage()),
-                    StatusCode = 400
-                });
-            }
             try
             {
+                if (request == null)
+                {
+                    return BadRequest(new ApiServiceDetailResponse
+                    {
+                        ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                        StatusCode = 400
+                    });
+                }
+                if (oid == null)
+                {
+                    return BadRequest(new ApiServiceDetailResponse
+                    {
+                        ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, SettingServiceManager.Instance.GetSystemLanguage()),
+                        StatusCode = 400
+                    });
+                }
                 var response = ApiServiceManager.Instance.Detail(oid, request);
                 _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
@@ -87,24 +87,24 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
         [HttpPost(AuthServerApiUrlConsts.EditRoutePrefix)]
         public ActionResult Edit(long? oid, EditApiServiceRequest request)
         {
-            if (request == null)
-            {
-                return BadRequest(new ResponseBase
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
-                    StatusCode = 400
-                });
-            }
-            if (oid == null)
-            {
-                return BadRequest(new ResponseBase
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, SettingServiceManager.Instance.GetSystemLanguage()),
-                    StatusCode = 400
-                });
-            }
             try
             {
+                if (request == null)
+                {
+                    return BadRequest(new ResponseBase
+                    {
+                        ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                        StatusCode = 400
+                    });
+                }
+                if (oid == null)
+                {
+                    return BadRequest(new ResponseBase
+                    {
+                        ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, SettingServiceManager.Instance.GetSystemLanguage()),
+                        StatusCode = 400
+                    });
+                }
                 var response = ApiServiceManager.Instance.Edit(oid, request);
                 _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
@@ -112,7 +112,7 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new ApiServiceDetailResponse
+                return Ok(new ResponseBase
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
                     StatusCode = 500
