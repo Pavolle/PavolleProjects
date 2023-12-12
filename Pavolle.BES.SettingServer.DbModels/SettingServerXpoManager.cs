@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.SettingServer.DbModels
 {
-    public class XpoManager : Singleton<XpoManager>
+    public class SettingServerXpoManager : Singleton<SettingServerXpoManager>
     {
         private string _connectionString;
         public string ConnectionString
@@ -22,7 +22,7 @@ namespace Pavolle.BES.SettingServer.DbModels
 
         private readonly object LockObject = new object();
 
-        private XpoManager()
+        private SettingServerXpoManager()
         {
         }
 

@@ -24,7 +24,7 @@ namespace Pavolle.BES.SettingServer.Business
 
         public void Initialize()
         {
-            using (Session session = XpoManager.Instance.GetNewSession())
+            using (Session session = SettingServerXpoManager.Instance.GetNewSession())
             {
                 var settings = session.Query<Setting>().ToList();
 

@@ -34,7 +34,7 @@ namespace Pavolle.BES.SettingServer.Business
 
             _settings = new ConcurrentDictionary<ESettingType, SettingCacheModel>();
 
-            using (Session session = XpoManager.Instance.GetNewSession())
+            using (Session session = SettingServerXpoManager.Instance.GetNewSession())
             {
                 var settingList = session.Query<Setting>().Select(t => new SettingCacheModel
                 {
@@ -74,7 +74,7 @@ namespace Pavolle.BES.SettingServer.Business
                 ChangeLogs = new List<SettingChangeLogViewData>()
             };
 
-            using (Session session = XpoManager.Instance.GetNewSession())
+            using (Session session = SettingServerXpoManager.Instance.GetNewSession())
             {
                 response.Detail = session.Query<Setting>().Where(t => t.SettingType == (ESettingType)setting_type)
                     .Select(t => new SettingViewData
@@ -98,7 +98,7 @@ namespace Pavolle.BES.SettingServer.Business
 
         public ResponseBase Edit(int setting_type, SettingRequest request)
         {
-            using (Session session = XpoManager.Instance.GetNewSession())
+            using (Session session = SettingServerXpoManager.Instance.GetNewSession())
             {
                 if(setting_type== (int)ESettingType.DbConnection)
                 {

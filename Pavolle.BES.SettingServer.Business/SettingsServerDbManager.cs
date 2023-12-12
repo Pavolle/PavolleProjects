@@ -25,7 +25,7 @@ namespace Pavolle.BES.SettingServer.Business
             {
                 _connectionString = connectionString;
                 _log.Info("Connecting to DB...");
-                XpoManager.Instance.InitXpo(connectionString);
+                SettingServerXpoManager.Instance.InitXpo(connectionString);
                 _log.Info("Connected to DB successfully.");
                 return true;
             }
