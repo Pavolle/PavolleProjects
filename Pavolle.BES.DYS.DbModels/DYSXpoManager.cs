@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.DYS.DbModels
 {
-    internal class XpoManager
+    internal class DYSXpoManager
     {
     }
 }

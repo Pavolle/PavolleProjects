@@ -5,14 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.B2C.DbModels.Entities
+namespace Pavolle.BES.ECommerce.DbModels.Entities
 {
     [NonPersistent]
     public class BaseObject : XPBaseObject
     {
         public BaseObject(Session session) : base(session)
         {
-
         }
 
         public override void AfterConstruction()
