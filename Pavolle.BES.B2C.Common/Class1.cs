@@ -1,4 +1,4 @@
-﻿namespace Pavolle.BES.B2B.Business
+﻿namespace Pavolle.BES.B2C.Common
 {
     public class Class1
     {
