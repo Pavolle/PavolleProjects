@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.B2B.DbModels.Entities
 {
-    [Persistent("b2b_dealer_user")]
-    public class DealerUser : BaseObject
+    [Persistent("b2b_dealer_customer")]
+    public class DealerCustomer : BaseObject
     {
-        public DealerUser(Session session) : base(session)
+        public DealerCustomer(Session session) : base(session)
         {
         }
     }

@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
-    <Folder Include="Utils\" />
+    <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
   </ItemGroup>
 
 </Project>

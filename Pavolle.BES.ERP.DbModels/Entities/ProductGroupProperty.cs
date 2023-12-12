@@ -1,5 +1,4 @@
 ﻿using DevExpress.Xpo;
-using Pavolle.BES.ERP.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.ERP.DbModels.Entities
 {
-    [Persistent("erp_product")]
-    public class Product : BaseObject
+    [Persistent("erp_product_group_properties")]
+    public class ProductGroupProperty : BaseObject
     {
-        public Product(Session session) : base(session)
+        public ProductGroupProperty(Session session) : base(session)
         {
         }
 
-        public string Name { get; set; }
-
-        public EProductType ProductType { get; set; }
         public ProductGroup ProductGroup { get; set; }
     }
 }
