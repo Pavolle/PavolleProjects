@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.ViewModels.Request;
+﻿using Pavolle.BES.Common.Enums;
+using Pavolle.BES.ViewModels.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Pavolle.BES.AuthServer.ViewModels.Criteria
 {
     public class ApiServiceCriteria : IntegrationAppRequestBase
     {
+        public EBesAppType? AppType { get; set; }
     }
 }

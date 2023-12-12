@@ -1,4 +1,5 @@
-﻿using Pavolle.Core.ViewModels.Response;
+﻿using Pavolle.BES.AuthServer.ViewModels.ViewData;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace Pavolle.BES.AuthServer.ViewModels.Response
 {
     public class ApiServiceListResponse : ResponseBase
     {
+        public List<ApiServiceViewData> DataList { get; set; }
     }
 }
