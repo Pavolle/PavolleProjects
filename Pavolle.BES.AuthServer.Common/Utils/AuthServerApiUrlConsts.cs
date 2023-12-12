@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.Common.Utils
 {
-    public class BesAuthServerApiUrlConsts
+    public class AuthServerApiUrlConsts
     {
         public const string ListRoutePrefix = "list";
         public const string LookupRoutePrefix = "lookup";

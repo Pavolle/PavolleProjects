@@ -4,7 +4,7 @@ using Pavolle.BES.AuthServer.Common.Utils;
 namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
 {
     [Produces("application/json")]
-    [Route(BesAuthServerApiUrlConsts.PersonUrlConsts.BaseRoute)]
+    [Route(AuthServerApiUrlConsts.PersonUrlConsts.BaseRoute)]
     public class PersonController : Controller
     {
     }

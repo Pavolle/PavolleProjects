@@ -13,12 +13,12 @@ using System.Text.Json;
 namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
 {
     [Produces("application/json")]
-    [Route(BesAuthServerApiUrlConsts.ServerStatusUrlConsts.BaseRoute)]
+    [Route(AuthServerApiUrlConsts.ServerStatusUrlConsts.BaseRoute)]
     public class ServerStatusController : Controller
     {
 
         static readonly ILog _log = LogManager.GetLogger(typeof(ServerStatusController));
-        [HttpGet(BesAuthServerApiUrlConsts.ServerStatusUrlConsts.ServerDetailRoutePrefix)]
+        [HttpGet(AuthServerApiUrlConsts.ServerStatusUrlConsts.ServerDetailRoutePrefix)]
         public ActionResult Detail(IntegrationAppRequestBase request)
         {
             if (request == null)
@@ -46,7 +46,7 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
             }
         }
 
-        [HttpGet(BesAuthServerApiUrlConsts.ServerStatusUrlConsts.ServerSettingsRoutePrefix)]
+        [HttpGet(AuthServerApiUrlConsts.ServerStatusUrlConsts.ServerSettingsRoutePrefix)]
         public ActionResult Settings(IntegrationAppRequestBase request)
         {
             if (request == null)
@@ -74,7 +74,7 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
             }
         }
 
-        [HttpPost(BesAuthServerApiUrlConsts.ServerStatusUrlConsts.ReloadAllServerSettingsRoutePrefix)]
+        [HttpPost(AuthServerApiUrlConsts.ServerStatusUrlConsts.ReloadAllServerSettingsRoutePrefix)]
         public ActionResult ReloadAllSettings(IntegrationAppRequestBase request)
         {
             if (request == null)

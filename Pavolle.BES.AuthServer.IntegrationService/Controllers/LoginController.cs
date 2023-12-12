@@ -13,11 +13,11 @@ using System.Text.Json;
 namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
 {
     [Produces("application/json")]
-    [Route(BesAuthServerApiUrlConsts.LoginUrlConsts.BaseRoute)]
+    [Route(AuthServerApiUrlConsts.LoginUrlConsts.BaseRoute)]
     public class LoginController : Controller
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(LoginController));
-        [HttpPost(BesAuthServerApiUrlConsts.LoginUrlConsts.SignInRoutePrefix)]
+        [HttpPost(AuthServerApiUrlConsts.LoginUrlConsts.SignInRoutePrefix)]
         public ActionResult SignIn([FromBody]LoginRequest request)
         {
             if (request == null)

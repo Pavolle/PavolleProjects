@@ -18,7 +18,7 @@ namespace Pavolle.BES.AuthServer.ClientLib
 
         public SignInResponse SignIn(LoginRequest request)
         {
-            var response = AuthServiceHelperManager.Instance.Post<SignInResponse>(BesAuthServerApiUrlConsts.LoginUrlConsts.BaseRoute + "/" + BesAuthServerApiUrlConsts.LoginUrlConsts.SignInRoutePrefix, request);
+            var response = AuthServiceHelperManager.Instance.Post<SignInResponse>(AuthServerApiUrlConsts.LoginUrlConsts.BaseRoute + "/" + AuthServerApiUrlConsts.LoginUrlConsts.SignInRoutePrefix, request);
             return response;
         }
     }
