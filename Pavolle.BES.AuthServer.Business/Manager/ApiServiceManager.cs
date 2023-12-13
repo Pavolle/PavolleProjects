@@ -52,6 +52,10 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             var response = new ApiServiceDetailResponse();
             using (Session session = AuthServerXpoManager.Instance.GetNewSession())
             {
+                //Api service detayını sorgula.
+                //Değişiklik tarihini yaz
+                //Role verilerini sorgula. Bu role verilerinden hangisi için yetki verildiği bilgisini oluştur.
+
 
             }
             return response;
