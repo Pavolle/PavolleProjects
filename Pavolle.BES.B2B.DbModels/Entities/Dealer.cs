@@ -14,11 +14,11 @@ namespace Pavolle.BES.B2B.DbModels.Entities
         {
         }
 
-        [Persistent("organization_oid")]
-        public long OrganizationOid { get; set; }
+        [Persistent("header_organization_oid")]
+        public long HeaderOrganizationOid { get; set; }
 
-        [Persistent("name")]
-        public string Name { get; set; }
+        [Persistent("dealer_organization_oid")]
+        public long DealerOrganizationOid { get; set; }
 
         [Persistent("price_group_oid")]
         public long PriceGroupOid { get; set; }

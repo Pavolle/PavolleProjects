@@ -10,4 +10,8 @@
     <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.CRM.Common\Pavolle.BES.CRM.Common.csproj" />
+  </ItemGroup>
+
 </Project>

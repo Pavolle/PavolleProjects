@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.ERP.DbModels.Entities
 {
-    [Persistent("erp_product_group_properties")]
+    [Persistent("product_group_properties")]
     public class ProductGroupProperty : BaseObject
     {
         public ProductGroupProperty(Session session) : base(session)

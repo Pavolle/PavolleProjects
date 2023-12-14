@@ -13,5 +13,10 @@ namespace Pavolle.BES.B2B.DbModels.Entities
         public DealerUser(Session session) : base(session)
         {
         }
+
+        [Persistent("dealer_oid")]
+        public Dealer Dealer { get; set; }
+
+        public long UserOid { get; set; }
     }
 }

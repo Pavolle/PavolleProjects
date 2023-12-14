@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.ERP.DbModels.Entities
 {
-    [Persistent("erp_product_family")]
+    [Persistent("product_family")]
     public class ProductFamily : BaseObject
     {
         public ProductFamily(Session session) : base(session)

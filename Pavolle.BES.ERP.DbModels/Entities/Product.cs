@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.ERP.DbModels.Entities
 {
-    [Persistent("erp_product")]
+    [Persistent("product")]
     public class Product : BaseObject
     {
         public Product(Session session) : base(session)
@@ -16,8 +16,9 @@ namespace Pavolle.BES.ERP.DbModels.Entities
         }
 
         public string Name { get; set; }
-
         public EProductType ProductType { get; set; }
         public ProductGroup ProductGroup { get; set; }
+        public Manufacturer Manufacturer { get; set; }
+        public bool IsOwnProduct { get; set; }
     }
 }

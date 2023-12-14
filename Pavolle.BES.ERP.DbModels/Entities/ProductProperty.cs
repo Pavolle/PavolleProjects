@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.ERP.DbModels.Entities
 {
+    //Ait olduğu gruptan özellikleri kalıtımsal olarak alır.
     public class ProductProperty : BaseObject
     {
         public ProductProperty(Session session) : base(session)

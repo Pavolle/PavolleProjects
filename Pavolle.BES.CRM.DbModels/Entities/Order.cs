@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.CRM.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,9 @@ namespace Pavolle.BES.CRM.DbModels.Entities
         }
 
         public string OrderCode { get; set; }
+        public EOrderChannel OrderChannel { get; set; }
+        public long? DealerOid { get; set; }
+        public long? CustomerOid { get; set; }
+        public long? UserOid { get; set; }
     }
 }

@@ -593,19 +593,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ECommerce.UnitT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ECommerce.MobileApp", "Pavolle.BES.ECommerce.MobileApp\Pavolle.BES.ECommerce.MobileApp.csproj", "{105FA231-2A46-46EA-9952-07D94ADF738D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.GeoServer.Business", "Pavolle.BES.GeoServer.Business\Pavolle.BES.GeoServer.Business.csproj", "{742833C6-AB79-45BF-AE4F-E6298956CE6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.GeoServer.Business", "Pavolle.BES.GeoServer.Business\Pavolle.BES.GeoServer.Business.csproj", "{742833C6-AB79-45BF-AE4F-E6298956CE6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.GeoServer.Common", "Pavolle.BES.GeoServer.Common\Pavolle.BES.GeoServer.Common.csproj", "{CBFF6248-DDE8-427C-B6E0-26555A54C87E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.GeoServer.Common", "Pavolle.BES.GeoServer.Common\Pavolle.BES.GeoServer.Common.csproj", "{CBFF6248-DDE8-427C-B6E0-26555A54C87E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.GeoServer.ViewModels", "Pavolle.BES.GeoServer.ViewModels\Pavolle.BES.GeoServer.ViewModels.csproj", "{543ABAE9-CC95-454A-BFF6-189B361D08CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.GeoServer.ViewModels", "Pavolle.BES.GeoServer.ViewModels\Pavolle.BES.GeoServer.ViewModels.csproj", "{543ABAE9-CC95-454A-BFF6-189B361D08CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.GeoServer.DbModels", "Pavolle.BES.GeoServer.DbModels\Pavolle.BES.GeoServer.DbModels.csproj", "{99D5A137-E20A-4CEE-B770-0D637001A5E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.GeoServer.DbModels", "Pavolle.BES.GeoServer.DbModels\Pavolle.BES.GeoServer.DbModels.csproj", "{99D5A137-E20A-4CEE-B770-0D637001A5E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.GeoServer.ClientLib", "Pavolle.BES.GeoServer.ClientLib\Pavolle.BES.GeoServer.ClientLib.csproj", "{02AD92F8-2A24-4C64-B21E-A81767A1D612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.GeoServer.ClientLib", "Pavolle.BES.GeoServer.ClientLib\Pavolle.BES.GeoServer.ClientLib.csproj", "{02AD92F8-2A24-4C64-B21E-A81767A1D612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.GeoServer.Service", "Pavolle.BES.GeoServer.Service\Pavolle.BES.GeoServer.Service.csproj", "{B9CD24DE-4F99-4915-AA41-999D32E6D2FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.GeoServer.Service", "Pavolle.BES.GeoServer.Service\Pavolle.BES.GeoServer.Service.csproj", "{B9CD24DE-4F99-4915-AA41-999D32E6D2FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.GeoServer.UnitTests", "Pavolle.BES.GeoServer.UnitTests\Pavolle.BES.GeoServer.UnitTests.csproj", "{9C96209E-633C-47F3-803B-DCA3F5B679B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.GeoServer.UnitTests", "Pavolle.BES.GeoServer.UnitTests\Pavolle.BES.GeoServer.UnitTests.csproj", "{9C96209E-633C-47F3-803B-DCA3F5B679B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.CRM.ViewModels", "Pavolle.BES.CRM.ViewModels\Pavolle.BES.CRM.ViewModels.csproj", "{642C826A-2235-4FCF-BA8F-5C1CBA56E4D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.CRM.ClientLib", "Pavolle.BES.CRM.ClientLib\Pavolle.BES.CRM.ClientLib.csproj", "{F3410BDD-25E7-46F9-97D4-94A6F647C0FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.CRM.UnitTests", "Pavolle.BES.CRM.UnitTests\Pavolle.BES.CRM.UnitTests.csproj", "{C7E27145-BAC0-4DDC-BBA5-7F2C6E682960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.CRM.IntegrationService", "Pavolle.BES.CRM.IntegrationService\Pavolle.BES.CRM.IntegrationService.csproj", "{71A48204-8EB4-4002-8A29-36AFDA1E89E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.CRM.WebApp", "Pavolle.BES.CRM.WebApp\Pavolle.BES.CRM.WebApp.csproj", "{CB0BFF1B-5C22-408A-B635-16B5344CE3B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.CRM.MobileApp", "Pavolle.BES.CRM.MobileApp\Pavolle.BES.CRM.MobileApp.csproj", "{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1553,6 +1565,32 @@ Global
 		{9C96209E-633C-47F3-803B-DCA3F5B679B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C96209E-633C-47F3-803B-DCA3F5B679B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C96209E-633C-47F3-803B-DCA3F5B679B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{642C826A-2235-4FCF-BA8F-5C1CBA56E4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{642C826A-2235-4FCF-BA8F-5C1CBA56E4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{642C826A-2235-4FCF-BA8F-5C1CBA56E4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{642C826A-2235-4FCF-BA8F-5C1CBA56E4D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3410BDD-25E7-46F9-97D4-94A6F647C0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3410BDD-25E7-46F9-97D4-94A6F647C0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3410BDD-25E7-46F9-97D4-94A6F647C0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3410BDD-25E7-46F9-97D4-94A6F647C0FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E27145-BAC0-4DDC-BBA5-7F2C6E682960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E27145-BAC0-4DDC-BBA5-7F2C6E682960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E27145-BAC0-4DDC-BBA5-7F2C6E682960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E27145-BAC0-4DDC-BBA5-7F2C6E682960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71A48204-8EB4-4002-8A29-36AFDA1E89E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A48204-8EB4-4002-8A29-36AFDA1E89E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A48204-8EB4-4002-8A29-36AFDA1E89E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A48204-8EB4-4002-8A29-36AFDA1E89E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB0BFF1B-5C22-408A-B635-16B5344CE3B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB0BFF1B-5C22-408A-B635-16B5344CE3B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB0BFF1B-5C22-408A-B635-16B5344CE3B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB0BFF1B-5C22-408A-B635-16B5344CE3B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1842,6 +1880,12 @@ Global
 		{02AD92F8-2A24-4C64-B21E-A81767A1D612} = {FA218225-BE84-4DD9-A127-803A72ED761C}
 		{B9CD24DE-4F99-4915-AA41-999D32E6D2FE} = {FA218225-BE84-4DD9-A127-803A72ED761C}
 		{9C96209E-633C-47F3-803B-DCA3F5B679B4} = {FA218225-BE84-4DD9-A127-803A72ED761C}
+		{642C826A-2235-4FCF-BA8F-5C1CBA56E4D9} = {AB23065C-4161-4EB6-A058-17A97B2E1B4E}
+		{F3410BDD-25E7-46F9-97D4-94A6F647C0FD} = {AB23065C-4161-4EB6-A058-17A97B2E1B4E}
+		{C7E27145-BAC0-4DDC-BBA5-7F2C6E682960} = {AB23065C-4161-4EB6-A058-17A97B2E1B4E}
+		{71A48204-8EB4-4002-8A29-36AFDA1E89E2} = {AB23065C-4161-4EB6-A058-17A97B2E1B4E}
+		{CB0BFF1B-5C22-408A-B635-16B5344CE3B6} = {AB23065C-4161-4EB6-A058-17A97B2E1B4E}
+		{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0} = {AB23065C-4161-4EB6-A058-17A97B2E1B4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
