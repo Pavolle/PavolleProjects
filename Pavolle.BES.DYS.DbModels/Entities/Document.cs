@@ -27,16 +27,10 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         [Persistent("path")]
         public string Path { get; set; }
 
-        [Persistent("index_key")]
-        public string IndexKey { get; set; }
-
         [Persistent("secure_key")]
         public string SecureKey { get; set; }
 
         [Persistent("folder_oid")]
         public Folder Folder { get; set; }
-
-        [Persistent("physical_document_oid")]
-        public PhysicalDocument PhysicalDocument { get; set; }
     }
 }

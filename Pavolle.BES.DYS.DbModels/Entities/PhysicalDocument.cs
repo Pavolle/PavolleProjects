@@ -22,5 +22,8 @@ namespace Pavolle.BES.DYS.DbModels.Entities
 
         [Persistent("rfid_tag")]
         public string RfidTag { get; set; }
+
+        [Persistent("document_oid")]
+        public Document Document { get; set; }
     }
 }
