@@ -11,6 +11,11 @@ namespace Pavolle.BES.DYS.Business.Manager
     {
         private DYSSetupManager() { }
 
+        public void Initialize()
+        {
+
+        }
+
         //ROOT folder elementi ve root klasörünün oluşturulması.
     }
 }
