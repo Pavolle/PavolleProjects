@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.DYS.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,11 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         {
         }
 
-        [Persistent("owner_organization_oid")]
-        public long OwnedOrganizationOid { get; set; }
+        [Persistent("organization_oid")]
+        public long OrganizationOid { get; set; }
 
-        [Persistent("owner_person_oid")]
-        public long? OwnedPersonOid { get; set; }
+        [Persistent("document_type")]
+        public EDocumentType DocumentType { get; set; }
 
         [Persistent("name")]
         public string Name { get; set; }
@@ -26,16 +27,16 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         [Persistent("path")]
         public string Path { get; set; }
 
-        [Persistent("is_original")]
-        public bool IsOrginal { get; set; }
+        [Persistent("index_key")]
+        public string IndexKey { get; set; }
 
-        [Persistent("rfid_tag")]
-        public string RfidTag { get; set; }
+        [Persistent("secure_key")]
+        public string SecureKey { get; set; }
 
-        [Persistent("file_oid")]
-        public File File { get; set; }
+        [Persistent("folder_oid")]
+        public Folder Folder { get; set; }
 
-        [Persistent("physical_file_oid")]
-        public PhysicalFile PhysicalFile { get; set; }
+        [Persistent("physical_document_oid")]
+        public PhysicalDocument PhysicalDocument { get; set; }
     }
 }

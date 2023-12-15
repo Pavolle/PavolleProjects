@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.DYS.DbModels.Entities
 {
-    [Persistent("physical_file_access")]
-    public class PhysicalFileAccess : BaseObject
+    [Persistent("physical_folder_access")]
+    public class PhysicalFolderAccess : BaseObject
     {
-        public PhysicalFileAccess(Session session) : base(session)
+        public PhysicalFolderAccess(Session session) : base(session)
         {
         }
 
-        [Persistent("physical_file_oid")]
-        public PhysicalFile PhysicalFile { get; set; }
+        [Persistent("physical_folder_oid")]
+        public PhysicalFolder PhysicalFolder { get; set; }
 
         [Persistent("person_oid")]
         public long? PersonOid { get; set; }
