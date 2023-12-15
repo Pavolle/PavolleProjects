@@ -11,7 +11,7 @@ namespace Pavolle.BES.DYS.Common.Utils
         public class SuppleraIntegrationUrlConsts
         {
             public const string Route = "api/dys/integration/supplera";
-            public const string SaveBomRoutePrefix = "savebom";
+            public const string SaveBomFileRoutePrefix = "savebomfile";
         }
 
         public class ServerStatusUrlConst

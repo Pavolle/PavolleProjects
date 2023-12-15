@@ -15,12 +15,12 @@ namespace Pavolle.BES.DYS.IntegrationService.Controllers
         static readonly ILog _log = LogManager.GetLogger(typeof(SuppleraIntegrationController));
         //yüklenen bom bilgisinin dosya olarak kaydedilmesi
 
-        [HttpPost(DYSIntegrationsConsts.SuppleraIntegrationUrlConsts.SaveBomRoutePrefix)]
-        public ActionResult Edit([FromBody] SuppleraIntegrationBomFileRequest request)
+        [HttpPost(DYSIntegrationsConsts.SuppleraIntegrationUrlConsts.SaveBomFileRoutePrefix)]
+        public ActionResult SaveBomFile([FromBody] SuppleraIntegrationBomFileRequest request)
         {
             try
             {
-                var response = SuppleraIntegrationManager.Instance.Edit(request);
+                var response = SuppleraIntegrationManager.Instance.SaveBomFile(request);
                 _log.Debug("Request IP: " + request.RequestIp + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }

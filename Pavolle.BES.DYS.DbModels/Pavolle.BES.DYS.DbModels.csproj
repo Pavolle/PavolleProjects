@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pavolle.BES.DYS.Common\Pavolle.BES.DYS.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 
 </Project>

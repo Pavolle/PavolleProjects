@@ -1,4 +1,8 @@
-﻿using Pavolle.BES.DYS.ViewModels.Integration.Request;
+﻿using DevExpress.Xpo;
+using Pavolle.BES.DYS.DbModels;
+using Pavolle.BES.DYS.DbModels.Entities;
+using Pavolle.BES.DYS.ViewModels.Integration.Request;
+using Pavolle.BES.DYS.ViewModels.Response;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
 using System;
@@ -13,24 +17,22 @@ namespace Pavolle.BES.DYS.Business.Integration
     {
         private SuppleraIntegrationManager() { }
 
-        public ResponseBase Edit(SuppleraIntegrationBomFileRequest request)
+        public DYSIntegrationResponseBase SaveBomFile(SuppleraIntegrationBomFileRequest request)
         {
             bool success = false;
             try
             {
-                //Get base folder name
-                //Check Organization folder if not create
-                //Check supplera folder if not create
-                //Check product folder if not create
-                //Check version folder if not create
-                //Encrypt and save file 
+                using(Session session = DYSXpoManager.Instance.GetNewSession())
+                {
+                    var root = session.Query<Folder>().FirstOrDefault(t => t.Name == "root");
+                }
             }
             catch (Exception)
             {
 
                 throw;
             }
-            return new ResponseBase
+            return new DYSIntegrationResponseBase
             {
                 Success = success
             };
