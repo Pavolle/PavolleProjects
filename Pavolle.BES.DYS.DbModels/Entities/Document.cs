@@ -15,6 +15,9 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         {
         }
 
+        [Persistent("unique_code")]
+        public string UniqueCode { get; set; }
+
         [Persistent("organization_oid")]
         public long OrganizationOid { get; set; }
 
