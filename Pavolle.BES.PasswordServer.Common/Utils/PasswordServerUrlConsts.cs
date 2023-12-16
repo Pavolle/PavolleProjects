@@ -32,10 +32,10 @@ namespace Pavolle.BES.PasswordServer.Common.Utils
         public class PasswordConsts
         {
             public const string BaseRoute = "api/passwordserver/password";
-            public const string AccessRoutePrefx = "access";
             public const string ListRoutePrefix = "list";
             public const string EditRoutePrefix = "edit";
             public const string AddRoutePrefix = "add";
+            public const string AccessRoutePrefx = "access";
 
             public const string AddAuthorityForRoleRoutePrefix = "addauthorityforrole";
             public const string DeleteAuthorityForRoleRoutePrefix = "deleteauthorityforrole";

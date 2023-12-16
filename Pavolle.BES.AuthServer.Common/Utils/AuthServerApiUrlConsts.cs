@@ -63,6 +63,7 @@ namespace Pavolle.BES.AuthServer.Common.Utils
             public const string BaseRoute = "api/login";
 
             public const string SignInRoutePrefix = "signin";
+            public const string GenerateTokenRoutePrefix = "generatetoken";
             public const string SignOutRoutePrefix = "signout";
             public const string ForgotPaswordRoutePrefix = "forgotpassword";
             public const string ResetPaswordRoutePrefix = "resetpassword";

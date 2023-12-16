@@ -20,6 +20,11 @@ namespace Pavolle.BES.AuthServer.Business.Manager
         static readonly ILog _log = LogManager.GetLogger(typeof(LoginManager));
         private LoginManager() { }
 
+        public object GenerateToken(GenerateTokenRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
         public SignInResponse SignIn(LoginRequest request)
         {
             var response = new SignInResponse();

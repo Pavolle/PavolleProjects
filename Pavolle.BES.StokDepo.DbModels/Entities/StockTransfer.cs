@@ -13,5 +13,7 @@ namespace Pavolle.BES.StokDepo.DbModels.Entities
         public StockTransfer(Session session) : base(session)
         {
         }
+
+        public int MyProperty { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Pavolle.BES.AuthServer.ClientLib;
 using Pavolle.BES.AuthServer.ViewModels.Request;
+using Pavolle.BES.AuthServer.ViewModels.Response;
 using Pavolle.BES.PasswordServer.Common.Utils;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.TranslateServer.ClientLib;
@@ -40,7 +41,7 @@ namespace Pavolle.BES.PasswordServer.WebApp.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new ResponseBase
+                return Ok(new SignInResponse
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, SettingServiceManager.Instance.GetSystemLanguage()),
                     StatusCode = 500

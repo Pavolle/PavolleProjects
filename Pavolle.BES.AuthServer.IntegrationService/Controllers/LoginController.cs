@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Pavolle.BES.AuthServer.Business.Manager;
 using Pavolle.BES.AuthServer.Common.Utils;
 using Pavolle.BES.AuthServer.ViewModels.Request;
+using Pavolle.BES.AuthServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.TranslateServer.ClientLib;
 using Pavolle.BES.TranslateServer.Common.Enums;
@@ -17,12 +18,14 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
     public class LoginController : Controller
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(LoginController));
+
+
         [HttpPost(AuthServerApiUrlConsts.LoginUrlConsts.SignInRoutePrefix)]
         public ActionResult SignIn([FromBody]LoginRequest request)
         {
             if (request == null)
             {
-                return BadRequest(new ResponseBase
+                return BadRequest(new AuthenticateResponse
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
                     StatusCode = 400
@@ -41,7 +44,39 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new ResponseBase
+                return Ok(new AuthenticateResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 500
+                });
+            }
+        }
+
+        [HttpPost(AuthServerApiUrlConsts.LoginUrlConsts.GenerateTokenRoutePrefix)]
+        public ActionResult GenerateToken([FromBody] GenerateTokenRequest request)
+        {
+            if (request == null)
+            {
+                return BadRequest(new AuthenticateResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 400
+                });
+            }
+            if (request.Language == null)
+            {
+                request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
+            }
+            try
+            {
+                var response = LoginManager.Instance.GenerateToken(request);
+                _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new AuthenticateResponse
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
                     StatusCode = 500

@@ -13,6 +13,6 @@ namespace Pavolle.BES.ViewModels.Request
         public EUserType UserType { get; set; }
         public long? OrganizationOid { get; set; }
         public long? UserOid { get; set; }
-        public long? UserGroupOid { get; set; }
+        public long? UserRoleOid { get; set; }
     }
 }

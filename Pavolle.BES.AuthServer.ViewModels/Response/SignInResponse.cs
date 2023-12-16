@@ -11,7 +11,6 @@ namespace Pavolle.BES.AuthServer.ViewModels.Response
     public class SignInResponse : ResponseBase
     {
         public string Token { get; set; }
-
         public List<UserAuthorizationViewData> Authorizations { get; set; }
         public SingInUserDetailViewData UserDetail { get; set; }
     }
