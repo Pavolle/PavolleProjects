@@ -9,9 +9,9 @@ namespace Pavolle.BES.DYS.ViewModels.Integration.Request
 {
     public class SuppleraIntegrationBomFileRequest : RequestBase
     {
-        public long OrganizationOid { get; set; }
-        public long ProductOid { get;set; }
-        public long VersionOid { get; set; }
+        public long? OrganizationOid { get; set; }
+        public long? ProductOid { get;set; }
+        public long? VersionOid { get; set; }
         public string Base64File { get; set; }
     }
 }

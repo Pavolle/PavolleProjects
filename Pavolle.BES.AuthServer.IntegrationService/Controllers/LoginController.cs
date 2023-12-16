@@ -46,7 +46,7 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
                 _log.Error("Unexpected exception occured! Ex: " + ex);
                 return Ok(new SignInResponse
                 {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, SettingServiceManager.Instance.GetSystemLanguage()),
                     StatusCode = 500
                 });
             }

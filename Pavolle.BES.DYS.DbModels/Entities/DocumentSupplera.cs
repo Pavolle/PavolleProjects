@@ -14,7 +14,6 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         {
         }
 
-        public long OrganizationOid { get; set; }
         public long ProductOid { get; set; }
         public long VersionOid { get; set; }
     }
