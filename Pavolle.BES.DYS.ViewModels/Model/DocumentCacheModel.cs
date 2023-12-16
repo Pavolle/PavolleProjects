@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.CRM.DbModels.Entities
+namespace Pavolle.BES.DYS.ViewModels.Model
 {
-    public class ProductPrice
+    public class DocumentCacheModel
     {
     }
 }

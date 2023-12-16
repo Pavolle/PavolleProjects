@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.ERP.DbModels.Entities
 {
-    [Persistent("Manufacturers")]
+    [Persistent("manufacturers")]
     public class Manufacturer : BaseObject
     {
         public Manufacturer(Session session) : base(session)
         {
         }
+
+        public string Name { get; set; }
+        public long CountryOid { get; set; }
     }
 }

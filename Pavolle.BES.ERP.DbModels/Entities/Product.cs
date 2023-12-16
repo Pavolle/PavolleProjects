@@ -20,5 +20,7 @@ namespace Pavolle.BES.ERP.DbModels.Entities
         public ProductGroup ProductGroup { get; set; }
         public Manufacturer Manufacturer { get; set; }
         public bool IsOwnProduct { get; set; }
+
+        //Üretim yeri, nasıl tedarik edilebildiği ile ilgili konular da önemli.
     }
 }

@@ -8,7 +8,20 @@ namespace Pavolle.BES.StokDepo.Common.Enums
 {
     public enum EStockTransferReason
     {
-        ProductSupply=1,
+        //Ürün tedariği
+        Supply = 1,
 
+        //Üretimde kullanım
+        UseInOroduction = 2,
+
+        //Araca Transfer
+
+        //B2B Bayi deposuna transfer
+
+        //B2B Müşteriye teslimat
+
+        //B2C Müşteriye teslimat
+
+        //E-Commerce satış
     }
 }

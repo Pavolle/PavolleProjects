@@ -24,7 +24,13 @@ namespace Pavolle.BES.DYS.Business.Integration
             {
                 using(Session session = DYSXpoManager.Instance.GetNewSession())
                 {
+                    //root
+                    //organization
+                    //supplera
+                    //product
+                    //version
                     var root = session.Query<Folder>().FirstOrDefault(t => t.Name == "root");
+                    
                 }
             }
             catch (Exception)

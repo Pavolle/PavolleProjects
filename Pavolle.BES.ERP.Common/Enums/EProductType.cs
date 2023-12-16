@@ -8,6 +8,6 @@ namespace Pavolle.BES.ERP.Common.Enums
 {
     public enum EProductType
     {
-        Electronic=1
+        SuppliedElectronicRowMaterial = 1,
     }
 }

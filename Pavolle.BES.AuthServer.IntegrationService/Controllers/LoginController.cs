@@ -25,7 +25,7 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
         {
             if (request == null)
             {
-                return BadRequest(new AuthenticateResponse
+                return BadRequest(new SignInResponse
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
                     StatusCode = 400
@@ -44,39 +44,7 @@ namespace Pavolle.BES.AuthServer.IntegrationService.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new AuthenticateResponse
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
-                    StatusCode = 500
-                });
-            }
-        }
-
-        [HttpPost(AuthServerApiUrlConsts.LoginUrlConsts.GenerateTokenRoutePrefix)]
-        public ActionResult GenerateToken([FromBody] GenerateTokenRequest request)
-        {
-            if (request == null)
-            {
-                return BadRequest(new AuthenticateResponse
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
-                    StatusCode = 400
-                });
-            }
-            if (request.Language == null)
-            {
-                request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
-            }
-            try
-            {
-                var response = LoginManager.Instance.GenerateToken(request);
-                _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new AuthenticateResponse
+                return Ok(new SignInResponse
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
                     StatusCode = 500

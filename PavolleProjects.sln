@@ -619,35 +619,37 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.CRM.WebApp", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.CRM.MobileApp", "Pavolle.BES.CRM.MobileApp\Pavolle.BES.CRM.MobileApp.csproj", "{9655BE5A-B1BA-4832-A5B4-EEFBCAA60FF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.Supplera.MobileApp", "Pavolle.BES.Supplera.MobileApp\Pavolle.BES.Supplera.MobileApp.csproj", "{A285BB24-3906-4008-92C9-2906B725664A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.Supplera.MobileApp", "Pavolle.BES.Supplera.MobileApp\Pavolle.BES.Supplera.MobileApp.csproj", "{A285BB24-3906-4008-92C9-2906B725664A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.JsonLibrary", "Pavolle.BES.JsonLibrary\Pavolle.BES.JsonLibrary.csproj", "{2799E9C9-4D66-49A9-9D17-A4BD358C9475}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.JsonLibrary", "Pavolle.BES.JsonLibrary\Pavolle.BES.JsonLibrary.csproj", "{2799E9C9-4D66-49A9-9D17-A4BD358C9475}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.XmlLibrary", "Pavolle.BES.XmlLibrary\Pavolle.BES.XmlLibrary.csproj", "{0109AD48-89DB-45BF-9408-7F7A795DB234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.XmlLibrary", "Pavolle.BES.XmlLibrary\Pavolle.BES.XmlLibrary.csproj", "{0109AD48-89DB-45BF-9408-7F7A795DB234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.WordLibrary", "Pavolle.BES.WordLibrary\Pavolle.BES.WordLibrary.csproj", "{4ABE445A-478A-48D7-A518-D31F21008F05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.WordLibrary", "Pavolle.BES.WordLibrary\Pavolle.BES.WordLibrary.csproj", "{4ABE445A-478A-48D7-A518-D31F21008F05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PdfLibrary", "Pavolle.BES.PdfLibrary\Pavolle.BES.PdfLibrary.csproj", "{10F52448-9242-45F9-8F17-292C0453ACD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PdfLibrary", "Pavolle.BES.PdfLibrary\Pavolle.BES.PdfLibrary.csproj", "{10F52448-9242-45F9-8F17-292C0453ACD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.ExcelLibrary", "Pavolle.BES.ExcelLibrary\Pavolle.BES.ExcelLibrary.csproj", "{22F6357E-6B96-485F-8F01-8BBC3D93E0BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.ExcelLibrary", "Pavolle.BES.ExcelLibrary\Pavolle.BES.ExcelLibrary.csproj", "{22F6357E-6B96-485F-8F01-8BBC3D93E0BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vehicle Managment", "Vehicle Managment", "{EE1B56EA-3518-44B9-9ECE-295178149349}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.Business", "Pavolle.BES.VehicleManagment.Business\Pavolle.BES.VehicleManagment.Business.csproj", "{D9763E07-14FE-4103-BB45-AD40FA197D68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.Business", "Pavolle.BES.VehicleManagment.Business\Pavolle.BES.VehicleManagment.Business.csproj", "{D9763E07-14FE-4103-BB45-AD40FA197D68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.ClientLib", "Pavolle.BES.VehicleManagment.ClientLib\Pavolle.BES.VehicleManagment.ClientLib.csproj", "{60A5F814-419D-4230-9ABE-35C219C6BC11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.ClientLib", "Pavolle.BES.VehicleManagment.ClientLib\Pavolle.BES.VehicleManagment.ClientLib.csproj", "{60A5F814-419D-4230-9ABE-35C219C6BC11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.Common", "Pavolle.BES.VehicleManagment.Common\Pavolle.BES.VehicleManagment.Common.csproj", "{70CC1039-5693-4FEC-9570-9E0094178164}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.Common", "Pavolle.BES.VehicleManagment.Common\Pavolle.BES.VehicleManagment.Common.csproj", "{70CC1039-5693-4FEC-9570-9E0094178164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.DbModels", "Pavolle.BES.VehicleManagment.DbModels\Pavolle.BES.VehicleManagment.DbModels.csproj", "{A6666ABD-5CC0-4CB9-B233-869D18FE4CC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.DbModels", "Pavolle.BES.VehicleManagment.DbModels\Pavolle.BES.VehicleManagment.DbModels.csproj", "{A6666ABD-5CC0-4CB9-B233-869D18FE4CC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.ViewModels", "Pavolle.BES.VehicleManagment.ViewModels\Pavolle.BES.VehicleManagment.ViewModels.csproj", "{AE92E777-A7BE-482B-80CA-0E00FD3F9CCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.ViewModels", "Pavolle.BES.VehicleManagment.ViewModels\Pavolle.BES.VehicleManagment.ViewModels.csproj", "{AE92E777-A7BE-482B-80CA-0E00FD3F9CCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.MobileApp", "Pavolle.BES.VehicleManagment.MobileApp\Pavolle.BES.VehicleManagment.MobileApp.csproj", "{227D6869-313B-4005-BD43-C9EDAB6ABE57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.MobileApp", "Pavolle.BES.VehicleManagment.MobileApp\Pavolle.BES.VehicleManagment.MobileApp.csproj", "{227D6869-313B-4005-BD43-C9EDAB6ABE57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.WebApp", "Pavolle.BES.VehicleManagment.WebApp\Pavolle.BES.VehicleManagment.WebApp.csproj", "{7B81A5C7-22FE-42E5-A36F-97BD0F2AE95F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.WebApp", "Pavolle.BES.VehicleManagment.WebApp\Pavolle.BES.VehicleManagment.WebApp.csproj", "{7B81A5C7-22FE-42E5-A36F-97BD0F2AE95F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.IntegrationService", "Pavolle.BES.VehicleManagment.IntegrationService\Pavolle.BES.VehicleManagment.IntegrationService.csproj", "{9FC8081A-6009-44A2-B6A0-1D71E9314328}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.IntegrationService", "Pavolle.BES.VehicleManagment.IntegrationService\Pavolle.BES.VehicleManagment.IntegrationService.csproj", "{9FC8081A-6009-44A2-B6A0-1D71E9314328}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{A1F7F8D8-E310-4F56-9186-39A4348C6F09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1810,7 +1812,7 @@ Global
 		{03F6895F-627C-4841-AC06-9D2B6AE5AC5F} = {F44DE28E-5633-4289-ADFB-2F571A63A96D}
 		{34F8A752-AB3D-4086-BEA0-F778A6C24AC3} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
 		{AD04C72F-C87C-495D-BC0E-C042A0D71C11} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
-		{E218D7C9-29E7-42BD-89FB-2293DEE7DC30} = {925F7B5B-F58C-481D-B22F-BFFF68387D29}
+		{E218D7C9-29E7-42BD-89FB-2293DEE7DC30} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
 		{DCCE0915-896E-480C-8884-1C975EB05DE4} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
 		{2E687F49-E980-4A6C-8C0F-5E68E04AB46F} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
 		{DD052848-0D44-49A5-A6A5-4DED7987515F} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
@@ -1991,6 +1993,7 @@ Global
 		{227D6869-313B-4005-BD43-C9EDAB6ABE57} = {EE1B56EA-3518-44B9-9ECE-295178149349}
 		{7B81A5C7-22FE-42E5-A36F-97BD0F2AE95F} = {EE1B56EA-3518-44B9-9ECE-295178149349}
 		{9FC8081A-6009-44A2-B6A0-1D71E9314328} = {EE1B56EA-3518-44B9-9ECE-295178149349}
+		{A1F7F8D8-E310-4F56-9186-39A4348C6F09} = {1C2C57FB-517A-4A48-B15E-5DC4BDF0A95D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

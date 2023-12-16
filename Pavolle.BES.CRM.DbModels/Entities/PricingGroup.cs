@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.CRM.DbModels.Entities
 {
-    [Persistent("b2b_pricing_group")]
+    [Persistent("pricing_group")]
     public class PricingGroup : BaseObject
     {
         public PricingGroup(Session session) : base(session)

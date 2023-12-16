@@ -16,6 +16,7 @@ namespace Pavolle.BES.DYS.Common.Enums
         Customer,
         Irsaliye,
         Fatura,
-        XPerson
+        XPerson,
+        SuppleraBomFile
     }
 }
