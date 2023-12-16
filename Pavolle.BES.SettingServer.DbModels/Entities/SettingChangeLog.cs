@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.SettingServer.DbModels.Entities
 {
-    [Persistent("ss_setting_change_logs")]
+    [Persistent("setting_change_logs")]
     public class SettingChangeLog : BaseObject
     {
         public SettingChangeLog(Session session) : base(session)

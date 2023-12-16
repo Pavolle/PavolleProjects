@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels.Entities
 {
-    [Persistent("as_user_sessions")]
+    [Persistent("user_sessions")]
     public class UserSession : BaseObject
     {
         public UserSession(Session session) : base(session)

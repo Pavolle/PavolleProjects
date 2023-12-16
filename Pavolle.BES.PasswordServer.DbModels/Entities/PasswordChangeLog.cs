@@ -19,6 +19,7 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
 
 
         [Persistent("old_value")]
+        [Size(1000)]
         public string Old { get; set; }
 
 

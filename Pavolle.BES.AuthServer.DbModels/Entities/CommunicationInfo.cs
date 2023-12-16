@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels.Entities
 {
-    [Persistent("as_communication_info")]
+    [Persistent("communication_info")]
     public class CommunicationInfo : BaseObject
     {
         public CommunicationInfo(Session session) : base(session)

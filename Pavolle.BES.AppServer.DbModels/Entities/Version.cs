@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AppServer.DbModels.Entities
 {
-    [Persistent("apps_app_version")]
+    [Persistent("app_version")]
     public class Version : BaseObject
     {
         public Version(Session session) : base(session)

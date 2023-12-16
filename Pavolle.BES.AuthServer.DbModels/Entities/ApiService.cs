@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.AuthServer.DbModels.Entities
 {
-    [Persistent("as_api_service")]
+    [Persistent("api_service")]
     public class ApiService : BaseObject
     {
 
