@@ -13,5 +13,8 @@ namespace Pavolle.BES.DYS.ViewModels.Integration.Request
         public long? ProductOid { get;set; }
         public long? VersionOid { get; set; }
         public string Base64File { get; set; }
+
+        //Product Name + Version Info
+        public string FileName { get; set; }
     }
 }
