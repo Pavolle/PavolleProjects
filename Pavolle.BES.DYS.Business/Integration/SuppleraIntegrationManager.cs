@@ -1,4 +1,6 @@
 ﻿using DevExpress.Xpo;
+using log4net;
+using Pavolle.BES.DYS.Business.Manager;
 using Pavolle.BES.DYS.Common.Enums;
 using Pavolle.BES.DYS.DbModels;
 using Pavolle.BES.DYS.DbModels.Entities;
@@ -19,6 +21,7 @@ namespace Pavolle.BES.DYS.Business.Integration
 {
     public class SuppleraIntegrationManager : Singleton<SuppleraIntegrationManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(SuppleraIntegrationManager));
         private SuppleraIntegrationManager() { }
 
         public DYSIntegrationResponseBase SaveBomFile(SuppleraIntegrationBomFileRequest request)

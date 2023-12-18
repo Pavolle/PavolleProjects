@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.DYS.Business.Integration;
+﻿using log4net;
+using Pavolle.BES.DYS.Business.Integration;
 using Pavolle.BES.DYS.ViewModels.Integration.Request;
 using Pavolle.BES.DYS.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
@@ -13,6 +14,7 @@ namespace Pavolle.BES.DYS.Business.Manager
 {
     public class DYSServerStatusManager : Singleton<DYSServerStatusManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(DYSServerStatusManager));
         private DYSServerStatusManager() { }
 
         public DYSSettingsResponse GetServerSettings(BesRequestBase request)

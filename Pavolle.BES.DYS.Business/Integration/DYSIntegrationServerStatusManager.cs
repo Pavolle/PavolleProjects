@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.DYS.Business.Manager;
+﻿using log4net;
+using Pavolle.BES.DYS.Business.Manager;
 using Pavolle.BES.DYS.ViewModels.Integration.Request;
 using Pavolle.BES.DYS.ViewModels.Response;
 using Pavolle.Core.Utils;
@@ -12,6 +13,7 @@ namespace Pavolle.BES.DYS.Business.Integration
 {
     public class DYSIntegrationServerStatusManager : Singleton<DYSIntegrationServerStatusManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(DYSIntegrationServerStatusManager));
         public DYSSettingsResponse GetServerSettings(DYSIntegrationRequestBase request)
         {
             throw new NotImplementedException();
