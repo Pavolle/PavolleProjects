@@ -150,11 +150,7 @@ namespace Pavolle.BES.DYS.Business.Integration
                         DocumentType = EDocumentType.SuppleraBomFile,
                         Folder = versionFolder,
                         Name = request.FileName,
-                        FullPath = versionFolder + "\\" + filename,
-                        Path = filename,
-                        SecureKey = secureKey,
                         OrganizationOid = request.OrganizationOid.Value,
-                        UniqueCode = CodeGeneratorManager.Instance.GenerateNumber(16, true),
                     };
                     document.Save();
                     

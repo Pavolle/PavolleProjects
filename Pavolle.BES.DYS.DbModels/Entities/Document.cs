@@ -20,10 +20,6 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         public long OrganizationOid { get; set; }
 
 
-        [Persistent("unique_code")]
-        public string UniqueCode { get; set; }
-
-
         [Persistent("document_type")]
         public EDocumentType DocumentType { get; set; }
 
@@ -33,27 +29,12 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         public string Name { get; set; }
 
 
-        [Persistent("secure_key")]
-        [Size(100)]
-        public string SecureKey { get; set; }
-
-
         [Persistent("folder_oid")]
         public Folder Folder { get; set; }
 
 
         [Persistent("can_transfer")]
         public bool CanTransfer { get; set; }
-
-
-        [Persistent("path")]
-        [Size(255)]
-        public string Path { get; set; }
-
-
-        [Persistent("full_path")]
-        [Size(255)]
-        public string FullPath { get; set; }
 
 
         [Persistent("permission_all_organization_user")]
