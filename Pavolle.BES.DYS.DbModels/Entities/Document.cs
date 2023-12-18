@@ -54,5 +54,9 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         [Persistent("full_path")]
         [Size(255)]
         public string FullPath { get; set; }
+
+
+        [Persistent("permission_all_organization_user")]
+        public bool PermissionAllOrganizationUser { get; set; }
     }
 }

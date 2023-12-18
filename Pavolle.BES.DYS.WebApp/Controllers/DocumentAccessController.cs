@@ -2,7 +2,7 @@
 
 namespace Pavolle.BES.DYS.WebApp.Controllers
 {
-    public class PhysicalFileController : Controller
+    public class DocumentAccessController : Controller
     {
         public IActionResult Index()
         {
