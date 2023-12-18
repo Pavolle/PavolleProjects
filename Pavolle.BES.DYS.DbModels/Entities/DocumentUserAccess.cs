@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.DYS.DbModels.Entities
 {
-    [Persistent("role_document_access")]
-    public class RoleDocumentAccess : BaseObject
+    [Persistent("document_access")]
+    public class DocumentUserAccess : BaseObject
     {
-        public RoleDocumentAccess(Session session) : base(session)
+        public DocumentUserAccess(Session session) : base(session)
         {
         }
 
@@ -20,8 +20,8 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         [Persistent("all_organization_user")]
         public bool AllOrganizationUser { get; set; }
 
-        [Persistent("role_oid")]
-        public long RoleOid { get; set; }
+        [Persistent("user_oid")]
+        public long UserOid { get; set; }
 
         [Persistent("has_access")]
         public bool HasAccess { get; set; }

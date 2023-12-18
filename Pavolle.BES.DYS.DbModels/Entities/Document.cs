@@ -33,11 +33,6 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         public string Name { get; set; }
 
 
-        [Persistent("path")]
-        [Size(255)]
-        public string Path { get; set; }
-
-
         [Persistent("secure_key")]
         [Size(100)]
         public string SecureKey { get; set; }
@@ -51,6 +46,11 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         public bool CanTransfer { get; set; }
 
 
+        [Persistent("path")]
+        [Size(255)]
+        public string Path { get; set; }
+
+
         [Persistent("full_path")]
         [Size(255)]
         public string FullPath { get; set; }
@@ -58,5 +58,11 @@ namespace Pavolle.BES.DYS.DbModels.Entities
 
         [Persistent("permission_all_organization_user")]
         public bool PermissionAllOrganizationUser { get; set; }
+
+
+        [Persistent("smart_index")]
+        public bool SmartIndex { get; set; }
+
+
     }
 }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace Pavolle.BES.DYS.DbModels.Entities
 {
     [Persistent("physical_folder_access")]
-    public class PhysicalFolderAccess : BaseObject
+    public class PhysicalFolderRoleAccess : BaseObject
     {
-        public PhysicalFolderAccess(Session session) : base(session)
+        public PhysicalFolderRoleAccess(Session session) : base(session)
         {
         }
 
