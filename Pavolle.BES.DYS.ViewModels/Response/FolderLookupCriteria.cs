@@ -1,14 +1,13 @@
 ﻿using Pavolle.BES.ViewModels.Request;
-using Pavolle.Core.ViewModels.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.DYS.ViewModels.Integration.Request
+namespace Pavolle.BES.DYS.ViewModels.Response
 {
-    public class DYSIntegrationRequestBase : IntegrationAppRequestBase
+    public class FolderLookupCriteria : BesRequestBase
     {
     }
 }

@@ -18,16 +18,24 @@ namespace Pavolle.BES.DYS.DbModels.Entities
         [Persistent("organization_oid")]
         public long? OrganizationOid { get; set; }
 
+
         [Persistent("name")]
         public string Name { get; set; }
+
 
         [Persistent("parent_folder_oid")]
         public long? ParentFolderOid { get; set; }
 
+
         [Persistent("folder_type")]
         public EFolderType FolderType { get; set; }
 
+
         [Persistent("full_path")]
         public string FullPath { get; set; }
+
+
+        [Persistent("can_transfer")]
+        public bool CanTransfer { get; set; }
     }
 }

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.ViewModels.Response
+namespace Pavolle.BES.DYS.ViewModels.Response
 {
-    public class BesResponseBase : ResponseBase
+    public class FolderDetailResponse : ResponseBase
     {
     }
 }

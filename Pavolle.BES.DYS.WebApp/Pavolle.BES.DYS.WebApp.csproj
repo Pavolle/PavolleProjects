@@ -25,6 +25,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Pavolle.BES.DYS.Business\Pavolle.BES.DYS.Business.csproj" />
     <ProjectReference Include="..\Pavolle.BES.DYS.Common\Pavolle.BES.DYS.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.RequestValidation\Pavolle.BES.RequestValidation.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.TranslateServer.ClientLib\Pavolle.BES.TranslateServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
   </ItemGroup>
 
