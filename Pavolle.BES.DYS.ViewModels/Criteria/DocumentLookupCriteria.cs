@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.DYS.ViewModels.Integration.Request
+namespace Pavolle.BES.DYS.ViewModels.Criteria
 {
-    public class AddFolderRequest : BesRequestBase
+    public class DocumentLookupCriteria : BesRequestBase
     {
     }
 }

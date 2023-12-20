@@ -3,7 +3,7 @@ using log4net;
 using Pavolle.BES.DYS.Common.Enums;
 using Pavolle.BES.DYS.DbModels.Entities;
 using Pavolle.BES.DYS.ViewModels.Criteria;
-using Pavolle.BES.DYS.ViewModels.Integration.Request;
+using Pavolle.BES.DYS.ViewModels.Request;
 using Pavolle.BES.DYS.ViewModels.Response;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;

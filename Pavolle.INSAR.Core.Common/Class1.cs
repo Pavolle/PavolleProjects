@@ -1,4 +1,4 @@
-﻿namespace Pavolle.BES.Journal.Common
+﻿namespace Pavolle.INSAR.Core.Common
 {
     public class Class1
     {

@@ -1,4 +1,4 @@
-﻿using Pavolle.BES.ViewModels.Request;
+﻿using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.DYS.ViewModels.Response
 {
-    public class FolderLookupCriteria : BesRequestBase
+    public class DocumentListResponse : ResponseBase
     {
     }
 }

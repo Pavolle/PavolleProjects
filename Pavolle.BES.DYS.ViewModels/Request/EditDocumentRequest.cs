@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.DYS.ViewModels.Integration.Request
+namespace Pavolle.BES.DYS.ViewModels.Request
 {
-    public class EditFolderRequest : BesRequestBase
+    public class EditDocumentRequest : BesRequestBase
     {
     }
 }

@@ -30,6 +30,13 @@ namespace Pavolle.BES.DYS.Common.Utils
             public const string MoveRoutePrefix = "move";
         }
 
+        public class DocumentUrlConst
+        {
+            public const string BaseRoute = "api/dysserver/document";
+
+            public const string MoveRoutePrefix = "move";
+        }
+
         public class DocumentAccessConsts
         {
             public const string BaseRoute = "api/dysserver/documentaccess";

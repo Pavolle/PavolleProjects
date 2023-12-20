@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Pavolle.BES.DYS.Business.Manager;
 using Pavolle.BES.DYS.Common.Utils;
 using Pavolle.BES.DYS.ViewModels.Criteria;
-using Pavolle.BES.DYS.ViewModels.Integration.Request;
+using Pavolle.BES.DYS.ViewModels.Request;
 using Pavolle.BES.DYS.ViewModels.Response;
 using Pavolle.BES.RequestValidation;
 using Pavolle.BES.SettingServer.ClientLib;
