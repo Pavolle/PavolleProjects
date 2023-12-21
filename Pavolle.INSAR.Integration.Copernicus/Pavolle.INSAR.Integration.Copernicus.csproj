@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 
