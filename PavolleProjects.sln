@@ -669,17 +669,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.INSAR.Core.Integrat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.INSAR.Core.ClientLib", "Pavolle.INSAR.Core.ClientLib\Pavolle.INSAR.Core.ClientLib.csproj", "{93948F46-0C6D-4F07-B03B-4A7033C523CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.INSAR.WebApp", "Pavolle.INSAR.WebApp\Pavolle.INSAR.WebApp.csproj", "{674045D5-E94C-419C-8777-723C44CBB9D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.INSAR.WebApp", "Pavolle.INSAR.WebApp\Pavolle.INSAR.WebApp.csproj", "{674045D5-E94C-419C-8777-723C44CBB9D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{AFA99C64-A8A4-4130-884E-44A543BEA263}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{25C04860-3F3C-4433-A59A-78EE407FB7CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.INSAR.Integration.Copernicus", "Pavolle.INSAR.Integration.Copernicus\Pavolle.INSAR.Integration.Copernicus.csproj", "{AA101421-8F79-4DEA-8F1C-98E6743E83A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.INSAR.Integration.Copernicus", "Pavolle.INSAR.Integration.Copernicus\Pavolle.INSAR.Integration.Copernicus.csproj", "{AA101421-8F79-4DEA-8F1C-98E6743E83A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Copernicus", "Copernicus", "{DC3A3409-A67E-4B81-AA50-CB20A2BDCDDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.INSAR.Integration.CopernicusTests", "Pavolle.INSAR.Integration.CopernicusTests\Pavolle.INSAR.Integration.CopernicusTests.csproj", "{7F9B7957-5E54-4119-80B6-883D1C7B9A24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.INSAR.Integration.CopernicusTests", "Pavolle.INSAR.Integration.CopernicusTests\Pavolle.INSAR.Integration.CopernicusTests.csproj", "{7F9B7957-5E54-4119-80B6-883D1C7B9A24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.GitIntegration", "Pavolle.BES.DYS.GitIntegration\Pavolle.BES.DYS.GitIntegration.csproj", "{7515540D-4009-44DC-9113-2ABF0ECCF775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.IntegrationService", "Pavolle.BES.TeknikDestek.IntegrationService\Pavolle.BES.TeknikDestek.IntegrationService.csproj", "{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.MobileApp", "Pavolle.BES.TeknikDestek.MobileApp\Pavolle.BES.TeknikDestek.MobileApp.csproj", "{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.UnitTests", "Pavolle.BES.VehicleManagment.UnitTests\Pavolle.BES.VehicleManagment.UnitTests.csproj", "{F4E7E523-D9C1-4A0A-A759-83627218A148}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1757,6 +1765,24 @@ Global
 		{7F9B7957-5E54-4119-80B6-883D1C7B9A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F9B7957-5E54-4119-80B6-883D1C7B9A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F9B7957-5E54-4119-80B6-883D1C7B9A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7515540D-4009-44DC-9113-2ABF0ECCF775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7515540D-4009-44DC-9113-2ABF0ECCF775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7515540D-4009-44DC-9113-2ABF0ECCF775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7515540D-4009-44DC-9113-2ABF0ECCF775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F4E7E523-D9C1-4A0A-A759-83627218A148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E7E523-D9C1-4A0A-A759-83627218A148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E7E523-D9C1-4A0A-A759-83627218A148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E7E523-D9C1-4A0A-A759-83627218A148}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2082,6 +2108,10 @@ Global
 		{AA101421-8F79-4DEA-8F1C-98E6743E83A8} = {DC3A3409-A67E-4B81-AA50-CB20A2BDCDDD}
 		{DC3A3409-A67E-4B81-AA50-CB20A2BDCDDD} = {AFA99C64-A8A4-4130-884E-44A543BEA263}
 		{7F9B7957-5E54-4119-80B6-883D1C7B9A24} = {DC3A3409-A67E-4B81-AA50-CB20A2BDCDDD}
+		{7515540D-4009-44DC-9113-2ABF0ECCF775} = {5F1BE2F1-2A8E-450B-AE89-0523485AB41E}
+		{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651} = {BD74D376-5F03-47BC-BC2A-85076512CEFD}
+		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3} = {BD74D376-5F03-47BC-BC2A-85076512CEFD}
+		{F4E7E523-D9C1-4A0A-A759-83627218A148} = {EE1B56EA-3518-44B9-9ECE-295178149349}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

@@ -1,7 +1,9 @@
 ﻿using Pavolle.BES.DYS.ViewModels.Criteria;
 using Pavolle.BES.DYS.ViewModels.Request;
+using Pavolle.BES.DYS.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,32 +16,32 @@ namespace Pavolle.BES.DYS.Business.Manager
     {
         private DocumentManager() { }
 
-        public object Detail(long? oid, BesRequestBase request)
+        public DocumentDetailResponse Detail(long? oid, BesRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object List(ListDocumentCriteria criteria)
+        public DocumentListResponse List(ListDocumentCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public object Add(AddDocumentRequest request)
+        public ResponseBase Add(AddDocumentRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object Lookup(DocumentLookupCriteria criteria)
+        public LookupResponse Lookup(DocumentLookupCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public object Edit(long? oid, EditDocumentRequest request)
+        public ResponseBase Edit(long? oid, EditDocumentRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object Move(MoveDocumentRequest request)
+        public ResponseBase Move(MoveDocumentRequest request)
         {
             throw new NotImplementedException();
         }

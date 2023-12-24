@@ -16,6 +16,7 @@ namespace Pavolle.BES.B2B.DbModels.Entities
         [Persistent("dealer_oid")]
         public Dealer Dealer { get; set; }
 
-        public long UnitOid { get; set; }
+        [Persistent("warehouse_oid")]
+        public long WarehouseOid { get; set; }
     }
 }
