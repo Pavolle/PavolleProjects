@@ -15,6 +15,7 @@ using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -90,12 +91,48 @@ namespace Pavolle.BES.PasswordServer.Business.Manager
 
         public ResponseBase Edit(long? oid, EditPasswordCategoryRequest request)
         {
-            throw new NotImplementedException();
+            var response = new ResponseBase();
+            //request Kontrolleri
+
+            using (Session session = PasswordServerXpoManager.Instance.GetNewSession())
+            {
+                var passCategory = session.Query<PasswordCategory>().FirstOrDefault(t => t.Oid == oid);
+                if (passCategory == null)
+                {
+                    response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, SettingServiceManager.Instance.GetDefaultLanguage());
+                    response.StatusCode = 400;
+                    return response;
+                }
+
+                passCategory.Definition = request.Definition;
+                passCategory.LastUpdateTime = DateTime.Now;
+                passCategory.Save();
+
+                passCategory.Save();
+            }
+
+            return response;
         }
 
         public PasswordCategoryListResponse List(BesRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new PasswordCategoryListResponse();
+            //request Kontrolleri
+
+            using (Session session = PasswordServerXpoManager.Instance.GetNewSession())
+            {
+                response.DataList = session.Query<PasswordCategory>().Where(t => t.OrganizationOid == request.OrganizationOid && (t.IsPersonal == false || t.BelongUserOid == request.UserOid)).Select(t => new PasswordCategoryViewData
+                {
+                    Oid = t.Oid,
+                    CreatedTime =t.CreatedTime,
+                    LastUpdateTime = t.LastUpdateTime,
+                    Definition=t.Definition,
+                    IsPersonal=t.IsPersonal
+                }).ToList();
+                
+            }
+
+            return response;
         }
 
         public LookupResponse Lookup(BesRequestBase request)

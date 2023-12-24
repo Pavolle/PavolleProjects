@@ -9,5 +9,6 @@ namespace Pavolle.BES.PasswordServer.ViewModels.Request
 {
     public class EditPasswordCategoryRequest : BesRequestBase
     {
+        public string Definition { get; set; }
     }
 }
