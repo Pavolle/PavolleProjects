@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.TeknikDestek.DbModels.Entities
+namespace Pavolle.BES.TeknikDestek.DbModels.Entities.LiveSupport
 {
-    [Persistent("live_support_users")]
-    public class LiveSupportUser : BaseObject
+    [Persistent("live_messaging_support_users")]
+    public class LiveMessagingSupportUser : BaseObject
     {
-        public LiveSupportUser(Session session) : base(session)
+        public LiveMessagingSupportUser(Session session) : base(session)
         {
         }
 

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.TeknikDestek.DbModels.Entities
+namespace Pavolle.BES.TeknikDestek.DbModels.Entities.LiveSupport
 {
     [Persistent("live_messaging_support_message")]
     public class LiveMessagingSupportMessage : BaseObject
@@ -16,7 +16,7 @@ namespace Pavolle.BES.TeknikDestek.DbModels.Entities
         }
 
         [Persistent("live_messaging_support_oid")]
-        public LiveMessagingSupport LiveMessagingSupport { get; set; }
+        public LiveMessagingSupportRecord LiveMessagingSupport { get; set; }
 
         [Persistent("message")]
         [Size(1000)]
