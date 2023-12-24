@@ -12,6 +12,7 @@ using Pavolle.BES.ViewModels.Request;
 using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
+using Pavolle.Core.ViewModels.ViewData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -137,7 +138,21 @@ namespace Pavolle.BES.PasswordServer.Business.Manager
 
         public LookupResponse Lookup(BesRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new LookupResponse();
+            //request Kontrolleri
+
+            using (Session session = PasswordServerXpoManager.Instance.GetNewSession())
+            {
+                response.DataList = session.Query<PasswordCategory>().Where(t => t.OrganizationOid == request.OrganizationOid && (t.IsPersonal == false || t.BelongUserOid == request.UserOid)).Select(t => new LookupViewData
+                {
+                    Key = t.Oid,
+                    Value = t.Definition,
+                    IsDefault = false
+                }).ToList();
+
+            }
+
+            return response;
         }
     }
 }
