@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.PasswordServer.DbModels.Entities
 {
-    [Persistent("ps_passwords")]
+    [Persistent("passwords")]
     public class Password : BaseObject
     {
 
@@ -19,18 +19,23 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
         [Persistent("password_category_oid")]
         public PasswordCategory Category { get; set; }
 
+
         [Persistent("owner_organization_oid")]
         public long OwnerOrganizationOid { get; set; }
 
+
         [Persistent("owner_user_oid")]
         public long? OwnerUserOid { get; set; }
+
 
         [Persistent("encryted_pasword")]
         [Size(1000)]
         public string EncrytedPasword { get; set; }
 
+
         [Persistent("definition")]
         public string Definition { get; set; }
+
 
         [Persistent("owner_type")]
         public EPasswordOwnerType OwnerType { get; set; }

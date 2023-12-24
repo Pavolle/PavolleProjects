@@ -18,16 +18,13 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
         public long OrganizationOid { get; set; }
 
 
-
         [Persistent("definition")]
         [Size(500)]
         public string Definition { get; set; }
 
 
-
         [Persistent("is_personel")]
         public bool IsPersonal { get; set; }
-
 
 
         [Persistent("belong_user_oid")]

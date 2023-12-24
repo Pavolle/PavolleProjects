@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.PasswordServer.DbModels.Entities
 {
-    [Persistent("ps_role_authorities")]
+    [Persistent("role_authorities")]
     public class RoleAuthority : BaseObject
     {
         public RoleAuthority(Session session) : base(session)
@@ -26,7 +26,7 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
         public bool CanChange { get; set; }
 
 
-        [Persistent("is_authority")]
-        public bool IsAuthority { get; set; }
+        [Persistent("can_access")]
+        public bool CanAccess { get; set; }
     }
 }
