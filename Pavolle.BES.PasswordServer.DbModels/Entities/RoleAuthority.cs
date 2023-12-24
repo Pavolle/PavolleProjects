@@ -22,6 +22,10 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
         public Password Pasword { get; set; }
 
 
+        [Persistent("can_change")]
+        public bool CanChange { get; set; }
+
+
         [Persistent("is_authority")]
         public bool IsAuthority { get; set; }
     }

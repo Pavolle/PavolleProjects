@@ -16,6 +16,9 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
         {
         }
 
+        [Persistent("password_category_oid")]
+        public PasswordCategory Category { get; set; }
+
         [Persistent("owner_organization_oid")]
         public long OwnerOrganizationOid { get; set; }
 

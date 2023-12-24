@@ -689,6 +689,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.UnitTests", "Pavolle.BES.VehicleManagment.UnitTests\Pavolle.BES.VehicleManagment.UnitTests.csproj", "{F4E7E523-D9C1-4A0A-A759-83627218A148}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PasswordServer.MobileApp", "Pavolle.BES.PasswordServer.MobileApp\Pavolle.BES.PasswordServer.MobileApp.csproj", "{20DD6A75-4253-4DC0-915A-EE9D4BACB151}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1783,6 +1785,12 @@ Global
 		{F4E7E523-D9C1-4A0A-A759-83627218A148}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4E7E523-D9C1-4A0A-A759-83627218A148}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4E7E523-D9C1-4A0A-A759-83627218A148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2112,6 +2120,7 @@ Global
 		{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651} = {BD74D376-5F03-47BC-BC2A-85076512CEFD}
 		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3} = {BD74D376-5F03-47BC-BC2A-85076512CEFD}
 		{F4E7E523-D9C1-4A0A-A759-83627218A148} = {EE1B56EA-3518-44B9-9ECE-295178149349}
+		{20DD6A75-4253-4DC0-915A-EE9D4BACB151} = {20872673-FF96-4179-A0E2-EC0B7741D725}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}

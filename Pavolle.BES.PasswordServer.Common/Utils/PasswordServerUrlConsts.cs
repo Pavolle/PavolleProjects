@@ -8,7 +8,6 @@ namespace Pavolle.BES.PasswordServer.Common.Utils
 {
     public class PasswordServerUrlConsts
     {
-
         public class ServerStatusUrlConst
         {
             public const string BaseRoute = "api/passwordserver/serverstatus";
@@ -27,6 +26,16 @@ namespace Pavolle.BES.PasswordServer.Common.Utils
             public const string ForgotPaswordRoutePrefix = "forgotpassword";
             public const string ResetPaswordRoutePrefix = "resetpassword";
 
+        }
+
+        public class PasswordCategoryConsts
+        {
+            public const string BaseRoute = "api/passwordserver/passwordcategory";
+            public const string ListRoutePrefix = "list";
+            public const string LookupRoutePrefix = "lookup";
+            public const string EditRoutePrefix = "edit/{oid}";
+            public const string DetailRoutePrefix = "detail/{oid}";
+            public const string AddRoutePrefix = "add";
         }
 
         public class PasswordConsts

@@ -22,8 +22,5 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
 
         [Persistent("user_oid")]
         public long UserOid { get; set; }
-
-        [Persistent("key")]
-        public string Key { get; set; }
     }
 }
