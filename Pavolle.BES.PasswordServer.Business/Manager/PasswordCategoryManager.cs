@@ -1,8 +1,10 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.AuthServer.ClientLib;
 using Pavolle.BES.PasswordServer.DbModels;
 using Pavolle.BES.PasswordServer.DbModels.Entities;
 using Pavolle.BES.PasswordServer.ViewModels.Request;
 using Pavolle.BES.PasswordServer.ViewModels.Response;
+using Pavolle.BES.PasswordServer.ViewModels.ViewData;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.TranslateServer.ClientLib;
 using Pavolle.BES.TranslateServer.Common.Enums;
@@ -54,7 +56,36 @@ namespace Pavolle.BES.PasswordServer.Business.Manager
 
         public PasswordCategoryDetailResponse Detail(long? oid, BesRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new PasswordCategoryDetailResponse();
+            //request Kontrolleri
+
+            using (Session session = PasswordServerXpoManager.Instance.GetNewSession())
+            {
+                var data = session.Query<PasswordCategory>().FirstOrDefault(t => t.Oid == oid);
+                if(data==null)
+                {
+                    response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, SettingServiceManager.Instance.GetDefaultLanguage());
+                    response.StatusCode = 400;
+                    return response;
+                }
+
+                response.Detail = new PasswordCategoryDetailViewData
+                {
+                    BelongUserOid = data.BelongUserOid,
+                    Definition = data.Definition,
+                    Oid = data.Oid,
+                    IsPersonal = data.IsPersonal,
+                    CreatedTime = data.CreatedTime,
+                    LastUpdateTime = data.LastUpdateTime
+                };
+
+                if (data.IsPersonal)
+                {
+                    response.Detail.BelongPersonInfo = AuthServerUserServiceManager.Instance.GetPersonCacheModelFromUserOid(data.BelongUserOid);
+                }
+            }
+
+            return response;
         }
 
         public ResponseBase Edit(long? oid, EditPasswordCategoryRequest request)
