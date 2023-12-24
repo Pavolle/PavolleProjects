@@ -29,6 +29,9 @@ namespace Pavolle.BES.TranslateServer.Common.Enums
 
         [Description("Data Created Before")]
         DataCreatedBefore,
+
+
+        [Description("Username or Password Not Correct!")]
         UsernameOrPasswordNotCorrect
     }
 }

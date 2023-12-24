@@ -18,6 +18,7 @@ namespace Pavolle.BES.PasswordServer.DbModels.Entities
         public long OrganizationOid { get; set; }
 
         [Persistent("definition")]
+        [Size(500)]
         public string Definition { get; set; }
 
         [Persistent("is_personel")]
