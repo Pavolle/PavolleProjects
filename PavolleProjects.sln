@@ -683,13 +683,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.INSAR.Integration.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.DYS.GitIntegration", "Pavolle.BES.DYS.GitIntegration\Pavolle.BES.DYS.GitIntegration.csproj", "{7515540D-4009-44DC-9113-2ABF0ECCF775}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.IntegrationService", "Pavolle.BES.TeknikDestek.IntegrationService\Pavolle.BES.TeknikDestek.IntegrationService.csproj", "{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.IntegrationService", "Pavolle.BES.TeknikDestek.IntegrationService\Pavolle.BES.TeknikDestek.IntegrationService.csproj", "{8847BBB4-D337-4EDB-BFBC-7C4A5F64F651}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.TeknikDestek.MobileApp", "Pavolle.BES.TeknikDestek.MobileApp\Pavolle.BES.TeknikDestek.MobileApp.csproj", "{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.TeknikDestek.MobileApp", "Pavolle.BES.TeknikDestek.MobileApp\Pavolle.BES.TeknikDestek.MobileApp.csproj", "{29164EA1-629D-4843-8C4B-9ECE86D3DBA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.VehicleManagment.UnitTests", "Pavolle.BES.VehicleManagment.UnitTests\Pavolle.BES.VehicleManagment.UnitTests.csproj", "{F4E7E523-D9C1-4A0A-A759-83627218A148}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.VehicleManagment.UnitTests", "Pavolle.BES.VehicleManagment.UnitTests\Pavolle.BES.VehicleManagment.UnitTests.csproj", "{F4E7E523-D9C1-4A0A-A759-83627218A148}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.PasswordServer.MobileApp", "Pavolle.BES.PasswordServer.MobileApp\Pavolle.BES.PasswordServer.MobileApp.csproj", "{20DD6A75-4253-4DC0-915A-EE9D4BACB151}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.PasswordServer.MobileApp", "Pavolle.BES.PasswordServer.MobileApp\Pavolle.BES.PasswordServer.MobileApp.csproj", "{20DD6A75-4253-4DC0-915A-EE9D4BACB151}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SEO", "SEO", "{9A3295D3-6E18-44FE-BD2D-1117F00AEE73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SEO.Business", "Pavolle.BES.SEO.Business\Pavolle.BES.SEO.Business.csproj", "{0665A932-9E22-413E-9361-A8142B877065}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.SEO.MobileApp", "Pavolle.BES.SEO.MobileApp\Pavolle.BES.SEO.MobileApp.csproj", "{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1791,6 +1797,16 @@ Global
 		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20DD6A75-4253-4DC0-915A-EE9D4BACB151}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0665A932-9E22-413E-9361-A8142B877065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0665A932-9E22-413E-9361-A8142B877065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0665A932-9E22-413E-9361-A8142B877065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0665A932-9E22-413E-9361-A8142B877065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2121,6 +2137,9 @@ Global
 		{29164EA1-629D-4843-8C4B-9ECE86D3DBA3} = {BD74D376-5F03-47BC-BC2A-85076512CEFD}
 		{F4E7E523-D9C1-4A0A-A759-83627218A148} = {EE1B56EA-3518-44B9-9ECE-295178149349}
 		{20DD6A75-4253-4DC0-915A-EE9D4BACB151} = {20872673-FF96-4179-A0E2-EC0B7741D725}
+		{9A3295D3-6E18-44FE-BD2D-1117F00AEE73} = {F3A72CCD-3804-40AC-8479-9D6E59356FF5}
+		{0665A932-9E22-413E-9361-A8142B877065} = {9A3295D3-6E18-44FE-BD2D-1117F00AEE73}
+		{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E} = {9A3295D3-6E18-44FE-BD2D-1117F00AEE73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
