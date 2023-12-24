@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.TeknikDestek.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,11 @@ namespace Pavolle.BES.TeknikDestek.DbModels.Entities
         [Persistent("message")]
         [Size(1000)]
         public string Message { get; set; }
+
+        [Persistent("live_message_direction")]
+        public ELiveMessageDirection LiveMessageDirection { get; set; }
+
+        [Persistent("order")]
+        public long Order { get; set; }
     }
 }

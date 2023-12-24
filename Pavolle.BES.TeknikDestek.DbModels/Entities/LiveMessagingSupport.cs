@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.TeknikDestek.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,18 @@ namespace Pavolle.BES.TeknikDestek.DbModels.Entities
 
         [Persistent("technical_support_record_oid")]
         public TechnicalSupportRecord TechnicalSupportRecord { get; set; }
+
+
+        [Persistent("status")]
+        public ELiveMessagingSupportStatus Status { get; set; }
+
+
+        [Persistent("service_requester_person_oid")]
+        public long ServiceRequesterPersonOid { get; set; }
+
+
+        [Persistent("service_provider_user_oid")]
+        public long ServiceProviderUserOid { get; set; }
+
     }
 }
