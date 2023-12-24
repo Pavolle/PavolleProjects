@@ -30,5 +30,17 @@ namespace Pavolle.BES.TeknikDestek.DbModels.Entities
         [Persistent("service_provider_user_oid")]
         public long ServiceProviderUserOid { get; set; }
 
+
+        [Persistent("start_time")]
+        public DateTime StartTime { get; set; }
+
+
+        [Persistent("end_time")]
+        public DateTime? EndTime { get; set; }
+
+
+        [Persistent("conclusion_reason")]
+        public ELiveMessagingSupportConclusionReason ConclusionReason { get; set; }
+
     }
 }
