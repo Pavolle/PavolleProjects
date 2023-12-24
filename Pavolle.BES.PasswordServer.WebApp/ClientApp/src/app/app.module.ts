@@ -14,12 +14,14 @@ import { FooterComponent } from './include/footer/footer.component';
 import { AuthService } from './auth.service';
 import { AuthorizationGuard } from './authorization.guard';
 import { NotFoundComponent } from './include/not-found/not-found.component';
+import { NavMenuComponent } from './include/nav-menu/nav-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    NavMenuComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

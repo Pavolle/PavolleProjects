@@ -1,3 +1,53 @@
-<p>
-  nav-menu works!
-</p>
+<nav class="side-nav-content" style="background-color: #111c40;">
+    <div>
+        <!--Kullanıcı Bilgileri üst kısımda yer alacak.-->
+    </div>
+    <div class=" text">
+        <ul class="nav-list tema ">
+            <li class="nav-list-item">
+                <span class="dx-icon-home menu-icon-custom"></span>
+                <a [routerLink]="['main']">
+                    Anasayfa
+                </a>
+            </li>
+
+            <li class="nav-list-item">
+              <span class="dx-icon-bookmark menu-icon-custom"></span>
+              <a (click)=toggleDisplayYonetim() [routerLink]="['']">
+                Yönetim
+              </a>
+              <ul class="nav-list-list" *ngIf="!isShowYonetim">
+
+                <li class="nav-list-item ">
+                  <span class="dx-icon-user menu-icon-custom"></span>
+                  <a [routerLink]="['managment/users']">
+                    Kullanıcılar
+                  </a>
+                </li>
+                <li class="nav-list-item ">
+                  <span class="dx-icon-key menu-icon-custom"></span>
+                  <a [routerLink]="['managment/auth']">
+                    Yetkiler
+                  </a>
+                </li>
+
+                <li class="nav-list-item">
+                    <!--Admin anasayfa-->
+                    <span class="dx-icon-folder menu-icon-custom"></span>
+                    <a [routerLink]="['category']">
+                        Şifre Kategorileri
+                    </a>
+                </li>
+
+              </ul>
+            </li>
+
+            <li class="nav-list-item">
+                <span class="dx-icon-chevronnext menu-icon-custom"></span>
+                <a [routerLink]="['logout']">
+                  Çıkış
+                </a>
+              </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,6 @@
+.app-icon-style {
+    display: inline-block; /* Blok öğe gibi davranmasını sağla */
+    vertical-align: middle; /* Dikeyde ortala */
+    height: 50px;
+    margin: 5px;
+  }

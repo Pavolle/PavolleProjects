@@ -3,46 +3,35 @@
 @import "~alertifyjs/build/css/alertify.min.css";
 @import "~alertifyjs/build/css/themes/bootstrap.rtl.min.css";
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-code {
-  color: #e01a76;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-app-header{
-  position: fixed; /* normalde fixed */
-  top:0px;
-  height: 4rem;
-  z-index: 2;
-}
-
-.mainarea{
-  position: absolute;
-  top: 4rem;
-  z-index: 1;
-}
-
-app-footer{
+footer {
   position: fixed;
-  left:0;
+  left: 0;
   bottom: 0;
-  height: 3.5rem;
-  text-align:center;
-  color:white
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: white;
+  background-color: #111c40;
+  text-shadow: 0lvw;
 }
 
-.mainPageArea{
-  margin: 10px;
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  color: white;
+  background-color: #111c40;
+}
+
+.menu-icon-custom {
+  font-size: 35px;
+  color: white;
+}
+
+.content{
+  padding-left: 280px;
+  padding-top: 10px;
 }

@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavMenuComponent implements OnInit {
 
+    isShowYonetim = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+
+  toggleDisplayYonetim() {
+    this.isShowYonetim = !this.isShowYonetim;
+  }
 }
