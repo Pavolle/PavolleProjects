@@ -1,0 +1,13 @@
+.verifyDivObject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .centered-div{
+    padding-top: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

@@ -1,4 +1,4 @@
 export interface UserAuthorizationViewData {
-  apiServiceKey: string;
-  isAuthority: boolean;
+    apiServiceKey: string;
+    isAuthority: boolean;
 }

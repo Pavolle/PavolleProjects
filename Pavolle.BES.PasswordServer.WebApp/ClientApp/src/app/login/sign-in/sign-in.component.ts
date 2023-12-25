@@ -68,9 +68,12 @@ EMessageCode: any;
        }
        else{
         sessionStorage.setItem("token", result.token);
-        this.authService.setIsAuthenticate(true);
-        this.router.navigate([('/main')]);
-        console.log("Kullanıcı Girişi Başarılı.");
+        localStorage.setItem('currentUser', JSON.stringify(result));
+        this.authService.setAuthenticateStatus();
+        if(this.authService.isAuthenticate)
+        {
+            this.router.navigate([('/main')]);
+        }
        }
     }, error => console.error(error));
   }

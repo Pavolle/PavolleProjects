@@ -19,6 +19,13 @@
               <ul class="nav-list-list" *ngIf="!isShowYonetim">
 
                 <li class="nav-list-item ">
+                  <span class="dx-icon-group menu-icon-custom"></span>
+                  <a [routerLink]="['managment/users']">
+                    Kullanıcı Grupları
+                  </a>
+                </li>
+
+                <li class="nav-list-item ">
                   <span class="dx-icon-user menu-icon-custom"></span>
                   <a [routerLink]="['managment/users']">
                     Kullanıcılar
@@ -44,7 +51,7 @@
 
             <li class="nav-list-item">
                 <span class="dx-icon-chevronnext menu-icon-custom"></span>
-                <a [routerLink]="['logout']">
+                <a [routerLink]="['signout']">
                   Çıkış
                 </a>
               </li>

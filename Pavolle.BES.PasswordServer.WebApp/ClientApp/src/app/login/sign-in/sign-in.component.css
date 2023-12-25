@@ -1,6 +1,7 @@
 .backimage{
   margin: 0;
   padding: 0;
+  padding-top: 500px;
   font-family: sans-serif;
     background-image: "../../../assets/back.jpg";
     background-size: cover;

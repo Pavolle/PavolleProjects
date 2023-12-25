@@ -15,6 +15,7 @@ import { AuthService } from './auth.service';
 import { AuthorizationGuard } from './authorization.guard';
 import { NotFoundComponent } from './include/not-found/not-found.component';
 import { NavMenuComponent } from './include/nav-menu/nav-menu.component';
+import { SignOutComponent } from './login/sign-out/sign-out.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NavMenuComponent } from './include/nav-menu/nav-menu.component';
     RouterModule.forRoot([
       { path: '', component: ListPasswordComponent, canActivate: [AuthorizationGuard] },
       { path: 'signin', component: SignInComponent},
+      { path: 'signout', component: SignOutComponent, canActivate: [AuthorizationGuard] },
       { path: 'main', component: ListPasswordComponent, canActivate: [AuthorizationGuard] },
       { path: 'not-found', component: NotFoundComponent},
       { path: '**', redirectTo: '/not-found' } 
