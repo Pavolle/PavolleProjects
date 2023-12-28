@@ -717,6 +717,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BorderSecurity.WebA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BorderSecurity.UnitTests", "Pavolle.BorderSecurity.UnitTests\Pavolle.BorderSecurity.UnitTests.csproj", "{C9565C86-4330-4C13-9B49-BDD62887180E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BorderSecurity.IntegrationEndpoint", "Pavolle.BorderSecurity.IntegrationEndpoint\Pavolle.BorderSecurity.IntegrationEndpoint.csproj", "{60A0996B-622B-49FB-AF5E-9FF5B4D81B1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1865,6 +1867,10 @@ Global
 		{C9565C86-4330-4C13-9B49-BDD62887180E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9565C86-4330-4C13-9B49-BDD62887180E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9565C86-4330-4C13-9B49-BDD62887180E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A0996B-622B-49FB-AF5E-9FF5B4D81B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A0996B-622B-49FB-AF5E-9FF5B4D81B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A0996B-622B-49FB-AF5E-9FF5B4D81B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A0996B-622B-49FB-AF5E-9FF5B4D81B1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2207,6 +2213,7 @@ Global
 		{C4075E00-584F-498B-BDF1-C110A0ECA7FA} = {23E880A8-AA55-4F36-BEBC-453F1E35E911}
 		{DDFB8B2B-B713-4E43-BA80-47CE20E4FF27} = {23E880A8-AA55-4F36-BEBC-453F1E35E911}
 		{C9565C86-4330-4C13-9B49-BDD62887180E} = {23E880A8-AA55-4F36-BEBC-453F1E35E911}
+		{60A0996B-622B-49FB-AF5E-9FF5B4D81B1A} = {23E880A8-AA55-4F36-BEBC-453F1E35E911}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
