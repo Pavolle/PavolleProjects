@@ -47,10 +47,10 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             #endregion
 
             #region Password Server
-            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignInRoutePrefix, "Password Server - Sign In", EApiServiceMethodType.Post, false, false, true);
-            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignOutRoutePrefix, "Password Server - Sign Out", EApiServiceMethodType.Post, false, false, false);
-            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.ForgotPaswordRoutePrefix, "Password Server - Forgot Pasword", EApiServiceMethodType.Post, false, false, true);
-            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.ResetPaswordRoutePrefix, "Password Server - Reset Pasword", EApiServiceMethodType.Post, false, false, true);
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignInRoutePrefix, "Sign In", EApiServiceMethodType.Post, false, false, true);
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignOutRoutePrefix, "Sign Out", EApiServiceMethodType.Post, false, false, false);
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.ForgotPaswordRoutePrefix, "Forgot Pasword", EApiServiceMethodType.Post, false, false, true);
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.ResetPaswordRoutePrefix, "Reset Pasword", EApiServiceMethodType.Post, false, false, true);
             #endregion
         }
 

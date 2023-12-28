@@ -6,5 +6,15 @@ export enum EMessageCode {
   KullaniciAdi=5,
   KullaniciGirisiAciklama=6,
   Parola=7,
-  KullaniciGirisi=8
+  KullaniciGirisi=8,
+  MenuAnasayfa=9,
+  MenuYonetim=10,
+  MenuKullaniciGruplari=11,
+  MenuKullanicilar=12,
+  MenuYetkiler=13,
+  MenuSifreKategorileri=14,
+  MenuCikis=15,
+  SagUstAcilirMenuBilgilerim=16,
+  SagUstAcilirMenuSifreDegistirme=17,
+  SagUstAcilirMenuCikis=18
 }
