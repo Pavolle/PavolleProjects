@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.ViewModels.Request
 {
-    public class BesRequestBase : RequestBase
+    public class BesRequestBase : AnonymousRequestBase
     {
         public EUserType UserType { get; set; }
         public long? OrganizationOid { get; set; }
         public long? UserOid { get; set; }
+
+        //TODO Buranın list olması lazım
         public long? UserRoleOid { get; set; }
     }
 }

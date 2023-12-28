@@ -2,6 +2,7 @@
 using Pavolle.BES.AuthServer.Common.Utils;
 using Pavolle.BES.AuthServer.ViewModels.Request;
 using Pavolle.BES.AuthServer.ViewModels.Response;
+using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
 using System;
@@ -20,6 +21,11 @@ namespace Pavolle.BES.AuthServer.ClientLib
         {
             var response = AuthServiceHelperManager.Instance.Post<SignInResponse>(AuthServerApiUrlConsts.LoginUrlConsts.BaseRoute + "/" + AuthServerApiUrlConsts.LoginUrlConsts.SignInRoutePrefix, request);
             return response;
+        }
+
+        public object SignOut(BesRequestBase request)
+        {
+            throw new NotImplementedException();
         }
     }
 }
