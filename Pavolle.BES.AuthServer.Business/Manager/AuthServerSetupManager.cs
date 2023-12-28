@@ -47,10 +47,27 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             #endregion
 
             #region Password Server
+
+            #region Login Service
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignInRoutePrefix, "Sign In", EApiServiceMethodType.Post, false, false, true);
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignOutRoutePrefix, "Sign Out", EApiServiceMethodType.Post, false, false, false);
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.ForgotPaswordRoutePrefix, "Forgot Pasword", EApiServiceMethodType.Post, false, false, true);
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.ResetPaswordRoutePrefix, "Reset Pasword", EApiServiceMethodType.Post, false, false, true);
+            #endregion
+
+            #region Password Category
+
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.PasswordCategoryConsts.BaseRoute + "/" + PasswordServerUrlConsts.PasswordCategoryConsts.ListRoutePrefix, "Password Category List", EApiServiceMethodType.Get, true, true, false);
+
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.PasswordCategoryConsts.BaseRoute + "/" + PasswordServerUrlConsts.PasswordCategoryConsts.LookupRoutePrefix, "Password Category Lookup", EApiServiceMethodType.Get, true, true, false);
+
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.PasswordCategoryConsts.BaseRoute + "/" + PasswordServerUrlConsts.PasswordCategoryConsts.DetailRoutePrefix, "Detail Password Category", EApiServiceMethodType.Get, true, true, false);
+
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.PasswordCategoryConsts.BaseRoute + "/" + PasswordServerUrlConsts.PasswordCategoryConsts.AddRoutePrefix, "Add Password Category", EApiServiceMethodType.Post, true, true, false);
+
+            Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.PasswordCategoryConsts.BaseRoute + "/" + PasswordServerUrlConsts.PasswordCategoryConsts.EditRoutePrefix, "Edit Password Category", EApiServiceMethodType.Post, true, true, false);
+            #endregion
+
             #endregion
         }
 
