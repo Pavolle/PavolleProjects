@@ -48,6 +48,9 @@ namespace Pavolle.BES.AuthServer.Business.Manager
 
             #region Password Server
 
+            #region Server Status
+            #endregion
+
             #region Login Service
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignInRoutePrefix, "Sign In", EApiServiceMethodType.Post, false, false, true);
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.LoginUrlConsts.BaseRoute + "/" + PasswordServerUrlConsts.LoginUrlConsts.SignOutRoutePrefix, "Sign Out", EApiServiceMethodType.Post, false, false, false);
@@ -66,6 +69,18 @@ namespace Pavolle.BES.AuthServer.Business.Manager
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.PasswordCategoryConsts.BaseRoute + "/" + PasswordServerUrlConsts.PasswordCategoryConsts.AddRoutePrefix, "Add Password Category", EApiServiceMethodType.Post, true, true, false);
 
             Add(session, EBesAppType.PasswordServer, PasswordServerUrlConsts.PasswordCategoryConsts.BaseRoute + "/" + PasswordServerUrlConsts.PasswordCategoryConsts.EditRoutePrefix, "Edit Password Category", EApiServiceMethodType.Post, true, true, false);
+            #endregion
+
+            #region User
+            #endregion
+
+            #region User Group
+            #endregion
+
+            #region Authotization
+            #endregion
+
+            #region Password
             #endregion
 
             #endregion
