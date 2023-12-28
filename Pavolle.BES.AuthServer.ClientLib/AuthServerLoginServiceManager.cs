@@ -17,13 +17,23 @@ namespace Pavolle.BES.AuthServer.ClientLib
     {
         private AuthServerLoginServiceManager() { }
 
+        public ForgotPasswordResponse ForgotPasword(ForgotPasswordRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ResponseBase ResetPasword(ResetPasswordRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
         public SignInResponse SignIn(LoginRequest request)
         {
             var response = AuthServiceHelperManager.Instance.Post<SignInResponse>(AuthServerApiUrlConsts.LoginUrlConsts.BaseRoute + "/" + AuthServerApiUrlConsts.LoginUrlConsts.SignInRoutePrefix, request);
             return response;
         }
 
-        public object SignOut(BesRequestBase request)
+        public ResponseBase SignOut(BesRequestBase request)
         {
             throw new NotImplementedException();
         }

@@ -11,6 +11,8 @@ namespace Pavolle.BES.AuthServer.ViewModels.Request
     public class ForgotPasswordRequest : AnonymousRequestBase
     {
         //TODO Şimdilik mail server entegre edilerek mail server üzerinden varsayılan olarak kod gönderilecek.
+
+        public string Username { get; set; }
         public ECommunicationType CommunicationType { get; set; }
 
         public string CommunicationValue { get; set; }

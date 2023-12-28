@@ -87,12 +87,12 @@ namespace Pavolle.BES.PasswordServer.WebApp.Controllers
         }
 
 
-        [HttpDelete(PasswordServerUrlConsts.LoginUrlConsts.ForgotPaswordRoutePrefix)]
-        public ActionResult ForgotPasword(BesRequestBase request)
+        [HttpPost(PasswordServerUrlConsts.LoginUrlConsts.ForgotPaswordRoutePrefix)]
+        public ActionResult ForgotPasword([FromBody]ForgotPasswordRequest request)
         {
             if (request == null)
             {
-                return BadRequest(new ResponseBase
+                return BadRequest(new ForgotPasswordResponse
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
                     StatusCode = 400
@@ -111,6 +111,39 @@ namespace Pavolle.BES.PasswordServer.WebApp.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
+                return Ok(new ForgotPasswordResponse
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 500
+                });
+            }
+        }
+
+
+        [HttpPost(PasswordServerUrlConsts.LoginUrlConsts.ResetPaswordRoutePrefix)]
+        public ActionResult ResetPasword([FromBody] ResetPasswordRequest request)
+        {
+            if (request == null)
+            {
+                return BadRequest(new ResponseBase
+                {
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetSystemLanguage()),
+                    StatusCode = 400
+                });
+            }
+            if (request.Language == null)
+            {
+                request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
+            }
+            try
+            {
+                var response = AuthServerLoginServiceManager.Instance.ResetPasword(request);
+                _log.Debug(request.LogBase + " Request: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected exception occured! Ex: " + ex);
                 return Ok(new ResponseBase
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, SettingServiceManager.Instance.GetSystemLanguage()),
@@ -118,5 +151,6 @@ namespace Pavolle.BES.PasswordServer.WebApp.Controllers
                 });
             }
         }
+
     }
 }

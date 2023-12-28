@@ -27,9 +27,6 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         [Persistent("person_oid")]
         public Person Person { get; set; }
 
-        [Persistent("reset_password_code")]
-        public string ResetPasswordCode { get; set; }
-
         [Persistent("wrong_try_count")]
         public int WrongTryCount { get; set; }
 

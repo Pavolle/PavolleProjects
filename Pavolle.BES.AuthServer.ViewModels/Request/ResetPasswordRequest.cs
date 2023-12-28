@@ -9,5 +9,9 @@ namespace Pavolle.BES.AuthServer.ViewModels.Request
 {
     public class ResetPasswordRequest : AnonymousRequestBase
     {
+        public long ForgotPasswordDataOid { get; set; }
+        public string Username { get; set; }
+        public string CommunicationValue { get; set; }
+        public string VerificationCode { get; set; }
     }
 }

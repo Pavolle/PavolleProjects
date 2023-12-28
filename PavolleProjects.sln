@@ -68,9 +68,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.AuthServer.Business", "Pavolle.BES.AuthServer.Business\Pavolle.BES.AuthServer.Business.csproj", "{246E8066-4744-4F6E-995C-2F6954A7617B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth Server", "Auth Server", "{7B194182-3B91-4D9E-B4B0-E2CE94BFB60E}"
-	ProjectSection(SolutionItems) = preProject
-		Auth Server Proje Amacı.txt = Auth Server Proje Amacı.txt
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.AuthServer.ViewModels", "Pavolle.BES.AuthServer.ViewModels\Pavolle.BES.AuthServer.ViewModels.csproj", "{F442CE7E-E197-4839-A403-1A9518EF27FE}"
 EndProject
