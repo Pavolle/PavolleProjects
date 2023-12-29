@@ -10,5 +10,10 @@ namespace Pavolle.BES.MailServer.Business.Manager
     public class MailServerDbManager : Singleton<MailServerDbManager>
     {
         private MailServerDbManager() { }
+
+        public object InitializeDb(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

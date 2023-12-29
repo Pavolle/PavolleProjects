@@ -19,6 +19,7 @@
     <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.TranslateServer.ClientLib\Pavolle.BES.TranslateServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.WebFilter\Pavolle.BES.WebFilter.csproj" />
   </ItemGroup>
 
 </Project>

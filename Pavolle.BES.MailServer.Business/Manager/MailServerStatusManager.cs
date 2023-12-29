@@ -21,5 +21,25 @@ namespace Pavolle.BES.MailServer.Business.Manager
         {
             throw new NotImplementedException();
         }
+
+        public void SetDbStatus(object dbStatus)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetRabbitMQStatus(bool rabbitMQStatus)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetServerStatus(bool v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetSettingServerConnectionStatus(bool v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
