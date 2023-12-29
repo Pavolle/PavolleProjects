@@ -16,18 +16,6 @@ namespace Pavolle.BES.MailServer.Business.Manager.Integration
 {
     public class PavolleMailServerManager : Singleton<PavolleMailServerManager>, IMailServerIntegrationManager
     {
-        /*
-         * Mail.Host = "mail.alanadi.com"								' mail host adresi 
-Mail.Username = "hesap@test.com"							' Mail gönderen hesabın adı
-Mail.Password = "Email Sifresi"								' mail gönderen hesabın şifresi
-Mail.Port = 587
-Mail.From = "hesap@alanadi.com"								' gönderici mail adresi
-Mail.FromName = "Web Form"									' Gönderici adı
-Mail.AddAddress "alici@test.com", "alici@test.com"			' alıcı adresi ve adı
-Mail.AddReplyTo "Destek@alanadi.com"						' Yanıla adresi istenirse kullanılmayabilir.
-Mail.Subject = "test"										' mesaj başlığı
-Mail.Body = Message	
-         */
 
 
         string _mailHostname;
@@ -106,6 +94,8 @@ Mail.Body = Message
             {
                 status = false;
             }
+
+            //TODO Statusu false ise bu bilgi aynı zamanda error mail listesine de yazılacak.
 
             MailServerHelperManager.Instance.WriteMailDataToDB(EMailServerIntegration.PavolleMailServer, mailToString, mailInfoString, header, htmlContent, attachments);
             
