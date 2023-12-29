@@ -11,7 +11,7 @@ namespace Pavolle.BES.MailServer.Business.Manager
     {
         private MailServerHelperManager() { }
 
-        internal string GetMailAddresses(List<string> mailList)
+        internal string GetMailToString(List<string> mailList)
         {
             var result = "";
             if (mailList.Count == 0)
@@ -33,6 +33,34 @@ namespace Pavolle.BES.MailServer.Business.Manager
                     else
                     {
                         result += mailList[i]+";";
+                    }
+                }
+            }
+            return result;
+        }
+
+        internal string GetMailInfoString(List<string> mailList)
+        {
+            var result = "";
+            if (mailList.Count == 0)
+            {
+                return result;
+            }
+            else if (mailList.Count == 1)
+            {
+                result = mailList.FirstOrDefault();
+            }
+            else
+            {
+                for (int i = 0; i < mailList.Count; i++)
+                {
+                    if (i == mailList.Count - 1)
+                    {
+                        result += mailList[i];
+                    }
+                    else
+                    {
+                        result += mailList[i] + ";";
                     }
                 }
             }

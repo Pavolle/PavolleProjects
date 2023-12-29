@@ -66,12 +66,17 @@ Mail.Body = Message
         {
             var mailMessage = new MailMessage
             {
-                From = new MailAddress(MailServerHelperManager.Instance.GetMailAddresses(mailTo)),
+                From = new MailAddress(MailServerHelperManager.Instance.GetMailToString(mailTo)),
                 Subject = header,
                 Body = htmlContent,
                 IsBodyHtml = true,
             };
-            mailMessage.To.Add(MailServerHelperManager.Instance.GetMailAddresses(mailInfo));
+
+            string mailInfoString= MailServerHelperManager.Instance.GetMailInfoString(mailInfo);
+            if(!string.IsNullOrEmpty(mailInfoString))
+            {
+                mailMessage.To.Add(mailInfoString);
+            }
 
             if(attachments != null && attachments.Count>0 )
             {
