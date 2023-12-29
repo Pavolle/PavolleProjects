@@ -98,6 +98,21 @@ namespace Pavolle.BES.SettingServer.Common.Enums
 
         [Description("Mail Server - Mail Error Routing Key")]
         MailServerMailErrorRoutingKey=510,
+
+        [Description("Mail Server - Pavolle Hostname")]
+        MailServerPavolleHostname = 511,
+
+        [Description("Mail Server - Pavolle Username")]
+        MailServerPavolleUsername = 512,
+
+        [Description("Mail Server - Pavolle Password")]
+        MailServerPavollePassword = 513,
+
+        [Description("Mail Server - Pavolle Port")]
+        MailServerPavollePort = 514,
+
+        [Description("Mail Server - Pavolle Port")]
+        MailServerCurrentIntegration = 515,
         #endregion
 
         #region SMS Server

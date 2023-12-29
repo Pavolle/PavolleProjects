@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.MailServer.Common.Enums
+namespace Pavolle.BES.SettingServer.Common.Enums
 {
-    public enum EMailServer
+    public enum EMailServerIntegration
     {
         PavolleMailServer=1
     }

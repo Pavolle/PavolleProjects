@@ -124,5 +124,12 @@ namespace Pavolle.BES.SettingServer.ClientLib
         {
             return _lastLoadTime;
         }
+
+        public EMailServerIntegration GetCurrentMailServerIntegration()
+        {
+            var currentIntegtationString = GetSetting(ESettingType.MailServerCurrentIntegration);
+            if (currentIntegtationString == "1") { return EMailServerIntegration.PavolleMailServer; }
+            else return EMailServerIntegration.PavolleMailServer;
+        }
     }
 }

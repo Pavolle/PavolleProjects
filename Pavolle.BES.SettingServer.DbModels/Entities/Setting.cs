@@ -26,5 +26,9 @@ namespace Pavolle.BES.SettingServer.DbModels.Entities
         [Persistent("value")]
         [Size(1000)]
         public string Value { get; set; }
+
+        //Şifreleri arayüzde gizlemek için bu şekilde bir parametre tanımladık.
+        [Persistent("is_critical_data")]
+        public bool IsCriticalData { get; set; }
     }
 }

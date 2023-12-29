@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.MailServer.ViewModels\Pavolle.BES.MailServer.ViewModels.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />
     <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Manager\Integration\PavolleMailServer\" />
   </ItemGroup>
 
 </Project>

@@ -13,5 +13,6 @@ namespace Pavolle.BES.SettingServer.ViewModels.ViewData
         public string SettingTypeName { get; set; }
         public string Value { get; set; }
         public string Category { get; set; }
+        public bool IsCriticalData { get; set; }
     }
 }

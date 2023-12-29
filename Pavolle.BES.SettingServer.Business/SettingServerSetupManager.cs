@@ -43,7 +43,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "https://localhost:7120",
-                                    Category=ESettingCategory.LogServer
+                                    Category=ESettingCategory.LogServer,
+                                    IsCriticalData =false
                                 }.Save();
 
                                 _log.Info("LogServerUrl  value is https://localhost:7120");
@@ -53,7 +54,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "guest",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerRabbitMQUsername value is guest");
@@ -63,7 +65,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "guest",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = true
                                 }.Save();
 
                                 _log.Info("LogServerRabbitMQPassword value is guest");
@@ -73,7 +76,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "/",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerRabbitMQVHost value is \"/\"");
@@ -83,7 +87,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "localhost",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerRabbitMQHostname value is localhost");
@@ -93,7 +98,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "5672",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerRabbitMQPort value is 5672");
@@ -104,7 +110,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "LOG_SERVER",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerExchangeName value is LOG_SERVER");
@@ -115,7 +122,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "LOGS",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerLogQueueKey value is LOGS");
@@ -126,7 +134,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "LOGS",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerLogRoutingKey value is LOGS");
@@ -137,7 +146,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "LOG_ERRORS",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerLogErrorQueueKey value is LOG_ERRORS");
@@ -148,7 +158,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "LOG_ERRORS",
-                                    Category = ESettingCategory.LogServer
+                                    Category = ESettingCategory.LogServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("LogServerLogErrorRoutingKey value is LOG_ERRORS");
@@ -159,7 +170,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "C://pavolle//bes//dys",
-                                    Category = ESettingCategory.DYS
+                                    Category = ESettingCategory.DYS,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("DYSBaseFilePath value is C://pavolle//bes//dys");
@@ -170,7 +182,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "https://localhost:7118",
-                                    Category = ESettingCategory.TranslateServer
+                                    Category = ESettingCategory.TranslateServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("TranslateServerBaseUrl value is https://localhost:7118");
@@ -181,7 +194,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = ((int)ELanguage.English).ToString(),
-                                    Category = ESettingCategory.General
+                                    Category = ESettingCategory.General,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("DefaultLanguage value is English");
@@ -192,7 +206,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = ((int)ELanguage.English).ToString(),
-                                    Category = ESettingCategory.General
+                                    Category = ESettingCategory.General,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SystemLanguage value is English");
@@ -204,7 +219,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "https://localhost:7065",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerUrl  value is https://localhost:7065");
@@ -214,7 +230,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "guest",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerRabbitMQUsername value is guest");
@@ -224,7 +241,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "guest",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = true
                                 }.Save();
 
                                 _log.Info("MailServerRabbitMQPassword value is guest");
@@ -234,7 +252,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "/",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerRabbitMQVHost value is \"/\"");
@@ -244,7 +263,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "localhost",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerRabbitMQHostname value is localhost");
@@ -254,7 +274,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "5672",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerRabbitMQPort value is 5672");
@@ -265,7 +286,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "MAIL_SERVER",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerExchangeName value is MAIL_SERVER");
@@ -276,7 +298,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "MAILS",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerMailQueueKey value is MAILS");
@@ -287,7 +310,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "MAILS",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerMailRoutingKey value is MAILS");
@@ -298,7 +322,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "MAIL_ERRORS",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerMailErrorQueueKey value is MAIL_ERRORS");
@@ -309,10 +334,71 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "MAIL_ERRORS",
-                                    Category = ESettingCategory.MailServer
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("MailServerMailErrorRoutingKey value is MAIL_ERRORS");
+                                break;
+
+                            case ESettingType.MailServerPavolleHostname:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "mail.pavolle.com",
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
+                                }.Save();
+
+                                _log.Info("MailServerPavolleHostname value is mail.pavolle.com");
+                                break;
+
+                            case ESettingType.MailServerPavolleUsername:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "security@pavolle.com",
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
+                                }.Save();
+
+                                _log.Info("MailServerPavolleUsername value is security@pavolle.com");
+                                break;
+
+                            case ESettingType.MailServerPavollePassword:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "m2A@g6@h-90@SC",
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = true
+                                }.Save();
+
+                                _log.Info("MailServerPavollePassword value is ******");
+                                break;
+
+                            case ESettingType.MailServerPavollePort:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "587",
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
+                                }.Save();
+
+                                _log.Info("MailServerPavollePort value is 587");
+                                break;
+
+                            case ESettingType.MailServerCurrentIntegration:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "1",
+                                    Category = ESettingCategory.MailServer,
+                                    IsCriticalData = false
+                                }.Save();
+
+                                _log.Info("MailServerCurrentIntegration value is 'Pavolle Mail Server'");
                                 break;
 
 
@@ -323,7 +409,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "https://localhost:7231",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerUrl  value is https://localhost:7231");
@@ -333,7 +420,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "guest",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerRabbitMQUsername value is guest");
@@ -343,8 +431,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "guest",
-                                    Category = ESettingCategory.SMSServer
-
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = true
                                 }.Save();
 
                                 _log.Info("SMSServerRabbitMQPassword value is guest");
@@ -354,7 +442,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "/",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerRabbitMQVHost value is \"/\"");
@@ -364,7 +453,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "localhost",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerRabbitMQHostname value is localhost");
@@ -374,7 +464,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "5672",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerRabbitMQPort value is 5672");
@@ -385,7 +476,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "SMS_SERVER",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerExchangeName value is SMS_SERVER");
@@ -396,7 +488,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "SMS",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerSMSQueueKey value is SMS");
@@ -407,7 +500,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "SMS",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerSMSRoutingKey value is SMS");
@@ -418,7 +512,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "SMS_ERRORS",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerSMSErrorQueueKey value is SMS_ERRORS");
@@ -429,7 +524,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "SMS_ERRORS",
-                                    Category = ESettingCategory.SMSServer
+                                    Category = ESettingCategory.SMSServer,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SMSServerSMSErrorRoutingKey value is SMS_ERRORS");
@@ -440,7 +536,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "https://localhost:44442",
-                                    Category = ESettingCategory.Surrvey
+                                    Category = ESettingCategory.Surrvey,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SurrveyServerlURL value is https://localhost:44442/");
@@ -451,7 +548,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "C://pavolle//surrvey//images//",
-                                    Category = ESettingCategory.Surrvey
+                                    Category = ESettingCategory.Surrvey,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("SurrveyServerImageBaseFilePath value is C://pavolle//surrvey//images//");
@@ -462,7 +560,8 @@ namespace Pavolle.BES.SettingServer.Business
                                 {
                                     SettingType = item,
                                     Value = "https://localhost:7157",
-                                    Category = ESettingCategory.Surrvey
+                                    Category = ESettingCategory.Surrvey,
+                                    IsCriticalData = false
                                 }.Save();
 
                                 _log.Info("AuthServerUrl value is https://localhost:7157");
