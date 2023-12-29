@@ -1,5 +1,4 @@
 ﻿using Pavolle.BES.MailServer.Business.Manager.Integration;
-using Pavolle.BES.MailServer.Business.Manager.Integration.PavolleMailServer;
 using Pavolle.BES.MailServer.ViewModels.Model;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;

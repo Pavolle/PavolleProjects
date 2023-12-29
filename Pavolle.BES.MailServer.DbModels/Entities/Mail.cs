@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.SettingServer.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +15,23 @@ namespace Pavolle.BES.MailServer.DbModels.Entities
         {
         }
 
+        [Persistent("mail_server_integration")]
+        public EMailServerIntegration MailServerIntegration { get; set; }
+
         [Persistent("header")]
+        [Size(1000)]
         public string Header { get; set; }
 
         [Persistent("content")]
+        [Size(2000)]
         public string Content { get; set; }
 
         [Persistent("mail_to")]
+        [Size(1000)]
         public string MailTo { get; set; }
 
         [Persistent("mail_info")]
+        [Size(1000)]
         public string MailInfo { get; set; }
 
         [Persistent("send_status")]

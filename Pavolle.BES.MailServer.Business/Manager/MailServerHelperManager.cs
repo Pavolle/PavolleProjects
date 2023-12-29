@@ -1,4 +1,6 @@
-﻿using Pavolle.Core.Utils;
+﻿using Pavolle.BES.MailServer.ViewModels.Model;
+using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +67,11 @@ namespace Pavolle.BES.MailServer.Business.Manager
                 }
             }
             return result;
+        }
+
+        internal void WriteMailDataToDB(EMailServerIntegration pavolleMailServer, string mailToString, string mailInfoString, string header, string htmlContent, List<AttachmentModel>? attachments)
+        {
+            
         }
     }
 }
