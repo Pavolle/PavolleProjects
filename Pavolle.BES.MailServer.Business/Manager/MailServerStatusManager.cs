@@ -20,25 +20,6 @@ namespace Pavolle.BES.MailServer.Business.Manager
         {
             return new MailServerSettingsResponse
             {
-                AppInfo = WebAppInfoManager.Instance.GetAppCode(),
-                Version = WebAppInfoManager.Instance.GetVersion(),
-                ReleaseDate = WebAppInfoManager.Instance.GetReleaseDate(),
-                DbStatus = _dbStatus,
-                DbStatusString = _dbStatus ? "Connected" : "Connection Error",
-                RabbitMQStatus = _rabbitMQStatus,
-                RabbitMQStatusString = _rabbitMQStatus ? "Ready" : "Not Ready",
-                ServerStatus = _serverStatus && _rabbitMQStatus && _dbStatus,
-                ServerStatusString = _serverStatus && _rabbitMQStatus && _dbStatus ? "Ready" : "Not Ready",
-                SettingServerConnectionStatus = _settingServerConnectionStatus,
-                SettingServerConnectionStatusString = _settingServerConnectionStatus ? "Connected" : "Not Connected",
-                SettingsReloadTime = SettingServiceManager.Instance.GetSettingsReloadTime()
-            };
-        }
-
-        public MailServereStatusResponse GetServerStatus(IntegrationAppRequestBase request)
-        {
-            return new MailServereStatusResponse
-            {
                 Language = SettingServiceManager.Instance.GetDefaultLanguage(),
                 SystemLanguage = SettingServiceManager.Instance.GetSystemLanguage(),
                 SettingServerBaseUrl = SettingServiceManager.Instance.GetServerUrl(),
@@ -53,6 +34,25 @@ namespace Pavolle.BES.MailServer.Business.Manager
                 MailServerMailRoutingKey = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerMailRoutingKey),
                 MailServerMailErrorQueueKey = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerMailErrorQueueKey),
                 MailServerMailErrorRoutingKey = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerMailErrorRoutingKey)
+            };
+        }
+
+        public MailServereStatusResponse GetServerStatus(IntegrationAppRequestBase request)
+        {
+            return new MailServereStatusResponse
+            {
+                AppInfo = WebAppInfoManager.Instance.GetAppCode(),
+                Version = WebAppInfoManager.Instance.GetVersion(),
+                ReleaseDate = WebAppInfoManager.Instance.GetReleaseDate(),
+                DbStatus = _dbStatus,
+                DbStatusString = _dbStatus ? "Connected" : "Connection Error",
+                RabbitMQStatus = _rabbitMQStatus,
+                RabbitMQStatusString = _rabbitMQStatus ? "Ready" : "Not Ready",
+                ServerStatus = _serverStatus && _rabbitMQStatus && _dbStatus,
+                ServerStatusString = _serverStatus && _rabbitMQStatus && _dbStatus ? "Ready" : "Not Ready",
+                SettingServerConnectionStatus = _settingServerConnectionStatus,
+                SettingServerConnectionStatusString = _settingServerConnectionStatus ? "Connected" : "Not Connected",
+                SettingsReloadTime = SettingServiceManager.Instance.GetSettingsReloadTime()
             };
         }
 
