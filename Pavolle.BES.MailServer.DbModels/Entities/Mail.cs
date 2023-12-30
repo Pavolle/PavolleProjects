@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpo;
+using Pavolle.BES.Common.Enums;
 using Pavolle.BES.SettingServer.Common.Enums;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace Pavolle.BES.MailServer.DbModels.Entities
         public Mail(Session session) : base(session)
         {
         }
+
+        [Persistent("bes_app_type")]
+        public EBesAppType BesAppType { get; set; }
 
         [Persistent("mail_server_integration")]
         public EMailServerIntegration MailServerIntegration { get; set; }

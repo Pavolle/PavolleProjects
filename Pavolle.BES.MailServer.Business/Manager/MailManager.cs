@@ -1,7 +1,11 @@
 ﻿using Pavolle.BES.MailServer.Business.Manager.Integration;
+using Pavolle.BES.MailServer.ViewModels.Criteria;
 using Pavolle.BES.MailServer.ViewModels.Model;
+using Pavolle.BES.MailServer.ViewModels.Request;
+using Pavolle.BES.MailServer.ViewModels.Response;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Concurrent;
@@ -26,6 +30,13 @@ namespace Pavolle.BES.MailServer.Business.Manager
         {
             _currentIntegration = SettingServiceManager.Instance.GetCurrentMailServerIntegration();
             _integrations[_currentIntegration].Initialize();
+        }
+
+        public MailListResponse List(MailListCriteria request)
+        {
+            var response=new MailListResponse();
+
+            return response;
         }
 
         public void SendMail(List<string> mailTo, List<string> mailInfo, string header, string htmlContent, List<AttachmentModel> attachments)

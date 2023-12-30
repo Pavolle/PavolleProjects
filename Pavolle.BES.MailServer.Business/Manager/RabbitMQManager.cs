@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Pavolle.BES.MailServer.ViewModels.Request;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
@@ -106,6 +107,15 @@ namespace Pavolle.BES.MailServer.Business.Manager
                 _log.Error("RabbitMQ error: Log Request Message could not write to queue! Message: " + JsonConvert.SerializeObject(request) + " Error: " + ex);
                 response = false;
             }
+
+            return response;
+        }
+
+        public ResponseBase SaveMail(MailRequest request)
+        {
+            var response=new ResponseBase();
+            //Mail verileri kaydedilecek.
+            //Bu veriler daha sonra kuyrukltan okunabilir hale getirilecek.
 
             return response;
         }

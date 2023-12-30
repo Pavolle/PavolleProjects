@@ -19,9 +19,10 @@ namespace Pavolle.BES.MailServer.Common.Utils
 
         public class MailServiceConsts
         {
-            public const string BaseRoute = "api/mailserver/job";
+            public const string BaseRoute = "api/mailserver/mail";
 
             public const string SendMailRoutePrefix = "sendmail";
+            public const string ListMailRoutePrefix = "list";
             //todo gelecekte gönderilen maillerin listesinin sorgulanacağız servis yazılması gerekiyor.
         }
     }
