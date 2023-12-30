@@ -75,13 +75,13 @@
       $('.scroll-to-section a[href^="#"]').on('click', function (e) {
           e.preventDefault();
           $(document).off("scroll");
-          
+
           $('.scroll-to-section a').each(function () {
               $(this).removeClass('active');
           })
           $(this).addClass('active');
-        
-          var target = this.hash,
+
+          //var target = this.hash,
           menu = target;
           var target = $(this.hash);
           $('html, body').stop().animate({

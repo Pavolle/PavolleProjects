@@ -1,4 +1,8 @@
-﻿using Pavolle.BES.ViewModels.Request;
+﻿using Pavolle.BES.MailServer.ViewModels.Response;
+using Pavolle.BES.SettingServer.ClientLib;
+using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.BES.ViewModels.Request;
+using Pavolle.Core.Manager;
 using Pavolle.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -12,34 +16,69 @@ namespace Pavolle.BES.MailServer.Business.Manager
     {
         private MailServerStatusManager() { }
 
-        public object GetServerSettings(IntegrationAppRequestBase request)
+        public MailServerSettingsResponse GetServerSettings(IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            return new MailServerSettingsResponse
+            {
+                AppInfo = WebAppInfoManager.Instance.GetAppCode(),
+                Version = WebAppInfoManager.Instance.GetVersion(),
+                ReleaseDate = WebAppInfoManager.Instance.GetReleaseDate(),
+                DbStatus = _dbStatus,
+                DbStatusString = _dbStatus ? "Connected" : "Connection Error",
+                RabbitMQStatus = _rabbitMQStatus,
+                RabbitMQStatusString = _rabbitMQStatus ? "Ready" : "Not Ready",
+                ServerStatus = _serverStatus && _rabbitMQStatus && _dbStatus,
+                ServerStatusString = _serverStatus && _rabbitMQStatus && _dbStatus ? "Ready" : "Not Ready",
+                SettingServerConnectionStatus = _settingServerConnectionStatus,
+                SettingServerConnectionStatusString = _settingServerConnectionStatus ? "Connected" : "Not Connected",
+                SettingsReloadTime = SettingServiceManager.Instance.GetSettingsReloadTime()
+            };
         }
 
-        public object GetServerStatus(IntegrationAppRequestBase request)
+        public MailServereStatusResponse GetServerStatus(IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            return new MailServereStatusResponse
+            {
+                Language = SettingServiceManager.Instance.GetDefaultLanguage(),
+                SystemLanguage = SettingServiceManager.Instance.GetSystemLanguage(),
+                SettingServerBaseUrl = SettingServiceManager.Instance.GetServerUrl(),
+                TranslateServerBaseUrl = SettingServiceManager.Instance.GetSetting(ESettingType.TranslateServerBaseUrl),
+                MailServerRabbitMQUsername = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerRabbitMQUsername),
+                MailServerRabbitMQPassword = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerRabbitMQPassword),
+                MailServerRabbitMQHostname = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerRabbitMQHostname),
+                MailServerRabbitMQVHost = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerRabbitMQVHost),
+                MailServerRabbitMQPort = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerRabbitMQPort),
+                MailServerExchangeName = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerExchangeName),
+                MailServerMailQueueKey = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerMailQueueKey),
+                MailServerMailRoutingKey = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerMailRoutingKey),
+                MailServerMailErrorQueueKey = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerMailErrorQueueKey),
+                MailServerMailErrorRoutingKey = SettingServiceManager.Instance.GetSetting(ESettingType.MailServerMailErrorRoutingKey)
+            };
         }
 
-        public void SetDbStatus(object dbStatus)
+        bool _dbStatus;
+        bool _serverStatus;
+        bool _rabbitMQStatus;
+        bool _settingServerConnectionStatus;
+
+        public void SetDbStatus(bool dbStatus)
         {
-            throw new NotImplementedException();
+            _dbStatus = dbStatus;
         }
 
         public void SetRabbitMQStatus(bool rabbitMQStatus)
         {
-            throw new NotImplementedException();
+            _rabbitMQStatus = rabbitMQStatus;
         }
 
-        public void SetServerStatus(bool v)
+        public void SetServerStatus(bool serverStatus)
         {
-            throw new NotImplementedException();
+            _serverStatus = serverStatus;
         }
 
-        public void SetSettingServerConnectionStatus(bool v)
+        public void SetSettingServerConnectionStatus(bool settingServerStatus)
         {
-            throw new NotImplementedException();
+            _settingServerConnectionStatus = settingServerStatus;
         }
     }
 }
