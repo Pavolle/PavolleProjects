@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
-    public class CityManager :  Singleton<CityManager>
+    public class MemoryDbManager : Singleton<MemoryDbManager>
     {
-        private CityManager() { }
+        private MemoryDbManager() { }
     }
 }

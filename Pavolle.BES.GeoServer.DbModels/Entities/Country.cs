@@ -26,5 +26,8 @@ namespace Pavolle.BES.GeoServer.DbModels.Entities
 
         [Persistent("phone_code")]
         public string PhoneCode { get; set; }
+
+        [Persistent("flag_path")]
+        public string FlagPath { get; set; }
     }
 }

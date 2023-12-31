@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pavolle.Core.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
-    internal class DistrictManager
+    public class DistrictManager : Singleton<DistrictManager>
     {
+        private DistrictManager() { }
     }
 }
