@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ListPasswordCategoryComponent } from './list-password-category.component';
+import { EditAuthUserGroupComponent } from './edit-auth-user-group.component';
 
-describe('ListPasswordCategoryComponent', () => {
-  let component: ListPasswordCategoryComponent;
-  let fixture: ComponentFixture<ListPasswordCategoryComponent>;
+describe('EditAuthUserGroupComponent', () => {
+  let component: EditAuthUserGroupComponent;
+  let fixture: ComponentFixture<EditAuthUserGroupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListPasswordCategoryComponent ]
+      declarations: [ EditAuthUserGroupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListPasswordCategoryComponent);
+    fixture = TestBed.createComponent(EditAuthUserGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
