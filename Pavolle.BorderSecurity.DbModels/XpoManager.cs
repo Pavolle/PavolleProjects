@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BorderSecurity.DbModels
 {
-    internal class XpoManager
+    public class XpoManager
     {
     }
 }

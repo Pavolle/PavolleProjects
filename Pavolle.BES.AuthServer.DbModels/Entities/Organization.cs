@@ -18,11 +18,17 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         [Size(255)]
         public string Name { get; set; }
 
+
         [Persistent("code")]
         [Size(5)]
         public string Code { get; set; }
 
-        [Persistent("zip_code")]
-        public string ZipCode { get; set; }
+
+        [Persistent("address_oid")]
+        public long AddressOid { get; set; }
+
+
+        [Persistent("parent_organization_oid")]
+        public Organization ParentOrganization { get; set; }
     }
 }

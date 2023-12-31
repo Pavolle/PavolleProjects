@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BorderSecurity.DbModels.Entities
 {
-    internal class BaseObject
+    public class BaseObject
     {
     }
 }
