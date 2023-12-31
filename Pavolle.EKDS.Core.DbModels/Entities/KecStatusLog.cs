@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Pavolle.EKDS.Core.DbModels.Entities
 {
-    [Persistent("politikalar")]
-    public class Politika : BaseObject
+    [Persistent("kec_status_log")]
+    public class KecStatusLog : BaseObject
     {
-        public Politika(Session session) : base(session)
+        public KecStatusLog(Session session) : base(session)
         {
         }
 
-        [Persistent("organization_oid")]
-        public long OrganizationOid { get; set; }
+        [Persistent("kec_oid")]
+        public Kec Kec { get; set; }
     }
 }

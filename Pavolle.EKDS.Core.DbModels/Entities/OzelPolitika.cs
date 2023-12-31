@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.EKDS.Core.DbModels.Entities
 {
-    [Persistent("special_politika")]
-    public class SpecialPolitika : BaseObject
+    [Persistent("ozel_politikalar")]
+    public class OzelPolitika : BaseObject
     {
-        public SpecialPolitika(Session session) : base(session)
+        public OzelPolitika(Session session) : base(session)
         {
         }
 
