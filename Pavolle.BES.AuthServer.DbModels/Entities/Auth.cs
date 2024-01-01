@@ -17,8 +17,10 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
         [Persistent("api_service_oid")]
         public ApiService ApiService { get; set; }
 
+
         [Persistent("role_oid")]
         public Role Role { get; set; }
+
 
         [Persistent("is_authority")]
         public bool IsAuthority { get; set; }
