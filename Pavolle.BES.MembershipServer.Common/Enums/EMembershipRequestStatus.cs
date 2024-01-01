@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.AuthServer.Common.Enums
+namespace Pavolle.BES.MembershipServer.Common.Enums
 {
-    public enum EMembershipRequestType
+    public enum EMembershipRequestStatus
     {
-        Invidual,
-        Commercial
+        WaitingForReview = 0,
     }
 }

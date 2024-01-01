@@ -1,13 +1,13 @@
 ﻿using DevExpress.Xpo;
-using Pavolle.BES.AuthServer.Common.Enums;
 using Pavolle.BES.Common.Enums;
+using Pavolle.BES.MembershipServer.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.AuthServer.DbModels.Entities
+namespace Pavolle.BES.MembershipServer.DbModels.Entities
 {
     [Persistent("membership_requests")]
     public class MembershipRequest : BaseObject
@@ -46,5 +46,9 @@ namespace Pavolle.BES.AuthServer.DbModels.Entities
 
         [Persistent("phone_number")]
         public string PhoneNumber { get; set; }
+
+
+        [Persistent("status")]
+        public EMembershipRequestStatus Status { get; set; }
     }
 }

@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Xpo" Version="23.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.Common\Pavolle.BES.Common.csproj" />
+    <ProjectReference Include="..\Pavolle.BES.MembershipServer.Common\Pavolle.BES.MembershipServer.Common.csproj" />
+  </ItemGroup>
+
 </Project>
