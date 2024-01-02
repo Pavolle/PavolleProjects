@@ -25,7 +25,7 @@ namespace Pavolle.BES.SettingServer.Business
         private ConcurrentDictionary<ESettingType, SettingCacheModel> _settings;
         private SettingsServerManager()
         {
-
+            _log.Debug("Initialize " + nameof(SettingsServerManager));
         }
 
         public void Initialize()

@@ -15,7 +15,10 @@ namespace Pavolle.BES.SettingServer.Business
     public class ServerStatusManager : Singleton<ServerStatusManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(ServerStatusManager));
-        private ServerStatusManager() { }
+        private ServerStatusManager()
+        {
+            _log.Debug("Initialize " + nameof(ServerStatusManager));
+        }
 
         bool _dbStatus = false;
         bool _serverStatus = false;

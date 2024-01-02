@@ -19,7 +19,7 @@ namespace Pavolle.BES.SettingServer.Business
         static readonly ILog _log = LogManager.GetLogger(typeof(SettingServerSetupManager));
         private SettingServerSetupManager()
         {
-
+            _log.Debug("Initialize " + nameof(SettingServerSetupManager));
         }
 
         public void Initialize()

@@ -15,7 +15,10 @@ namespace Pavolle.BES.SettingServer.Business
     public class DefinitionManager : Singleton<DefinitionManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(DefinitionManager));
-        private DefinitionManager() { }
+        private DefinitionManager()
+        {
+            _log.Debug("Initialize " + nameof(DefinitionManager));
+        }
 
         public object GetSettingsCategoriesList()
         {

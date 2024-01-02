@@ -16,7 +16,7 @@ namespace Pavolle.BES.SettingServer.Business
         public string _connectionString;
         private SettingsServerDbManager()
         {
-
+            _log.Debug("Initialize " + nameof(SettingsServerDbManager));
         }
 
         public bool InitializeDb(string connectionString)
