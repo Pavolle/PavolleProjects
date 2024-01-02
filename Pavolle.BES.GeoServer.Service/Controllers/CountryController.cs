@@ -21,9 +21,9 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
         static readonly ILog _log = LogManager.GetLogger(typeof(CountryController));
 
         [HttpGet(GeoServerUrlConsts.ListRoutePrefix)]
-        public ActionResult List(IntegrationAppRequestBase criteria)
+        public ActionResult List(IntegrationAppRequestBase request)
         {
-            if (criteria == null)
+            if (request == null)
             {
                 return BadRequest(new CountryListResponse
                 {
@@ -31,14 +31,14 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
                     StatusCode = 400
                 });
             }
-            if (criteria.Language == null)
+            if (request.Language == null)
             {
-                criteria.Language = SettingServiceManager.Instance.GetDefaultLanguage();
+                request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
             }
             try
             {
-                var response = CountryManager.Instance.List(criteria);
-                _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
+                var response = CountryManager.Instance.List(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Criteria: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
                 _log.Error("Unexpected exception occured! Ex: " + ex);
                 return Ok(new CountryListResponse
                 {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value),
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value),
                     StatusCode = 500
                 });
             }
@@ -54,9 +54,9 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
 
 
         [HttpGet(GeoServerUrlConsts.LookupRoutePrefix)]
-        public ActionResult Lookup(IntegrationAppRequestBase criteria)
+        public ActionResult Lookup(IntegrationAppRequestBase request)
         {
-            if (criteria == null)
+            if (request == null)
             {
                 return BadRequest(new LookupResponse
                 {
@@ -64,14 +64,14 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
                     StatusCode = 400
                 });
             }
-            if (criteria.Language == null)
+            if (request.Language == null)
             {
-                criteria.Language = SettingServiceManager.Instance.GetDefaultLanguage();
+                request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
             }
             try
             {
-                var response = CountryManager.Instance.Lookup(criteria);
-                _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
+                var response = CountryManager.Instance.Lookup(request);
+                _log.Debug("Request IP: " + request.RequestIp + " Criteria: " + JsonSerializer.Serialize(request) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
             catch (Exception ex)
@@ -79,7 +79,7 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
                 _log.Error("Unexpected exception occured! Ex: " + ex);
                 return Ok(new LookupResponse
                 {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value),
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value),
                     StatusCode = 500
                 });
             }
@@ -87,9 +87,9 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
 
 
         [HttpGet(GeoServerUrlConsts.ImageLookupRoutePrefix)]
-        public ActionResult ImageLookup(IntegrationAppRequestBase criteria)
+        public ActionResult ImageLookup(IntegrationAppRequestBase reuest)
         {
-            if (criteria == null)
+            if (reuest == null)
             {
                 return BadRequest(new ImageLookupResponse
                 {
@@ -97,14 +97,14 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
                     StatusCode = 400
                 });
             }
-            if (criteria.Language == null)
+            if (reuest.Language == null)
             {
-                criteria.Language = SettingServiceManager.Instance.GetDefaultLanguage();
+                reuest.Language = SettingServiceManager.Instance.GetDefaultLanguage();
             }
             try
             {
-                var response = CountryManager.Instance.ImageLookup(criteria);
-                _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
+                var response = CountryManager.Instance.ImageLookup(reuest);
+                _log.Debug("Request IP: " + reuest.RequestIp + " Criteria: " + JsonSerializer.Serialize(reuest) + " Response: " + JsonSerializer.Serialize(response));
                 return Ok(response);
             }
             catch (Exception ex)
@@ -112,7 +112,7 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
                 _log.Error("Unexpected exception occured! Ex: " + ex);
                 return Ok(new LookupResponse
                 {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value),
+                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, reuest.Language.Value),
                     StatusCode = 500
                 });
             }
@@ -120,7 +120,7 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
 
 
         [HttpGet(GeoServerUrlConsts.DetailRoutePrefix)]
-        public ActionResult Detail(long? oid, BesRequestBase request)
+        public ActionResult Detail(long? oid, IntegrationAppRequestBase request)
         {
             if (request == null || oid == null || oid == 0)
             {
@@ -220,7 +220,7 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
 
 
         [HttpDelete(GeoServerUrlConsts.DeleteRoutePrefix)]
-        public ActionResult Delete(long? oid, BesRequestBase request)
+        public ActionResult Delete(long? oid, IntegrationAppRequestBase request)
         {
             if (request == null || oid == null || oid == 0)
             {
@@ -233,14 +233,6 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
             if (request.Language == null)
             {
                 request.Language = SettingServiceManager.Instance.GetDefaultLanguage();
-            }
-            if (!BaseParameterValidationManager.Instance.Validate(request).Validated)
-            {
-                return Unauthorized(new ResponseBase
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnauthorizedException, SettingServiceManager.Instance.GetDefaultLanguage()),
-                    StatusCode = 401
-                });
             }
             try
             {

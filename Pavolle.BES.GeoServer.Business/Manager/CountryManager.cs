@@ -18,12 +18,12 @@ namespace Pavolle.BES.GeoServer.Business.Manager
             throw new NotImplementedException();
         }
 
-        public object Delete(long? oid, BesRequestBase request)
+        public object Delete(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object Detail(long? oid, BesRequestBase request)
+        public object Detail(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
