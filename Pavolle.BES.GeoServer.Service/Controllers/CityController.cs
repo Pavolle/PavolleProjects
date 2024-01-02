@@ -19,7 +19,7 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
     [Route(GeoServerUrlConsts.CityUrlConsts.BaseRoute)]
     public class CityController : Controller
     {
-        static readonly ILog _log = LogManager.GetLogger(typeof(CountryController));
+        static readonly ILog _log = LogManager.GetLogger(typeof(CityController));
 
         [HttpGet(GeoServerUrlConsts.ListRoutePrefix)]
         public ActionResult List([FromQuery]CityCriteria criteria)
