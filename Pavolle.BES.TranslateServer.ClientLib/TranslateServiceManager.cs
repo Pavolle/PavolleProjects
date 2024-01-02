@@ -1,8 +1,10 @@
-﻿using Pavolle.BES.TranslateServer.Common.Enums;
+﻿using Pavolle.BES.Common.Enums;
+using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.TranslateServer.Common.Utils;
 using Pavolle.BES.TranslateServer.ViewModels.Model;
 using Pavolle.BES.TranslateServer.ViewModels.Response;
 using Pavolle.BES.TranslateServer.ViewModels.ViewData;
+using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using System;
@@ -62,7 +64,7 @@ namespace Pavolle.BES.TranslateServer.ClientLib
             }
         }
 
-        public bool SaveNewData(string header, ELanguage? language)
+        public BesAddRecordResponseBase SaveNewData(string variable, ELanguage? language, EBesAppType besAppType)
         {
             throw new NotImplementedException();
         }

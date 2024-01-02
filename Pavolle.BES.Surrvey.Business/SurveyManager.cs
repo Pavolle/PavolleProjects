@@ -227,7 +227,8 @@ namespace Pavolle.BES.Surrvey.Business
 
                         if(request.MultiLanguage)
                         {
-                            bool translateServiceStatus=TranslateServiceManager.Instance.SaveNewData(request.Header, request.Language);
+                            //TODO Bu kısım değiştirildi. Bakılması lazım.
+                            var addStatus = TranslateServiceManager.Instance.SaveNewData(request.Header, request.Language, BES.Common.Enums.EBesAppType.Surrvey).Success;
                         }
 
 

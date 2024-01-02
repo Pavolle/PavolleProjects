@@ -1,5 +1,12 @@
-﻿using Pavolle.BES.GeoServer.ViewModels.Request;
+﻿using DevExpress.Xpo;
+using log4net;
+using Pavolle.BES.Common.Enums;
+using Pavolle.BES.GeoServer.DbModels;
+using Pavolle.BES.GeoServer.DbModels.Entities;
+using Pavolle.BES.GeoServer.ViewModels.Request;
 using Pavolle.BES.GeoServer.ViewModels.Response;
+using Pavolle.BES.TranslateServer.ClientLib;
+using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Utils;
@@ -14,6 +21,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 {
     public class CountryManager : Singleton<CountryManager>
     {
+        static readonly ILog _log = LogManager.GetLogger(typeof(CountryManager));
         private CountryManager() { }
 
         public void Initilaize()
@@ -23,37 +31,112 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public BesAddRecordResponseBase AddCountry(AddCountryRequest request)
         {
-            throw new NotImplementedException();
+            var response = new BesAddRecordResponseBase();
+
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+                    if(session.Query<Country>().Any(t=>t.IsoCode2== request.IsoCode2))
+                    {
+                        response.ErrorMessage= TranslateServiceManager.Instance.GetMessage(EMessageCode.DataCreatedBefore, request.Language.Value);
+                        response.StatusCode = 400;
+                        return response;
+                    }
+
+                    var addCountryNameResponse = TranslateServiceManager.Instance.SaveNewData(request.Name, request.Language, EBesAppType.GeolocationServer);
+                    if(addCountryNameResponse == null || !addCountryNameResponse.Success)
+                    {
+                        _log.Error("Translate Server ERROR");
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+                    new Country(session)
+                    {
+
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            return response;
         }
 
         public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new BesAddRecordResponseBase();
+
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            return response;
         }
 
         public CityDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            var response = new CityDetailResponse();
+
+            return response;
         }
 
         public ResponseBase Edit(long? oid, EditCountryRequest request)
         {
-            throw new NotImplementedException();
+            var response = new BesAddRecordResponseBase();
+
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            return response;
         }
 
         public ImageLookupResponse ImageLookup(IntegrationAppRequestBase criteria)
         {
-            throw new NotImplementedException();
+            var response = new ImageLookupResponse();
+
+            return response;
         }
 
         public CountryListResponse List(IntegrationAppRequestBase criteria)
         {
-            throw new NotImplementedException();
+            var response = new CountryListResponse();
+
+            return response;
         }
 
         public LookupResponse Lookup(IntegrationAppRequestBase criteria)
         {
-            throw new NotImplementedException();
+            var response = new LookupResponse();
+
+            return response;
         }
     }
 }

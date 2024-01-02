@@ -29,5 +29,6 @@ namespace Pavolle.BES.Common.Enums
         PasswordServer = 18,
         CoreAuthServer = 19,
         CoreSettingServer = 20,
+        GeolocationServer = 21,
     }
 }
