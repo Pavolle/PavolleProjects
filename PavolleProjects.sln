@@ -7,23 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Smart App Coder", "Smart Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.SmartAppCoder", "Pavolle.SmartAppCoder\Pavolle.SmartAppCoder.csproj", "{CBD68F50-35BA-4439-9A90-71CFF53D4ABA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0000 Neleri Başardık", "0000 Neleri Başardık", "{45FE0CE4-3424-40A8-A14F-28C427FF7E63}"
-	ProjectSection(SolutionItems) = preProject
-		projefikirleri.txt = projefikirleri.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2023", "2023", "{59CD6A3D-7959-4CE0-9D4E-B65927D030DB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eylul", "Eylul", "{5CA65C37-3496-447E-89F3-00F4529379D6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Agha", "Agha", "{F5A32C39-EB0B-422B-AA2E-484E65F752AE}"
-	ProjectSection(SolutionItems) = preProject
-		20.09.2023.txt = 20.09.2023.txt
-		21.09.2023.txt = 21.09.2023.txt
-		22.09.2023.txt = 22.09.2023.txt
-		29.09.2023.txt = 29.09.2023.txt
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{9328F32F-9C58-4238-A833-423E5AC98614}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game", "Game", "{FB8FEB6D-65F6-43E7-A4AD-DD6DA1F65CDF}"
@@ -56,12 +39,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross.Common", "Pavolle.PassCross.Common\Pavolle.PassCross.Common.csproj", "{29A78E7A-C023-41F8-B8F3-EE3E81C94A71}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.PassCross.UnitTests", "Pavolle.PassCross.UnitTests\Pavolle.PassCross.UnitTests.csproj", "{DDCD473B-2AD5-4786-9E49-2BB086189D75}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ekim", "Ekim", "{2396AC3C-8BB9-4383-8581-A3A2CA19775B}"
-	ProjectSection(SolutionItems) = preProject
-		08.10.2023.txt = 08.10.2023.txt
-		10.10.2023.txt = 10.10.2023.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Ecosystem Software", "Business Ecosystem Software", "{9362482A-2A9C-4109-AD5E-53D018922511}"
 EndProject
@@ -712,33 +689,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.EKDS.HSMService", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Membership Server", "Membership Server", "{00B78AE6-BFCB-4954-A2FE-028A79320A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MembershipServer.Business", "Pavolle.BES.MembershipServer.Business\Pavolle.BES.MembershipServer.Business.csproj", "{C7A7E288-C3E4-42BB-956B-8A5410388958}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MembershipServer.Business", "Pavolle.BES.MembershipServer.Business\Pavolle.BES.MembershipServer.Business.csproj", "{C7A7E288-C3E4-42BB-956B-8A5410388958}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MembershipServer.DbModels", "Pavolle.BES.MembershipServer.DbModels\Pavolle.BES.MembershipServer.DbModels.csproj", "{B6905900-1CE1-4607-81BF-54CCBB2600EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MembershipServer.DbModels", "Pavolle.BES.MembershipServer.DbModels\Pavolle.BES.MembershipServer.DbModels.csproj", "{B6905900-1CE1-4607-81BF-54CCBB2600EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MembershipServer.Common", "Pavolle.BES.MembershipServer.Common\Pavolle.BES.MembershipServer.Common.csproj", "{47F5B96D-E1A2-4E7D-B6D0-BEBF6A227054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MembershipServer.Common", "Pavolle.BES.MembershipServer.Common\Pavolle.BES.MembershipServer.Common.csproj", "{47F5B96D-E1A2-4E7D-B6D0-BEBF6A227054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MembershipServer.ViewModels", "Pavolle.BES.MembershipServer.ViewModels\Pavolle.BES.MembershipServer.ViewModels.csproj", "{271F0A8C-0B81-4E42-87BC-679458FFDAEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MembershipServer.ViewModels", "Pavolle.BES.MembershipServer.ViewModels\Pavolle.BES.MembershipServer.ViewModels.csproj", "{271F0A8C-0B81-4E42-87BC-679458FFDAEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MembershipServer.ClientLib", "Pavolle.BES.MembershipServer.ClientLib\Pavolle.BES.MembershipServer.ClientLib.csproj", "{77E93406-B4CC-48C1-934A-FD151C2704D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MembershipServer.ClientLib", "Pavolle.BES.MembershipServer.ClientLib\Pavolle.BES.MembershipServer.ClientLib.csproj", "{77E93406-B4CC-48C1-934A-FD151C2704D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MembershipServer.Service", "Pavolle.BES.MembershipServer.Service\Pavolle.BES.MembershipServer.Service.csproj", "{DC25F15F-0B93-44B9-85DA-1E4AA506A7BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MembershipServer.Service", "Pavolle.BES.MembershipServer.Service\Pavolle.BES.MembershipServer.Service.csproj", "{DC25F15F-0B93-44B9-85DA-1E4AA506A7BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.MembershipServer.UnitTests", "Pavolle.BES.MembershipServer.UnitTests\Pavolle.BES.MembershipServer.UnitTests.csproj", "{11B9C998-A2ED-49F9-BA55-77EF7408B713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.BES.MembershipServer.UnitTests", "Pavolle.BES.MembershipServer.UnitTests\Pavolle.BES.MembershipServer.UnitTests.csproj", "{11B9C998-A2ED-49F9-BA55-77EF7408B713}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ESecim", "ESecim", "{CAF17BA0-2450-40B5-9D40-490EEB861111}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.ESecim.Business", "Pavolle.ESecim.Business\Pavolle.ESecim.Business.csproj", "{AF21CEAA-0F9A-4EBA-BEE2-00FE8F677175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.ESecim.Business", "Pavolle.ESecim.Business\Pavolle.ESecim.Business.csproj", "{AF21CEAA-0F9A-4EBA-BEE2-00FE8F677175}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.ESecim.Common", "Pavolle.ESecim.Common\Pavolle.ESecim.Common.csproj", "{0E0912D2-0113-4DAE-BD6E-8BB2C6A3200B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.ESecim.Common", "Pavolle.ESecim.Common\Pavolle.ESecim.Common.csproj", "{0E0912D2-0113-4DAE-BD6E-8BB2C6A3200B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.ESecim.ViewModels", "Pavolle.ESecim.ViewModels\Pavolle.ESecim.ViewModels.csproj", "{DD0339F9-8D8D-44DB-B253-D106B47F7C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.ESecim.ViewModels", "Pavolle.ESecim.ViewModels\Pavolle.ESecim.ViewModels.csproj", "{DD0339F9-8D8D-44DB-B253-D106B47F7C4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.ESecim.ClientLib", "Pavolle.ESecim.ClientLib\Pavolle.ESecim.ClientLib.csproj", "{5900C042-F313-4047-99C7-A0C42CBF0CB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.ESecim.ClientLib", "Pavolle.ESecim.ClientLib\Pavolle.ESecim.ClientLib.csproj", "{5900C042-F313-4047-99C7-A0C42CBF0CB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.ESecim.KioskEndpoint", "Pavolle.ESecim.KioskEndpoint\Pavolle.ESecim.KioskEndpoint.csproj", "{04F80CD0-C037-4328-B73B-12125FA398C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.ESecim.KioskEndpoint", "Pavolle.ESecim.KioskEndpoint\Pavolle.ESecim.KioskEndpoint.csproj", "{04F80CD0-C037-4328-B73B-12125FA398C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.ESecim.DbModels", "Pavolle.ESecim.DbModels\Pavolle.ESecim.DbModels.csproj", "{F4037B1B-6636-4C21-9018-7E70F1C7AEBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pavolle.ESecim.DbModels", "Pavolle.ESecim.DbModels\Pavolle.ESecim.DbModels.csproj", "{F4037B1B-6636-4C21-9018-7E70F1C7AEBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{AFCC5BB1-C50C-44D6-AB8C-DA70D8A89658}"
 EndProject
@@ -1969,9 +1946,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E20A050E-3CC9-418E-A6F8-07CE4CD4B4B5} = {9328F32F-9C58-4238-A833-423E5AC98614}
 		{CBD68F50-35BA-4439-9A90-71CFF53D4ABA} = {E20A050E-3CC9-418E-A6F8-07CE4CD4B4B5}
-		{59CD6A3D-7959-4CE0-9D4E-B65927D030DB} = {45FE0CE4-3424-40A8-A14F-28C427FF7E63}
-		{5CA65C37-3496-447E-89F3-00F4529379D6} = {59CD6A3D-7959-4CE0-9D4E-B65927D030DB}
-		{F5A32C39-EB0B-422B-AA2E-484E65F752AE} = {5CA65C37-3496-447E-89F3-00F4529379D6}
+		{FB8FEB6D-65F6-43E7-A4AD-DD6DA1F65CDF} = {9328F32F-9C58-4238-A833-423E5AC98614}
 		{6E725082-AEA6-44BD-9532-221F7AC7221A} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 		{F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D} = {FB8FEB6D-65F6-43E7-A4AD-DD6DA1F65CDF}
 		{B16D245F-0779-49F0-9B7F-3ECDD913BDCB} = {B58E18F5-D166-483E-AFFE-EDC7DEA317F4}
@@ -1983,7 +1958,6 @@ Global
 		{EF52BEFB-37E5-45DE-A3DB-00CFBB5F340C} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 		{29A78E7A-C023-41F8-B8F3-EE3E81C94A71} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
 		{DDCD473B-2AD5-4786-9E49-2BB086189D75} = {F8CCEE4F-07DB-47BF-B107-C0CBE39AB41D}
-		{2396AC3C-8BB9-4383-8581-A3A2CA19775B} = {59CD6A3D-7959-4CE0-9D4E-B65927D030DB}
 		{246E8066-4744-4F6E-995C-2F6954A7617B} = {7B194182-3B91-4D9E-B4B0-E2CE94BFB60E}
 		{7B194182-3B91-4D9E-B4B0-E2CE94BFB60E} = {D72213C1-859B-4A8E-BC3F-A69DE4B8C68E}
 		{F442CE7E-E197-4839-A403-1A9518EF27FE} = {7B194182-3B91-4D9E-B4B0-E2CE94BFB60E}
@@ -2287,6 +2261,7 @@ Global
 		{9A3295D3-6E18-44FE-BD2D-1117F00AEE73} = {F3A72CCD-3804-40AC-8479-9D6E59356FF5}
 		{0665A932-9E22-413E-9361-A8142B877065} = {9A3295D3-6E18-44FE-BD2D-1117F00AEE73}
 		{2D051E92-FD0E-4CDD-BEEC-CC2621EF2E6E} = {9A3295D3-6E18-44FE-BD2D-1117F00AEE73}
+		{23E880A8-AA55-4F36-BEBC-453F1E35E911} = {8AC250C4-4F76-4AD1-B202-5D8EC5168023}
 		{3CEA07DB-48E6-4CFD-8688-B18DFCDBEACC} = {23E880A8-AA55-4F36-BEBC-453F1E35E911}
 		{912EC9C7-F12B-4217-983E-94126F8C4689} = {23E880A8-AA55-4F36-BEBC-453F1E35E911}
 		{52C58B81-2E55-4E05-B6A3-6EC9B29DCC51} = {23E880A8-AA55-4F36-BEBC-453F1E35E911}
