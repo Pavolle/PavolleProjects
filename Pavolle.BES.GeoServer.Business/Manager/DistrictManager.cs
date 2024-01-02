@@ -1,7 +1,9 @@
 ﻿using Pavolle.BES.GeoServer.ViewModels.Criteria;
 using Pavolle.BES.GeoServer.ViewModels.Request;
+using Pavolle.BES.GeoServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,32 +16,32 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     {
         private DistrictManager() { }
 
-        public object AddDistrict(AddDistrictRequest request)
+        public ResponseBase AddDistrict(AddDistrictRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object Delete(long? oid, IntegrationAppRequestBase request)
+        public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object Detail(long? oid, IntegrationAppRequestBase request)
+        public DistrictDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object Edit(long? oid, EditDistrictRequest request)
+        public ResponseBase Edit(long? oid, EditDistrictRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object List(DistrictCriteria criteria)
+        public DistrictDetailResponse List(DistrictCriteria criteria)
         {
             throw new NotImplementedException();
         }
 
-        public object Lookup(DistrictCriteria criteria)
+        public LookupResponse Lookup(DistrictCriteria criteria)
         {
             throw new NotImplementedException();
         }

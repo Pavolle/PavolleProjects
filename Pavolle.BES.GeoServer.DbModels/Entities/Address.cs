@@ -33,9 +33,9 @@ namespace Pavolle.BES.GeoServer.DbModels.Entities
         public string ZipCode { get; set; }
 
         [Persistent("latitude")]
-        public double Latitude { get; set; }
+        public double? Latitude { get; set; }
 
         [Persistent("longitude")]
-        public double Longitude { get; set; }
+        public double? Longitude { get; set; }
     }
 }

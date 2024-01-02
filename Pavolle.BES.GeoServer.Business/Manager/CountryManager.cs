@@ -1,6 +1,8 @@
 ﻿using Pavolle.BES.GeoServer.ViewModels.Request;
+using Pavolle.BES.GeoServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,37 +15,37 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     {
         private CountryManager() { }
 
-        public object AddCountry(AddCountryRequest request)
+        public ResponseBase AddCountry(AddCountryRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object Delete(long? oid, IntegrationAppRequestBase request)
+        public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object Detail(long? oid, IntegrationAppRequestBase request)
+        public CityDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object Edit(long? oid, EditCountryRequest request)
+        public ResponseBase Edit(long? oid, EditCountryRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object ImageLookup(IntegrationAppRequestBase criteria)
+        public ImageLookupResponse ImageLookup(IntegrationAppRequestBase criteria)
         {
             throw new NotImplementedException();
         }
 
-        public object List(IntegrationAppRequestBase criteria)
+        public CountryListResponse List(IntegrationAppRequestBase criteria)
         {
             throw new NotImplementedException();
         }
 
-        public object Lookup(IntegrationAppRequestBase criteria)
+        public LookupResponse Lookup(IntegrationAppRequestBase criteria)
         {
             throw new NotImplementedException();
         }

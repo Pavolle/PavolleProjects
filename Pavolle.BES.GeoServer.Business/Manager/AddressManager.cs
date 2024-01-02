@@ -16,22 +16,22 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     {
         private AddressManager() { }
 
-        public object AddAddress(AddAddressRequest request)
+        public ResponseBase AddAddress(AddAddressRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public object Delete(long? oid, IntegrationAppRequestBase request)
+        public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object Detail(long? oid, IntegrationAppRequestBase request)
+        public AddressDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
             throw new NotImplementedException();
         }
 
-        public object Edit(long? oid, EditAddressRequest request)
+        public ResponseBase Edit(long? oid, EditAddressRequest request)
         {
             throw new NotImplementedException();
         }
