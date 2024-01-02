@@ -11,158 +11,158 @@ namespace Pavolle.BES.SettingServer.Common.Enums
     {
         #region General
         [Description("Db Connection")]
-        DbConnection = 100,
+        DbConnection = 10000,
 
         [Description("Default Language")]
-        DefaultLanguage=101,
+        DefaultLanguage=10001,
 
         [Description("System Language")]
-        SystemLanguage=102,
+        SystemLanguage=10002,
         #endregion
 
         #region Log Server
         [Description("Log Server Url")]
-        LogServerUrl = 201,
+        LogServerUrl = 20001,
 
         [Description("Log Server - RabbitMQ Username")]
-        LogServerRabbitMQUsername = 202,
+        LogServerRabbitMQUsername = 20002,
 
         [Description("Log Server - RabbitMQ Password")]
-        LogServerRabbitMQPassword =203,
+        LogServerRabbitMQPassword =20003,
 
         [Description("Log Server - RabbitMQ VHost")]
-        LogServerRabbitMQVHost = 204,
+        LogServerRabbitMQVHost = 20004,
 
         [Description("Log Server - RabbitMQ Hostname")]
-        LogServerRabbitMQHostname = 205,
+        LogServerRabbitMQHostname = 20005,
 
         [Description("Log Server - RabbitMQ Port")]
-        LogServerRabbitMQPort = 206,
+        LogServerRabbitMQPort = 20006,
 
         [Description("Log Server - Exchange Name")]
-        LogServerExchangeName = 207,
+        LogServerExchangeName = 20007,
 
         [Description("Log Server - Log Queue Key")]
-        LogServerLogQueueKey = 208,
+        LogServerLogQueueKey = 20008,
 
         [Description("Log Server - Log Routing Key")]
-        LogServerLogRoutingKey = 209,
+        LogServerLogRoutingKey = 20009,
 
         [Description("Log Server - Log Error Queue Key")]
-        LogServerLogErrorQueueKey=210,
+        LogServerLogErrorQueueKey= 20010,
 
         [Description("Log Server - Log Error Routing Key")]
-        LogServerLogErrorRoutingKey = 211,
+        LogServerLogErrorRoutingKey = 20011,
         #endregion
 
         #region DYS
         [Description("DYS - Base File Path")]
-        DYSBaseFilePath = 300,
+        DYSBaseFilePath = 30000,
         #endregion
 
         #region Translate Server
         [Description("Translate Server Base Url")]
-        TranslateServerBaseUrl = 400,
+        TranslateServerBaseUrl = 40000,
         #endregion
 
         #region Mail Server
         [Description("Mail Server URL")]
-        MailServerUrl = 500,
+        MailServerUrl = 50000,
 
         [Description("Mail Server - RabbitMQ Username")]
-        MailServerRabbitMQUsername = 501,
+        MailServerRabbitMQUsername = 50001,
 
         [Description("Mail Server - RabbitMQ Password")]
-        MailServerRabbitMQPassword =502,
+        MailServerRabbitMQPassword = 50002,
 
         [Description("Mail Server - RabbitMQ VHost")]
-        MailServerRabbitMQVHost =503,
+        MailServerRabbitMQVHost = 50003,
 
         [Description("Mail Server - RabbitMQ Hostname")]
-        MailServerRabbitMQHostname = 504,
+        MailServerRabbitMQHostname = 50004,
 
         [Description("Mail Server - RabbitMQ Port")]
-        MailServerRabbitMQPort = 505,
+        MailServerRabbitMQPort = 50005,
 
         [Description("Mail Server - Exchange Name")]
-        MailServerExchangeName = 506,
+        MailServerExchangeName = 50006,
 
         [Description("Mail Server - Mail Queue Key")]
-        MailServerMailQueueKey =507,
+        MailServerMailQueueKey = 50007,
 
         [Description("Mail Server - Mail Routing Key")]
-        MailServerMailRoutingKey = 508,
+        MailServerMailRoutingKey = 50008,
 
         [Description("Mail Server - Mail Error Queue Key")]
-        MailServerMailErrorQueueKey = 509,
+        MailServerMailErrorQueueKey = 50009,
 
         [Description("Mail Server - Mail Error Routing Key")]
-        MailServerMailErrorRoutingKey=510,
+        MailServerMailErrorRoutingKey= 50010,
 
         [Description("Mail Server - Pavolle Hostname")]
-        MailServerPavolleHostname = 511,
+        MailServerPavolleHostname = 50011,
 
         [Description("Mail Server - Pavolle Username")]
-        MailServerPavolleUsername = 512,
+        MailServerPavolleUsername = 50012,
 
         [Description("Mail Server - Pavolle Password")]
-        MailServerPavollePassword = 513,
+        MailServerPavollePassword = 50013,
 
         [Description("Mail Server - Pavolle Port")]
-        MailServerPavollePort = 514,
+        MailServerPavollePort = 50014,
 
         [Description("Mail Server - Pavolle Port")]
-        MailServerCurrentIntegration = 515,
+        MailServerCurrentIntegration = 50015,
         #endregion
 
         #region SMS Server
         [Description("SMS Server URL")]
-        SMSServerUrl = 600,
+        SMSServerUrl = 60000,
 
         [Description("SMS Server - RabbitMQ Username")]
-        SMSServerRabbitMQUsername = 601,
+        SMSServerRabbitMQUsername = 60001,
 
         [Description("SMS Server - RabbitMQ Password")]
-        SMSServerRabbitMQPassword = 602,
+        SMSServerRabbitMQPassword = 60002,
 
         [Description("SMS Server - RabbitMQ VHost")]
-        SMSServerRabbitMQVHost =603,
+        SMSServerRabbitMQVHost = 60003,
 
         [Description("SMS Server - RabbitMQ Hostname")]
-        SMSServerRabbitMQHostname =604,
+        SMSServerRabbitMQHostname = 60004,
 
         [Description("SMS Server - RabbitMQ Port")]
-        SMSServerRabbitMQPort =605,
+        SMSServerRabbitMQPort = 60005,
 
         [Description("SMS Server - Exchange Name")]
-        SMSServerExchangeName =606,
+        SMSServerExchangeName = 60006,
 
         [Description("SMS Server - SMS Queue Key")]
-        SMSServerSMSQueueKey = 607,
+        SMSServerSMSQueueKey = 60007,
 
         [Description("SMS Server - SMS Routing Key")]
-        SMSServerSMSRoutingKey =608,
+        SMSServerSMSRoutingKey = 60008,
 
         [Description("SMS Server - SMS Error Queue Key")]
-        SMSServerSMSErrorQueueKey = 609,
+        SMSServerSMSErrorQueueKey = 60009,
 
         [Description("SMS Server - SMS Error Routing Key")]
-        SMSServerSMSErrorRoutingKey =610,
+        SMSServerSMSErrorRoutingKey = 60010,
         #endregion
 
         #region Surrvey
         [Description("Surrvey Server - Image Base File Path")] 
-        SurrveyServerImageBaseFilePath = 700,
+        SurrveyServerImageBaseFilePath = 70000,
 
         [Description("Surrvey Server - URL")]
-        SurrveyServerlURL =701,
+        SurrveyServerlURL = 70001,
 
         #endregion
 
         #region Auth Server
 
         [Description("Auth Server - URL")]
-        AuthServerUrl = 800,
+        AuthServerUrl = 80000,
         #endregion
     }
 }
