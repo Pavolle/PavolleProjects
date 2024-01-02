@@ -3,6 +3,7 @@ using log4net;
 using Pavolle.BES.Common.Enums;
 using Pavolle.BES.GeoServer.DbModels;
 using Pavolle.BES.GeoServer.DbModels.Entities;
+using Pavolle.BES.GeoServer.ViewModels.Model;
 using Pavolle.BES.GeoServer.ViewModels.Request;
 using Pavolle.BES.GeoServer.ViewModels.Response;
 using Pavolle.BES.TranslateServer.ClientLib;
@@ -12,6 +13,7 @@ using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +24,29 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     public class CountryManager : Singleton<CountryManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(CountryManager));
+        ConcurrentDictionary<long, CountryCacheModel> _countries;
         private CountryManager() { }
 
         public void Initilaize()
         {
+            using(Session session = GeoServerXpoManager.Instance.GetNewSession())
+            {
+                var countryList=session.Query<Country>().ToList();
 
+                foreach (var country in countryList)
+                {
+                    var cacheData = new CountryCacheModel
+                    {
+                        Oid = country.Oid,
+                        IsoCode2 = country.IsoCode2,
+                        IsoCode3 = country.IsoCode3,
+                        PhoneCode = country.PhoneCode,
+                        FlagPath = country.FlagPath
+                    };
+
+                    _countries.TryAdd(cacheData.Oid, cacheData);
+                }
+            }
         }
 
         public BesAddRecordResponseBase AddCountry(AddCountryRequest request)

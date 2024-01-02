@@ -8,6 +8,7 @@ namespace Pavolle.BES.GeoServer.ViewModels.Model
 {
     public class CountryCacheModel
     {
+        public long Oid { get; set; }
         public string NameTR { get; set; }
         public string NameEN { get; set; }
         public string NameRU { get; set; }
@@ -19,5 +20,6 @@ namespace Pavolle.BES.GeoServer.ViewModels.Model
         public string IsoCode3 { get; set; }
         public string PhoneCode { get; set; }
         public string Base64Flag { get; set; }
+        public string FlagPath { get; set; }
     }
 }
