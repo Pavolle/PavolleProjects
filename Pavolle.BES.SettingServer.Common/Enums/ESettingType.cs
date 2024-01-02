@@ -164,5 +164,14 @@ namespace Pavolle.BES.SettingServer.Common.Enums
         [Description("Auth Server - URL")]
         AuthServerUrl = 80000,
         #endregion
+
+        #region Geolocation Server
+
+        [Description("Geolocation Server - URL")]
+        GeolocationServerUrl = 90000,
+
+        [Description("Geolocation Server - Country Flag Base Url")]
+        GeolocationCountryFlagBaseUrl = 90001,
+        #endregion
     }
 }

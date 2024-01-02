@@ -73,7 +73,9 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         return response;
                     }
 
-                    //todo resim dys de dosyaya kaydedilecek.
+                    //resmi sadece dosyaya kaydetme kararı verdik. Şuanda DYS tarafına kaydetmeye gerek yok. O yüzden dosyaya kaydetip devam edeceğiz.
+
+
 
                     new Country(session)
                     {
