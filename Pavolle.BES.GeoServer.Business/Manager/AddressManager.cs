@@ -2,6 +2,7 @@
 using Pavolle.BES.GeoServer.ViewModels.Request;
 using Pavolle.BES.GeoServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
 using System;
@@ -16,7 +17,13 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     {
         private AddressManager() { }
 
-        public ResponseBase AddAddress(AddAddressRequest request)
+        public void Initilaize()
+        {
+
+        }
+
+        //TODO Burada oid bilgisini geri dönmemiz gerekebilir. Çünkü bu oid bilgisi bir yerlere yazılacak.
+        public BesAddRecordResponseBase AddAddress(AddAddressRequest request)
         {
             throw new NotImplementedException();
         }

@@ -10,6 +10,7 @@ using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.TranslateServer.ClientLib;
 using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.ViewModels.Response;
 using System.Text.Json;
 
@@ -125,7 +126,7 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
         {
             if (request == null)
             {
-                return BadRequest(new ResponseBase
+                return BadRequest(new BesAddRecordResponseBase
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetDefaultLanguage()),
                     StatusCode = 400
@@ -144,7 +145,7 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
             catch (Exception ex)
             {
                 _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new ResponseBase
+                return Ok(new BesAddRecordResponseBase
                 {
                     ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value),
                     StatusCode = 500

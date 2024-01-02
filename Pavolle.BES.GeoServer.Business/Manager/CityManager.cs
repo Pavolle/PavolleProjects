@@ -2,6 +2,7 @@
 using Pavolle.BES.GeoServer.ViewModels.Request;
 using Pavolle.BES.GeoServer.ViewModels.Response;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
 using System;
@@ -16,7 +17,12 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     {
         private CityManager() { }
 
-        public ResponseBase AddCity(AddCityRequest request)
+        public void Initilaize()
+        {
+
+        }
+
+        public BesAddRecordResponseBase AddCity(AddCityRequest request)
         {
             throw new NotImplementedException();
         }
