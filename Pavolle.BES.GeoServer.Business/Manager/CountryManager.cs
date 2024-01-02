@@ -53,6 +53,8 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         return response;
                     }
 
+                    //todo resim dys de dosyaya kaydedilecek.
+
                     new Country(session)
                     {
 
