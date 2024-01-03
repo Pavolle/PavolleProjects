@@ -32,5 +32,8 @@ namespace Pavolle.BES.SettingServer.Common.Enums
 
         [Description("Supplera")]
         Supplera = 8,
+
+        [Description("Geolocation Server")]
+        GeolocationServer = 9,
     }
 }

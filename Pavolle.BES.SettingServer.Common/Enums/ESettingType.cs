@@ -172,6 +172,7 @@ namespace Pavolle.BES.SettingServer.Common.Enums
 
         [Description("Geolocation Server - Country Flag Base Url")]
         GeolocationCountryFlagBaseUrl = 90001,
+        lll
         #endregion
     }
 }

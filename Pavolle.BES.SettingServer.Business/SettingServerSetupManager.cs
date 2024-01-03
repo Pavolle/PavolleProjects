@@ -567,6 +567,30 @@ namespace Pavolle.BES.SettingServer.Business
                                 _log.Info("AuthServerUrl value is https://localhost:7157");
                                 break;
 
+                            case ESettingType.GeolocationServerUrl:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "https://localhost:7298",
+                                    Category = ESettingCategory.GeolocationServer,
+                                    IsCriticalData = false
+                                }.Save();
+
+                                _log.Info("AuthServerUrl value is https://localhost:7298");
+                                break;
+
+                            case ESettingType.GeolocationCountryFlagBaseUrl:
+                                new Setting(session)
+                                {
+                                    SettingType = item,
+                                    Value = "C://pavolle//geoserver//falgs//",
+                                    Category = ESettingCategory.Surrvey,
+                                    IsCriticalData = false
+                                }.Save();
+
+                                _log.Info("AuthServerUrl value is C://pavolle//geoserver//falgs//");
+                                break;
+
                         }
                     }
                 }
