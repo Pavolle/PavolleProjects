@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.Business\Pavolle.BES.Business.csproj" />
     <ProjectReference Include="..\Pavolle.BES.GeoServer.DbModels\Pavolle.BES.GeoServer.DbModels.csproj" />
     <ProjectReference Include="..\Pavolle.BES.GeoServer.ViewModels\Pavolle.BES.GeoServer.ViewModels.csproj" />
     <ProjectReference Include="..\Pavolle.BES.SettingServer.ClientLib\Pavolle.BES.SettingServer.ClientLib.csproj" />

@@ -9,6 +9,7 @@ namespace Pavolle.BES.GeoServer.ViewModels.ViewData
 {
     public class CountryDetailViewData : ViewDataBase
     {
+        public long Oid { get; set; }
         public string Name { get; set; }
         public string IsoCode2 { get; set; }
         public string IsoCode3 { get; set; }

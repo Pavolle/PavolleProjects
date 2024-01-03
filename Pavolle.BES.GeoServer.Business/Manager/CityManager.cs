@@ -1,6 +1,7 @@
 ﻿using Pavolle.BES.GeoServer.ViewModels.Criteria;
 using Pavolle.BES.GeoServer.ViewModels.Request;
 using Pavolle.BES.GeoServer.ViewModels.Response;
+using Pavolle.BES.GeoServer.ViewModels.ViewData;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Utils;
@@ -48,6 +49,11 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         }
 
         public LookupResponse Lookup(CityCriteria request)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal List<CityViewData> GetCityListForCountry(long oid)
         {
             throw new NotImplementedException();
         }

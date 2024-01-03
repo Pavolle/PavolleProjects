@@ -11,5 +11,6 @@ namespace Pavolle.BES.GeoServer.ViewModels.Response
     public class CityDetailResponse : ResponseBase
     {
         public CityDetailViewData Detail { get; set; }
+        public List<DistrictViewData> DistrictList { get; set; }
     }
 }

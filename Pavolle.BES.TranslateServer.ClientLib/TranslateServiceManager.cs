@@ -70,5 +70,15 @@ namespace Pavolle.BES.TranslateServer.ClientLib
             return new BesAddRecordResponseBase();
             //TODO Burayı tamamlayacapız.
         }
+
+        public TranslateDataCacheModel GetDataByOid(long nameTranslateDataOid, EBesAppType besAppType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetNameFromCacheData(TranslateDataCacheModel nameTranslateModel, ELanguage? language)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

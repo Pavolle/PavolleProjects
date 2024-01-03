@@ -9,6 +9,7 @@ namespace Pavolle.BES.TranslateServer.ViewModels.Model
 {
     public class TranslateDataCacheModel
     {
+        public long Oid { get; set; }
         public string Variable { get; set; }
         public EBesAppType? AppType { get; set; }
         public string TR { get; set; }
