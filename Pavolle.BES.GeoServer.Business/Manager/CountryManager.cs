@@ -6,6 +6,8 @@ using Pavolle.BES.GeoServer.DbModels.Entities;
 using Pavolle.BES.GeoServer.ViewModels.Model;
 using Pavolle.BES.GeoServer.ViewModels.Request;
 using Pavolle.BES.GeoServer.ViewModels.Response;
+using Pavolle.BES.SettingServer.ClientLib;
+using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.TranslateServer.ClientLib;
 using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
@@ -74,13 +76,28 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                     }
 
                     //resmi sadece dosyaya kaydetme kararı verdik. Şuanda DYS tarafına kaydetmeye gerek yok. O yüzden dosyaya kaydetip devam edeceğiz.
+                    string directory = SettingServiceManager.Instance.GetSetting(ESettingType.GeolocationCountryFlagBaseUrl);
+                    string filePath = directory + request.IsoCode2.ToLower() + ".png";
+                    if (Directory.Exists(directory))
+                    {
+                        Directory.CreateDirectory(directory);
+                    }
 
-
+                    if (!string.IsNullOrWhiteSpace(request.Base64Flag))
+                    {
+                        File.WriteAllText(filePath, request.Base64Flag);
+                    }
 
                     new Country(session)
                     {
+                        NameTranslateDataOid = addCountryNameResponse.RecordOid.Value,
+                        IsoCode2 = request.IsoCode2,
+                        IsoCode3 = request.IsoCode3,
+                        FlagPath = filePath,
+                        PhoneCode = request.PhoneCode
+                    }.Save();
 
-                    };
+                    _log.Info("Country saved to DB. Country => " + request.Name);
                 }
             }
             catch (Exception ex)
