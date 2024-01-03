@@ -66,7 +66,9 @@ namespace Pavolle.BES.TranslateServer.ClientLib
 
         public BesAddRecordResponseBase SaveNewData(string variable, ELanguage? language, EBesAppType besAppType)
         {
-            throw new NotImplementedException();
+
+            return new BesAddRecordResponseBase();
+            //TODO Burayı tamamlayacapız.
         }
     }
 }

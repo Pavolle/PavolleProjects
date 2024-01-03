@@ -30,8 +30,10 @@ namespace Pavolle.BES.TranslateServer.Common.Enums
         [Description("Data Created Before")]
         DataCreatedBefore,
 
-
         [Description("Username or Password Not Correct!")]
-        UsernameOrPasswordNotCorrect
+        UsernameOrPasswordNotCorrect,
+
+        [Description("Record Cannot Be Deleted!")]
+        RecordCannotBeDeleted
     }
 }

@@ -43,7 +43,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         IsoCode2 = country.IsoCode2,
                         IsoCode3 = country.IsoCode3,
                         PhoneCode = country.PhoneCode,
-                        FlagPath = country.FlagPath
+                        FlagPath = country.FlagPath,
                     };
 
                     _countries.TryAdd(cacheData.Oid, cacheData);
@@ -118,7 +118,25 @@ namespace Pavolle.BES.GeoServer.Business.Manager
             {
                 using (Session session = GeoServerXpoManager.Instance.GetNewSession())
                 {
+                    var country=session.Query<Country>().FirstOrDefault(t=>t.Oid==oid);
+                    if(country==null)
+                    {
+                        response.ErrorMessage=TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
 
+                    if (session.Query<City>().Any(t => t.Country.Oid == oid))
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordCannotBeDeleted, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+                    country.DeletedTime = DateTime.Now;
+                    country.Save();
+
+                    country.Delete();
                 }
             }
             catch (Exception ex)

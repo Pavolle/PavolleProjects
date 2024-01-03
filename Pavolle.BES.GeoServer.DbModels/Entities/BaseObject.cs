@@ -18,6 +18,7 @@ namespace Pavolle.BES.GeoServer.DbModels.Entities
         {
             base.AfterConstruction();
             CreatedTime = DateTime.Now;
+            DeletedTime = null;
         }
 
         [Persistent("oid")]
@@ -29,5 +30,8 @@ namespace Pavolle.BES.GeoServer.DbModels.Entities
 
         [Persistent("last_update_time")]
         public DateTime? LastUpdateTime { get; set; }
+
+        [Persistent("deleted_time")]
+        public DateTime? DeletedTime { get; set; }
     }
 }
