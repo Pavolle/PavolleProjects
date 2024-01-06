@@ -9,5 +9,6 @@ namespace Pavolle.BES.GeoServer.ViewModels.ViewData
 {
     public class CityViewData : ViewDataBase
     {
+        public string Name { get; set; }
     }
 }

@@ -9,5 +9,7 @@ namespace Pavolle.BES.GeoServer.ViewModels.Request
 {
     public class EditCityRequest : IntegrationAppRequestBase
     {
+        public long CountryOid { get; set; }
+        public string Name { get; set; }
     }
 }

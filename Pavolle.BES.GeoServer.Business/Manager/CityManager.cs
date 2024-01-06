@@ -181,13 +181,47 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         public ResponseBase Edit(long? oid, EditCityRequest request)
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
-            throw new NotImplementedException();
+            var response = new BesAddRecordResponseBase();
+
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+                    var country = session.Query<Country>().FirstOrDefault(t => t.Oid == request.CountryOid);
+                    if (country == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            Initilaize();
+
+            return response;
         }
 
         public CityListResponse List(CityCriteria request)
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
-            throw new NotImplementedException();
+            var response = new CityListResponse();
+            response.DataList = _cities.Values.Select(t => new CityViewData
+            {
+                Oid = t.Oid,
+                CreatedTime = t.CreatedTime,
+                LastUpdateTime = t.LastUpdateTime,
+                Name = TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, request.Language),
+            }).ToList();
+            return response;
         }
 
         public LookupResponse Lookup(CityCriteria criteria)
