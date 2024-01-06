@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pavolle.BES.TranslateServer.Common.Enums;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -65,7 +66,64 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         //TODO Burada oid bilgisini geri dönmemiz gerekebilir. Çünkü bu oid bilgisi bir yerlere yazılacak.
         public BesAddRecordResponseBase AddAddress(AddAddressRequest request)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response = new BesAddRecordResponseBase();
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+                    var address = new Address(session)
+                    {
+                        Longitude = request.Longitude,
+                        Latitude = request.Latitude,
+                        StreetName = request.StreetName,
+                        OpenAddress = request.OpenAddress,
+                        ZipCode = request.ZipCode
+                    };
+                    address.Save();
+                    
+                    if(request.CountryOid != null)
+                    {
+                        var country = session.Query<Country>().FirstOrDefault(t => t.Oid == request.CountryOid);
+                        if (country != null)
+                        {
+                            address.Country = country;
+                            address.Save();
+                        }
+                    }
+                    if (request.CityOid != null)
+                    {
+                        var city = session.Query<City>().FirstOrDefault(t => t.Oid == request.CityOid);
+                        if (city != null)
+                        {
+                            address.City = city;
+                            address.Save();
+                        }
+                    }
+                    if (request.DistrictOid != null)
+                    {
+                        var district = session.Query<District>().FirstOrDefault(t => t.Oid == request.DistrictOid);
+                        if (district != null)
+                        {
+                            address.District = district;
+                            address.Save();
+                        }
+                    }
+
+                    response.RecordOid = address.Oid;
+
+                    _log.Info("Address saved to DB.");
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            Initilaize();
+            return response;
         }
 
         public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)

@@ -24,12 +24,15 @@ namespace Pavolle.BES.GeoServer.DbModels.Entities
         public District District { get; set; }
 
         [Persistent("open_address")]
+        [Size(1000)]
         public string OpenAddress { get; set; }
 
         [Persistent("street_name")]
+        [Size(255)]
         public string StreetName { get; set; }
 
         [Persistent("zip_code")]
+        [Size(20)]
         public string ZipCode { get; set; }
 
         [Persistent("latitude")]
