@@ -16,6 +16,7 @@ using Pavolle.Core.ViewModels.Response;
 using System.Collections.Concurrent;
 using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.Core.ViewModels.ViewData;
+using Pavolle.Core.Enums;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -231,9 +232,15 @@ namespace Pavolle.BES.GeoServer.Business.Manager
             return response;
         }
 
-        internal List<DistrictViewData> GetDistrictListForCity(long oid)
+        internal List<DistrictViewData> GetDistrictListForCity(long oid, ELanguage language)
         {
-            throw new NotImplementedException();
+            return _cacheData.Values.Where(t => t.CityOid == oid).Select(t => new DistrictViewData
+            {
+                Oid = t.Oid,
+                CreatedTime = t.CreatedTime,
+                LastUpdateTime = t.LastUpdateTime,
+                Name = TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, language)
+            }).ToList();
         }
     }
 }

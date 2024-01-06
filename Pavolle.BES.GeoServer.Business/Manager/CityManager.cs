@@ -175,7 +175,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                 Name = TranslateServiceManager.Instance.GetNameFromCacheData(data.NameTranslateModel, request.Language)
             };
 
-            response.DistrictList = DistrictManager.Instance.GetDistrictListForCity(data.Oid);
+            response.DistrictList = DistrictManager.Instance.GetDistrictListForCity(data.Oid, request.Language.Value);
             return response;
         }
 
