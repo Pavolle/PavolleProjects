@@ -128,7 +128,37 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response = new ResponseBase();
+
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+                    var data = session.Query<Address>().FirstOrDefault(t => t.Oid == oid);
+                    if (data == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+                    data.DeletedTime = DateTime.Now;
+                    data.Save();
+
+                    data.Delete();
+                    _log.Warn("Address deleted succeded. Address Oid => " + data.Oid);
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            Initilaize();
+            return response;
         }
 
         public AddressDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
@@ -142,11 +172,6 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         }
 
         public AddressListResponse List(AddressCriteria criteria)
-        {
-            throw new NotImplementedException();
-        }
-
-        public LookupResponse Lookup(AddressCriteria criteria)
         {
             throw new NotImplementedException();
         }

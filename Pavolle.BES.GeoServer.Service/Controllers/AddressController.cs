@@ -55,39 +55,6 @@ namespace Pavolle.BES.GeoServer.Service.Controllers
         }
 
 
-        [HttpGet(GeoServerUrlConsts.LookupRoutePrefix)]
-        public ActionResult Lookup([FromQuery] AddressCriteria criteria)
-        {
-            if (criteria == null)
-            {
-                return BadRequest(new LookupResponse
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RequestDataTypeError, SettingServiceManager.Instance.GetDefaultLanguage()),
-                    StatusCode = 400
-                });
-            }
-            if (criteria.Language == null)
-            {
-                criteria.Language = SettingServiceManager.Instance.GetDefaultLanguage();
-            }
-            try
-            {
-                var response = AddressManager.Instance.Lookup(criteria);
-                _log.Debug("Request IP: " + criteria.RequestIp + " Criteria: " + JsonSerializer.Serialize(criteria) + " Response: " + JsonSerializer.Serialize(response));
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                _log.Error("Unexpected exception occured! Ex: " + ex);
-                return Ok(new LookupResponse
-                {
-                    ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, criteria.Language.Value),
-                    StatusCode = 500
-                });
-            }
-        }
-
-
         [HttpGet(GeoServerUrlConsts.DetailRoutePrefix)]
         public ActionResult Detail(long? oid, IntegrationAppRequestBase request)
         {
