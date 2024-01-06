@@ -13,13 +13,9 @@ using Pavolle.BES.ViewModels.Request;
 using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Pavolle.BES.TranslateServer.Common.Enums;
+using Pavolle.Core.ViewModels.ViewData;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -49,7 +45,8 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         DeletedTime = data.DeletedTime,
                         LastUpdateTime = data.LastUpdateTime,
                         NameTranslateModel = TranslateServiceManager.Instance.GetDataByOid(data.NameTranslateDataOid, EBesAppType.GeolocationServer),
-                        CityOid = data.City.Oid
+                        CityOid = data.City.Oid,
+                        CountryOid=data.City.Country.Oid
                     };
 
                     _cacheData.TryAdd(cacheData.Oid, cacheData);
@@ -146,22 +143,92 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public DistrictDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response = new DistrictDetailResponse();
+            DistrictCacheModel? data = null;
+            if (_cacheData.ContainsKey(oid))
+            {
+                data = _cacheData[oid];
+            }
+            if (data == null)
+            {
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                response.StatusCode = 500;
+                return response;
+            }
+
+            response.Detail = new DistrictDetailViewData
+            {
+                Oid = data.Oid,
+                CountyDetail = CountryManager.Instance.GetCountryDetail(data.CountryOid, request.Language),
+                CityDetail = CityManager.Instance.GetCityDetail(data.CityOid, request.Language),
+                CreatedTime = data.CreatedTime,
+                LastUpdateTime = data.LastUpdateTime,
+                Name = TranslateServiceManager.Instance.GetNameFromCacheData(data.NameTranslateModel, request.Language)
+            };
+
+            return response;
         }
 
         public ResponseBase Edit(long? oid, EditDistrictRequest request)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response = new ResponseBase();
+
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+                    var city = session.Query<Country>().FirstOrDefault(t => t.Oid == request.CityOid);
+                    if (city == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            Initilaize();
+
+            return response;
         }
 
-        public DistrictDetailResponse List(DistrictCriteria criteria)
+        //todo criteriaya eklenecek, country ve city detayları da eklenecek.
+        public DistrictListResponse List(DistrictCriteria criteria)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response = new DistrictListResponse();
+            response.DataList = _cacheData.Values.Select(t => new DistrictViewData
+            {
+                Oid = t.Oid,
+                CreatedTime = t.CreatedTime,
+                LastUpdateTime = t.LastUpdateTime,
+                Name = TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, criteria.Language),
+            }).ToList();
+            return response;
         }
 
         public LookupResponse Lookup(DistrictCriteria criteria)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response = new LookupResponse();
+            response.DataList = _cacheData.Values.ToList().Where(t => t.CityOid == criteria.CityOid)
+                                                .Select(t => new LookupViewData
+                                                {
+                                                    Key = t.Oid,
+                                                    Value = TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, criteria.Language),
+                                                    IsDefault = false
+                                                }).ToList();
+            return response;
         }
 
         internal List<DistrictViewData> GetDistrictListForCity(long oid)

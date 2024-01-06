@@ -250,5 +250,10 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                 Name= TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, language),
             }).ToList();
         }
+
+        internal CityDetailViewData GetCityDetail(long cityOid, ELanguage? language)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

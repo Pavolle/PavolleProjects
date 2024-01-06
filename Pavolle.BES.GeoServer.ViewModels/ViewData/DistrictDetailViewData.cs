@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.GeoServer.ViewModels.ViewData
 {
-    public class DistrictViewData : ViewDataBase
+    public class DistrictDetailViewData : ViewDataBase
     {
+        public CountryDetailViewData CountyDetail { get; set; }
+        public CityDetailViewData CityDetail { get; set; }
         public string Name { get; set; }
     }
 }

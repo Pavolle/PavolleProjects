@@ -15,5 +15,6 @@ namespace Pavolle.BES.GeoServer.ViewModels.Model
         public DateTime? LastUpdateTime { get; set; }
         public TranslateDataCacheModel? NameTranslateModel { get; set; }
         public long CityOid { get; set; }
+        public long CountryOid { get; set; }
     }
 }

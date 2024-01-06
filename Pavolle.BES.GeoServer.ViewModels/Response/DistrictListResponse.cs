@@ -9,5 +9,6 @@ namespace Pavolle.BES.GeoServer.ViewModels.Response
 {
     public class DistrictListResponse : ResponseBase
     {
+        public object DataList { get; set; }
     }
 }
