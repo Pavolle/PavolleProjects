@@ -15,13 +15,16 @@ using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Utils;
+using Pavolle.Core.ViewModels.Request;
 using Pavolle.Core.ViewModels.Response;
+using Pavolle.Core.ViewModels.ViewData;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -50,7 +53,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         CreatedTime=country.CreatedTime,
                         DeletedTime=country.DeletedTime,
                         LastUpdateTime=country.LastUpdateTime,
-                        NameTranslateModel = TranslateServiceManager.Instance.GetDataByOid(country.NameTranslateDataOid)
+                        NameTranslateModel = TranslateServiceManager.Instance.GetDataByOid(country.NameTranslateDataOid, EBesAppType.GeolocationServer)
                     };
 
                     _countries.TryAdd(cacheData.Oid, cacheData);
@@ -104,8 +107,6 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         PhoneCode = request.PhoneCode
                     }.Save();
 
-                    Initilaize();
-
                     _log.Info("Country saved to DB. Country => " + request.Name);
                 }
             }
@@ -115,6 +116,8 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                 response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
                 response.StatusCode = 500;
             }
+
+            Initilaize();
 
             return response;
         }
@@ -250,10 +253,17 @@ namespace Pavolle.BES.GeoServer.Business.Manager
             return response;
         }
 
-        public ImageLookupResponse ImageLookup(IntegrationAppRequestBase criteria)
+        public ImageLookupResponse ImageLookup(IntegrationAppRequestBase request)
         {
             var response = new ImageLookupResponse();
-
+            response.DataList = _countries.Values.ToList()
+            .Select(t => new ImageLookupViewData
+            {
+                Key = t.Oid,
+                Value = TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, request.Language),
+                ImageBase64 = FileDocumentManager.Instance.GetBase64FileFromPath(t.FlagPath),
+                IsDefault = false
+            }).ToList();
             return response;
         }
 

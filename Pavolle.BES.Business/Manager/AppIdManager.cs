@@ -34,6 +34,9 @@ namespace Pavolle.BES.Business
 
             _apps.Add("PASSE-PLLE-112326-TA", EBesAppType.PasswordServer);
             _appsById.Add(EBesAppType.PasswordServer, "PASSE-PLLE-112326-TA");
+
+            _apps.Add("JEOSR-PLLE-012401-TA", EBesAppType.GeolocationServer);
+            _appsById.Add(EBesAppType.GeolocationServer, "JEOSR-PLLE-012401-TA");
         }
 
         public EBesAppType GetBesAppTypeByAppId(string appId)

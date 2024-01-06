@@ -10,6 +10,7 @@ using Pavolle.BES.TranslateServer.ViewModels.Request;
 using Pavolle.BES.TranslateServer.ViewModels.Response;
 using Pavolle.BES.TranslateServer.ViewModels.ViewData;
 using Pavolle.BES.ViewModels.Request;
+using Pavolle.BES.ViewModels.Response;
 using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Response;
@@ -37,9 +38,9 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
             _translateDataList = new ConcurrentDictionary<string, TranslateDataCacheModel>();
         }
 
-        public ResponseBase AddTranslateData(AddTranslateDataRequest request)
+        public BesAddRecordResponseBase AddTranslateData(AddTranslateDataRequest request)
         {
-            var response=new ResponseBase();    
+            var response=new BesAddRecordResponseBase();    
             using(Session session = TranslateServerXpoManager.Instance.GetNewSession())
             {
                 var data = new TranslateData(session)
@@ -75,6 +76,8 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
                         break;
                 }
                 data.Save();
+
+                response.RecordOid = data.Oid;
 
                 AddTranslateCacheData(new TranslateDataCacheModel
                 {
@@ -214,9 +217,11 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
             return response;
         }
 
+        //TODO Bu kısmın yazılması lazım. Çünkü diğer servislerin tamamı Service üzerinden veri aldığı için kodlar orada yazıldı. Burada direk veri üzerinden sorgulanması gerekiyor.
         private string GetMessageFromMessageCode(EMessageCode messageCode, ELanguage language)
         {
-            throw new NotImplementedException();
+            //return GetData(messageCode.ToString(), new IntegrationAppRequestBase { Language = language }).Data;
+            return "";
         }
 
         internal void AddTranslateCacheData(TranslateDataCacheModel item)

@@ -2,6 +2,7 @@
 using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.TranslateServer.Common.Utils;
 using Pavolle.BES.TranslateServer.ViewModels.Model;
+using Pavolle.BES.TranslateServer.ViewModels.Request;
 using Pavolle.BES.TranslateServer.ViewModels.Response;
 using Pavolle.BES.TranslateServer.ViewModels.ViewData;
 using Pavolle.BES.ViewModels.Response;
@@ -66,9 +67,13 @@ namespace Pavolle.BES.TranslateServer.ClientLib
 
         public BesAddRecordResponseBase SaveNewData(string variable, ELanguage? language, EBesAppType besAppType)
         {
-
-            return new BesAddRecordResponseBase();
-            //TODO Burayı tamamlayacapız.
+            var response = TranslateServerHelperManager.Instance.Post<BesAddRecordResponseBase>(TranslateServerUrlConsts.TranslateDataUrlConst.BaseRoute + "/" + TranslateServerUrlConsts.TranslateDataUrlConst.AddRoutePrefix, new AddTranslateDataRequest
+            {
+                CurrentLanguage = language,
+                Variable = variable,
+                Value=variable
+            });
+            return response;
         }
 
         public TranslateDataCacheModel GetDataByOid(long nameTranslateDataOid, EBesAppType besAppType)

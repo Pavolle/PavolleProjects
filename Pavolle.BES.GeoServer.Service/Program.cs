@@ -2,6 +2,7 @@ using log4net;
 using Pavolle.BES.GeoServer.Business.Manager;
 using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.BES.TranslateServer.ClientLib;
 using Pavolle.BES.WebFilter;
 using Pavolle.Core.Manager;
 
@@ -15,7 +16,7 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         ILog _log = LogManager.GetLogger(typeof(Program));
-        WebAppInfoManager.Instance.Initialize("Geolocation Server", "1.0.0", "JEOSR-PLLE-012301-TA", new DateTime(2023, 1, 1));
+        WebAppInfoManager.Instance.Initialize("Geolocation Server", "1.0.0", "JEOSR-PLLE-012401-TA", new DateTime(2024, 1, 1));
 
         _log.Info("  ");
         _log.Info("********************************************");
@@ -49,6 +50,11 @@ internal class Program
             _log.Error("Db connection error! Db is not ready!");
             return;
         }
+
+
+
+        TranslateServerHelperManager.Instance.Initialize(SettingServiceManager.Instance.GetSetting(ESettingType.TranslateServerBaseUrl), WebAppInfoManager.Instance.GetAppCode(), WebAppInfoManager.Instance.GetId());
+        TranslateServiceManager.Instance.Initialize();
 
         // Add services to the container.
 
@@ -89,6 +95,10 @@ internal class Program
         app.UseAuthorization();
 
         app.MapControllers();
+        CountryManager.Instance.Initilaize();
+        CityManager.Instance.Initilaize();
+        DistrictManager.Instance.Initilaize();
+        AddressManager.Instance.Initilaize();
 
         GeoServerStatusManager.Instance.SetServerStatus(true);
         app.Run();
