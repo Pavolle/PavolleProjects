@@ -19,6 +19,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pavolle.BES.SettingServer.ClientLib;
+using Pavolle.BES.SettingServer.Common.Enums;
+using Pavolle.BES.TranslateServer.Common.Enums;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -59,36 +63,81 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public BesAddRecordResponseBase AddCity(AddCityRequest request)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response= new BesAddRecordResponseBase();
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+                    var addCityNameResponse = TranslateServiceManager.Instance.SaveNewData(request.Name, request.Language, EBesAppType.GeolocationServer);
+                    if (addCityNameResponse == null || !addCityNameResponse.Success)
+                    {
+                        _log.Error("Translate Server ERROR");
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+                    var country=session.Query<Country>().FirstOrDefault(t=>t.Oid==request.CountryOid);
+                    if (country == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+                    new City(session)
+                    {
+                        NameTranslateDataOid = addCityNameResponse.RecordOid.Value,
+                        Country = country
+                    }.Save();
+
+                    _log.Info("City saved to DB. City => " + request.Name);
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            Initilaize();
+            return response;
         }
 
         public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             throw new NotImplementedException();
         }
 
         public CityDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             throw new NotImplementedException();
         }
 
         public ResponseBase Edit(long? oid, EditCityRequest request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             throw new NotImplementedException();
         }
 
         public CityListResponse List(CityCriteria request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             throw new NotImplementedException();
         }
 
         public LookupResponse Lookup(CityCriteria request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             throw new NotImplementedException();
         }
 
         internal List<CityViewData> GetCityListForCountry(long oid)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             throw new NotImplementedException();
         }
     }
