@@ -10,6 +10,7 @@ namespace Pavolle.BES.TranslateServer.ViewModels.ViewData
 {
     public class TranslateDataViewData
     {
+        public long Oid { get; set; }
         public string Variable { get; set; }
         public EBesAppType? AppType { get; set; }
         public string TR { get; set; }

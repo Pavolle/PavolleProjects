@@ -36,6 +36,28 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
         public void Initialize()
         {
             _translateDataList = new ConcurrentDictionary<string, TranslateDataCacheModel>();
+
+            using(Session session = TranslateServerXpoManager.Instance.GetNewSession())
+            {
+                var data=session.Query<TranslateData>().ToList();
+
+                foreach (var dataItem in data)
+                {
+                    _translateDataList.TryAdd(dataItem.Variable, new TranslateDataCacheModel
+                    {
+                        Oid = dataItem.Oid,
+                        AppType = dataItem.AppType,
+                        AZ = dataItem.AZ,
+                        DE = dataItem.DE,
+                        EN = dataItem.EN,
+                        ES = dataItem.ES,
+                        FR = dataItem.FR,
+                        RU = dataItem.RU,
+                        TR = dataItem.TR,
+                        Variable = dataItem.Variable
+                    });
+                }
+            }
         }
 
         public BesAddRecordResponseBase AddTranslateData(AddTranslateDataRequest request)
@@ -179,6 +201,7 @@ namespace Pavolle.BES.TranslateServer.Business.Manager
             var response= new TranslateDataListResponse();
             response.DataList= _translateDataList.Values.Where(t=>t.AppType==null || t.AppType == AppIdManager.Instance.GetBesAppTypeByAppId(request.AppId)).Select(data=> new TranslateDataViewData
             {
+                Oid=data.Oid,
                 Variable = data.Variable,
                 AppType = data.AppType,
                 EN = data.EN,

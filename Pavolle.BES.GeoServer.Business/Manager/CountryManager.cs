@@ -270,14 +270,29 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         public CountryListResponse List(IntegrationAppRequestBase criteria)
         {
             var response = new CountryListResponse();
-
+            response.DataList = _countries.Values.Select(t => new CountryViewData
+            {
+                Oid = t.Oid,
+                CreatedTime = t.CreatedTime,
+                LastUpdateTime = t.LastUpdateTime,
+                IsoCode2 = t.IsoCode2,
+                IsoCode3 = t.IsoCode3,
+                Name= TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, criteria.Language),
+                PhoneCode = t.PhoneCode
+            }).ToList();
             return response;
         }
 
         public LookupResponse Lookup(IntegrationAppRequestBase criteria)
         {
             var response = new LookupResponse();
-
+            response.DataList = _countries.Values.ToList()
+                                                .Select(t => new LookupViewData
+                                                {
+                                                    Key = t.Oid,
+                                                    Value = TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, criteria.Language),
+                                                    IsDefault = false
+                                                }).ToList();
             return response;
         }
     }

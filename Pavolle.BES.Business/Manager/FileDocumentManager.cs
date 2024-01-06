@@ -14,9 +14,10 @@ namespace Pavolle.BES.Business.Manager
 
         }
 
+        //TODO BU kısım yazılacak. Dosyayı klasörden okuyan kod. Önemli bu kısım.
         public string GetBase64FileFromPath(string flagPath)
         {
-            throw new NotImplementedException();
+            return string.Empty;
         }
     }
 }

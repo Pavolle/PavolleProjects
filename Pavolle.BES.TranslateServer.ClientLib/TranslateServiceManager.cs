@@ -18,14 +18,26 @@ namespace Pavolle.BES.TranslateServer.ClientLib
 {
     public class TranslateServiceManager : Singleton<TranslateServiceManager>
     {
-        List<TranslateDataViewData> _translateData;
+        List<TranslateDataCacheModel> _translateData;
         private TranslateServiceManager() { }
         public void Initialize() 
         {
             var response = TranslateServerHelperManager.Instance.Get<TranslateDataListResponse>(TranslateServerUrlConsts.TranslateDataUrlConst.BaseRoute + "/" + TranslateServerUrlConsts.TranslateDataUrlConst.GetAllDataRoutePrefix);
             if (response != null)
             {
-                _translateData = response.DataList;
+                _translateData = response.DataList.Select(t => new TranslateDataCacheModel
+                {
+                    Oid = t.Oid,
+                    AppType = t.AppType,
+                    AZ = t.AZ,
+                    DE = t.DE,
+                    EN = t.EN,
+                    RU = t.RU,
+                    FR = t.FR,
+                    ES = t.ES,
+                    TR = t.TR,
+                    Variable = t.Variable
+                }).ToList();
             }
         }
 
@@ -67,23 +79,38 @@ namespace Pavolle.BES.TranslateServer.ClientLib
 
         public BesAddRecordResponseBase SaveNewData(string variable, ELanguage? language, EBesAppType besAppType)
         {
-            var response = TranslateServerHelperManager.Instance.Post<BesAddRecordResponseBase>(TranslateServerUrlConsts.TranslateDataUrlConst.BaseRoute + "/" + TranslateServerUrlConsts.TranslateDataUrlConst.AddRoutePrefix, new AddTranslateDataRequest
+            return TranslateServerHelperManager.Instance.Post<BesAddRecordResponseBase>(TranslateServerUrlConsts.TranslateDataUrlConst.BaseRoute + "/" + TranslateServerUrlConsts.TranslateDataUrlConst.AddRoutePrefix, new AddTranslateDataRequest
             {
                 CurrentLanguage = language,
                 Variable = variable,
                 Value=variable
             });
-            return response;
         }
 
-        public TranslateDataCacheModel GetDataByOid(long nameTranslateDataOid, EBesAppType besAppType)
+        public TranslateDataCacheModel? GetDataByOid(long nameTranslateDataOid, EBesAppType besAppType)
         {
-            throw new NotImplementedException();
+            return _translateData.FirstOrDefault(t => t.Oid == nameTranslateDataOid);
         }
 
-        public string GetNameFromCacheData(TranslateDataCacheModel nameTranslateModel, ELanguage? language)
+        public string GetNameFromCacheData(TranslateDataCacheModel data, ELanguage? language)
         {
-            throw new NotImplementedException();
+            if(language==null) { return data.Variable; }
+            switch (language.Value)
+            {
+                case ELanguage.German:
+                    return data.DE;
+                case ELanguage.Spanish:
+                    return data.ES;
+                case ELanguage.English:
+                    return data.EN;
+                case ELanguage.Russian:
+                    return data.RU;
+                case ELanguage.French:
+                    return data.FR;
+                case ELanguage.Turkish:
+                    return data.TR;
+                default:return data.Variable;
+            }
         }
     }
 }
