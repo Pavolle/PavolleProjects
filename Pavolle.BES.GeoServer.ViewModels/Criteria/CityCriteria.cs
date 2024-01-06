@@ -9,5 +9,6 @@ namespace Pavolle.BES.GeoServer.ViewModels.Criteria
 {
     public class CityCriteria : IntegrationAppRequestBase
     {
+        public long? CountryOid { get; set; }
     }
 }

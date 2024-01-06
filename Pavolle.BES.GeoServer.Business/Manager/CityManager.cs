@@ -24,6 +24,7 @@ using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.TranslateServer.Common.Enums;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Pavolle.BES.Business.Manager;
+using Pavolle.Core.ViewModels.ViewData;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -189,10 +190,18 @@ namespace Pavolle.BES.GeoServer.Business.Manager
             throw new NotImplementedException();
         }
 
-        public LookupResponse Lookup(CityCriteria request)
+        public LookupResponse Lookup(CityCriteria criteria)
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
-            throw new NotImplementedException();
+            var response = new LookupResponse();
+            response.DataList = _cities.Values.ToList().Where(t=>t.CountryOid==criteria.CountryOid)
+                                                .Select(t => new LookupViewData
+                                                {
+                                                    Key = t.Oid,
+                                                    Value = TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, criteria.Language),
+                                                    IsDefault = false
+                                                }).ToList();
+            return response;
         }
 
         internal List<CityViewData> GetCityListForCountry(long oid)
