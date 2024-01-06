@@ -19,6 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pavolle.BES.TranslateServer.Common.Enums;
+using Pavolle.BES.GeoServer.ViewModels.ViewData;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -47,9 +48,9 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         CreatedTime = data.CreatedTime,
                         DeletedTime = data.DeletedTime,
                         LastUpdateTime = data.LastUpdateTime,
-                        DistrictOid=data.District.Oid,
-                        CityOid = data.City.Oid,
-                        CountryOid = data.Country.Oid,
+                        DistrictOid= data.District==null? null : data.District.Oid,
+                        CityOid = data.City==null? null: data.City.Oid,
+                        CountryOid = data.Country==null? null: data.Country.Oid,
                         Latitude=data.Latitude,
                         Longitude=data.Longitude,
                         OpenAddress=data.OpenAddress,
@@ -173,7 +174,15 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public AddressListResponse List(AddressCriteria criteria)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response = new AddressListResponse();
+            response.DataList = _cacheData.Values.Select(t => new AddressViewData
+            {
+                Oid = t.Oid,
+                CreatedTime = t.CreatedTime,
+                LastUpdateTime = t.LastUpdateTime,
+            }).ToList();
+            return response;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Pavolle.BES.GeoServer.ViewModels.Model
 {
     public class AddressCacheModel
     {
-        public long CountryOid { get; set; }
+        public long? CountryOid { get; set; }
         public long? CityOid { get; set; }
         public long? DistrictOid { get; set; }
         public string OpenAddress { get; set; }
