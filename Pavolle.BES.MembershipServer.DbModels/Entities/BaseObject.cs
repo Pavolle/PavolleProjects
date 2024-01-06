@@ -31,5 +31,8 @@ namespace Pavolle.BES.MembershipServer.DbModels.Entities
 
         [Persistent("last_update_time")]
         public DateTime? LastUpdateTime { get; set; }
+
+        [Persistent("deleted_time")]
+        public DateTime? DeletedTime { get; set; }
     }
 }

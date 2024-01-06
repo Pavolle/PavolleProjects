@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pavolle.BES.AppServer.DbModels.Entities
+namespace Pavolle.BES.NotificationServer.DbModels.Entities
 {
     [NonPersistent]
     public class BaseObject : XPBaseObject
