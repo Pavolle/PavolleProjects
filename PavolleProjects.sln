@@ -727,6 +727,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.NotificationSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.NotificationServer.UnitTests", "Pavolle.BES.NotificationServer.UnitTests\Pavolle.BES.NotificationServer.UnitTests.csproj", "{C0B588DF-1A60-4E60-B7D9-ACFF7DF8A407}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pavolle.BES.AppServer.ViewModels", "Pavolle.BES.AppServer.ViewModels\Pavolle.BES.AppServer.ViewModels.csproj", "{86B26409-C175-4672-B8F2-26207C2A3D84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1959,6 +1961,10 @@ Global
 		{C0B588DF-1A60-4E60-B7D9-ACFF7DF8A407}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0B588DF-1A60-4E60-B7D9-ACFF7DF8A407}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0B588DF-1A60-4E60-B7D9-ACFF7DF8A407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B26409-C175-4672-B8F2-26207C2A3D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B26409-C175-4672-B8F2-26207C2A3D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B26409-C175-4672-B8F2-26207C2A3D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B26409-C175-4672-B8F2-26207C2A3D84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2319,6 +2325,7 @@ Global
 		{801EB63F-014D-45CA-9C4D-F24EC0BE2F60} = {84D1E471-4912-445B-84AC-51E279A21878}
 		{99D2BB40-6E8D-4429-AFE6-B6A8A52A1B58} = {84D1E471-4912-445B-84AC-51E279A21878}
 		{C0B588DF-1A60-4E60-B7D9-ACFF7DF8A407} = {84D1E471-4912-445B-84AC-51E279A21878}
+		{86B26409-C175-4672-B8F2-26207C2A3D84} = {4B3560EB-D565-47E4-9674-C30C6EF52ACC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BD723E9-424D-44E5-B683-4F14A0EFB246}
