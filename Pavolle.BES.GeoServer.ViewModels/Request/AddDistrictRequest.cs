@@ -9,5 +9,7 @@ namespace Pavolle.BES.GeoServer.ViewModels.Request
 {
     public class AddDistrictRequest : IntegrationAppRequestBase
     {
+        public string Name { get; set; }
+        public long CityOid { get; set; }
     }
 }

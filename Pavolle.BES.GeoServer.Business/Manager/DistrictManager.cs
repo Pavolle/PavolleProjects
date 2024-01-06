@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pavolle.BES.TranslateServer.Common.Enums;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -59,7 +60,46 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public BesAddRecordResponseBase AddDistrict(AddDistrictRequest request)
         {
-            throw new NotImplementedException();
+            if (!_isCacheInitiliaze) { Initilaize(); }
+            var response = new BesAddRecordResponseBase();
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+                    var addCityNameResponse = TranslateServiceManager.Instance.SaveNewData(request.Name, request.Language, EBesAppType.GeolocationServer);
+                    if (addCityNameResponse == null || !addCityNameResponse.Success)
+                    {
+                        _log.Error("Translate Server ERROR");
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+                    var city = session.Query<City>().FirstOrDefault(t => t.Oid == request.CityOid);
+                    if (city == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+                    new District(session)
+                    {
+                        NameTranslateDataOid = addCityNameResponse.RecordOid.Value,
+                        City = city
+                    }.Save();
+
+                    _log.Info("District saved to DB. District => " + request.Name);
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            Initilaize();
+            return response;
         }
 
         public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
