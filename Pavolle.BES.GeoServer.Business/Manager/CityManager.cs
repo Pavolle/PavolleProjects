@@ -1,4 +1,5 @@
-﻿using Pavolle.BES.GeoServer.ViewModels.Criteria;
+﻿using log4net;
+using Pavolle.BES.GeoServer.ViewModels.Criteria;
 using Pavolle.BES.GeoServer.ViewModels.Request;
 using Pavolle.BES.GeoServer.ViewModels.Response;
 using Pavolle.BES.GeoServer.ViewModels.ViewData;
@@ -16,7 +17,10 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 {
     public class CityManager :  Singleton<CityManager>
     {
-        private CityManager() { }
+        static readonly ILog _log = LogManager.GetLogger(typeof(CountryManager));
+        private CityManager() 
+        {
+        }
 
         public void Initilaize()
         {

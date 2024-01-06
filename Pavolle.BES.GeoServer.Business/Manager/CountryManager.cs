@@ -32,7 +32,11 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(CountryManager));
         ConcurrentDictionary<long?, CountryCacheModel> _countries;
-        private CountryManager() { }
+        bool _isCacheInitiliaze = false;
+        private CountryManager() 
+        { 
+            _log.Debug("Initilize " +nameof(CountryManager));
+        }
 
         public void Initilaize()
         {
@@ -58,11 +62,13 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
                     _countries.TryAdd(cacheData.Oid, cacheData);
                 }
+                _isCacheInitiliaze=true;
             }
         }
 
         public BesAddRecordResponseBase AddCountry(AddCountryRequest request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new BesAddRecordResponseBase();
 
             try
@@ -124,6 +130,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new BesAddRecordResponseBase();
 
             try
@@ -149,8 +156,6 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                     country.Save();
 
                     country.Delete();
-
-                    Initilaize();
                     _log.Warn("Country deleted succeded. Country Oid => " + country.Oid);
                 }
             }
@@ -161,11 +166,14 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                 response.StatusCode = 500;
             }
 
+            Initilaize();
+
             return response;
         }
 
         public CountryDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new CountryDetailResponse();
             CountryCacheModel? data = null;
             if (_countries.ContainsKey(oid))
@@ -195,6 +203,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public ResponseBase Edit(long? oid, EditCountryRequest request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new BesAddRecordResponseBase();
 
             try
@@ -250,11 +259,14 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                 response.StatusCode = 500;
             }
 
+            Initilaize();
+
             return response;
         }
 
         public ImageLookupResponse ImageLookup(IntegrationAppRequestBase request)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new ImageLookupResponse();
             response.DataList = _countries.Values.ToList()
             .Select(t => new ImageLookupViewData
@@ -269,6 +281,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public CountryListResponse List(IntegrationAppRequestBase criteria)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new CountryListResponse();
             response.DataList = _countries.Values.Select(t => new CountryViewData
             {
@@ -285,6 +298,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public LookupResponse Lookup(IntegrationAppRequestBase criteria)
         {
+            if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new LookupResponse();
             response.DataList = _countries.Values.ToList()
                                                 .Select(t => new LookupViewData
