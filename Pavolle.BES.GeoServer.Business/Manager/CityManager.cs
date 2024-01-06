@@ -25,6 +25,7 @@ using Pavolle.BES.TranslateServer.Common.Enums;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Pavolle.BES.Business.Manager;
 using Pavolle.Core.ViewModels.ViewData;
+using Pavolle.Core.Enums;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -238,10 +239,16 @@ namespace Pavolle.BES.GeoServer.Business.Manager
             return response;
         }
 
-        internal List<CityViewData> GetCityListForCountry(long oid)
+        internal List<CityViewData> GetCityListForCountry(long oid, ELanguage language)
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
-            throw new NotImplementedException();
+            return _cities.Values.Where(t => t.CountryOid == oid).Select(t => new CityViewData
+            {
+                Oid = t.Oid,
+                CreatedTime = t.CreatedTime,
+                LastUpdateTime = t.LastUpdateTime,
+                Name= TranslateServiceManager.Instance.GetNameFromCacheData(t.NameTranslateModel, language),
+            }).ToList();
         }
     }
 }

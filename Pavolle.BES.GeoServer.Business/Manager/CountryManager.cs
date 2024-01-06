@@ -194,11 +194,12 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                 IsoCode2 = data.IsoCode2,
                 IsoCode3 = data.IsoCode3,
                 CreatedTime = data.CreatedTime,
+                PhoneCode= data.PhoneCode,
                 Base64Flag = FileDocumentManager.Instance.GetBase64FileFromPath(data.FlagPath),
                 Name = TranslateServiceManager.Instance.GetNameFromCacheData(data.NameTranslateModel, request.Language)
             };
 
-            response.CityList = CityManager.Instance.GetCityListForCountry(data.Oid);
+            response.CityList = CityManager.Instance.GetCityListForCountry(data.Oid, request.Language.Value);
             return response;
         }
 
