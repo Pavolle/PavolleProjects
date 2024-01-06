@@ -32,7 +32,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     public class CityManager :  Singleton<CityManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(CountryManager));
-        ConcurrentDictionary<long?, CityCacheModel> _cities;
+        ConcurrentDictionary<long?, CityCacheModel> _cacheData;
         bool _isCacheInitiliaze = false;
         private CityManager()
         {
@@ -41,7 +41,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public void Initilaize()
         {
-            _cities=new ConcurrentDictionary<long?, CityCacheModel>(); 
+            _cacheData=new ConcurrentDictionary<long?, CityCacheModel>(); 
             using (Session session = GeoServerXpoManager.Instance.GetNewSession())
             {
                 var dataList = session.Query<City>().ToList();
@@ -58,7 +58,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         CountryOid=data.Country.Oid
                     };
 
-                    _cities.TryAdd(cacheData.Oid, cacheData);
+                    _cacheData.TryAdd(cacheData.Oid, cacheData);
                 }
                 _isCacheInitiliaze = true;
             }
@@ -155,9 +155,9 @@ namespace Pavolle.BES.GeoServer.Business.Manager
             if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new CityDetailResponse();
             CityCacheModel? data = null;
-            if (_cities.ContainsKey(oid))
+            if (_cacheData.ContainsKey(oid))
             {
-                data = _cities[oid];
+                data = _cacheData[oid];
             }
             if (data == null)
             {
@@ -215,7 +215,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new CityListResponse();
-            response.DataList = _cities.Values.Select(t => new CityViewData
+            response.DataList = _cacheData.Values.Select(t => new CityViewData
             {
                 Oid = t.Oid,
                 CreatedTime = t.CreatedTime,
@@ -229,7 +229,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new LookupResponse();
-            response.DataList = _cities.Values.ToList().Where(t=>t.CountryOid==criteria.CountryOid)
+            response.DataList = _cacheData.Values.ToList().Where(t=>t.CountryOid==criteria.CountryOid)
                                                 .Select(t => new LookupViewData
                                                 {
                                                     Key = t.Oid,
@@ -242,7 +242,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         internal List<CityViewData> GetCityListForCountry(long oid, ELanguage language)
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
-            return _cities.Values.Where(t => t.CountryOid == oid).Select(t => new CityViewData
+            return _cacheData.Values.Where(t => t.CountryOid == oid).Select(t => new CityViewData
             {
                 Oid = t.Oid,
                 CreatedTime = t.CreatedTime,

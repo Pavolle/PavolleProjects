@@ -32,7 +32,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
     public class CountryManager : Singleton<CountryManager>
     {
         static readonly ILog _log = LogManager.GetLogger(typeof(CountryManager));
-        ConcurrentDictionary<long?, CountryCacheModel> _countries;
+        ConcurrentDictionary<long?, CountryCacheModel> _cacheData;
         bool _isCacheInitiliaze = false;
         private CountryManager() 
         { 
@@ -41,7 +41,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
 
         public void Initilaize()
         {
-            _countries = new ConcurrentDictionary<long?, CountryCacheModel>();
+            _cacheData = new ConcurrentDictionary<long?, CountryCacheModel>();
             using (Session session = GeoServerXpoManager.Instance.GetNewSession())
             {
                 var countryList=session.Query<Country>().ToList();
@@ -61,7 +61,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                         NameTranslateModel = TranslateServiceManager.Instance.GetDataByOid(country.NameTranslateDataOid, EBesAppType.GeolocationServer)
                     };
 
-                    _countries.TryAdd(cacheData.Oid, cacheData);
+                    _cacheData.TryAdd(cacheData.Oid, cacheData);
                 }
                 _isCacheInitiliaze=true;
             }
@@ -177,9 +177,9 @@ namespace Pavolle.BES.GeoServer.Business.Manager
             if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new CountryDetailResponse();
             CountryCacheModel? data = null;
-            if (_countries.ContainsKey(oid))
+            if (_cacheData.ContainsKey(oid))
             {
-                data = _countries[oid];
+                data = _cacheData[oid];
             }
             if(data==null)
             {
@@ -270,7 +270,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new ImageLookupResponse();
-            response.DataList = _countries.Values.ToList()
+            response.DataList = _cacheData.Values.ToList()
             .Select(t => new ImageLookupViewData
             {
                 Key = t.Oid,
@@ -285,7 +285,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new CountryListResponse();
-            response.DataList = _countries.Values.Select(t => new CountryViewData
+            response.DataList = _cacheData.Values.Select(t => new CountryViewData
             {
                 Oid = t.Oid,
                 CreatedTime = t.CreatedTime,
@@ -302,7 +302,7 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
             var response = new LookupResponse();
-            response.DataList = _countries.Values.ToList()
+            response.DataList = _cacheData.Values.ToList()
                                                 .Select(t => new LookupViewData
                                                 {
                                                     Key = t.Oid,
