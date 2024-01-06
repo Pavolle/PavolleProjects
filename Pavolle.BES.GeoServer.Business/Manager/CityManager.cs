@@ -108,7 +108,43 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         public ResponseBase Delete(long? oid, IntegrationAppRequestBase request)
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
-            throw new NotImplementedException();
+            var response = new ResponseBase();
+
+            try
+            {
+                using (Session session = GeoServerXpoManager.Instance.GetNewSession())
+                {
+                    var data = session.Query<City>().FirstOrDefault(t => t.Oid == oid);
+                    if (data == null)
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+                    if (session.Query<District>().Any(t => t.City.Oid == oid))
+                    {
+                        response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordCannotBeDeleted, request.Language.Value);
+                        response.StatusCode = 500;
+                        return response;
+                    }
+
+                    data.DeletedTime = DateTime.Now;
+                    data.Save();
+
+                    data.Delete();
+                    _log.Warn("City deleted succeded. City Oid => " + data.Oid);
+                }
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Unexpected error occured! " + ex);
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.UnexpectedExceptionOccured, request.Language.Value);
+                response.StatusCode = 500;
+            }
+
+            Initilaize();
+            return response;
         }
 
         public CityDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
