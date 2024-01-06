@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pavolle.BES.MembershipServer.Common.Enums
 {
-    public class EMembershipRequestOperation
+    public enum EMembershipRequestOperation
     {
     }
 }

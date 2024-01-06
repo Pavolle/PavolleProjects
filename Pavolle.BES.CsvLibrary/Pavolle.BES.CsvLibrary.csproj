@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Manager\" />
-    <Folder Include="Model\" />
+    <ProjectReference Include="..\Pavolle.Core\Pavolle.Core.csproj" />
   </ItemGroup>
 
 </Project>
