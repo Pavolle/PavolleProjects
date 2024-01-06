@@ -23,6 +23,7 @@ using Pavolle.BES.SettingServer.ClientLib;
 using Pavolle.BES.SettingServer.Common.Enums;
 using Pavolle.BES.TranslateServer.Common.Enums;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Pavolle.BES.Business.Manager;
 
 namespace Pavolle.BES.GeoServer.Business.Manager
 {
@@ -150,7 +151,30 @@ namespace Pavolle.BES.GeoServer.Business.Manager
         public CityDetailResponse Detail(long? oid, IntegrationAppRequestBase request)
         {
             if (!_isCacheInitiliaze) { Initilaize(); }
-            throw new NotImplementedException();
+            var response = new CityDetailResponse();
+            CityCacheModel? data = null;
+            if (_cities.ContainsKey(oid))
+            {
+                data = _cities[oid];
+            }
+            if (data == null)
+            {
+                response.ErrorMessage = TranslateServiceManager.Instance.GetMessage(EMessageCode.RecordNotFoundException, request.Language.Value);
+                response.StatusCode = 500;
+                return response;
+            }
+
+            response.Detail = new CityDetailViewData
+            {
+                Oid = data.Oid,
+                CountyDetail = CountryManager.Instance.GetCountryDetail(data.CountryOid, request.Language),
+                CreatedTime = data.CreatedTime,
+                LastUpdateTime = data.LastUpdateTime,
+                Name = TranslateServiceManager.Instance.GetNameFromCacheData(data.NameTranslateModel, request.Language)
+            };
+
+            response.DistrictList = DistrictManager.Instance.GetDistrictListForCity(data.Oid);
+            return response;
         }
 
         public ResponseBase Edit(long? oid, EditCityRequest request)

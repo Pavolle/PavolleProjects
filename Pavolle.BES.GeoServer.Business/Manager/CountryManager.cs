@@ -14,6 +14,7 @@ using Pavolle.BES.TranslateServer.ClientLib;
 using Pavolle.BES.TranslateServer.Common.Enums;
 using Pavolle.BES.ViewModels.Request;
 using Pavolle.BES.ViewModels.Response;
+using Pavolle.Core.Enums;
 using Pavolle.Core.Utils;
 using Pavolle.Core.ViewModels.Request;
 using Pavolle.Core.ViewModels.Response;
@@ -308,6 +309,11 @@ namespace Pavolle.BES.GeoServer.Business.Manager
                                                     IsDefault = false
                                                 }).ToList();
             return response;
+        }
+
+        internal CountryDetailViewData GetCountryDetail(long countryOid, ELanguage? language)
+        {
+            throw new NotImplementedException();
         }
     }
 }
