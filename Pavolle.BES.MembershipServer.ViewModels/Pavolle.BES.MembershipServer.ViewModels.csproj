@@ -9,8 +9,11 @@
   <ItemGroup>
     <Folder Include="Criteria\" />
     <Folder Include="ViewData\" />
-    <Folder Include="Response\" />
     <Folder Include="Request\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pavolle.BES.ViewModels\Pavolle.BES.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
