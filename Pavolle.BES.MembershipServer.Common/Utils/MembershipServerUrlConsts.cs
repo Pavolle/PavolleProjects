@@ -32,6 +32,7 @@ namespace Pavolle.BES.MembershipServer.Common.Utils
             public const string CreateAccountRoutePrefix = "createaccount/{oid}";
             public const string AddCommentRoutePrefix = "addcomment/{oid}";
             public const string ChangeStatusRoutePrefix = "changestatus/{oid}";
+            public const string RequestStatusRoutePrefix = "requeststatus";
         }
 
         public class DefinitionUrlConsts
