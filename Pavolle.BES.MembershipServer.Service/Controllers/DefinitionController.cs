@@ -2,10 +2,7 @@
 
 namespace Pavolle.BES.MembershipServer.Service.Controllers
 {
-    public class MembershipController : Controller
+    public class DefinitionController : Controller
     {
-        //add //list //detail //cancel //create account
-
-
     }
 }
